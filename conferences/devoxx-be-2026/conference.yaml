@@ -1,0 +1,22 @@
+name: Devoxx Belgium 2026
+slug: devoxx-be-2026
+
+talks:
+  source: devoxx-cfp   # adapter in scripts/catalog.py (cfp.dev API, shared by Devoxx/VoxxedDays)
+  baseUrl: https://dvbe26.cfp.dev/api/public
+
+videos:
+  playlists:
+    - https://www.youtube.com/playlist?list=PLKlmOVksNGoE   # "Devoxx Belgium 2026" on @DevoxxForever
+  # Stripped (case-insensitive) from video titles before matching: the last " by <speakers>".
+  titleSuffix: '\s+by\s+(?:(?!\s+by\s).)*$'
+  captionLang: en-orig
+
+matching:
+  accept: 0.85   # >= accept -> matched
+  review: 0.60   # >= review -> needs-review; below -> no-video
+
+excludeSessionTypes: [BOF, Hands-on Lab, Keynote Overflow]
+
+# talkId: videoId (force a match) | null (no video exists). Wins over the matcher on every rebuild.
+overrides: {31451: aup9tNzQu7c, 9023: eSSPOCeoF0c, 25652: _dcauZC9ST8, 52104: jhvT8hVYSvQ}
