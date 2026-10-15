@@ -1,0 +1,6 @@
+conferences/*/transcripts/
+conferences/*/frames/
+conferences/*/slides/
+conferences/*/reviews/
+conferences/*/catalog.json.lock
+conferences/*/catalog.json.tmp
