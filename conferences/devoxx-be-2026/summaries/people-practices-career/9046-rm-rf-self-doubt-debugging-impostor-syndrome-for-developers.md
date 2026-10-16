@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=Tfrt19d3TEA
 durationMin: 39
 slides: null
 verdict: 5
+reach: broad
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -62,12 +63,15 @@ Asked how to tell impostor syndrome from actually not being good, Mayers says fa
 Developers who dread code reviews, hesitate to speak up in design discussions or feel fraudulent stepping into larger roles will get the most, especially those early in their careers or entering through non-traditional paths. Team leads get concrete review and culture practices. Skip it if you want clinical psychology or data on interventions; this is lived experience plus popular neuroscience, not research.
 
 ## Verdict
-**5/10**: An engaging reframing of self-doubt with a usable pipeline model and practices, limited by familiar material, no measurements and no artifacts to take home.
+**5/10**: A reframing of self-doubt built on lived experience, a pipeline model and practices, limited by textbook science, no measurements and no artifact to take home.
+
+**Reach broad**: most developers and tech leads in the audience meet self-doubt around code reviews, design discussions and larger roles, and leads can use the review and culture practices.
 
 **Novelty 1/2**
 
-- **+** [16:52](https://youtu.be/Tfrt19d3TEA?t=1012) The amygdala-to-cortisol fight-or-flight walkthrough ties textbook neuroscience to a blocked PR with 37 comments, a mapping no single source offers in this form.
-- **+** [01:07](https://youtu.be/Tfrt19d3TEA?t=67) The pottery-degree-to-devrel career story, his international-competition experience and the JFokus speaker-unconference lessons carry the talk on experience a search cannot reproduce.
+- **+** [01:07](https://youtu.be/Tfrt19d3TEA?t=67) The pottery-degree-to-developer-relations career story and the JFokus speaker-unconference lessons are the speaker's own examples illustrating known material.
+- **+** [18:27](https://youtu.be/Tfrt19d3TEA?t=1107) His white-water kayaking start-line experience, where fight or flight never faded across international competitions, gives the mechanism a first-hand case.
+- **−** The Clance and Imes definition and the amygdala-hypothalamus-adrenal chain are what the Wikipedia articles on impostor syndrome and the fight-or-flight response already give.
 
 **Demonstrated 1/2**
 

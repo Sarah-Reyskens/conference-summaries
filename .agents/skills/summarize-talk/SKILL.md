@@ -3,7 +3,7 @@ name: summarize-talk
 description: Summarize one conference talk from the catalog into a summary file from its video transcript. Use when asked to summarize a talk, or when given a talk id and conference slug to summarize.
 ---
 
-Input: a conference slug and a talk (id or title fragment), and optionally `checker=<name> judge=<name>` to have the verdict reviewed (step 8). With no slug, use the only directory under `conferences/`; with several, ask. Run every command from the repo root. Commands below write `<slug>` and `<id>` for the resolved values.
+Input: a conference slug and a talk (id or title fragment), optionally `rescore` to rewrite only the verdict of an existing summary (see Rescore), and optionally `checker=<name> judge=<name>` to have the verdict reviewed (step 8). With no slug, use the only directory under `conferences/`; with several, ask. Run every command from the repo root. Commands below write `<slug>` and `<id>` for the resolved values.
 
 Any step that ends the run early records the outcome in the catalog first; the catalog is how `summarize-backlog` knows what is done.
 
@@ -44,10 +44,10 @@ Read [`SUMMARY-FORMAT.md`](SUMMARY-FORMAT.md) and write the file it specifies, a
 ## 7. Record
 
 ```
-uv run scripts/catalog.py set <slug> <id> --status summarized --summary <summary path> --transcript <transcript path> --slides <deck url | none> --scores <novelty> <demonstrated> <measured> <depth> <reusable>
+uv run scripts/catalog.py set <slug> <id> --status summarized --summary <summary path> --transcript <transcript path> --slides <deck url | none> --scores <novelty> <demonstrated> <measured> <depth> <reusable> --reach <reach>
 ```
 
-The catalog stores the five criteria and their sum as the verdict, so the scores here match the summary's `## Verdict` section.
+The catalog stores the five criteria, their sum as the verdict, and the reach, so the values here match the summary's front matter and `## Verdict` section.
 
 An unexpected error in steps 2–7: `uv run scripts/catalog.py set <slug> <id> --status failed --error "<what broke>"`.
 
@@ -55,6 +55,16 @@ An unexpected error in steps 2–7: `uv run scripts/catalog.py set <slug> <id> -
 
 Only when the input named both a checker and a judge: read [`../review-verdict/SKILL.md`](../review-verdict/SKILL.md) and run its steps 1–5 for this talk with those two, as its author, with everything you read for the summary still in hand. A review that fails leaves the recorded summary as it is, unreviewed; say so in the reply.
 
+## Rescore
+
+With `rescore`, the summary stays and only its verdict is redone, after a rubric change. Step 1 must find `status` `summarized`; any other status: report it and stop without touching the catalog. Then:
+
+1. Run step 2's command (the transcript is cached); a nonzero exit: report it and stop without touching the catalog. Then step 3: read the whole transcript. Read the deck PDF at `conferences/<slug>/slides/<id>.pdf` when it exists, and the frames already cached as `conferences/<slug>/frames/<videoId>-<seconds>.jpg`; grab new frames only where a criterion turns on what the screen showed.
+2. Read the summary, then [`SUMMARY-FORMAT.md`](SUMMARY-FORMAT.md) item 7 and the "Verdict scale" and "Reach" sections. Score every criterion and the reach afresh from the transcript, without regard to the old scores, and replace the `## Verdict` section. In the front matter set `verdict:` and `reach:`, and remove `reviewedAt:`. Leave every other section and field as it is.
+3. Record: `uv run scripts/catalog.py set <slug> <id> --status summarized --scores <novelty> <demonstrated> <measured> <depth> <reusable> --reach <reach>`.
+
+Step 8 runs when a checker and a judge were named. An unexpected error leaves the old summary and catalog entry in place (the talk stays in the rescore queue); say what broke in the reply, and never set it `failed`, which would drop its summary from the catalog.
+
 ## Reply
 
-End with exactly one line: `<id> summarized verdict=<score> <summary path>`, followed by `, reviewed <old> -> <new>` or `, review failed: <reason>` when step 8 ran; or `<id> <status>: <reason>` when the run stopped early.
+End with exactly one line: `<id> summarized verdict=<score> reach=<reach> <summary path>` (`<id> rescored <old> -> <new> reach=<reach> <summary path>` with `rescore`), followed by `, reviewed <old> -> <new>` or `, review failed: <reason>` when step 8 ran; or `<id> <status>: <reason>` when the run stopped early.

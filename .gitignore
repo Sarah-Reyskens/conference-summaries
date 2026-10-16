@@ -4,3 +4,6 @@ conferences/*/slides/
 conferences/*/reviews/
 conferences/*/catalog.json.lock
 conferences/*/catalog.json.tmp
+conferences/*/ranking.json.lock
+conferences/*/ranking.json.tmp
+scripts/__pycache__/

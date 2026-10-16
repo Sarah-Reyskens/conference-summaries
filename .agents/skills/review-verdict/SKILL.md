@@ -28,7 +28,7 @@ Done when the log has a `## Checker` section; a checker that ends without one is
 
 ## 3. Author
 
-Answer every checker finding in a `## Author` section of the log, in the checker's numbering: **concede** or **contest**, with one sentence of reasons. Contest only after opening the transcript at the finding's timestamp; quote what you read. A challenge stands unless you can quote a moment that answers it against the rubric row; defend the verdict where the transcript carries it, never the score for its own sake. Missed material: say which criterion it moves and in which direction, or why it doesn't. End with your proposed scores, `Novelty <n> · Demonstrated <n> · Measured <n> · Depth <n> · Reusable <n>`.
+Answer every checker finding in a `## Author` section of the log, in the checker's numbering: **concede** or **contest**, with one sentence of reasons. Contest only after opening the transcript at the finding's timestamp; quote what you read. A challenge stands unless you can quote a moment that answers it against the rubric row; defend the verdict where the transcript carries it, never the score for its own sake. Missed material: say which criterion it moves and in which direction, or why it doesn't. End with your proposed scores, `Novelty <n> · Demonstrated <n> · Measured <n> · Depth <n> · Reusable <n> · Reach <level>`.
 
 ## 4. Judge
 
@@ -42,12 +42,12 @@ Done when the log has a `## Judge` section ending in a `### Ruling` subsection.
 
 ## 5. Apply
 
-Replace the summary's `## Verdict` section with the ruling's Verdict text, unchanged, and set the front matter's `verdict:` to its total and `reviewedAt:` to today. Record the scores:
+Replace the summary's `## Verdict` section with the ruling's Verdict text, unchanged, and set the front matter's `verdict:` to its total, `reach:` to its reach and `reviewedAt:` to today. Record the scores:
 
 ```
-uv run scripts/catalog.py set <slug> <id> --status summarized --scores <novelty> <demonstrated> <measured> <depth> <reusable>
+uv run scripts/catalog.py set <slug> <id> --status summarized --scores <novelty> <demonstrated> <measured> <depth> <reusable> --reach <reach>
 ```
 
 ## Reply
 
-One line per talk: `<id> reviewed <old total> -> <new total> <criteria that changed, e.g. "Measured 2->1"> (<n> findings, <n> conceded)`, or `<id> review skipped: <reason>`.
+One line per talk: `<id> reviewed <old total> -> <new total> <criteria or reach that changed, e.g. "Measured 2->1", "Reach broad->segment"> (<n> findings, <n> conceded)`, or `<id> review skipped: <reason>`.

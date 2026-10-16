@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=pMv_39iSXVA
 durationMin: 182
 slides: null
 verdict: 7
+reach: segment
 frames: 13
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 # From Autocomplete to Autopilot: How AI Is Changing the Developer Experience
 Tugdual Grall · Deep Dive · Agentic Engineering & Tooling
@@ -89,35 +90,36 @@ Canvas plugins embed custom React interfaces in the app: a Jira canvas for non-G
 Developers and team leads already using an AI coding assistant who want a complete tour of agentic workflows: planning, parallel sessions, cost control, review automation, and quality gates. Engineering managers rolling out Copilot at enterprise scale get the governance half (model allowlists, credit budgets, adoption APIs). Skip it if you want a balanced comparison of assistants: every demo is Copilot, and Cursor, Claude, and Codex appear only as names.
 
 ## Verdict
-**7/10**: three hours of Copilot agentic workflows shown running end to end and costed with stated methods, limited by public-surface material, harness internals left unexplained and no published artifact.
+**7/10**: working Copilot workflows and comparative session-cost reports support a useful delegation tour, but the three-hour intermediate slot mostly teaches operation and leaves its examples unpublished.
+
+**Reach segment**: Copilot users can apply the CLI, app, review and enterprise controls directly; users of other assistants can transfer the planning and quality-gate practices.
 
 **Novelty 1/2**
 
-- **+** [05:15](https://youtu.be/pMv_39iSXVA?t=315) The 10-person CLI team merging 500 pull requests a week is a GitHub-internal production figure.
-- **+** [126:03](https://youtu.be/pMv_39iSXVA?t=7563) At $80 on mostly cached input tokens, the full PetClinic rewrite is an original costed result.
-- **−** The VS Code, CLI, and app walkthrough covers the public Copilot surface from the official docs and the weekly VS Code release notes.
+- **+** [154:51](https://youtu.be/pMv_39iSXVA?t=9291) GitHub's move from centralized configuration to per-repo skills reflects teams' differing needs and adoption speeds, adding organizational experience beyond the feature tour.
+- **+** [22:07](https://youtu.be/pMv_39iSXVA?t=1327) Grall connects his move away from the IDE to the need to stop watching agents and prepare several independent tasks, giving the workflow advice a personal rationale.
+- **·** The main feature walkthrough is within the search baseline of GitHub's official Copilot CLI and customization documentation rather than a tested cross-tool decision framework.
 
 **Demonstrated 2/2**
 
-- **+** [127:48](https://youtu.be/pMv_39iSXVA?t=7668) Opened live, the rewritten app works end to end with multiple languages and themes.
-- **+** [135:30](https://youtu.be/pMv_39iSXVA?t=8130) The scheduled issue pickup starts worktree sessions for issue 3 and Swedish, and by 140:33 a draft PR #6 with screenshots exists.
-- **−** [132:35](https://youtu.be/pMv_39iSXVA?t=7955) The first scheduled-session prompt is misconfigured live and rewritten before it runs.
+- **+** [68:30](https://youtu.be/pMv_39iSXVA?t=4110) The requested French and Italian localization runs in the browser before the workflow proceeds to a pull request.
+- **+** [175:26](https://youtu.be/pMv_39iSXVA?t=10526) The rewritten PetClinic's embedded Copilot SDK returns Max from the application data and then proposes a visit for user confirmation.
+- **·** [127:48](https://youtu.be/pMv_39iSXVA?t=7668) The rewritten application's pages, languages and themes are visible, while exhaustive feature correctness remains the speaker's assurance.
 
 **Measured 2/2**
 
-- **+** [06:50](https://youtu.be/pMv_39iSXVA?t=410) The live CLI repo query prints its method (348.37 days, stable and prerelease releases, no drafts) and a monthly series peaking at 57 releases in May.
-- **+** [142:50](https://youtu.be/pMv_39iSXVA?t=8570) A session report tabulates PetClinic runs per model with credits, dollars, tokens and elapsed time, backing the same-prompt benchmark with UI and unit test suites.
-- **−** [109:28](https://youtu.be/pMv_39iSXVA?t=6568) From a demo org, the 16% pull-request uplift carries a warning against reading the numbers in detail.
+- **+** [06:50](https://youtu.be/pMv_39iSXVA?t=410) The CLI release series states its counting method, including stable and prerelease releases but excluding drafts, and covers 348.37 days.
+- **+** [142:40](https://youtu.be/pMv_39iSXVA?t=8560) A session report compares models' token use, cost and elapsed time for the same PetClinic rewrite prompt and context, with UI and unit tests used to check the outputs.
+- **−** [109:28](https://youtu.be/pMv_39iSXVA?t=6568) The adoption dashboard's PR uplift is demo-organization data that the speaker explicitly says not to interpret as a real effect.
 
 **Depth 1/2**
 
-- **+** [59:37](https://youtu.be/pMv_39iSXVA?t=3577) Autopilot covers daily coding while production database changes stay manual and step by step.
-- **+** [154:51](https://youtu.be/pMv_39iSXVA?t=9291) Centralized platform configuration gives way to per-repo skills because teams adopt at different speeds.
-- **−** [62:46](https://youtu.be/pMv_39iSXVA?t=3766) The promised explanation of how auto mode selects a model never arrives, and the harness's routing of context, tools and models stays unexplained.
+- **+** [59:37](https://youtu.be/pMv_39iSXVA?t=3577) Permission choices distinguish ordinary coding from production database changes, which he performs manually step by step.
+- **+** [136:16](https://youtu.be/pMv_39iSXVA?t=8176) Side conversations use a subset or summary of the main context to avoid mixing unrelated questions into an implementation session.
+- **·** [144:46](https://youtu.be/pMv_39iSXVA?t=8686) The delegation safety model rests on tests and security scans, but this intermediate deep dive mainly shows configuration and operation rather than examining how to establish sufficient acceptance criteria for generated changes.
 
 **Reusable 1/2**
 
-- **+** [123:54](https://youtu.be/pMv_39iSXVA?t=7434) The rewrite prompt names REST exposure, coverage targets, and per-run reports in enough detail to reconstruct.
-- **+** [157:28](https://youtu.be/pMv_39iSXVA?t=9448) The public awesome-copilot registry collects agents, instructions, and skills as inspiration.
-- **−** [158:30](https://youtu.be/pMv_39iSXVA?t=9510) Promised only as future-public, the migrated repository shares no link, skill file, or checklist.
-
+- **+** [123:54](https://youtu.be/pMv_39iSXVA?t=7434) The rewrite prompt describes REST operations, test coverage targets and run reports in enough detail to reconstruct the approach.
+- **+** [157:28](https://youtu.be/pMv_39iSXVA?t=9448) Awesome Copilot supplies public instructions and skills as inspiration, rather than the session's complete example.
+- **−** [158:30](https://youtu.be/pMv_39iSXVA?t=9510) The migrated repository is promised as future-public, leaving no linked artifact that reproduces the main demos.

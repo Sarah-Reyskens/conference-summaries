@@ -8,7 +8,7 @@ Input: a conference slug (a directory under `conferences/`). Run every command f
 
 ## 1. Conference file
 
-`conferences/<slug>/conference.yaml` drives everything: talk source, playlists, thresholds, excluded session types, overrides. Missing → stop and say which file is needed; another conference's file shows the fields.
+`conferences/<slug>/conference.yaml` drives everything: talk source, playlists, thresholds, excluded session types, overrides, and the `audience` description that verdicts' Reach and the ranking are judged against. Missing → stop and say which file is needed; another conference's file shows the fields. A new conference file without `audience`: ask the user who attends and write it before anything is summarized.
 
 ## 2. Build
 

@@ -1,6 +1,13 @@
 name: Devoxx Belgium 2026
 slug: devoxx-be-2026
 
+# Who the talks are for: a verdict's Reach and the ranking (scripts/rank.py) are judged against this.
+audience: >-
+  Mostly Java and JVM developers, tech leads and architects building and running business applications:
+  backend services on Spring Boot, Quarkus or Jakarta EE, relational databases and messaging, deployed to
+  containers, Kubernetes and the public cloud. Many use AI coding assistants daily and are adding LLM features
+  to their applications; few work on GPU computing, compilers, JVM internals or embedded systems.
+
 talks:
   source: devoxx-cfp   # adapter in scripts/catalog.py (cfp.dev API, shared by Devoxx/VoxxedDays)
   baseUrl: https://dvbe26.cfp.dev/api/public

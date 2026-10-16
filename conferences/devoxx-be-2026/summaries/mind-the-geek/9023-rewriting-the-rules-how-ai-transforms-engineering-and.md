@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=eSSPOCeoF0c
 durationMin: 51
 slides: null
 verdict: 5
+reach: segment
 frames: 10
 reviewedAt: 2026-10-15
 ---
@@ -72,30 +73,32 @@ Engineers curious how AI adoption works inside a regulated enterprise, and anyon
 ## Verdict
 **5/10**: An enterprise-adoption testimonial with live kids'-lab demos, limited by internal agents that are described but not run and by self-reported numbers.
 
+**Reach segment**: Tech leads and teams rolling out AI coding assistants in large or regulated organisations, and Devoxx4Kids or school workshop volunteers, can use the main content; most of the audience gets only the closing specify, generate, review loop.
+
 **Novelty 1/2**
 
-- **+** [15:40](https://youtu.be/eSSPOCeoF0c?t=940) The dated ING rollout (three engineers trained for a week in March 2025, 180 licenses by May, a sharing community, a dedicated AI department) is first-hand organizational experience.
-- **+** [32:57](https://youtu.be/eSSPOCeoF0c?t=1977) Both Devoxx4Kids labs are the speakers' own AI-built platforms, shown with build details such as the Lovable scaffold.
-- **−** The closing guidance (give context, set rules, check the output) matches GitHub's "Best practices for using GitHub Copilot" docs page.
+- **+** [15:40](https://youtu.be/eSSPOCeoF0c?t=940) The dated ING rollout sequence (three engineers trained in March 2025, 180 licenses by May, a sharing community, a dedicated AI department, a group-wide agentic hub) is first-hand organizational experience no search gives.
+- **+** [32:57](https://youtu.be/eSSPOCeoF0c?t=1977) Kickstarting a full kids' coding platform with Lovable as a spare-time pet project is the speakers' own build experience.
+- **−** The closing guidance (set context and rules, test the output) matches GitHub's "Best practices for using GitHub Copilot" docs page.
 
 **Demonstrated 1/2**
 
-- **+** [27:09](https://youtu.be/eSSPOCeoF0c?t=1629) A sped-up recording takes the frontend-toolkit agent from an empty, pre-created repo to generated files and form screens, with the wizard questions visible.
-- **+** [34:34](https://youtu.be/eSSPOCeoF0c?t=2074) CodeKids Lab runs live: concept cards, then the games unlocked by a password.
-- **−** [24:02](https://youtu.be/eSSPOCeoF0c?t=1442) The API SDK agent is shown only as a release-notes and migration-guide page, and the vulnerability agent is only described; neither runs.
+- **+** [27:09](https://youtu.be/eSSPOCeoF0c?t=1629) A sped-up recording takes the frontend-toolkit agent from an empty repo through wizard questions to generated files and form screens.
+- **+** [41:16](https://youtu.be/eSSPOCeoF0c?t=2476) CyberQuest runs live: a typed password visibly travels after fake terms and social login, opening the privacy lesson.
+- **−** [43:20](https://youtu.be/eSSPOCeoF0c?t=2600) The captive-portal backend version fails to start live, and the API SDK agent (docs pages only) and the vulnerability and accessibility agents (described only) never run on screen.
 
 **Measured 1/2**
 
-- **+** [19:19](https://youtu.be/eSSPOCeoF0c?t=1159) Adoption totals are stated: 4,000-plus M365 licenses at 85% active use, then 8,500-plus group GitHub Copilot licenses.
+- **+** [19:19](https://youtu.be/eSSPOCeoF0c?t=1159) License adoption is stated as 4,000-plus M365 licenses at 85% active use and 8,500-plus group GitHub Copilot licenses.
 - **+** [34:34](https://youtu.be/eSSPOCeoF0c?t=2074) A Mastermind that took two months as a student was rebuilt with AI in two hours, a self-reported comparison with no method.
-- **−** [17:43](https://youtu.be/eSSPOCeoF0c?t=1063) The engagement graphs are shown blurred, so no baseline or method for the active, engaged and dedicated tiers is visible.
+- **−** [17:43](https://youtu.be/eSSPOCeoF0c?t=1063) The engagement graphs are shown blurred, so the active, engaged and dedicated tiers have no visible baseline or method.
 
 **Depth 1/2**
 
 - **+** [48:05](https://youtu.be/eSSPOCeoF0c?t=2885) The specify, generate, review loop gives beginners a clear mental model of where engineers add value with agents.
-- **+** [37:07](https://youtu.be/eSSPOCeoF0c?t=2227) The code inspection shows translations duplicated in every class, a worked example of AI output falling short of product vision.
+- **+** [37:07](https://youtu.be/eSSPOCeoF0c?t=2227) The code inspection shows translations duplicated in every class, a worked example of AI output missing product vision.
 
 **Reusable 1/2**
 
 - **+** [50:39](https://youtu.be/eSSPOCeoF0c?t=3039) The closing slide links both live labs by QR code, so workshop leaders can run them with kids straight away.
-- **−** [42:50](https://youtu.be/eSSPOCeoF0c?t=2570) No repository or configuration is published: sharing the code is promised for later, and the ING agents are internal.
+- **−** [42:50](https://youtu.be/eSSPOCeoF0c?t=2570) No repository or configuration is published, as sharing the code is promised for later and the ING agents stay internal.

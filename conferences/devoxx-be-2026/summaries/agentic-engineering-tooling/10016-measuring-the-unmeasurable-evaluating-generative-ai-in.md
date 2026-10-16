@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=Qdn-I3q50Ww
 durationMin: 41
 slides: null
 verdict: 5
+reach: segment
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Measuring the Unmeasurable: Evaluating Generative AI in Practice
@@ -81,7 +82,7 @@ Each dataset entry gets its own metric set: an LLM judge checking contradictions
 
 ## Tools, libraries and specs
 
-- ROUGE and BLEU scores: embedding-based semantic similarity metrics for comparing generated answers against expected ones.
+- ROUGE and BLEU scores: n-gram overlap metrics for comparing generated answers against expected ones (the speaker describes them as embedding-based semantic similarity).
 
 ## Who should watch
 
@@ -89,22 +90,24 @@ Teams moving a first RAG chatbot or Q&A assistant from demo to production gain a
 
 ## Verdict
 
-**5/10**: an ordered evaluation method carried by a worked insurance-chatbot case, with a reasoned account of why narrow LLM judges work, held back by a constructed case, no run on screen, no figures and no published artifact.
+**5/10**: a complete evaluation method carried by a worked insurance-chatbot case with a reasoned account of narrow LLM judges, held back by a fictional case, no run on screen, no measured figures and no published artifact.
+
+**Reach segment**: teams adding LLM features to their applications can copy the pipeline; the rest of the Java-focused audience cannot put it to use.
 
 **Novelty 1/2**
 
-- **+** [18:41](https://youtu.be/Qdn-I3q50Ww?t=1121) The renter's-insurance answer, grown from "Yes." into the final target response, is the speaker's own example built for this talk.
-- **+** [01:36](https://youtu.be/Qdn-I3q50Ww?t=96) The insurance RAG chatbot case study carries the whole pipeline as one continuous worked example.
-- **−** The core apparatus (evaluation datasets, LLM-as-a-judge, metric families) is established practice documented in sources such as Zheng et al., "Judging LLM-as-a-Judge" (2023), and the chatbot stays a team exercise rather than a shipped deployment.
+- **+** [18:41](https://youtu.be/Qdn-I3q50Ww?t=1121) The renter's-insurance answer, grown from "Yes." into the final target response, is the speaker's own worked example illustrating known evaluation material.
+- **−** The evaluation dataset, LLM-as-a-judge and metric-family apparatus is covered by sources such as Zheng et al., "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena" (2023) for the judge and the survey by Brehme et al., "Can LLMs Be Trusted for Evaluating RAG Systems?" (arXiv 2504.20119, 2025) for datasets and automated and human evaluation.
 
 **Demonstrated 0/2**
 
-- **−** [07:22](https://youtu.be/Qdn-I3q50Ww?t=442) The pipeline that yields a score at the click of a button is described on slides and in speech; no harness, run or output appears.
-- **−** [15:05](https://youtu.be/Qdn-I3q50Ww?t=905) The 60% triage score is a narrated figure for a fictional chatbot, not the visible output of an executed evaluation.
+- **−** [07:22](https://youtu.be/Qdn-I3q50Ww?t=442) The pipeline that yields a score at the click of a button is described in speech and on slides; no harness, run or output appears.
+- **−** [33:04](https://youtu.be/Qdn-I3q50Ww?t=1984) The question, expected answer and "generated response" shown for the judge step are text typed onto a slide, with no judge call or verdict output.
 
 **Measured 1/2**
 
-- **·** [08:24](https://youtu.be/Qdn-I3q50Ww?t=504) The talk makes no quantitative claim: the 93%-versus-91% version comparison is flagged "for instance" and the 60% triage score walks a fictional chatbot, so there is nothing to measure.
+- **·** [08:24](https://youtu.be/Qdn-I3q50Ww?t=504) The talk makes no quantitative claim about its method: the 93%-versus-91% version comparison is flagged "for instance".
+- **·** [15:05](https://youtu.be/Qdn-I3q50Ww?t=905) The 60% triage score is a figure for a fictional chatbot that illustrates pass/fail scoring, so there is no measurement to rate.
 
 **Depth 2/2**
 
@@ -115,4 +118,4 @@ Teams moving a first RAG chatbot or Q&A assistant from demo to production gain a
 **Reusable 1/2**
 
 - **+** [37:12](https://youtu.be/Qdn-I3q50Ww?t=2232) The Guidelines-to-Prod roadmap with roles and iteration loops gives a process teams can reconstruct on their own projects.
-- **−** [29:28](https://youtu.be/Qdn-I3q50Ww?t=1768) No repository, sample project, configuration or checklist is published or pointed to; the judge-prompt wording and the triage rules stay fragments on slides.
+- **−** [40:18](https://youtu.be/Qdn-I3q50Ww?t=2418) The talk closes without pointing to a repository, sample project, configuration or checklist; the judge-prompt wording and the triage rules stay fragments on slides.

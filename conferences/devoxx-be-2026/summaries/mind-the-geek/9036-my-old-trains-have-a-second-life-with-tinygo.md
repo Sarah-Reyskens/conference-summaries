@@ -11,6 +11,7 @@ durationMin: 40
 slides: https://forestier.re/presentations/trainberry/fosdem-2026/index.html
 slidesNote: from FOSDEM 2026
 verdict: 8
+reach: niche
 frames: 12
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -82,33 +83,35 @@ Beginners curious about embedded work, web developers wondering how their habits
 
 ## Verdict
 
-**8/10**: Live control of a physical train and an original build log of their own failures and design choices carry it; the latency figures have no stated method and no repository is named.
+**8/10**: Live control of a physical train and a first-hand build log with explained mechanisms carry it; the latency figures have no stated method and no repository is named.
+
+**Reach niche**: Conference-goers working with embedded boards or model railways can reuse the train-digitizing build, a specialised subject few in this audience work on.
 
 **Novelty 2/2**
 
-- **+** [09:27](https://youtu.be/LIGVpEuIrrY?t=567) The BB 9201 conversion, with its fried first build, rail micro-cut reboots and first custom PCB shield, is the speakers' own project experience.
-- **+** [27:46](https://youtu.be/LIGVpEuIrrY?t=1666) The WiFi-to-BLE migration rests on their own bench observations (over 300 ms per command versus under 1 ms writes), with no cited source behind it.
+- **+** [23:33](https://youtu.be/LIGVpEuIrrY?t=1413) The speakers ordered and soldered ESP32-C6 boards before discovering TinyGo did not support the chip, forcing another board search.
+- **+** [35:02](https://youtu.be/LIGVpEuIrrY?t=2102) A self-made PCB mistake fried a XIAO and a DFPlayer just days before a conference, a failure only their own build log gives.
 
 **Demonstrated 2/2**
 
-- **+** [20:24](https://youtu.be/LIGVpEuIrrY?t=1224) Live on stage, changing the speed in the Trainberry UI sets the physical train running on the table and the light toggles respond.
-- **−** [20:24](https://youtu.be/LIGVpEuIrrY?t=1224) The speaker opens with "of course the interface is broken", so part of the UI does not work during the demo.
-- **·** [39:46](https://youtu.be/LIGVpEuIrrY?t=2386) The recording ends on the QR-code invitation to vote every 15 seconds for the next section run on the table, so the audience-driven run is not shown.
+- **+** [20:24](https://youtu.be/LIGVpEuIrrY?t=1224) Live on stage, changing the speed in the Trainberry UI sets the physical BB 9201 running on the table.
+- **−** [20:24](https://youtu.be/LIGVpEuIrrY?t=1224) The speaker acknowledges that the interface is broken, although the demonstrated speed control still works.
+- **·** [39:46](https://youtu.be/LIGVpEuIrrY?t=2386) The recording ends on the QR-code invitation to vote for the next run, so the audience-driven run is not shown.
 
 **Measured 1/2**
 
-- **+** [20:57](https://youtu.be/LIGVpEuIrrY?t=1257) The first WiFi/HTTP communication took more than 300 milliseconds, judged too slow for an emergency stop of all trains.
+- **+** [20:57](https://youtu.be/LIGVpEuIrrY?t=1257) The superseded WiFi/HTTP prototype had command latency above 200 ms in the accepted deck, with the speaker reporting above 300 ms here and judging it too slow for emergency stops.
 - **+** [27:46](https://youtu.be/LIGVpEuIrrY?t=1666) BLE writes over the kept-open connection come in under 1 ms.
-- **−** [27:46](https://youtu.be/LIGVpEuIrrY?t=1666) Neither figure comes with a stated method, so the before/after is a bench observation that a reader cannot reproduce.
+- **−** [27:46](https://youtu.be/LIGVpEuIrrY?t=1666) Neither figure comes with a stated measurement method, so the comparison cannot be reproduced from the talk.
 
 **Depth 2/2**
 
 - **+** [27:16](https://youtu.be/LIGVpEuIrrY?t=1636) The GATT mental model (services as collections, characteristics as items, read/write as HTTP verbs) gives beginners a working picture of BLE.
 - **+** [29:20](https://youtu.be/LIGVpEuIrrY?t=1760) The single-core deadlock between BLE handling and PWM computation is explained and fixed by queuing events through a Go channel.
-- **+** [18:19](https://youtu.be/LIGVpEuIrrY?t=1099) The watchdog design follows from the zombie failure: an 8 s hardware timer fed by a goroutine that checks WiFi every 4 s and reboots after two misses.
+- **+** [18:19](https://youtu.be/LIGVpEuIrrY?t=1099) The watchdog design follows from the zombie failure: a hardware timer fed by a periodic WiFi sanity check reboots the board when checks keep failing.
 
 **Reusable 1/2**
 
 - **+** [38:12](https://youtu.be/LIGVpEuIrrY?t=2292) Every code snippet shown is real, compiling TinyGo.
 - **+** [37:39](https://youtu.be/LIGVpEuIrrY?t=2259) The project is declared open source and open hardware with an invitation to contribute.
-- **−** [37:39](https://youtu.be/LIGVpEuIrrY?t=2259) No repository is named in the talk, and the closing QR codes lead to the feedback form and the train vote, so rebuilding starts from the snippets.
+- **−** [39:15](https://youtu.be/LIGVpEuIrrY?t=2315) No repository is named and the closing QR codes lead to the feedback form and the train vote, so rebuilding starts from the snippets.

@@ -10,8 +10,8 @@ video: https://www.youtube.com/watch?v=nHRSwiFNQ9E
 durationMin: 48
 slides: https://speakerdeck.com/danicat/devoxx-2026-state-of-agentic-coding
 verdict: 8
+reach: broad
 frames: 10
-summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
 ---
 
@@ -73,19 +73,21 @@ The plugin standard (agent-plugins.org, 1.0 mid-2026) bundles MCP servers plus s
 Developers already using coding agents who want a practitioner's setup: skill design, subagent orchestration, and what to stop doing. Agent-curious viewers get a dense 2026 landscape map, though the Antigravity-specific segments matter less outside that ecosystem. Expect Python/Go-flavored examples over JVM specifics.
 
 ## Verdict
-**8/10**: Practitioner synthesis with open-sourced tooling and a companion repo of her real rules and prompts; the sidecar demo partly failed and two launched demos never show results.
+**8/10**: Practitioner experience from 18 months of daily use, a demo companion repository and explained trade-offs; two launched demos never show results, the sidecar demo partly failed and nothing is measured.
+
+**Reach broad**: Most attendees already use AI coding assistants daily and can apply its prompting, rules, skills and subagent practices in their own work within the year.
 
 **Novelty 2/2**
 
 - **+** [20:51](https://youtu.be/nHRSwiFNQ9E?t=1251) She abandoned agent hooks after models bypassed them, once by rewriting the hook script that blocked a command, a failure from her own 18 months of daily use.
-- **+** [26:06](https://youtu.be/nHRSwiFNQ9E?t=1566) The kungfu CLI is her own tool for just-in-time skill loading with versions and provenance, built because installed skills rot.
-- **+** [44:26](https://youtu.be/nHRSwiFNQ9E?t=2666) The Agy Paint Studio sidecar design (a Node.js server on port 7788, sessions keyed by conversation ID, messages relayed through the agentapi CLI) is her own architecture.
+- **+** [12:28](https://youtu.be/nHRSwiFNQ9E?t=748) Since her first state-of-agentic-coding talk in February or March she moved from structured prompts with acceptance criteria to conversational freestyle plus `/grill-me` and `/goal`.
+- **+** [18:12](https://youtu.be/nHRSwiFNQ9E?t=1092) Her 15-line GEMINI.md comes from repeated failures: agents adding fallbacks and mocks, and reading her other experiment folders.
 
 **Demonstrated 1/2**
 
 - **+** [26:06](https://youtu.be/nHRSwiFNQ9E?t=1566) kungfu runs live in the terminal with visible output: the catalog listing, an available update, and a keyword skill search.
 - **−** [43:24](https://youtu.be/nHRSwiFNQ9E?t=2604) After the live sketch and nano-banana filters, the inline component did not work as intended (it used the full image) and she showed a companion from an earlier run instead.
-- **−** [38:39](https://youtu.be/nHRSwiFNQ9E?t=2319) The ten-agent code review launches on an untested prompt and the swarm-built game keeps running in the background, but neither result is shown before the talk moves on.
+- **−** [38:39](https://youtu.be/nHRSwiFNQ9E?t=2319) The ten-agent code review launches on a prompt she says she had not tested and the swarm-built game keeps running in the background, but neither result is shown before the talk moves on.
 
 **Measured 1/2**
 
@@ -94,11 +96,11 @@ Developers already using coding agents who want a practitioner's setup: skill de
 **Depth 2/2**
 
 - **+** [16:38](https://youtu.be/nHRSwiFNQ9E?t=998) Rules files fail for enforcement because a non-deterministic agent drops steps of a build-test-lint routine over repeated runs, so deterministic steps move to scripts, git hooks or CI.
-- **+** [20:51](https://youtu.be/nHRSwiFNQ9E?t=1251) Hooks are weighed against git hooks and CI with a reason: agents read the blocking hook, decide user orders win, and disable the script.
+- **+** [22:28](https://youtu.be/nHRSwiFNQ9E?t=1348) MCP endpoints earn their keep serving always up-to-date documentation such as the Google Developer Knowledge MCP or internal wikis, while one-off capabilities are cheaper as skill plus script.
 - **+** [33:53](https://youtu.be/nHRSwiFNQ9E?t=2033) Static subagent roles are rejected for a coordinator given an agent budget and a divide-and-conquer skill, with context isolation and parallelization as the stated gains.
 
 **Reusable 2/2**
 
-- **+** [25:35](https://youtu.be/nHRSwiFNQ9E?t=1535) kungfu is a published repository for the just-in-time skills technique (deck p.24), alongside the skills catalog at skills.danicat.dev (deck p.25).
+- **+** [17:41](https://youtu.be/nHRSwiFNQ9E?t=1061) The GEMINI.md shown on screen is in github.com/danicat/devoxx2026 (last slide), a demo companion repository whose folders 01-prompts to 08-plugins hold her prompts, the rules file, the kungfu multi-skill game prompt and the subagent review prompt.
+- **+** [25:35](https://youtu.be/nHRSwiFNQ9E?t=1535) kungfu is a published repository for the just-in-time skills technique, alongside the skills catalog at skills.danicat.dev.
 - **+** [44:57](https://youtu.be/nHRSwiFNQ9E?t=2697) Agy Paint Studio is open sourced as an Antigravity plugin with its sidecar.
-- **+** [17:41](https://youtu.be/nHRSwiFNQ9E?t=1061) The GEMINI.md shown on screen is in github.com/danicat/devoxx2026, whose per-topic folders also hold her prompts, the kungfu multi-skill prompt and the subagent review prompt.

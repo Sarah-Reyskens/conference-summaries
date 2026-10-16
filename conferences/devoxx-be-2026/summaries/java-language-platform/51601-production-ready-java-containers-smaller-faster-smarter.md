@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=LPhGSgO5eKE
 durationMin: 48
 slides: null
 verdict: 7
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -90,33 +91,34 @@ Beginners containerizing Java who want one checklist for image size, startup, me
 
 ## Verdict
 
-**7/10**: A beginner checklist where each technique carries a baselined size, startup or memory comparison, held back by results shown only as slides and by Dockerfiles that are cut and not published.
+**7/10**: A beginner production-container checklist with baselined measurements and explanations of the mechanisms, limited by optimization results presented as charts and examples without a published reproduction artifact.
+
+**Reach broad**: Most of the conference audience ships Java services in containers and can apply the image, startup, memory and hardening practices in their own work.
 
 **Novelty 1/2**
 
 - **+** [45:01](https://youtu.be/LPhGSgO5eKE?t=2701) Image pinning, dependency layering, jlink modules, the AOT cache, environment-variable tuning, memory limits and hardening are recapped as one decision flow for a production container.
-- **+** [36:03](https://youtu.be/LPhGSgO5eKE?t=2163) The speaker reports from customer visits that teams size bigger containers because they leave the heap at the 25% default.
-- **·** [06:47](https://youtu.be/LPhGSgO5eKE?t=407) The base images are Oracle's own and the flags come from the JDK's documented options, so the added value is the assembly and the speaker's own runs.
+- **+** [36:03](https://youtu.be/LPhGSgO5eKE?t=2163) Customer visits reveal a recurring deployment mistake: teams enlarge containers instead of adjusting the default heap allocation.
 
 **Demonstrated 1/2**
 
-- **+** [35:25](https://youtu.be/LPhGSgO5eKE?t=2125) The `PrintFlagsFinal` output on screen shows a 268435456-byte heap, `MaxRAMPercentage` 25 and `UseSerialGC` true inside a 1 GB container.
-- **+** [37:39](https://youtu.be/LPhGSgO5eKE?t=2259) The 256 MB container with a 256 MB heap is run as a worked failure case, starting and dying on first load.
-- **−** [39:50](https://youtu.be/LPhGSgO5eKE?t=2390) The `docker inspect` slide shows the command without output, and the AOT startup, image size and throughput results appear as charts, not runs on screen.
+- **+** [35:25](https://youtu.be/LPhGSgO5eKE?t=2125) The `PrintFlagsFinal` output on screen exposes the heap, memory-percentage and garbage-collector defaults inside the container.
+- **+** [39:45](https://youtu.be/LPhGSgO5eKE?t=2385) The container inspection output shows `OOMKilled` true after the worked memory-limit failure.
+- **−** [18:18](https://youtu.be/LPhGSgO5eKE?t=1098) The image-size optimization is presented as a comparison chart rather than an end-to-end build and run with its output visible.
 
 **Measured 2/2**
 
 - **+** [23:37](https://youtu.be/LPhGSgO5eKE?t=1417) Startup on the same jar and machine reads about 3.0 s for the fat jar, 2.5 s for the explicit classpath and under 1 s with the AOT cache.
-- **+** [18:00](https://youtu.be/LPhGSgO5eKE?t=1080) The size chart goes from about 800 MB for the complete Oracle JDK image to under 200 MB with jlink on Oracle Linux slim, and the speaker puts the OS layer at 100 MB, then 28 MB, then 6 MB.
+- **+** [11:00](https://youtu.be/LPhGSgO5eKE?t=660) A `dive` inspection compares the 56 MB fat-jar layer with a layered image whose dependencies occupy 56 MB and application layer occupies 18 KB.
 - **−** [31:25](https://youtu.be/LPhGSgO5eKE?t=1885) Compact headers lift throughput from about 5,400 to about 5,700 req/s with latency from 15 ms to 14 ms, but "I did a stress test" names no tool, load or machine.
 
 **Depth 2/2**
 
 - **+** [25:12](https://youtu.be/LPhGSgO5eKE?t=1512) Split packages explain why classpath order changes application identity and invalidates the cache of loaded and linked classes.
-- **+** [29:53](https://youtu.be/LPhGSgO5eKE?t=1793) The 12-byte versus 8-byte header arithmetic with alignment padding shows when compact headers help and when padding erases the gain.
-- **+** [36:35](https://youtu.be/LPhGSgO5eKE?t=2195) The kernel OOM kill of PID 1 and the JVM `OutOfMemoryError` are separated by mechanism, with `-XX:+ExitOnOutOfMemoryError` and a heap dump path prescribed for the second.
+- **+** [29:53](https://youtu.be/LPhGSgO5eKE?t=1793) Header layout and alignment padding explain when compact headers save space and when padding erases the gain.
+- **+** [36:35](https://youtu.be/LPhGSgO5eKE?t=2195) Heap exhaustion and the kernel's container-memory enforcement are separated by mechanism, explaining why a Java `OutOfMemoryError` differs from a killed container.
 
 **Reusable 1/2**
 
 - **+** [12:03](https://youtu.be/LPhGSgO5eKE?t=723) The multi-stage Spring layered Dockerfile is complete on a slide, with the layers extracted and the application layer last.
-- **−** [19:20](https://youtu.be/LPhGSgO5eKE?t=1160) The from-scratch Dockerfile has its library-copying step cut ("I had to cut out a lot from this example"), the AOT builder stage is likewise trimmed, and the full files are offered by email, not published.
+- **−** [19:20](https://youtu.be/LPhGSgO5eKE?t=1160) The from-scratch Dockerfile omits the library-copying step, and the speaker offers the full example on request rather than pointing to a published artifact.

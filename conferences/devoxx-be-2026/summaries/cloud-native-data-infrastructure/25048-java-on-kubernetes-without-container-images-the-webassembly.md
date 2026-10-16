@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=fszyRIZXjQM
 durationMin: 53
 slides: null
-verdict: 9
+verdict: 8
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -77,24 +78,26 @@ Fontconfig for image-rendering apps must come from the chosen JDK image, which t
 Platform engineers and Kubernetes-minded Java developers weighing who should own the JDK and dependency layers, and anyone curious how far RuntimeClass plus a custom shim can stretch Kubernetes. Teams happy with buildpacks or golden images, and viewers wanting production hardening or performance data, can skip it: this is an experimental project's debut, not a migration guide.
 
 ## Verdict
-**9/10**: Brewlet is the speaker's own design, shown live from push through a JDK 25 to 27 switch on an unchanged artifact digest, with a public repo; the main limit is that its only numbers are self-reported totals.
+**8/10**: Brewlet's JDK 25 to 27 switch on an unchanged artifact digest ran live, the shim path is explained with its reasons, and a sample project is published; the main limits are that the project is the speaker's own (its README and docs already cover the design) and that the only numbers are self-reported totals.
 
-**Novelty 2/2**
+**Reach segment**: Platform engineers and Java teams running Spring Boot or Quarkus services on Kubernetes could trial this RuntimeClass-based JDK platform in staging within the next year.
 
-- **+** [07:20](https://youtu.be/fszyRIZXjQM?t=440) The SpinKube model is mapped onto Java (JAR plus classpath and launch configuration as the developer artifact) in the speaker's own project, first shown publicly at this talk.
-- **+** [19:27](https://youtu.be/fszyRIZXjQM?t=1167) The three-layer ownership model with managed dependency bundles as immutable OCI artifacts is the speaker's own design.
+**Novelty 1/2**
+
+- **+** [07:20](https://youtu.be/fszyRIZXjQM?t=440) The SpinKube runtime-delegation model is mapped onto Java, with a JAR plus classpath and launch configuration as the developer artifact, in the speaker's own project at its public debut.
+- **−** The microsoft/brewlet README and brewlet.sh documentation already describe the architecture, node profiles and the `JavaApplication` API that the talk tours.
 
 **Demonstrated 2/2**
 
 - **+** [41:33](https://youtu.be/fszyRIZXjQM?t=2493) The Spring Boot app deploys from the OCI artifact and serves its JVM details page in the browser, live.
 - **+** [44:48](https://youtu.be/fszyRIZXjQM?t=2688) The workload switches from JDK 25 to 27 with the artifact digest unchanged, confirmed on the app's JVM page.
-- **−** [30:02](https://youtu.be/fszyRIZXjQM?t=1802) The Helm install walkthrough is a replay ("a simulation, not a live execution because it's already installed"), and the rollback and distroless-shell steps are cut for time at [45:50](https://youtu.be/fszyRIZXjQM?t=2750).
+- **−** [30:02](https://youtu.be/fszyRIZXjQM?t=1802) The Helm install walkthrough is a replayed simulation, and the rollback and distroless-shell steps are cut for time at [45:50](https://youtu.be/fszyRIZXjQM?t=2750).
 
 **Measured 1/2**
 
 - **+** [47:26](https://youtu.be/fszyRIZXjQM?t=2846) The build effort is quantified as 12 weeks, 600 commits, 48,000 lines of Go, and a 2,200-line specification.
-- **−** [14:40](https://youtu.be/fszyRIZXjQM?t=880) The claims of building a custom platform "in a matter of weeks instead of years" and "way cheaper now" ([49:34](https://youtu.be/fszyRIZXjQM?t=2974)) rest on those self-reported totals, with no baseline.
-- **−** [48:30](https://youtu.be/fszyRIZXjQM?t=2910) "kind and Docker Desktop covered 70% of the issues, the other 30% only in real clusters" is a ratio with no stated method.
+- **−** [14:40](https://youtu.be/fszyRIZXjQM?t=880) The "matter of weeks instead of years" payoff rests on those self-reported totals, with no outside baseline.
+- **−** [48:30](https://youtu.be/fszyRIZXjQM?t=2910) The "kind covered 70%, real clusters the other 30%" split is a ratio with no stated method.
 
 **Depth 2/2**
 
@@ -106,4 +109,3 @@ Platform engineers and Kubernetes-minded Java developers weighing who should own
 
 - **+** [50:04](https://youtu.be/fszyRIZXjQM?t=3004) The talk points to brewlet.sh and github.com/microsoft/brewlet, which hold the CLI, shim, operator, provisioner, and Maven plugin.
 - **+** [46:23](https://youtu.be/fszyRIZXjQM?t=2783) The demoed ShowMyJVM project with Spring Boot and Quarkus variants is published on the speaker's GitHub for trying the flow.
-- **·** [48:30](https://youtu.be/fszyRIZXjQM?t=2910) The project is experimental and pre-1.0, recommended only for kind, Docker Desktop, or staging clusters.

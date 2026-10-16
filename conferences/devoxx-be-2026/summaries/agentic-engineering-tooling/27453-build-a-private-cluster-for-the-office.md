@@ -8,7 +8,8 @@ sessionType: Conference
 audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=rv2KpWgb0Mw
 durationMin: 47
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 reviewedAt: 2026-10-15
 ---
@@ -76,32 +77,34 @@ Asked about developer token rates, Davies said these boxes are for code review a
 Teams planning on-premise LLM serving for privacy or audit reasons, and anyone curious how far small unified-memory boxes stretch with the right models. Skip it if you want code-generation help (the speaker rules that out for this hardware) or a hands-on vLLM tutorial rather than an architecture field report.
 
 ## Verdict
-**8/10**: Own head-to-head measurements and fleet incidents from a running office cluster; the headline KV-cache demo was deferred and the setup notes are only promised.
+**7/10**: Production cluster decisions, comparative benchmarks and serving internals carry the talk; the status screenshots do not show execution, and the document demo and setup repository remain outside the talk.
+
+**Reach segment**: Office teams adding LLM features under privacy or audit constraints can use the cluster recipe, while most backend developers will never buy inference hardware.
 
 **Novelty 2/2**
 
-- **+** [09:40](https://youtu.be/rv2KpWgb0Mw?t=580) Two independent Sparks against one model split across both (76.5 → 67.0 tok/s for one user, 261.6 → 274.7 at 8 users) is the speaker's own comparison, with the fleet policy it led to.
-- **+** [36:53](https://youtu.be/rv2KpWgb0Mw?t=2213) The document-pack API with NVMe reload, per-document cards beyond ~229k tokens and a dated outage comes from running it in production, with no single source to search instead.
-- **·** [36:53](https://youtu.be/rv2KpWgb0Mw?t=2213) The NVMe tier itself is vLLM's own offloading, which the slide credits; the pack API and tiering on top are the speaker's.
+- **+** [12:24](https://youtu.be/rv2KpWgb0Mw?t=744) After wiring four Sparks as a ring and trying pooled models, the team serves one model per box and leaves the fabric links unused.
+- **+** [36:53](https://youtu.be/rv2KpWgb0Mw?t=2213) Slide 31 records the September pack outage caused by an over-estimated token count, whose only symptom was a NOT warmed log entry.
+- **+** [41:36](https://youtu.be/rv2KpWgb0Mw?t=2496) The fleet serves code review and reading because generation on these boxes stays too slow for daily coding work.
 
-**Demonstrated 1/2**
+**Demonstrated 0/2**
 
-- **+** [20:13](https://youtu.be/rv2KpWgb0Mw?t=1213) Slide 20 shows the NOC with per-box utilisation, temperature and watt readouts for the Spark and Mac fleet.
-- **−** [34:20](https://youtu.be/rv2KpWgb0Mw?t=2060) The SpaceX S-1 document demo, the proof of the KV-cache claim, is offered for after the talk and not run on screen.
+- **−** [20:13](https://youtu.be/rv2KpWgb0Mw?t=1213) The fleet status view appears as screenshots embedded in slide 20, with its navigation and shutdown functions described rather than shown executing.
+- **−** [34:20](https://youtu.be/rv2KpWgb0Mw?t=2060) The SpaceX S-1 question-answering demo is offered for after the talk, so the headline document claim is never shown executing.
 
 **Measured 2/2**
 
-- **+** [07:47](https://youtu.be/rv2KpWgb0Mw?t=467) One Spark with Qwen3.6-35B-A3B NVFP4 + MTP under vLLM gives 89, 34, 19 and 12 tok/s per user at 1, 8, 16 and 32 users, and vLLM holds 513 tok/s at 256 streams where llama.cpp collapses past 32.
-- **+** [33:16](https://youtu.be/rv2KpWgb0Mw?t=1996) An 82k-token regulation takes ~40 s to prefill once and answers in 0.46-0.6 s from the cache on a Mac, and on the Spark at [36:53](https://youtu.be/rv2KpWgb0Mw?t=2213) a 144,727-token book takes 57.1 s inline against 5.1 s as a pack.
-- **−** [09:00](https://youtu.be/rv2KpWgb0Mw?t=540) The comparison table lists the Studio M5 Ultra at ~190 tok/s decode and ~7.5k prefill as extrapolated figures, not runs.
+- **+** [07:47](https://youtu.be/rv2KpWgb0Mw?t=467) Slide 9 names the Spark, Qwen model, NVFP4, MTP and vLLM setup for the 1-, 8-, 16- and 32-user throughput series and compares serving capacity against llama.cpp.
+- **+** [33:16](https://youtu.be/rv2KpWgb0Mw?t=1996) The Mac regulation-pack example states the model and 82k-token input, with roughly 40 seconds of initial prefill followed by 0.46–0.6 seconds to first token and a 1.74 GB cache loading in about 0.1 seconds.
+- **−** [09:00](https://youtu.be/rv2KpWgb0Mw?t=540) The comparison table marks the Studio M5 Ultra decode and prefill figures as extrapolated rather than runs.
 
 **Depth 2/2**
 
-- **+** [25:45](https://youtu.be/rv2KpWgb0Mw?t=1545) Qwen3.8 at xhigh effort burns 12k-131k-token budgets and returns nothing, while medium scores better and runs 13× faster, which is why the team never uses the default.
-- **+** [09:40](https://youtu.be/rv2KpWgb0Mw?t=580) TP=2 does not speed up the workhorse model and only the 172.8 GiB FP8 build needs two boxes, so pairs run independently, since one run wedged both nodes.
-- **+** [36:53](https://youtu.be/rv2KpWgb0Mw?t=2213) vLLM's own offloading is used because LMCache breaks Qwen3.6's hybrid Mamba KV, and one box holding every pack is a single point of failure.
+- **+** [25:45](https://youtu.be/rv2KpWgb0Mw?t=1545) The default xhigh effort reasons until it exhausts its own token budget and returns nothing while a lower effort answers better, which is why the team never uses the default.
+- **+** [43:44](https://youtu.be/rv2KpWgb0Mw?t=2624) Decode uses multi-token prediction with each model's own draft after the team rejected a faster variant whose draft quantisation gave worse quality.
+- **+** [31:43](https://youtu.be/rv2KpWgb0Mw?t=1903) Stable corpora are prefilled once and served from KV cache written to disk because prefill dominates first-token latency while a cached pack reloads in a fraction of the time.
 
 **Reusable 1/2**
 
-- **+** [27:02](https://youtu.be/rv2KpWgb0Mw?t=1622) The stated values (vLLM 0.31.0, NVFP4 with MTP, ~70% memory fill, two pinned models) give a team a starting configuration to reconstruct from.
-- **−** [38:27](https://youtu.be/rv2KpWgb0Mw?t=2307) The setup notes and Claude READMEs are promised as open source and no repository is named.
+- **+** [27:02](https://youtu.be/rv2KpWgb0Mw?t=1622) The stated starting point of vLLM 0.31.0 at about 70% memory fill with two pinned Qwen tiers is described closely enough for a team to reconstruct.
+- **−** [38:27](https://youtu.be/rv2KpWgb0Mw?t=2307) The setup notes and Claude READMEs that would reproduce the layers are promised as future open source with no repository named.

@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=xEAYnXyt3L4
 durationMin: 44
 slides: https://github.com/sberyozkin/slides-devoxx-be-2026/blob/main/SayGoodbyeToApiKeysWithWIF.pdf
 verdict: 8
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -99,34 +100,35 @@ Java developers taking LangChain4j or Quarkus LLM apps toward production, platfo
 
 ## Verdict
 
-**8/10**: a live keyless Claude call through SPIFFE tokens, an attestation walkthrough, and published Quarkus samples; Novelty is held to 1 because the exchange flow is in the Anthropic docs, and Measured to 1 because the only statistic is borrowed.
+**8/10**: a live keyless Claude call through SPIFFE tokens, an explained attestation and exchange chain, and a published Quarkus sample; Novelty is held to 1 because the exchange flow is in the Anthropic docs, and Measured to 1 because the only statistic is borrowed.
+
+**Reach segment**: Java teams adding LLM features to their applications can replace static keys with the talk's WIF flow, while the rest of the audience only meets it in passing.
 
 **Novelty 1/2**
 
-- **+** [12:09](https://youtu.be/xEAYnXyt3L4?t=729) Transaction Tokens, the Identity Assertion Grant, and the aiagent-auth draft are brought together into one map of token-based agent authentication.
-- **+** [33:35](https://youtu.be/xEAYnXyt3L4?t=2015) The demo and its sample project are the speaker's own Quarkus LangChain4j WIF implementation work, not a docs walkthrough.
-- **−** Anthropic's workload-identity-federation docs page already explains the exchange flow the middle of the talk teaches, and the speaker recommends it at [20:00](https://youtu.be/xEAYnXyt3L4?t=1200).
+- **+** [13:10](https://youtu.be/xEAYnXyt3L4?t=790) Transaction Tokens, the Identity Assertion Grant, and the aiagent-auth draft are brought together under one thread: each identifies caller, target and permissions in tokens that are exchanged at every hop.
+- **−** Anthropic's workload-identity-federation docs page already explains the exchange flow the middle of the talk teaches, and the speaker recommends it outright.
 
 **Demonstrated 2/2**
 
-- **+** [34:07](https://youtu.be/xEAYnXyt3L4?t=2047) The properties, sidecar deployment, and token path are shown on screen with no API key anywhere.
-- **+** [38:16](https://youtu.be/xEAYnXyt3L4?t=2296) The deployed chat app answers a live question through Claude over the federated token.
+- **+** [34:07](https://youtu.be/xEAYnXyt3L4?t=2047) The application properties are shown on screen with a token path and no API key anywhere.
+- **+** [38:16](https://youtu.be/xEAYnXyt3L4?t=2296) The deployed chat app answers a live question through Claude over the federated token, though its next answer shows the sample bot kept no conversation memory.
 - **+** [40:18](https://youtu.be/xEAYnXyt3L4?t=2418) The Claude console shows the federation event arriving as the live query runs.
 
 **Measured 1/2**
 
-- **+** [07:52](https://youtu.be/xEAYnXyt3L4?t=472) Cites the NHI Management Group figure that only 20% of organizations have formal key offboarding, plus two of his own keys left active for two years.
-- **−** [07:52](https://youtu.be/xEAYnXyt3L4?t=472) The 20% figure ships without method or sample, which the speaker flags before moving on.
-- **·** [12:39](https://youtu.be/xEAYnXyt3L4?t=759) The seven open WIMSE drafts and the seven supported platforms are counts of the landscape, not measurements backing a claim.
+- **+** [08:25](https://youtu.be/xEAYnXyt3L4?t=505) The speaker found two of his own OpenAI keys still active after two years because he had left expiry on "never".
+- **−** [07:52](https://youtu.be/xEAYnXyt3L4?t=472) The figure that only 20% of organizations have formal key offboarding ships without method or sample, and the speaker says it is hard to evaluate.
+- **·** [12:39](https://youtu.be/xEAYnXyt3L4?t=759) The seven open WIMSE drafts are a count of the landscape, not a measurement backing a claim.
 
 **Depth 2/2**
 
 - **+** [19:29](https://youtu.be/xEAYnXyt3L4?t=1169) Explains why the extra exchange step exists: the LLM provider keeps control of token lifecycle and audience.
-- **+** [24:43](https://youtu.be/xEAYnXyt3L4?t=1483) Walks the SPIRE attestation chain from node attestation to SVID issuance to key verification through the server's OIDC endpoint.
-- **+** [27:52](https://youtu.be/xEAYnXyt3L4?t=1672) Weighs SPIFFE (laptop, bare metal, multi-cluster) against Kubernetes projected tokens (simple, single self-managed cluster), and at [16:54](https://youtu.be/xEAYnXyt3L4?t=1014) explains why user auth-code login falls short for agent flows.
+- **+** [24:43](https://youtu.be/xEAYnXyt3L4?t=1483) Walks the SPIRE chain from node attestation through process-level workload attestation to SVID issuance and key verification through the server's OIDC endpoint.
+- **+** [27:52](https://youtu.be/xEAYnXyt3L4?t=1672) Weighs SPIFFE (laptop, bare metal, multi-cluster) against Kubernetes projected tokens (simple, single self-managed cluster).
 
 **Reusable 2/2**
 
-- **+** [43:26](https://youtu.be/xEAYnXyt3L4?t=2606) The closing slide links the WIF-plus-SPIFFE and WIF-plus-Kubernetes Quarkus sample projects covering the demo end to end.
-- **+** [34:39](https://youtu.be/xEAYnXyt3L4?t=2079) The federation properties (rule, organization and service-account IDs) and the sidecar deployment are walked through from the linked sample.
+- **+** [33:35](https://youtu.be/xEAYnXyt3L4?t=2015) The speaker points to the WIF Quarkus LangChain4j sample as part of the released version, and the linked WIF-plus-SPIFFE and WIF-plus-Kubernetes sample projects cover the demo.
 - **·** [30:28](https://youtu.be/xEAYnXyt3L4?t=1828) Reproducing the SPIRE setup needs an OpenShift cluster with the Zero Trust Workload Identity Manager operator, which the speaker says may not be available to everyone.
+- **·** [32:32](https://youtu.be/xEAYnXyt3L4?t=1952) Application developers only read the issued token; deploying SPIRE is the platform team's job.

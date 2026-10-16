@@ -9,11 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=ewCPBgOrLAE
 durationMin: 51
 slides: null
-verdict: 6
+verdict: 7
+reach: broad
 frames: 5
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Ask the Architects
 
@@ -98,31 +98,33 @@ Java developers who want authoritative yes/no/why answers on Loom scheduling, de
 
 ## Verdict
 
-**6/10**: Authors explain their own reasoning on Loom schedulers, string internals and JEP 465 across a dozen Q&A topics; the format caps depth and numbers, and the roadmap questions on modules, specialization and builders get no detail.
+**7/10**: First-hand Loom experiments and model-vendor discussions accompany explanations of scheduler, string and template trade-offs; measurement lacks method detail and the takeaways are fragments.
+
+**Reach broad**: most Java developers in the audience can use the answers on virtual threads, deprecation policy, value objects, ZGC direction and agent-assisted development in their own work.
 
 **Novelty 2/2**
 
-- **+** [03:38](https://youtu.be/ewCPBgOrLAE?t=218) Bateman and Klang explain why custom virtual-thread schedulers stay unexposed: the runtime would call out to foreign scheduler code from locking, timer and socket paths, and N pools mean handover costs without the priority people want.
-- **+** [44:45](https://youtu.be/ewCPBgOrLAE?t=2685) Cimadamore gives the post-mortem behind withdrawing JEP 465: nested templates were processed eagerly, which forced double processing and blocked the two-pass validation that string concatenation gets, so any replacement must keep nested templates open.
-- **·** [38:29](https://youtu.be/ewCPBgOrLAE?t=2309) The modules, specialization-timeline and builders answers state goals and cost of prototyping but defer details until the work is ready to present.
+- **+** [04:39](https://youtu.be/ewCPBgOrLAE?t=279) Bateman describes the Loom team steering Netty experiments until existing applications ran on virtual threads with one pool instead of separate pools.
+- **+** [07:13](https://youtu.be/ewCPBgOrLAE?t=433) Francesco reports that a year implementing against the experimental scheduler API taught him why ForkJoinPool behaves as it does and how difficult a replacement is.
+- **+** [20:22](https://youtu.be/ewCPBgOrLAE?t=1222) A panelist reports that a frontier model lab asked the team for modern Java training code and community feedback because its available examples skew toward older idioms.
 
 **Demonstrated 1/2**
 
-- **·** A panel Q&A with the speakers seated and no screen content has nothing to run, so there is no demo to judge.
+- **·** An audience Q&A about Java design and roadmap decisions has no central runnable claim requiring a demonstration.
 
 **Measured 1/2**
 
-- **+** [25:03](https://youtu.be/ewCPBgOrLAE?t=1503) An internal experiment generating the same programs with Java 25 idioms instead of Java 8 used about 20% fewer tokens.
-- **·** [25:03](https://youtu.be/ewCPBgOrLAE?t=1503) The figure comes without method or workload detail, and nothing else quantitative is claimed.
+- **+** [25:03](https://youtu.be/ewCPBgOrLAE?t=1503) An internal experiment generating programs with Java 25 features instead of Java 8 features used about 20% fewer tokens.
+- **·** [25:03](https://youtu.be/ewCPBgOrLAE?t=1503) The comparison does not identify the programs, model, prompts or repetition methodology.
 
-**Depth 1/2**
+**Depth 2/2**
 
-- **+** [31:51](https://youtu.be/ewCPBgOrLAE?t=1911) The string answers weigh the requested view against immutability, native code scribbling on a string, and moving collectors, then state what JDK 27 did instead (copy straight from the string's bytes when the coder is compatible).
-- **+** [14:07](https://youtu.be/ewCPBgOrLAE?t=847) The deprecation answers explain the removal calculus: Vector's blast radius across early JDK APIs, the cost of leaving it in place, Thread.stop respecified to throw instead of removed, and Maven-corpus static analysis.
-- **·** [29:44](https://youtu.be/ewCPBgOrLAE?t=1784) Each answer runs a few minutes by format, so trade-offs get stated rather than worked through.
+- **+** [03:38](https://youtu.be/ewCPBgOrLAE?t=218) The custom-scheduler answers weigh the risk of runtime locking, timer and socket paths calling externally controlled code against separate pools that add handover costs without reliably delivering priority.
+- **+** [31:51](https://youtu.be/ewCPBgOrLAE?t=1911) The string answers weigh zero-copy views against native code mutating an immutable string and moving collectors, then explain the compatible-coder copying path that avoids intermediate buffering.
+- **+** [44:45](https://youtu.be/ewCPBgOrLAE?t=2685) Cimadamore explains how eager processing of nested templates forced double processing and prevented two-pass validation, motivating a replacement that keeps nested templates open until final processing.
 
 **Reusable 1/2**
 
-- **+** [43:12](https://youtu.be/ewCPBgOrLAE?t=2592) Viewers leave with the HotSpot layout-print flags for inspecting value-class layout (the speaker is unsure of the current name).
+- **+** [43:12](https://youtu.be/ewCPBgOrLAE?t=2592) Viewers leave with HotSpot layout-print flags for inspecting value-class layout, although the speaker is unsure of the current flag name.
 - **+** [08:49](https://youtu.be/ewCPBgOrLAE?t=529) The loom-dev mailing list is the named place to report scheduler problems.
-- **·** No repository, sample, configuration or checklist covering the session's content is pointed to.
+- **·** [43:12](https://youtu.be/ewCPBgOrLAE?t=2592) The layout-inspection pointer is a fragment rather than a published example reproducing the session content.

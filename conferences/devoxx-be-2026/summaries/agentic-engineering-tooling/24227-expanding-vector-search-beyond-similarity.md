@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=EnHPYkSAaCo
 durationMin: 31
 slides: null
 verdict: 7
+reach: segment
 frames: 7
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Expanding Vector Search Beyond Similarity
@@ -69,32 +70,30 @@ The closing takeaways, shown in a markdown file: capture meaning with embeddings
 Java developers building RAG-style or assistant apps who want a concrete pattern for grounding search in business rules, and anyone evaluating LangChain4j with Micronaut. Skip if you already ship tool-based agents with evals, or if you want GraalVM internals: the native image is used but never explained.
 
 ## Verdict
-**7/10**: Live searches verified in the database and in Phoenix traces back the constraints-plus-tools pattern, but the embeddings stay a black box and the memory figure has no baseline.
+**7/10**: The hybrid search app runs live end to end and is published as a sample repository; the design reasoning is brief and the one measurement has no baseline.
+
+**Reach segment**: Java developers adding LLM search or assistant features can apply the combination of semantic matching and application-side business constraints.
 
 **Novelty 1/2**
 
-- **+** [07:55](https://youtu.be/EnHPYkSAaCo?t=475) The 15 km default radius for "near" queries is her own fallback from building the app, used when users give no distance.
-- **+** [11:31](https://youtu.be/EnHPYkSAaCo?t=691) The rule to embed stable attributes like a spa or kids area while filtering volatile prices and offers in SQL comes from her own design work.
-- **−** The stack walkthrough (`@RegisterAiService`, `@Tool` methods, Oracle vector and spatial SQL) repeats what the Micronaut LangChain4j getting-started guide and the Oracle AI Vector Search documentation already carry.
+- **+** [26:44](https://youtu.be/EnHPYkSAaCo?t=1604) Building the travel-advisor sample exposed hallucinated tool calls and tool results that were hard to debug, a development lesson beyond the framework walkthrough.
 
 **Demonstrated 2/2**
 
-- **+** [18:16](https://youtu.be/EnHPYkSAaCo?t=1096) A luxury-hotel search runs live in the UI, then re-runs with a lower price and "luxury" dropped to show different results.
-- **+** [23:34](https://youtu.be/EnHPYkSAaCo?t=1414) The Phoenix trace shows the luxury request reduced to the "luxury" fragment and matched against catalog rows whose metadata carries destination ID and price.
-- **−** [07:55](https://youtu.be/EnHPYkSAaCo?t=475) The 15 km default is never exercised: the only radius on screen is `radiusKm: 40` in a logged activity search.
+- **+** [18:16](https://youtu.be/EnHPYkSAaCo?t=1096) The live UI returns Lucerne hotel recommendations under the requested budget and responds to an amended search.
+- **+** [21:30](https://youtu.be/EnHPYkSAaCo?t=1290) A database query independently checks that the recommended hotels belong to Lucerne and satisfy the adjusted price constraint.
 
 **Measured 1/2**
 
-- **+** [28:16](https://youtu.be/EnHPYkSAaCo?t=1696) `/usr/bin/time -v` reports the native-image app process under 200 MB max RSS, with Phoenix and the database running separately.
-- **−** [28:50](https://youtu.be/EnHPYkSAaCo?t=1730) The figure comes from a single interactive run with no baseline or comparison, since she sent no bulk load against the app.
-- **−** [16:12](https://youtu.be/EnHPYkSAaCo?t=972) Startup is called "quite fast" with no figure; the only time reported is the whole-session elapsed time.
+- **+** [28:16](https://youtu.be/EnHPYkSAaCo?t=1696) The native-image app's maximum resident memory is reported below 200 MB, with Phoenix and the database excluded from that process.
+- **−** [28:50](https://youtu.be/EnHPYkSAaCo?t=1730) The resource-efficiency claim rests on one interactive run without a comparison baseline or a stated load beyond the demonstrated requests.
 
 **Depth 1/2**
 
-- **+** [09:58](https://youtu.be/EnHPYkSAaCo?t=598) Tools are presented as a security boundary: the assistant never sees customer IDs, balances or addresses, only what the tools return.
-- **+** [12:33](https://youtu.be/EnHPYkSAaCo?t=753) The hotel tool ranks catalog rows by similarity against the semantic fragment while enforcing the radius and price filters.
-- **−** [05:19](https://youtu.be/EnHPYkSAaCo?t=319) The vector comparison is "offloaded to the database" with no index type or tuning discussed.
+- **+** [11:31](https://youtu.be/EnHPYkSAaCo?t=691) Stable hotel descriptions go into embeddings while volatile prices and offers remain structured filters, with the split justified by their different rates of change.
+- **+** [09:58](https://youtu.be/EnHPYkSAaCo?t=598) Constrained tools provide a reasoned boundary around permitted actions and sensitive customer data.
+- **·** [13:35](https://youtu.be/EnHPYkSAaCo?t=815) The implementation explanation follows tool selection and framework orchestration; the combined vector and spatial query is named but its mechanics are not explained.
 
 **Reusable 2/2**
 
-- **+** [30:24](https://youtu.be/EnHPYkSAaCo?t=1824) The demo app sits on GitHub with build and run instructions and a linked blog post covering the same build.
+- **+** [30:24](https://youtu.be/EnHPYkSAaCo?t=1824) The speaker points to the demo application's GitHub repository with build and run instructions and a linked explanatory blog post.

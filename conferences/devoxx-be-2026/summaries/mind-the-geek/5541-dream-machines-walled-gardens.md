@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=am8adCMJQzk
 durationMin: 49
 slides: null
 verdict: 5
+reach: niche
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -89,10 +90,13 @@ Worth the time for developers curious about the intellectual history of the web 
 
 **5/10**: A well-organised beginner history of Nelson and hypertext whose counterfactual is the speaker's own, limited by mechanisms that are described but not explained, an uncritical claim that they would have solved modern problems, and nothing shown or measured.
 
+**Reach niche**: Only developers already working on content attribution, provenance or decentralised alternatives can put its Xanadu ideas to use; for the rest of this Java-developer audience it is curiosity history.
+
 **Novelty 1/2**
 
 - **+** [38:36](https://youtu.be/am8adCMJQzk?t=2316) The counterfactual of Xanadu specified as a protocol rather than sold as a franchise product ("What if he thought of this as a protocol?") is the speaker's own framing, not a retelling of one source.
 - **+** [43:21](https://youtu.be/am8adCMJQzk?t=2601) The closing applies transclusion and bidirectional links to misinformation, music sampling and AI training attribution, connecting 1980 ideas to current disputes.
+- **+** [33:24](https://youtu.be/am8adCMJQzk?t=2004) Annotation in Literary Machines is read by the speaker as what is known today as social media, another link from a 1980 idea to the present.
 
 **Demonstrated 1/2**
 
@@ -100,12 +104,12 @@ Worth the time for developers curious about the intellectual history of the web 
 
 **Measured 1/2**
 
-- **·** The talk makes no quantitative claims to back; the dates and the few-cents micropayment sketch at [41:49] are narrative details, not measurements.
+- **·** The talk makes no quantitative claims to back; the dates and the few-cents micropayment sketch at [41:49](https://youtu.be/am8adCMJQzk?t=2509) are narrative details, not measurements.
 
 **Depth 1/2**
 
-- **+** [20:08](https://youtu.be/am8adCMJQzk?t=1208) JOT's append-only tape, where an edit is recorded at the end instead of overwritten, is explained with its reason and linked to how Git works.
-- **+** [31:21](https://youtu.be/am8adCMJQzk?t=1881) Bidirectional links, transclusion with per-version link targets and annotation each get a short description of what they do, enough to see what the web left out.
+- **+** [20:08](https://youtu.be/am8adCMJQzk?t=1208) JOT's append-only tape, where an edit is recorded at the end instead of overwritten, is explained with its reason (the history is preserved) and linked to how Git works.
+- **+** [32:22](https://youtu.be/am8adCMJQzk?t=1942) Transclusion is explained as built-in copy and paste by reference, with a version history so a link can target the latest version or a point in time.
 - **−** [46:01](https://youtu.be/am8adCMJQzk?t=2761) The claim that bidirectional links and transclusion would trace AI output back to its sources and pay them is stated, not explained: no account of how the back-reference or payment would work.
 
 **Reusable 1/2**

@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=SQUrHzMie3o
 durationMin: 50
 slides: https://renato.cavalcanti.io/presentations/owning-the-code/
 verdict: 7
+reach: broad
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -101,31 +102,33 @@ AI already pays off enormously: postponed migrations, flaky build diagnosis (a b
 Developers who merge agent-written code daily and feel their grip on the codebase loosening will get the most, since every practice targets that exact situation. Beginners get an accessible framing of what the job is becoming. Skip it if you want measured comparisons of agents or benchmarks: there are no numbers here, and the tooling details assume a Claude-based workflow.
 
 ## Verdict
-
-**7/10**: a personal agent-workflow system backed by two incidents from his own work and a published plugin repository, held back by practices that are described but never run on screen.
-
++
+**7/10**: A personal workflow for staying in the loop on agent-written code, grounded in own incidents, beginner-level design rationale and a published command set, with only part of the workflow shown on screen.
++
+**Reach broad**: Most of the Java and JVM audience using coding assistants can apply the readability bar, file-based review and phased commits.
++
 **Novelty 1/2**
-
-- **+** [08:21](https://youtu.be/SQUrHzMie3o?t=501) The Scala for-comprehension misdiagnosis, repeated by Claude after a context reset in the same week, is the speaker's own field evidence for why depth matters.
-- **+** [26:36](https://youtu.be/SQUrHzMie3o?t=1596) The constructor that accepted an `Optional`, null-checked it and spread that pattern across every constructor is a production incident behind the "today's code is tomorrow's context" rule.
-- **·** [19:48](https://youtu.be/SQUrHzMie3o?t=1188) The automation-paradox passage is read from Wikipedia's article on the Bainbridge paradox, and the practices overlap with widely shared agent-workflow advice, so the added value is the integration with his own examples.
-
++
+- **+** [08:21](https://youtu.be/SQUrHzMie3o?t=501) The Scala for-comprehension misdiagnosis, repeated by Claude after a context reset that week, gives his own case for why developers must judge agent reviews.
+- **+** [26:36](https://youtu.be/SQUrHzMie3o?t=1596) His team saw an Optional-accepting constructor’s null-handling pattern spread across constructors, giving a personal case behind the rule that today’s code becomes tomorrow’s context.
+- **·** [19:48](https://youtu.be/SQUrHzMie3o?t=1188) The automation-paradox passage uses Wikipedia’s summary of Bainbridge, so the contribution is its integration with his own cases and workflow.
++
 **Demonstrated 1/2**
-
-- **+** [41:22](https://youtu.be/SQUrHzMie3o?t=2482) A screenshot of his Rust project after an `/autonomously` run shows three phase commits, each with a written description for later review.
-- **−** [36:39](https://youtu.be/SQUrHzMie3o?t=2199) The `/walk-through` and `/check-inbox` commands are described but never run on screen, so their output is taken on trust.
-
++
+- **+** [41:22](https://youtu.be/SQUrHzMie3o?t=2482) His Rust tool’s commit history shows three phase commits with descriptions after an `/autonomously` run.
+- **−** [36:39](https://youtu.be/SQUrHzMie3o?t=2199) The walk-through workflow is described without showing a command run and its generated reading guide, leaving the central review practice short of an end-to-end demonstration.
++
 **Measured 1/2**
-
-- **·** The talk makes no quantitative claims about speed, cost, adoption or effect, so there is nothing a measurement would need to back.
-
++
+- **·** The talk makes no quantitative claims about speed, cost, adoption or effect, so no measurement is due.
++
 **Depth 2/2**
-
-- **+** [06:48](https://youtu.be/SQUrHzMie3o?t=408) The fluency-versus-depth model gives a beginner a mental frame: syntax is borrowable from the model, while runtime and design judgment stay with the developer.
-- **+** [16:43](https://youtu.be/SQUrHzMie3o?t=1003) The drift-to-the-center explanation ties the model's probabilistic training distribution to why unguided output regresses to average code.
-- **+** [31:57](https://youtu.be/SQUrHzMie3o?t=1917) The always-on reminder hook is chosen because rules loaded at session start lose attention as context grows, and weighed against a stateful hook that fires about a third of the time to save tokens.
-
++
+- **+** [06:48](https://youtu.be/SQUrHzMie3o?t=408) The fluency-versus-depth frame tells a beginner that syntax is borrowable from the model while runtime, memory, concurrency and design judgment stay with the developer.
+- **+** [16:43](https://youtu.be/SQUrHzMie3o?t=1003) The drift-to-the-center account links the mix of training material to why developers must guide models toward the design they want.
+- **+** [31:57](https://youtu.be/SQUrHzMie3o?t=1917) The per-prompt reminder addresses rules losing attention as context grows, with a stateful intermittent reminder offered as an alternative that uses fewer tokens.
++
 **Reusable 2/2**
-
-- **+** [48:18](https://youtu.be/SQUrHzMie3o?t=2898) The `octonato/octo-stack` repository publishes the walk-through, walk-replay, check-inbox and autonomously commands and the reviewer agents the talk's practices run on.
-- **·** [48:48](https://youtu.be/SQUrHzMie3o?t=2928) The speaker calls the repository a playground he changes at will and tells listeners to build their own, and the setup targets Claude, so adapting it to other assistants is left to the reader.
++
+- **+** [48:18](https://youtu.be/SQUrHzMie3o?t=2898) The `octonato/octo-stack` repository publishes the walk-through, walk-replay, check-inbox and autonomously commands plus the reviewer agents behind the practices.
+- **·** [48:48](https://youtu.be/SQUrHzMie3o?t=2928) The speaker offers his changing Claude-based playground for copying and adaptation rather than promising a maintained setup.

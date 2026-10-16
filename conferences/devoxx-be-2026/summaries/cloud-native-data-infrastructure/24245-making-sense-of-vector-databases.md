@@ -11,6 +11,7 @@ durationMin: 48
 slides: https://speakerdeck.com/balkrishnarawool/making-sense-of-vector-databases
 slidesNote: from an earlier Dec 2024 delivery
 verdict: 7
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -100,12 +101,13 @@ Java developers who want the foundations of vector search before adopting a mana
 
 ## Verdict
 
-**7/10**: Seven live demos carry the arc from vectors to image search and the repository publishes them, but the talk has no performance numbers, no guidance on choosing metrics or indexes, and its finale match missed.
+**7/10**: Seven live demos carry the arc from vectors to image search and the repository publishes them, but the talk gives no performance numbers and no guidance on choosing metrics or indexes.
+
+**Reach segment**: Spring Boot teams adding semantic search or RAG to their applications can reuse the pgvector, Elasticsearch, and Weaviate patterns directly; the rest of the Java audience meets little they can apply within a year.
 
 **Novelty 1/2**
 
-- **+** [06:14](https://youtu.be/knE4uy7IYXY?t=374) The in-memory VectorDB built on the Vector API's SIMD operations anchors standard concepts in the speaker's own code.
-- **+** [41:10](https://youtu.be/knE4uy7IYXY?t=2470) The progression from 1-D color vectors to a working img2vec image search is the speaker's own curriculum rather than one source retold.
+- **+** [02:06](https://youtu.be/knE4uy7IYXY?t=126) The talk sets its own curriculum from vectors to a Google-Lens-like image search, combining the Vector API, similarity metrics, word2vec, HNSW, pgvector, RAG, and img2vec into one progression.
 
 **Demonstrated 2/2**
 
@@ -115,7 +117,7 @@ Java developers who want the foundations of vector search before adopting a mana
 
 **Measured 1/2**
 
-- **·** [09:52](https://youtu.be/knE4uy7IYXY?t=592) The talk makes no quantitative claim of its own: the Vector API speedup is stated without a number, and figures like 300 dimensions or k = 7 are configuration, not results.
+- **·** [06:14](https://youtu.be/knE4uy7IYXY?t=374) The Vector API is said to give "faster processing" with no number, and figures like 300 dimensions or k = 7 are configuration, so the talk offers no measurement of its own.
 
 **Depth 1/2**
 

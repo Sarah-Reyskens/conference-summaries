@@ -9,7 +9,8 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=LD2tKMpToYg
 durationMin: 49
 slides: null
-verdict: 8
+verdict: 7
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -71,12 +72,14 @@ Asked whether it works in Java, the speaker shows "Jake": the same game in 10 li
 Kotlin and Java developers who enjoy constraint coding, and beginners who want a guided live-coding session where every design decision is explained. Skip it if you want production game architecture, engine internals, or advanced JVM material; the point is the learning exercise, not the game.
 
 ## Verdict
-**8/10**: A live-built 10-line Snake whose design choices are the speaker's own and shown working, limited by self-counted line totals and no linked code.
+**7/10**: A live-built 10-line Snake whose design choices are explained and shown working, limited by short-code Snake being a known genre, self-counted line totals and no linked code.
 
-**Novelty 2/2**
+**Reach segment**: Java and Kotlin developers who run coding exercises, teach, or want compact refactoring techniques for their own code.
 
-- **+** [23:39](https://youtu.be/LD2tKMpToYg?t=1419) The 1D board model with single-number coordinates rendered 2D via line wrap is the speaker's own design answer to the line budget.
-- **+** [37:04](https://youtu.be/LD2tKMpToYg?t=2224) Reporting the score through the process exit code is an original trick invented for the constraint.
+**Novelty 1/2**
+
+- **+** [04:36](https://youtu.be/LD2tKMpToYg?t=276) The six-word spec technique is tried on other games, with the audience guessing Pong, Tetris and the Chrome dino game from six-word descriptions.
+- **+** [42:44](https://youtu.be/LD2tKMpToYg?t=2564) Half the 10 lines are generic game scaffolding (window, loop, sleep, exit) rather than Snake logic, which reframes the speaker's own 10 lines as a reusable game shape.
 - **·** [01:33](https://youtu.be/LD2tKMpToYg?t=93) Short-code Snake implementations are a known code-golf genre; the value here is the documented journey and its transferable techniques.
 
 **Demonstrated 2/2**
@@ -93,9 +96,9 @@ Kotlin and Java developers who enjoy constraint coding, and beginners who want a
 
 **Depth 2/2**
 
+- **+** [08:42](https://youtu.be/LD2tKMpToYg?t=522) Terminal input is rejected with reasons: arrow keys only move the cursor and line-based input would make Snake turn-based, so the JDK-only build needs a Swing KeyAdapter.
 - **+** [14:54](https://youtu.be/LD2tKMpToYg?t=894) The movement design walks from per-segment updates through corners-only storage to add-head-remove-tail, with the reason each earlier step falls short.
 - **+** [23:39](https://youtu.be/LD2tKMpToYg?t=1419) The 2D-to-1D switch is justified as single-number arithmetic for positions and directions, with the wrap-around edge disclosed as the cost.
-- **+** [42:13](https://youtu.be/LD2tKMpToYg?t=2533) The "conciseness leads to understanding" claim is grounded in the refactoring just performed rather than asserted.
 
 **Reusable 1/2**
 

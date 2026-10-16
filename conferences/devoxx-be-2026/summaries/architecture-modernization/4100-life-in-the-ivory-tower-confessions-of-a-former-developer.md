@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=nhVRKv8VHKU
 durationMin: 35
 slides: null
 verdict: 5
+reach: broad
 frames: 7
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Life in the Ivory Tower: Confessions of a Former Developer Who Turned Into an Architect
@@ -78,12 +79,14 @@ Developers moving toward architecture or working with architects gain the most, 
 
 ## Verdict
 
-**5/10**: A practitioner story that applies published frameworks to the speaker's own decisions, limited by anecdotal evidence and nothing to take home.
+**5/10**: A practitioner story that applies published frameworks to the speaker's own decisions, limited by Salesforce argued on organization fit rather than capability and by nothing packaged to take home.
+
+**Reach broad**: Architects, tech leads and developers can apply the governance, standards and start-small practices in their own teams within a year.
 
 **Novelty 1/2**
 
 - **+** [07:19](https://youtu.be/nhVRKv8VHKU?t=439) The CIO's "one central solution" question and the consultants' module-by-module Salesforce pitch come from the speaker's own first weeks in a government organization.
-- **+** [17:12](https://youtu.be/nhVRKv8VHKU?t=1032) Placing that organization in the operating model's coordination quadrant, and using it to take Salesforce off the table, applies the framework to a case no source already covers.
+- **+** [16:10](https://youtu.be/nhVRKv8VHKU?t=970) Placing prison, family-violence and law-enforcement departments that share data on people in touch with the law in the coordination quadrant applies the model to a case no source covers.
 - **·** [12:31](https://youtu.be/nhVRKv8VHKU?t=751) The operating model comes from *Enterprise Architecture as Strategy* and the change laws from Craig Larman, both credited published sources.
 
 **Demonstrated 1/2**
@@ -98,10 +101,9 @@ Developers moving toward architecture or working with architects gain the most, 
 
 - **+** [16:42](https://youtu.be/nhVRKv8VHKU?t=1002) The four operating-model quadrants are explained with worked examples (McDonald's, airlines, Sony), and the coordination quadrant's rule against one central solution carries its reason: different business processes would put "a lot of complexity in this one central solution".
 - **+** [21:19](https://youtu.be/nhVRKv8VHKU?t=1279) The governance bridge names its three mechanisms and what each carries: principles give direction, forums give discussion, public decision records give visibility.
-- **−** [17:44](https://youtu.be/nhVRKv8VHKU?t=1064) Salesforce is argued down on organization fit "not in technical language on what Salesforce could do or not do", after the speaker says he was unsure it could support the departments' processes, so the alternative is never weighed on capability.
+- **−** [17:44](https://youtu.be/nhVRKv8VHKU?t=1064) Salesforce is argued down on organization fit "not in technical language on what Salesforce could do or not do", so the alternative is never weighed on capability.
 
 **Reusable 1/2**
 
-- **+** [21:19](https://youtu.be/nhVRKv8VHKU?t=1279) The principles, advisory forum and public decision-record trio is described plainly enough to copy into another organization.
 - **+** [24:26](https://youtu.be/nhVRKv8VHKU?t=1466) The standardization rule (Java and Angular as the default for custom applications, deviations recorded in decision records, integration standardized rather than IDEs) is stated in a form another team could adopt.
-- **−** [21:19](https://youtu.be/nhVRKv8VHKU?t=1279) No template, checklist or repository backs any of the practices.
+- **−** [24:58](https://youtu.be/nhVRKv8VHKU?t=1498) AI agents and shared AI skills are named as ways to support the strategy-to-decision bridge, but no template, checklist, skill or repository is pointed to for any of the practices.

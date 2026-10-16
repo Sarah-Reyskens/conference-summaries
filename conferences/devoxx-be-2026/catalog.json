@@ -35,17 +35,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/Q91obeWeWNQ.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/17786-agent-loops-decoded-fundamentals-to-agentic-patterns-in.md",
       "slides": "https://speakerdeck.com/tzolov/agentic-engineering-and-tooling-agentic-engineering-and-tooling-deep-dive-180min-216-agent-loops-decoded-fundamentals-to-agentic-patterns-in-spring-ai",
-      "verdict": 8,
+      "verdict": 9,
       "scores": {
         "novelty": 1,
         "demonstrated": 2,
-        "measured": 1,
+        "measured": 2,
         "depth": 2,
         "reusable": 2
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:33:00+00:00"
+      "updatedAt": "2026-10-15T21:53:25+00:00",
+      "reach": "segment",
+      "rating": 1.582,
+      "tier": "if-relevant"
     },
     {
       "id": "10020",
@@ -90,7 +93,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:54:59+00:00"
+      "updatedAt": "2026-10-15T22:05:32+00:00",
+      "reach": "segment",
+      "rating": -1.091,
+      "tier": "low-priority"
     },
     {
       "id": "23529",
@@ -135,7 +141,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:49:01+00:00"
+      "updatedAt": "2026-10-16T08:03:30+00:00",
+      "reach": "segment",
+      "rating": -2.56,
+      "tier": "low-priority"
     },
     {
       "id": "7006",
@@ -180,7 +189,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:56:37+00:00"
+      "updatedAt": "2026-10-16T08:02:10+00:00",
+      "reach": "segment",
+      "rating": -1.224,
+      "tier": "low-priority"
     },
     {
       "id": "17763",
@@ -225,7 +237,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:49:54+00:00"
+      "updatedAt": "2026-10-15T22:05:08+00:00",
+      "reach": "segment",
+      "rating": -1.462,
+      "tier": "low-priority"
     },
     {
       "id": "17800",
@@ -260,7 +275,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "22914",
@@ -294,7 +311,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "7012",
@@ -339,7 +358,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:30:20+00:00"
+      "updatedAt": "2026-10-15T22:06:17+00:00",
+      "reach": "broad",
+      "rating": -2.141,
+      "tier": "low-priority"
     },
     {
       "id": "50108",
@@ -384,7 +406,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:53:07+00:00"
+      "updatedAt": "2026-10-16T08:00:19+00:00",
+      "reach": "segment",
+      "rating": 0.253,
+      "tier": "if-relevant"
     },
     {
       "id": "10045",
@@ -429,7 +454,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:55:00+00:00"
+      "updatedAt": "2026-10-16T08:02:19+00:00",
+      "reach": "niche",
+      "rating": -6.758,
+      "tier": "low-priority"
     },
     {
       "id": "24229",
@@ -463,7 +491,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "17765",
@@ -504,13 +534,16 @@
       "scores": {
         "novelty": 2,
         "demonstrated": 1,
-        "measured": 1,
+        "measured": 2,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:54:12+00:00"
+      "updatedAt": "2026-10-16T08:01:16+00:00",
+      "reach": "segment",
+      "rating": -1.297,
+      "tier": "low-priority"
     },
     {
       "id": "25027",
@@ -546,9 +579,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/GGEmc6eR8c4.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/25027-codepocalypse-now-langchain4j-vs-jetbrains-koog.md",
       "slides": "https://drive.google.com/file/d/1jpwSxTC2LbaF2zVeYSHXfLgtMB6afoSq/view",
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
@@ -556,7 +589,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:55:20+00:00"
+      "updatedAt": "2026-10-16T08:02:33+00:00",
+      "reach": "segment",
+      "rating": -1.81,
+      "tier": "low-priority"
     },
     {
       "id": "4098",
@@ -601,7 +637,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:50:25+00:00"
+      "updatedAt": "2026-10-16T08:01:47+00:00",
+      "reach": "broad",
+      "rating": 1.319,
+      "tier": "if-relevant"
     },
     {
       "id": "23524",
@@ -647,7 +686,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:27:15+00:00"
+      "updatedAt": "2026-10-16T08:02:13+00:00",
+      "reach": "broad",
+      "rating": 1.388,
+      "tier": "if-relevant"
     },
     {
       "id": "5537",
@@ -694,7 +736,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:56:21+00:00"
+      "updatedAt": "2026-10-16T08:07:11+00:00",
+      "reach": "niche",
+      "rating": -5.736,
+      "tier": "low-priority"
     },
     {
       "id": "22920",
@@ -728,7 +773,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "24227",
@@ -773,7 +820,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:54:41+00:00"
+      "updatedAt": "2026-10-16T08:06:03+00:00",
+      "reach": "segment",
+      "rating": 3.525,
+      "tier": "recommended"
     },
     {
       "id": "20651",
@@ -809,7 +859,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "7011",
@@ -854,7 +906,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:01:20+00:00"
+      "updatedAt": "2026-10-16T08:06:56+00:00",
+      "reach": "segment",
+      "rating": 4.538,
+      "tier": "recommended"
     },
     {
       "id": "10034",
@@ -899,7 +954,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:26:55+00:00"
+      "updatedAt": "2026-10-16T08:06:28+00:00",
+      "reach": "segment",
+      "rating": 0.562,
+      "tier": "if-relevant"
     },
     {
       "id": "5516",
@@ -934,7 +992,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "21654",
@@ -979,7 +1039,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:49:17+00:00"
+      "updatedAt": "2026-10-16T08:06:10+00:00",
+      "reach": "segment",
+      "rating": 6.519,
+      "tier": "must-watch"
     },
     {
       "id": "25654",
@@ -1014,17 +1077,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/sexe_tnhAOI.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/25654-beyond-code-the-intent-driven-ide-for-the-agentic-age.md",
       "slides": null,
-      "verdict": 6,
+      "verdict": 5,
       "scores": {
         "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
         "depth": 1,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:54:58+00:00"
+      "updatedAt": "2026-10-16T08:06:54+00:00",
+      "reach": "niche",
+      "rating": -4.231,
+      "tier": "low-priority"
     },
     {
       "id": "25652",
@@ -1059,17 +1125,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/_dcauZC9ST8.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/25652-in-the-loop-not-in-the-dark-staying-in-control-in-the-era-of.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
         "novelty": 2,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:57:59+00:00"
+      "updatedAt": "2026-10-16T08:06:20+00:00",
+      "reach": "niche",
+      "rating": -1.849,
+      "tier": "low-priority"
     },
     {
       "id": "5507",
@@ -1114,7 +1183,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:50:49+00:00"
+      "updatedAt": "2026-10-16T08:08:09+00:00",
+      "reach": "broad",
+      "rating": 10.166,
+      "tier": "must-watch"
     },
     {
       "id": "23533",
@@ -1149,17 +1221,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/rk22mStXsGU.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/23533-teaching-a-new-dog-old-tricks-give-the-agent-a-debugger.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
         "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 1,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:49:24+00:00"
+      "updatedAt": "2026-10-16T08:09:17+00:00",
+      "reach": "segment",
+      "rating": 2.305,
+      "tier": "if-relevant"
     },
     {
       "id": "17783",
@@ -1205,7 +1280,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:47:25+00:00"
+      "updatedAt": "2026-10-16T08:10:34+00:00",
+      "reach": "niche",
+      "rating": -2.32,
+      "tier": "low-priority"
     },
     {
       "id": "22911",
@@ -1250,7 +1328,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:52:00+00:00"
+      "updatedAt": "2026-10-16T08:09:56+00:00",
+      "reach": "segment",
+      "rating": 1.043,
+      "tier": "if-relevant"
     },
     {
       "id": "8196",
@@ -1285,17 +1366,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/asAxisu6EQ0.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/architecture-modernization/8196-testing-architecture-made-simple.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 8,
       "scores": {
         "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
-        "depth": 1,
+        "depth": 2,
         "reusable": 2
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:51:53+00:00"
+      "updatedAt": "2026-10-16T08:07:46+00:00",
+      "reach": "segment",
+      "rating": 7.894,
+      "tier": "must-watch"
     },
     {
       "id": "13753",
@@ -1329,7 +1413,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "16435",
@@ -1362,7 +1448,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "24247",
@@ -1407,7 +1495,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:46:22+00:00"
+      "updatedAt": "2026-10-16T08:08:11+00:00",
+      "reach": "segment",
+      "rating": -1.204,
+      "tier": "low-priority"
     },
     {
       "id": "17751",
@@ -1442,9 +1533,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/Ycdt7IT7Kdw.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/mind-the-geek/17751-cheaper-or-better-the-strategic-choice-behind-ai-adoption.md",
       "slides": null,
-      "verdict": 6,
+      "verdict": 5,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
         "depth": 1,
@@ -1452,7 +1543,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:45:45+00:00"
+      "updatedAt": "2026-10-16T08:12:06+00:00",
+      "reach": "segment",
+      "rating": -7.839,
+      "tier": "low-priority"
     },
     {
       "id": "10022",
@@ -1486,7 +1580,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "9752",
@@ -1532,7 +1628,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:58:11+00:00"
+      "updatedAt": "2026-10-16T08:12:12+00:00",
+      "reach": "broad",
+      "rating": 1.191,
+      "tier": "if-relevant"
     },
     {
       "id": "22912",
@@ -1568,17 +1667,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/A7ZIf8LkSvE.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/22912-loop-engineering-beyond-prompt-context-and-harness.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
         "novelty": 1,
         "demonstrated": 2,
-        "measured": 2,
+        "measured": 1,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:55:38+00:00"
+      "updatedAt": "2026-10-16T08:15:14+00:00",
+      "reach": "broad",
+      "rating": 0.736,
+      "tier": "if-relevant"
     },
     {
       "id": "15354",
@@ -1614,9 +1716,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/vLDbzmiT7Xs.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/15354-will-valhalla-fix-tony-s-billion-dollar-mistake.md",
       "slides": "https://speakerdeck.com/josepaumard/will-valhalla-fix-tonys-billion-dollars-mistake",
-      "verdict": 9,
+      "verdict": 8,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 2,
         "depth": 2,
@@ -1624,7 +1726,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:34:27+00:00"
+      "updatedAt": "2026-10-16T08:16:09+00:00",
+      "reach": "broad",
+      "rating": -0.355,
+      "tier": "if-relevant"
     },
     {
       "id": "4079",
@@ -1658,7 +1763,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "21152",
@@ -1691,7 +1798,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:07+00:00"
+      "updatedAt": "2026-10-14T09:44:07+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "5526",
@@ -1736,7 +1845,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:50:34+00:00"
+      "updatedAt": "2026-10-16T08:21:18+00:00",
+      "reach": "niche",
+      "rating": -7.22,
+      "tier": "low-priority"
     },
     {
       "id": "10016",
@@ -1781,7 +1893,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:48:48+00:00"
+      "updatedAt": "2026-10-16T08:14:56+00:00",
+      "reach": "segment",
+      "rating": -1.038,
+      "tier": "low-priority"
     },
     {
       "id": "16439",
@@ -1820,7 +1935,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T14:50:42+00:00"
+      "updatedAt": "2026-10-14T14:50:42+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "23520",
@@ -1854,7 +1971,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "7032",
@@ -1889,17 +2008,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/zDqS1U5Gnk8.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/7032-dont-burn-your-fingers-in-the-heat-of-the-ai-r-evolution-and.md",
       "slides": "https://github.com/maarten-vandeperre/presentations/tree/main/20261006%20-%20devoxx%20belgium%20deepdive%20%5Bpresentation%5D",
-      "verdict": 6,
+      "verdict": 7,
       "scores": {
         "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
-        "depth": 1,
+        "depth": 2,
         "reusable": 2
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:47:47+00:00"
+      "updatedAt": "2026-10-16T08:17:45+00:00",
+      "reach": "segment",
+      "rating": -1.448,
+      "tier": "low-priority"
     },
     {
       "id": "31452",
@@ -1938,7 +2060,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T15:07:59+00:00"
+      "updatedAt": "2026-10-14T15:07:59+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "19714",
@@ -1983,7 +2107,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:56:22+00:00"
+      "updatedAt": "2026-10-16T08:16:09+00:00",
+      "reach": "segment",
+      "rating": 0.976,
+      "tier": "if-relevant"
     },
     {
       "id": "8190",
@@ -2017,7 +2144,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "8194",
@@ -2056,7 +2185,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T15:27:10+00:00"
+      "updatedAt": "2026-10-14T15:27:10+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "22933",
@@ -2101,7 +2232,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:46:48+00:00"
+      "updatedAt": "2026-10-16T08:18:23+00:00",
+      "reach": "niche",
+      "rating": -4.871,
+      "tier": "low-priority"
     },
     {
       "id": "15360",
@@ -2135,7 +2269,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "11558",
@@ -2170,17 +2306,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/NkstzPeo400.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/development-practices/11558-bootui-the-missing-developer-console-for-spring-boot-and.md",
       "slides": "https://www.julien-dubois.com/conferences/bootui/index-en.html",
-      "verdict": 7,
+      "verdict": 5,
       "scores": {
         "novelty": 1,
-        "demonstrated": 2,
+        "demonstrated": 1,
         "measured": 1,
         "depth": 1,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:50:57+00:00"
+      "updatedAt": "2026-10-16T08:19:10+00:00",
+      "reach": "segment",
+      "rating": 0.01,
+      "tier": "if-relevant"
     },
     {
       "id": "7036",
@@ -2215,7 +2354,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "16418",
@@ -2260,7 +2401,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:48:57+00:00"
+      "updatedAt": "2026-10-16T08:20:21+00:00",
+      "reach": "niche",
+      "rating": -1.339,
+      "tier": "low-priority"
     },
     {
       "id": "19732",
@@ -2297,17 +2441,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/6SPnBmQrYEk.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/19732-tap-into-the-nvidia-ecosystem-from-java-with-tornadovm-s.md",
       "slides": null,
-      "verdict": 10,
+      "verdict": 8,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 2,
-        "depth": 2,
+        "depth": 1,
         "reusable": 2
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:01:53+00:00"
+      "updatedAt": "2026-10-16T08:24:17+00:00",
+      "reach": "niche",
+      "rating": -3.476,
+      "tier": "low-priority"
     },
     {
       "id": "5051",
@@ -2340,7 +2487,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:07+00:00"
+      "updatedAt": "2026-10-14T09:44:07+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "24234",
@@ -2385,7 +2534,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:59:30+00:00"
+      "updatedAt": "2026-10-16T08:22:24+00:00",
+      "reach": "segment",
+      "rating": 4.549,
+      "tier": "recommended"
     },
     {
       "id": "9024",
@@ -2430,7 +2582,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:58:58+00:00"
+      "updatedAt": "2026-10-16T08:23:12+00:00",
+      "reach": "niche",
+      "rating": -4.202,
+      "tier": "low-priority"
     },
     {
       "id": "17558",
@@ -2465,17 +2620,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/B5-4mDLrWjM.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/cloud-native-data-infrastructure/17558-from-laptop-to-lakehouse-analytical-sql-with-duckdb.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
         "novelty": 1,
-        "demonstrated": 2,
+        "demonstrated": 1,
         "measured": 0,
         "depth": 2,
         "reusable": 2
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:03:27+00:00"
+      "updatedAt": "2026-10-16T08:24:56+00:00",
+      "reach": "niche",
+      "rating": -2.156,
+      "tier": "low-priority"
     },
     {
       "id": "50101",
@@ -2508,7 +2666,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:07+00:00"
+      "updatedAt": "2026-10-14T09:44:07+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "5519",
@@ -2543,17 +2703,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/Lf_m5dIjjqw.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/5519-the-magic-of-opentelemetry-rewriting-your-app-in-production.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 8,
       "scores": {
         "novelty": 1,
         "demonstrated": 2,
         "measured": 2,
-        "depth": 1,
+        "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:08:37+00:00"
+      "updatedAt": "2026-10-16T13:14:50+00:00",
+      "reach": "segment",
+      "rating": 5.523,
+      "tier": "recommended"
     },
     {
       "id": "4077",
@@ -2588,9 +2751,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/y9JjxyKc6gU.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/4077-do-we-need-a-build-language-java-builds-java.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 8,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 2,
@@ -2598,7 +2761,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:06:16+00:00"
+      "updatedAt": "2026-10-16T13:15:14+00:00",
+      "reach": "niche",
+      "rating": -1.912,
+      "tier": "low-priority"
     },
     {
       "id": "21690",
@@ -2644,7 +2810,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:59:51+00:00"
+      "updatedAt": "2026-10-16T13:14:34+00:00",
+      "reach": "segment",
+      "rating": 6.309,
+      "tier": "must-watch"
     },
     {
       "id": "10021",
@@ -2689,7 +2858,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:05:46+00:00"
+      "updatedAt": "2026-10-16T13:14:24+00:00",
+      "reach": "broad",
+      "rating": 4.826,
+      "tier": "recommended"
     },
     {
       "id": "7017",
@@ -2734,7 +2906,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:29:24+00:00"
+      "updatedAt": "2026-10-16T13:15:17+00:00",
+      "reach": "broad",
+      "rating": -2.473,
+      "tier": "low-priority"
     },
     {
       "id": "10037",
@@ -2767,7 +2942,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "10046",
@@ -2800,7 +2977,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "52105",
@@ -2833,7 +3012,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "31451",
@@ -2878,7 +3059,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:09:20+00:00"
+      "updatedAt": "2026-10-16T13:14:12+00:00",
+      "reach": "broad",
+      "rating": -2.159,
+      "tier": "low-priority"
     },
     {
       "id": "50102",
@@ -2923,7 +3107,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:10:44+00:00"
+      "updatedAt": "2026-10-16T13:14:58+00:00",
+      "reach": "niche",
+      "rating": -5.158,
+      "tier": "low-priority"
     },
     {
       "id": "31455",
@@ -2958,17 +3145,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/qFTuteOEtsE.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/31455-half-of-a-billion-idle-gpus-the-case-for-on-device-ai.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
         "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:21:24+00:00"
+      "updatedAt": "2026-10-15T19:13:12+00:00",
+      "reach": "segment",
+      "rating": -0.652,
+      "tier": "if-relevant"
     },
     {
       "id": "48301",
@@ -3013,7 +3203,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:03:59+00:00"
+      "updatedAt": "2026-10-15T19:13:22+00:00",
+      "reach": "segment",
+      "rating": 0.327,
+      "tier": "if-relevant"
     },
     {
       "id": "49251",
@@ -3058,7 +3251,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:14:16+00:00"
+      "updatedAt": "2026-10-15T19:18:57+00:00",
+      "reach": "broad",
+      "rating": 3.426,
+      "tier": "recommended"
     },
     {
       "id": "51951",
@@ -3103,7 +3299,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:27:28+00:00"
+      "updatedAt": "2026-10-15T19:19:16+00:00",
+      "reach": "broad",
+      "rating": -0.29,
+      "tier": "if-relevant"
     },
     {
       "id": "24233",
@@ -3148,7 +3347,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:15:03+00:00"
+      "updatedAt": "2026-10-15T19:18:08+00:00",
+      "reach": "segment",
+      "rating": -3.391,
+      "tier": "low-priority"
     },
     {
       "id": "7022",
@@ -3194,7 +3396,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:05:08+00:00"
+      "updatedAt": "2026-10-15T19:17:32+00:00",
+      "reach": "segment",
+      "rating": -3.0,
+      "tier": "low-priority"
     },
     {
       "id": "22923",
@@ -3239,7 +3444,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:07:20+00:00"
+      "updatedAt": "2026-10-15T19:18:02+00:00",
+      "reach": "segment",
+      "rating": -0.742,
+      "tier": "if-relevant"
     },
     {
       "id": "8156",
@@ -3274,17 +3482,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/P14Fy05Gs38.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/mind-the-geek/8156-i-hired-a-real-robot-as-my-junior-dev-and-now-my-kids-don-t.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
         "novelty": 2,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:06:12+00:00"
+      "updatedAt": "2026-10-15T19:10:03+00:00",
+      "reach": "segment",
+      "rating": -0.034,
+      "tier": "if-relevant"
     },
     {
       "id": "21691",
@@ -3329,7 +3540,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T18:22:51+00:00"
+      "updatedAt": "2026-10-15T19:17:17+00:00",
+      "reach": "segment",
+      "rating": -0.694,
+      "tier": "if-relevant"
     },
     {
       "id": "24224",
@@ -3374,7 +3588,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T20:01:52+00:00"
+      "updatedAt": "2026-10-15T19:19:30+00:00",
+      "reach": "segment",
+      "rating": -3.604,
+      "tier": "low-priority"
     },
     {
       "id": "29351",
@@ -3410,9 +3627,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/aow56RgptLA.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/29351-structured-concurrency-looms.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
@@ -3420,7 +3637,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T19:58:44+00:00"
+      "updatedAt": "2026-10-15T19:22:31+00:00",
+      "reach": "broad",
+      "rating": 1.694,
+      "tier": "if-relevant"
     },
     {
       "id": "7040",
@@ -3455,17 +3675,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/ymLlOAB8h_c.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/architecture-modernization/7040-wrap-reshape-or-redesign-retrofitting-your-apis-for-a-world.md",
       "slides": "https://noti.st/lostinbrittany/bxObJc/wrap-reshape-or-redesign-retrofitting-your-apis-for-a-world-of-agents",
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
         "novelty": 2,
         "demonstrated": 1,
-        "measured": 2,
+        "measured": 1,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T20:06:06+00:00"
+      "updatedAt": "2026-10-15T19:30:35+00:00",
+      "reach": "segment",
+      "rating": 1.048,
+      "tier": "if-relevant"
     },
     {
       "id": "23519",
@@ -3510,7 +3733,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T20:15:27+00:00"
+      "updatedAt": "2026-10-15T19:23:33+00:00",
+      "reach": "broad",
+      "rating": -0.404,
+      "tier": "if-relevant"
     },
     {
       "id": "49253",
@@ -3545,17 +3771,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/Pg5kS8l9CpI.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/development-practices/49253-engineering-for-the-long-haul-operating-open-source-at-scale.md",
       "slides": null,
-      "verdict": 2,
+      "verdict": 4,
       "scores": {
-        "novelty": 0,
+        "novelty": 1,
         "demonstrated": 0,
         "measured": 1,
         "depth": 1,
-        "reusable": 0
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T20:25:17+00:00"
+      "updatedAt": "2026-10-15T19:25:52+00:00",
+      "reach": "niche",
+      "rating": -14.079,
+      "tier": "low-priority"
     },
     {
       "id": "10038",
@@ -3600,7 +3829,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:08:30+00:00"
+      "updatedAt": "2026-10-15T19:23:06+00:00",
+      "reach": "segment",
+      "rating": 2.874,
+      "tier": "recommended"
     },
     {
       "id": "50106",
@@ -3635,9 +3867,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/-2vEfnB2mRw.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/50106-from-user-prompt-to-jpa-query-comparing-tool-calling.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 8,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 2,
         "depth": 2,
@@ -3645,7 +3877,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:09:14+00:00"
+      "updatedAt": "2026-10-15T19:28:16+00:00",
+      "reach": "segment",
+      "rating": 3.432,
+      "tier": "recommended"
     },
     {
       "id": "50103",
@@ -3692,7 +3927,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:08:38+00:00"
+      "updatedAt": "2026-10-15T19:30:36+00:00",
+      "reach": "niche",
+      "rating": -10.152,
+      "tier": "low-priority"
     },
     {
       "id": "4100",
@@ -3737,7 +3975,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:21:28+00:00"
+      "updatedAt": "2026-10-15T19:29:12+00:00",
+      "reach": "broad",
+      "rating": -0.845,
+      "tier": "low-priority"
     },
     {
       "id": "49254",
@@ -3772,17 +4013,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/1yndLHw9mbo.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/49254-mission-possible-the-45-minute-path-to-bullet-proof-java.md",
       "slides": null,
-      "verdict": 6,
+      "verdict": 5,
       "scores": {
         "novelty": 1,
         "demonstrated": 0,
-        "measured": 2,
+        "measured": 1,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:25:22+00:00"
+      "updatedAt": "2026-10-15T19:31:08+00:00",
+      "reach": "broad",
+      "rating": 0.839,
+      "tier": "if-relevant"
     },
     {
       "id": "25657",
@@ -3827,7 +4071,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:27:45+00:00"
+      "updatedAt": "2026-10-15T19:30:04+00:00",
+      "reach": "segment",
+      "rating": 2.375,
+      "tier": "if-relevant"
     },
     {
       "id": "7018",
@@ -3863,9 +4110,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/nEW0kosJjc8.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/7018-a-year-of-agentic-ai-evolution-lessons-learned-building.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 1,
@@ -3873,7 +4120,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:24:13+00:00"
+      "updatedAt": "2026-10-15T19:39:58+00:00",
+      "reach": "segment",
+      "rating": 0.338,
+      "tier": "if-relevant"
     },
     {
       "id": "4096",
@@ -3918,7 +4168,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:36:07+00:00"
+      "updatedAt": "2026-10-15T19:32:54+00:00",
+      "reach": "segment",
+      "rating": 3.725,
+      "tier": "recommended"
     },
     {
       "id": "9008",
@@ -3951,7 +4204,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:07+00:00"
+      "updatedAt": "2026-10-14T09:44:07+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "4087",
@@ -3996,7 +4251,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:38:50+00:00"
+      "updatedAt": "2026-10-15T19:36:02+00:00",
+      "reach": "broad",
+      "rating": 7.808,
+      "tier": "must-watch"
     },
     {
       "id": "24228",
@@ -4041,7 +4299,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:38:00+00:00"
+      "updatedAt": "2026-10-15T19:39:49+00:00",
+      "reach": "niche",
+      "rating": -4.693,
+      "tier": "low-priority"
     },
     {
       "id": "31454",
@@ -4076,17 +4337,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/DseVLPC4Qjs.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/31454-run-frontier-open-models-on-consumer-hardware.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 6,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 1,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:37:45+00:00"
+      "updatedAt": "2026-10-15T19:56:52+00:00",
+      "reach": "segment",
+      "rating": -2.395,
+      "tier": "low-priority"
     },
     {
       "id": "8164",
@@ -4132,7 +4396,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:37:21+00:00"
+      "updatedAt": "2026-10-15T19:41:12+00:00",
+      "reach": "broad",
+      "rating": 0.198,
+      "tier": "if-relevant"
     },
     {
       "id": "22909",
@@ -4177,7 +4444,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:45:48+00:00"
+      "updatedAt": "2026-10-15T19:38:28+00:00",
+      "reach": "niche",
+      "rating": -11.255,
+      "tier": "low-priority"
     },
     {
       "id": "8171",
@@ -4222,7 +4492,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:47:41+00:00"
+      "updatedAt": "2026-10-15T19:39:10+00:00",
+      "reach": "broad",
+      "rating": 7.737,
+      "tier": "must-watch"
     },
     {
       "id": "19733",
@@ -4267,7 +4540,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:48:32+00:00"
+      "updatedAt": "2026-10-15T19:38:45+00:00",
+      "reach": "segment",
+      "rating": 3.404,
+      "tier": "recommended"
     },
     {
       "id": "4051",
@@ -4302,9 +4578,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/QQcsZNf0eWs.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/security-trust-compliance/4051-cracking-compliance-the-eu-cyber-resilience-act.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 2,
         "depth": 2,
@@ -4312,7 +4588,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:47:58+00:00"
+      "updatedAt": "2026-10-15T19:42:09+00:00",
+      "reach": "segment",
+      "rating": 1.646,
+      "tier": "if-relevant"
     },
     {
       "id": "7008",
@@ -4357,7 +4636,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:50:51+00:00"
+      "updatedAt": "2026-10-16T13:15:05+00:00",
+      "reach": "broad",
+      "rating": -1.15,
+      "tier": "low-priority"
     },
     {
       "id": "8166",
@@ -4403,7 +4685,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:00:16+00:00"
+      "updatedAt": "2026-10-15T19:52:40+00:00",
+      "reach": "broad",
+      "rating": 0.683,
+      "tier": "if-relevant"
     },
     {
       "id": "4097",
@@ -4438,17 +4723,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/mOmuF5fDiUM.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/cloud-native-data-infrastructure/4097-pragmatic-multi-cloud-architecture-designing-for-resilience.md",
       "slides": "https://speakerdeck.com/alexandretouret/dvxpl26-pragmatic-multi-cloud-architecture-designing-for-resilience-and-portability-beyond-the-hype",
-      "verdict": 5,
+      "verdict": 6,
       "scores": {
         "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
-        "depth": 1,
+        "depth": 2,
         "reusable": 1
       },
       "attempts": 2,
       "error": null,
-      "updatedAt": "2026-10-15T03:01:31+00:00"
+      "updatedAt": "2026-10-15T19:57:03+00:00",
+      "reach": "segment",
+      "rating": -1.718,
+      "tier": "low-priority"
     },
     {
       "id": "21666",
@@ -4494,7 +4782,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:59:35+00:00"
+      "updatedAt": "2026-10-15T19:53:57+00:00",
+      "reach": "niche",
+      "rating": -5.097,
+      "tier": "low-priority"
     },
     {
       "id": "22942",
@@ -4539,7 +4830,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:01:12+00:00"
+      "updatedAt": "2026-10-15T19:55:11+00:00",
+      "reach": "broad",
+      "rating": 1.233,
+      "tier": "if-relevant"
     },
     {
       "id": "4086",
@@ -4585,7 +4879,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T21:57:26+00:00"
+      "updatedAt": "2026-10-15T19:54:21+00:00",
+      "reach": "segment",
+      "rating": -0.422,
+      "tier": "if-relevant"
     },
     {
       "id": "31453",
@@ -4620,9 +4917,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/BOcNjR2lBus.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/31453-architecture-observability-and-guardrails.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 1,
@@ -4630,7 +4927,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:11:12+00:00"
+      "updatedAt": "2026-10-15T19:56:24+00:00",
+      "reach": "segment",
+      "rating": 0.786,
+      "tier": "if-relevant"
     },
     {
       "id": "49252",
@@ -4665,9 +4965,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/vhDwy1eCXbs.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/49252-big-runtimes-make-efficient-programs.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 2,
         "depth": 2,
@@ -4675,7 +4975,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:08:02+00:00"
+      "updatedAt": "2026-10-15T19:53:37+00:00",
+      "reach": "broad",
+      "rating": 3.713,
+      "tier": "recommended"
     },
     {
       "id": "19730",
@@ -4712,17 +5015,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/HO5CpETzywk.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/19730-building-llm-inference-engines-in-java-with-tornadovm-and.md",
       "slides": null,
-      "verdict": 10,
+      "verdict": 8,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 2,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:09:30+00:00"
+      "updatedAt": "2026-10-15T20:10:21+00:00",
+      "reach": "niche",
+      "rating": -3.928,
+      "tier": "low-priority"
     },
     {
       "id": "50107",
@@ -4767,7 +5073,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:09:13+00:00"
+      "updatedAt": "2026-10-15T20:00:53+00:00",
+      "reach": "segment",
+      "rating": -0.916,
+      "tier": "low-priority"
     },
     {
       "id": "17791",
@@ -4812,7 +5121,10 @@
       },
       "attempts": 2,
       "error": null,
-      "updatedAt": "2026-10-15T09:07:57+00:00"
+      "updatedAt": "2026-10-15T20:10:38+00:00",
+      "reach": "segment",
+      "rating": 3.02,
+      "tier": "recommended"
     },
     {
       "id": "24212",
@@ -4847,9 +5159,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/OLQ98Ko4p3Q.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/development-practices/24212-graalvm-next-layers-crema-and-webassembly-in-action.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 2,
         "depth": 1,
@@ -4857,7 +5169,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:19:27+00:00"
+      "updatedAt": "2026-10-15T20:13:11+00:00",
+      "reach": "segment",
+      "rating": -0.612,
+      "tier": "if-relevant"
     },
     {
       "id": "11562",
@@ -4902,7 +5217,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:21:34+00:00"
+      "updatedAt": "2026-10-15T20:09:00+00:00",
+      "reach": "segment",
+      "rating": -2.994,
+      "tier": "low-priority"
     },
     {
       "id": "10802",
@@ -4935,7 +5253,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:07+00:00"
+      "updatedAt": "2026-10-14T09:44:07+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "16401",
@@ -4980,7 +5300,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:21:49+00:00"
+      "updatedAt": "2026-10-15T20:05:35+00:00",
+      "reach": "niche",
+      "rating": -5.815,
+      "tier": "low-priority"
     },
     {
       "id": "19713",
@@ -5025,7 +5348,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:28:16+00:00"
+      "updatedAt": "2026-10-15T20:15:21+00:00",
+      "reach": "segment",
+      "rating": 0.425,
+      "tier": "if-relevant"
     },
     {
       "id": "17759",
@@ -5070,7 +5396,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:36:46+00:00"
+      "updatedAt": "2026-10-15T20:06:57+00:00",
+      "reach": "segment",
+      "rating": 0.408,
+      "tier": "if-relevant"
     },
     {
       "id": "16426",
@@ -5115,7 +5444,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:38:09+00:00"
+      "updatedAt": "2026-10-15T20:12:22+00:00",
+      "reach": "segment",
+      "rating": 0.887,
+      "tier": "if-relevant"
     },
     {
       "id": "5510",
@@ -5161,7 +5493,10 @@
       },
       "attempts": 2,
       "error": null,
-      "updatedAt": "2026-10-15T09:38:47+00:00"
+      "updatedAt": "2026-10-15T20:18:06+00:00",
+      "reach": "segment",
+      "rating": 5.099,
+      "tier": "recommended"
     },
     {
       "id": "14463",
@@ -5207,7 +5542,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:39:14+00:00"
+      "updatedAt": "2026-10-15T20:23:38+00:00",
+      "reach": "segment",
+      "rating": 4.066,
+      "tier": "recommended"
     },
     {
       "id": "9046",
@@ -5252,7 +5590,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:35:05+00:00"
+      "updatedAt": "2026-10-15T20:19:21+00:00",
+      "reach": "broad",
+      "rating": -1.555,
+      "tier": "low-priority"
     },
     {
       "id": "19707",
@@ -5285,7 +5626,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "24206",
@@ -5320,7 +5663,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "11556",
@@ -5355,17 +5700,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/0A2jqCqSIjg.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/development-practices/11556-223-pull-requests-in-11-days-the-recipe-for-building-real.md",
       "slides": "https://www.julien-dubois.com/conferences/building-with-ai-agents/index-en.html",
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
         "novelty": 2,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:48:50+00:00"
+      "updatedAt": "2026-10-15T20:18:55+00:00",
+      "reach": "broad",
+      "rating": 4.692,
+      "tier": "recommended"
     },
     {
       "id": "5503",
@@ -5411,7 +5759,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:47:30+00:00"
+      "updatedAt": "2026-10-15T20:21:18+00:00",
+      "reach": "broad",
+      "rating": 3.696,
+      "tier": "recommended"
     },
     {
       "id": "16414",
@@ -5456,7 +5807,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:53:13+00:00"
+      "updatedAt": "2026-10-15T20:18:03+00:00",
+      "reach": "broad",
+      "rating": 3.305,
+      "tier": "recommended"
     },
     {
       "id": "25048",
@@ -5491,9 +5845,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/fszyRIZXjQM.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/cloud-native-data-infrastructure/25048-java-on-kubernetes-without-container-images-the-webassembly.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 8,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 2,
@@ -5501,7 +5855,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:45:51+00:00"
+      "updatedAt": "2026-10-15T20:21:05+00:00",
+      "reach": "segment",
+      "rating": -0.232,
+      "tier": "if-relevant"
     },
     {
       "id": "23527",
@@ -5536,17 +5893,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/JWFZY0aJTjg.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/23527-project-detroit-from-foreign-libraries-to-foreign-language.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 8,
       "scores": {
         "novelty": 2,
         "demonstrated": 2,
         "measured": 1,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:50:15+00:00"
+      "updatedAt": "2026-10-15T20:25:29+00:00",
+      "reach": "segment",
+      "rating": -1.029,
+      "tier": "low-priority"
     },
     {
       "id": "9023",
@@ -5592,7 +5952,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:01:40+00:00"
+      "updatedAt": "2026-10-15T20:27:47+00:00",
+      "reach": "segment",
+      "rating": -4.257,
+      "tier": "low-priority"
     },
     {
       "id": "19748",
@@ -5627,9 +5990,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/LD2tKMpToYg.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/mind-the-geek/19748-snake-in-10-lines-learning-more-by-coding-less.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 2,
@@ -5637,7 +6000,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:00:16+00:00"
+      "updatedAt": "2026-10-15T20:23:23+00:00",
+      "reach": "segment",
+      "rating": -3.14,
+      "tier": "low-priority"
     },
     {
       "id": "9035",
@@ -5682,7 +6048,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:04:00+00:00"
+      "updatedAt": "2026-10-15T20:26:50+00:00",
+      "reach": "broad",
+      "rating": 5.292,
+      "tier": "recommended"
     },
     {
       "id": "9032",
@@ -5715,7 +6084,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:07+00:00"
+      "updatedAt": "2026-10-14T09:44:07+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "14457",
@@ -5760,7 +6131,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T22:59:59+00:00"
+      "updatedAt": "2026-10-15T20:25:07+00:00",
+      "reach": "segment",
+      "rating": -0.187,
+      "tier": "if-relevant"
     },
     {
       "id": "5541",
@@ -5805,7 +6179,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:00:35+00:00"
+      "updatedAt": "2026-10-15T20:26:56+00:00",
+      "reach": "niche",
+      "rating": -11.25,
+      "tier": "low-priority"
     },
     {
       "id": "52102",
@@ -5850,7 +6227,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:10:51+00:00"
+      "updatedAt": "2026-10-15T20:26:06+00:00",
+      "reach": "segment",
+      "rating": -0.168,
+      "tier": "if-relevant"
     },
     {
       "id": "22947",
@@ -5885,17 +6265,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/8NURE3I4AJQ.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/22947-high-performance-java-native-ai-with-cuda-and-the-vector-api.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 5,
       "scores": {
-        "novelty": 2,
-        "demonstrated": 1,
+        "novelty": 1,
+        "demonstrated": 0,
         "measured": 1,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:17:36+00:00"
+      "updatedAt": "2026-10-15T20:30:39+00:00",
+      "reach": "niche",
+      "rating": -9.345,
+      "tier": "low-priority"
     },
     {
       "id": "8169",
@@ -5940,7 +6323,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:15:38+00:00"
+      "updatedAt": "2026-10-15T20:30:51+00:00",
+      "reach": "broad",
+      "rating": 0.045,
+      "tier": "if-relevant"
     },
     {
       "id": "21657",
@@ -5975,17 +6361,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/0-1IGpVrFLQ.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/21657-reflect-transform-accelerate-bringing-gpu-computing-to-java.md",
       "slides": null,
-      "verdict": 10,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
-        "demonstrated": 2,
+        "novelty": 1,
+        "demonstrated": 1,
         "measured": 2,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:12:51+00:00"
+      "updatedAt": "2026-10-15T20:35:29+00:00",
+      "reach": "niche",
+      "rating": -7.354,
+      "tier": "low-priority"
     },
     {
       "id": "22905",
@@ -6030,7 +6419,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:14:14+00:00"
+      "updatedAt": "2026-10-15T20:33:15+00:00",
+      "reach": "segment",
+      "rating": 9.985,
+      "tier": "must-watch"
     },
     {
       "id": "24245",
@@ -6075,7 +6467,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:25:06+00:00"
+      "updatedAt": "2026-10-15T20:37:51+00:00",
+      "reach": "segment",
+      "rating": 1.595,
+      "tier": "if-relevant"
     },
     {
       "id": "14452",
@@ -6110,17 +6505,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/S7x4DxwRnk4.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/14452-quixotic-pure-java-inference-at-native-speed.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 2,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:27:27+00:00"
+      "updatedAt": "2026-10-15T20:36:00+00:00",
+      "reach": "niche",
+      "rating": -2.75,
+      "tier": "low-priority"
     },
     {
       "id": "17556",
@@ -6155,9 +6553,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/adFS-_sCTQ4.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/cloud-native-data-infrastructure/17556-simd-for-java-how-elasticsearch-already-benefits-from-the.md",
       "slides": "https://przybyl.org/pres/SIMD4Java/DevoxxBE.html",
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 2,
@@ -6165,7 +6563,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:26:59+00:00"
+      "updatedAt": "2026-10-15T20:48:22+00:00",
+      "reach": "niche",
+      "rating": -4.25,
+      "tier": "low-priority"
     },
     {
       "id": "16443",
@@ -6210,7 +6611,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:24:28+00:00"
+      "updatedAt": "2026-10-15T20:36:27+00:00",
+      "reach": "segment",
+      "rating": 2.234,
+      "tier": "if-relevant"
     },
     {
       "id": "25671",
@@ -6255,7 +6659,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:27:27+00:00"
+      "updatedAt": "2026-10-15T20:42:04+00:00",
+      "reach": "broad",
+      "rating": 5.771,
+      "tier": "recommended"
     },
     {
       "id": "8153",
@@ -6300,7 +6707,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:35:12+00:00"
+      "updatedAt": "2026-10-15T20:34:59+00:00",
+      "reach": "broad",
+      "rating": 2.792,
+      "tier": "recommended"
     },
     {
       "id": "21671",
@@ -6345,7 +6755,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:34:29+00:00"
+      "updatedAt": "2026-10-15T20:53:27+00:00",
+      "reach": "segment",
+      "rating": 0.965,
+      "tier": "if-relevant"
     },
     {
       "id": "23543",
@@ -6380,17 +6793,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/rNOzf12RORI.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/23543-the-yearly-java-performance-update-for-2026.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
         "novelty": 1,
         "demonstrated": 1,
-        "measured": 2,
+        "measured": 1,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:37:17+00:00"
+      "updatedAt": "2026-10-15T20:42:30+00:00",
+      "reach": "broad",
+      "rating": 1.988,
+      "tier": "if-relevant"
     },
     {
       "id": "41302",
@@ -6436,7 +6852,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:39:39+00:00"
+      "updatedAt": "2026-10-15T20:47:40+00:00",
+      "reach": "niche",
+      "rating": -1.985,
+      "tier": "low-priority"
     },
     {
       "id": "44601",
@@ -6481,7 +6900,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:34:55+00:00"
+      "updatedAt": "2026-10-15T20:49:18+00:00",
+      "reach": "segment",
+      "rating": 0.403,
+      "tier": "if-relevant"
     },
     {
       "id": "50104",
@@ -6526,7 +6948,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:47:50+00:00"
+      "updatedAt": "2026-10-15T20:49:12+00:00",
+      "reach": "segment",
+      "rating": -1.111,
+      "tier": "low-priority"
     },
     {
       "id": "24244",
@@ -6571,7 +6996,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:47:41+00:00"
+      "updatedAt": "2026-10-15T20:46:43+00:00",
+      "reach": "segment",
+      "rating": 1.925,
+      "tier": "if-relevant"
     },
     {
       "id": "17782",
@@ -6616,7 +7044,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:49:23+00:00"
+      "updatedAt": "2026-10-15T20:54:08+00:00",
+      "reach": "broad",
+      "rating": -3.058,
+      "tier": "low-priority"
     },
     {
       "id": "50109",
@@ -6649,7 +7080,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:07+00:00"
+      "updatedAt": "2026-10-14T09:44:07+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "52103",
@@ -6694,7 +7127,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:47:56+00:00"
+      "updatedAt": "2026-10-15T20:52:41+00:00",
+      "reach": "segment",
+      "rating": -2.825,
+      "tier": "low-priority"
     },
     {
       "id": "7020",
@@ -6739,7 +7175,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:47:35+00:00"
+      "updatedAt": "2026-10-15T20:52:18+00:00",
+      "reach": "segment",
+      "rating": -2.234,
+      "tier": "low-priority"
     },
     {
       "id": "23536",
@@ -6779,17 +7218,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/ewCPBgOrLAE.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/23536-ask-the-architects.md",
       "slides": null,
-      "verdict": 6,
+      "verdict": 7,
       "scores": {
         "novelty": 2,
         "demonstrated": 1,
         "measured": 1,
-        "depth": 1,
+        "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:55:28+00:00"
+      "updatedAt": "2026-10-15T21:04:12+00:00",
+      "reach": "broad",
+      "rating": 1.55,
+      "tier": "if-relevant"
     },
     {
       "id": "50105",
@@ -6825,17 +7267,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/OCCOIgkCnjE.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/50105-building-shipping-and-governing-ai-agents-on-kubernetes.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
         "novelty": 1,
         "demonstrated": 2,
         "measured": 2,
         "depth": 1,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:58:47+00:00"
+      "updatedAt": "2026-10-15T21:01:12+00:00",
+      "reach": "niche",
+      "rating": -2.869,
+      "tier": "low-priority"
     },
     {
       "id": "24218",
@@ -6870,17 +7315,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/wbzpP0T9w6I.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/mind-the-geek/24218-conquest-time-travel-and-explosions-using-git.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:59:49+00:00"
+      "updatedAt": "2026-10-15T20:56:37+00:00",
+      "reach": "broad",
+      "rating": 2.329,
+      "tier": "if-relevant"
     },
     {
       "id": "23522",
@@ -6915,17 +7363,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/6mzvcPr30kg.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/cloud-native-data-infrastructure/23522-hardwood-building-a-parquet-parser-from-scratch-with-a.md",
       "slides": "https://speakerdeck.com/gunnarmorling/hardwood-building-a-parquet-library-from-scratch-with-a-little-help-from-ai-devoxx-belgium-2026",
-      "verdict": 9,
+      "verdict": 8,
       "scores": {
         "novelty": 2,
         "demonstrated": 1,
         "measured": 2,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:58:06+00:00"
+      "updatedAt": "2026-10-15T20:56:49+00:00",
+      "reach": "segment",
+      "rating": -0.811,
+      "tier": "low-priority"
     },
     {
       "id": "22916",
@@ -6970,7 +7421,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T23:57:23+00:00"
+      "updatedAt": "2026-10-15T20:59:40+00:00",
+      "reach": "segment",
+      "rating": -0.209,
+      "tier": "if-relevant"
     },
     {
       "id": "19706",
@@ -7015,7 +7469,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:16:16+00:00"
+      "updatedAt": "2026-10-15T21:00:02+00:00",
+      "reach": "broad",
+      "rating": 2.998,
+      "tier": "recommended"
     },
     {
       "id": "5502",
@@ -7060,7 +7517,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:11:11+00:00"
+      "updatedAt": "2026-10-15T20:59:43+00:00",
+      "reach": "segment",
+      "rating": -0.927,
+      "tier": "low-priority"
     },
     {
       "id": "8186",
@@ -7105,7 +7565,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:07:38+00:00"
+      "updatedAt": "2026-10-15T21:08:11+00:00",
+      "reach": "broad",
+      "rating": 2.31,
+      "tier": "if-relevant"
     },
     {
       "id": "24202",
@@ -7140,17 +7603,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/3bIiAoYtAPs.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/cloud-native-data-infrastructure/24202-beyond-the-pod-architecting-and-scaling-ai-agents-on.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:07:49+00:00"
+      "updatedAt": "2026-10-15T21:02:16+00:00",
+      "reach": "niche",
+      "rating": -4.238,
+      "tier": "low-priority"
     },
     {
       "id": "27453",
@@ -7185,17 +7651,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/rv2KpWgb0Mw.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/27453-build-a-private-cluster-for-the-office.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
         "novelty": 2,
-        "demonstrated": 1,
+        "demonstrated": 0,
         "measured": 2,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:28:29+00:00"
+      "updatedAt": "2026-10-15T21:10:45+00:00",
+      "reach": "segment",
+      "rating": -1.931,
+      "tier": "low-priority"
     },
     {
       "id": "16444",
@@ -7231,9 +7700,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/zo6L7bxn4OY.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/16444-faster-development-with-java-python-and-micronaut.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 1,
@@ -7241,7 +7710,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:40:18+00:00"
+      "updatedAt": "2026-10-15T21:09:17+00:00",
+      "reach": "segment",
+      "rating": -1.254,
+      "tier": "low-priority"
     },
     {
       "id": "5530",
@@ -7286,7 +7758,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:36:18+00:00"
+      "updatedAt": "2026-10-15T21:07:36+00:00",
+      "reach": "broad",
+      "rating": -0.178,
+      "tier": "if-relevant"
     },
     {
       "id": "49255",
@@ -7322,9 +7797,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/FvVe9J0Abjg.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/49255-modernizing-legacy-code-with-ai-hands-on-examples-lessons.md",
       "slides": null,
-      "verdict": 5,
+      "verdict": 6,
       "scores": {
-        "novelty": 1,
+        "novelty": 2,
         "demonstrated": 1,
         "measured": 0,
         "depth": 2,
@@ -7332,7 +7807,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:36:37+00:00"
+      "updatedAt": "2026-10-15T21:10:57+00:00",
+      "reach": "broad",
+      "rating": 2.732,
+      "tier": "recommended"
     },
     {
       "id": "10031",
@@ -7367,17 +7845,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/2Yh7LKt8YNw.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/mind-the-geek/10031-the-dark-secrets-of-computer-science.md",
       "slides": null,
-      "verdict": 4,
+      "verdict": 5,
       "scores": {
         "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
         "depth": 1,
-        "reusable": 0
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:38:51+00:00"
+      "updatedAt": "2026-10-15T21:08:47+00:00",
+      "reach": "broad",
+      "rating": -2.826,
+      "tier": "low-priority"
     },
     {
       "id": "5549",
@@ -7412,9 +7893,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/wJ7R4qkVs8Y.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/security-trust-compliance/5549-underneath-the-black-marker-ai-techniques-for-detecting-and.md",
       "slides": "https://github.com/davidvonthenen/2026-devoxx-belgium/blob/main/Underneath_the_Black_Marker_AI_Techniques_for_Detecting_and_Reversing_Redactions.pdf",
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 1,
         "depth": 1,
@@ -7422,7 +7903,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:37:04+00:00"
+      "updatedAt": "2026-10-15T21:10:33+00:00",
+      "reach": "segment",
+      "rating": -1.378,
+      "tier": "low-priority"
     },
     {
       "id": "22932",
@@ -7458,17 +7942,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/hHu3rLsbYog.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/22932-why-java-is-perfect-for-ai-just-not-the-ai-youre-thinking-of.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 0,
-        "measured": 1,
+        "measured": 2,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:49:47+00:00"
+      "updatedAt": "2026-10-15T21:14:21+00:00",
+      "reach": "segment",
+      "rating": 0.67,
+      "tier": "if-relevant"
     },
     {
       "id": "49256",
@@ -7513,7 +8000,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:47:59+00:00"
+      "updatedAt": "2026-10-15T21:15:52+00:00",
+      "reach": "broad",
+      "rating": -0.709,
+      "tier": "if-relevant"
     },
     {
       "id": "19708",
@@ -7558,7 +8048,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:51:35+00:00"
+      "updatedAt": "2026-10-15T21:18:37+00:00",
+      "reach": "segment",
+      "rating": 1.893,
+      "tier": "if-relevant"
     },
     {
       "id": "23539",
@@ -7604,7 +8097,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:52:43+00:00"
+      "updatedAt": "2026-10-15T21:36:40+00:00",
+      "reach": "broad",
+      "rating": -0.241,
+      "tier": "if-relevant"
     },
     {
       "id": "25661",
@@ -7639,17 +8135,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/KwQ76IvU59M.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/25661-introducing-agent-control-theory-the-system-runs-the-model.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 2,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:48:51+00:00"
+      "updatedAt": "2026-10-15T21:24:03+00:00",
+      "reach": "broad",
+      "rating": 3.394,
+      "tier": "recommended"
     },
     {
       "id": "12758",
@@ -7694,7 +8193,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:59:53+00:00"
+      "updatedAt": "2026-10-15T21:15:32+00:00",
+      "reach": "broad",
+      "rating": 0.785,
+      "tier": "if-relevant"
     },
     {
       "id": "12751",
@@ -7739,7 +8241,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T00:59:28+00:00"
+      "updatedAt": "2026-10-15T21:17:21+00:00",
+      "reach": "broad",
+      "rating": 2.296,
+      "tier": "if-relevant"
     },
     {
       "id": "25042",
@@ -7784,7 +8289,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:03:39+00:00"
+      "updatedAt": "2026-10-15T21:20:17+00:00",
+      "reach": "broad",
+      "rating": 1.997,
+      "tier": "if-relevant"
     },
     {
       "id": "41301",
@@ -7830,7 +8338,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:04:45+00:00"
+      "updatedAt": "2026-10-15T21:25:05+00:00",
+      "reach": "segment",
+      "rating": 0.796,
+      "tier": "if-relevant"
     },
     {
       "id": "9017",
@@ -7865,17 +8376,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/kaT6UpLrzhU.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/9017-ai-in-the-dark-running-llms-in-air-gapped-production.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
         "novelty": 1,
         "demonstrated": 2,
-        "measured": 1,
+        "measured": 0,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:01:59+00:00"
+      "updatedAt": "2026-10-15T21:24:42+00:00",
+      "reach": "segment",
+      "rating": -0.366,
+      "tier": "if-relevant"
     },
     {
       "id": "14459",
@@ -7921,7 +8435,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:13:08+00:00"
+      "updatedAt": "2026-10-15T21:24:43+00:00",
+      "reach": "segment",
+      "rating": 7.096,
+      "tier": "must-watch"
     },
     {
       "id": "22946",
@@ -7966,7 +8483,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:11:55+00:00"
+      "updatedAt": "2026-10-15T21:25:56+00:00",
+      "reach": "niche",
+      "rating": -6.478,
+      "tier": "low-priority"
     },
     {
       "id": "9029",
@@ -8011,7 +8531,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:12:09+00:00"
+      "updatedAt": "2026-10-15T21:29:09+00:00",
+      "reach": "niche",
+      "rating": -1.907,
+      "tier": "low-priority"
     },
     {
       "id": "4090",
@@ -8046,9 +8569,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/sWP9osLV45I.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/people-practices-career/4090-help-i-hate-my-team-mate.md",
       "slides": null,
-      "verdict": 6,
+      "verdict": 7,
       "scores": {
-        "novelty": 1,
+        "novelty": 2,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
@@ -8056,7 +8579,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:11:08+00:00"
+      "updatedAt": "2026-10-15T21:31:26+00:00",
+      "reach": "broad",
+      "rating": 2.712,
+      "tier": "if-relevant"
     },
     {
       "id": "51601",
@@ -8101,7 +8627,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:15:41+00:00"
+      "updatedAt": "2026-10-15T21:38:36+00:00",
+      "reach": "broad",
+      "rating": 5.384,
+      "tier": "recommended"
     },
     {
       "id": "7035",
@@ -8136,17 +8665,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/PGpKfdXZrpc.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/development-practices/7035-their-api-went-down-so-why-is-my-app-on-fire.md",
       "slides": "https://speakerdeck.com/inesp/their-api-went-down-so-why-is-my-app-on-fire",
-      "verdict": 6,
+      "verdict": 5,
       "scores": {
         "novelty": 2,
         "demonstrated": 0,
-        "measured": 1,
+        "measured": 0,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:28:06+00:00"
+      "updatedAt": "2026-10-15T21:33:40+00:00",
+      "reach": "broad",
+      "rating": 1.277,
+      "tier": "if-relevant"
     },
     {
       "id": "8167",
@@ -8179,7 +8711,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "10043",
@@ -8212,7 +8746,9 @@
       "scores": null,
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-14T09:44:02+00:00"
+      "updatedAt": "2026-10-14T09:44:02+00:00",
+      "rating": null,
+      "tier": null
     },
     {
       "id": "49751",
@@ -8247,9 +8783,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/wUyQmRriCng.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/49751-f-ck-the-system-and-other-bad-ideas-for-the-future.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 2,
         "depth": 2,
@@ -8257,7 +8793,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:22:33+00:00"
+      "updatedAt": "2026-10-15T21:38:59+00:00",
+      "reach": "segment",
+      "rating": -3.273,
+      "tier": "low-priority"
     },
     {
       "id": "21675",
@@ -8302,7 +8841,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:25:50+00:00"
+      "updatedAt": "2026-10-15T21:34:22+00:00",
+      "reach": "broad",
+      "rating": 0.148,
+      "tier": "if-relevant"
     },
     {
       "id": "17794",
@@ -8338,9 +8880,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/lUB15M3mMLs.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/17794-escaping-java-s-allocation-gravity-with-value-classes.md",
       "slides": "https://github.com/CodeSimcoe/blackhole-devoxx",
-      "verdict": 10,
+      "verdict": 9,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 2,
         "measured": 2,
         "depth": 2,
@@ -8348,7 +8890,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:23:17+00:00"
+      "updatedAt": "2026-10-15T21:42:58+00:00",
+      "reach": "broad",
+      "rating": 4.571,
+      "tier": "recommended"
     },
     {
       "id": "52104",
@@ -8383,17 +8928,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/jhvT8hVYSvQ.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/52104-in-the-loop-not-in-the-dark-staying-in-control-in-the-era-of.md",
       "slides": null,
-      "verdict": 9,
+      "verdict": 8,
       "scores": {
         "novelty": 2,
         "demonstrated": 2,
         "measured": 1,
         "depth": 2,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:23:48+00:00"
+      "updatedAt": "2026-10-15T21:42:23+00:00",
+      "reach": "niche",
+      "rating": -1.302,
+      "tier": "low-priority"
     },
     {
       "id": "9025",
@@ -8438,7 +8986,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:34:01+00:00"
+      "updatedAt": "2026-10-15T21:40:19+00:00",
+      "reach": "broad",
+      "rating": -0.893,
+      "tier": "low-priority"
     },
     {
       "id": "21694",
@@ -8483,7 +9034,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:37:59+00:00"
+      "updatedAt": "2026-10-15T21:43:06+00:00",
+      "reach": "broad",
+      "rating": 1.341,
+      "tier": "if-relevant"
     },
     {
       "id": "16408",
@@ -8528,7 +9082,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:35:57+00:00"
+      "updatedAt": "2026-10-15T21:46:56+00:00",
+      "reach": "segment",
+      "rating": 1.745,
+      "tier": "if-relevant"
     },
     {
       "id": "49257",
@@ -8563,9 +9120,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/DniA37kVfvI.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/agentic-engineering-tooling/49257-embabel-agent-v1-5.md",
       "slides": null,
-      "verdict": 8,
+      "verdict": 7,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
@@ -8573,7 +9130,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:34:22+00:00"
+      "updatedAt": "2026-10-15T21:47:33+00:00",
+      "reach": "segment",
+      "rating": 0.291,
+      "tier": "if-relevant"
     },
     {
       "id": "15359",
@@ -8618,7 +9178,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:35:23+00:00"
+      "updatedAt": "2026-10-15T21:50:55+00:00",
+      "reach": "broad",
+      "rating": 1.459,
+      "tier": "if-relevant"
     },
     {
       "id": "21655",
@@ -8653,9 +9216,9 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/Go76-9Q51wU.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/21655-whats-happening-with-project-amber.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
-        "novelty": 2,
+        "novelty": 1,
         "demonstrated": 1,
         "measured": 1,
         "depth": 2,
@@ -8663,7 +9226,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:45:57+00:00"
+      "updatedAt": "2026-10-15T21:52:17+00:00",
+      "reach": "broad",
+      "rating": 0.077,
+      "tier": "if-relevant"
     },
     {
       "id": "10023",
@@ -8709,7 +9275,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:50:01+00:00"
+      "updatedAt": "2026-10-15T21:45:20+00:00",
+      "reach": "broad",
+      "rating": 7.501,
+      "tier": "must-watch"
     },
     {
       "id": "21687",
@@ -8754,7 +9323,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:45:13+00:00"
+      "updatedAt": "2026-10-15T21:47:54+00:00",
+      "reach": "broad",
+      "rating": 6.297,
+      "tier": "recommended"
     },
     {
       "id": "52101",
@@ -8789,17 +9361,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/ufhs9THbYZI.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/java-language-platform/52101-java-next-from-valhalla-to-leyden-from-babylon-to-panama.md",
       "slides": "https://slides.nipafx.dev/java-next/2026-10-09-devoxx-be/",
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
         "novelty": 1,
-        "demonstrated": 1,
+        "demonstrated": 0,
         "measured": 2,
         "depth": 2,
         "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:48:29+00:00"
+      "updatedAt": "2026-10-15T21:49:02+00:00",
+      "reach": "broad",
+      "rating": 1.717,
+      "tier": "if-relevant"
     },
     {
       "id": "9036",
@@ -8845,7 +9420,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:49:40+00:00"
+      "updatedAt": "2026-10-15T21:54:34+00:00",
+      "reach": "niche",
+      "rating": -7.836,
+      "tier": "low-priority"
     },
     {
       "id": "5538",
@@ -8890,7 +9468,10 @@
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:57:54+00:00"
+      "updatedAt": "2026-10-15T21:53:01+00:00",
+      "reach": "broad",
+      "rating": 0.604,
+      "tier": "if-relevant"
     },
     {
       "id": "23531",
@@ -8925,17 +9506,20 @@
       "transcriptPath": "conferences/devoxx-be-2026/transcripts/niBYuCuViGw.txt",
       "summaryPath": "conferences/devoxx-be-2026/summaries/development-practices/23531-we-created-our-own-ai-orchestrator-and-it-became-so-much.md",
       "slides": null,
-      "verdict": 7,
+      "verdict": 6,
       "scores": {
         "novelty": 2,
         "demonstrated": 1,
         "measured": 1,
         "depth": 1,
-        "reusable": 2
+        "reusable": 1
       },
       "attempts": 0,
       "error": null,
-      "updatedAt": "2026-10-15T01:58:42+00:00"
+      "updatedAt": "2026-10-15T22:02:17+00:00",
+      "reach": "broad",
+      "rating": 1.854,
+      "tier": "if-relevant"
     }
   ]
 }

@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=W-OKVLMtPAw
 durationMin: 51
 slides: null
 verdict: 8
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -73,33 +74,33 @@ The finale applies the same identity stack to AI agents. Garnier-Moiroux turns a
 Spring developers who secure web apps and want a beginner-friendly tour from password hashing to OAuth2, BFF gateways, and MCP security in one sitting. Skip it if you already run Spring Authorization Server with passkeys and token relay in production; the segments stay introductory and point to the speakers' longer talks for internals.
 
 ## Verdict
-**8/10**: every flow is live-coded end to end and works with a clear reason for each step, but the setup follows documented Spring Security features and the figures are unmeasured estimates.
+**8/10**: completed authentication, gateway and agent flows come with beginner-level explanations and reproducible demo code, while the synthesis illustrates known features and the performance figures lack a measurement method.
+
+**Reach segment**: Spring Boot users securing web applications can apply the password, passkey, OAuth2, gateway and MCP examples in their own services.
 
 **Novelty 1/2**
 
-- **+** [25:46](https://youtu.be/W-OKVLMtPAw?t=1546) The MFA authors explain their design: the second factor is required before the role check so users cannot guess the rules, and rejections carry hints so an app can show different pages.
-- **+** [45:56](https://youtu.be/W-OKVLMtPAw?t=2756) Securing a Spring AI MCP server with OAuth2 and driving it from Claude Code brings the identity stack to agents, beyond the usual web-app scope.
-- **−** Spring Security reference documentation and the Spring Authorization Server getting-started guide: password encoders, one-time tokens, WebAuthn and the resource-server setup follow the documented path.
+- **+** [45:56](https://youtu.be/W-OKVLMtPAw?t=2756) Bringing passwordless web login, centralized OAuth2 identity, browser gateways and MCP agents into one progression connects material spread across several feature guides.
 
 **Demonstrated 2/2**
 
 - **+** [25:15](https://youtu.be/W-OKVLMtPAw?t=1515) The MFA escalation runs live: a non-admin passes both factors and is forbidden on `/admin`, then Rob the admin is challenged again and reaches the page.
-- **+** [44:55](https://youtu.be/W-OKVLMtPAw?t=2695) The gateway, SPA page and authorization-server redirect work on the first attempt ("boom, first try").
-- **+** [49:40](https://youtu.be/W-OKVLMtPAw?t=2980) Claude Code lists slots and books every-other-week classes through the OAuth2-secured MCP server, and the bookings appear in the app.
+- **+** [44:55](https://youtu.be/W-OKVLMtPAw?t=2695) The gateway, SPA page and authorization-server redirect work on the first attempt.
+- **+** [49:40](https://youtu.be/W-OKVLMtPAw?t=2980) Claude Code books every-other-week classes through the OAuth2-secured MCP server, and the bookings appear in the application.
 
 **Measured 1/2**
 
-- **+** [09:18](https://youtu.be/W-OKVLMtPAw?t=558) Bcrypt at work factor 10 is put at about 100 ms per check, which anchors the claim that slow login is by design.
-- **−** [08:47](https://youtu.be/W-OKVLMtPAw?t=527) SHA-256 is said to allow "billions of guesses per second" with no hardware, method or comparison figure, and the 100 ms for bcrypt is "probably", not timed on screen.
-- **−** [32:29](https://youtu.be/W-OKVLMtPAw?t=1949) Token validation is called "almost instantly" next to a 100 ms password check, but no measurement backs the contrast.
+- **+** [09:18](https://youtu.be/W-OKVLMtPAw?t=558) Bcrypt at work factor 10 is put at about 100 ms per check, anchoring the claim that slow login is by design.
+- **−** [08:47](https://youtu.be/W-OKVLMtPAw?t=527) SHA-256 is said to allow billions of guesses per second without a stated hardware setup or measurement method.
+- **−** [32:29](https://youtu.be/W-OKVLMtPAw?t=1949) Token validation is called almost instant compared with password checking, but no measurement backs the contrast.
 
 **Depth 2/2**
 
-- **+** [08:17](https://youtu.be/W-OKVLMtPAw?t=497) SHA-256, bcrypt and Argon2id are compared on attacker cost: hashing speed and memory-hardness decide resistance to brute force.
+- **+** [08:17](https://youtu.be/W-OKVLMtPAw?t=497) The password-hashing discussion explains why fast general-purpose hashes help attackers and why password hashing deliberately imposes computational cost.
 - **+** [15:58](https://youtu.be/W-OKVLMtPAw?t=958) One-time codes are weighed against passkeys on phishing resistance, with the argument that a code remains a shareable password.
-- **+** [40:50](https://youtu.be/W-OKVLMtPAw?t=2450) The BFF gateway choice follows the OAuth2 browser-app guidance: tokens stay in the backend so the SPA handles no credentials and meets no CORS problem.
+- **+** [40:50](https://youtu.be/W-OKVLMtPAw?t=2450) The BFF gateway choice follows the OAuth2 browser-app guidance: the backend holds tokens and relays authenticated requests for the SPA.
 
 **Reusable 2/2**
 
-- **+** [50:42](https://youtu.be/W-OKVLMtPAw?t=3042) The closing screen points to the demo repository with the session's modules and an extended edition with messaging, gRPC, desktop, MCP and CLI examples.
-- **+** [50:42](https://youtu.be/W-OKVLMtPAw?t=3042) The free Leanpub book "Secure All The Things!" on Spring Security is linked alongside the repositories for follow-up reading.
+- **+** [50:42](https://youtu.be/W-OKVLMtPAw?t=3042) The closing screen points to the session demo repository with the authentication, client, resource-server and gateway examples.
+- **+** [02:03](https://youtu.be/W-OKVLMtPAw?t=123) The speakers offer their free Spring Security book alongside the demo code for follow-up reading.

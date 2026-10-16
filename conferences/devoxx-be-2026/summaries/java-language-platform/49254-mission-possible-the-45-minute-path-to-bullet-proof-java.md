@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=1yndLHw9mbo
 durationMin: 43
 slides: null
-verdict: 6
+verdict: 5
+reach: broad
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Mission Possible: The 45-Minute Path to Bullet-Proof Java Container Images
@@ -86,29 +87,31 @@ Java developers who ship containers without knowing who maintains their base ima
 
 ## Verdict
 
-**6/10**: before/after scan numbers on one app and a triage-and-ownership model carry it, but nothing runs on screen and the checklist it points to covers only part of the five steps.
+**5/10**: a before/after scan on one app and a triage-and-ownership model carry it, but nothing runs on screen, the cost figures behind the ownership case have no method, and the checklist it points to covers only part of the five steps.
+
+**Reach broad**: most of the conference audience ships Java services in containers and can apply the image-hygiene and triage practices directly.
 
 **Novelty 1/2**
 
-- **+** [26:20](https://youtu.be/1yndLHw9mbo?t=1580) The Debian Bookworm zlib "will not fix" case, rechecked the day of the talk with upstream fix version and sources on the slide, grounds the ownership argument in a checked example.
-- **+** [31:38](https://youtu.be/1yndLHw9mbo?t=1898) A per-step onboarding and maintenance cost account from someone who builds hardened images turns the DIY-versus-vendor question into arithmetic.
+- **+** [10:04](https://youtu.be/1yndLHw9mbo?t=604) Zero unmanaged risk, every CVE fixed or accepted by a named owner with an expiry date, reframes the goal from chasing zero CVEs to owning every finding.
+- **+** [26:20](https://youtu.be/1yndLHw9mbo?t=1580) The Debian Bookworm zlib 1.2.13 "will not fix" case is a scan the speaker reran on the day of the talk, a worked example of upstream fixing what the distro still ships.
 - **−** The core practices (non-root user, dropped capabilities, multi-stage builds, minimal bases, signing) are the Docker security docs and CIS Docker Benchmark baseline.
 
 **Demonstrated 0/2**
 
 - **−** [03:44](https://youtu.be/1yndLHw9mbo?t=224) The 46-CVE scan result is reported on a slide; no scanner run appears on screen.
-- **−** [18:27](https://youtu.be/1yndLHw9mbo?t=1107) The 46-to-7 CVE and 1 GB-to-about-180 MB multi-stage improvement is stated, not built or scanned live.
+- **−** [17:56](https://youtu.be/1yndLHw9mbo?t=1076) The improved multi-stage Dockerfile is displayed on slides but never built on screen.
 - **−** [37:24](https://youtu.be/1yndLHw9mbo?t=2244) The zero-CVE hardened result is claimed on a slide with no visible verification run.
 
-**Measured 2/2**
+**Measured 1/2**
 
-- **+** [04:49](https://youtu.be/1yndLHw9mbo?t=289) The 46 CVEs come broken down by severity with base-versus-app attribution (42 base, 4 dependencies), and the same base image is later shown at 135.
-- **+** [18:27](https://youtu.be/1yndLHw9mbo?t=1107) The same app is compared before and after the Dockerfile change, both Dockerfiles on slides: 46 to 7 CVEs and 1 GB to about 180 MB.
+- **+** [18:27](https://youtu.be/1yndLHw9mbo?t=1107) The same app is compared before and after moving to a multi-stage JRE build: 46 to 7 CVEs and 1 GB to 200 MB.
 - **−** [08:01](https://youtu.be/1yndLHw9mbo?t=481) The 6% share of published CVEs exploited in the wild is restated as a 6% chance of being hacked with 100 CVEs in an image, which that figure does not give.
+- **−** [31:38](https://youtu.be/1yndLHw9mbo?t=1898) The per-step cost estimates (days for non-root and capabilities, a month of onboarding, many hours a week of maintenance) come from the speaker's experience with no data or method behind them.
 
 **Depth 2/2**
 
-- **+** [22:38](https://youtu.be/1yndLHw9mbo?t=1358) The escalate and de-escalate rules, motivated by Spring4Shell's 9.8 score being exploitable only as a WAR on standalone Tomcat, give a working model for adjusting CVSS with local context.
+- **+** [22:38](https://youtu.be/1yndLHw9mbo?t=1358) Escalate and de-escalate rules, motivated by Spring4Shell's 9.8 score applying only to WAR-packaged apps on standalone Tomcat, give a working model for adjusting CVSS with local context.
 - **+** [39:00](https://youtu.be/1yndLHw9mbo?t=2340) Pin-by-digest versus latest is weighed as tested builds against free patches, resolved by automating the update proposal.
 - **+** [27:53](https://youtu.be/1yndLHw9mbo?t=1673) The five-link patch lifecycle explains why fixes lag and why ownership needs an SLA.
 

@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=wzN6qq08w0U
 durationMin: 50
 slides: null
 verdict: 5
+reach: broad
 frames: 7
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -58,13 +59,15 @@ ADRs are immutable once decided; only the status and typos change afterward, bec
 Developers and architects on teams that keep rediscovering why old decisions were made, and anyone trying to introduce lightweight documentation without reviving big-design-up-front habits. Skip it if you already write and maintain ADRs routinely; the format and tenets will hold no surprises.
 
 ## Verdict
-**5/10**: A story-driven case for ADRs with tenets a team can adopt as policy, but the format and tenets are the standard ADR playbook and the how-to part is short and thinly reasoned.
+**5/10**: A story-driven case for ADRs with tenets a team can adopt as policy, but the format and tenets are the standard ADR playbook and the field-by-field walkthrough stays thin.
+
+**Reach broad**: Most of the audience makes or inherits technical decisions on backend teams, so a shared habit for recording them transfers across stacks and roles.
 
 **Novelty 1/2**
 
-- **+** [33:49](https://youtu.be/wzN6qq08w0U?t=2029) The expiration-label argument for technical decisions and corporate standards, with the seventh-team rinse-and-repeat anecdote, frames ADRs as living records rather than write-once paperwork.
-- **+** [30:42](https://youtu.be/wzN6qq08w0U?t=1842) The speaker's own early-career document, which kept a colleague from changing code and rediscovering the same problem, is the production experience that carries the case.
-- **·** The ADR format and tenets follow the well-known adr.github.io conventions, so the value comes from the speaker's stories and framing, not from new material.
+- **+** [33:49](https://youtu.be/wzN6qq08w0U?t=2029) The expiration-label argument treats technical decisions like cartons of milk and asks teams to re-certify corporate standards on schedule instead of rinsing and repeating them.
+- **+** [31:13](https://youtu.be/wzN6qq08w0U?t=1873) The speaker's own early-career document kept a colleague from changing odd-looking code and rediscovering the same problem months later.
+- **·** The ADR format and tenets follow the well-known adr.github.io conventions, with the speaker's stories and framing supplying the added value.
 
 **Demonstrated 1/2**
 
@@ -72,15 +75,16 @@ Developers and architects on teams that keep rediscovering why old decisions wer
 
 **Measured 1/2**
 
-- **·** The talk makes no quantitative claim: "a lot of time, a lot of money" ([37:25](https://youtu.be/wzN6qq08w0U?t=2245)) names no amount, and its figures (two weeks versus three months, three weeks tracing house wiring) are anecdotes.
+- **+** [17:40](https://youtu.be/wzN6qq08w0U?t=1060) The consulting story contrasts the team's two-week expectation with the speaker's estimate of about three months of effort after examining the existing code.
+- **·** [18:11](https://youtu.be/wzN6qq08w0U?t=1091) Both figures are anecdotal estimates, with no estimation method or completed outcome reported to substantiate the comparison.
 
 **Depth 1/2**
 
-- **+** [45:44](https://youtu.be/wzN6qq08w0U?t=2744) Immutability comes with its reason ("if you modify the ADR, the original decisions are gone"), and superseding is explained as a linked list of records.
+- **+** [45:44](https://youtu.be/wzN6qq08w0U?t=2744) Immutability comes with its reason ("if you modify the ADR, the original decisions are gone"), and superseding is explained as a linked list of records referring back to the old one.
 - **+** [06:18](https://youtu.be/wzN6qq08w0U?t=378) The high-impact definition of architecture sets which decisions deserve deliberate records and which can be taken lightly.
-- **−** [43:07](https://youtu.be/wzN6qq08w0U?t=2587) The ADR fields (title, context, status, decision, options, consequences) are listed with short glosses and only the consequences section gets a reason, with just a one-line NoSQL example at [43:38](https://youtu.be/wzN6qq08w0U?t=2618).
+- **−** [43:07](https://youtu.be/wzN6qq08w0U?t=2587) The ADR fields (title, context, status, decision, options, consequences) are listed with short glosses and a one-line NoSQL-versus-relational example, without showing what a good entry reads like.
 
 **Reusable 1/2**
 
-- **+** [45:13](https://youtu.be/wzN6qq08w0U?t=2713) The tenets (immutable, supersede, short, plain text, numbered, version-controlled) are specific enough to adopt directly as team policy.
+- **+** [45:13](https://youtu.be/wzN6qq08w0U?t=2713) The tenets (immutable, supersede, short, plain text, numbered, version-controlled, pull-request reviewed) are specific enough to adopt directly as team policy.
 - **·** [47:49](https://youtu.be/wzN6qq08w0U?t=2869) ADR tooling is mentioned without a name, and no template, repository or sample ADR is pointed to, so each team reconstructs the format from the talk.

@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=zC2tbq7S5UE
 durationMin: 161
 slides: https://slides.nipafx.dev/java-17+/
 verdict: 7
+reach: broad
 frames: 12
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Modern Java in Practice - The Features That Matter
@@ -91,17 +92,18 @@ Parlog calls JFR heavily underutilized: roughly 1% overhead with defaults, recor
 Java developers on 17 or older who need both the upgrade case and the coding patterns, and intermediate developers on 21+ who want one coherent tour of data-oriented programming, virtual threads, and structured concurrency. Teams weighing reactive against virtual threads get a clear statement of the trade. Skip it if you already ship 25/27 idioms (records, sealed types, gatherers, structured concurrency) or want depth on any single topic: each segment compresses a full talk into 20-40 minutes.
 
 ## Verdict
-**7/10**: a Java 18-28 tour with cited, charted measurements and trade-off explanations for compact headers, virtual threads and structured concurrency, limited by familiar material and slide-bound code.
+**7/10**: a Java upgrade and programming-model survey with comparative performance charts and detailed concurrency trade-offs, limited by slide-bound examples rather than an end-to-end execution of the core patterns.
+
+**Reach broad**: most of the conference's Java backend developers can put the upgrade case, the language idioms, and the concurrency and tooling practices to use in their own services within the next year.
 
 **Novelty 1/2**
 
-- **+** [28:32](https://youtu.be/zC2tbq7S5UE?t=1712) Parlog presents his revision of Goetz's data-oriented-programming principles: data must be transparent as well as immutable, and operations stay separate from data.
-- **+** [04:42](https://youtu.be/zC2tbq7S5UE?t=282) A medication-plan example (a Drug enum, a sealed Dosage, Medication records) carries the whole pattern-matching segment.
-- **−** JEP 431: the sequenced-collections segment works through getFirst and getLast, addFirst and addLast, and reversed views without going beyond the specified API.
+- **+** [05:16](https://youtu.be/zC2tbq7S5UE?t=316) The medication-plan example brings a credited sums-and-products article together with the speakers' selected Java features into one domain-modeling walkthrough.
+- **+** [03:10](https://youtu.be/zC2tbq7S5UE?t=190) The survey connects language features, runtime upgrades, security and tooling into an upgrade-oriented selection spanning multiple Java releases.
 
 **Demonstrated 1/2**
 
-- **+** [54:33](https://youtu.be/zC2tbq7S5UE?t=3273) A slide with a terminal transcript shows the shebang script `hello` printing "Hello, scripts!" next to the output of `cat` on the file.
+- **+** [55:00](https://youtu.be/zC2tbq7S5UE?t=3300) A slide pairs the executable shebang script's source with a terminal transcript in which `hello` prints "Hello, scripts!".
 - **+** [151:01](https://youtu.be/zC2tbq7S5UE?t=9061) A slide pairs the JFR method-trace command with `jfr print` output: start time, duration, method and thread for a `HashMap::resize` call, with the stack trace cut.
 - **−** [93:07](https://youtu.be/zC2tbq7S5UE?t=5587) The central structured-concurrency example is narrated line by line from on-slide code and never executed.
 
@@ -119,6 +121,6 @@ Java developers on 17 or older who need both the upgrade case and the coding pat
 
 **Reusable 1/2**
 
-- **+** [149:28](https://youtu.be/zC2tbq7S5UE?t=8968) The JFR recipe is complete commands: `-XX:StartFlightRecording` at launch or `jcmd <pid> JFR.start` against a running JVM.
-- **+** [84:48](https://youtu.be/zC2tbq7S5UE?t=5088) A 16-permit semaphore guarding database calls shows the pattern for capping virtual-thread concurrency without pools.
-- **−** [130:10](https://youtu.be/zC2tbq7S5UE?t=7810) The custom-gatherer implementation stays an illustrative slide fragment; no runnable listing or repository backs any of the shown code.
+- **+** [84:48](https://youtu.be/zC2tbq7S5UE?t=5088) The semaphore snippet provides a pattern for capping database concurrency while using virtual threads.
+- **+** [149:28](https://youtu.be/zC2tbq7S5UE?t=8968) The JFR launch and attach commands are available to reconstruct a recording workflow.
+- **·** [130:41](https://youtu.be/zC2tbq7S5UE?t=7841) The custom gatherer is presented as a code fragment to reconstruct rather than a linked sample project reproducing the talk's main examples.

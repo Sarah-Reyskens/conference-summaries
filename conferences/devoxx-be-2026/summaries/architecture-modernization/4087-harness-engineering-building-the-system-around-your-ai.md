@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=6N6qFqn1_Uo
 durationMin: 40
 slides: null
 verdict: 8
+reach: broad
 frames: 9
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Harness Engineering: Building the System Around Your AI Coding Agent
@@ -80,24 +81,25 @@ Developers running coding agents on real codebases and feeling the maintainabili
 
 ## Verdict
 
-**8/10**: A user-side harness framework with a Terminal-Bench comparison, reasoned check ordering and a public workshop repo, held back by a cut live build and an own design that is only sketched.
+**8/10**: A user-side harness framework with a Terminal-Bench comparison, reasoned check ordering and a public workshop repo, held back by a cut live build and mostly synthesized rather than original material.
+
+**Reach broad**: Java and JVM developers, tech leads and architects who use AI coding assistants daily can apply the guide, independent-check, bounded-repair and final-verdict practices to their own projects.
 
 **Novelty 1/2**
 
-- **+** [35:36](https://youtu.be/6N6qFqn1_Uo?t=2136) Deterministic hooks, repo maps and code graphs, Harbor's separate validation agent and split test-author/code-author sandboxes are brought together with Terminal-Bench and Böckeler's framework.
-- **+** [25:09](https://youtu.be/6N6qFqn1_Uo?t=1509) The ordered check sequence (compile gate, independent focused checks, one repair, final verdict) is the speaker's own design.
-- **·** [09:57](https://youtu.be/6N6qFqn1_Uo?t=597) The guides/sensors and computational/inferential model is Böckeler's, credited by the speaker, so the originality sits in the sequence and the bookshelf case.
+- **+** [35:36](https://youtu.be/6N6qFqn1_Uo?t=2136) Deterministic hooks, repo maps and code graphs, Harbor's separate validation agent and split test-author/code-author sandboxes are brought together in one survey of related approaches.
+- **·** [09:57](https://youtu.be/6N6qFqn1_Uo?t=597) The guides/sensors and computational/inferential model is Böckeler's, credited by the speaker, so the framework itself is not new.
 
 **Demonstrated 1/2**
 
 - **+** [20:22](https://youtu.be/6N6qFqn1_Uo?t=1222) A slide shows the flawed `borrow` method with its missing second-borrow rule beside a test with "no assertion follows" and a PASS badge for `./mvnw test`.
-- **·** [01:04](https://youtu.be/6N6qFqn1_Uo?t=64) The live build the abstract promised was cut and moved to the workshop repo, so the check sequence is never shown running.
+- **−** [01:04](https://youtu.be/6N6qFqn1_Uo?t=64) The live build the abstract promised was cut, so the check sequence is never shown running.
 
 **Measured 2/2**
 
-- **+** [09:10](https://youtu.be/6N6qFqn1_Uo?t=550) The Terminal-Bench slide holds Claude Opus 4.5 constant across Terminus 2 (57.8%), Claude Code (52.1%) and OpenHands (51.9%) and cites arXiv 2601.11868 appendix A6.
-- **+** [31:24](https://youtu.be/6N6qFqn1_Uo?t=1884) Microsoft's component-library port passed 221 of 222 behavioral tests after the suite was revealed in stages, yet the agent had hardcoded the demo.
-- **−** [05:13](https://youtu.be/6N6qFqn1_Uo?t=313) The vendor adoption percentages (Stripe, Google, Uber) are self-reported totals, which the speaker flags himself.
+- **+** [08:53](https://youtu.be/6N6qFqn1_Uo?t=533) The Terminal-Bench slide holds Claude Opus 4.5 constant across Terminus 2 (57.8%), Claude Code (52.1%) and OpenHands (51.9%) on tasks with defined acceptance criteria, and cites arXiv 2601.11868 appendix A6.
+- **+** [24:07](https://youtu.be/6N6qFqn1_Uo?t=1447) Repair-loop research on hard problems shows 82% success on the first attempt dropping to 67.3% once iteration starts, as bloated context hides answers already found.
+- **−** [31:24](https://youtu.be/6N6qFqn1_Uo?t=1884) The Microsoft component-library port (221 of 222 tests passing, demo hardcoded) is told from memory as a single case with no method.
 
 **Depth 2/2**
 
@@ -107,5 +109,4 @@ Developers running coding agents on real codebases and feeling the maintainabili
 
 **Reusable 2/2**
 
-- **+** [39:40](https://youtu.be/6N6qFqn1_Uo?t=2380) The final slide points to github.com/JiDarwish/outer-harness-workshop, a public repo with the starter and the full guide.
-- **+** [01:37](https://youtu.be/6N6qFqn1_Uo?t=97) The speaker presents the self-guided workshop as the way to implement these concepts yourself.
+- **+** [39:15](https://youtu.be/6N6qFqn1_Uo?t=2355) The closing slide points to github.com/JiDarwish/outer-harness-workshop, a public repo with the starter, harness.sh, the guide, a solution and tests.

@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=Spxl1eDQJKs
 durationMin: 47
 slides: null
 verdict: 5
+reach: broad
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -68,6 +69,8 @@ Newly promoted tech leads, staff engineers and senior engineers eyeing a leaders
 ## Verdict
 **5/10**: a tour of tech-lead practice built on credited sources (Goleman, Covey, the Peter principle), carried by the speaker's own framings and examples; it shows nothing running, measures nothing and stays at the level of described practices.
 
+**Reach broad**: most of the conference audience works in teams and can use the influence-without-authority, listening, ADR and delegation practices in their own work within the year.
+
 **Novelty 1/2**
 
 - **+** [26:23](https://youtu.be/Spxl1eDQJKs?t=1583) The organisation-as-distributed-computer mapping (latency as approval chains, consensus as expensive alignment, backpressure as saying no, Conway's law) is the speaker's own framing of standard organisational advice.
@@ -80,7 +83,7 @@ Newly promoted tech leads, staff engineers and senior engineers eyeing a leaders
 
 **Measured 1/2**
 
-- **·** The talk makes no claim about speed, cost, adoption or effect that needed backing; its figures are illustrations or self-reports, such as 20 signatures for a database config change [26:23](https://youtu.be/Spxl1eDQJKs?t=1583) and about 10% of his time on architecture [13:29](https://youtu.be/Spxl1eDQJKs?t=809).
+- **·** The talk makes no claim about speed, cost, adoption or effect that needed backing; its only numbers are illustrations or self-reports, such as about 10% of his time on architecture [13:29](https://youtu.be/Spxl1eDQJKs?t=809).
 
 **Depth 1/2**
 

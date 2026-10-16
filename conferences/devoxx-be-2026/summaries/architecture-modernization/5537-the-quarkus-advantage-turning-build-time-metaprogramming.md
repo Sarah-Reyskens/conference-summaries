@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=SgK0zMNayq0
 durationMin: 148
 slides: null
 verdict: 8
+reach: niche
 frames: 16
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
----
+reviewedAt: 2026-10-16
 
 # The Quarkus advantage: Turning build-time metaprogramming into runtime performances
 Mario Fusco, Georgios Andrianakis, Francesco Nigro · Deep Dive · Architecture & Modernization
@@ -87,23 +87,25 @@ End to end, the fixes delivered about 8% throughput improvement on a test where 
 Framework and library authors, performance engineers, and Quarkus users who want to understand what build-time extension code buys and costs. Java developers curious about JIT behavior (inlining trade-offs, profile pollution, unrolling budgets) get a rare end-to-end case study with assembly-level evidence. Skip it if you want a Quarkus getting-started guide or application-level tuning advice; this is internals and compiler interaction throughout.
 
 ## Verdict
-**8/10**: The authors' build-time generation and Jackson investigation combine comparative benchmarks with JIT-level explanations, while the dispatcher has no request run and the reusable material remains fragments.
+**8/10**: The team's serialization rollout experience, benchmarks with a stated setup and JIT-level diagnosis make a strong internals deep dive, with partial runtime demonstrations and no published reproducer.
+
+**Reach niche**: Quarkus extension authors and performance engineers can apply the build-step generation and serialization profiling material in their own work.
 
 **Novelty 2/2**
 
-- **+** [55:57](https://youtu.be/SgK0zMNayq0?t=3357) The tableswitch dispatcher was implemented for this talk, acting on a four-year-old suggestion.
-- **+** [129:01](https://youtu.be/SgK0zMNayq0?t=7741) The authors' Jackson investigation led to a lazy fallback-date patch that avoids eager String::charAt profile pollution, although later UTF-16 calls can recreate it.
+- **+** [99:21](https://youtu.be/SgK0zMNayq0?t=5961) Fusco recounts underestimating Jackson's customization corner cases, fixing the reported ones, and ending with generated serialization disabled by default, an implementation history absent from a feature tour.
+- **+** [84:24](https://youtu.be/SgK0zMNayq0?t=5064) The team recounts its recurring upstream-maintenance negotiations and the conflicting Java-version commitments that force selective transformations instead of fixes shared by every consumer.
 
 **Demonstrated 1/2**
 
-- **+** [28:00](https://youtu.be/SgK0zMNayq0?t=1680) The live request stack shows the generated invoker's direct call with no reflective frames.
+- **+** [25:55](https://youtu.be/SgK0zMNayq0?t=1555) The sample application is cleaned and built live with the flag that writes out generated classes, and the generated endpoint invoker is opened to show a direct method call with no reflection.
 - **+** [35:24](https://youtu.be/SgK0zMNayq0?t=2124) A debugging session breaks live inside the build-time processor method that indexes the REST endpoints.
 - **−** [58:01](https://youtu.be/SgK0zMNayq0?t=3481) The generated tableswitch dispatcher appears only as a code excerpt, with no run showing it serving requests.
 
 **Measured 2/2**
 
 - **+** [106:13](https://youtu.be/SgK0zMNayq0?t=6373) The Hyperfoil benchmark compares both serializers on a 20-object endpoint under JDK 25, Quarkus 4 and Jackson 3, reporting about 144,000 requests/s for reflection and slightly less for generated code.
-- **+** [136:22](https://youtu.be/SgK0zMNayq0?t=8182) The speakers report about 8% improvement after the fixes in the end-to-end test and 40-50% in a JMH serialization-only test.
+- **+** [136:22](https://youtu.be/SgK0zMNayq0?t=8182) After the fixes, the speakers report about 8% improvement in the end-to-end test and 40-50% in a JMH serialization-only test.
 - **−** [89:20](https://youtu.be/SgK0zMNayq0?t=5360) Half the RSS against a competitor framework on identical libraries is asserted without a baseline or measurement setup.
 
 **Depth 2/2**
@@ -113,5 +115,5 @@ Framework and library authors, performance engineers, and Quarkus users who want
 
 **Reusable 1/2**
 
-- **+** [97:45](https://youtu.be/SgK0zMNayq0?t=5865) The IDE shows the generated Jackson serializers for the endpoint's return types.
-- **−** [95:41](https://youtu.be/SgK0zMNayq0?t=5741) The walkthrough identifies no published project or complete configuration covering the main content, and the enabling property shown earlier is clipped at the editor edge.
+- **+** [92:31](https://youtu.be/SgK0zMNayq0?t=5551) The hand-written StdSerializer example and module-registration recipe give a practice viewers can reconstruct.
+- **−** [146:57](https://youtu.be/SgK0zMNayq0?t=8817) The closing discussion stresses reproducible open-source benchmarks but supplies no published sample project or complete configuration reproducing this talk's main examples.

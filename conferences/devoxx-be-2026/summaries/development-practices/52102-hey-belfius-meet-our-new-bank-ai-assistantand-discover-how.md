@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=4hXQoN8co80
 durationMin: 42
 slides: null
 verdict: 6
+reach: segment
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -87,33 +88,34 @@ Developers and architects building customer-facing LLM assistants, and anyone re
 
 ## Verdict
 
-**6/10**: Production launch figures, live jailbreak demos and clear mental models carry a beginner talk, but the only original result is one unmeasured KPI and Hey Belfius itself is never shown working.
+**6/10**: Live jailbreak demos, a beginner-level mental model for assistants and prompt-injection defences, and a defined production KPI make it useful, while the production assistant stays at architecture level and the repository covers only the demos.
+
+**Reach segment**: Teams adding customer-facing LLM assistants can use the orchestration, evaluation and security material in their own applications.
 
 **Novelty 1/2**
 
-- **+** [02:28](https://youtu.be/4hXQoN8co80?t=148) Six-month production results (doubled volumes, 70% to 90% bot-only KPI) come from the speakers' own launch, not public sources.
-- **+** [24:29](https://youtu.be/4hXQoN8co80?t=1469) The Aikido partnership taught the team that poorly structured legacy code is much harder for an AI to reason about, an observation from their own trial.
-- **·** [22:57](https://youtu.be/4hXQoN8co80?t=1377) The three AI-development guidelines are ones the speaker hopes the audience already follows, and the demo jailbreaks are standard prompt-injection techniques.
+- **+** [24:29](https://youtu.be/4hXQoN8co80?t=1469) The Aikido trial gave the team a specific observation: poorly structured legacy code could defeat the AI's attempts to reason about it.
+- **·** [22:57](https://youtu.be/4hXQoN8co80?t=1377) The vulnerability-confirmation partnership remains an R&D effort whose promised results the team cannot yet substantiate.
 
 **Demonstrated 1/2**
 
-- **+** [29:50](https://youtu.be/4hXQoN8co80?t=1790) The system prompt with its never-repeat canary visibly leaks on screen in response to the formatting jailbreak.
-- **+** [35:56](https://youtu.be/4hXQoN8co80?t=2156) The gradient attack visibly progresses turn by turn from fireworks questions to explosive chemistry discussion.
-- **−** [01:25](https://youtu.be/4hXQoN8co80?t=85) Hey Belfius appears only in a short promo clip; both demos target a local Mistral bot in a free-text version of the booth game ([28:16](https://youtu.be/4hXQoN8co80?t=1696)), and its capabilities and results are described, not shown.
+- **+** [29:50](https://youtu.be/4hXQoN8co80?t=1790) The local bot reveals its system prompt and forbidden canary in the live prompt-extraction demo.
+- **+** [35:56](https://youtu.be/4hXQoN8co80?t=2156) A second live sequence advances from innocuous questions to content the model's safety refusal was meant to prevent.
+- **−** [05:06](https://youtu.be/4hXQoN8co80?t=306) The production assistant's ability to perform banking actions is described without an end-to-end run showing the action completed.
 
 **Measured 1/2**
 
-- **+** [02:28](https://youtu.be/4hXQoN8co80?t=148) The 70% to 90% bot-only KPI is a defined before/after production metric, not a bare total.
-- **−** [02:28](https://youtu.be/4hXQoN8co80?t=148) No method or sample backs the KPI, and "doubled the monthly volumes" gives no absolute figures.
-- **−** [26:02](https://youtu.be/4hXQoN8co80?t=1562) The "roughly 20%" of AI-generated dependencies that are hallucinated, the "six or seven" compromised npm packages and the vulnerability chart ([19:47](https://youtu.be/4hXQoN8co80?t=1187)) carry no source.
+- **+** [02:28](https://youtu.be/4hXQoN8co80?t=148) The speaker defines the bot-only KPI as avoiding a request for human help and reports a rise from 70% to 90% within six months.
+- **+** [16:40](https://youtu.be/4hXQoN8co80?t=1000) The UK AI Security Institute benchmark (a network compromisable in 32 consecutive exploits) is cited as an independent comparison: Mythos was the first model to complete it, earlier models never came close.
+- **−** [26:02](https://youtu.be/4hXQoN8co80?t=1562) Roughly 20% of AI-suggested dependencies being hallucinated is stated with no source or method.
 
 **Depth 2/2**
 
-- **+** [08:50](https://youtu.be/4hXQoN8co80?t=530) Routing is weighed per capability: deterministic paths where deviation is unacceptable, generative leeway where behavior stays controllable.
-- **+** [32:00](https://youtu.be/4hXQoN8co80?t=1920) The persona-override attack is explained through system/user prompt concatenation, giving a mechanism for why prompt-only protection cannot be reliable.
-- **+** [38:36](https://youtu.be/4hXQoN8co80?t=2316) Defense layers come with their costs: LLM-as-judge is a nice option but very expensive in resource cost, while a canary check is a lookup for one specific value in the output.
+- **+** [08:50](https://youtu.be/4hXQoN8co80?t=530) Deterministic paths are chosen where deviation is unacceptable, while generative behavior is allowed where the team can control its consequences.
+- **+** [12:32](https://youtu.be/4hXQoN8co80?t=752) A golden dataset and back-testing give statistics on how far the assistant can go wrong, and the go-live decision rests on accepting the residual risk.
+- **+** [32:00](https://youtu.be/4hXQoN8co80?t=1920) The security explanation connects persona overrides to the concatenation of trusted instructions and user input, giving beginners a mechanism for prompt-only defenses failing.
 
 **Reusable 1/2**
 
-- **+** [38:03](https://youtu.be/4hXQoN8co80?t=2283) Canaries in outputs, LLM-as-judge checks, and golden-dataset back-testing are described concretely enough to copy.
-- **·** [42:17](https://youtu.be/4hXQoN8co80?t=2537) The talk points to no repository, configuration, or checklist; follow-up goes to the booth.
+- **+** [28:50](https://youtu.be/4hXQoN8co80?t=1730) The playground frame shows [LibreNico/devoxx-treasury-hack](https://github.com/LibreNico/devoxx-treasury-hack), whose standalone free-chat page, scenarios and live-demo script reproduce the talk's jailbreak exercises.
+- **−** [07:15](https://youtu.be/4hXQoN8co80?t=435) The orchestrator and specialized-agent architecture is described with no published configuration, sample project or checklist to reconstruct it from.

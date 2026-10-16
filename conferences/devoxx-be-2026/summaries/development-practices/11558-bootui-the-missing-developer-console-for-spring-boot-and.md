@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=NkstzPeo400
 durationMin: 30
 slides: https://www.julien-dubois.com/conferences/bootui/index-en.html
-verdict: 7
+verdict: 5
+reach: segment
 frames: 9
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # BootUI, the missing developer console for Spring Boot and Quarkus
@@ -95,34 +96,33 @@ Spring Boot or Quarkus developers who want runtime visibility beyond Actuator, a
 
 ## Verdict
 
-**7/10**: Live demos of an original tool and unreleased V2 work from its author, with a published repository; held back by V1 panels that Actuator-level docs already cover, a failed skill demo, one-line explanations of the internals and numbers without a baseline.
+**5/10**: A live tour of the author's own console with a working MCP agent query, held back by an agent fix loop that is promised and never run, a failed skill invocation, an unbenchmarked overhead guess, capture internals named but not opened, and a takeaway that is the project's own distribution.
+
+**Reach segment**: Spring Boot 4 or Quarkus 3 developers can add the console to their own services within the next year; the Jakarta EE and other JVM developers in the audience cannot use it directly.
 
 **Novelty 1/2**
 
-- **+** [22:21](https://youtu.be/NkstzPeo400?t=1341) The V2 event graph with change impact, run diffing and the bytecode agent were shown from a development build made that morning (06:48), before release.
-- **+** [03:40](https://youtu.be/NkstzPeo400?t=220) The author explains why he owns the capture: his own JDBC proxy and OpenTelemetry implementation instead of transitive dependencies.
-- **−** The Micrometer metrics, thread dump, startup timeline and Flyway/Liquibase panels surface data that the Spring Boot Actuator reference documentation already covers.
+- **+** [06:48](https://youtu.be/NkstzPeo400?t=408) The V2 features come from a build made that morning, so a viewer learns where the project is heading before any release notes exist.
+- **−** The console panels, MCP server, skill and CLI are listed in the project's README and documentation site (github.com/jdubois/boot-ui), which a search for the tool returns first.
 
-**Demonstrated 2/2**
+**Demonstrated 1/2**
 
 - **+** [04:44](https://youtu.be/NkstzPeo400?t=284) The advisor scorecard runs live on the sample app, starting from "0 of 9 advisors assessed", and surfaces findings with locations and fixes.
 - **+** [18:16](https://youtu.be/NkstzPeo400?t=1096) A Copilot agent queries the MCP server live and reports which of the 28 transactions are problematic.
-- **−** [19:48](https://youtu.be/NkstzPeo400?t=1188) The agent-skill invocation fails on stage and the speaker falls back to the CLI, which runs after a typo.
+- **−** [19:48](https://youtu.be/NkstzPeo400?t=1188) The agent-skill invocation fails on stage and the speaker falls back to the CLI, and the agent fix-and-verify loop the talk presents as its purpose is described but never run.
 
 **Measured 1/2**
 
-- **+** [02:09](https://youtu.be/NkstzPeo400?t=129) The deck gives exact scale figures (411 rules across 10 advisors, 60 panels in 9 groups) and defines the 0–100 score.
-- **+** [07:20](https://youtu.be/NkstzPeo400?t=440) The live KPI strip states its base ("over 17 retained requests") beside p50/p95, error rate and cache hit ratio.
+- **−** [18:47](https://youtu.be/NkstzPeo400?t=1127) The agent is said to find issues "much better than a human would do", and no human-against-agent comparison backs it.
 - **−** [27:31](https://youtu.be/NkstzPeo400?t=1651) The ~5% instrumentation overhead is an estimate ("maybe 5%") with no benchmark setup or before/after measurement behind it.
 
 **Depth 1/2**
 
-- **+** [03:40](https://youtu.be/NkstzPeo400?t=220) The own-the-capture philosophy is explained with reasons: no proxy libraries, fewer transitive dependencies, confidence labels where correlation is uncertain.
+- **+** [03:40](https://youtu.be/NkstzPeo400?t=220) The own-the-capture philosophy is explained with reasons: a hand-written JDBC proxy and OpenTelemetry implementation, fewer transitive dependencies, confidence labels where correlation is uncertain.
 - **+** [22:53](https://youtu.be/NkstzPeo400?t=1373) The reason for the event graph is stated: it links an endpoint to the table it touches and to other endpoints that share it, so an agent sees side effects before editing.
-- **−** [09:26](https://youtu.be/NkstzPeo400?t=566) The memory tuner's flag computation gets one sentence ("calculated straight from your data … probably very good") with no account of how the parameters are derived.
+- **·** [10:59](https://youtu.be/NkstzPeo400?t=659) The panels are toured at about a minute each ("I'm going a little bit fast on this one") and how capture and correlation work is named, not opened, which the 30-minute BEGINNER slot scopes.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [28:35](https://youtu.be/NkstzPeo400?t=1715) The talk points to the open-source repository (github.com/jdubois/boot-ui), which covers the product demoed.
-- **+** [02:39](https://youtu.be/NkstzPeo400?t=159) The one-dependency install is concrete enough to reproduce on any Spring Boot or Quarkus app.
-- **+** [20:18](https://youtu.be/NkstzPeo400?t=1218) The CLI gives a scriptable path for CI gating on score, rollbacks and exception counts.
+- **+** [28:35](https://youtu.be/NkstzPeo400?t=1715) The talk points to the open-source repository (github.com/jdubois/boot-ui, Apache 2.0) and the one-dependency install that opens the console at `/bootui` on a Spring Boot 4 or Quarkus 3 app.
+- **·** [03:10](https://youtu.be/NkstzPeo400?t=190) The demo app is the published sample app, but the speaker calls it "my demo app" and tells viewers to drop the jar into their own, and the V2 features shown later come from a development build, so the takeaway is the project's own distribution.

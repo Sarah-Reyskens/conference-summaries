@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=vAfQ4f8wIVI
 durationMin: 22
 slides: https://victorrentea.ro/talk/agentic-reconversion-devoxx-26/
 verdict: 5
+reach: broad
 frames: 5
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Agentic Engineering Reconversion
@@ -63,29 +64,32 @@ The closing checklist, shown in full on the final slide: AI-generate over 95% of
 Engineers feeling behind on AI-assisted development who want a motivational map of what to change and a concrete exercise list. Skip when you already work agent-first daily: the techniques are named rather than taught, and the tooling advice is opinion, not comparison.
 
 ## Verdict
-**5/10**: A motivational keynote carried by the speaker's own agent-first experience, limited to named techniques and baseline-free numbers.
+**5/10**: A motivational keynote carried by the speaker's own agent-first practice, limited to named techniques and baseline-free numbers.
+
+**Reach broad**: Most of the conference audience codes with AI assistants daily and can try the agent-directing habits in their own work within the year.
 
 **Novelty 1/2**
 
-- **+** [02:07](https://youtu.be/vAfQ4f8wIVI?t=127) The voice-model run (Whisper Large V3 Turbo LoRA on 40 hours of his voice, two hours on a rented H100 for $4) is his own unpublished experiment.
-- **−** [03:09](https://youtu.be/vAfQ4f8wIVI?t=189) The basics segment (context windows, skills, prompt caching, a pointer to Anthropic's Skill Jar) is vendor getting-started material a search surfaces first.
+- **+** [02:07](https://youtu.be/vAfQ4f8wIVI?t=127) The voice-dictation run (Whisper Large V3 Turbo with a LoRA adapter on 40 hours of his own voice, trained on a rented H100) is his own unpublished experiment.
+- **+** [05:13](https://youtu.be/vAfQ4f8wIVI?t=313) The learning habits (active recall, re-testing against the exam the AI would give on your own approvals, chunking into fours) are taken from Make It Stick and applied to reviewing agent output.
+- **−** The basics stretch (context windows, skills, prompt caching) is Anthropic's getting-started material plus its Skill Jar showcase, which a search for the subject surfaces first.
 
 **Demonstrated 1/2**
 
-- **·** A 22-minute strategy keynote with no demo slot, whose mindset-and-habits subject has nothing central to run on screen.
+- **·** A 20-minute strategy keynote with no demo slot, whose mindset-and-habits subject has nothing central to run on screen.
 
 **Measured 1/2**
 
-- **+** [10:55](https://youtu.be/vAfQ4f8wIVI?t=655) The debugging run carries a count and a duration: 17 memory leaks and 10 profiler bottlenecks in 30 minutes.
-- **−** [19:43](https://youtu.be/vAfQ4f8wIVI?t=1183) No number has a baseline or method: the 30-minute run has no manual comparison, and the 95% target and the "up to 60 times more value" are asserted.
+- **+** [10:55](https://youtu.be/vAfQ4f8wIVI?t=655) The debugging story carries a count and a duration: 17 memory leaks from a heap dump plus 10 profiler bottlenecks in 30 minutes.
+- **−** [10:55](https://youtu.be/vAfQ4f8wIVI?t=655) The 30-minute run has no manual baseline or described method, so the counts stay anecdotal.
+- **−** [19:43](https://youtu.be/vAfQ4f8wIVI?t=1183) The 95%-by-2027 bar and the "up to 60 times more value" claim are asserted without a baseline or method.
 
 **Depth 1/2**
 
-- **+** [04:10](https://youtu.be/vAfQ4f8wIVI?t=250) The agent-parenting frame (context plus tools, wild feedback loops built around the problem) gives a working model for directing agents in a beginner slot.
-- **−** [03:09](https://youtu.be/vAfQ4f8wIVI?t=189) Skills, prompt caching and model selection are assigned as homework ("you have to try it out") with no account of how any of them works.
+- **+** [04:10](https://youtu.be/vAfQ4f8wIVI?t=250) The agent-parenting frame (feed the agent context and tools, build feedback loops around the problem) gives a beginner slot a working model for directing agents, with the two-browser migration check as the pattern.
+- **−** [03:39](https://youtu.be/vAfQ4f8wIVI?t=219) Skills, prompt caching and model selection are assigned as homework ("You have to try it out") with no account of how any of them works.
 
 **Reusable 1/2**
 
-- **+** [19:43](https://youtu.be/vAfQ4f8wIVI?t=1183) The nine-item calisthenics list names practices specific enough to follow week by week.
-- **−** [02:07](https://youtu.be/vAfQ4f8wIVI?t=127) The linked repos (walkie-talkie dictation, human-review) cover tools from the intro, and the talk points to no repository or checklist that covers all nine exercises.
-
+- **+** [20:16](https://youtu.be/vAfQ4f8wIVI?t=1216) The nine-item calisthenics list states each practice plainly enough to attempt week by week.
+- **−** [20:16](https://youtu.be/vAfQ4f8wIVI?t=1216) The linked repositories cover the intro's dictation and review tools, and nothing published reproduces the exercise list itself.

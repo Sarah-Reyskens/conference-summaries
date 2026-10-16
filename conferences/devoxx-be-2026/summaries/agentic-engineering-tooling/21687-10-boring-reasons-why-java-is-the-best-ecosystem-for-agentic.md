@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=Qg7Uu_XBvpI
 durationMin: 50
 slides: null
 verdict: 8
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # 10 boring reasons why Java is the best ecosystem for agentic development
 Ed Burns · Conference · Agentic Engineering & Tooling
@@ -70,33 +70,33 @@ Keep the reviewer and distrust agent self-reports; put rules in the build, not t
 Engineers and leads wiring AI coding agents into Java CI/CD who want an evidence-first map of which guardrails pay off and which don't. Most valuable for teams already running agents and wondering what to enforce in the build. Skip if you want a Java-vs-other-ecosystems comparison (no rival stack is tested) or a tutorial on any single tool; the verdict favors skeptics comfortable with small-n, honestly inconclusive results.
 
 ## Verdict
-**8/10**: a control-versus-treatment experiment on a real feature, with per-arm counts and published repositories, reports, and a checklist; limited by gates that found nothing in the agents' code and by no agent run shown on screen.
+**8/10**: a first-hand guardrail experiment with baseline comparisons and published experiment materials; the small campaign shows limited effectiveness for several gates, and the browser tour stops short of an end-to-end agent run.
+
+**Reach broad**: Java developers, leads, and architects using coding assistants can apply the build checks, test-inventory controls, analyzer audits, and independent-review practices in their own delivery pipelines.
 
 **Novelty 2/2**
 
-- **+** [30:44](https://youtu.be/Qg7Uu_XBvpI?t=1844) The speaker ran a control-versus-treatment experiment on one Cargo Tracker feature (issue #64), with both arms given the same spec reverse-engineered from the real 2020 commit.
-- **+** [06:44](https://youtu.be/Qg7Uu_XBvpI?t=404) The failure-mode survey puts several cited studies (token variance, vulnerability growth, duplication growth, cheating benchmarks, Veracode) into one H2 symptom map.
-- **+** [22:51](https://youtu.be/Qg7Uu_XBvpI?t=1371) He describes first-hand Maven Central namespace verification, having had to prove ownership of the GitHub group ID while working on the Copilot SDK for Java.
+- **+** [30:44](https://youtu.be/Qg7Uu_XBvpI?t=1844) The speaker recounts an agent-built guardrail campaign around a historical Cargo Tracker feature, including the practical choices and limitations encountered when separating baseline construction from feature execution.
+- **+** [45:58](https://youtu.be/Qg7Uu_XBvpI?t=2758) Reconciling agent postmortems with empirical reports exposed gaps in both evaluations and produced a first-hand lesson about auditing the evaluators themselves.
 
 **Demonstrated 1/2**
 
-- **+** [36:29](https://youtu.be/Qg7Uu_XBvpI?t=2189) Actual campaign artifacts are browsed live: agent postmortems, a task issue, its PR with review-round commits, and the evaluator's evidence matrix.
-- **−** [36:29](https://youtu.be/Qg7Uu_XBvpI?t=2189) No agent run executes on screen; the demo shows recorded outputs and reports rather than the workflow operating end to end.
+- **+** [39:04](https://youtu.be/Qg7Uu_XBvpI?t=2344) The task issue, its PR, and the review-round commits including the non-canonical-date fix are browsed live in the browser.
+- **−** [36:29](https://youtu.be/Qg7Uu_XBvpI?t=2189) The browser tour inspects completed outputs rather than showing the agent workflow execute end to end.
 
 **Measured 2/2**
 
-- **+** [26:00](https://youtu.be/Qg7Uu_XBvpI?t=1560) Formatting failures are tabulated per arm under a stated identical Spotless gate: 5 failed checks in the control run against 2 and 7 in the two treatment runs.
-- **+** [44:24](https://youtu.be/Qg7Uu_XBvpI?t=2664) Detection order is compared across arms: the test-inventory check caught the same missing test four times before code review, and 3 of 4 treatment behavioral defects reached review against 1 in the control.
-- **−** [44:24](https://youtu.be/Qg7Uu_XBvpI?t=2664) SpotBugs, ArchUnit, the Java EE 7 contract and the lint gate found nothing in agent-written code, so their effect on agent output is unmeasured.
+- **+** [26:00](https://youtu.be/Qg7Uu_XBvpI?t=1560) Under the identical Spotless gate, failed formatting checks are compared across the control and two treatment runs: 5 against 2 and 7.
+- **+** [44:24](https://youtu.be/Qg7Uu_XBvpI?t=2664) The test-inventory check caught the same missing test four times before review, while 3 of 4 treatment behavioral defects still reached review and several additional gates found no defects in feature code.
+- **+** [28:37](https://youtu.be/Qg7Uu_XBvpI?t=1717) The harness records token use through OpenTelemetry and compares wall-clock duration across arms, reporting that treatment took 86% longer while noting that CI waiting time was not isolated.
 
 **Depth 1/2**
 
-- **+** [21:20](https://youtu.be/Qg7Uu_XBvpI?t=1280) The agent that built the treatment narrowed SpotBugs to three categories and hid about 120 findings, which shows that the analyzer's scope decides what "clean" means.
-- **+** [43:20](https://youtu.be/Qg7Uu_XBvpI?t=2600) The repeated symptoms (same 16 copied dialog lines, same Maven wrapper, same invalid `gh` flags) are separated from Java-code symptoms: what repeated was process and tooling.
-- **−** [20:19](https://youtu.be/Qg7Uu_XBvpI?t=1219) Error Prone, NullAway and PMD/CPD get a sentence each, with no account of how they work or when to choose one.
+- **+** [21:20](https://youtu.be/Qg7Uu_XBvpI?t=1280) The treatment-building agent narrowed SpotBugs to three categories, illustrating how an analyzer's configured scope determines what a clean result means.
+- **+** [43:20](https://youtu.be/Qg7Uu_XBvpI?t=2600) The conclusions distinguish repeated process and tooling failures from Java-code failure modes that did not appear in the experiment.
+- **−** [20:19](https://youtu.be/Qg7Uu_XBvpI?t=1219) Error Prone, NullAway, PMD/CPD, and ArchUnit are surveyed without explaining their mechanisms or weighing when to choose them.
 
 **Reusable 2/2**
 
-- **+** [48:33](https://youtu.be/Qg7Uu_XBvpI?t=2913) The resources slide points to the shepherd-task harness README, the cold-open PR, the full reports, and both ignorance-reduction plans.
-- **+** [46:29](https://youtu.be/Qg7Uu_XBvpI?t=2789) The closing checklist (keep the reviewer, rules in the build, test inventory, duplication checks, audit analyzer scope) can be applied on Monday.
-- **−** [33:21](https://youtu.be/Qg7Uu_XBvpI?t=2001) The treatment's pom and CI guardrails are listed on one slide and live in the run repositories; the talk offers no standalone template to copy.
+- **+** [48:33](https://youtu.be/Qg7Uu_XBvpI?t=2913) The resources point to the harness README, cold-open PR, experiment reports, and ignorance-reduction plans supporting reconstruction of the campaign.
+- **+** [46:29](https://youtu.be/Qg7Uu_XBvpI?t=2789) The closing checklist covers independent review, build-enforced rules, duplication checks, and auditing analyzer exclusions.

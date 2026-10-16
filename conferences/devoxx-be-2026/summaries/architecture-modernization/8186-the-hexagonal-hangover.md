@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=m9viRAIRAUQ
 durationMin: 49
 slides: https://docs.google.com/presentation/d/1DE-YL-QsrCwZOkDeOtvLLSoiQVoZ26ZnO9MrcqfCtko/edit?usp=sharing
 verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -81,13 +82,14 @@ Developers and tech leads who choose or defend layered and hexagonal architectur
 
 ## Verdict
 
-**6/10**: A trade-off framework for architecture decisions with reasoned explanations of contracts, connectivity and hexagonal costs, carried by the speaker's own stories rather than measured evidence or a published artifact.
+**6/10**: A trade-off framework for architecture decisions with reasoned explanations of contracts, connectivity and hexagonal costs, supported by experience and anecdotal numbers rather than measured comparisons or a reproducing artifact.
+
+**Reach broad**: Most of the conference audience designs, reviews or debates layered service architectures and can use the cohesion, coupling and volatility trade-offs in their own work.
 
 **Novelty 1/2**
 
-- **+** [01:33](https://youtu.be/m9viRAIRAUQ?t=93) The mental model is credited to colleague Boyen van de Ven, and the formula (Coupling = Depth × Connectivity through to Pain = Spaghettification × Volatility) packages the trade-offs into one decision tool [39:29](https://youtu.be/m9viRAIRAUQ?t=2369).
-- **+** [10:50](https://youtu.be/m9viRAIRAUQ?t=650) The Kafka relay rewrite and the Alliander quality work across 200 teams ground the argument in the speaker's own practice.
-- **−** The strength/distance/volatility core overlaps Vlad Khononov's *Balancing Coupling in Software Design*, so a search for the subject returns the same model.
+- **+** [01:33](https://youtu.be/m9viRAIRAUQ?t=93) The speaker credits a colleague's mental model and their discussions as the basis for the talk's architecture framework.
+- **+** [12:27](https://youtu.be/m9viRAIRAUQ?t=747) The Kafka relay experience weighs readiness for hypothetical changes against a simple rewrite that accepts duplicated logic and limited extensibility.
 
 **Demonstrated 1/2**
 
@@ -97,14 +99,15 @@ Developers and tech leads who choose or defend layered and hexagonal architectur
 
 - **+** [11:55](https://youtu.be/m9viRAIRAUQ?t=715) The rewrite comparison puts numbers on the claim: tens of thousands of lines built over almost a year replaced in an afternoon with the native Kafka client.
 - **−** [10:50](https://youtu.be/m9viRAIRAUQ?t=650) The year-versus-afternoon comparison is an anecdote with no method: no side-by-side scope and no follow-up on maintenance cost.
+- **−** [44:39](https://youtu.be/m9viRAIRAUQ?t=2679) The claims of upfront cost and expensive repairs across layers come without measured costs, while the missing-field frequency is an illustrative example.
 
 **Depth 2/2**
 
 - **+** [30:06](https://youtu.be/m9viRAIRAUQ?t=1806) The interface argument explains why no contract strength is added beyond the signatures, with the rule for when an interface earns its place.
 - **+** [34:48](https://youtu.be/m9viRAIRAUQ?t=2088) The connectivity treatment explains why fan-in wants weak contracts and fan-out strong ones, and how that decides where change is allowed.
-- **+** [41:35](https://youtu.be/m9viRAIRAUQ?t=2495) Hexagonal is scored through the model with both sides weighed: functional cohesion and contract coupling against distance and change cost.
+- **+** [41:35](https://youtu.be/m9viRAIRAUQ?t=2495) Hexagonal is assessed through the model with both sides weighed: functional cohesion and contract coupling against distance and change cost.
 
 **Reusable 1/2**
 
-- **+** [19:48](https://youtu.be/m9viRAIRAUQ?t=1188) The state-changes technique, with one domain model per state, is described concretely enough to copy.
-- **−** [47:44](https://youtu.be/m9viRAIRAUQ?t=2864) The close points to LinkedIn and the speaker's site, not to a repository, sample or checklist covering the method; the two Kafka relay repositories at [11:55](https://youtu.be/m9viRAIRAUQ?t=715) are never linked.
+- **+** [19:48](https://youtu.be/m9viRAIRAUQ?t=1188) The state-changes technique, with one domain model per state, is described as a practice viewers can reconstruct.
+- **−** [47:44](https://youtu.be/m9viRAIRAUQ?t=2864) The close points to LinkedIn and the speaker's site, not to a repository, sample or checklist covering the method.

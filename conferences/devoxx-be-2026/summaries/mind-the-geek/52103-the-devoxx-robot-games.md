@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=NT0wyPM58G8
 durationMin: 41
 slides: null
 verdict: 8
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # The Devoxx Robot Games
 Stephan Janssen · Lunch Talk · Mind the Geek
@@ -80,34 +80,35 @@ The session closes by inviting everyone to play the games on the competition por
 Developers curious what AI-assisted game building looks like in practice, and anyone weighing which tools and workflows to try for a weekend build. Voters in the Robot Games competition get the full lineup in 40 minutes. Skip it for deep engine internals: each entry gets four minutes, so techniques are named and shown rather than taught.
 
 ## Verdict
-**8/10**: Eight playable games and an agent visualizer premiered with their AI build stories, shown running on screen; each entry has four minutes, so the build numbers are self-reported and most internals stay brief.
+**8/10**: Nine premiered AI-built games and an agent visualizer, most shown running live with specific build lessons; four-minute slots keep internals brief and all numbers self-reported.
+
+**Reach segment**: Java developers who build games, visual front-ends or side projects with AI coding assistants can reuse the screenshot-loop, describe-in-words and playtesting practices; most business-application developers have no game to build.
 
 **Novelty 2/2**
 
-- **+** [01:04](https://youtu.be/NT0wyPM58G8?t=64) The session premieres eight original games and one agent visualizer built for this competition, each with its own mechanics, art and build story.
-- **+** [15:14](https://youtu.be/NT0wyPM58G8?t=914) Photos, drone video and floor plans kept producing wrong walls until the builder described the venue room by room and had the model paint its plan over the game, so every error showed in yellow.
-- **+** [16:17](https://youtu.be/NT0wyPM58G8?t=977) The Unreal visualizer renders real Claude Code sub-agents as builders on an exhibition floor, an entry no getting-started page covers.
+- **+** [03:40](https://youtu.be/NT0wyPM58G8?t=220) The first builder describes a gauntlet loop for graphics: prompt the model with a real game screenshot as target, compare screenshots each cycle, and repeat until the critics are satisfied.
+- **+** [15:14](https://youtu.be/NT0wyPM58G8?t=914) Photos, drone video and floor plans kept producing wrong walls until the builder described the venue room by room in words and had the model paint its plan over the game, so every error showed in yellow.
+- **+** [27:48](https://youtu.be/NT0wyPM58G8?t=1668) Richard's daughters, hallway volunteers and train passengers supplied the arrows, hints and fixes the model never suggested, so the human stays in the loop.
 
 **Demonstrated 2/2**
 
-- **+** [02:08](https://youtu.be/NT0wyPM58G8?t=128) Robots stack to reach a lever and carry items through puzzles, shown on screen.
-- **+** [30:58](https://youtu.be/NT0wyPM58G8?t=1858) The hopping robot crosses the venue on screen, with security switched off for that run.
-- **−** [26:14](https://youtu.be/NT0wyPM58G8?t=1574) Richard's run shows stray objects flying around that the model could not explain, and the mobile run does not stop.
+- **+** [02:08](https://youtu.be/NT0wyPM58G8?t=128) Robots stack to reach a high lever, open doors and carry items through the puzzles, shown running on screen.
+- **−** [26:14](https://youtu.be/NT0wyPM58G8?t=1574) Richard's run shows stray objects flying around that the model could not explain.
 
 **Measured 1/2**
 
-- **+** [06:47](https://youtu.be/NT0wyPM58G8?t=407) A first version was ready in one hour against the AI's estimate of a full day, from a 13-hour window.
+- **+** [06:47](https://youtu.be/NT0wyPM58G8?t=407) A first version was ready in one hour against the AI's estimate of a full day.
 - **·** [25:12](https://youtu.be/NT0wyPM58G8?t=1512) Token use is described as "exhausted all my tokens" with no figure.
-- **·** [31:58](https://youtu.be/NT0wyPM58G8?t=1918) The 1800-line brief and the best-run time are self-reported with no baseline or method.
+- **·** [31:58](https://youtu.be/NT0wyPM58G8?t=1918) The 1800-line brief is self-reported with no baseline or method.
 
 **Depth 1/2**
 
-- **+** [14:44](https://youtu.be/NT0wyPM58G8?t=884) The Overclocked builder explains the crowd system: simple per-attendee rules over shared flow fields, with tests written as user stories.
-- **+** [18:23](https://youtu.be/NT0wyPM58G8?t=1103) The Unreal visualizer is explained end to end: hooks emit JSON per sub-agent, a broker reads the files and streams them into the Unreal client.
-- **·** [00:34](https://youtu.be/NT0wyPM58G8?t=34) Each entry gets four minutes, so most name the tools and show the game without explaining how it works.
+- **+** [14:44](https://youtu.be/NT0wyPM58G8?t=884) The Overclocked builder explains the approach: one web page of plain JavaScript with no game engine and zero dependencies, with tests written as user stories defining what done means.
+- **+** [18:54](https://youtu.be/NT0wyPM58G8?t=1134) The Unreal visualizer is explained end to end: hooks emit JSON per sub-agent, a broker reads the files and streams them into the Unreal client.
+- **·** [32:30](https://youtu.be/NT0wyPM58G8?t=1950) The Richie stack rundown lists ChatGPT, Codex, Claude, texture models and AI-generated Sonic Pi music without showing how any of them was driven.
 
 **Reusable 2/2**
 
-- **+** [00:34](https://youtu.be/NT0wyPM58G8?t=34) Every game is playable by the audience with its repository available to clone.
+- **+** [39:50](https://youtu.be/NT0wyPM58G8?t=2390) The closing points to the competition portal and QR code where the audience can play the games, most of them on mobile.
 - **+** [33:01](https://youtu.be/NT0wyPM58G8?t=1981) The Richie game runs for free on GitHub Pages as a PWA, playable on a phone or a laptop.
-- **−** [18:54](https://youtu.be/NT0wyPM58G8?t=1134) The hooks, broker and Unreal setup is offered for your own Claude Code sessions, but no repository is named.
+- **−** [19:24](https://youtu.be/NT0wyPM58G8?t=1164) The visualizer is offered for your own Claude Code sessions as the demo wraps, but no repository is named.

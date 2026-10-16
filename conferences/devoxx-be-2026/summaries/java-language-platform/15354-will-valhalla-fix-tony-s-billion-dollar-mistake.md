@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=vLDbzmiT7Xs
 durationMin: 161
 slides: https://speakerdeck.com/josepaumard/will-valhalla-fix-tonys-billion-dollars-mistake
-verdict: 9
+verdict: 8
+reach: broad
 frames: 11
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Will Valhalla Fix Tony's Billion-Dollar Mistake?
@@ -99,32 +100,33 @@ Short answer: no. The JDK 28 roadmap is JEP 513 constructors (final in 25), JEP 
 Java developers deciding what Valhalla means for their code, performance engineers who want scalarization and flattening numbers with their trade-offs, and library authors who must audit synchronization and weak-reference usage before JDK 28. Viewers wanting usable `List<int>`, stable APIs, or a null-free Java should skip this: specialization is prototypes only, value classes are preview, and the talk's own answer is that null survives.
 
 ## Verdict
-**9/10**: Head-to-head JMH and JFR measurements the speakers ran themselves, design rationale from inside the expert group and a published demo repository; the optimization itself is never run end to end on screen.
+**8/10**: Live IDE demos of the `==`, synchronization and constructor changes, JMH series with baselines and error bars, an explained flattening budget and a published demo repository carry it; the optimization itself is never run on screen and the value-class core follows what the JEPs already say.
 
-**Novelty 2/2**
+**Reach broad**: Most Java developers in the audience will meet value classes once JDK 28 ships, so the migration rules and flattening trade-offs transfer directly to their own code.
 
-- **+** [144:41](https://youtu.be/vLDbzmiT7Xs?t=8681) The expert group's rejection of the `!` null-restriction syntax, argued as storage detail that must stay out of API types, is design rationale from the spec authors.
-- **+** [79:15](https://youtu.be/vLDbzmiT7Xs?t=4755) The mixtape JMH tables compare identity and value versions of three computations head to head, a run no single source offers.
-- **+** [110:51](https://youtu.be/vLDbzmiT7Xs?t=6651) The JFR wall-clock comparison of identity allocation against value allocation is the speakers' own measurement.
+**Novelty 1/2**
+
+- **+** [145:15](https://youtu.be/vLDbzmiT7Xs?t=8715) The expert group's outcome for null-restricted types is that `!` will not ship with value classes and may return later as a separate feature, a status a viewer would not get from the JEP pages.
+- **−** The value-class semantics in the first half (identity, `==`, headers, strict fields) follow JEP 401 and JEP 539, and the speakers work on the project, so those pages are the search baseline.
 
 **Demonstrated 1/2**
 
-- **+** [41:01](https://youtu.be/vLDbzmiT7Xs?t=2461) Two equal value records compare `==` as true in the IDE and false once the titles are distinct `String` instances, with console output visible.
-- **+** [49:30](https://youtu.be/vLDbzmiT7Xs?t=2970) Casting a value record to `Object` to synchronize on it, and wrapping it in a `WeakReference`, each throw `IdentityException` at runtime in the IDE.
-- **−** [85:32](https://youtu.be/vLDbzmiT7Xs?t=5132) Scalarization appears only as pseudo-code of the VM's view, and the benchmarks are shown as JMH result slides and one JFR trace rather than run on screen, so the optimization is never shown end to end.
+- **+** [41:01](https://youtu.be/vLDbzmiT7Xs?t=2461) Two equal value records compare `==` as true in the IDE on a JDK 28 early-access build and false once the titles become distinct `String` instances, with the console output visible.
+- **+** [49:30](https://youtu.be/vLDbzmiT7Xs?t=2970) A `synchronized` block on a value record fails to compile, and a cast through `Object` to dodge the compiler throws `IdentityException` when the code runs.
+- **−** [85:32](https://youtu.be/vLDbzmiT7Xs?t=5132) The VM's scalarized view of the code is a pseudo-code slide, so the central optimization claim is never run on screen.
 
 **Measured 2/2**
 
-- **+** [82:53](https://youtu.be/vLDbzmiT7Xs?t=4973) The JMH tables report identity against value versions of all three mixtape computations on 100-song arrays over 500 ms runs, and the GC profiler counters show 70/138/122 collections for identity against none for value V1 and V2.
-- **+** [106:37](https://youtu.be/vLDbzmiT7Xs?t=6397) Flattened versus non-flattened scores across array sizes up to 1,000,000 songs expose the crossover where density beats decode cost.
-- **−** [78:44](https://youtu.be/vLDbzmiT7Xs?t=4724) Hardware and JVM flags go unstated: the runs are introduced only as done "on the machine", and the closing remark says no more than that the machine was not especially fast.
+- **+** [82:53](https://youtu.be/vLDbzmiT7Xs?t=4973) The JMH tables report identity against value versions of all three mixtape computations on 100-song arrays over 500 ms runs, with GC profiler counters at 70/138/122 collections for identity against none for value V1 and V2.
+- **+** [106:37](https://youtu.be/vLDbzmiT7Xs?t=6397) Scaling the array from 100 to 1,000,000 songs sets flattened against pointer arrays with error bars: 54 against 33 ns/op at 100 songs, 51.3 against 79.9 µs/op at 100,000 and 507 µs against 2.71 ms at one million.
+- **−** [78:44](https://youtu.be/vLDbzmiT7Xs?t=4724) Hardware and JVM flags go unstated since the runs are introduced only as done "on the machine".
 
 **Depth 2/2**
 
-- **+** [24:47](https://youtu.be/vLDbzmiT7Xs?t=1487) Identity is derived as a memory address, which yields no address, no header and no mutability in one chain.
-- **+** [100:47](https://youtu.be/vLDbzmiT7Xs?t=6047) The flattening budget drops from 64 to 56 bits because of the 8-bit null marker next to the single atomic 64-bit read, which is why an `int` duration disables flattening.
-- **+** [120:56](https://youtu.be/vLDbzmiT7Xs?t=7256) Lazy class loading is weighed against field flattening to motivate the `LoadableDescriptors` preload attribute.
+- **+** [24:47](https://youtu.be/vLDbzmiT7Xs?t=1487) Identity derives from the object's memory address, which yields no address, no header and no mutability in one chain.
+- **+** [100:47](https://youtu.be/vLDbzmiT7Xs?t=6047) The flattening budget drops from 64 to 56 bits because of the 8-bit null marker beside the single atomic 64-bit read, which is why an `int` duration disables flattening.
+- **+** [118:47](https://youtu.be/vLDbzmiT7Xs?t=7127) Classes load lazily because a null field never needs them, so the VM cannot know a field's class is a value class at layout time, which motivates the new `LoadableDescriptors` attribute emitted on recompilation.
 
 **Reusable 2/2**
 
-- **+** [160:05](https://youtu.be/vLDbzmiT7Xs?t=9605) The closing slide points to github.com/forax/valhalla-demo, which holds the slides, the IDE demos, the mixtape benchmark sources and the JFR files.
+- **+** [160:05](https://youtu.be/vLDbzmiT7Xs?t=9605) The closing slide points to github.com/forax/valhalla-demo, which holds the IDE demos, the mixtape benchmark sources and the JFR files.

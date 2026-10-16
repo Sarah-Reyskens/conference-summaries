@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=npSWywhFDHo
 durationMin: 139
 slides: null
 verdict: 9
+reach: segment
 frames: 22
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Specialized AI Agents: from concept to production
@@ -105,35 +106,34 @@ Engineers about to put a task-specific agent into production who want a full loo
 
 ## Verdict
 
-**9/10**: A specialized agent is built, evaluated, served and used live, with design trade-offs and a complete demo repository; the core build mostly follows Docker Agent's documented features.
+**9/10**: A specialized agent is built, evaluated against baselines, served and competed live, with a complete demo repository; the build follows Docker Agent's documented path.
+
+**Reach segment**: Teams adding task-specific LLM agents to their business applications can reuse the specialize, evaluate and serve loop.
 
 **Novelty 1/2**
 
-- **+** [97:16](https://youtu.be/npSWywhFDHo?t=5836) Gordon's evaluation practice combines 4,000 stronger-model-generated questions with manual and complaint-driven non-regression cases.
-- **+** [111:57](https://youtu.be/npSWywhFDHo?t=6717) The speaker explains why Gordon's shipped instructions include overfitted compose URLs that outperform knowledge-base retrieval on real questions.
-- **−** Docker Agent's official toolset and evaluation documentation covers most of the feature-led build, while the Gordon experience and speaker-run comparison occupy smaller parts of the session.
+- **+** [97:16](https://youtu.be/npSWywhFDHo?t=5836) Gordon's eval practice generates its test questions from the documentation with a much stronger model, then adds manual cases and one non-regression case per user complaint.
+- **+** [111:57](https://youtu.be/npSWywhFDHo?t=6717) Part of Gordon's shipped YAML is overfitted on purpose, with hardcoded compose-question URLs that beat the knowledge base on real questions.
+- **−** Docker Agent's published toolset, eval and serve documentation covers the feature path most of the build follows.
 
 **Demonstrated 2/2**
 
-- **+** [83:36](https://youtu.be/npSWywhFDHo?t=5016) The full eval suite executes live with per-case scores, flakiness counts and cost output visible.
-- **+** [121:59](https://youtu.be/npSWywhFDHo?t=7319) The served agent returns a structured team to a Python client, and the later arena match finishes with agent A winning 2989 to 2873 at [132:45](https://youtu.be/npSWywhFDHo?t=7965).
-- **−** [123:00](https://youtu.be/npSWywhFDHo?t=7380) The alternative MCP-serving route is explained without a client run, although HTTP serving completes.
+- **+** [83:36](https://youtu.be/npSWywhFDHo?t=5016) The eval suite runs live against the agent, printing per-case pass counts, flakiness status and cost on screen.
+- **+** [121:59](https://youtu.be/npSWywhFDHo?t=7319) The served agent returns a structured team to a Python client over the OpenAI-compatible endpoint, and the arena match completes with agent A winning 2989 to 2873 at [132:45](https://youtu.be/npSWywhFDHo?t=7965).
+- **·** [123:00](https://youtu.be/npSWywhFDHo?t=7380) The alternative MCP-serving route is explained without a client run, and the closing 32-player bracket is stopped before it finishes.
 
 **Measured 2/2**
 
-- **+** [94:08](https://youtu.be/npSWywhFDHo?t=5648) The five-repeat flavor run prints relevance 0.800 → 1.000 and assertions 0.991 → 1.000 against a saved baseline, with the duplicate-team failure fixed and no regressions.
-- **+** [102:00](https://youtu.be/npSWywhFDHo?t=6120) The model-only swap on the same suite reaches relevance 95.0% and pass^5 80.0% at $0.455792 per suite, versus 100% and about $0.026 for the fixed cheap setup.
-- **−** [103:34](https://youtu.be/npSWywhFDHo?t=6214) The speaker warns that ambiguous relevance checks and imperfect judge models can cause flakiness, so the suite scores alone do not establish correctness on unseen questions.
+- **+** [94:08](https://youtu.be/npSWywhFDHo?t=5648) The five-repeat flavor run prints relevance 0.800 to 1.000 and assertions 0.991 to 1.000 against the saved baseline, with the duplicate-team failure fixed and no regressions.
+- **+** [102:00](https://youtu.be/npSWywhFDHo?t=6120) The model-only swap on the same suite reaches relevance 95.0 percent and pass-hat-5 80.0 percent at $0.455792 per suite, versus 100 percent and $0.025693 for the fixed cheap setup.
+- **−** [13:36](https://youtu.be/npSWywhFDHo?t=816) The claim that a coding agent ships about 4,000 configuration tokens per call is stated without a measurement.
 
 **Depth 2/2**
 
 - **+** [52:25](https://youtu.be/npSWywhFDHo?t=3145) Instructions are explained as focus aids while tools carry enforceable constraints, a design rule applied throughout the build.
-- **+** [108:48](https://youtu.be/npSWywhFDHo?t=6528) Eval cases run in isolated containers with only their required files, with container overhead weighed against sandboxes and Gordon's environment chosen to represent a user's machine.
-- **+** [114:04](https://youtu.be/npSWywhFDHo?t=6844) The sub-agent design weighs smaller contexts and cheaper models against coordination-token cost, then explains separating tool permissions by responsibility.
+- **+** [108:48](https://youtu.be/npSWywhFDHo?t=6528) Eval cases run in isolated containers with only their required files, with container overhead weighed against sandboxes and Gordon's environment chosen to represent a user machine.
+- **+** [114:04](https://youtu.be/npSWywhFDHo?t=6844) The sub-agent design weighs smaller contexts and cheaper models against coordination-token cost, then separates tool permissions by responsibility.
 
 **Reusable 2/2**
 
-- **+** [137:06](https://youtu.be/npSWywhFDHo?t=8226) The Presentation QR opens github.com/dgageot/devoxx-be-2026, which carries agents/01-pirate.yaml to 16-tournament.yaml, evals/arena/*.json with baselines and measurements, and the arena and Compose files.
-- **+** [129:47](https://youtu.be/npSWywhFDHo?t=7787) Agent YAML is pushed to a registry as an OCI artifact and pulled or run by name and tag, the way Gordon ships.
-
-
+- **+** [137:06](https://youtu.be/npSWywhFDHo?t=8226) The Presentation QR opens github.com/dgageot/devoxx-be-2026, which carries agents/01-pirate.yaml to 16-tournament.yaml, evals/arena JSON files with baselines and measurements, and the arena and Compose files.

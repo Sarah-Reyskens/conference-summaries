@@ -9,7 +9,8 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=wbzpP0T9w6I
 durationMin: 47
 slides: null
-verdict: 9
+verdict: 7
+reach: broad
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -92,13 +93,15 @@ Beginners who stage, branch and merge by ritual gain the most: the game turns th
 
 ## Verdict
 
-**9/10**: A beginner Git talk earns its score through an original RTS implementation, completed live Git operations and explanations of the object model, with reuse limited to the published server rather than the full game client.
+**7/10**: A beginner Git talk whose object-model explanations and live Git operations earn Depth and Demonstrated, held at 7 by Novelty and Reusable 1: the Git material is known, and the one linked repository is the game's own server without the client.
 
-**Novelty 2/2**
+**Reach broad**: Nearly the whole conference audience versions code with Git daily, so the object-model intuition and merge and rebase practice apply to most viewers' own work.
 
-- **+** [15:16](https://youtu.be/wbzpP0T9w6I?t=916) The speaker's own RTS game represents its world as a text grid in a real Git repository, making staging, branching and merging game mechanics.
-- **+** [25:50](https://youtu.be/wbzpP0T9w6I?t=1550) The per-character custom merge driver comes from the speaker's own implementation, built because line-based merging false-conflicts on the game grid.
-- **·** Game-based Git teaching has precedents in [Oh My Git!](https://ohmygit.org) and [Learn Git Branching](https://learngitbranching.js.org), while this talk supplies its own RTS implementation and merge-driver design.
+**Novelty 1/2**
+
+- **+** [15:16](https://youtu.be/wbzpP0T9w6I?t=916) The speaker's own RTS game stores its map as a text grid in a real Git repository, so staging, branching and merging become game mechanics.
+- **+** [26:22](https://youtu.be/wbzpP0T9w6I?t=1582) A custom merge driver written by the speaker checks conflicts per character, because line-based merging false-conflicts on the game grid.
+- **−** The Git internals it teaches (objects, DAG, three-way merge, rebase) are covered by the Pro Git book and the Git docs, and game-based Git teaching exists in [Oh My Git!](https://ohmygit.org) and [Learn Git Branching](https://learngitbranching.js.org).
 
 **Demonstrated 2/2**
 
@@ -116,7 +119,7 @@ Beginners who stage, branch and merge by ritual gain the most: the game turns th
 - **+** [33:12](https://youtu.be/wbzpP0T9w6I?t=1992) Branches are explained as named references to commit hashes, with history recovered by following commit ancestry through the DAG.
 - **+** [38:27](https://youtu.be/wbzpP0T9w6I?t=2307) Rebase is explained as replayed cherry-picks and fast-forward as reference movement, giving the reason behind linear history.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [46:24](https://youtu.be/wbzpP0T9w6I?t=2784) The closing slide points to [git-and-conquer-server](https://github.com/glycin/git-and-conquer-server), a published sample project with the world repository, Git operations, merge drivers and HTTP examples behind the demonstration.
-- **·** [16:19](https://youtu.be/wbzpP0T9w6I?t=979) The architecture separates the Unity client from the Git-driving server, and the linked artifact publishes the server and merge drivers without the Unity client.
+- **+** [46:24](https://youtu.be/wbzpP0T9w6I?t=2784) The closing slide links [git-and-conquer-server](https://github.com/glycin/git-and-conquer-server), the game's server with its world repository handling, merge drivers and HTTP examples.
+- **−** [16:19](https://youtu.be/wbzpP0T9w6I?t=979) The linked repository is the presented project's own server and lacks the Unity client that renders the demo, so the on-screen game cannot be reproduced from it.

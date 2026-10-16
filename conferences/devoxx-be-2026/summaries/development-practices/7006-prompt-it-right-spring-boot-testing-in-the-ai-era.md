@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=d6D8nef-32c
 durationMin: 153
 slides: null
 verdict: 7
+reach: segment
 frames: 17
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Prompt It Right: Spring Boot Testing in the AI Era
@@ -115,13 +116,14 @@ Untestable failures cited from experience: a shared third-party API key expiring
 Spring Boot developers who review AI-generated tests or want to speed up their suite gain the most; beginners get a compact map of the test types, and experienced teams get the context-caching and skills material. Teams without Spring or without agentic workflows can skip the second block, and viewers wanting ready-made skill files should know the session teaches the pattern while the finished templates ship with the speaker's paid course.
 
 ## Verdict
-**7/10**: Slice and cache internals plus a published testing-skill and CI-gate sample carry the session, but skill-driven test generation is not demonstrated end to end.
+**7/10**: Slice and cache internals plus a published testing-skill and CI-gate sample carry the session, but skill-driven test generation is never shown running end to end.
+
+**Reach segment**: Spring Boot developers, a sizable minority of the Devoxx audience, can apply the test-type map, context-caching discipline, and skill templates to their own suites within the next year.
 
 **Novelty 1/2**
 
-- **+** [104:18](https://youtu.be/d6D8nef-32c?t=6258) Each skill pairs its main file with a references folder encoding testing standards with IDs and severity for reportable review.
-- **+** [70:39](https://youtu.be/d6D8nef-32c?t=4239) A client project once disabled all context reuse through a `@DirtiesContext` annotation on a shared abstract base class.
-- **−** [110:03](https://youtu.be/d6D8nef-32c?t=6603) The assertion-message standard is offered as an adjustable preference without an original comparison establishing when it improves test review.
+- **+** [70:39](https://youtu.be/d6D8nef-32c?t=4239) A client project inherited `@DirtiesContext` from a shared abstract test class and lost all context reuse, giving the testing guidance a failure case from the speaker's work.
+- **+** [131:32](https://youtu.be/d6D8nef-32c?t=7892) The agentic-TDD discussion brings together Kent Beck, Simon Willison and a Thoughtworks experiment before giving a conditional recommendation based on the team's testing judgment.
 
 **Demonstrated 1/2**
 
@@ -131,19 +133,18 @@ Spring Boot developers who review AI-generated tests or want to speed up their s
 
 **Measured 1/2**
 
-- **+** [61:43](https://youtu.be/d6D8nef-32c?t=3703) A client build reportedly dropped from 26 to 12 minutes on `mvn verify` purely by optimizing cache reuse.
+- **+** [61:43](https://youtu.be/d6D8nef-32c?t=3703) A client build reportedly dropped from 26 to 12 minutes on `mvn verify` purely by optimizing cache reuse, with no stated measurement setup.
 - **+** [68:32](https://youtu.be/d6D8nef-32c?t=4112) The sample Maven profiler report shows 9 contexts created, 11 cache hits, 9 misses and a 55% hit rate.
-- **−** [68:32](https://youtu.be/d6D8nef-32c?t=4112) The suggested 21-second saving is a projection rather than a measured before-and-after comparison, and the client timing claim has no stated measurement setup.
+- **−** [68:32](https://youtu.be/d6D8nef-32c?t=4112) The suggested 21-second saving is a projection rather than a measured before-and-after comparison.
 
 **Depth 2/2**
 
 - **+** [66:29](https://youtu.be/d6D8nef-32c?t=3989) Context reuse requires matching `MergedContextConfiguration` keys, so different active profiles prevent sharing even when the resulting contexts might look similar.
 - **+** [41:14](https://youtu.be/d6D8nef-32c?t=2474) The slice shopping list is a set of included types in `WebMvcTypeExcludeFilter`, so dependencies outside the slice must be supplied, usually as mocks.
-- **+** [58:02](https://youtu.be/d6D8nef-32c?t=3482) With a real-port setup the test and application run on separate threads, so thread-local security-context overrides stop working and tests need real authorization.
+- **+** [58:02](https://youtu.be/d6D8nef-32c?t=3482) Real-port tests and the application run on different threads, explaining why thread-local security overrides work with MockMvc but must be replaced by real authorization for Tomcat.
 
 **Reusable 2/2**
 
 - **+** [103:47](https://youtu.be/d6D8nef-32c?t=6227) The slide points to the [published sample project](https://github.com/rieckpil/talks/tree/main/prompt-it-right), which includes controller tests and the unit-testing skill with its standards and examples.
 - **+** [127:50](https://youtu.be/d6D8nef-32c?t=7670) The public sample includes a context-count checking script and CI workflow implementing the profiler-based build gate shown here.
-- **−** [148:47](https://youtu.be/d6D8nef-32c?t=8927) The full seven-skill template library is offered through the speaker's paid course; the public project supplies the unit-testing example.
-
+- **·** [148:47](https://youtu.be/d6D8nef-32c?t=8927) The full seven-skill template library is part of the speaker's paid course; the public project supplies the unit-testing example.

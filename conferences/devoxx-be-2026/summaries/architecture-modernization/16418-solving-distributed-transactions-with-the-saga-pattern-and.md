@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=c45C2wNSZFc
 durationMin: 29
 slides: null
 verdict: 8
+reach: niche
 frames: 11
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Solving Distributed Transactions with the Saga Pattern and Temporal
@@ -70,23 +71,26 @@ Three closing points: cancellation does not mean the external operation stopped,
 Temporal users implementing sagas or cancellable workflows gain the most, especially anyone wiring synchronous APIs to workflow executions. Viewers wanting general saga theory or a comparison of orchestration engines should look elsewhere.
 
 ## Verdict
-**8/10**: four cancellation defects of the Temporal saga sample debugged and fixed live, with a runnable demo repository, but the ordering and detached-scope fixes are already in the official sample and the talk has no measurements.
+
+**8/10**: four cancellation defects of the Temporal saga sample debugged and fixed on a live Temporal UI with the mechanics explained and a demo repository linked; the talk measures nothing and part of the material is in the official sample and docs.
+
+**Reach niche**: only teams already running Temporal can apply the cancellation-scope and cancel-type fixes that fill most of the slot.
 
 **Novelty 1/2**
 
-- **+** [09:03](https://youtu.be/c45C2wNSZFc?t=543) The speaker traces the cancellation error to the parallel compensation path wrapping failures in a CompensationException, his own finding in the official sample.
-- **+** [19:33](https://youtu.be/c45C2wNSZFc?t=1173) The explicit `CancellationScope.throwCanceled()` that makes WAIT_CANCELLATION_COMPLETED reach its compensation is the speaker's own fix, which neither official saga sample contains.
-- **−** The ordering fix and the detached cancellation scope are already in the official temporalio/samples-java bookingsaga sample, and the cancellation scope and cancel-type mechanics are on the Temporal Java SDK cancellation docs page.
+- **+** [04:52](https://youtu.be/c45C2wNSZFc?t=292) The speaker rebuilds the official sample in his own domain, holding money in a credit and a debit system over plain HTTP activities, which gives the known material a fintech setting.
+- **+** [23:15](https://youtu.be/c45C2wNSZFc?t=1395) Skyro keeps a reconciliation service running a few times a day as the last guard of consistency in a fintech system, a production choice a getting-started search does not give.
+- **−** The ordering fix and the detached cancellation scope are already in the official temporalio/samples-java bookingsaga sample, and cancellation scopes are covered on the Temporal Java SDK cancellation docs page.
 
 **Demonstrated 2/2**
 
-- **+** [17:24](https://youtu.be/c45C2wNSZFc?t=1044) After switching to WAIT_CANCELLATION_COMPLETED, the rerun waits out the 8s in-flight hold before the compensation executes.
-- **+** [20:35](https://youtu.be/c45C2wNSZFc?t=1235) The rerun with the explicit throwCanceled fix compensates where the second-hold cancellation had left none.
-- **−** [20:35](https://youtu.be/c45C2wNSZFc?t=1235) Success is read from the Temporal UI timeline and workflow status; the downstream ledger state is never shown on screen.
+- **+** [17:24](https://youtu.be/c45C2wNSZFc?t=1044) After switching to WAIT_CANCELLATION_COMPLETED, the rerun in the Temporal UI waits out the 8s in-flight hold before the compensation executes.
+- **+** [20:35](https://youtu.be/c45C2wNSZFc?t=1235) The rerun with the explicit throwCanceled fix compensates where the second-hold cancellation at [18:31](https://youtu.be/c45C2wNSZFc?t=1111) had left none.
+- **−** [08:30](https://youtu.be/c45C2wNSZFc?t=510) The error from cancelling with parallel compensation appears only as a still screenshot from the Temporal UI and is never rerun.
 
 **Measured 1/2**
 
-- **·** The talk makes no quantitative claim, with the 8s latency a configured mock parameter and the reconciler schedule stated without any effect claim.
+- **·** The talk makes no quantitative claim: the 8s latency is a configured mock parameter, and the reconciler schedule is stated without any effect claim.
 
 **Depth 2/2**
 
@@ -96,4 +100,4 @@ Temporal users implementing sagas or cancellable workflows gain the most, especi
 
 **Reusable 2/2**
 
-- **+** [28:00](https://youtu.be/c45C2wNSZFc?t=1680) The closing "Try the Demo!" QR points to github.com/AndreiSulyz/temporal-synchronous-saga-devoxx-example, whose README documents the naive saga and the local-activity, parallel and synchronous variants with configuration and run steps.
+- **+** [27:53](https://youtu.be/c45C2wNSZFc?t=1673) The closing "Try the Demo!" QR points to github.com/AndreiSulyz/temporal-synchronous-saga-devoxx-example, whose README documents the naive saga and the local-activity, parallel and synchronous variants with configuration and run steps.

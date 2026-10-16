@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=fShgG3jtkXQ
 durationMin: 51
 slides: null
 verdict: 6
+reach: segment
 frames: 11
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
----
+reviewedAt: 2026-10-15
 
 # MCP 2.0 - Stateless, New Auth (CIMD), and Exciting Extensions
 James Ward · Conference · Agentic Engineering & Tooling
@@ -82,18 +82,19 @@ Checklist for server developers: run stateless with explicit handles; drop sampl
 MCP server developers, especially on the JVM or Spring, who need to plan the 2026-07-28 migration or adopt CIMD, Tasks, Skills, or Apps. Skip it if you only consume MCP tools as an end user, or if you want agent-framework or client-side guidance beyond Inspector-level testing.
 
 ## Verdict
-**6/10**: The transport redesign, CIMD and extensions are explained from protocol internals with most segments demoed live, but the title-billed CIMD handshake never runs and the takeaways stay library pointers plus a spoken checklist.
+**6/10**: The transport redesign and CIMD are explained from protocol internals and most segments run live, but the title-billed CIMD handshake never completes and the takeaways are library pointers plus a spoken checklist.
+
+**Reach segment**: teams building MCP servers or agent features can use the migration checklist and extension APIs in their own work.
 
 **Novelty 1/2**
 
-- **+** [40:19](https://youtu.be/fShgG3jtkXQ?t=2419) Skills JARs, the cimd.now test site and the zio-http-mcp demos carry the talk on the speaker's own projects and migration experience.
-- **−** The core material (stateless transport, CIMD, extension IDs, deprecations) follows the public modelcontextprotocol.io/specification/2026-07-28 closely.
+- **+** [09:18](https://youtu.be/fShgG3jtkXQ?t=558) Ties the spec change to what the current Spring AI SDK offers: putting a server in stateless mode now approximates the new behaviour, so servers can prepare before the release.
 
 **Demonstrated 1/2**
 
 - **+** [19:11](https://youtu.be/fShgG3jtkXQ?t=1151) The elicitation flow runs end to end in MCP Inspector with the input_required response and the follow-up request visible in the protocol view.
-- **+** [35:35](https://youtu.be/fShgG3jtkXQ?t=2135) In Claude, the MCP App renders a sortable 16-row EC2 table and auto-fills a launch prompt.
-- **−** [29:45](https://youtu.be/fShgG3jtkXQ?t=1785) The CIMD handshake never runs on screen: the toggle goes on, setup is deferred, and the whoami call uses the DCR-authenticated session.
+- **+** [35:35](https://youtu.be/fShgG3jtkXQ?t=2135) In Claude, the MCP App renders a sortable EC2 table and auto-fills a launch prompt.
+- **−** [29:45](https://youtu.be/fShgG3jtkXQ?t=1785) The CIMD handshake never runs on screen: the toggle goes on, the URL setup is deferred, and the whoami call uses the already authenticated session.
 
 **Measured 1/2**
 
@@ -107,5 +108,6 @@ MCP server developers, especially on the JVM or Spring, who need to plan the 202
 
 **Reusable 1/2**
 
-- **+** [46:38](https://youtu.be/fShgG3jtkXQ?t=2798) The speaker names implementations that already support the new spec (Tachyon MCP, his zio-http-mcp) and cimd.now for localhost CIMD tests, which a reader can look up.
+- **+** [46:38](https://youtu.be/fShgG3jtkXQ?t=2798) Names implementations that already support the new spec (Tachyon MCP, zio-http-mcp) and cimd.now for localhost CIMD tests, which a reader can look up.
+- **+** [49:14](https://youtu.be/fShgG3jtkXQ?t=2954) Describes extracting Skills JARs to the filesystem with sbt, Gradle or Maven plugins, a practice left for the viewer to reconstruct.
 - **−** [47:09](https://youtu.be/fShgG3jtkXQ?t=2829) Demo code is only said to be "up on my GitHub", with no repository named in speech.

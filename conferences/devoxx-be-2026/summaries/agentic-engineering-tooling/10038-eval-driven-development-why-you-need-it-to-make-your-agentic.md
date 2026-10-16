@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=4qeUklTLyTs
 durationMin: 40
 slides: null
 verdict: 7
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -77,33 +78,34 @@ Shipping creates a new role, the agent-sitter. Trace everything (prompts, respon
 JVM developers shipping or about to ship agent apps who need a practical eval workflow from first test to production loop. Skip it if layered evals with calibrated judges and a production-to-regression loop already run in your team, or if you came for LLM security depth, which the talk sends elsewhere.
 
 ## Verdict
-**7/10**: A full eval lifecycle run on screen with real trade-offs explained, limited by single-run scores without spread and no sample repository.
+**7/10**: A full eval lifecycle run on screen with trade-offs weighed, limited by single-run scores without spread, unsourced figures and no sample repository.
+
+**Reach segment**: JVM developers adding LLM features to business applications can lift the eval pyramid, judge calibration and production-to-regression loop into their own agent work.
 
 **Novelty 1/2**
 
-- **+** [11:48](https://youtu.be/4qeUklTLyTs?t=708) The Devoxx assistant demo app, from semantic program search to personalized tracks, carries the talk on the speaker's own example.
-- **+** [14:21](https://youtu.be/4qeUklTLyTs?t=861) The JVM framework survey centers Dokimos, whose Kotlin integration is the speaker's own contribution.
-- **−** Eval-driven development itself is already covered by the Red Hat eval-driven development article (March 2026) and evaldriven.org, so the concept framing is shared ground.
+- **+** [12:18](https://youtu.be/4qeUklTLyTs?t=738) The speaker-built Devoxx assistant, with drafted user profiles and scenarios, illustrates each eval pattern on the speaker's own example.
+- **−** Eval-driven development as a concept is already covered by the Red Hat eval-driven development article (March 2026) and evaldriven.org, so the framing is shared ground.
 
 **Demonstrated 2/2**
 
-- **+** [22:34](https://youtu.be/4qeUklTLyTs?t=1354) The pirate-tone eval fails at 0.62 on screen, a system-prompt fix follows, and a re-run scores 0.95.
+- **+** [22:34](https://youtu.be/4qeUklTLyTs?t=1354) The pirate-tone eval fails on screen with the pirate reply and the judge's verdict visible.
 - **+** [26:42](https://youtu.be/4qeUklTLyTs?t=1602) The parking hallucination run fails its faithfulness judges with the per-verdict breakdown visible.
-- **+** [30:18](https://youtu.be/4qeUklTLyTs?t=1818) The conversation simulation run shows the judges passing while the deterministic overlap check fails.
+- **+** [30:18](https://youtu.be/4qeUklTLyTs?t=1818) The conversation simulation run passes its judges while the deterministic overlap check fails.
 
 **Measured 1/2**
 
 - **+** [23:04](https://youtu.be/4qeUklTLyTs?t=1384) The tone score moves from 0.62 to 0.95 after the prompt fix, with the criterion, threshold, pinned model and temperature 0 shown as the method.
-- **−** [23:04](https://youtu.be/4qeUklTLyTs?t=1384) Each score is a single judge run with no spread, although the speaker's own calibration advice at [31:20](https://youtu.be/4qeUklTLyTs?t=1880) is to rerun a frozen set and check standard deviation.
-- **−** [04:06](https://youtu.be/4qeUklTLyTs?t=246) The 89% observability and 52% eval-use figures are given without a source or method.
+- **−** [31:20](https://youtu.be/4qeUklTLyTs?t=1880) Each score is a single judge run with no spread, although the speaker's own calibration advice is to rerun a frozen set and check standard deviation.
+- **−** [04:06](https://youtu.be/4qeUklTLyTs?t=246) The 89% observability and 52% eval-use figures, like the Gartner 40% cancellation forecast at [02:34](https://youtu.be/4qeUklTLyTs?t=154), are given without a source or method.
 
 **Depth 2/2**
 
 - **+** [05:08](https://youtu.be/4qeUklTLyTs?t=308) The refund-request trace grounds the probabilistic-core argument in each compounding uncertainty source.
 - **+** [20:31](https://youtu.be/4qeUklTLyTs?t=1231) Judge design trade-offs are weighed: a judge at least as good as the agent, pinned version and temperature 0, and threshold versus grade-point average at higher cost for more stable results.
-- **+** [27:13](https://youtu.be/4qeUklTLyTs?t=1633) The faithfulness internals show truths-versus-statements verdicting, not only the resulting score.
+- **+** [27:13](https://youtu.be/4qeUklTLyTs?t=1633) The faithfulness internals show truths-versus-statements verdicting behind the resulting score.
 
 **Reusable 1/2**
 
-- **+** [14:21](https://youtu.be/4qeUklTLyTs?t=861) Dokimos is named with its docs site, supported frameworks, workflow skills and Kotlin DSL shown in use.
+- **+** [14:21](https://youtu.be/4qeUklTLyTs?t=861) Dokimos is named with its docs site, supported frameworks and workflow skills, the presented project's own distribution.
 - **−** [39:59](https://youtu.be/4qeUklTLyTs?t=2399) The closing offers no repository for the Devoxx assistant, leaving the Kotlin eval code to reconstruct by hand.

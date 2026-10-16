@@ -9,7 +9,8 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=BOcNjR2lBus
 durationMin: 52
 slides: null
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -85,33 +86,34 @@ Engineers drowning in large AI-generated pull requests, and anyone building revi
 
 ## Verdict
 
-**8/10**: A live, end-to-end tour of an original per-PR review tool whose repositories are published, held back by self-reported costs and totals and by a core capture pipeline whose internals are skipped.
+**7/10**: A live, end-to-end tour of an original per-PR review tool with a public demo, held back by credited and off-the-shelf parts inside the speaker's own tool, self-reported totals, and a core capture pipeline whose wiring is skipped.
 
-**Novelty 2/2**
+**Reach segment**: JVM teams already reviewing large AI-written pull requests who have end-to-end tests and can add OpenTelemetry, since the Sequence, City and architecture-check tabs depend on that setup.
+
+**Novelty 1/2**
 
 - **+** [25:30](https://youtu.be/BOcNjR2lBus?t=1530) Unit-testing hand-drawn Draw.io diagrams against the code, with AI adding the missing edge in red for a human to lay out, is a technique of the speaker's own design.
-- **+** [28:08](https://youtu.be/BOcNjR2lBus?t=1688) Running every test alone under a coverage probe, listing the tests that touched the ~500 changed lines, and AI-matching them to the issue is the speaker's own pipeline.
-- **·** [42:54](https://youtu.be/BOcNjR2lBus?t=2574) Code City ("Very old idea") and the trace-to-PlantUML script from "a friend of mine" ([35:00](https://youtu.be/BOcNjR2lBus?t=2100)) are credited ingredients, so the novelty sits in assembling them per PR.
+- **+** [28:08](https://youtu.be/BOcNjR2lBus?t=1688) Listing the tests that executed any of the ~500 changed lines and AI-matching them to the issue is the speaker's own pipeline.
+- **·** [42:54](https://youtu.be/BOcNjR2lBus?t=2574) Code City ("Very old idea") and the trace-to-PlantUML script from "a friend of mine" ([35:00](https://youtu.be/BOcNjR2lBus?t=2100)) are credited ingredients, and oasdiff, OpenTelemetry and PlantUML are off-the-shelf, so the page is an assembly inside the speaker's own tool, which rates 1.
 
 **Demonstrated 2/2**
 
-- **+** [04:43](https://youtu.be/BOcNjR2lBus?t=283) The review page for PR #51 renders live with assumptions, findings, costs and test churn, and the Demo, API, Data, Tests, Sequence and City tabs are clicked through on screen.
+- **+** [04:43](https://youtu.be/BOcNjR2lBus?t=283) The review page for PR #51 renders live with its assumptions, open findings and auto-fixed items, and the Demo, API, Data, Tests, Sequence and City tabs are clicked through on screen.
 - **+** [36:34](https://youtu.be/BOcNjR2lBus?t=2194) The N+1 query problem appears live inside a captured sequence with the actual SQL and bound values visible.
 - **−** [37:39](https://youtu.be/BOcNjR2lBus?t=2259) Peripheral pieces fail or are cut: one endpoint's response payload does not render ("that didn't work right now"), the module-callback detail needs repeated clicks at [39:16](https://youtu.be/BOcNjR2lBus?t=2356), and the Codeowners tab is dropped at [48:36](https://youtu.be/BOcNjR2lBus?t=2916), while the PR #51 run itself works.
 
 **Measured 1/2**
 
-- **+** [06:46](https://youtu.be/BOcNjR2lBus?t=406) Every pipeline stage carries a stated dollar cost ($15 implementation, $5 review quorum, $9 autofixes, $0.30 guide), grounding the economics argument.
-- **·** [19:12](https://youtu.be/BOcNjR2lBus?t=1152) PR totals (lines +1590/−380, 345 tests probed, 25 autofixes) are self-reported counts with no baseline or method, so they illustrate scale rather than prove effect.
-- **−** [50:10](https://youtu.be/BOcNjR2lBus?t=3010) "Uber burned its own entire year budget in four months" is quoted with no source.
+- **+** [07:18](https://youtu.be/BOcNjR2lBus?t=438) Every pipeline stage carries a stated dollar cost ($15 implementation, $5 review quorum, $9 autofixes), grounding the economics argument.
+- **·** [19:12](https://youtu.be/BOcNjR2lBus?t=1152) PR totals (lines +1590/−380, tests +42/−12/5, 25 fixed) are self-reported counts with no baseline or method, so they illustrate scale rather than prove effect.
 
 **Depth 1/2**
 
 - **+** [42:23](https://youtu.be/BOcNjR2lBus?t=2543) The zero-drift principle is argued with reasons: ask AI to write the diagram-generating script once instead of asking it for opinions on every run.
 - **+** [24:25](https://youtu.be/BOcNjR2lBus?t=1465) The trade-off behind hand-drawn diagrams is explained: one added line re-lays-out a PlantUML drawing and destroys the reviewer's "geographic memory".
-- **−** [35:30](https://youtu.be/BOcNjR2lBus?t=2130) How the trace capture was wired is waved away ("it plugged in the open telemetry … zero instrumentation agent … I don't care. done"), so the core pipeline is shown, not explained.
+- **−** [35:30](https://youtu.be/BOcNjR2lBus?t=2130) How the trace capture was wired is waved away ("it plugged in the open telemetry … zero instrumentation agent … I don't care. done"), so the core pipeline is shown but its wiring goes unexplained.
 
 **Reusable 2/2**
 
-- **+** [01:36](https://youtu.be/BOcNjR2lBus?t=96) Two open-source GitHub repositories hold the review tool, with issues invited as the feedback channel.
-- **+** [09:54](https://youtu.be/BOcNjR2lBus?t=594) A demo of the review page is published online and browsable from a phone via the shown QR code.
+- **+** [09:54](https://youtu.be/BOcNjR2lBus?t=594) A demo of the review page is published online and browsable from a phone via the shown QR code, which reproduces the talk's main content.
+- **·** [01:36](https://youtu.be/BOcNjR2lBus?t=96) Two open-source GitHub repositories hold the review tool itself, with issues invited as the feedback channel; as the project's own repositories they alone would rate 1.

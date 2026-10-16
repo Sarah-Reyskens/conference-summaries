@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=6SPnBmQrYEk
 durationMin: 27
 slides: null
-verdict: 10
+verdict: 8
+reach: niche
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Tap into the NVIDIA Ecosystem from Java with TornadoVM's Hybrid API
@@ -67,7 +68,7 @@ The team built a full LLM inference engine (jitLLM) in Java on the TornadoVM bac
 
 ### [25:02](https://youtu.be/6SPnBmQrYEk?t=1502) Takeaways and resources
 
-Recap: code generation reaches about 98% kernel-time parity with equivalent hand-written CUDA, Cassandra/JVector graph builds run 90x faster on a local GPU. Everything is on GitHub: TornadoVM, jitLLM, the talk's demos (mikepapadim/tornadovm-devoxx2026-cuda-demos), the Flink accelerator, plus the SDKMAN SDK.
+Recap: code generation reaches about 98% kernel-time parity with equivalent hand-written CUDA, and the slide puts Cassandra/JVector graph builds at 19x faster on a local GPU (268.4 s on the CPU, 14.1 s on the GPU; the speaker says 90x). Everything is on GitHub: TornadoVM, jitLLM, the talk's demos (mikepapadim/tornadovm-devoxx2026-cuda-demos), the Flink accelerator, plus the SDKMAN SDK.
 
 ## Tools, libraries and specs
 
@@ -84,33 +85,35 @@ Java developers curious about GPU acceleration without leaving the JVM, and anyo
 
 ## Verdict
 
-**10/10**: Four working GPU demos, the authors' comparative benchmarks, a task-composition mental model and published example repositories meet the five criteria, with uneven support for the closing performance claims and extra setup for Flink.
+**8/10**: Four on-screen GPU demos, GEMM and Flink benchmarks with stated setups, and a demo repository that reproduces the examples; the API tour is what the project's own docs cover and the internals are only sketched.
 
-**Novelty 2/2**
+**Reach niche**: Java developers in this audience with NVIDIA GPU access and an offloadable workload (local LLM inference, Flink or data-frame pipelines, custom GPU kernels) can use the main content; typical business-application teams without GPU work cannot.
 
-- **+** [17:13](https://youtu.be/6SPnBmQrYEk?t=1033) The speakers compare their TileContext and hand-tuned KernelContext GEMM implementations against cuBLAS on the same RTX 4090.
-- **+** [23:58](https://youtu.be/6SPnBmQrYEk?t=1438) The authors' Flink measurements compare GPU execution with vanilla Flink at three parallelism levels on two dataset sizes.
+**Novelty 1/2**
+
+- **+** [18:15](https://youtu.be/6SPnBmQrYEk?t=1095) The team's jitLLM inference engine mixes generated Java kernels with cuBLAS and cuDNN library kernels, and [21:55](https://youtu.be/6SPnBmQrYEk?t=1315) the Flink provider builds one task graph from library tasks and JIT tasks, so one library-task layer serves both projects.
+- **−** The `LibraryTask` API tour and the layering of the four programming levels are what tornadovm.org/cuda-for-java and the beehive-lab/TornadoVM repository already give.
 
 **Demonstrated 2/2**
 
-- **+** [12:34](https://youtu.be/6SPnBmQrYEk?t=754) The low-pass filter runs its library/JIT chain beside the Java source and reaches PASSED, and [16:12](https://youtu.be/6SPnBmQrYEk?t=972) the GEMM ladder shows the variants executing under Nsight Systems.
-- **+** [19:18](https://youtu.be/6SPnBmQrYEk?t=1158) jitLLM generates a Java GPU kernel, compiles and executes it on the same GPU, with the output reporting PASSED and a 99.87% GPU/CPU pixel match.
-- **+** [22:56](https://youtu.be/6SPnBmQrYEk?t=1376) The Flink query runs to completion in the dashboard and its task-executor log shows the generated library and JIT tasks.
+- **+** [13:45](https://youtu.be/6SPnBmQrYEk?t=825) The low-pass filter runs its cuFFT and JIT chain on the same buffers live and ends with `PASSED` for 110 executions, and [17:05](https://youtu.be/6SPnBmQrYEk?t=1025) the GEMM ladder runs eight rungs under Nsight Systems and ends with `PASSED -- every check holds`.
+- **+** [19:18](https://youtu.be/6SPnBmQrYEk?t=1158) jitLLM generates a Java GPU kernel, compiles it and runs it on the same GPU, with the output showing 99.87% GPU/CPU agreement on 786,432 pixels.
+- **+** [23:40](https://youtu.be/6SPnBmQrYEk?t=1420) The Flink query runs live and the task-executor log lists the generated Parquet-read and regex library tasks plus the combine kernel, on 1M lines and 8 patterns rather than the 64M-line corpus of the benchmark slide.
 
 **Measured 2/2**
 
-- **+** [17:13](https://youtu.be/6SPnBmQrYEk?t=1033) The GEMM chart states workload, GPU, tool and version for cuBLAS/TileContext/KernelContext throughput of 146.5/125.0/119.5 TFLOP/s, while [13:20](https://youtu.be/6SPnBmQrYEk?t=800) the filter compares plain execution at 63.3 µs with CUDA graphs at 38.9 µs using medians of 300 executions each.
-- **+** [23:58](https://youtu.be/6SPnBmQrYEk?t=1438) The Flink chart gives hardware, versions and end-to-end comparisons for 16M and 64M log lines, including 8.1 s versus 142 s at parallelism 1, although it compares a device median of three runs with a vanilla mean of two.
-- **−** [19:49](https://youtu.be/6SPnBmQrYEk?t=1189) The llama.cpp throughput claims, [25:02](https://youtu.be/6SPnBmQrYEk?t=1502) 90x graph-build speedup and [25:36](https://youtu.be/6SPnBmQrYEk?t=1536) 98% CUDA kernel-time parity lack the workload and measurement setup needed to assess them.
+- **+** [17:20](https://youtu.be/6SPnBmQrYEk?t=1040) The GEMM slide states FP16 with FP32 accumulate, n = 2048, nsys kernel time, RTX 4090 and TornadoVM 7.0.0, and compares hand-written, tiled and cuBLAS kernels (119.5, 125.0 and 146.5 TFLOP/s).
+- **+** [24:05](https://youtu.be/6SPnBmQrYEk?t=1445) The Flink slide gives RTX 4070 laptop, CUDA 12.5, JDK 21, Flink 2.3.0 and end-to-end wall clock for 16M and 64M lines against three vanilla baselines (17.43x, 9.38x, 5.26x at 64M), although it compares a device median of three runs with a vanilla mean of two.
+- **−** [25:02](https://youtu.be/6SPnBmQrYEk?t=1502) The speaker says Cassandra/JVector graph builds are 90x faster, while the slide shown at that moment reads 19x (268.4 s on the CPU, 14.1 s on the GPU).
 
-**Depth 2/2**
+**Depth 1/2**
 
-- **+** [09:25](https://youtu.be/6SPnBmQrYEk?t=565) Named tasks let the runtime reason about data movement across a chain, and the FFT/filter/normalization example explains when to combine vendor libraries with custom Java kernels.
-- **+** [12:01](https://youtu.be/6SPnBmQrYEk?t=721) The runtime-feature discussion separates compute from IO overhead and identifies staged transfers, grid scheduling, CUDA graphs and multiple streams as tuning controls.
-- **+** [21:24](https://youtu.be/6SPnBmQrYEk?t=1284) The Flink provider analyzes the query IR and selects library tasks for supported operations or JIT tasks for the remaining work inside one TaskGraph.
+- **+** [09:25](https://youtu.be/6SPnBmQrYEk?t=565) Named tasks let the runtime decide which data stays on the GPU, which is freed and which is transferred across a chain of tasks.
+- **+** [06:47](https://youtu.be/6SPnBmQrYEk?t=407) The Parallel API was found insufficient for performant code, which is why KernelContext was added below it and TileContext (between the two) later.
+- **·** [14:09](https://youtu.be/6SPnBmQrYEk?t=849) TileContext leaves thread and prefetch decisions to the compiler; how it makes them is not explained, and TornadoVM internals are deferred to other sessions.
 
 **Reusable 2/2**
 
-- **+** [26:06](https://youtu.be/6SPnBmQrYEk?t=1566) The closing resources point to the talk's demos repository and jitLLM, alongside the TornadoVM and Flink accelerator repositories, covering the main examples with published code.
-- **+** [08:53](https://youtu.be/6SPnBmQrYEk?t=533) The Hybrid API abstraction ships as a Maven jar, and the SDKMAN distribution supplies an installation route for the core TornadoVM examples.
-- **−** [20:51](https://youtu.be/6SPnBmQrYEk?t=1251) Reproducing the Flink path requires the unreleased gpu-offload branch and a locally built TornadoVM development version, rather than only the configuration flag described here.
+- **+** [26:30](https://youtu.be/6SPnBmQrYEk?t=1590) The closing slide links the demos repository for this talk (`mikepapadim/tornadovm-devoxx2026-cuda-demos`), whose README lists runnable versions of the filter, the jitLLM kernel and the tile ladder, each with a CUDA C++ equivalent.
+- **+** [26:06](https://youtu.be/6SPnBmQrYEk?t=1566) The Flink accelerator repository ships the `demo-regex.sh` script used for the log-screening demo.
+- **−** [20:51](https://youtu.be/6SPnBmQrYEk?t=1251) The accelerator README states that the Flink SPI exists only on the `gpu-offload` branch and that TornadoVM must be built locally, while the talk presents the GPU path as a config flag.

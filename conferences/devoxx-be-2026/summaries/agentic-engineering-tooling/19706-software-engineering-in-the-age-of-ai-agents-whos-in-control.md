@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=Z64CjgCO5gk
 durationMin: 48
 slides: null
 verdict: 6
+reach: broad
 frames: 12
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -88,34 +89,36 @@ A CTO once told a junior that reviewed code is yours; the junior returned with o
 Engineers and tech leads already merging agent-written code who want a tour of what can go wrong and which guardrails to install. Skip it if you want a hands-on tutorial for a specific agent framework or a deep dive into any single incident; each story gets a few minutes in service of the larger argument.
 
 ## Verdict
-
-**6/10**: Credited research (METR, Carnegie Mellon, DX, Mandiant) and incident stories are tied to a capability, acceptance and evidence framework with per-tier review rules; the first-hand material is toy apps, and each control mechanism gets a few minutes.
-
++
+**6/10**: Studies with a baseline and method (METR, Carnegie Mellon) and an incident tour are tied together by a capability, acceptance and evidence framework with review tiers by blast radius; the speaker's own builds are toy apps, the headline 5–15% gain has no source, and each control gets a few minutes.
++
+**Reach broad**: Most of the conference audience already uses AI assistants and many merge agent-written code, so they can apply the review tiers, sandboxing and measurement practices to their own work within the next year.
++
 **Novelty 1/2**
-
-- **+** [07:55](https://youtu.be/Z64CjgCO5gk?t=475) The talk brings METR, Carnegie Mellon, DX and Mandiant research, Oxide's review rules and Addy Osmani's offloading-versus-surrender framing together with the speaker's own agent-built apps under one accountability thesis.
-- **+** [14:43](https://youtu.be/Z64CjgCO5gk?t=883) The capability, acceptance and evidence controls plus the traffic-light review tiers give the incident tour a decision structure.
-- **·** [05:49](https://youtu.be/Z64CjgCO5gk?t=349) The speaker's own builds are toy front-end apps he flags as having no backend, security or compliance, so the first-hand material is thin next to the credited public sources.
-
++
+- **+** [14:43](https://youtu.be/Z64CjgCO5gk?t=883) Naming capability, acceptance and evidence as the three controls, and saying whoever writes them is in control, gives the incident tour a decision structure that a search for any single incident does not offer.
+- **+** [47:16](https://youtu.be/Z64CjgCO5gk?t=2836) The closing line (execution moves to agents, control sits in the constraints around them, accountability does not move) states the synthesis the whole talk builds toward.
+- **·** [05:49](https://youtu.be/Z64CjgCO5gk?t=349) The speaker's own builds are front-end toys with no backend, security or compliance, so the first-hand experience behind the synthesis is thin.
++
 **Demonstrated 1/2**
-
-- **+** [07:00](https://youtu.be/Z64CjgCO5gk?t=420) Screenshots of the agent-built quiz app show an image upload, a generated question, a streak counter and a graded answer.
-- **·** [23:08](https://youtu.be/Z64CjgCO5gk?t=1388) The apps and the chatbot prompt-injection attempt appear as screenshots with the chatbot's reply narrated; no agent loop, stop condition or sandbox is run, which suits a strategy talk.
-
++
+- **+** [06:51](https://youtu.be/Z64CjgCO5gk?t=411) Screenshots of the quiz app built from three 15-minute specs show a textbook photo turned into generated questions, graded answers and a streak counter.
+- **·** [23:08](https://youtu.be/Z64CjgCO5gk?t=1388) The chatbot prompt-injection attempt appears as a screenshot with the reply narrated; no agent loop, stop condition or sandbox is run, which suits a strategy talk.
++
 **Measured 2/2**
-
-- **+** [28:51](https://youtu.be/Z64CjgCO5gk?t=1731) The Carnegie Mellon study compares 806 Cursor repositories against 1,380 matched controls: +281% lines added in month one, with +30% static-analysis warnings and +41% complexity persisting.
-- **+** [08:27](https://youtu.be/Z64CjgCO5gk?t=507) The METR trial has developers do a task with and without AI: they felt 20% faster and measured 19% slower (the quiz-app screenshot at 07:00 shows 19%, the speaker says 90% aloud), and the 2026 repeat is reported inconclusive because participants refused the no-AI condition.
++
+- **+** [28:51](https://youtu.be/Z64CjgCO5gk?t=1731) The Carnegie Mellon study compares about 800 Cursor projects with about a thousand that did not adopt it: lines added up almost fourfold in month one, with +30% static-analysis warnings and +41% complexity persisting.
+- **+** [08:27](https://youtu.be/Z64CjgCO5gk?t=507) The METR trial has developers do the same task with and without AI: they felt 20% faster and measured 19% slower (the captions hear "90%"), and the 2026 repeat is reported inconclusive because participants refused the no-AI condition.
 - **−** [08:57](https://youtu.be/Z64CjgCO5gk?t=537) The 5–15% realistic-gain range, the talk's own headline figure, rests on "what I've seen in research and from the organizations I work with" with no source or method.
-
++
 **Depth 1/2**
-
-- **+** [13:09](https://youtu.be/Z64CjgCO5gk?t=789) Loop engineering is explained as designing the loop and its stop condition, with an example of tests passing plus an architecture-rules report showing zero violations.
-- **+** [34:07](https://youtu.be/Z64CjgCO5gk?t=2047) The traffic-light review model sets agent autonomy by blast radius with a criterion per tier: low impact, a human review step, and money, security or privacy.
-- **−** [16:00](https://youtu.be/Z64CjgCO5gk?t=960) The Bun slide's stop condition adds adversarial reviewers in their own context, which the talk never explains although it is the part that makes the verifier harder to fool than the generator.
-
++
+- **+** [13:09](https://youtu.be/Z64CjgCO5gk?t=789) Loop engineering is explained as designing the loop and its stop condition, with tests passing plus an architecture-rules report at zero violations as the example.
+- **+** [34:07](https://youtu.be/Z64CjgCO5gk?t=2047) The traffic-light review model sets agent autonomy by blast radius: agent-reviewed low-impact code, a human review step in the middle, and no agents or strict supervision for money, security or privacy.
+- **−** [15:16](https://youtu.be/Z64CjgCO5gk?t=916) The verifier-harder-to-fool-than-the-generator claim is the talk's core, yet the Bun slide's adversarial reviewers in their own context, the part that implements it, are never explained.
++
 **Reusable 1/2**
-
++
 - **+** [42:40](https://youtu.be/Z64CjgCO5gk?t=2560) The Monday-morning list (specs before prompts, explainable accepts, codified standards, sandboxed reach, DORA measurement before, during and after) is specific enough to adopt directly.
 - **+** [33:01](https://youtu.be/Z64CjgCO5gk?t=1981) Oxide's published rulebook (RFD 576) supplies three review rules: self-review before others review, no regeneration during review, no LLM review as a human substitute.
 - **·** [43:41](https://youtu.be/Z64CjgCO5gk?t=2621) No repository or checklist covers loop control, boundaries or measurement, so each team reconstructs those practices from the recording.

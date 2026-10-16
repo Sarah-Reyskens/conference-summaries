@@ -9,7 +9,8 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=ufhs9THbYZI
 durationMin: 52
 slides: https://slides.nipafx.dev/java-next/2026-10-09-devoxx-be/
-verdict: 7
+verdict: 6
+reach: broad
 frames: 5
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -90,32 +91,34 @@ Java developers who want a single current map of where the platform is heading, 
 
 ## Verdict
 
-**7/10**: A roadmap survey of eight projects whose Leyden benchmark charts and Valhalla and Babylon design reasoning carry it, limited by status-only novelty and slide-only code.
+**6/10**: An OpenJDK roadmap supported by comparative Leyden benchmarks and runtime design explanations, limited by status-report novelty and runnable claims presented only on slides.
+
+**Reach broad**: Most of the Devoxx BE audience develops Java applications and can use the language-feature and runtime-upgrade roadmap as these JDK changes ship.
 
 **Novelty 1/2**
 
-- **+** [02:39](https://youtu.be/ufhs9THbYZI?t=159) The speaker folds his own recorded Inside Java conversations with Cimadamore and Bierman, not yet published, into the survey.
-- **+** [35:18](https://youtu.be/ufhs9THbYZI?t=2118) He revises his earlier guidance that almost all records would become value records and tells listeners to pick value classes by domain meaning, not for performance.
-- **+** [45:39](https://youtu.be/ufhs9THbYZI?t=2739) Six of the eight projects (Amber, Leyden, Valhalla, Loom, Panama, Lilliput) get timelines with release numbers and preview rounds in one place; Babylon and Detroit have none yet.
+- **+** [02:39](https://youtu.be/ufhs9THbYZI?t=159) The survey combines project updates with pointers to the speaker's recorded Inside Java conversations with Cimadamore and Bierman.
+- **+** [35:18](https://youtu.be/ufhs9THbYZI?t=2118) He revises his earlier expectation that almost all records would become value records and advises choosing value classes by domain meaning.
+- **+** [45:39](https://youtu.be/ufhs9THbYZI?t=2739) The closing roadmap brings Loom, Panama, Lilliput and Detroit alongside the four projects covered earlier.
 
-**Demonstrated 1/2**
+**Demonstrated 0/2**
 
-- **·** [00:34](https://youtu.be/ufhs9THbYZI?t=34) A 50-minute survey that lists the projects it will cover and presents slides throughout has no runnable claim and no demo slot; code appears as slide examples.
+- **−** [43:34](https://youtu.be/ufhs9THbYZI?t=2614) The Java-to-GPU claim is illustrated with Triton slide code without showing compilation, execution or output.
 
 **Measured 2/2**
 
-- **+** [18:43](https://youtu.be/ufhs9THbYZI?t=1123) The bar chart is titled "Linux/x64 (2 cores), normalized score" and shows five named framework versions (Helidon 4.4.0.M2 to Spring PetClinic 3.2.0) with and without the AOT cache and AOT code, each normalized to a 1,000 no-cache baseline.
-- **+** [19:46](https://youtu.be/ufhs9THbYZI?t=1186) A 20-iteration seconds-per-iteration curve on the same setup compares no AOT (~1.4 s first iteration), cache (~0.9 s) and cache plus code (~0.3 s), all converging to the same peak.
-- **−** [16:38](https://youtu.be/ufhs9THbYZI?t=998) The slide figures (PetClinic ~40%, stream loop ~20%, javac ~15% and ~75% fewer warmup iterations) are called "different disconnected benchmarks ... just there to give you an idea", with no run count or variance behind them.
+- **+** [18:43](https://youtu.be/ufhs9THbYZI?t=1123) The Linux/x64 two-core comparison uses framework hello-world workloads and PetClinic, normalizing each no-cache baseline to 1,000 against cache-only and cache-plus-code runs.
+- **+** [19:46](https://youtu.be/ufhs9THbYZI?t=1186) A twenty-iteration javac warmup curve compares seconds per iteration without AOT, with cached profiles and with cached compiled code, showing first-iteration time fall from about 1.4 seconds to 0.9 seconds and then about 0.3 seconds.
+- **−** [16:38](https://youtu.be/ufhs9THbYZI?t=998) The figures are introduced as disconnected benchmarks intended to suggest possible benefits, without run counts or variance.
 
 **Depth 2/2**
 
-- **+** [13:31](https://youtu.be/ufhs9THbYZI?t=811) The Leyden mechanism is explained end to end: why early work needs training runs, what the AOT cache captures, and how a mismatched cache is ignored or costs only a deoptimization.
-- **+** [31:08](https://youtu.be/ufhs9THbYZI?t=1868) Flattening limits are worked through to the bit level: the null bit plus 64 value bits breaks atomic writes, which is why `Long` cannot flatten, after identity and null costs and escape analysis with scalarization.
-- **+** [42:01](https://youtu.be/ufhs9THbYZI?t=2521) The code-model design is justified against the alternatives: the AST is too syntactic, bytecode holds too little information, and the model draws on compiler IRs and MLIR.
+- **+** [13:31](https://youtu.be/ufhs9THbYZI?t=811) Leyden's training-run explanation connects dynamic runtime decisions to cache reuse and explains why mismatches cause fallback or deoptimization rather than incorrect behavior.
+- **+** [31:08](https://youtu.be/ufhs9THbYZI?t=1868) The flattening explanation connects nullability's extra bit to atomic-write limits and shows why a nullable Long cannot routinely flatten.
+- **+** [42:01](https://youtu.be/ufhs9THbYZI?t=2521) Babylon's intermediate code model is justified against the AST's syntax dependence and bytecode's missing information, drawing on compiler IRs and MLIR.
 
 **Reusable 1/2**
 
-- **+** [15:05](https://youtu.be/ufhs9THbYZI?t=905) The training-run and production-run AOT flags, in full and shortcut form, are on slides for use in a build or canary pipeline.
-- **+** [03:09](https://youtu.be/ufhs9THbYZI?t=189) The primitive-pattern snippet shows a preview feature, while constant patterns and withers are strawman syntax that no JDK accepts.
-- **·** No repository, sample project or checklist covers the talk's content; the deck does not count toward this criterion.
+- **+** [15:05](https://youtu.be/ufhs9THbYZI?t=905) The AOT training, assembly and production workflow includes command fragments and a shortcut suitable for adapting to a build or canary pipeline.
+- **+** [03:09](https://youtu.be/ufhs9THbYZI?t=189) Primitive-pattern slide code provides a preview-feature example, followed by proposed constant-pattern and wither syntax.
+- **·** [50:17](https://youtu.be/ufhs9THbYZI?t=3017) The closing dev.java and Inside Java pointers provide further reading without a sample repository or checklist reproducing the examples.

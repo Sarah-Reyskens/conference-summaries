@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=ePQyy9sLmsY
 durationMin: 51
 slides: null
 verdict: 7
+reach: niche
 frames: 14
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Beyond encryption at rest: computing on encrypted data
 
@@ -97,22 +97,23 @@ Developers and architects handling sensitive data in finance, health, or confide
 
 **7/10**: A live end-to-end encrypted computation with a beginner mental model of noise and bootstrapping, held back by standard core material, a benchmark with no stated method, and no published demo code.
 
+**Reach niche**: Backend developers handling highly sensitive health or financial data could pilot the approach, but with no Java binding and a roughly 20,000x slowdown most of the Devoxx audience will not compute on encrypted data in their own work within the year.
+
 **Novelty 1/2**
 
-- **+** [22:06](https://youtu.be/ePQyy9sLmsY?t=1326) The cardiovascular risk-score app is the speaker's own example, so the talk carries more than the standard RSA→LWE→BFV→bootstrapping explanation.
-- **+** [36:54](https://youtu.be/ePQyy9sLmsY?t=2214) The cleartext-versus-homomorphic timing, with its component breakdown, is a measurement the speaker ran on that app.
+- **+** [22:06](https://youtu.be/ePQyy9sLmsY?t=1326) The cardiovascular risk-score app, with its six inputs, weights and low/medium/high thresholds, is the speaker's own worked example illustrating the standard RSA→LWE→BFV→bootstrapping arc.
 - **·** [09:26](https://youtu.be/ePQyy9sLmsY?t=566) The speaker sends the learning-with-errors background to another session ("explained a lot better than I'm going to do it now"), so the theory arc is the established one.
 
 **Demonstrated 2/2**
 
 - **+** [34:47](https://youtu.be/ePQyy9sLmsY?t=2087) The client and server run live: default inputs are entered and the encrypted request is sent.
-- **+** [35:52](https://youtu.be/ePQyy9sLmsY?t=2152) The server log shows a 531,111-byte request whose fields are ciphertext strings several thousand characters long (truncated to 50 on screen), and the client prints `Risk score: 430 (Low)` at [36:23].
+- **+** [35:52](https://youtu.be/ePQyy9sLmsY?t=2152) The server log shows a 531,111-byte request whose fields are ciphertext strings several thousand characters long (truncated to 50 on screen), and the client prints `Risk score: 430 (Low)` at [36:23](https://youtu.be/ePQyy9sLmsY?t=2183).
 
 **Measured 1/2**
 
 - **+** [36:54](https://youtu.be/ePQyy9sLmsY?t=2214) The log-scale chart compares 0.43 µs cleartext against 7.71 ms homomorphic (about 20,000x) and splits server time into deserialization 4.75 ms, computation 2.15 ms and serialization 156.41 µs.
 - **+** [38:27](https://youtu.be/ePQyy9sLmsY?t=2307) The scope is stated: serialization is included and bootstrapping is excluded, since it would take tens of seconds.
-- **−** [36:54](https://youtu.be/ePQyy9sLmsY?t=2214) The talk gives no machine, iteration count or variance, and the "10 times worse five years ago" remark at [38:58](https://youtu.be/ePQyy9sLmsY?t=2338) has no source.
+- **−** [38:58](https://youtu.be/ePQyy9sLmsY?t=2338) The talk gives no machine, iteration count or variance, and the "10 times worse five years ago" remark has no source.
 
 **Depth 2/2**
 
@@ -123,4 +124,5 @@ Developers and architects handling sensitive data in finance, health, or confide
 **Reusable 1/2**
 
 - **+** [27:18](https://youtu.be/ePQyy9sLmsY?t=1638) The `encrypt_inputs` client code and the server's weighted-sum loop are shown and walked through, enough to rebuild the encrypt-compute-decrypt loop.
+- **+** [39:28](https://youtu.be/ePQyy9sLmsY?t=2368) Oracle testing through the unmocked library with production parameters, heavy on boundaries, is described as the way to catch OpenFHE's silent wrong values on noise overflow.
 - **−** [29:54](https://youtu.be/ePQyy9sLmsY?t=1794) The connection code is skipped ("I don't show all the rest of the application because it's trivial"), and no repository, gist or download link for the demo is given.

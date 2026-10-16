@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=QBQ11aL2aZc
 durationMin: 179
 slides: https://speakerdeck.com/mlvandijk/learning-modern-java-the-playful-way-devoxx-deep-dive
 verdict: 8
+reach: broad
 frames: 23
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Learning modern Java the playful way
@@ -92,7 +93,7 @@ A name-plus-score service demo shows a failing subtask cancelling its sibling in
 `LazyConstant` (preview in Java 27, JEP 531) holds immutable, thread-safe values created on first `get()`, with `orElse` and `isInitialized` helpers. The demo converts an `ObjectMapper` field so class loading no longer pays for objects the first requests may never need. The field itself must stay `final`, or the laziness guarantee breaks.
 
 ### [79:18](https://youtu.be/QBQ11aL2aZc?t=4758) Markdown documentation comments
-Markdown doc comments (Java 23, JEP 467) replace HTML-flavored Javadoc with a Markdown dialect while keeping `@param`, `@return` and `@throws`. IntelliJ writes the new style by default. A JetBrains Air agent in EAP generates the method docs on stage, and the result renders in the IDE and through the `javadoc` tool.
+Markdown doc comments (Java 23, JEP 467) replace HTML-flavored Javadoc with a Markdown dialect while keeping `@param`, `@return` and `@throws`. IntelliJ writes the new style by default. A JetBrains Air agent in EAP generates the method docs on stage, but the text does not show up in the IDE and the speakers cannot say why; they state that Markdown comments render in the IDE and work with the `javadoc` tool.
 
 ### [82:58](https://youtu.be/QBQ11aL2aZc?t=4978) Upgrading means learning new idioms
 Bumping the Elasticsearch client to version 9 replaces a hand-built configuration with lambda-style setup, environment-sourced secrets, and a Testcontainers integration test with an injected CA. The point generalizes: Spring and the upcoming Maven 4 keep raising their Java floors, so moving a little with every release beats an emergency migration during a vulnerability.
@@ -141,31 +142,35 @@ The speakers ask for session ratings, point at a feedback form and a QR code to 
 Java developers on 8 through 21 who want a guided tour of what the last six years added, with runnable examples for each feature. Beginners get approachable explanations; experienced developers get the upgrade ammunition (headers, pinning, gatherers). Skip it if you already use structured concurrency, scoped values and the Java 25 starter features daily, or if you want a deep single-topic treatment instead of a survey.
 
 ## Verdict
-**8/10**: Live Java-feature refactors, paired allocation and starvation measurements, and beginner-level explanations of cancellation and memory layout earn the score; the day's main demo repository remains unavailable.
+**8/10**: Live refactors that run, two measured comparisons and clear explanations of cancellation, scoped values and memory layout make a strong beginner survey; the material is a guided tour of documented JEPs, and the newest search-project repository link is missing.
+
+**Reach broad**: Java backend developers moving from 8 through 21 can use records, gatherers, structured concurrency, scoped values and the pinning fix in their services, and get compact object headers by upgrading to Java 27.
 
 **Novelty 1/2**
 
-- **+** [28:22](https://youtu.be/QBQ11aL2aZc?t=1702) The speakers' own hybrid-search application carries the Java-feature tour through one working example.
-- **+** [141:11](https://youtu.be/QBQ11aL2aZc?t=8471) The Toxiproxy plus Testcontainers pinning test with `jdk.tracePinnedThreads` supplies the speakers' diagnostic recipe alongside the language-feature sources.
+- **+** [19:59](https://youtu.be/QBQ11aL2aZc?t=1199) The speakers build their own demo, an older-style Java image webshop with hybrid vector search, and upgrade it feature by feature.
+- **+** [08:28](https://youtu.be/QBQ11aL2aZc?t=508) Elasticsearch's forced migration away from the removed Security Manager gives firsthand context, though the session does not develop it.
+- **−** The per-feature explanations repeat what the JEP pages on openjdk.org and the JDK release notes already say.
 
 **Demonstrated 2/2**
 
-- **+** [64:45](https://youtu.be/QBQ11aL2aZc?t=3885) The structured-concurrency refactor runs the hybrid search end to end after the CompletableFuture callback block is deleted.
-- **+** [144:19](https://youtu.be/QBQ11aL2aZc?t=8659) The pinning test fails on Java 21 and passes after the container image is switched to Java 24, with the pinned call identified at line 54.
+- **+** [64:45](https://youtu.be/QBQ11aL2aZc?t=3885) The structured-concurrency refactor runs the hybrid search after the `CompletableFuture` cross-cancellation block is deleted.
+- **+** [144:19](https://youtu.be/QBQ11aL2aZc?t=8659) The containerized pinning test fails on Java 21 and passes after the image moves to Java 24, with the pinned call at line 54.
+- **−** [80:54](https://youtu.be/QBQ11aL2aZc?t=4854) The agent writes the Markdown documentation but it does not appear in the IDE, and the speakers cannot say why.
 
 **Measured 2/2**
 
-- **+** [93:53](https://youtu.be/QBQ11aL2aZc?t=5633) The same ten-million-object program reports about 190 MB on Java 25 versus 114 MB on Java 27, with each run recorded to JFR for allocation inspection.
-- **+** [43:57](https://youtu.be/QBQ11aL2aZc?t=2637) Five parallel-stream tasks take 10 seconds alone and 30 seconds after a busy-neighbor stream is enabled, showing the shared-pool effect against a controlled baseline.
-- **−** [94:58](https://youtu.be/QBQ11aL2aZc?t=5698) The speakers identify the nearly all-header objects as an extreme allocation case whose savings depend on the application's actual objects.
+- **+** [93:53](https://youtu.be/QBQ11aL2aZc?t=5633) The same ten-million-object program reports about 190 MB on Java 25 versus 114 MB on Java 27 in JFR, and the speakers flag it as an extreme case because the objects are nearly all header.
+- **+** [43:57](https://youtu.be/QBQ11aL2aZc?t=2637) The same five parallel-stream tasks take 10 seconds alone and 30 with a competing stream, with the contention toggle and timing shown.
+- **−** [104:29](https://youtu.be/QBQ11aL2aZc?t=6269) The scalar-versus-vector comparison shows mixed speedups from a single run, which the speakers say is not a benchmark.
 
 **Depth 2/2**
 
-- **+** [59:32](https://youtu.be/QBQ11aL2aZc?t=3572) The all-or-nothing hybrid-search requirement explains why sibling cancellation belongs in a task scope rather than an expanding set of cross-cancellation callbacks.
-- **+** [73:05](https://youtu.be/QBQ11aL2aZc?t=4385) The cancellation experiment explains interruption as the mechanism and shows why an uninterruptible CPU-bound task delays scope completion.
-- **+** [120:35](https://youtu.be/QBQ11aL2aZc?t=7235) The value-object explanation connects possible flattening into array cells with fewer reference indirections and better cache locality.
+- **+** [59:32](https://youtu.be/QBQ11aL2aZc?t=3572) The all-or-nothing search requirement shows why sibling cancellation belongs in a task scope instead of a growing set of cross-cancellation callbacks.
+- **+** [73:05](https://youtu.be/QBQ11aL2aZc?t=4385) The speakers explain that scope cancellation uses interruption, so CPU-bound work must cooperate rather than assuming the scope can stop it.
+- **+** [120:35](https://youtu.be/QBQ11aL2aZc?t=7235) The value-object segment connects flattening into array cells with fewer indirections and better cache locality.
 
 **Reusable 1/2**
 
-- **+** [55:53](https://youtu.be/QBQ11aL2aZc?t=3353) The speakers point to cloneable GitHub examples, with DeepDiveJava21 through 28 and modern-playful-Java25/26 verified to exist.
-- **−** [177:30](https://youtu.be/QBQ11aL2aZc?t=10650) The day's talk-page link to modern-playful-Java27 returns 404, leaving the current running application's code unavailable through that advertised repository.
+- **+** [55:53](https://youtu.be/QBQ11aL2aZc?t=3353) The speakers say the demos are on GitHub to clone and extend; the Java 26 search project and the DeepDiveJava feature demos are published with run instructions.
+- **−** [177:30](https://youtu.be/QBQ11aL2aZc?t=10650) The talk page still lacks slides and links and the `modern-playful-Java27` repository returns 404, so the newest running search example is unavailable.

@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=vcL6eCAwLwY
 durationMin: 45
 slides: null
 verdict: 7
+reach: niche
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -82,29 +83,33 @@ Backend engineers building latency-sensitive or deterministic systems (trading, 
 
 ## Verdict
 
-**7/10**: A production rebuild with its design reasons and operating rules, limited by a results slide with no stated measurement method and no published artifact.
+**7/10**: A production rebuild with its operating experience and replication mechanisms, limited by results without a stated measurement method and no published artifact reproducing the system.
+
+**Reach niche**: Engineers building latency-sensitive deterministic systems such as trading platforms can apply the replicated-state-machine design and operating rules; the main content targets a specialised subset of this JVM business-application audience.
 
 **Novelty 2/2**
 
-- **+** [06:22](https://youtu.be/vcL6eCAwLwY?t=382) The speaker gives his team's reasons for leaving the 2018 stack: non-deterministic parallel processing, shared MySQL and Redis contention, unpredictable tail latency, and the largest AWS MySQL cluster already in use.
-- **+** [32:36](https://youtu.be/vcL6eCAwLwY?t=1956) The operating rules (feature flags as ingress commands, CI replay of old and new versions, compensating commands instead of history rewrites at [34:42](https://youtu.be/vcL6eCAwLwY?t=2082)) come from running the cluster, not from library docs.
+- **+** [06:22](https://youtu.be/vcL6eCAwLwY?t=382) The speaker gives his team’s reasons for abandoning the startup stack: non-deterministic parallel processing, shared MySQL and Redis contention, unpredictable tail latency and exhausted database scaling.
+- **+** [33:37](https://youtu.be/vcL6eCAwLwY?t=2017) Upgrade protection comes from the team’s operating experience: CI compares old and new versions on identical ingress, while production checks catch input combinations absent from CI.
+- **+** [35:45](https://youtu.be/vcL6eCAwLwY?t=2145) Compensating admin commands repair incorrect balances without rewriting events already consumed by downstream systems and regulators.
 
 **Demonstrated 1/2**
 
-- **·** [28:52](https://youtu.be/vcL6eCAwLwY?t=1732) The subject is a live exchange core that cannot run on a conference stage, so architecture diagrams stand in for a working demo and the evidence lands in Measured.
+- **·** [28:52](https://youtu.be/vcL6eCAwLwY?t=1732) This architecture-migration case study explains the production topology rather than teaching or promising a runnable implementation, so Demonstrated is not applicable.
 
 **Measured 1/2**
 
-- **+** [43:13](https://youtu.be/vcL6eCAwLwY?t=2593) The results slide pairs each figure with its baseline: p99 end-to-end (gateway to engine to gateway) from 5-200 ms to under 1 ms, and throughput from 20k to 100k orders/s at [44:18](https://youtu.be/vcL6eCAwLwY?t=2658).
-- **−** [43:44](https://youtu.be/vcL6eCAwLwY?t=2624) The "flat, no spikes" latency and the 5-microsecond order time are stated with no chart, load profile or measurement setup.
+- **+** [43:13](https://youtu.be/vcL6eCAwLwY?t=2593) The reported end-to-end p99 falls from 5–200 ms before migration to under 1 ms afterward.
+- **+** [44:18](https://youtu.be/vcL6eCAwLwY?t=2658) Reported throughput rises from 20,000 to 100,000 orders per second, with the latter described as current demand rather than a measured architectural limit.
+- **−** [43:44](https://youtu.be/vcL6eCAwLwY?t=2624) Flat latency and five-microsecond order processing are stated without a load profile or measurement setup.
 
 **Depth 2/2**
 
-- **+** [23:06](https://youtu.be/vcL6eCAwLwY?t=1386) The TCP section weighs ACK-based recovery, per-consumer connections, header sizes and congestion control against sequence numbers and single-packet NACKs before naming Aeron as the adopted answer.
-- **+** [26:45](https://youtu.be/vcL6eCAwLwY?t=1605) The build-vs-buy decision is explained: reimplementing the reliable-UDP concepts would take "maybe like three years to create and polish", so the team adopted Aeron.
-- **−** [29:23](https://youtu.be/vcL6eCAwLwY?t=1763) What happens inside the cluster when a message arrives is skipped with "Some magic happens", so the engine's own processing stays closed.
+- **+** [14:45](https://youtu.be/vcL6eCAwLwY?t=885) The replication walkthrough explains why state machines wait for the leader to commit a log position after a majority acknowledges it.
+- **+** [17:52](https://youtu.be/vcL6eCAwLwY?t=1072) The market-opening example explains how wall-clock differences diverge replicas, followed by seeded randomness and sorted iteration as further determinism requirements.
+- **+** [25:40](https://youtu.be/vcL6eCAwLwY?t=1540) The transport explanation shows how a sequence gap triggers retransmission of the missing packet and how periodic heartbeats reveal whether an idle sender is still alive.
 
 **Reusable 1/2**
 
-- **+** [36:47](https://youtu.be/vcL6eCAwLwY?t=2207) The low-latency checklist names practices and libraries (startup allocation, single writer, Agrona/FastUtil primitives, CPU pinning, DPDK) in enough detail to reconstruct.
-- **·** [44:49](https://youtu.be/vcL6eCAwLwY?t=2689) The closing slide shows only QR codes for questions and feedback, with no repository, sample project or configuration for the talk's content.
+- **+** [36:47](https://youtu.be/vcL6eCAwLwY?t=2207) The low-latency checklist names practices and libraries, including startup allocation, single-writer concurrency, primitive collections, CPU pinning and kernel bypass, that viewers can reconstruct.
+- **·** [44:49](https://youtu.be/vcL6eCAwLwY?t=2689) The closing offers questions and feedback QR codes, with no repository, sample project or configuration reproducing the talk’s system.

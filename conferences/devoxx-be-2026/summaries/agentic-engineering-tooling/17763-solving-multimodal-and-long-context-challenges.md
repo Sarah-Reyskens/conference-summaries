@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=VTxhxCy_2lE
 durationMin: 179
 slides: null
 verdict: 9
+reach: segment
 frames: 17
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Solving Multimodal and Long-Context Challenges
@@ -106,18 +107,20 @@ Restoration prompts ("isolate and straighten on pure white, clean physical artif
 Practitioners who want copyable prompt-and-code patterns for video understanding, document extraction, or image pipelines on Gemini, and anyone curious how far zero-thinking-token single prompts stretch. Viewers committed to another model family or wanting Java-specific integration (Picard apologizes for being Python-only at a Java conference) will get patterns but no portable code.
 
 ## Verdict
-**9/10**: Four single-prompt solutions run live on public notebooks with an original decoupling method, with one like-for-like measurement (TSV against JSON tokens) and the rest self-reported runs.
+**9/10**: Four problems pushed through live with an original prompt-craft method and reproducible notebooks, with only one like-for-like measurement and the other timings self-reported.
+
+**Reach segment**: Developers adding LLM video, document-extraction or image features to their applications can copy the prompt-and-notebook patterns within the next year.
 
 **Novelty 2/2**
 
-- **+** [42:56](https://youtu.be/VTxhxCy_2lE?t=2576) The two-table decoupling (transcripts with voice IDs plus speakers mapped from those IDs in one prompt) is the speaker's own method, built after the naive all-in-one prompt failed on the 8-minute video.
-- **+** [63:58](https://youtu.be/VTxhxCy_2lE?t=3838) Diarizing 40+ voices from the 99-minute video passes the roughly 10-speaker ceiling of dedicated diarization models.
+- **+** [14:39](https://youtu.be/VTxhxCy_2lE?t=879) Inverting the usual scale-up habit, the speaker prototypes every problem against the smallest model with zero thinking tokens to build intuition about what the model does naturally.
+- **+** [42:56](https://youtu.be/VTxhxCy_2lE?t=2576) The two-table decoupling (transcripts with voice IDs plus speakers mapped from those IDs in one prompt) is the speaker's own fix after the naive all-in-one prompt failed on the 8-minute video.
 
 **Demonstrated 2/2**
 
 - **+** [51:47](https://youtu.be/VTxhxCy_2lE?t=3107) The final transcription prompt runs live across the teaser, a nature clip, a French field report and the 8-minute AlphaFold video with 14 voices.
 - **+** [104:51](https://youtu.be/VTxhxCy_2lE?t=6291) Les Misérables (800,000 tokens) analyzes live in 46 seconds with 64 entities extracted.
-- **−** [63:28](https://youtu.be/VTxhxCy_2lE?t=3808) The 99-minute run is stopped while still executing and a stored result is shown instead.
+- **−** [173:15](https://youtu.be/VTxhxCy_2lE?t=10395) One restored illustration comes out still slightly tilted, with no retry mechanism on stage.
 
 **Measured 1/2**
 

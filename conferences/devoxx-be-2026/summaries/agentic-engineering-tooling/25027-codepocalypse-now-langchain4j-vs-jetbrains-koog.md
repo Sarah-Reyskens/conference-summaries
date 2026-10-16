@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=GGEmc6eR8c4
 durationMin: 180
 slides: https://drive.google.com/file/d/1jpwSxTC2LbaF2zVeYSHXfLgtMB6afoSq/view
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 
 # Codepocalypse Now: LangChain4j vs JetBrains Koog
 Viktor Gamov, Baruch Sadogursky · Deep Dive · Agentic Engineering & Tooling
@@ -82,31 +83,33 @@ Three threads are worth keeping. On governance: model bans are usually cost cont
 JVM developers evaluating LangChain4j or Koog for agent features, or anyone wanting a single end-to-end tour of tool calling, memory, skills, workflows, guardrails, and observability with both frameworks side by side. Python agent builders can skip the code but may still take the strategy and context-management arguments. Viewers short on time can skip the break Q&A's prompt-caching search and the Port sales segment.
 
 ## Verdict
-**8/10**: A paired JVM-agent build with beginner-level explanations and complete published implementations, limited by an incomplete LangChain4j workflow demonstration and measurements without stated methods.
+**7/10**: A paired JVM-agent tutorial with first-principles explanations and published demo code, limited by an incomplete LangChain4j workflow and figures without baselines or methods.
 
-**Novelty 2/2**
+**Reach segment**: JVM developers adding LLM agent features to their applications can reuse the tool, memory, skill, workflow, and observability patterns within the next year.
 
-- **+** [07:55](https://youtu.be/GGEmc6eR8c4?t=475) The same assistant is built twice across seven stages from chatbot to observed workflow, a head-to-head comparison no single-framework tutorial offers.
-- **+** [105:15](https://youtu.be/GGEmc6eR8c4?t=6315) Koog ships no JEV support, so the speaker wraps the public classifier protocol by hand to route requests in the live workflow.
+**Novelty 1/2**
+
+- **+** [07:22](https://youtu.be/GGEmc6eR8c4?t=442) The same assistant is built through seven stages (chatbot, tools, memory, skills, workflows, guardrails, observability) in both frameworks, so a viewer sees each ecosystem's answer to every requirement side by side, which neither framework's documentation gives.
+- **−** The per-round feature tours (AI Services, tool registry, MCP wiring, OpenTelemetry module) follow the LangChain4j and Koog documentation.
 
 **Demonstrated 1/2**
 
 - **+** [103:08](https://youtu.be/GGEmc6eR8c4?t=6188) Koog's draft-review loop redrafts after Codex rejects the first candidate and delivers the excuse live.
 - **+** [126:09](https://youtu.be/GGEmc6eR8c4?t=7569) After the Koog human-critic revise round, Codex approves the redraft and the excuse is delivered live.
-- **−** [128:46](https://youtu.be/GGEmc6eR8c4?t=7726) LangChain4j stops at its six-refinement safety bound with nothing sent, and subsequent upstream rejections leave its final draft-review-send workflow incomplete on stage.
+- **−** [128:46](https://youtu.be/GGEmc6eR8c4?t=7726) LangChain4j stops at its six-refinement safety bound with nothing sent, and later upstream rejections ([131:22](https://youtu.be/GGEmc6eR8c4?t=7882)) leave its final draft-review-send workflow incomplete on stage.
 
 **Measured 1/2**
 
-- **+** [60:52](https://youtu.be/GGEmc6eR8c4?t=3652) The skill page reports about 20% success unaided versus 92% with the Koog skill for prompt-writing tasks.
-- **+** [140:51](https://youtu.be/GGEmc6eR8c4?t=8451) The live trace reports 3,335 tokens and per-node costs for the demonstrated workflow.
-- **−** [161:33](https://youtu.be/GGEmc6eR8c4?t=9693) The claim that a weaker model with context nearly matches a frontier model without it has no reported evaluation results, while the earlier skill percentages lack a stated method and the trace lacks a comparative baseline.
+- **+** [140:51](https://youtu.be/GGEmc6eR8c4?t=8451) The live Langfuse trace reports 3,335 tokens and a cost for the Koog workflow, without a comparative baseline.
+- **−** [60:52](https://youtu.be/GGEmc6eR8c4?t=3652) The claimed improvement from roughly 20% to 92% correctness with the Koog skill comes without a stated task set or evaluation method.
+- **−** [161:33](https://youtu.be/GGEmc6eR8c4?t=9693) The claim that a weaker model with context nearly matches a frontier model without it is made without any figures or named evaluation.
 
 **Depth 2/2**
 
-- **+** [24:09](https://youtu.be/GGEmc6eR8c4?t=1449) The tool-calling loop is explained from first principles: the model emits an execution intent, the harness invokes the tool and feeds the result back.
+- **+** [24:40](https://youtu.be/GGEmc6eR8c4?t=1480) The tool-calling loop is explained from first principles: the model emits an execution intent, the harness invokes the tool and feeds the result back.
+- **+** [78:43](https://youtu.be/GGEmc6eR8c4?t=4723) The prompt-caching search contrasts Koog's one-line Anthropic cache-control parameter with LangChain4j's per-model options that have to be dug out of the modules.
 - **+** [113:42](https://youtu.be/GGEmc6eR8c4?t=6822) Deterministic process steps stay as code instead of paying a stochastic model to re-decide them, grounding the workflow argument in cost.
 
 **Reusable 2/2**
 
-- **+** [10:00](https://youtu.be/GGEmc6eR8c4?t=600) The published speaking.jbaru.ch page links both complete demo repositories, runbooks, seven chapter checkpoints and the talk's agentic skill.
-- **+** [67:04](https://youtu.be/GGEmc6eR8c4?t=4024) The corporate-speak skill is a Markdown file whose YAML description triggers loading when the user asks for a corporate or jargon version.
+- **+** [10:00](https://youtu.be/GGEmc6eR8c4?t=600) The published speaking.jbaru.ch show-notes page provides the source code for both implementations and the talk's agentic skill.

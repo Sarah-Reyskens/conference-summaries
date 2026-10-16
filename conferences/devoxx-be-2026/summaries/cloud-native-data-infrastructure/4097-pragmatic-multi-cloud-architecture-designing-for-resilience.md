@@ -10,7 +10,8 @@ video: https://www.youtube.com/watch?v=mOmuF5fDiUM
 durationMin: 35
 slides: https://speakerdeck.com/alexandretouret/dvxpl26-pragmatic-multi-cloud-architecture-designing-for-resilience-and-portability-beyond-the-hype
 slidesNote: from Devoxx Poland 2026
-verdict: 5
+verdict: 6
+reach: segment
 frames: 7
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -102,13 +103,15 @@ Architects and senior engineers starting or reviewing a multi-cloud design benef
 
 ## Verdict
 
-**5/10**: A framework talk carried by worked trade-offs and project anecdotes, with one calculator-based cost comparison as its only number, no demo, and no repository or sample.
+**6/10**: A multi-cloud design framework argued through reasoned trade-offs and a few project anecdotes, held back by calculator-only numbers, no demo and no published artifact.
+
+**Reach segment**: Architects and tech leads planning or reviewing a design that spans cloud providers can apply the checklist and trade-offs; teams on a single-cloud backend will not use the cross-cloud material within the next year.
 
 **Novelty 1/2**
 
-- **+** [19:47](https://youtu.be/mOmuF5fDiUM?t=1187) The team hit an introspection bottleneck in production and switched to local signature validation with short-lived tokens.
-- **+** [15:04](https://youtu.be/mOmuF5fDiUM?t=904) A client talked down from an irrelevant 99.99% availability target shows the NFR challenge applied to a real engagement.
-- **·** [34:18](https://youtu.be/mOmuF5fDiUM?t=2058) The core material overlaps the speaker's own two-part blog series, which prior publication rules keep neutral rather than a fault.
+- **+** [15:04](https://youtu.be/mOmuF5fDiUM?t=904) A client was talked down from an irrelevant and expensive 99.99% availability target, which shows the NFR challenge applied in a real engagement.
+- **+** [19:47](https://youtu.be/mOmuF5fDiUM?t=1187) The team hit a token-introspection bottleneck in an existing project and switched to local signature validation with short-lived tokens.
+- **+** [10:24](https://youtu.be/mOmuF5fDiUM?t=624) A recent project accepted a direct channel for externally received data because it only served BI and stayed off the transactional path.
 
 **Demonstrated 1/2**
 
@@ -120,13 +123,13 @@ Architects and senior engineers starting or reviewing a multi-cloud design benef
 - **−** [27:02](https://youtu.be/mOmuF5fDiUM?t=1622) The 1600 euro dedicated-channel figure comes with no link type or capacity, covers GCP only, and is a calculator projection whose prices "change daily", not observed spend.
 - **−** [14:33](https://youtu.be/mOmuF5fDiUM?t=873) The advice to consider caching above 200 to 400 transactions per second gives a threshold with no baseline, source or method.
 
-**Depth 1/2**
+**Depth 2/2**
 
-- **+** [22:19](https://youtu.be/mOmuF5fDiUM?t=1339) Sync versus async data replication is weighed explicitly: simple but chatty and costly against complex but lossless.
+- **+** [22:19](https://youtu.be/mOmuF5fDiUM?t=1339) Sync versus async data replication is weighed explicitly: simple but chatty and costly against complex but lossless, with hybrid bidirectional sync rejected for its split-brain risk.
 - **+** [28:38](https://youtu.be/mOmuF5fDiUM?t=1718) Each managed service gets a migration alternative with a cost judgment, from rebuilding BigQuery pipelines to moving a plain VM with ease.
-- **·** [12:31](https://youtu.be/mOmuF5fDiUM?t=751) With eight areas in 35 minutes, mitigations such as circuit breakers and backoff are listed rather than worked through.
+- **+** [12:31](https://youtu.be/mOmuF5fDiUM?t=751) The AWS app server calling BigQuery over HTTP stays coupled on every schema change, and the API facade restores the boundary so BigQuery can evolve without touching the app server.
 
 **Reusable 1/2**
 
-- **+** [34:18](https://youtu.be/mOmuF5fDiUM?t=2058) The talk points to the speaker's two blog articles covering the same multi-cloud material for follow-up reading.
-- **·** [32:15](https://youtu.be/mOmuF5fDiUM?t=1935) The six-question checklist is spoken and shown, but the talk points to no repository, sample project or standalone checklist artifact.
+- **+** [32:15](https://youtu.be/mOmuF5fDiUM?t=1935) The six-question checklist orders the design questions from workload placement to a unified customer interface, giving practices to reconstruct.
+- **·** [33:16](https://youtu.be/mOmuF5fDiUM?t=1996) The canvas is walked through on screen, but the talk points to no repository, sample project or standalone checklist artifact.

@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=DseVLPC4Qjs
 durationMin: 50
 slides: null
-verdict: 8
+verdict: 6
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Run Frontier Open Models on consumer hardware
@@ -73,33 +74,36 @@ With Google DeepMind he day-zero benchmarked the multimodal EmbeddingGemma 2 (te
 Mac owners who want coding agents, voice tools, or private assistants running fully on their hardware, and engineers curious how Apple Silicon inference serving is put together. Skip it if you work on Windows or Linux without unified-memory NVIDIA hardware, or if you want engine internals and API detail rather than an app-led tour.
 
 ## Verdict
-**8/10**: The engine's author runs fast local inference live with Wi-Fi off, backs the engine with open repositories and one day-zero benchmark, but most headline speed figures come with no baseline and the internals stay sketched.
+**6/10**: The engine's author runs voice, chat, and coding agents live with Wi-Fi off and charts a day-zero benchmark across batch sizes and precisions, but the engine internals stay sketched and the take-home artifacts are the project's own distribution.
 
-**Novelty 2/2**
+**Reach segment**: Mac-owning developers who want coding agents, voice tools, or private assistants running on their own hardware.
 
-- **+** [34:40](https://youtu.be/DseVLPC4Qjs?t=2080) The engine's author explains his on-device design choices: maximize what fits rather than batch size, tune per chip generation, and validate ports against the PyTorch reference on long prompts because matmul-level errors accumulate with context.
-- **+** [24:10](https://youtu.be/DseVLPC4Qjs?t=1450) Agent-written contributions grew his engine's tests to 86,000 lines inside a 300,000-line codebase before he noticed, which is first-hand production experience.
-- **+** [47:20](https://youtu.be/DseVLPC4Qjs?t=2840) The EmbeddingGemma 2 day-zero benchmark with Google DeepMind is an original measurement no search result offers.
+**Novelty 1/2**
+
+- **+** [24:10](https://youtu.be/DseVLPC4Qjs?t=1450) Agent-written contributions grew the engine's tests to 86,000 lines inside a 300,000-line codebase before he noticed, and the Repo Meter cleanup that followed is recounted first-hand.
+- **+** [37:17](https://youtu.be/DseVLPC4Qjs?t=2237) Ports are validated against the PyTorch reference on long prompts rather than short ones because engine-level errors accumulate with context length, a practice from shipping thousands of model ports.
+- **−** The engine-capabilities tour (continuous batching, speculative decoding, KV-cache compression) restates the project's own mlx-vlm README and docs, which the rubric counts as search baseline.
 
 **Demonstrated 2/2**
 
 - **+** [14:06](https://youtu.be/DseVLPC4Qjs?t=846) Voice dictation and chat with CohereLabs North Mini Code run live with Wi-Fi off and the transcript visible.
 - **+** [19:59](https://youtu.be/DseVLPC4Qjs?t=1199) The local model builds a chat website over a localhost endpoint, fixes its layout on request, and then holds a working conversation with it.
-- **−** [32:03](https://youtu.be/DseVLPC4Qjs?t=1923) The live image-generation demo is not run ("This demo might fail… Maybe not") and the X voice-generation video is skipped for time, so both are described through a stored artifact.
+- **−** [32:03](https://youtu.be/DseVLPC4Qjs?t=1923) The image-generation demo is not run live ("this demo might fail"), so that capability reaches the viewer only as a stored artifact.
 
 **Measured 1/2**
 
-- **+** [48:22](https://youtu.be/DseVLPC4Qjs?t=2902) The EmbeddingGemma 2 throughput and peak-memory charts compare batch sizes 1–32 and four precisions on a stated M5 Max 128 GB with per-modality inputs.
-- **+** [10:27](https://youtu.be/DseVLPC4Qjs?t=627) A slide line gives TurboQuant "3.24× faster decode at 150K tokens" with model (Gemma 4 E4B), benchmark (LongBench-v2) and chip (M3 Ultra 512 GB), though the speaker does not discuss it.
-- **−** [38:50](https://youtu.be/DseVLPC4Qjs?t=2330) Prompt caching is "eight times 100 times faster depending on the model" with no method, and the 3x speculative-decoding and ~90 tokens/s chat figures likewise come with no baseline or repeat.
+- **+** [48:22](https://youtu.be/DseVLPC4Qjs?t=2902) The EmbeddingGemma 2 throughput and peak-memory charts compare batch sizes 1–32 and four precisions on a stated M5 Max with 128 GB, per modality.
+- **+** [10:27](https://youtu.be/DseVLPC4Qjs?t=627) A slide line gives TurboQuant "100% identical answers, 3.24x faster decode at 150K tokens" with model, benchmark, and chip in the footer, though the speaker does not discuss it.
+- **−** [38:50](https://youtu.be/DseVLPC4Qjs?t=2330) Disk-cached prompt reloads are "8x-100x faster depending on the model" with no method, and the chat speed of "nearly 90 tokens per second" stated at [14:40](https://youtu.be/DseVLPC4Qjs?t=880) comes with no baseline or repeat.
 
 **Depth 1/2**
 
-- **+** [05:13](https://youtu.be/DseVLPC4Qjs?t=313) The decode-ceiling slide (tok/s ≤ bandwidth ÷ bytes read per token, with fewer-bytes and more-tokens-per-read levers) is a working model for matching models to hardware.
-- **+** [34:40](https://youtu.be/DseVLPC4Qjs?t=2080) Cloud and on-device priorities are weighed with reasons: fit over batch size, concurrency over batch-of-one, tuning per chip generation.
-- **−** [07:49](https://youtu.be/DseVLPC4Qjs?t=469) The scheduler is described by the questions it answers (what to admit, how to prefill without stalling, when to throttle), with no mechanism, and the engine is never set against llama.cpp, Ollama or LM Studio.
+- **+** [05:13](https://youtu.be/DseVLPC4Qjs?t=313) The decode-is-memory-bound relation of memory bandwidth to model size gives a working model for matching models to hardware.
+- **+** [34:40](https://youtu.be/DseVLPC4Qjs?t=2080) Cloud and on-device priorities are weighed with reasons: fit over batch size, concurrency over batch-of-one FLOPS, tuning per chip generation.
+- **−** [07:49](https://youtu.be/DseVLPC4Qjs?t=469) The scheduler is described by the questions it answers, with no mechanism, and the engine is never set against llama.cpp, Ollama, or LM Studio.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [11:58](https://youtu.be/DseVLPC4Qjs?t=718) A slide shows the open-source mlx-vlm and mlx-audio GitHub repositories, which hold the engine the talk is about, and the Python package, one-script example and server mode are described at [09:25](https://youtu.be/DseVLPC4Qjs?t=565).
-- **+** [13:01](https://youtu.be/DseVLPC4Qjs?t=781) The Nativ Mac app download is pointed to ("search native blazy" on GitHub) and powers every demo that follows.
+- **+** [11:58](https://youtu.be/DseVLPC4Qjs?t=718) The slide shows the open-source mlx-vlm and mlx-audio GitHub repositories behind the engine the talk is about.
+- **+** [13:01](https://youtu.be/DseVLPC4Qjs?t=781) The Nativ Mac app download is pointed to on GitHub and powers every demo that follows.
+- **·** Both are the presented project's own repository and distribution, which the rubric rates 1 rather than 2.

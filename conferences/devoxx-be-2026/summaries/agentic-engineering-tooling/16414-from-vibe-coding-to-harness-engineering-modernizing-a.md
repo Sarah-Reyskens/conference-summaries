@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=zEUSFvDOiCo
 durationMin: 41
 slides: null
 verdict: 6
+reach: broad
 frames: 14
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -94,34 +95,37 @@ The team is building an AI Harness Scorecard script that grades a repo on five p
 Engineers shipping AI-generated code under enterprise or regulatory constraints, and leads setting agent guardrails, get a field-tested playbook. Teams wanting live demos, measured benchmarks, or the scorecard's implementation should go to the repository instead; skeptics of AI-assisted development will find the production framing more useful than the film metaphors.
 
 ## Verdict
-
-**6/10**: Field-tested harness playbook from a bank mainframe migration, limited by nothing shown running, unsourced numbers and a linked repository that is a fork covering only the closing chapter.
-
++
+**6/10**: Field-tested harness playbook from a bank mainframe migration, limited by nothing shown running and numbers without baselines.
++
+**Reach broad**: Most of the conference audience uses AI coding assistants daily and can apply the spec-first, build-gate, and agent-scope practices in their own work.
++
 **Novelty 2/2**
-
-- **+** [19:59](https://youtu.be/zEUSFvDOiCo?t=1199) The agent that kept changing the project from Java 25 to Java 17 and the Maven Enforcer gate that replaced a prompt rule carry the "build, not prompt" lesson on the team's own production evidence.
-- **+** [22:03](https://youtu.be/zEUSFvDOiCo?t=1323) The client architect's "you're consuming … 30% of the monthly quota of the whole company" is the trigger for the team's context-engineering and FinOps measures, first-hand bank experience no search result gives.
-- **+** [27:45](https://youtu.be/zEUSFvDOiCo?t=1665) The failed subagent IT department, diagnosed as anthropomorphized handoffs burning tokens on inter-agent chatter, is first-hand experience against a popular trend.
-
++
+- **+** [11:35](https://youtu.be/zEUSFvDOiCo?t=695) The team vibe coded the demo, then opened a second track with the harness once client feedback arrived, a switch the speaker credits with cutting requirement uncertainty while keeping the prototype discardable.
+- **+** [19:59](https://youtu.be/zEUSFvDOiCo?t=1199) The agent that kept downgrading the project from Java 25 to Java 17 until a Maven Enforcer gate replaced the prompt rule is production evidence for the "build, not prompt" lesson.
+- **+** [27:45](https://youtu.be/zEUSFvDOiCo?t=1665) The failed subagent IT department, diagnosed as anthropomorphized handoffs burning tokens on inter-agent chatter, is the team's own experience against a popular trend.
+- **−** The "Grill Me" spec-interrogation skill is a public skill (Matt Pocock's skills repository, "grill-me", heard as "Map Co Docs" in the captions) that the team applied to the bank's stories rather than a method they devised.
++
 **Demonstrated 0/2**
-
-- **−** [10:01](https://youtu.be/zEUSFvDOiCo?t=601) The Research-Plan-Implement-Sync workflow appears only as a flow diagram; no agent run, plan or sync is shown.
++
+- **−** [10:01](https://youtu.be/zEUSFvDOiCo?t=601) The Research-Plan-Implement-Sync workflow appears only as a flow diagram; no agent run, plan, or sync is shown.
 - **−** [38:40](https://youtu.be/zEUSFvDOiCo?t=2320) The scorecard is described as "a script that you can run on your project" and QR-linked but never executed against any repository on screen.
-
++
 **Measured 1/2**
-
-- **+** [33:28](https://youtu.be/zEUSFvDOiCo?t=2008) The speaker relays a study of "650 Claude Code trials" (source unnamed on stage): clean code leaves the pass rate unchanged, cuts token use 7-8% and file revisitation 34%.
-- **−** [05:51](https://youtu.be/zEUSFvDOiCo?t=351) The 25K commits, 3,500 auto-merged PRs and 180,000 lines are self-reported totals with no baseline or method.
-- **−** [22:03](https://youtu.be/zEUSFvDOiCo?t=1323) The 30%-of-quota anecdote, the CLI proxy's 60-80% token saving and the output-token price ratio ("three to six times … three to eight times") come with no baseline or setup.
-
++
+- **+** [33:28](https://youtu.be/zEUSFvDOiCo?t=2008) The relayed study of 650 Claude Code trials compares clean against unclean code (pass rate unchanged, token use down 7-8%, file revisitation down 34%), but its source and method are not given.
+- **−** [05:51](https://youtu.be/zEUSFvDOiCo?t=351) The 25K commits, 3,500 auto-merged pull requests, and 180,000 lines are self-reported totals with no baseline or method.
+- **−** [22:03](https://youtu.be/zEUSFvDOiCo?t=1323) The 30%-of-quota anecdote, the CLI proxy's 60-80% token saving, and the output-token price ratio come with no baseline or setup.
++
 **Depth 2/2**
-
++
 - **+** [19:28](https://youtu.be/zEUSFvDOiCo?t=1168) The harness gets a mental model: an envelope that validates stochastic output and rejects the invalid, not a deterministic model.
-- **+** [25:11](https://youtu.be/zEUSFvDOiCo?t=1511) The duplication threshold in the build, with an explicit message telling the agent to refactor, replaces a prompt instruction that the agent ignored when copy-pasting across microservices.
+- **+** [25:11](https://youtu.be/zEUSFvDOiCo?t=1511) The duplication threshold in the build, with an explicit message telling the agent to refactor, replaces a prompt instruction the agent ignored when copy-pasting across microservices.
 - **+** [29:21](https://youtu.be/zEUSFvDOiCo?t=1761) Agent TDD is dissected into horizontal versus vertical slicing and the same-agent shared-misunderstanding trap, then replaced with outside-in TDD for a stated reason.
-
++
 **Reusable 1/2**
-
-- **+** [26:12](https://youtu.be/zEUSFvDOiCo?t=1572) The OpenRewrite recipe areas (Mockito, AssertJ, Testcontainers, Maven, Java API idioms), ArchUnit and Maven Enforcer are named precisely enough for a team to rebuild the same guardrails.
-- **−** [38:40](https://youtu.be/zEUSFvDOiCo?t=2320) The linked AI Harness Scorecard is a fork of markmishaev76/ai-harness-scorecard that covers the extra chapter's five pillars, not the workflow, spec hardening or context engineering that make up the talk's main content.
-- **·** [32:27](https://youtu.be/zEUSFvDOiCo?t=1947) The team's validation scripts, per-environment provisioning profiles and Confluence resource list are described on stage but unpublished, as internal bank tooling would be.
++
+- **+** [26:12](https://youtu.be/zEUSFvDOiCo?t=1572) The OpenRewrite recipe areas (Mockito, AssertJ, Testcontainers, Maven, Java API idioms), ArchUnit, and Maven Enforcer are named precisely enough for a team to rebuild the same guardrails.
+- **−** [38:09](https://youtu.be/zEUSFvDOiCo?t=2289) The linked AI Harness Scorecard grades the extra chapter's five pillars, not the workflow, spec hardening, or context engineering that make up the talk's main content.
+- **·** [32:27](https://youtu.be/zEUSFvDOiCo?t=1947) The per-environment provisioning scripts and Confluence resource list are described on stage but unpublished, as internal bank tooling would be.

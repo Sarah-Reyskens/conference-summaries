@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=zo6L7bxn4OY
 durationMin: 48
 slides: null
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -85,33 +86,34 @@ Installation is `pip install pyronaut`, after which `pyronaut setup` provisions 
 Python developers curious about a faster production framework gain the most, as do Micronaut and Java developers who want script-speed iteration (including on existing Maven projects) without leaving the ecosystem. Tooling watchers get a concrete pattern for generated stubs that teach coding agents an API. Viewers wanting framework internals should skip the middle: how Crema extends a native image is asserted rather than explained.
 
 ## Verdict
-**8/10**: A days-old framework launched by its creators with live end-to-end demos, an installable release, and a throughput benchmark with its setup on the slide; the development-turnaround baselines are unmeasured "TO MEASURE" placeholders and the Crema mechanism is not explained.
+**7/10**: End-to-end Python and Java development demos, a comparative throughput benchmark, and reproducing sample projects support the framework introduction; its turnaround comparison remains unmeasured and the dynamic-extension mechanism is only outlined.
 
-**Novelty 2/2**
+**Reach segment**: Developers building on Micronaut in Java or Python can use the development loop and integrations; the wider Spring and Quarkus audience would need to adopt this framework stack.
 
-- **+** [09:48](https://youtu.be/zo6L7bxn4OY?t=588) Pyronaut 0.1.0 was announced days before the talk, so the launch and design rationale come straight from the Micronaut creator and the GraalVM lead.
-- **+** [04:40](https://youtu.be/zo6L7bxn4OY?t=280) The 3.1%-user-classes measurement on Micronaut PetClinic is the speakers' own result motivating the architecture.
-- **+** [23:56](https://youtu.be/zo6L7bxn4OY?t=1436) The head-to-head run against FastAPI with Granian and Flask with Gunicorn is the speakers' own comparison work.
+**Novelty 1/2**
+
+- **+** [19:42](https://youtu.be/zo6L7bxn4OY?t=1182) The speakers’ own PetClinic port brings Python DTOs, compile-time-checked repositories, and Micronaut application conventions together in a worked example.
+- **·** [09:48](https://youtu.be/zo6L7bxn4OY?t=588) The creators introduce their newly released framework, but the launch itself supplies no experience or tested decision framework beyond a project-author feature tour.
 
 **Demonstrated 2/2**
 
-- **+** [12:20](https://youtu.be/zo6L7bxn4OY?t=740) `pyronaut dev` serves the Python hello endpoint live in 290 ms, with a working Swagger UI try-out on screen.
+- **+** [12:20](https://youtu.be/zo6L7bxn4OY?t=740) `pyronaut dev` serves the Python hello endpoint live, with a working Swagger UI try-out on screen.
 - **+** [13:23](https://youtu.be/zo6L7bxn4OY?t=803) A pytest functional test with server start, injected client, and a real HTTP request runs live with its rendered report visible.
-- **+** [28:06](https://youtu.be/zo6L7bxn4OY?t=1686) A Java file compiles and serves live in 75 ms end to end, compile, load, and server start included.
+- **+** [28:06](https://youtu.be/zo6L7bxn4OY?t=1686) A Java source file compiles and starts the application live through the same development command.
 
 **Measured 1/2**
 
 - **+** [23:56](https://youtu.be/zo6L7bxn4OY?t=1436) The throughput chart shows Pyronaut at 35,351 req/s against 13,576 for FastAPI with Granian and 5,453 for Flask with Gunicorn, with its setup in the footer: OCI E4.Flex, 3 OCPUs, 24 GB, HTTPS plus HTTP/2, Hyperfoil, best of two runs, latency SLAs.
-- **−** [03:38](https://youtu.be/zo6L7bxn4OY?t=218) The "cost of the wait" slide that frames the turnaround claim shows "N s" for the JVM and "N min" for native image, both tagged "TO MEASURE", so the 75 ms start has no measured JVM or native-image counterpart.
-- **−** [45:53](https://youtu.be/zo6L7bxn4OY?t=2753) The "six times their throughput on the profile page" and "three times … on creating" claims against the FastAPI template come with no workload or method on screen.
+- **−** [03:38](https://youtu.be/zo6L7bxn4OY?t=218) The comparison framing the turnaround claim leaves JVM and native-image wait times as “TO MEASURE” placeholders, so the demonstrated fast starts lack measured turnaround baselines.
+- **−** [45:53](https://youtu.be/zo6L7bxn4OY?t=2753) The “six times their throughput on the profile page” and “three times” on creation claims against the FastAPI template come with no workload or method on screen.
 
 **Depth 1/2**
 
-- **+** [07:14](https://youtu.be/zo6L7bxn4OY?t=434) The precompile-the-base design is argued from the fact that dependencies stay fixed over a project's life while user code churns.
-- **+** [24:58](https://youtu.be/zo6L7bxn4OY?t=1498) The GIL bottleneck is named precisely (serialized Python paths while Java and I/O run in parallel), with its removal plus virtual threads and Shenandoah as the roadmap.
-- **−** [09:17](https://youtu.be/zo6L7bxn4OY?t=557) Crema, the mechanism that lets dynamic classes extend the closed native base, gets one sentence and is never explained.
+- **+** [07:14](https://youtu.be/zo6L7bxn4OY?t=434) The precompile-the-base design is argued from the fact that dependencies stay fixed over a project’s life while user code churns.
+- **+** [24:58](https://youtu.be/zo6L7bxn4OY?t=1498) The GIL bottleneck is named precisely as serialized Python paths while Java and I/O run in parallel, with its removal plus virtual threads and Shenandoah as the roadmap.
+- **−** [09:17](https://youtu.be/zo6L7bxn4OY?t=557) Crema, the mechanism that lets dynamic classes extend the closed native base, gets one sentence without an explanation of how that extension works.
 
 **Reusable 2/2**
 
-- **+** [41:44](https://youtu.be/zo6L7bxn4OY?t=2504) Release 0.1.0 installs from PyPI with one command and self-provisions GraalPy and GraalVM.
-- **+** [45:23](https://youtu.be/zo6L7bxn4OY?t=2723) The talk points to the ported Micronaut guide catalog and the pyronaut fullstack template repository, which cover its arc.
+- **+** [45:23](https://youtu.be/zo6L7bxn4OY?t=2723) The talk points to the Pyronaut fullstack template repository, a port of the FastAPI full-stack sample covering application structure, persistence, and testing.
+- **+** [44:19](https://youtu.be/zo6L7bxn4OY?t=2659) A second sample ports an entire DevOps AI scheduler to Pyronaut using LangChain4j, tool calling, and Micronaut Cache.

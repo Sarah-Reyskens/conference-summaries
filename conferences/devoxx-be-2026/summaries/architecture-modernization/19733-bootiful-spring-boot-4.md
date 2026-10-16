@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=1PtdpItmzTo
 durationMin: 49
 slides: null
 verdict: 6
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Bootiful Spring Boot 4
@@ -75,33 +76,36 @@ A `leiden.sh` script packages the app, extracts the AOT layout, profiles it, and
 Spring developers deciding when to move to Boot 4 gain a fast, demo-driven map of what is new and worth adopting. Beginners get approachable live examples of each feature with the reasoning attached. Teams already deep on Boot 4 or wanting internals-level treatment of any single feature (AOT, gRPC tuning, JobRunr operations) should look for dedicated sessions instead.
 
 ## Verdict
-**6/10**: A live tour of Boot 4.1/4.2 features that mostly runs on screen, carried by the speaker's own app, with one before/after startup figure whose baseline is recalled, light on internals and demo code not yet published.
+**6/10**: A live tour of Boot 4.1/4.2 features where nearly every feature runs on screen, limited by tour breadth, one recalled startup baseline and demo code not yet published.
+
+**Reach segment**: Spring Boot developers can put the lazy datasource connections, API versioning, interface HTTP clients, resilient methods, SSRF filter, and Leyden packaging steps to use in their own services within the next year.
 
 **Novelty 1/2**
 
-- **+** [41:01](https://youtu.be/1PtdpItmzTo?t=2461) The BeanRegistrar segment gives a Spring team member's rationale: `@Component` is implicit, `@Bean` is explicit, and neither can register five beans in a loop, which the registrar's callback can (stated, not run).
-- **+** [25:27](https://youtu.be/1PtdpItmzTo?t=1527) The SSRF segment ties `InetAddressFilter` to an exfiltration threat and states that it plugs into the RestClient, RestTemplate, reactive, JDK and Apache clients.
 - **+** [11:57](https://youtu.be/1PtdpItmzTo?t=717) The upgrade advice comes from inside the team: CVE fixes ship in a release before disclosure, so teams need a fast path to production.
+- **+** [48:47](https://youtu.be/1PtdpItmzTo?t=2927) The talk joins Boot 4.1 features, the security advisory volume, and the Java 27 and Leyden material in one pass, which he calls "a smorgasbord of interesting features".
+- **−** Each feature on its own is what the Spring Boot 4.1 reference docs and release notes already describe, so the value is the assembled tour rather than new material.
 
 **Demonstrated 2/2**
 
+- **+** [18:40](https://youtu.be/1PtdpItmzTo?t=1120) The versioned dogs endpoint returns the new shape by default and the old shape with the version header, live.
 - **+** [35:21](https://youtu.be/1PtdpItmzTo?t=2121) The grpcurl call against the freshly built gRPC service returns the dog list on screen.
-- **+** [26:30](https://youtu.be/1PtdpItmzTo?t=1590) With the reject-all `InetAddressFilter` registered, the catfacts call fails with "filtered host" on screen.
-- **+** [45:11](https://youtu.be/1PtdpItmzTo?t=2711) The JobRunr recurring job prints "hello Devoxx" on schedule, and a psql session lists the `jobrunr_*` tables.
+- **+** [45:11](https://youtu.be/1PtdpItmzTo?t=2711) The recurring JobRunr job prints its message on schedule from the beans the registrar registered.
 
 **Measured 1/2**
 
 - **+** [48:17](https://youtu.be/1PtdpItmzTo?t=2897) The Leyden-optimized run reports a startup of 0.471 s on screen against a stated 1.7 s without it.
 - **−** [48:17](https://youtu.be/1PtdpItmzTo?t=2897) The 1.7 s baseline is recalled rather than run, with no repetition or hardware given.
-- **−** [08:19](https://youtu.be/1PtdpItmzTo?t=499) The "10 20% less RAM" from compact object headers is stated "depending on how you're measuring" with no measurement or baseline.
+- **−** [08:19](https://youtu.be/1PtdpItmzTo?t=499) The 10-20% less RAM from compact object headers is stated "depending on how you're measuring", with no measurement shown.
 
 **Depth 1/2**
 
-- **+** [14:32](https://youtu.be/1PtdpItmzTo?t=872) The lazy-connection explanation traces pool saturation to virtual-thread concurrency plus `@Transactional` holding connections through non-DB work, giving the why behind the property.
-- **+** [38:26](https://youtu.be/1PtdpItmzTo?t=2306) The stereotype-annotation tour grounds the BeanRegistrar in how `@Controller`, `@Service` and `@SpringBootApplication` all resolve to `@Component`.
+- **+** [14:32](https://youtu.be/1PtdpItmzTo?t=872) The lazy-connection explanation traces pool saturation to virtual-thread concurrency plus `@Transactional` holding connections through non-DB work.
+- **+** [38:26](https://youtu.be/1PtdpItmzTo?t=2306) The bean-registration segment explains `@Component` as a stereotype meta-annotation, contrasts implicit with explicit registration, and gives the cases where `@Bean` or the registrar fits.
+- **−** [34:49](https://youtu.be/1PtdpItmzTo?t=2089) gRPC is offered with "blazing fast" as its only reason to choose it, and the generated wiring behind the service class is not explained.
 
 **Reusable 1/2**
 
-- **+** [32:45](https://youtu.be/1PtdpItmzTo?t=1965) The `dogs.proto` schema is typed out on screen, with the step of marking `generated-sources` as a source root in IntelliJ.
-- **+** [47:16](https://youtu.be/1PtdpItmzTo?t=2836) The Leyden script's steps (package, extract the AOT layout, profile, run) are narrated, so the flow can be reconstructed.
+- **+** [32:45](https://youtu.be/1PtdpItmzTo?t=1965) The `dogs.proto` schema is typed out on screen, with the generated-sources source-root step for IntelliJ.
+- **+** [47:16](https://youtu.be/1PtdpItmzTo?t=2836) The Leyden script's steps (package, extract the AOT layout, profile, run) are narrated so the flow can be reconstructed.
 - **−** [02:35](https://youtu.be/1PtdpItmzTo?t=155) The demo code is promised ("the code will be online as well") but is not published yet, so no artifact covers the talk's main content.

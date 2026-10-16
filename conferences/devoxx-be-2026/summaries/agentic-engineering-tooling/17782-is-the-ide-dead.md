@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=jFxR6YYWdmI
 durationMin: 35
 slides: null
 verdict: 4
+reach: broad
 frames: 7
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -69,14 +70,16 @@ Tool builders and Spring developers curious where IDE investment is going, and a
 ## Verdict
 **4/10**: A three-way prediction from a Spring Tools builder, with a live review demo that stops before a verdict; no measurements and no artifact for the thesis.
 
+**Reach broad**: Most of the audience uses AI coding assistants daily and faces the same question of how to review agent output and where tooling goes next.
+
 **Novelty 1/2**
 
 - **+** [14:38](https://youtu.be/jFxR6YYWdmI?t=878) The three-way split (review tools, fleet managers, smartness for agents) is the speaker's own synthesis, carried through the rest of the talk.
-- **+** [23:25](https://youtu.be/jFxR6YYWdmI?t=1405) The Spring Tools changes-only review view is the speaker's own experiment, shown running rather than described from elsewhere.
+- **+** [31:40](https://youtu.be/jFxR6YYWdmI?t=1900) Agents writing and running their own throwaway tools, as personal software for the agent, is his own observation from tool-builder practice.
 
 **Demonstrated 1/2**
 
-- **+** [23:25](https://youtu.be/jFxR6YYWdmI?t=1405) Claude Code runs live on Spring PetClinic while the Logical Structure view surfaces the resulting Spring-concept changes on screen.
+- **+** [23:55](https://youtu.be/jFxR6YYWdmI?t=1435) Claude Code runs live on Spring PetClinic while the Logical Structure view surfaces the resulting Spring-concept changes on screen.
 - **−** [24:56](https://youtu.be/jFxR6YYWdmI?t=1496) The live run stops after about 90 seconds ("enough auto mode for today"), before any review verdict is reached.
 - **−** [25:28](https://youtu.be/jFxR6YYWdmI?t=1528) The fleet-management direction is shown only as screenshots of JetBrains Air, VS Code, and herdr, with nothing running.
 
@@ -94,5 +97,5 @@ Tool builders and Spring developers curious where IDE investment is going, and a
 **Reusable 1/2**
 
 - **+** [26:31](https://youtu.be/jFxR6YYWdmI?t=1591) The herdr repository URL is shown on the agents-perspective slide for the fleet-management direction.
-- **+** [19:18](https://youtu.be/jFxR6YYWdmI?t=1158) The slide lists what a review tool keeps (language and framework understanding, navigation, validations, structural and diff views) and what it drops (autocompletion, quick fixes).
+- **+** [19:48](https://youtu.be/jFxR6YYWdmI?t=1188) The review-tool keeps-and-drops list (language and framework understanding, navigation, validations kept; autocompletion and quick fixes dropped) is described but left to reconstruct.
 - **·** No published artifact covers the talk's main thesis; herdr and Spring Tools each cover one direction only.

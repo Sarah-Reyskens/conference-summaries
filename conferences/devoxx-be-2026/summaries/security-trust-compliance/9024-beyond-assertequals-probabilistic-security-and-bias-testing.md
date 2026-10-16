@@ -10,9 +10,11 @@ video: https://www.youtube.com/watch?v=MmSvjJhZl3A
 durationMin: 37
 slides: null
 verdict: 5
+reach: niche
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
+---
 
 # Beyond assertEquals: Probabilistic Security and Bias Testing for Java LLM Applications
 Iryna Dohndorf · Tools-in-Action · Security, Trust & Compliance
@@ -58,33 +60,31 @@ Tiberius also fingerprints which LLM server sits behind an endpoint and runs bia
 Java backend developers shipping LLM features who want security tests inside their existing JUnit and CI workflow gain the most. Engineers settled on the Python scanners get only a brief survey and can skip. Anyone wanting measured scan results or a real bias-testing walkthrough should look elsewhere: neither gets numbers or a demo here.
 
 ## Verdict
-**5/10**: A Java-native scan, fixture and security-contract workflow with an exhibited bike-shop jailbreak, limited by code-only Tiberius demonstrations, anecdotal measurements and a demo dependency tied to the author's machine.
+**5/10**: A Java-native scan, fixture and security-contract workflow explained through slides and test code, plus a curl jailbreak against a bike-shop bot, limited by no Tiberius scan running on screen, third-party numbers without a method, and a demo pom that needs the author's local Maven repository.
+
+**Reach niche**: Java teams that want to adopt one new open-source library for JUnit-based LLM security scans can use the main content, while most of the conference audience building LLM features gets the motivation but not the material.
 
 **Novelty 1/2**
 
-- **+** [10:46](https://youtu.be/MmSvjJhZl3A?t=646) The credited survey brings several scanners together before presenting Tiberius as the Java-native answer.
-- **+** [15:29](https://youtu.be/MmSvjJhZl3A?t=929) The road-bike sales bot supplies the speaker's own application example for the jailbreak attempts.
+- **+** [10:46](https://youtu.be/MmSvjJhZl3A?t=646) The credited survey of Garak, Microsoft's scanner, Promptfoo, Julius and Augustus brings several scanners together before presenting Tiberius as the Java-native answer.
 
 **Demonstrated 1/2**
 
 - **+** [22:00](https://youtu.be/MmSvjJhZl3A?t=1320) The deceased-grandmother jailbreak runs via curl against the running Spring Boot backend.
-- **+** [23:34](https://youtu.be/MmSvjJhZl3A?t=1414) An earlier response visible in the terminal offers a bike for €5, and the live reply engages with the grandmother persona.
-- **−** [32:54](https://youtu.be/MmSvjJhZl3A?t=1974) No Tiberius scan, JUnit run or security contract executes on screen, leaving the central fixture and contract workflow without visible output.
+- **+** [23:34](https://youtu.be/MmSvjJhZl3A?t=1414) After saying the fresh reply is hard to read, the speaker points to an earlier terminal response in which the bot offers a bike for €5.
+- **−** [24:06](https://youtu.be/MmSvjJhZl3A?t=1446) No Tiberius scan, JUnit run or security contract executes on screen; the talk moves to code and configuration, and fingerprinting and bias testing, named at the close, are never run.
 
 **Measured 1/2**
 
-- **+** [04:56](https://youtu.be/MmSvjJhZl3A?t=296) The Claude Code anecdote reports 0% in the vendor benchmark and 60–80% in the researchers' attempts, supplying numerical outcomes without explaining their methods.
-- **−** [04:56](https://youtu.be/MmSvjJhZl3A?t=296) The cited “Breaking Claude Code Opus 5 Auto Mode” account places the researcher's chain outside the vendor benchmark set, so the figures do not establish a same-chain comparison.
-- **−** [33:59](https://youtu.be/MmSvjJhZl3A?t=2039) The 50-sample example supplies a configured trial count without a resulting resistance rate.
+- **·** [04:56](https://youtu.be/MmSvjJhZl3A?t=296) The Claude Code incident reports 0% in the vendor benchmark against 60–80% in the researchers' attempts, numbers with no stated method for either.
 
 **Depth 1/2**
 
 - **+** [28:14](https://youtu.be/MmSvjJhZl3A?t=1694) The scan, fixture, validate and harden loop explains how stored prompts and responses feed guardrail regression tests.
-- **+** [33:27](https://youtu.be/MmSvjJhZl3A?t=2007) Success rate is defined as successful attacks divided by total attacks after the explanation of minimum resistance and confidence parameters.
-- **−** [32:54](https://youtu.be/MmSvjJhZl3A?t=1974) The contract derives a sample count from resistance and confidence settings without explaining that calculation, and the detector's penetration decision remains unexplained.
+- **+** [25:07](https://youtu.be/MmSvjJhZl3A?t=1507) Multi-turn attacks are explained as more successful because they draw the model into a longer conversation, which makes data leaks easier to obtain.
+- **−** [13:51](https://youtu.be/MmSvjJhZl3A?t=831) The LLM generator and detector are named as the mechanism for judging a probe "penetrated", and the talk never explains how that decision is made.
 
 **Reusable 1/2**
 
-- **+** [16:02](https://youtu.be/MmSvjJhZl3A?t=962) The speaker offers the demo backend's repository URL for viewers to query during or after the session.
-- **−** [24:06](https://youtu.be/MmSvjJhZl3A?t=1446) The published demo pom uses `io.tiberius:tiberius:1.0.0-SNAPSHOT` with `file:///home/iryna/git/m2-repo`, leaving its dependency resolution tied to the author's local filesystem.
-
+- **+** [16:02](https://youtu.be/MmSvjJhZl3A?t=962) The speaker gives the URL of the public demo backend repository, which holds the Spring Boot app and its Tiberius test classes.
+- **−** [16:02](https://youtu.be/MmSvjJhZl3A?t=962) The demo's pom pins `io.tiberius:tiberius:1.0.0-SNAPSHOT` to a `file:///home/iryna/git/m2-repo` repository, so running its Tiberius tests requires that local Maven repository.

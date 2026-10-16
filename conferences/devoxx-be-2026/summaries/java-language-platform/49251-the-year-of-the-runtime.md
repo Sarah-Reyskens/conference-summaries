@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=tle2mA7EwWU
 durationMin: 15
 slides: null
 verdict: 6
+reach: broad
 frames: 6
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # The Year of the Runtime
@@ -51,11 +52,11 @@ Ship a jlink-built minimal runtime (~35 MB). Integrity by default (e.g., reflect
 
 ## Who should watch
 
-Java developers tracking the platform's AI-era direction, Valhalla, Leyden, or ZGC. Skip if you follow the JDK roadmap closely; internals are deferred to the speaker's other talks.
-
 ## Verdict
 
 **6/10**: Roadmap keynote with production ZGC evidence and Leyden benchmark charts that state setup and baseline, but nothing runs on screen and jlink and JFR views come as slide fragments with no walkthrough.
+
+**Reach broad**: most Java developers in the audience can use the JDK upgrade, jlink, and JFR gains in their own services within the year.
 
 **Novelty 1/2**
 
@@ -84,3 +85,4 @@ Java developers tracking the platform's AI-era direction, Valhalla, Leyden, or Z
 - **+** [09:53](https://youtu.be/tle2mA7EwWU?t=593) The jlink advice is a specific practice: build a runtime with only the JDK modules you need, with a java.base-only runtime at about 35 MB.
 - **+** [12:03](https://youtu.be/tle2mA7EwWU?t=723) Slide 22 shows the command `jfr view allocation-by-site recording.jfr` with its allocation-by-site output.
 - **−** [09:53](https://youtu.be/tle2mA7EwWU?t=593) No jlink invocation, repository or checklist is pointed to, so the viewer reconstructs the practice.
+

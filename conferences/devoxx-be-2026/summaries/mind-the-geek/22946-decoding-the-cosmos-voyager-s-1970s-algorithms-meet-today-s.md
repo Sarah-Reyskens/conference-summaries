@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=CuvV3Aud3Q0
 durationMin: 41
 slides: null
 verdict: 7
+reach: niche
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
-
 # Decoding the Cosmos: Voyager's 1970s Algorithms Meet Today's Cutting-Edge Tech
 
 Pieter van der Meer · Conference · Mind the Geek
@@ -72,33 +72,35 @@ Developers and data scientists curious how error correction actually works, and 
 
 ## Verdict
 
-**7/10**: Three demos on screen carry the talk from encoder registers through Viterbi decoding and NER to denoising, with the decoder walkthrough explained down to path pruning, but the figures are quoted readouts or toy-code results and nothing is published to reuse.
+**7/10**: Three working demos connect convolutional decoding, NER and denoising, with the trellis explained down to path pruning, but the measurements remain illustrative and no reproduction artifact is shared.
+
+**Reach niche**: Developers working with communications, signal processing or specialized NLP decoding can apply the main content; for most of the Java/JVM business-application audience it remains a curiosity subject.
 
 **Novelty 1/2**
 
-- **+** [19:57](https://youtu.be/CuvV3Aud3Q0?t=1197) The self-built trellis explorer turns textbook Viterbi decoding into a step-by-step interactive walkthrough.
+- **+** [05:47](https://youtu.be/CuvV3Aud3Q0?t=347) Research across NASA's hand-typed memos and telemetry documents brings Voyager's coding setup into a developer-oriented account.
 - **+** [25:50](https://youtu.be/CuvV3Aud3Q0?t=1550) The talk connects Voyager coding, Viterbi decoding, NER tagging and ML denoising into one arc.
-- **·** [15:48](https://youtu.be/CuvV3Aud3Q0?t=948) The history (Elias 1955, Viterbi 1967, Voyager's (7, 1/2) code) follows NASA documents and Wikipedia, credited on screen, so the added value is the synthesis and the demos.
+- **·** [15:48](https://youtu.be/CuvV3Aud3Q0?t=948) The credited history and established convolutional-coding material make the synthesis the added value.
 
 **Demonstrated 2/2**
 
-- **+** [22:34](https://youtu.be/CuvV3Aud3Q0?t=1354) The Viterbi decoder runs live on a simplified K=3 code: paths extend, Hamming scores accumulate, losers are discarded, and the traceback recovers the sent bits on screen.
+- **+** [23:36](https://youtu.be/CuvV3Aud3Q0?t=1416) The simplified decoder runs through to recovered data, with its output visible.
 - **+** [30:02](https://youtu.be/CuvV3Aud3Q0?t=1802) The NER demo tags "Alice works for Google in Paris" end to end with the winning path traced through the trellis.
-- **+** [32:49](https://youtu.be/CuvV3Aud3Q0?t=1969) The autoencoder notebook plots the noisy input against the clean recovered output for the sine wave, with a modulated-bits variant after it.
+- **+** [32:49](https://youtu.be/CuvV3Aud3Q0?t=1969) The autoencoder notebook displays the noisy sine wave alongside the recovered signal.
 
 **Measured 1/2**
 
-- **+** [24:14](https://youtu.be/CuvV3Aud3Q0?t=1454) The error-injection runs on the simplified demo encoder recover 1- and 2-bit errors and fail at 3, the limit the speaker gives for that encoder.
-- **−** [14:44](https://youtu.be/CuvV3Aud3Q0?t=884) The dBm ladder (phone near -60 dBm, Voyager near -160 dBm) and the 160 bits/s downlink are quoted figures with no method beyond the DSN Now screen recording.
-- **−** [32:18](https://youtu.be/CuvV3Aud3Q0?t=1938) The denoising before/after plots come from a model trained on the noise it is tested on, which the speaker admits, so they show capability and no measured performance.
+- **+** [24:14](https://youtu.be/CuvV3Aud3Q0?t=1454) The error-injection runs recover one- and two-bit errors and fail with three in the shown example.
+- **−** [14:44](https://youtu.be/CuvV3Aud3Q0?t=884) The phone-to-Voyager signal-strength comparison supplies quoted figures without an evaluation method.
+- **−** [32:18](https://youtu.be/CuvV3Aud3Q0?t=1938) The speaker acknowledges optimizing the denoising model for the noise just added, leaving performance on other noise unmeasured.
 
 **Depth 2/2**
 
-- **+** [17:18](https://youtu.be/CuvV3Aud3Q0?t=1038) The encoder internals are laid out: shift registers, XOR taps, one input bit producing two output bits, and Voyager's (7, 1/2) parameters.
-- **+** [22:34](https://youtu.be/CuvV3Aud3Q0?t=1354) The decode walkthrough gives the reason for each step: Hamming distance as path metric, a 5-loss path dropped against a 3-loss path where paths merge, and traceback to the surviving path.
-- **·** [15:48](https://youtu.be/CuvV3Aud3Q0?t=948) The talk covers one code and never compares it with Reed-Solomon or a modern code, which is ordinary scope for a 41-minute slot spanning space communication and ML.
+- **+** [17:18](https://youtu.be/CuvV3Aud3Q0?t=1038) The encoder explanation follows an input bit into registers and logic that produce two output bits.
+- **+** [22:02](https://youtu.be/CuvV3Aud3Q0?t=1322) The walkthrough explains accumulated Hamming distance as the metric used to compare candidate decoding paths.
+- **+** [22:34](https://youtu.be/CuvV3Aud3Q0?t=1354) Comparing a distance-five path with a distance-three path explains why the decoder discards the less likely candidate.
 
 **Reusable 1/2**
 
-- **+** [32:18](https://youtu.be/CuvV3Aud3Q0?t=1938) The denoising approach (generate a sine wave, add noise, train an autoencoder on the pair) is described plainly enough to rebuild in any framework.
-- **·** [22:34](https://youtu.be/CuvV3Aud3Q0?t=1354) The trellis explorer and NER demos run from the speaker's local files with no repository or URL shared, so the working apps stay on stage.
+- **+** [31:46](https://youtu.be/CuvV3Aud3Q0?t=1906) The signal-generation and TensorFlow denoising recipe gives viewers a starting point to reconstruct.
+- **·** [33:51](https://youtu.be/CuvV3Aud3Q0?t=2031) The notebook example ends without a published repository or reproduction URL.

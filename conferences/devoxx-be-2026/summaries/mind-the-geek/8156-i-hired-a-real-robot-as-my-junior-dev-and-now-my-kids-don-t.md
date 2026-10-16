@@ -8,10 +8,11 @@ sessionType: Conference
 audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=P14Fy05Gs38
 durationMin: 48
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # I Hired a Real Robot as My Junior Dev — and Now My Kids Don't Want to Learn Java Anymore
@@ -93,7 +94,9 @@ Five days after assembly, his son was already treating the robot as a collaborat
 Builders of agent systems and tech leads setting agent guardrails get the most: per-person encryption keys, told-versus-inferred memory, the automation ladder and helper-agent fences transfer directly. Viewers wanting reusable code patterns or measured benchmarks should go to the AURA repository or a more technical talk instead.
 
 ## Verdict
-**8/10**: six household failure post-mortems with design trade-offs weighed, and a public runnable repository, limited by recorded or retold demos and self-reported numbers.
+**7/10**: six household failure post-mortems with design trade-offs weighed, limited by retold demos, self-reported counts, and no artifact beyond the project's own repository.
+
+**Reach segment**: teams building LLM or agent features can use the guardrail rules (threat-model sentences, told versus inferred memory, the automation ladder, helper fences, loud fallbacks) in their own systems.
 
 **Novelty 2/2**
 
@@ -114,11 +117,11 @@ Builders of agent systems and tech leads setting agent guardrails get the most: 
 
 **Depth 2/2**
 
+- **+** [09:56](https://youtu.be/P14Fy05Gs38?t=596) Six Docker services collapse into two deployables because six "implied an independence that did not exist" for one desk robot, with the module boundaries kept as separately tested packages.
 - **+** [18:11](https://youtu.be/P14Fy05Gs38?t=1091) The encryption post-mortem works through the threat model (copied folder, stolen laptop), the agent-built flaw, and the per-person-key plus OS-vault fix with its accepted single-copy trade-off.
-- **+** [31:06](https://youtu.be/P14Fy05Gs38?t=1866) The six-rung automation ladder orders integration styles from API to screenshot-and-mouse, with screen control fenced as a last resort because it is coarse and eats the evening.
 - **+** [36:20](https://youtu.be/P14Fy05Gs38?t=2180) Helper limits (read-only, few tries, no spawning) are derived from the argument that delegation chains compound into work nobody authorised.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
 - **+** [47:25](https://youtu.be/P14Fy05Gs38?t=2845) The closing slide points to `github.com/janvanwassenhove/aura`, the full brain, runnable without the robot and with pluggable models.
-- **+** [10:27](https://youtu.be/P14Fy05Gs38?t=627) He says the specs and the way the code was built are also online, so the repository covers the process as well as the system.
+- **·** [47:25](https://youtu.be/P14Fy05Gs38?t=2845) The published material is the presented project's own repository, which the rubric counts as the talk's subject, with no separate sample reproducing the six failure scenarios.

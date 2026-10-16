@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=j3aEB0i3Up8
 durationMin: 29
 slides: null
 verdict: 8
+reach: segment
 frames: 7
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
----
+reviewedAt: 2026-10-16
 
 # Your AI Agent Trusts Strangers. Let Me Show You.
 Elder Moraes · Tools-in-Action · Agentic Engineering & Tooling
@@ -101,31 +101,31 @@ The threat model to take home: does the agent read stranger-written content, doe
 Java developers shipping agents with tool access to third-party content, especially on LangChain4j, and anyone designing guardrails or tool scoping for support-style agents. Skip if you want LLM-security theory or non-Java frameworks; the value is the concrete attack-defense progression, not the threat taxonomy.
 
 ## Verdict
-**8/10**: Recorded attack runs break each LangChain4j defense on screen through to server-side scoping, with a published demo repo to replay them, limited by cited figures without task or sample-size detail and a ladder built from standard indirect-injection techniques.
+**8/10**: A recorded attack-and-defense sequence ends in server-enforced tool scoping, explains why each earlier defense leaks, and publishes the demo repository; its benchmark comparison comes without the measurement setup.
+
+**Reach segment**: Teams building LLM agents that read third-party content can apply the threat model and server-side authorization, with Java and LangChain4j as the implementation vehicle.
 
 **Novelty 1/2**
 
-- **+** [09:04](https://youtu.be/j3aEB0i3Up8?t=544) The poisoned-ticket ladder is the speaker's own construction, staging email exfiltration, guardrail bypass, wrapping defeat, and reply and markdown pivots against successive defenses.
-- **−** Each technique on its own belongs to the standard indirect-injection repertoire documented in the OWASP Top 10 for LLM Applications (LLM01: Prompt Injection).
+- **+** [04:52](https://youtu.be/j3aEB0i3Up8?t=292) Moraes builds his own support-ticket scenario around the combination of untrusted tickets, private customer data and multiple outgoing channels, bringing established injection risks into one application case.
+- **+** [02:11](https://youtu.be/j3aEB0i3Up8?t=131) The GitHub MCP incident of May 2025 and the Invariant Labs conclusion that the architecture was at fault frame the talk's attack, with the lethal trifecta credited to Simon Willison.
 
 **Demonstrated 2/2**
 
-- **+** [10:39](https://youtu.be/j3aEB0i3Up8?t=639) The victim's full profile arrives in the attacker's terminal after the poisoned ticket runs.
-- **+** [24:13](https://youtu.be/j3aEB0i3Up8?t=1453) After the output guardrail and CSP go on, the reply renders with the voucher image removed and nothing reaches the attacker.
-- **+** [26:50](https://youtu.be/j3aEB0i3Up8?t=1610) In the scoped-tools run the debug log shows the cross-customer lookup refused and the ticket still open with no reply, while the stranger's server log stays empty.
+- **+** [10:39](https://youtu.be/j3aEB0i3Up8?t=639) The recorded run ends with the victim's customer profile visible in the attacker's terminal.
+- **+** [26:25](https://youtu.be/j3aEB0i3Up8?t=1585) The final run shows the agent refusing the cross-customer lookup, the ticket staying open without a reply, and nothing reaching the attacker.
 
 **Measured 1/2**
 
-- **+** [03:30](https://youtu.be/j3aEB0i3Up8?t=210) The slide compares Qwen3-4B at ~45% attack success with GPT-5 at ~5% under the same automated attacker on AgentDojo, citing Hofer, Debenedetti and Tramèr (arXiv 2606.10525).
-- **−** [03:30](https://youtu.be/j3aEB0i3Up8?t=210) No task set or sample size accompanies the figures, so their weight stays unclear.
+- **+** [03:17](https://youtu.be/j3aEB0i3Up8?t=197) A cited AgentDojo comparison gives 45.5% attack success on Qwen 3 4B against about 5% on GPT-5.
+- **−** [03:49](https://youtu.be/j3aEB0i3Up8?t=229) The claim that models have improved comes without the task set, attack budget or sample size needed to interpret these rates.
 
 **Depth 2/2**
 
-- **+** [12:46](https://youtu.be/j3aEB0i3Up8?t=766) The guardrail failure gets a mechanism: the guard inspects the prompt while the poison sits in the tool result.
-- **+** [20:02](https://youtu.be/j3aEB0i3Up8?t=1202) LangChain4j's fatal result halts the request while a failure lets the model retry, and the slide gives the reason: a detailed refusal is a hint to retry.
-- **+** [27:05](https://youtu.be/j3aEB0i3Up8?t=1625) The scoped-tools slide names its limit: it works when the server knows the scope and who owns it, and does not protect the customer the ticket is about.
+- **+** [12:46](https://youtu.be/j3aEB0i3Up8?t=766) The input guardrail's failure is traced to its boundary: it inspects the operator prompt while the malicious instruction arrives in a tool result.
+- **+** [15:51](https://youtu.be/j3aEB0i3Up8?t=951) Wrapping tool results as untrusted data fails because instructions in the prompt are guidelines to a non-deterministic model, and mixed instructions in one context get lost even in strong models.
+- **+** [27:28](https://youtu.be/j3aEB0i3Up8?t=1648) The four-question threat model ends on tool scope coming from a deterministic server decision, because a manipulable model-supplied parameter cannot establish authorization.
 
 **Reusable 2/2**
 
-- **+** [29:02](https://youtu.be/j3aEB0i3Up8?t=1742) The demo repository is published on GitHub for running the attacks against your own agent.
-- **+** [27:28](https://youtu.be/j3aEB0i3Up8?t=1648) For scoping any agent's tools and channels, the four-question threat model gives a checklist.
+- **+** [29:02](https://youtu.be/j3aEB0i3Up8?t=1742) The closing slide publishes github.com/eldermoraes/agent-trusts-strangers, the demo repository for replaying and adapting the attack scenarios.

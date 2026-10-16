@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=ymLlOAB8h_c
 durationMin: 48
 slides: https://noti.st/lostinbrittany/bxObJc/wrap-reshape-or-redesign-retrofitting-your-apis-for-a-world-of-agents
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Wrap, Reshape, or Redesign: Retrofitting Your APIs for a World of Agents
@@ -84,29 +85,30 @@ API and platform engineers whose endpoints are about to meet LLM agents, and arc
 
 ## Verdict
 
-**8/10**: A decision framework applied to the speaker's own production API failures, backed by a baselined description-rewriting benchmark, but with no run executed on screen and no published artifact for the redesign cases.
+**7/10**: A wrap/reshape/redesign framework tested on the speaker's own production API, with one baselined description-rewriting benchmark, but with no fix run on screen, the other figures without method and no published artifact for the redesign cases.
+
+**Reach segment**: Teams building LLM features or shipping agent-facing APIs can apply intent-level tools and prepare/execute boundaries within the next year, while most of the audience meets agents as users rather than API designers.
 
 **Novelty 2/2**
 
-- **+** [08:24](https://youtu.be/ymLlOAB8h_c?t=504) The wrap/reshape/redesign framework classifies each capability by semantic gap rather than effort, then gets applied to the speaker's own platform across three escalating failures.
-- **+** [29:58](https://youtu.be/ymLlOAB8h_c?t=1798) The near-identical delete endpoints were probed with seven harnesses and seven models, and two of them called the endpoint that destroys the database: an original experiment, not a retelling.
+- **+** [08:24](https://youtu.be/ymLlOAB8h_c?t=504) The wrap/reshape/redesign framework classifies each capability by the size of its semantic gap, with the cost of the work left out of the choice, and gets applied to the speaker's own platform across three escalating failures.
+- **+** [11:03](https://youtu.be/ymLlOAB8h_c?t=663) Smarter models let teams wrap more and shrink reshape, but redesign stays because a better model makes fewer mistakes without making them cost less: a shelf-life rule no single source states.
 - **·** [45:54](https://youtu.be/ymLlOAB8h_c?t=2754) The independent reShapr tool landed on almost the same three-way framework, which corroborates it while showing the idea is in the air.
 
 **Demonstrated 1/2**
 
-- **+** [01:34](https://youtu.be/ymLlOAB8h_c?t=94) The Java-version failure is shown on slides as the agent's own exchange: success reported, application unchanged.
+- **+** [01:34](https://youtu.be/ymLlOAB8h_c?t=94) The Java-version failure is shown on slides as an agent exchange: success reported, application unchanged.
 - **−** [23:09](https://youtu.be/ymLlOAB8h_c?t=1389) The diagnose endpoint, the prepare/execute redesign and the Cloudflare and AWS cases are described on slides or in speech; no run executes on screen.
-- **−** [29:58](https://youtu.be/ymLlOAB8h_c?t=1798) The delete probe, the talk's only first-party experiment, has no slide: its prompt and the two destructive outputs are described but never shown.
 
-**Measured 2/2**
+**Measured 1/2**
 
-- **+** [41:03](https://youtu.be/ymLlOAB8h_c?t=2463) Rewriting only tool descriptions lifted StableToolBench multi-step completion from 33.5% to 44.6% with models, tools and tasks held fixed (arXiv 2602.20426), while the same study's BFCLv2 Live gain was +1.4 points, ending at 86.4%.
-- **+** [29:58](https://youtu.be/ymLlOAB8h_c?t=1798) The delete-endpoint probe reports two destructive calls out of seven harnesses and seven models, with the prompt stated: remove the database from the application without deleting it.
+- **+** [41:03](https://youtu.be/ymLlOAB8h_c?t=2463) Rewriting only tool descriptions lifted StableToolBench multi-step completion from 33.5% to 44.6% with models, tools and tasks held fixed (arXiv 2602.20426), while the same study's BFCLv2 Live gain on an already high score (86.4%) was +1.4 points.
+- **−** [30:31](https://youtu.be/ymLlOAB8h_c?t=1831) The delete-endpoint probe reports two destructive calls from seven harnesses and seven models, but names no harness or model and shows no prompt or outputs.
 - **·** [24:43](https://youtu.be/ymLlOAB8h_c?t=1483) The Postmark 80%-to-100% diagnosis figure is Postmark's reported outcome with no method shown.
 
 **Depth 2/2**
 
-- **+** [09:28](https://youtu.be/ymLlOAB8h_c?t=568) Each strategy gets a decision rule grounded in what the agent can know: wrap when explicit, reshape when scattered, redesign when invariants are unstated.
+- **+** [18:28](https://youtu.be/ymLlOAB8h_c?t=1108) MCP tool annotations are weighed as a safety mechanism and rejected on the spec's own wording: they are hints that clients must treat as untrusted, so a model can ignore them.
 - **+** [34:12](https://youtu.be/ymLlOAB8h_c?t=2052) The prepare → inspect → execute pattern is argued from who owns the safety boundary: a non-deterministic model cannot hold it, and callers may run any harness, including a small local model.
 - **·** [36:22](https://youtu.be/ymLlOAB8h_c?t=2182) The restart redesign stays at design level (a task id with states, where `failed` counts as done) with no implementation, which fits a strategy talk in a 50-minute slot.
 

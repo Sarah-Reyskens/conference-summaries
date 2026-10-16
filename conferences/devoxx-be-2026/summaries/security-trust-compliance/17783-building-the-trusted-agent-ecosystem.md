@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=dWF5HMkKiLg
 durationMin: 35
 slides: null
 verdict: 8
+reach: niche
 frames: 7
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Building the Trusted Agent Ecosystem
@@ -94,33 +95,32 @@ Developers building agents that handle sensitive data, and security engineers ev
 
 ## Verdict
 
-**8/10**: The attested-agent session and the tamper refusal run end to end and the Oak repository holds what they used; the opening third is a confidential-computing primer and the Agent Dojo result has no baseline.
+**8/10**: The attested healthcare agent, the forged evaluation and the tampered-image refusal run end to end, the trust chain is explained with its limits, and the repository ships the demo scripts; the evaluation numbers have no baseline and the overhead figure is unsupported.
+
+**Reach niche**: Teams building sensitive-data agents on confidential-computing infrastructure and security engineers evaluating TEE-based AI workloads can apply the main content.
 
 **Novelty 1/2**
 
-- **+** [20:53](https://youtu.be/dWF5HMkKiLg?t=1253) The signed Gemma evaluation against Agent Dojo, with the model verified and then a forged score rejected, is the speakers' own system and result, with the run dated 2026-10-02.
-- **+** [11:00](https://youtu.be/dWF5HMkKiLg?t=660) Putting the MCP tool description inside the attestation and the transparency log, so a prompt-injected description must be published first, is a design of the authors.
-- **−** The TEE, remote-attestation and binary-transparency tour is material the Confidential Space docs and the Certificate Transparency docs it is modeled on already cover.
+- **·** [09:28](https://youtu.be/dWF5HMkKiLg?t=568) The speakers present Project Oak's building blocks for trusted agents, a tour of the project they build whose features are covered by the Oak repository's own documentation.
 
 **Demonstrated 2/2**
 
-- **+** [24:36](https://youtu.be/dWF5HMkKiLg?t=1476) The trusted-agent session runs live: proxy and CLI started from the shown configs, a medical query answered from two attested MCP servers, and session memory shown by the recalled 17.0 hemoglobin baseline.
-- **+** [28:48](https://youtu.be/dWF5HMkKiLg?t=1728) The tampered-agent run shows the failure end to end: a rebuilt image with a different digest, the client config still expecting the trusted one, and the refused connection with its attestation error in the logs.
-- **−** [22:27](https://youtu.be/dWF5HMkKiLg?t=1347) The client refusing a model whose forged evaluation fails verification is stated ("will be able to stop the connection"), not run; the refusal shown live is for the agent image.
+- **+** [24:36](https://youtu.be/dWF5HMkKiLg?t=1476) The healthcare agent answers using two attested MCP servers, and the following session shows both conversation recall and a fresh session without prior history.
+- **+** [28:48](https://youtu.be/dWF5HMkKiLg?t=1728) Connecting to the rebuilt, tampered agent fails with an attestation error because its image does not match the trusted reference in the client configuration.
+- **−** [19:19](https://youtu.be/dWF5HMkKiLg?t=1159) Attested agent-to-agent communication over Oak Proxy is described but not run; the demos connect one agent to tools and a model.
 
 **Measured 1/2**
 
-- **+** [21:30](https://youtu.be/dWF5HMkKiLg?t=1290) The signed statement on screen carries agentdojo v1.2.2, gemma4:31b-it-qat (Q4_0, temperature 0, seed 0), a run window, attack_success_rate 0.0071 and utility_rate 0.85.
-- **−** [21:24](https://youtu.be/dWF5HMkKiLg?t=1284) The result has no baseline or comparison: no other model, no earlier version and no pass threshold to read 0.0071 against.
-- **−** [32:16](https://youtu.be/dWF5HMkKiLg?t=1936) The TEE overhead is quoted from memory ("I think it was roughly 3%, but I need to double check", then "around 5%") with no workload or method.
+- **+** [21:30](https://youtu.be/dWF5HMkKiLg?t=1290) The signed evaluation displays AgentDojo v1.2.2, Gemma's model and quantization, temperature 0, seed 0 and a run window alongside attack_success_rate 0.0071 and utility_rate 0.85.
+- **−** [21:24](https://youtu.be/dWF5HMkKiLg?t=1284) The evaluation result has no baseline model or comparison run to establish the effect of the proposed protections.
+- **−** [32:16](https://youtu.be/dWF5HMkKiLg?t=1936) The TEE overhead estimate shifts from roughly 3% to around 5%, with no workload or measurement method supplied.
 
 **Depth 2/2**
 
-- **+** [06:51](https://youtu.be/dWF5HMkKiLg?t=411) The split-view attack and the reproducible-build argument explain why each layer (open source, reproducible builds, transparency log with inclusion proofs) exists.
-- **+** [10:30](https://youtu.be/dWF5HMkKiLg?t=630) Closed-source code runs inside an audited open-source sandbox because reproducible builds are costly, which weighs auditability against proprietary code and moves the trust anchor to the sandbox.
-- **+** [32:47](https://youtu.be/dWF5HMkKiLg?t=1967) For a model that is malicious from upload, the transparency log buys accountability rather than prevention: auditors can benchmark the old release later and publish signed proof.
+- **+** [06:51](https://youtu.be/dWF5HMkKiLg?t=411) The split-view attack explains why audited reproducible builds still need a public append-only release log and client inclusion proofs.
+- **+** [10:30](https://youtu.be/dWF5HMkKiLg?t=630) Moving the trust anchor to an audited sandbox addresses the cost of reproducible builds and the wish to keep application code proprietary.
+- **+** [32:47](https://youtu.be/dWF5HMkKiLg?t=1967) The malicious-from-upload question establishes the boundary of transparency: later auditing creates accountability but does not prevent the first malicious deployment.
 
 **Reusable 2/2**
 
-- **+** [29:19](https://youtu.be/dWF5HMkKiLg?t=1759) The closing points to the open-source Project Oak repository at github.com/project-oak/oak, which holds the proxy, the agent sandbox, the eval server and the demo directory the talk ran.
-- **+** [21:30](https://youtu.be/dWF5HMkKiLg?t=1290) The demo script ./oak_trusted_agent/demo/model/read.sh used on stage is in that repository, so the signed-eval check can be repeated.
+- **+** [29:51](https://youtu.be/dWF5HMkKiLg?t=1791) The closing points to the open-source Project Oak repository, whose `oak_trusted_agent/demo` directory has `agent`, `mcp` and `model` examples, including the get, read, run and verify scripts and tamper check for the signed-evaluation bundle.

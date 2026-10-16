@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=VmPMUGImB-M
 durationMin: 40
 slides: null
 verdict: 5
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -74,32 +75,33 @@ The closing argument replaces the blame game with a shared-responsibility model:
 Developers who run AI coding agents with broad permissions and want concrete exploit stories to calibrate their caution, especially beginners in AI security. Practitioners already tracking prompt-injection CVEs can skip the case walkthroughs and take only the shared-responsibility framing.
 
 ## Verdict
-**5/10**: four public AI-tool CVEs, with clear mechanisms in Cameo, Probllama and the VS Code case, held together by an attack-chain recap, but the evidence is second hand, no exploit runs and nothing is published.
+**5/10**: four public AI-tool CVEs argued from both sides and folded into one attack chain for beginners, but every exploit is retold from advisories with nothing running on screen and nothing published to reuse.
+
+**Reach segment**: developers in the audience who run AI coding agents or MCP servers with broad permissions can apply the agent-caution practices; the rest of the audience gains the framing only.
 
 **Novelty 1/2**
 
-- **+** [27:53](https://youtu.be/VmPMUGImB-M?t=1673) The speaker names one self-modification pattern across Claude Code, Gemini CLI, Cursor and Roo Code and calls it the invisible collaborator, an attacker writing instructions into shared context such as agent configuration files.
-- **+** [34:13](https://youtu.be/VmPMUGImB-M?t=2053) The recap compresses the four vendor cases into one progression: prompt injection, context manipulation, path traversal or settings change, remote code execution, data theft, guardrail override, tool impersonation.
-- **+** [30:32](https://youtu.be/VmPMUGImB-M?t=1832) Beyond the four cases it adds the Copilot MCP shared-token issue, fifteen malicious JetBrains marketplace plugins in February 2026 and the Anthropic poisoning report, so the talk gathers incidents from several sources.
+- **+** [27:53](https://youtu.be/VmPMUGImB-M?t=1673) The speaker groups the self-modification CVEs across Claude Code, Cursor, Roo Code and Gemini CLI under one pattern he names the invisible collaborator.
+- **+** [10:02](https://youtu.be/VmPMUGImB-M?t=602) Each case is argued from both sides in the room, here with the tool-developer defense citing the shipped content security policy and prior threat modeling.
 
 **Demonstrated 1/2**
 
-- **·** [01:37](https://youtu.be/VmPMUGImB-M?t=97) No exploit runs on screen; the talk is an audience-vote argument over four patched CVEs, so there is nothing for it to run.
+- **·** [01:37](https://youtu.be/VmPMUGImB-M?t=97) The session is an audience-vote courtroom game over already-patched CVEs, so no exploit runs on screen by design.
 
 **Measured 1/2**
 
-- **+** [06:57](https://youtu.be/VmPMUGImB-M?t=417) The speaker says the CVSS scores shown are the official ones, not the vendor's, which gives the severity claims a stated basis.
-- **+** [31:02](https://youtu.be/VmPMUGImB-M?t=1862) The poisoning figure of about 250 documents is credited by name to Anthropic's October 2025 report.
-- **−** [29:28](https://youtu.be/VmPMUGImB-M?t=1768) The 60% growth in PR size is hedged ("if I am correct about the statistics") and carries no source or method.
+- **+** [06:57](https://youtu.be/VmPMUGImB-M?t=417) The severity claims carry a stated basis: the scores shown are the official CVSS ones.
+- **+** [31:02](https://youtu.be/VmPMUGImB-M?t=1862) The model-poisoning figure of about 250 documents is credited to Anthropic's October 2025 report.
+- **−** [29:28](https://youtu.be/VmPMUGImB-M?t=1768) The 60% growth in PR size is hedged as possibly misremembered and carries no source or method.
 
 **Depth 1/2**
 
 - **+** [09:01](https://youtu.be/VmPMUGImB-M?t=541) The Cameo segment explains why the bypass works: the camo proxy sits inside the GitHub domain the content security policy allows, so the attacker reads the secrets back from the access log.
-- **+** [33:08](https://youtu.be/VmPMUGImB-M?t=1988) The iceberg contrasts what the user sees (a productivity feature in a chat window) with what the attacker sees (an autonomous agent holding credentials and following instructions), a mental model sized for beginners.
-- **−** [37:20](https://youtu.be/VmPMUGImB-M?t=2240) The shared-responsibility model the title argues for is one line per party and is not applied back to the four cases to show where blame would land.
+- **+** [33:08](https://youtu.be/VmPMUGImB-M?t=1988) The iceberg slide gives beginners a mental model contrasting the chat-window view with the attacker's view of a credentialed instruction follower.
+- **−** [37:20](https://youtu.be/VmPMUGImB-M?t=2240) The shared-responsibility model the title argues for stays one line per party, with no trade-offs weighed between them.
 
 **Reusable 1/2**
 
-- **+** [34:13](https://youtu.be/VmPMUGImB-M?t=2053) The attack-chain stages give a viewer a sequence to check their own agent setup against.
-- **+** [28:56](https://youtu.be/VmPMUGImB-M?t=1736) The question of when you last checked your agent configuration files points to a habit, though it is left for the viewer to reconstruct.
-- **−** [38:25](https://youtu.be/VmPMUGImB-M?t=2305) No repository, checklist or configuration is offered; the closing mentions only the voting QR code.
+- **+** [34:13](https://youtu.be/VmPMUGImB-M?t=2053) The end-to-end attack chain gives viewers a stage-by-stage sequence to check their own agent setup against.
+- **+** [28:25](https://youtu.be/VmPMUGImB-M?t=1705) The question of when the viewer last checked their agent configuration files points at a repeatable habit, though the viewer must reconstruct it alone.
+- **−** [38:25](https://youtu.be/VmPMUGImB-M?t=2305) No repository, checklist or configuration is published; the closing offers only the voting QR code.

@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=-2vEfnB2mRw
 durationMin: 39
 slides: null
-verdict: 9
+verdict: 8
+reach: segment
 frames: 11
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # From User Prompt to JPA Query: Comparing Tool Calling, Structured Output & Hybrid Approach
@@ -84,7 +85,7 @@ Approach beats model choice: a precise prompt plus a well-defined target structu
 
 ### [33:16](https://youtu.be/-2vEfnB2mRw?t=1996) Live demo, fully offline
 
-With Wi-Fi disconnected and everything on the laptop, queries across nine filter parameters narrow a hundred-row grid: Berlin only, Berlin with last year's orders, last year alone, and last quarter returning two rows (2026-07-11 and 2026-09-30, both in-quarter). One multi-city attempt returns Munich and Cologne rows for a Berlin-and-Munich query and is replaced live with a Berlin-only query.
+With Wi-Fi disconnected and everything on the laptop, queries across nine filter parameters narrow a hundred-row grid: Berlin only, Berlin with last year's orders, and last year alone return the expected rows. One multi-city attempt returns Munich and Cologne rows for a Berlin-and-Munich query and is replaced live with a Berlin-only query; the last-quarter query returns a September row plus a June row the speaker flags as wrong for the quarter.
 
 ### [35:50](https://youtu.be/-2vEfnB2mRw?t=2150) Source walkthrough and Q&A
 
@@ -103,31 +104,35 @@ Java and Spring developers adding natural-language filtering to data-driven UIs,
 
 ## Verdict
 
-**9/10**: Self-run benchmarks of four approaches and six local models, an offline demo and a runnable repository earn the score; the multi-value query failed live, so the demo shows only part of the capability set.
+**8/10**: Benchmarks of four approaches and six local models with a stated setup, a clear mental model of when to pick structured output, and a repository covering each approach earn the score; the comparison is the speaker's own measurement rather than novelty a search lacks, and the live demo missed on the multi-city and last-quarter queries.
 
-**Novelty 2/2**
+**Reach segment**: Spring developers adding natural-language filtering to data grids can put the prompt-to-query pattern to use.
 
-- **+** [26:00](https://youtu.be/-2vEfnB2mRw?t=1560) Four approaches are measured head to head on the speaker's own queries over 10 runs, each on every query it can express, with pass counts, tokens, latency and spread.
-- **+** [29:45](https://youtu.be/-2vEfnB2mRw?t=1785) Six local models are compared over 2,020 executions each, with per-approach success rates and RAM footprints, leading to the finding that approach beats model choice.
+**Novelty 1/2**
+
+- **+** [03:43](https://youtu.be/-2vEfnB2mRw?t=223) The talk brings LangChain4j, Spring AI and Koog together and says the prompt-to-query concepts transfer across all three, more than any single framework's docs give.
+- **+** [31:43](https://youtu.be/-2vEfnB2mRw?t=1903) The takeaways state a decision framework tested on the speaker's own cases: approach beats model choice, structured output by default, tools when extra runtime context is needed.
+- **−** Spring AI's reference docs already cover both tool calling and structured output, so the mechanism knowledge is search baseline and the novelty rests on the synthesis above.
 
 **Demonstrated 1/2**
 
-- **+** [33:46](https://youtu.be/-2vEfnB2mRw?t=2026) Natural-language queries filter a hundred-row customer grid live with Wi-Fi disconnected and the model running locally, including Berlin with last year's orders.
-- **+** [35:20](https://youtu.be/-2vEfnB2mRw?t=2120) The relative-date query "who ordered last quarter" returns two rows, dated 2026-09-30 and 2026-07-11, on screen.
-- **−** [34:18](https://youtu.be/-2vEfnB2mRw?t=2058) The multi-city query returned Munich and Cologne rows and was replaced by a Berlin-only query, so multi-value filtering was not shown working live and only the structured-output app ran.
+- **+** [34:49](https://youtu.be/-2vEfnB2mRw?t=2089) Natural-language queries filter a hundred-row customer grid in the live app with Wi-Fi disconnected: Berlin with last year's orders and last year alone return the expected rows.
+- **−** [33:46](https://youtu.be/-2vEfnB2mRw?t=2026) The Berlin and Munich query returned Munich and Cologne rows and was replaced by Berlin-only queries, so multi-value filtering was not shown working live.
+- **−** [35:20](https://youtu.be/-2vEfnB2mRw?t=2120) The last-quarter query returned a June row alongside the September one, which the speaker flags as wrong.
 
 **Measured 2/2**
 
 - **+** [26:00](https://youtu.be/-2vEfnB2mRw?t=1560) The cost table reports tool calls, tokens and latency per request with median, range and spread: structured output at 812 tokens and 1,588 ms against hybrid at 2,103 tokens and 2,594 ms.
 - **+** [29:45](https://youtu.be/-2vEfnB2mRw?t=1785) The model table pairs success rates with RAM and states the setup: 10 runs per case, MacBook M2 Pro, Ollama 0.35.1.
+- **−** [27:01](https://youtu.be/-2vEfnB2mRw?t=1621) The spread runs to ±11% on extended tool calling, so that approach's numbers are less stable than the ±5% elsewhere.
 
 **Depth 2/2**
 
+- **+** [15:39](https://youtu.be/-2vEfnB2mRw?t=939) Flat tool parameters hold one scalar per field, which is why multiple values fail, and adding an operator and a negate flag per field triples the parameter count and slows the model.
 - **+** [18:44](https://youtu.be/-2vEfnB2mRw?t=1124) Tool calling re-sends the full context on every round trip while structured output answers in one, which is why the token bills differ.
-- **+** [31:43](https://youtu.be/-2vEfnB2mRw?t=1903) Selection rules come with reasons: structured output by default, tools when extra context is needed, and approach over model choice.
 - **+** [36:22](https://youtu.be/-2vEfnB2mRw?t=2182) Relative dates are precomputed in Java because models are unreliable at date arithmetic.
 
 **Reusable 2/2**
 
-- **+** [38:55](https://youtu.be/-2vEfnB2mRw?t=2335) The closing slide gives the public repository github.com/SebastianKuehnau/vaadin-grid-ai-filter, which the speaker names at [32:45](https://youtu.be/-2vEfnB2mRw?t=1965) as holding the whole project.
+- **+** [38:55](https://youtu.be/-2vEfnB2mRw?t=2335) The closing slide gives the public repository github.com/SebastianKuehnau/vaadin-grid-ai-filter, named as holding the whole project with its demo and benchmarks.
 - **+** [35:50](https://youtu.be/-2vEfnB2mRw?t=2150) The source walkthrough runs from that repository's code, whose four runnable apps cover each approach compared in the talk.

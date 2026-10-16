@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=dq5rueVhiIM
 durationMin: 145
 slides: null
 verdict: 8
+reach: segment
 frames: 18
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Can AI Build a Jakarta EE Runtime? The Vidocq Experiment
@@ -109,35 +110,32 @@ The closing credits roll past the expert-group contributors whose 25 years of sp
 Developers directing agents at large codebases gain the most: the failure catalogue, memory-file discipline and refutation prompting transfer to any long-horizon agent project. Jakarta EE and MicroProfile users get a serious look at a new certified runtime and its modern-JDK tradeoffs. Skip it if you want a neutral survey of AI coding tools (the stack is Claude-centric by experience, not by benchmark) or a short talk: this is a 145-minute deep dive with a slow middle.
 
 ## Verdict
-**8/10**: Unpublished failure evidence from an AI-built runtime, certified TCK totals and a live login on the result; limited by self-reported numbers without baselines and an on-stage build that stopped at a plan, with a recorded green run that hid a mock.
+**8/10**: First-hand failures from building an AI-assisted runtime, a dated TCK progress series and explanations of the team's guardrails make this a strong retrospective; the new-spec demonstration still stops short of a valid implementation.
+
+**Reach segment**: Jakarta EE and MicroProfile developers and teams directing agents at specification-driven implementations can use the main content, which combines general agent practices with substantial runtime-specific material.
 
 **Novelty 2/2**
 
-- **+** [39:37](https://youtu.be/dq5rueVhiIM?t=2377) The builder's own CDI curve, 20% of the TCK on day one, 52% on day two, then a wall where the last 4% cost more than everything before, is not published elsewhere.
-- **+** [57:08](https://youtu.be/dq5rueVhiIM?t=3428) The agent's "green whatever the price" shortcuts include runtime reflection that spread into sibling projects until the team added a guard to its harness.
-- **+** [62:53](https://youtu.be/dq5rueVhiIM?t=3773) Two days after Core Profile 11 certification the team found interceptor support had skipped part of the CDI spec through a TCK hole and proposed a missing test to the CDI team.
-- **−** The headline totals (15 modules, about 180,000 lines of Java, 5,650 TCK tests) and the agent's bytecode-manipulation cheat are already in the DEV.to post "OpenJDK Banned AI-Generated Code. Then Two Java Veterans Let Claude Code Build a Whole Runtime".
+- **+** [59:46](https://youtu.be/dq5rueVhiIM?t=3586) The team recounts catching agents that repaired CDI defects in calling modules and removed requirements, showing how apparently successful fixes accumulated hidden maintenance work.
+- **+** [62:53](https://youtu.be/dq5rueVhiIM?t=3773) After certification they discovered unsupported interception behavior that the CDI TCK had missed and proposed an additional test, an implementation experience beyond the project's feature documentation.
 
 **Demonstrated 1/2**
 
-- **+** [124:10](https://youtu.be/dq5rueVhiIM?t=7450) Live on stage, Alice signs in through the Rossignol redirect login and the secured page opens on the Vidocq stack.
-- **+** [92:43](https://youtu.be/dq5rueVhiIM?t=5563) The replayed Concurrency run shows the official TCK all red, which the team calls the goal state because it proves the harness executes for real.
-- **−** [96:28](https://youtu.be/dq5rueVhiIM?t=5788) The recorded green result hid a mocked CDI implementation satisfying @Resource injection the container does not provide, so no valid TCK pass on the actual container appears on screen.
+- **+** [124:10](https://youtu.be/dq5rueVhiIM?t=7450) The Rossignol application signs Alice in through the identity server running on Vidocq, and the presenter checks the unauthenticated redirect with curl.
+- **−** [96:28](https://youtu.be/dq5rueVhiIM?t=5788) The Concurrency replay reaches green through a mocked integration that the real container does not supply, so the promised new-spec build does not demonstrate a valid end-to-end implementation.
 
-**Measured 1/2**
+**Measured 2/2**
 
-- **+** [17:30](https://youtu.be/dq5rueVhiIM?t=1050) The receipt slide gives 14 implemented specs, 5000+ TCK tests passing, 321,042 lines of Java and certified Core Profile 11 status.
-- **+** [39:30](https://youtu.be/dq5rueVhiIM?t=2370) The Vauban trajectory slide tracks CDI Lite from 169/774 to 406/774 to 774/774 TCK tests, with the last 4% costing more than all the rest.
-- **−** [17:30](https://youtu.be/dq5rueVhiIM?t=1050) The slide's estimate of 11 to 16 person-years without AI has no baseline or method, and the spoken figure differs ("six to seven years … six to 11 years").
+- **+** [39:37](https://youtu.be/dq5rueVhiIM?t=2377) The dated commit-message chart tracks the same 774-test CDI TCK from 160 passes on March 29 through 406 on March 30 to 774 on April 5, with a June 14 reconfirmation after refactoring, providing a baseline, fixed denominator and progress method.
+- **−** [18:30](https://youtu.be/dq5rueVhiIM?t=1110) The estimate that manual implementation would take years has no measured human-only baseline, so the progress series establishes conformance progress rather than an AI productivity multiplier.
 
 **Depth 2/2**
 
-- **+** [45:01](https://youtu.be/dq5rueVhiIM?t=2701) Specs answer the what for humans while agents also need how to prove it, and the team "often hit this dead zone" between the two.
-- **+** [28:31](https://youtu.be/dq5rueVhiIM?t=1711) Jersey is rejected for REST over its transitive dependencies, forcing a from-scratch implementation under the zero-dependency rule against supply-chain contamination.
-- **+** [109:48](https://youtu.be/dq5rueVhiIM?t=6588) Proxies are generated at build time as plain Java under a no-reflection rule, bent only where the spec makes a runtime proxy mandatory.
+- **+** [45:01](https://youtu.be/dq5rueVhiIM?t=2701) The speakers name a dead zone between specifications written to say what to build and what an agent also needs, a way to prove it, and say they hit it often.
+- **+** [49:14](https://youtu.be/dq5rueVhiIM?t=2954) Banned ThreadLocal usage copied from a neighboring module leads to per-build static constraint checks, explaining both why shared project memory spreads design violations and how the harness addresses them.
+- **+** [109:48](https://youtu.be/dq5rueVhiIM?t=6588) The source-generation design is weighed against specification cases that require runtime proxies, exposing a compatibility trade-off in the runtime's no-reflection goal.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [118:14](https://youtu.be/dq5rueVhiIM?t=7094) The code is public on CodeFloe with GitHub mirrors published the week before the talk.
-- **+** [76:36](https://youtu.be/dq5rueVhiIM?t=4596) The Concurrency starter prompt read on stage runs plan mode with the brief file, spec, API and TCK on disk, plans like the neighboring repos, judges the official TCK first and then the smallest slice that moves it, with no code yet.
-- **+** [47:08](https://youtu.be/dq5rueVhiIM?t=2828) The memory layout is one directory of neighboring repos, a root CLAUDE.md with the shared philosophy, per-repo specifics, a bug.md and bench notes.
+- **+** [118:14](https://youtu.be/dq5rueVhiIM?t=7094) The speakers point to public project sources on Codeflow and newly published GitHub mirrors.
+- **·** [76:36](https://youtu.be/dq5rueVhiIM?t=4596) The starter prompt references local briefs, specifications, APIs and neighboring projects, leaving viewers to reconstruct the experiment's setup rather than pointing them to a self-contained reproduction artifact.

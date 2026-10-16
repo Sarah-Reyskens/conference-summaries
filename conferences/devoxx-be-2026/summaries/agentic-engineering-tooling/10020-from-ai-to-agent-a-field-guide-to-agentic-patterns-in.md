@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=IXcQYp51PLM
 durationMin: 144
 slides: https://speakerdeck.com/magnette/devoxxbe-from-ai-to-agent-a-field-guide-to-agentic-patterns-in-langchain4j
 verdict: 8
+reach: segment
 frames: 16
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # From AI to Agent: A Field Guide to Agentic Patterns in LangChain4j
@@ -177,25 +178,25 @@ Java developers who have shipped a basic LLM integration and now face multi-step
 
 ## Verdict
 
-**8/10**: Every pattern runs on screen with its failure modes and the demo repository is public; the timings and client figures have no baseline or method, and the core mechanics match the LangChain4j tutorial.
+**8/10**: Every pattern runs live on a local model with its failure modes and the demo repository is public; the timings have no baseline or method, and the catalogue matches the LangChain4j tutorial.
+
+**Reach segment**: Java developers adding LLM features to their applications can apply the workflow and agent patterns directly in LangChain4j.
 
 **Novelty 1/2**
 
-- **+** [128:54](https://youtu.be/IXcQYp51PLM?t=7734) Client work grounds the closing guidance: most client systems end as workflows, so start deterministic and climb only as far as the problem demands.
+- **+** [128:54](https://youtu.be/IXcQYp51PLM?t=7734) Client work grounds the closing guidance: most client systems end up as workflows, so start deterministic and climb only as far as the problem demands.
 - **+** [74:36](https://youtu.be/IXcQYp51PLM?t=4476) The supervisor warning rests on the speaker's own negative result: with the smallest Llama 3.2 it never delegated and tried to do everything itself.
 - **−** The builders and the pattern catalogue are what the LangChain4j tutorial's "Agents and Agentic AI" page already documents, as the speaker points out at the end.
 
 **Demonstrated 2/2**
 
 - **+** [28:52](https://youtu.be/IXcQYp51PLM?t=1732) Live on screen, the loop iterates a poster draft scoring 3/4 in scope until it passes the 0.8 exit threshold.
-- **+** [72:28](https://youtu.be/IXcQYp51PLM?t=4348) The supervisor run completes in about 24 seconds having called three of four sub-agents on its own discretion, with the diagram and logs visible.
-- **−** [119:27](https://youtu.be/IXcQYp51PLM?t=7167) The custom planner was loaded from a checked-out branch instead of coded live, though it then ran with its logs visible.
+- **+** [114:14](https://youtu.be/IXcQYp51PLM?t=6854) Live on screen, the BDI run switches desires by priority mid-run, with the planner graph and step logs visible.
 
 **Measured 1/2**
 
 - **+** [41:32](https://youtu.be/IXcQYp51PLM?t=2492) The parallel-mapper batch over eight lost ducklings completes in about 30 seconds on the local model, timing visible in the run.
-- **−** [72:28](https://youtu.be/IXcQYp51PLM?t=4348) No baseline run, comparison, or stated method stands behind the supervisor's 24 seconds or the parallel-mapper's 30 seconds.
-- **−** [128:54](https://youtu.be/IXcQYp51PLM?t=7734) The client-workflows figure and the cost and latency warnings come from experience, with no production metrics or method shown.
+- **−** [72:28](https://youtu.be/IXcQYp51PLM?t=4348) No baseline run, comparison, or stated method stands behind the supervisor's 24 seconds.
 
 **Depth 2/2**
 
@@ -207,5 +208,3 @@ Java developers who have shipped a basic LLM integration and now face multi-step
 
 - **+** [137:49](https://youtu.be/IXcQYp51PLM?t=8269) A QR code links to a GitHub repository holding the demo code for the patterns shown.
 - **+** [09:54](https://youtu.be/IXcQYp51PLM?t=594) The demo application runs on a local model, so the repository can be tried without any token or API key.
-- **−** [137:49](https://youtu.be/IXcQYp51PLM?t=8269) The declarative-API branch was not yet pushed at talk time.
-

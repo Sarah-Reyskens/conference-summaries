@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=E--oDq3X74E
 durationMin: 46
 slides: https://github.com/luma-repositories/presentations
 verdict: 7
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -69,11 +70,13 @@ Developers who let AI assistants generate application code and want a concrete r
 ## Verdict
 **7/10**: A year-long vibe-coding experiment with a published branch-per-stage repo and a working ArchUnit enforcement demo, held back by an unfinished multi-agent refactor and anecdotal cost figures.
 
+**Reach broad**: Most Java backend builders who use AI coding assistants daily can apply the use-case boundaries and CI architecture checks in their own services.
+
 **Novelty 1/2**
 
-- **+** [28:15](https://youtu.be/E--oDq3X74E?t=1695) The speakers ran the same clean-architecture refactor through OpenAI and Claude and report how the outputs differed: OpenAI's domain/ports/use-case split was reasonable, Claude put the ports inside the domain.
-- **+** [29:51](https://youtu.be/E--oDq3X74E?t=1791) Their multi-agent OpenCode pipeline (OpenAI as product owner, Claude as architect, local Qwen as junior implementer) comes from their own experiment.
-- **−** The clean-architecture explanation is the ports-and-use-cases material that the hexagonal and clean-architecture literature gives in a first search.
+- **+** [28:15](https://youtu.be/E--oDq3X74E?t=1695) The speakers ran the same clean-architecture refactor through OpenAI and Claude and report the outputs differed, with OpenAI's split reasonable and Claude placing ports inside the domain.
+- **+** [29:51](https://youtu.be/E--oDq3X74E?t=1791) Their multi-agent OpenCode pipeline with OpenAI as product owner, Claude as architect, and local Qwen as implementer comes from their own year-long experiment.
+- **−** The clean-architecture ports-and-use-cases explanation is the material Cockburn's hexagonal-architecture article and Martin's Clean Architecture book give in a first search.
 
 **Demonstrated 1/2**
 
@@ -89,12 +92,10 @@ Developers who let AI assistants generate application code and want a concrete r
 
 **Depth 2/2**
 
-- **+** [22:04](https://youtu.be/E--oDq3X74E?t=1324) The use-case-versus-service distinction is argued through the failure mode it prevents (one update method reused by 500 endpoints), with the accidental-duplication trade-off named at [22:34](https://youtu.be/E--oDq3X74E?t=1354).
-- **+** [37:47](https://youtu.be/E--oDq3X74E?t=2267) Guardrails are split by architectural layer, with size and prompt-injection checks in infrastructure and business rules like "no pineapple" in the domain.
-- **+** [44:08](https://youtu.be/E--oDq3X74E?t=2648) Isolation lets an architect model name which files change, which shrinks the context sent to the LLM and lets a smaller model make small edits.
+- **+** [22:34](https://youtu.be/E--oDq3X74E?t=1354) Grouping code by user action into use cases avoids breaking other commands, accepting accidental duplication over shared-service reuse.
+- **+** [37:47](https://youtu.be/E--oDq3X74E?t=2267) Guardrails split by architectural layer, with size and prompt-injection checks in infrastructure and business rules such as no pineapple in the domain.
+- **+** [24:10](https://youtu.be/E--oDq3X74E?t=1450) A model or runtime swap keeps the same contract but counts as a dependency change, so behavior must be revalidated.
 
 **Reusable 2/2**
 
-- **+** [10:03](https://youtu.be/E--oDq3X74E?t=603) Every demo branch plus the prompts folder is published under github.com/luma-repositories for replay with other models.
-- **+** [39:27](https://youtu.be/E--oDq3X74E?t=2367) The ArchUnit rules that enforce the talk's architecture are shown in the branch 09 code on screen.
-- **−** [32:31](https://youtu.be/E--oDq3X74E?t=1951) The refreshed overnight multi-agent branch was unpublished at talk time ("I will push it on this repository").
+- **+** [39:27](https://youtu.be/E--oDq3X74E?t=2367) The branch 09 ArchUnit rules that enforce the talk's architecture, such as "domain should not depend on any frameworks", ship in that repository.

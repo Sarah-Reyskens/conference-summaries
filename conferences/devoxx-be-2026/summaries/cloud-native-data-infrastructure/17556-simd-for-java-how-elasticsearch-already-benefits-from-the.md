@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=adFS-_sCTQ4
 durationMin: 52
 slides: https://przybyl.org/pres/SIMD4Java/DevoxxBE.html
-verdict: 8
+verdict: 7
+reach: niche
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -101,34 +102,35 @@ Java developers working on search, vector workloads, or performance-sensitive nu
 
 ## Verdict
 
-**8/10**: A self-run FMA head-to-head and live Vector API demos, with the Lucene and Elasticsearch design reasons explained; limited by benchmark numbers without a stated method and a demo repository that covers only the two micro-demos.
+**7/10**: Live Vector API demos, the two-CPU FMA comparison and the Lucene and Elasticsearch design reasons explained; limited by a tour of Elastic's own internals that a search of its blog posts largely gives, and by numbers with no stated method.
 
-**Novelty 2/2**
+**Reach niche**: engineers tuning vector search or numeric Java code, a small corner of a business-application audience.
 
-- **+** [42:08](https://youtu.be/adFS-_sCTQ4?t=2528) The FMA versus MUL+ADD comparison on Apple M3 Pro and Intel i9 is a head-to-head the speaker ran himself: the split sequence wins by about 45% on the M3 Pro and ties on the Intel i9.
-- **+** [37:29](https://youtu.be/adFS-_sCTQ4?t=2249) The speaker checks generated assembly himself, showing NEON and AVX2 SIMD instructions emitted for the Vector API BBQ scoring.
-- **+** [39:01](https://youtu.be/adFS-_sCTQ4?t=2341) The reasons Elasticsearch moved past the Vector API to its own native kernels come from inside Elastic.
+**Novelty 1/2**
+
+- **+** [41:05](https://youtu.be/adFS-_sCTQ4?t=2465) Brings Lucene's Vector API path, Elasticsearch 9.5's native simdvec probe chain and the 9.4 to 9.5 change together in one walk-through.
+- **·** [01:37](https://youtu.be/adFS-_sCTQ4?t=97) The speaker works for Elastic, so the project's own docs and blog posts on simdvec, BBQ and Lucene vectorization are part of the search baseline.
 
 **Demonstrated 2/2**
 
-- **+** [15:44](https://youtu.be/adFS-_sCTQ4?t=944) The scalar versus Vector API dot product runs live with visible speedups, then re-runs against a corrected unrolled baseline.
-- **+** [28:07](https://youtu.be/adFS-_sCTQ4?t=1687) Local Elasticsearch logs on screen show the Vector API path activating with preferred bit size 128.
-- **−** [48:24](https://youtu.be/adFS-_sCTQ4?t=2904) The simdvec FFI path and the ES|QL SwissHash fast path are shown as source and slide code only and never run.
+- **+** [15:44](https://youtu.be/adFS-_sCTQ4?t=944) Runs the scalar versus Vector API dot product live with visible speedups, then re-runs it against a corrected unrolled scalar baseline.
+- **+** [28:07](https://youtu.be/adFS-_sCTQ4?t=1687) Shows local Elasticsearch logs on screen with the Vector API path enabled at preferred bit size 128.
+- **−** [48:24](https://youtu.be/adFS-_sCTQ4?t=2904) Leaves the native simdvec FFI path and the ES|QL SwissHash fast path as source and slide code that never runs.
 
 **Measured 1/2**
 
-- **+** [42:39](https://youtu.be/adFS-_sCTQ4?t=2559) FMA versus MUL+ADD average milliseconds are tabulated for both CPUs, with the instruction sequences shown.
-- **−** [15:44](https://youtu.be/adFS-_sCTQ4?t=944) The live speedup runs are single ad-hoc executions that the speaker calls "not a benchmark", and the deck's speedup and FMA tables state no run count, warm-up or variance.
-- **−** [46:20](https://youtu.be/adFS-_sCTQ4?t=2780) The native FFI win is claimed with "the penalty is like 5 milliseconds" and no baseline or setup.
+- **+** [42:39](https://youtu.be/adFS-_sCTQ4?t=2559) Tabulates FMA versus MUL+ADD average milliseconds on both the M3 Pro and the Intel i9 alongside the emitted instruction sequences.
+- **−** [47:22](https://youtu.be/adFS-_sCTQ4?t=2842) Leaves the deck's 13x and 16x speedup claims without run counts, warm-up, or variance, with the speaker disclaiming they transfer to other machines.
+- **−** [46:20](https://youtu.be/adFS-_sCTQ4?t=2780) Claims the FFI call penalty is "like 5 milliseconds" with no baseline or setup behind it.
 
 **Depth 2/2**
 
-- **+** [17:51](https://youtu.be/adFS-_sCTQ4?t=1071) The four-accumulator pattern is explained as overlapping FMA latency with fetches, applied to both scalar and vector paths.
-- **+** [35:23](https://youtu.be/adFS-_sCTQ4?t=2123) The bit-plane transposition is worked by hand to the same score of 25, showing why scoring needs no multiplication.
-- **+** [39:01](https://youtu.be/adFS-_sCTQ4?t=2341) The decision to bypass the Vector API with native kernels is justified through release cadence, `MemorySegment` layout, and bulk scoring.
+- **+** [17:51](https://youtu.be/adFS-_sCTQ4?t=1071) Explains the four accumulators as overlapping FMA latency with data fetches, applied to the scalar and vector paths alike.
+- **+** [35:23](https://youtu.be/adFS-_sCTQ4?t=2123) Works the bit-plane transposition by hand to the same score of 25, showing why scoring needs no multiplication.
+- **+** [39:01](https://youtu.be/adFS-_sCTQ4?t=2341) Justifies the native kernels through Lucene's release cadence, MemorySegment layout, and bulk scoring for HNSW traversal.
 
 **Reusable 1/2**
 
-- **+** [15:44](https://youtu.be/adFS-_sCTQ4?t=944) The demo sources repository reproduces the scalar, Vector API, and FMA comparisons run on stage.
-- **+** [45:17](https://youtu.be/adFS-_sCTQ4?t=2717) The Lucene and Elasticsearch files walked through are pinned upstream sources with paths and line numbers.
-- **−** [34:52](https://youtu.be/adFS-_sCTQ4?t=2092) The BBQ bit-plane scoring has no runnable artifact: the repository's README lists only `dotproduct` and `fmavsmuladd`.
+- **+** [51:03](https://youtu.be/adFS-_sCTQ4?t=3063) Points to the demo repository that reproduces the scalar, Vector API, and FMA comparisons run on stage.
+- **+** [45:17](https://youtu.be/adFS-_sCTQ4?t=2717) Pins the Lucene and Elasticsearch files walked through to upstream paths with line numbers.
+- **−** [34:52](https://youtu.be/adFS-_sCTQ4?t=2092) Offers no runnable artifact for the BBQ bit-plane scoring, which the repository's README does not list.

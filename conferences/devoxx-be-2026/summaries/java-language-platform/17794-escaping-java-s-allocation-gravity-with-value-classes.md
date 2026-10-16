@@ -9,7 +9,8 @@ audienceLevel: ADVANCED
 video: https://www.youtube.com/watch?v=lUB15M3mMLs
 durationMin: 51
 slides: https://github.com/CodeSimcoe/blackhole-devoxx
-verdict: 10
+verdict: 9
+reach: broad
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -74,29 +75,30 @@ In JDK 28 with preview enabled, `Integer`, `Long`, `Float`, `Double`, `Optional`
 Java developers curious about Valhalla or performance-sensitive numerical code gain a working mental model plus numbers; the ADVANCED internals (flattening limits, strict init, header mechanics) reward experienced JVM users most. Skip if you already follow the Valhalla design notes closely or need stable APIs rather than preview features.
 
 ## Verdict
-**10/10**: First-hand Valhalla design rationale and a ray-tracer benchmark run both ways with JMH and JFR evidence, though the headline benchmark shows only a modest ~8% wall-clock gain and the thread-side GC explanation is not measured.
+**9/10**: Value-class semantics shown live, compared with JMH/JFR and explained through JVM constraints, with a reproducible demo project; the novelty is an application of the documented model and the timings cover only the benchmarked thread.
 
-**Novelty 2/2**
+**Reach broad**: Most of the conference audience develops Java applications and can use the value-class model when JDK support arrives, including through the planned Integer, Optional and java.time retrofits.
 
-- **+** [12:38](https://youtu.be/lUB15M3mMLs?t=758) Forax, who says he helped create the invokedynamic, lambda, record and pattern-matching specs and now value classes, explains Valhalla's design from inside the project, including why strict initialization took years ([32:10](https://youtu.be/lUB15M3mMLs?t=1930)).
-- **+** [38:29](https://youtu.be/lUB15M3mMLs?t=2309) The black-hole ray tracer is the speakers' own head-to-head experiment, run both ways on identical code to isolate the effect of the `value` keyword.
+**Novelty 1/2**
+
+- **+** [45:45](https://youtu.be/lUB15M3mMLs?t=2745) The speakers illustrate the known zero-cost-abstraction goal with their own ray-tracer coding choices, contrasting encapsulated vector operations with expanded primitive arithmetic.
 
 **Demonstrated 2/2**
 
-- **+** [19:37](https://youtu.be/lUB15M3mMLs?t=1177) The IDE session runs live: `isValue`, field-wise `==`, matching default hash codes, and the compile-time plus runtime synchronization failures all execute on screen.
-- **+** [40:02](https://youtu.be/lUB15M3mMLs?t=2402) The identity and value benchmark runs and both JFR recordings render on screen with tables and allocation graphs, showing the 128,000-to-≈0 GC event contrast ([41:05](https://youtu.be/lUB15M3mMLs?t=2465)).
+- **+** [19:37](https://youtu.be/lUB15M3mMLs?t=1177) The live IDE session executes the new semantics end to end: `isValue` returns true, equal `Vec3` instances compare `==` as true with matching default hash codes, and synchronization produces compiler and runtime errors.
+- **+** [31:09](https://youtu.be/lUB15M3mMLs?t=1869) Moving `super()` before field initialization produces the strict-initialization compiler error in the IDE demonstration.
 
 **Measured 2/2**
 
-- **+** [40:02](https://youtu.be/lUB15M3mMLs?t=2402) The JMH table states its method (avgt, 5 iterations) with error bounds: 52,593 ± 1,389 ms/op identity versus 48,566 ± 1,727 ms/op value, plus gc.alloc.rate (2,022 versus 4.15 MB/s) and gc.count for both.
-- **+** [42:38](https://youtu.be/lUB15M3mMLs?t=2558) The JFR comparison quantifies allocation directly: 10.7 GB of Vec3 (99.8%) with identity against 316 MB with value before scalarization kicks in.
-- **−** [40:33](https://youtu.be/lUB15M3mMLs?t=2433) The speaker calls the times "mostly the same" although the error bounds do not overlap (about 8% in favor of value), and the explanation that GC threads absorb the cost, with G1 faster since JDK 26 ([42:08](https://youtu.be/lUB15M3mMLs?t=2528)), has no multi-thread measurement behind it.
+- **+** [40:02](https://youtu.be/lUB15M3mMLs?t=2402) The same-code identity/value JMH comparison reports avgt with five observations and error bounds: 52.593 ± 1.389 versus 48.566 ± 1.727 ms/op, alongside allocation-rate and GC-count baselines.
+- **+** [42:38](https://youtu.be/lUB15M3mMLs?t=2558) The JFR comparison records 10.7 GB of `Vec3` allocation for identity against 316 MB for value, with the remaining value allocations occurring before JIT scalarization takes effect.
+- **−** [41:37](https://youtu.be/lUB15M3mMLs?t=2497) The near-equal elapsed times measure the benchmarked thread and exclude GC work on other threads, so they do not quantify whole-system savings.
 
 **Depth 2/2**
 
-- **+** [35:16](https://youtu.be/lUB15M3mMLs?t=2116) The atomicity argument derives the 64-bit flattening ceiling and the null-marker cost, explaining why a three-double vector stays behind a pointer while a three-byte one can flatten.
-- **+** [31:39](https://youtu.be/lUB15M3mMLs?t=1899) Strict initialization is traced to its root cause (no address, so no observable default value) and to its enabler, JEP 513 flexible constructor bodies ([30:07](https://youtu.be/lUB15M3mMLs?t=1807)).
+- **+** [35:16](https://youtu.be/lUB15M3mMLs?t=2116) The flattening ceiling follows from atomic reference reads and writes plus space for a null marker, explaining why three doubles remain behind a pointer while three bytes can flatten.
+- **+** [31:39](https://youtu.be/lUB15M3mMLs?t=1899) Strict initialization is explained as preventing observation of changing field values during construction, requiring field initialization before the superclass constructor runs.
 
 **Reusable 2/2**
 
-- **+** [50:58](https://youtu.be/lUB15M3mMLs?t=3058) The closing slide links https://github.com/CodeSimcoe/blackhole-devoxx, which holds the ray-tracer sources and the identity and value JFR recordings from the talk.
+- **+** [50:58](https://youtu.be/lUB15M3mMLs?t=3058) The closing slide links https://github.com/CodeSimcoe/blackhole-devoxx, containing the semantics examples, ray-tracer source, benchmark and identity/value JFR recordings.

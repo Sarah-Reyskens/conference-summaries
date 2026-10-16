@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=wxNQRGPnJ24
 durationMin: 47
 slides: null
 verdict: 7
+reach: segment
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -68,13 +69,15 @@ At Tessl, support staff work inside the same factory, releases and chat: a custo
 Engineering leaders, team leads and platform engineers scaling agents beyond individual use gain the most; solo developers get the lifecycle framing but little hands-on technique. Skip it for live demos, benchmarks, or factory implementation details.
 
 ## Verdict
-**7/10**: Original concurrency-control framing backed by Tessl factory experience and a clear risk-gate model, limited by an all-speech format, anecdote-level numbers and no repository or checklist.
+**7/10**: Original concurrency-control framing backed by firsthand Tessl factory observations and a clear risk-gate model, limited by an all-speech format, no measured results and no repository or checklist.
+
+**Reach segment**: tech leads and platform engineers rolling out coding agents across teams, and developers already running parallel agents, can apply its context, ritual and risk-gate practices.
 
 **Novelty 2/2**
 
-- **+** [23:00](https://youtu.be/wxNQRGPnJ24?t=1380) The slide reframes rebase loops, duplicated work and stale assumptions as races, livelocks and stale reads, with git conflicts as the visible data races, and the speaker builds a "concurrent delivery" mindset on it.
-- **+** [44:29](https://youtu.be/wxNQRGPnJ24?t=2669) Tessl factory observations (support staff merging from Slack, docs and training lagging code output) come from production use of the framework.
-- **+** [02:41](https://youtu.be/wxNQRGPnJ24?t=161) The context development lifecycle maps linting, evals, security scanning, packaging, marketplaces and log observability onto context work as one cycle.
+- **+** [23:28](https://youtu.be/wxNQRGPnJ24?t=1408) Agent collisions are framed as the concurrency problem developers have always reconciled, and the speaker names the resulting mindset "concurrent delivery".
+- **+** [44:29](https://youtu.be/wxNQRGPnJ24?t=2669) Tessl factory observations (support staff turning Slack requests into merged PRs, docs and training lagging code output) come from the speaker's own team.
+- **−** [37:34](https://youtu.be/wxNQRGPnJ24?t=2254) Concurrent versions in production, per-customer versions and customer vibe-coding are offered as belief ("I know sounds scary"), with no tested experience behind them.
 
 **Demonstrated 1/2**
 
@@ -82,16 +85,16 @@ Engineering leaders, team leads and platform engineers scaling agents beyond ind
 
 **Measured 1/2**
 
-- **+** [22:24](https://youtu.be/wxNQRGPnJ24?t=1344) The 16-agent C-compiler run, from Anthropic's public experiment, is cited with the remark that 100 agents would still be blocked by dependencies.
+- **·** [22:24](https://youtu.be/wxNQRGPnJ24?t=1344) The 16-agent C-compiler run is cited with the remark that 100 agents would still be blocked by dependencies, with no numbers or method behind it.
 - **−** [17:15](https://youtu.be/wxNQRGPnJ24?t=1035) Human touches per agent task and reuse reach are proposed as effectiveness signals, with no before/after numbers from Tessl's own factories.
 
 **Depth 2/2**
 
 - **+** [28:11](https://youtu.be/wxNQRGPnJ24?t=1691) Merging moves from text merge to semantic merge to intent merge, and each agent's assumptions behave like a cache that parallel work can invalidate.
-- **+** [35:30](https://youtu.be/wxNQRGPnJ24?t=2130) The risk gate slide weighs four levers (reduce likelihood, verify outcome, locate risk, reduce impact) and maps them to ship, canary, verify-more and human tiers.
-- **+** [33:55](https://youtu.be/wxNQRGPnJ24?t=2035) The live-TV startup anecdote shows risk-labeled code under a one-hour ROI window, justifying progressive release over blanket review.
+- **+** [31:18](https://youtu.be/wxNQRGPnJ24?t=1878) Review is treated as a risk problem: low-risk changes such as a CSS color auto-merge, authentication changes do not, and risk is cut by adversarial reviewers and linters or by evidence that the change matches the intent.
+- **+** [41:15](https://youtu.be/wxNQRGPnJ24?t=2475) The CFEngine, Puppet, Chef and Ansible arc explains why humans serialize concurrency, which leads to the "serial above the line, concurrent in the factory" shape.
 
 **Reusable 1/2**
 
-- **+** [09:59](https://youtu.be/wxNQRGPnJ24?t=599) "Stop building the thing, but build the thing that builds the thing" is a practice a developer can apply, and planning and retro questions for context follow at [10:29](https://youtu.be/wxNQRGPnJ24?t=629).
-- **−** [47:05](https://youtu.be/wxNQRGPnJ24?t=2825) The closing slide points to Tessl's "Context-Driven Factories" post and a pending concurrent-delivery post, with no repository, sample configuration or checklist for the practices.
+- **+** [09:59](https://youtu.be/wxNQRGPnJ24?t=599) "Stop building the thing, but build the thing that builds the thing" is a practice a developer can apply, with planning and retro questions for context quality following in the same segment.
+- **−** [47:09](https://youtu.be/wxNQRGPnJ24?t=2829) The closing offers slides by DM and points to Tessl's posts on factories and context, with no repository, sample configuration or checklist for the practices.

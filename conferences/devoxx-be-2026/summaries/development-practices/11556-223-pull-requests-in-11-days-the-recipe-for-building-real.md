@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=0A2jqCqSIjg
 durationMin: 50
 slides: https://www.julien-dubois.com/conferences/building-with-ai-agents/index-en.html
-verdict: 8
+verdict: 7
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -92,13 +93,14 @@ Developers and leads already using coding agents who want a full workflow (specs
 
 ## Verdict
 
-**8/10**: A build measured from its own git history, with an open repository and a replicable workflow, limited by a demo that launches a release run without showing it land and by a solo baseline that is an estimate.
+**7/10**: A first-hand agent workflow with git-logged numbers, an explained harness loop and an open repository, limited by an estimated solo baseline, a release demo that never completes on screen, and a repository that is the project itself rather than a template.
+
+**Reach broad**: Most of the conference audience uses AI coding assistants daily and can carry the specs-and-tests harness, parallel fleet and overnight-run routine into their own work within the year.
 
 **Novelty 2/2**
 
-- **+** [03:11](https://youtu.be/0A2jqCqSIjg?t=191) The 223-PR, 83k-line build is quantified from the project's own git history and released as open source, with a six-ingredient framework drawn from running it.
-- **+** [25:03](https://youtu.be/0A2jqCqSIjg?t=1503) The daily rhythm (merge overnight PRs 9 to 11, fan out at 11, two or three specified jobs overnight) is read off the speaker's own commit log, not recommended in the abstract.
-- **−** The token-economics section rests on the OpenAI and Claude prompt-caching docs and GitHub's published model rates, which the deck cites, and its quiz figures are illustrative.
+- **+** [25:03](https://youtu.be/0A2jqCqSIjg?t=1503) The daily rhythm (merge overnight PRs 9 to 11, fan out at 11, brief two or three deep jobs for the night) is read off the speaker's own commit log, not recommended in the abstract.
+- **+** [28:11](https://youtu.be/0A2jqCqSIjg?t=1691) The self-critique names the conditions that inflated the gain (near-identical panels, mature Spring documentation), telling viewers when to expect 10x rather than 15 to 20x.
 
 **Demonstrated 1/2**
 
@@ -114,10 +116,10 @@ Developers and leads already using coding agents who want a full workflow (specs
 **Depth 2/2**
 
 - **+** [14:09](https://youtu.be/0A2jqCqSIjg?t=849) The harness argument explains the mechanism: specs define "done", tests close the loop, and agents iterate to green instead of emitting first drafts.
-- **+** [12:04](https://youtu.be/0A2jqCqSIjg?t=724) Model choice is argued as a trade-off: small models for speed on mechanical tasks, one workhorse model kept for its warm cache and known tooling, because the human's time costs more than tokens.
+- **+** [39:11](https://youtu.be/0A2jqCqSIjg?t=2351) The cost trade-off is explained by how the cache works: switching to a half-price model kills the cache and raises the bill, and so do editing AGENTS.md, compacting history and idling for minutes.
 - **−** [16:43](https://youtu.be/0A2jqCqSIjg?t=1003) The claim that a better harness beats a better model rests on "a team that proved it", unnamed and unlinked.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
 - **+** [02:40](https://youtu.be/0A2jqCqSIjg?t=160) The BootUI repository holds the build the talk measures: code, AGENTS.md, Copilot instructions, the project's own agents, CI workflows and docs, all inspectable per PR.
-- **·** [18:17](https://youtu.be/0A2jqCqSIjg?t=1097) The orchestrate and agent-merge skills are provided by GitHub Copilot and Impeccable is third-party, so those parts of the recipe are installed from elsewhere.
+- **·** [18:17](https://youtu.be/0A2jqCqSIjg?t=1097) The Impeccable, orchestrate and agent-merge skills ship with Copilot or third parties, so the repository carries only this project's own instantiation of the recipe, not a template for the viewer's.

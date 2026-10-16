@@ -7,10 +7,11 @@ track: Agentic Engineering & Tooling
 sessionType: Deep Dive
 audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=zDqS1U5Gnk8
-verdict: 6
+verdict: 7
+reach: segment
 frames: 14
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Don’t burn your fingers in the heat of the AI (r)evolution. (And get an OpenClaw).
@@ -95,33 +96,35 @@ Architects and platform engineers carrying AI pilots into production, and Java t
 
 ## Verdict
 
-**6/10**: Most layers of the production-AI stack run live with their repositories published; survey-level depth for a three-hour slot, a pipeline demo on screenshots and numbers without baselines hold it at 6.
+**7/10**: Most layers of the production-AI stack run live, two published repositories reproduce the demos and the choices are argued against alternatives; the layers follow their projects' docs, the pipeline demo runs on screenshots and the few numbers have no baseline.
+
+**Reach segment**: teams adding LLM features to business applications, and the platform engineers who serve them, can use the guardrail, delivery and observability patterns directly.
 
 **Novelty 1/2**
 
 - **+** [13:45](https://youtu.be/zDqS1U5Gnk8?t=825) The speaker's sales experience (customers asking how to stop a model upgrade from forcing a full retest) drives the model lifecycle argument.
-- **+** [35:38](https://youtu.be/zDqS1U5Gnk8?t=2138) The speaker's own Quarkus demo repository puts direct calls, RAG, agents and MCP behind one comparable coffee-ordering app.
+- **+** [15:22](https://youtu.be/zDqS1U5Gnk8?t=922) His RFP and RFI work shows that buyers ask vendors for sovereignty claims but never for proof of portability.
 - **−** The NeMo guardrails proxy setup and the Debezium outbox pattern follow the projects' own documentation (NeMo Guardrails docs, Debezium outbox event router docs), and the reality-check statistics are the MIT NANDA, Gartner and Veracode reports.
 
 **Demonstrated 1/2**
 
-- **+** [92:00](https://youtu.be/zDqS1U5Gnk8?t=5520) A Postgres order appears in the MongoDB read model through Debezium and Kafka, live.
+- **+** [44:42](https://youtu.be/zDqS1U5Gnk8?t=2682) The NeMo proxy accepts a valid coffee order live and refuses the oversized request and the afternoon cappuccino.
 - **+** [100:33](https://youtu.be/zDqS1U5Gnk8?t=6033) The mesh probe flips from 403 to 200 after the frontend service account joins the authorization policy, with no application code touched.
-- **−** [78:58](https://youtu.be/zDqS1U5Gnk8?t=4738) The trusted-pipeline demo runs on screenshots of another talk's application because the environment broke that morning, the Rollouts analysis template ([113:10](https://youtu.be/zDqS1U5Gnk8?t=6790)) is shown but never run, and the Loki log query fails on screen ([118:52](https://youtu.be/zDqS1U5Gnk8?t=7132)).
+- **−** [78:58](https://youtu.be/zDqS1U5Gnk8?t=4738) The trusted-pipeline demo runs on screenshots of another talk's application because the environment broke that morning, the automated Rollouts promotion is skipped ([110:57](https://youtu.be/zDqS1U5Gnk8?t=6657)) and the Loki log query fails on screen ([118:52](https://youtu.be/zDqS1U5Gnk8?t=7132)).
 
 **Measured 1/2**
 
-- **+** [106:45](https://youtu.be/zDqS1U5Gnk8?t=6405) The canary demo shows an observed 93/7 split against the configured 90/10 over a stated 10-second window.
+- **+** [106:45](https://youtu.be/zDqS1U5Gnk8?t=6405) The canary run reports an observed 93/7 split against the configured 90/10 over a stated 10-second window.
 - **−** [119:55](https://youtu.be/zDqS1U5Gnk8?t=7195) The MLflow trace shows one 3.5-second request with no comparison or baseline.
 
-**Depth 1/2**
+**Depth 2/2**
 
+- **+** [22:08](https://youtu.be/zDqS1U5Gnk8?t=1328) Direct call, RAG, fine-tuning, tool calling and agents are each tied to the task that justifies them and the cost they add (a one-off PDF needs no retrieval infrastructure), which gives a beginner the rule for when to choose which.
 - **+** [88:52](https://youtu.be/zDqS1U5Gnk8?t=5332) The outbox pattern is argued against alternatives: one security policy instead of two on database and Kafka, smaller events, and the schema version carried in the same transaction.
-- **+** [101:03](https://youtu.be/zDqS1U5Gnk8?t=6063) Deny-by-default is weighed against allow-listing: blocking everything first is more secure, while explicit blocks risk a forgotten hole.
 - **−** [12:09](https://youtu.be/zDqS1U5Gnk8?t=729) Quantization and the vLLM and llm-d serving runtimes are named as the reason local models work, with a promise to "touch them later on in the session" that the talk never keeps.
 
 **Reusable 2/2**
 
-- **+** [43:04](https://youtu.be/zDqS1U5Gnk8?t=2584) The NeMo guardrails demo repository is linked and shared for reuse.
-- **+** [91:28](https://youtu.be/zDqS1U5Gnk8?t=5488) The speaker says the entire platform application is in the GitHub repository, deployed with all the operators; it holds the mesh, rollouts and Camel configurations.
-- **−** [119:55](https://youtu.be/zDqS1U5Gnk8?t=7195) The MLflow mortgage demo is a workshop asset with no repository offered, so that demo cannot be repeated from the talk.
+- **+** [35:38](https://youtu.be/zDqS1U5Gnk8?t=2138) The public Quarkus demo repository implements direct calls, RAG, agents and MCP as `/ai/plain`, `/ai/rag`, `/ai/agent` and `/ai/mcp` endpoints of one coffee-ordering app.
+- **+** [91:28](https://youtu.be/zDqS1U5Gnk8?t=5488) The speaker says the entire platform application is in the GitHub repository, deployed with all the operators; its README installs OpenShift AI, MLflow, Kafka with Debezium, Service Mesh and Argo CD with `./deploy.sh stack` and the demo applications with `./deploy.sh app all`.
+- **·** [116:48](https://youtu.be/zDqS1U5Gnk8?t=6948) The MLflow mortgage demo is a workshop asset with no repository offered, so that slice stays unrepeatable from the talk.

@@ -11,6 +11,7 @@ durationMin: 49
 slides: https://www.slideshare.net/slideshow/openchain-friends-2006-surviving-the-ai-slopaggedon/286700476
 slidesNote: from OpenChain & Friends 2026
 verdict: 6
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -92,13 +93,14 @@ Maintainers and contributors feeling the AI contribution flood, and anyone setti
 
 ## Verdict
 
-**6/10**: A wide, incident-packed survey with a clear mental model of why AI breaks open source foundations; its material is retold from public sources, and its numbers and takeaways are cited or described, not shown.
+**6/10**: A wide survey of 2025-2026 AI-versus-open-source incidents with a clear mental model of why each foundation breaks; its material is retold from public sources and its takeaways are described without a published template.
+
+**Reach segment**: Developers who maintain or regularly contribute to open source projects, and tech leads setting AI-contribution policy, can put its governance patterns to use; the rest of the audience mostly gets context.
 
 **Novelty 1/2**
 
 - **+** [09:20](https://youtu.be/vN9jWqSvJNE?t=560) The talk sorts the 2025-2026 incidents into five foundations (incentives, trust, community and infrastructure, security, legal), a structure that brings many sources together.
-- **+** [32:19](https://youtu.be/vN9jWqSvJNE?t=1939) The license-laundering arc links the Dark Hour accident, the 5-day chardet rewrite at 1.3% similarity, the MALUS warning, and the copyright vacuum into one legal argument.
-- **+** [40:39](https://youtu.be/vN9jWqSvJNE?t=2439) AGENTS.md, no-agents.md and HOWTOAI.md are sorted into three targets: agents' coding rules, a deny list for scrapers, and the human social contract.
+- **+** [32:19](https://youtu.be/vN9jWqSvJNE?t=1939) The license-laundering arc links an accidental reimplementation, a deliberate copyleft-to-permissive rewrite, the MALUS warning, and the copyright vacuum into one legal argument.
 
 **Demonstrated 1/2**
 
@@ -107,8 +109,8 @@ Maintainers and contributors feeling the AI contribution flood, and anyone setti
 **Measured 1/2**
 
 - **+** [24:01](https://youtu.be/vN9jWqSvJNE?t=1441) The Firefox scan reports 22 vulnerabilities, 14 of high severity, found in two weeks and set against about a fifth of the critical vulnerabilities treated the previous year.
-- **+** [21:56](https://youtu.be/vN9jWqSvJNE?t=1316) The OpenStreetMap defense cites 320k IPv4 and 100k IPv6 addresses banned in 24 hours against a 100k-400k IP proxy swarm.
-- **−** [43:46](https://youtu.be/vN9jWqSvJNE?t=2626) The defensive-AI figures (1,462 issues closed, 98% of slop auto-closed) are reported project totals with no method or baseline shown.
+- **+** [22:29](https://youtu.be/vN9jWqSvJNE?t=1349) The OpenStreetMap slide gives 320k IPv4 and 100k IPv6 addresses banned manually in 24 hours after a residential proxy swarm hit the API.
+- **−** [43:46](https://youtu.be/vN9jWqSvJNE?t=2626) The defensive-AI totals (almost 1,500 stale issues closed by a maintainer agent) are reported project figures with no method or baseline shown.
 
 **Depth 2/2**
 

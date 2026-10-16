@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=A8TBUalnfdc
 durationMin: 51
 slides: https://link.simplexacode.ch/mix2
 verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-14
 reviewedAt: 2026-10-15
----
 
 # Why Documentation Won’t Write Itself—and AI Won’t Save You
 Christian Heitzmann · Conference · Development Practices
@@ -84,11 +84,13 @@ Developers and team leads who own internal documentation and wonder which format
 ## Verdict
 **6/10**: Opinionated advocacy with a live AsciiDoc preview and a clear mental model of what documentation is for, held back by a docs-as-code pipeline that is described and never run, a 10x claim with no baseline, and an evaluation whose criteria stay in an article.
 
+**Reach broad**: Most of the Devoxx Belgium audience writes or reviews team documentation, so the audience/altitude split, the docs-as-code setup, and the human-context-for-AI point are directly usable within the next year.
+
 **Novelty 1/2**
 
-- **+** [19:34](https://youtu.be/A8TBUalnfdc?t=1174) The speaker reports his own evaluation of 23 lightweight markup languages from the Wikipedia table, ending in a ranked top four (AsciiDoc, reStructuredText, MediaWiki, Textile).
+- **+** [19:34](https://youtu.be/A8TBUalnfdc?t=1174) The speaker brings his own evaluation of the 23 lightweight markup languages in the Wikipedia table, ending in a ranked top four led by AsciiDoc.
 - **+** [33:27](https://youtu.be/A8TBUalnfdc?t=2007) The Confluence case rests on firsthand consulting episodes, including a security ticket answered only by a bot for three months.
-- **−** [19:34](https://youtu.be/A8TBUalnfdc?t=1174) The criteria behind the 23-language ranking are not shown on stage; the speaker points to his article for them.
+- **−** [20:36](https://youtu.be/A8TBUalnfdc?t=1236) The criteria behind the 23-language ranking are described in the speaker's article rather than shown on stage.
 
 **Demonstrated 1/2**
 
@@ -106,9 +108,8 @@ Developers and team leads who own internal documentation and wonder which format
 - **+** [21:38](https://youtu.be/A8TBUalnfdc?t=1298) Markdown is rejected for stated reasons (no standard, flavors differ, tables, cross-references and notes need plugins or raw HTML), with AsciiDoc as the replacement for the same basic syntax.
 - **+** [34:58](https://youtu.be/A8TBUalnfdc?t=2098) The case against a single documentation hub weighs interface expectations, distance from code, and the effect of starting a clean system.
 - **+** [42:42](https://youtu.be/A8TBUalnfdc?t=2562) Documentation is defined as the invisible part (decisions, history, rejected designs, how-tos, debt, warnings), with the argument that source code cannot supply it.
-- **−** [15:31](https://youtu.be/A8TBUalnfdc?t=931) The flexibility-versus-complexity chart behind the format ranking is, in the speaker's words, qualitative, with no criteria shown.
 
 **Reusable 1/2**
 
-- **+** [50:52](https://youtu.be/A8TBUalnfdc?t=3052) The linked zip supplies the slides and the AsciiDoc example from the demo to start from.
-- **−** [42:42](https://youtu.be/A8TBUalnfdc?t=2562) The list of what documentation must cover is spoken only; the zip holds the demo example, with no checklist or template for that list.
+- **+** [50:52](https://youtu.be/A8TBUalnfdc?t=3052) The linked zip supplies the AsciiDoc example from the live demo to start from.
+- **−** [49:51](https://youtu.be/A8TBUalnfdc?t=2991) The organizational half (responsible owners, a style guide) is pointed at the GitLab guide and left to reconstruct, with nothing to copy in the zip.

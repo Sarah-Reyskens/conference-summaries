@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=OLQ98Ko4p3Q
 durationMin: 47
 slides: null
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -66,32 +67,35 @@ Stay on the monthly 25.x feature releases for performance and security fixes; a 
 JVM developers tracking where Native Image is headed, teams running fleets of microservices on a shared stack, and anyone blocked by the closed-world assumption (ByteBuddy, plugins, scripting). Skip it if you need production-ready guidance on stable features only: Layers, Crema and Web Image are experimental and fast-moving.
 
 ## Verdict
-**8/10**: three projects from their authors, with a live demo and a measurement for Layers and a live demo for Crema and Web Image, but explained at survey depth and with artifacts for only one of the three.
+**7/10**: three experimental projects shown running live with a baselined memory measurement for Layers, held at Novelty 1 because the speakers are the project's authors and its design is public, with survey-level Web Image and a reusable artifact for only one of three demos.
 
-**Novelty 2/2**
+**Reach segment**: teams shipping JVM services as Native Images on a shared stack can use Layers, and the subset blocked by the closed-world assumption or targeting browsers can use Crema and Web Image.
 
-- **+** [11:53](https://youtu.be/OLQ98Ko4p3Q?t=713) Wuerthinger's analysis of the Micronaut Pet Clinic found 3% of loaded classes were user code, and that finding is the stated reason Layers was designed.
-- **+** [21:52](https://youtu.be/OLQ98Ko4p3Q?t=1312) The authors explain that open-world compilation built for base layers made Crema possible by adding a bytecode interpreter to a native image.
+**Novelty 1/2**
+
+- **+** [22:23](https://youtu.be/OLQ98Ko4p3Q?t=1343) The authors place Crema in the years of user requests for ByteBuddy with Native Image that it now answers.
+- **+** [34:54](https://youtu.be/OLQ98Ko4p3Q?t=2094) The talk frames one decision rule across the projects: stable parts compiled ahead of time and shared, frequently changing parts loaded dynamically and JIT-compiled.
+- **−** The public Crema issue oracle/graal#11327 already describes the interpreter built on Native Image Layers and the AOT base with runtime-loaded user code, so a search for the project returns the core of the Crema material.
 
 **Demonstrated 2/2**
 
-- **+** [15:36](https://youtu.be/OLQ98Ko4p3Q?t=936) Ten layered Micronaut apps run on one shared base with per-process RSS and PSS printed.
-- **+** [23:28](https://youtu.be/OLQ98Ko4p3Q?t=1408) A native binary loads and runs ByteBuddy classes generated after the build, then a source launcher and a jar on a precompiled Micronaut runtime run too.
-- **+** [38:33](https://youtu.be/OLQ98Ko4p3Q?t=2313) A Spring Boot app compiled to WebAssembly plays music in the browser, run from prebuilt output.
+- **+** [15:36](https://youtu.be/OLQ98Ko4p3Q?t=936) Ten layered Micronaut apps start on one shared base with per-process RSS and PSS printed on screen.
+- **+** [23:28](https://youtu.be/OLQ98Ko4p3Q?t=1408) A native binary loads and runs ByteBuddy classes generated after the build, with new timestamped class names per run.
+- **+** [38:33](https://youtu.be/OLQ98Ko4p3Q?t=2313) A Spring Boot music app compiled to WebAssembly plays music in the browser on stage.
 
 **Measured 2/2**
 
-- **+** [04:42](https://youtu.be/OLQ98Ko4p3Q?t=282) The same Micronaut Pet Clinic built with GraalVM 25.0 and 25.4 with default settings gives a 33% smaller image and 22% lower memory.
+- **+** [04:42](https://youtu.be/OLQ98Ko4p3Q?t=282) The same Micronaut Pet Clinic built with GraalVM 25.0 and 25.4 under default settings gives a 33% smaller image and 22% lower memory.
 - **+** [18:45](https://youtu.be/OLQ98Ko4p3Q?t=1125) One layered instance uses about 100 MB PSS against about 30 MB per instance across ten, sampled with system-level tools.
-- **−** [29:42](https://youtu.be/OLQ98Ko4p3Q?t=1782) The "7x faster than the regular Java source launcher" and "30x … CPU consumption" claims come with no run of the regular launcher, only the 35.7 ms hyperfine result for Crema.
+- **−** [29:42](https://youtu.be/OLQ98Ko4p3Q?t=1782) The "7x faster than the regular Java source launcher" and "30x CPU consumption" claims come with no run of the regular launcher, only the 35.7 ms hyperfine result for Crema.
 
 **Depth 1/2**
 
-- **+** [21:52](https://youtu.be/OLQ98Ko4p3Q?t=1312) The Crema mechanism is explained: an AOT-compiled base plus an embedded bytecode interpreter, with hot classes JIT-compiled.
-- **+** [34:54](https://youtu.be/OLQ98Ko4p3Q?t=2094) The AOT/JIT boundary is framed as a choice: stable parts compiled ahead and shared, frequently changing parts loaded dynamically.
+- **+** [14:00](https://youtu.be/OLQ98Ko4p3Q?t=840) Layers are explained as a base compiled once with thin app layers on top that map onto Docker image layers.
+- **+** [21:52](https://youtu.be/OLQ98Ko4p3Q?t=1312) Crema is explained as a bytecode interpreter compiled into the image reusing the open-world machinery built for base layers, with hot classes JIT-compiled.
 - **−** [35:58](https://youtu.be/OLQ98Ko4p3Q?t=2158) Web Image gets a what-and-demo treatment with no mechanism or limits beyond naming the browser and Cloudflare as targets.
 
 **Reusable 1/2**
 
-- **+** [39:05](https://youtu.be/OLQ98Ko4p3Q?t=2345) The mytunes Spring-to-Wasm demo app is on GitHub and can be built and run, though the repository is not named.
-- **·** [15:36](https://youtu.be/OLQ98Ko4p3Q?t=936) No repository or sample is pointed to for the Layers and Crema demos, so those stay fragments to reconstruct.
+- **+** [39:05](https://youtu.be/OLQ98Ko4p3Q?t=2345) The mytunes Spring-to-Wasm demo app is on GitHub and can be built and run by the viewer.
+- **·** [34:23](https://youtu.be/OLQ98Ko4p3Q?t=2063) The invitation to build with Crema names no repository or sample, and none is pointed to for the Layers demos either.

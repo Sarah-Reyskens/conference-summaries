@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=Q91obeWeWNQ
 durationMin: 162
 slides: https://speakerdeck.com/tzolov/agentic-engineering-and-tooling-agentic-engineering-and-tooling-deep-dive-180min-216-agent-loops-decoded-fundamentals-to-agentic-patterns-in-spring-ai
-verdict: 8
+verdict: 9
+reach: segment
 frames: 13
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Agent Loops, Decoded: Fundamentals to Agentic Patterns in Spring AI
@@ -129,34 +130,32 @@ Java developers adopting Spring AI for agents gain the most: the talk maps every
 
 ## Verdict
 
-**8/10**: Tool calling, tool search, skills, subagents, memory and MCP sampling run live with Inspector traces and a public repo; the workflow taxonomy follows a well-known article and the Jev speed and cost claims have no measurement.
+**9/10**: Central agent patterns run end to end with Inspector traces, explained advisor mechanics and a runnable demo repository; a same-task token comparison supplies measurement, while Jev speed and cost claims remain unverified.
+
+**Reach segment**: Spring Boot users adding LLM features can apply the Spring AI advisors, tools and agent patterns in their services.
 
 **Novelty 1/2**
 
-- **+** [10:59](https://youtu.be/Q91obeWeWNQ?t=659) The Spring AI Inspector was built the week before the conference to trace application runs.
-- **+** [04:46](https://youtu.be/Q91obeWeWNQ?t=286) System One (Jev/TypeSafe) models, announced about two weeks earlier, are introduced as a new non-generative decision maker.
-- **−** The workflow taxonomy (chained, routing, orchestrator-worker, evaluator-optimizer) follows Anthropic's well-known "Building effective agents" article.
+- **+** [10:59](https://youtu.be/Q91obeWeWNQ?t=659) The speaker brings his own example of replacing console-based tracing with an Inspector built for the conference.
+- **·** The workflow taxonomy follows Anthropic's "Building effective agents," and the Spring AI feature tour does not establish the experience-led synthesis needed for 2.
 
 **Demonstrated 2/2**
 
-- **+** [75:19](https://youtu.be/Q91obeWeWNQ?t=4519) Amsterdam and Barcelona weather requests dispatch to getTemperature tools with responses re-entering context before the final answer.
-- **+** [144:55](https://youtu.be/Q91obeWeWNQ?t=8695) A subagent task spawns in its own context while the lead agent memory keeps only the request, task response and final answer.
-- **−** [99:20](https://youtu.be/Q91obeWeWNQ?t=5960) The dedicated LLM-as-judge advisor using a local judge model stays as code without a live run.
+- **+** [75:19](https://youtu.be/Q91obeWeWNQ?t=4519) Amsterdam and Barcelona weather requests dispatch to getTemperature tools, with responses re-entering context before the final answer.
+- **+** [121:47](https://youtu.be/Q91obeWeWNQ?t=7307) The skills run loads the skill body, invokes its bundled transcript-fetching script and returns a reinforcement-learning explanation.
+- **−** [103:29](https://youtu.be/Q91obeWeWNQ?t=6209) The self-refine run glitches and rejects an earlier plausible response before eventually accepting a later result.
 
-**Measured 1/2**
+**Measured 2/2**
 
-- **+** [87:20](https://youtu.be/Q91obeWeWNQ?t=5240) The tool-search run shows about 4,000 tokens in the Inspector, down from about 7,000 with all tools in context in the same example, one run each.
-- **−** [87:50](https://youtu.be/Q91obeWeWNQ?t=5270) The extra client-server iterations and Jev latency behind that token saving are named but not measured.
-- **−** [55:34](https://youtu.be/Q91obeWeWNQ?t=3334) Jev speed and cost figures (100x faster, one to two orders cheaper) repeat vendor statistics without an on-stage measurement.
+- **+** [87:20](https://youtu.be/Q91obeWeWNQ?t=5240) Inspector shows about 4,000 tokens after enabling tool search for the same clothing-and-weather task that used about 7,000 with the full tool registry.
+- **−** [55:34](https://youtu.be/Q91obeWeWNQ?t=3334) Jev speed and cost figures repeat vendor statistics without a measurement in the talk.
 
 **Depth 2/2**
 
-- **+** [27:36](https://youtu.be/Q91obeWeWNQ?t=1656) Advisors chain with first-in-last-out semantics and recurse by copying the chain to loop through downstream steps.
-- **+** [76:21](https://youtu.be/Q91obeWeWNQ?t=4581) Whether memory records tool traffic or only the request and final answer depends on advisor ordering.
-- **+** [23:27](https://youtu.be/Q91obeWeWNQ?t=1407) Conversation history must be cut at turn boundaries because mid-turn cuts confuse the model and some providers reject the call.
+- **+** [27:36](https://youtu.be/Q91obeWeWNQ?t=1656) Advisors use first-in-last-out semantics and recurse by copying the chain to repeat downstream steps.
+- **+** [76:21](https://youtu.be/Q91obeWeWNQ?t=4581) Advisor ordering determines whether memory records tool traffic or only the original request and final answer.
+- **+** [101:24](https://youtu.be/Q91obeWeWNQ?t=6084) Plain-Java checks run before model evaluation and stop the chain on failure, avoiding model calls for conditions deterministic code can decide.
 
 **Reusable 2/2**
 
-- **+** [11:31](https://youtu.be/Q91obeWeWNQ?t=691) Every demo plus the Inspector lives in the Voxxed Days demo repository for attendees to run.
-- **+** [106:39](https://youtu.be/Q91obeWeWNQ?t=6399) Companion spring-ai-agent-utils provides file, shell and web search and fetch tools used in later demos.
-
+- **+** [11:31](https://youtu.be/Q91obeWeWNQ?t=691) The published Voxxed Days demo repository contains the Inspector and examples that attendees can run.

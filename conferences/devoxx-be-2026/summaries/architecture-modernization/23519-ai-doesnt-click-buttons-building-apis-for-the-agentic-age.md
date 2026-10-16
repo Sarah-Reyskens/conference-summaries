@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=QvyIzP4-OvM
 durationMin: 38
 slides: null
 verdict: 5
+reach: broad
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # AI Doesn’t Click Buttons: Building APIs for the Agentic Age
@@ -60,11 +61,13 @@ API designers and architects wondering what "agent-ready" concretely requires of
 
 ## Verdict
 
-**5/10**: A design framework (data, meaning and available actions; machine-readable errors; inline-vs-discoverable values; MCP and delegation boundaries) with reasons for each rule, held back by a toy domain shown only on slides, rules that an IETF draft already lists, and no artifact.
+**5/10**: A reasoned design framework for agent-consumable APIs (data, meaning and available actions; machine-readable errors; inline-vs-discoverable values; MCP and delegation boundaries), held back by a toy domain shown only on slides, rules that an IETF draft already lists, and no published artifact.
+
+**Reach broad**: Backend developers and architects in the audience can apply explicit contracts, structured errors and discoverable values to the APIs they build, whether or not agents ever consume them.
 
 **Novelty 1/2**
 
-- **+** [16:38](https://youtu.be/QvyIzP4-OvM?t=998) The stamp-price response is built up in three layers (data, meaning, available actions) and then played as an agent dialogue, which is the speaker's own worked example.
+- **+** [12:42](https://youtu.be/QvyIzP4-OvM?t=762) The stamp-price case starts from a real 17 April 2026 newspaper report on the bpost chatbot failing to answer the price of a stamp, which is the speaker's own illustration of known material.
 - **−** IETF Internet-Draft `draft-gaikwad-agent-friendly-http-api-profile` (June 2026) already lists next-step links, allowed-value enums, confirmation metadata on high-risk operations and the API-layer/tool-layer split.
 
 **Demonstrated 0/2**
@@ -82,7 +85,7 @@ API designers and architects wondering what "agent-ready" concretely requires of
 
 - **+** [19:48](https://youtu.be/QvyIzP4-OvM?t=1188) The inline-vs-discoverable rule for valid values weighs inline lists, a reference-data endpoint and a schema type against response size and freshness, and ends in a decision rule.
 - **+** [23:59](https://youtu.be/QvyIzP4-OvM?t=1439) The MCP discussion separates the connection standard from domain explainability and states what MCP cannot fix.
-- **+** [26:04](https://youtu.be/QvyIzP4-OvM?t=1564) The delegation rule (AI acts inside the user's authority, never as super-user) grounds the security section in a principle with design consequences.
+- **+** [06:59](https://youtu.be/QvyIzP4-OvM?t=419) The browser-clicking alternative is weighed against direct API use (faster, more reliable, easier to secure, easier to observe), which is the reasoning behind the talk's title.
 
 **Reusable 1/2**
 

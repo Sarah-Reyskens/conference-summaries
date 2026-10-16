@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=yB6FIQPgsWE
 durationMin: 49
 slides: null
 verdict: 5
+reach: niche
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # What rules the virtual? How our systems obey physical laws.
@@ -92,6 +93,8 @@ Developers curious what happens below their programming language, especially sel
 
 **5/10**: A physics tour from circuits to qubits with a live body-circuit slide advance, held at survey depth with no measurements and no artifact of its own.
 
+**Reach niche**: Only the few Java developers curious about hardware or quantum basics can use this physics survey in their own backend work within the next year.
+
 **Novelty 1/2**
 
 - **+** [12:06](https://youtu.be/yB6FIQPgsWE?t=726) Punch cards losing mass, the hard disk's breathing-hole warning and Landauer heat are combined into one argument about physical carriers that a single search result does not give as a whole.
@@ -100,7 +103,7 @@ Developers curious what happens below their programming language, especially sel
 **Demonstrated 1/2**
 
 - **+** [01:07](https://youtu.be/yB6FIQPgsWE?t=67) She advances her slides by completing a Makey Makey circuit with her own body ("Yes, there we go"), a working live demo of current through a circuit.
-- **−** [06:50](https://youtu.be/yB6FIQPgsWE?t=410) The game controlled through the same circuit is announced, but the projector still shows the physics slide, so it is described rather than shown.
+- **−** [06:50](https://youtu.be/yB6FIQPgsWE?t=410) The game controlled through the same circuit is announced, but she returns to the slides without playing it, so it is described rather than shown.
 - **·** [26:52](https://youtu.be/yB6FIQPgsWE?t=1612) The transistor, gates, Landauer heat and qubits are explained on slides only, with nothing run.
 
 **Measured 1/2**

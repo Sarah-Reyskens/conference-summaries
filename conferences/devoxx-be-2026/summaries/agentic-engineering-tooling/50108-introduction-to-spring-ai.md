@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=JzFelLDiVJQ
 durationMin: 43
 slides: null
 verdict: 6
+reach: segment
 frames: 9
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Introduction to Spring AI
@@ -88,18 +89,19 @@ The last minutes compressed the remaining topics: auto-instrumented observabilit
 Spring developers evaluating Spring AI gain a compact map of ChatClient, advisors, RAG, tools, and MCP with real configuration and code. Skip it if you already build with Spring AI or want depth on evaluation loops, MCP servers, or production operations; those get minutes, not demonstrations.
 
 ## Verdict
-**6/10**: Mental models of advisors and tool calling plus two published sample repos earn the score, but nothing runs on screen and the core material follows the Spring AI reference documentation.
+**6/10**: The beginner-level mental models for advisors and tool calling and the published recipe-finder sample earn the score; the API tour shows code without an application run.
+
+**Reach segment**: Spring Boot developers adding LLM features to their applications can use it; Quarkus and Jakarta EE teams in the audience cannot adopt Spring AI directly.
 
 **Novelty 1/2**
 
-- **+** [08:27](https://youtu.be/JzFelLDiVJQ?t=507) The harness framing carries the intro: models gain capability through surrounding components, then get restricted on exposure and token use.
-- **−** The ChatClient, advisors, RAG and tool-calling material follows the Spring AI reference documentation (docs.spring.io/spring-ai) rather than comparing sources or adding unpublished experience.
+- **·** The Spring AI team's tour of its own framework earns the project-author baseline of 1: the official Spring AI reference documentation at docs.spring.io/spring-ai covers these features, and the talk adds no production experience or cross-source synthesis beyond that baseline.
 
 **Demonstrated 0/2**
 
-- **−** [10:02](https://youtu.be/JzFelLDiVJQ?t=602) The start.spring.io screen-share shows project setup only; no application output appears anywhere in the talk.
+- **−** [10:02](https://youtu.be/JzFelLDiVJQ?t=602) The start.spring.io walkthrough covers project setup only; no application output appears anywhere in the talk.
 - **−** [18:53](https://youtu.be/JzFelLDiVJQ?t=1133) Structured output through `.entity(Recipe.class)` with native and fallback modes is walked through in code without running the recipe finder.
-- **−** [29:30](https://youtu.be/JzFelLDiVJQ?t=1770) RAG with `QuestionAnswerAdvisor` is declared implemented after the configuration walkthrough, with no query or answer shown.
+- **−** [30:01](https://youtu.be/JzFelLDiVJQ?t=1801) RAG with `QuestionAnswerAdvisor` is declared implemented after the configuration walkthrough, with no query or answer shown.
 
 **Measured 1/2**
 
@@ -108,11 +110,11 @@ Spring developers evaluating Spring AI gain a compact map of ChatClient, advisor
 **Depth 2/2**
 
 - **+** [27:17](https://youtu.be/JzFelLDiVJQ?t=1637) Advisor order is explained through logging placement: a logger before RAG sees the raw prompt, one after sees the augmented prompt.
+- **+** [30:31](https://youtu.be/JzFelLDiVJQ?t=1831) Recursive advisors copy the advisor chain so a sub-loop, such as an LLM-rated evaluation that reruns on a low score, can run without repeating the surrounding advisors.
 - **+** [33:39](https://youtu.be/JzFelLDiVJQ?t=2019) The tool-calling round trip is explained end to end: prompt plus tool metadata, the model's tool-call request with arguments, the app running the method, and the result sent back in the next prompt.
-- **−** [37:51](https://youtu.be/JzFelLDiVJQ?t=2271) MCP versus plain `@Tool` choice gets a when-to-use-each rule (share across teams versus one app) without weighing alternatives or design trade-offs.
 
 **Reusable 2/2**
 
-- **+** [42:02](https://youtu.be/JzFelLDiVJQ?t=2522) The closing slide points to the recipe-finder and nutrition-planner GitHub samples, whose READMEs cover the patterns shown.
+- **+** [42:02](https://youtu.be/JzFelLDiVJQ?t=2522) The closing slide points to the recipe-finder sample, the project whose code was shown, and the nutrition-planner sample for multi-step and human-in-the-loop patterns.
 - **+** [41:02](https://youtu.be/JzFelLDiVJQ?t=2462) The free Spring Academy course covers the capabilities with hands-on labs against a mocked OpenAI API.
 - **−** [41:32](https://youtu.be/JzFelLDiVJQ?t=2492) The course's experimental-patterns module was still marked coming soon on staging.

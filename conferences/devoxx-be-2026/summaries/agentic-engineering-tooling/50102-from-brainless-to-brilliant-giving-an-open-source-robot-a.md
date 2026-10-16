@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=ZDocIlx7Zvg
 durationMin: 17
 slides: null
 verdict: 7
+reach: niche
 frames: 7
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # From Brainless to Brilliant — Giving an Open-Source Robot a Mind of Its Own
@@ -55,18 +56,19 @@ Beginners curious what a home robotics-plus-AI build looks like end to end. Skip
 
 ## Verdict
 
-**7/10**: Recorded AURA console runs show recognition, mode-gated refusal, code edits and self-proposed changes behind approval gates, each guardrail with a stated reason, but the numbers stay price and count anecdotes and the AURA project itself is never pointed to.
+**7/10**: AURA's recorded runs show household recognition, mode refusal and approval-gated code changes with a clear beginner-level privacy model; the evidence is a project tour with anecdotal numbers and no reproducible AURA example.
+
+**Reach niche**: Only attendees with a home-robotics or embodied-agent side project can put the Reachy Mini plus AURA build to use within the next year.
 
 **Novelty 1/2**
 
-- **+** [03:43](https://youtu.be/ZDocIlx7Zvg?t=223) The empty robot plus encrypted laptop brain is the speaker's own AURA build.
-- **−** The approval gates and propose-instead-of-apply changes repeat the human-in-the-loop agent pattern in LangGraph's human-in-the-loop docs.
+- **+** [02:09](https://youtu.be/ZDocIlx7Zvg?t=129) The speaker uses his own kitchen-table robot build to illustrate how a hobbyist can assemble an embodied assistant, going beyond a generic agent introduction without offering a tested cross-project synthesis.
 
 **Demonstrated 2/2**
 
 - **+** [05:05](https://youtu.be/ZDocIlx7Zvg?t=305) The recorded AURA console shows Mila recognized with a confidence label and PersonRecognized entries in the event feed.
-- **+** [08:10](https://youtu.be/ZDocIlx7Zvg?t=490) The refusal to read the work calendar in home mode appears as the console's own reply text.
-- **+** [09:35](https://youtu.be/ZDocIlx7Zvg?t=575) The console shows the green pytest result and then the "May I run this command?" card over the git commit, with Allow and Deny buttons.
+- **+** [08:10](https://youtu.be/ZDocIlx7Zvg?t=490) In home mode, the refusal to read the work calendar appears as the console's own reply text.
+- **+** [09:35](https://youtu.be/ZDocIlx7Zvg?t=575) After the green pytest result, the console shows the "May I run this command?" card over the git commit, with Allow and Deny buttons.
 
 **Measured 1/2**
 
@@ -82,5 +84,4 @@ Beginners curious what a home robotics-plus-AI build looks like end to end. Skip
 
 **Reusable 1/2**
 
-- **+** [15:08](https://youtu.be/ZDocIlx7Zvg?t=908) A QR code and URL open the published physics game "Please Do Not Throw Richie", an artifact unrelated to AURA's content.
-- **−** [03:43](https://youtu.be/ZDocIlx7Zvg?t=223) The talk gives no repository, install path or URL for AURA itself.
+- **+** [15:08](https://youtu.be/ZDocIlx7Zvg?t=908) The slide gives a QR code and `janvanwassenhove.github.io/PleaseDoNotThrowRichie` for the physics game, an artifact viewers can try that does not reproduce the AURA assistant shown in the keynote.

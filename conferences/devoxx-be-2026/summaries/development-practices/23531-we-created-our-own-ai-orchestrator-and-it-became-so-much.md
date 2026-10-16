@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=niBYuCuViGw
 durationMin: 52
 slides: null
-verdict: 7
+verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
-reviewedAt: 2026-10-15
+reviewedAt: 2026-10-16
 ---
 
 # We created our own AI orchestrator and it became so much more!
@@ -76,31 +77,34 @@ The Node.js to Spring Boot migration took about 18 productive staff hours (exclu
 Teams adopting coding agents who are hitting review overload, inconsistent agent output, or vague-requirements failures gain the most, especially leads designing the surrounding process. Viewers wanting Embabel internals, orchestrator source walkthroughs, or benchmarked agent comparisons should look elsewhere.
 
 ## Verdict
-**7/10**: A first-hand account of an agent orchestrator built and run in production, with an open-sourced repository, limited by screenshots instead of a run, numbers without a baseline, and the orchestrator itself left unexplained.
+**6/10**: A first-hand production account of building and running an agent orchestrator, with numbers and an open-sourced repository, limited to screenshots instead of a run, baseline-free measurements, and the orchestrator's own internals left unexplained.
+
+**Reach broad**: Most of the conference audience uses AI coding assistants daily and can apply the spec-writing, review, and ownership practices to their own teams.
 
 **Novelty 2/2**
 
-- **+** [46:31](https://youtu.be/niBYuCuViGw?t=2791) The Node.js to Spring Boot migration result (18 productive hours, in production) comes from the speaker's own team and no public source documents it.
-- **+** [15:47](https://youtu.be/niBYuCuViGw?t=947) The local-agents-to-central-repository turnaround, including the demotivation episode and the notation-feedback loop, is original production experience rather than assembled advice.
+- **+** [16:54](https://youtu.be/niBYuCuViGw?t=1014) The move from divergent local agents to one shared central repository after review friction demotivated the team comes from the speaker's own team and no search documents it.
+- **+** [30:31](https://youtu.be/niBYuCuViGw?t=1831) The change in team habits, with the business and the product owner joining refinement instead of leaning back, is original production experience rather than assembled advice.
 
 **Demonstrated 1/2**
 
 - **+** [22:19](https://youtu.be/niBYuCuViGw?t=1339) The dashboard screenshot shows a real spec workflow mid-run with stage orbs, an agent log line, and the quality-gate panel.
-- **+** [37:27](https://youtu.be/niBYuCuViGw?t=2247) The queue screenshot shows the per-project auto-merge checkbox over real spec rows; the workflow designer next to it is introduced as "a small preview" of work in progress.
-- **−** [22:51](https://youtu.be/niBYuCuViGw?t=1371) The quality-gate results are described over static screenshots ("good for the show"); no workflow runs end to end on screen with its output visible.
+- **+** [37:27](https://youtu.be/niBYuCuViGw?t=2247) The queue screenshot shows the per-project auto-merge checkbox over real spec rows, with the workflow designer introduced as a work-in-progress preview.
+- **−** [22:51](https://youtu.be/niBYuCuViGw?t=1371) The gates read as all-green over static screenshots ("good for the show"); no workflow runs end to end on screen with its output visible.
 
 **Measured 1/2**
 
-- **+** [12:50](https://youtu.be/niBYuCuViGw?t=770) The first agent pull request is shown at +19,525 −319 across 225 files, against a ~100-line pull request after the specs were sliced [29:26](https://youtu.be/niBYuCuViGw?t=1766).
+- **+** [12:50](https://youtu.be/niBYuCuViGw?t=770) The first agent pull request is shown at +19,525 −319 across 225 files changed.
 - **+** [46:31](https://youtu.be/niBYuCuViGw?t=2791) The migration cost is quantified as 18 productive staff hours, counting employee time only and excluding unattended agent runtime.
-- **−** [46:31](https://youtu.be/niBYuCuViGw?t=2791) The 18 hours have no baseline: no manual-migration estimate or before/after comparison backs the implied saving, and the speaker says it "cannot be seen like it's a person working eight hours".
+- **−** [46:31](https://youtu.be/niBYuCuViGw?t=2791) The 18 hours have no baseline: no manual-migration estimate or before/after comparison backs the implied saving.
 
 **Depth 1/2**
 
 - **+** [17:26](https://youtu.be/niBYuCuViGw?t=1046) The centralization decision is argued with reasons: divergent local agents caused inconsistent output, so shared definitions absorb recurring review feedback.
-- **+** [26:12](https://youtu.be/niBYuCuViGw?t=1572) The small-spec practice is explained through the gap-filling mechanism: large specs let agents invent services, small ones make assumptions reviewable.
+- **+** [26:12](https://youtu.be/niBYuCuViGw?t=1572) The small-spec practice is explained through the gap-filling mechanism: large specs let agents invent services, small ones keep assumptions reviewable.
 - **−** [19:04](https://youtu.be/niBYuCuViGw?t=1144) The orchestrator's own internals (Embabel wiring, workflow execution) and the choice to build one instead of adopting an existing tool are named rather than explained.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [50:50](https://youtu.be/niBYuCuViGw?t=3050) The final slide points to the open-sourced orchestrator at https://github.com/OpenJCockpit, whose repository documents the cockpit, Keycloak, PostgreSQL, the LiteLLM gateway, the local Qwen model and the seven-stage agent pipeline with a Docker Compose start-up.
+- **+** [50:50](https://youtu.be/niBYuCuViGw?t=3050) The final slide points to the open-sourced orchestrator at https://github.com/OpenJCockpit, which resolves and documents a Docker Compose start-up for the cockpit, Keycloak, the LiteLLM gateway, and the local Qwen model pipeline.
+- **·** [50:50](https://youtu.be/niBYuCuViGw?t=3050) As the presenters' own project, the repository counts as the project's distribution rather than a separate sample reproducing the talk's examples.

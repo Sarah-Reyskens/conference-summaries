@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=rNOzf12RORI
 durationMin: 42
 slides: null
-verdict: 7
+verdict: 6
+reach: broad
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -71,22 +72,23 @@ JDK work is validated with JMH microbenchmarks and workload measurements from th
 Java engineers deciding whether a JDK 26 or 27 upgrade is worth measuring, and anyone who wants a compact mental model of what the JIT and GC do for them. Skip it if you already read the inside.java performance articles in full; regular JVM-conference attendees will find the JIT primer familiar.
 
 ## Verdict
-**7/10**: A survey of JDK 26 and 27 by a JDK library author, with before/after numbers, a shown benchmark method and mechanism-level explanations, limited by being mostly a digest of the speaker's inside.java articles with nothing run live.
+**6/10**: A survey of JDK 26 and 27 performance work by a JDK library author, with mechanism-level explanations of the JIT and the GC barrier, limited by numbers quoted without setups, nothing run on screen and material that is mostly a digest of his inside.java articles.
+
+**Reach broad**: Most Java developers weighing a JDK 26 or 27 upgrade can use its defaults, header, AOT and measurement guidance in their own work.
 
 **Novelty 1/2**
 
-- **+** [35:51](https://youtu.be/rNOzf12RORI?t=2151) The FFM arena pooling design (four pre-allocated pools on the thread, slab returned on close, not generalized to other arena shapes) is explained from first-hand implementation experience.
-- **+** [24:45](https://youtu.be/rNOzf12RORI?t=1485) The HashMap copy-constructor change comes with the team's trade-off reasoning: accepted maintenance complexity in exchange for the measured win.
-- **·** [12:41](https://youtu.be/rNOzf12RORI?t=761) The release-by-release roadmap picks highlights from the inside.java performance articles the speaker co-wrote, so most of it is also in those articles.
+- **+** [35:51](https://youtu.be/rNOzf12RORI?t=2151) The FFM arena pooling design (four pre-allocated pools on the thread, slab returned on close, other arena shapes left out as too varied) comes from the speaker's own implementation work.
+- **·** [12:41](https://youtu.be/rNOzf12RORI?t=761) The release-by-release roadmap explicitly picks highlights from the inside.java performance articles the speaker co-wrote, so most of it is also in those articles.
 
 **Demonstrated 1/2**
 
 - **·** [24:45](https://youtu.be/rNOzf12RORI?t=1485) A 42-minute survey of twenty-plus changes has no single claim to run end to end; evidence appears as benchmark charts on slides, such as the HashMap copy bars.
 
-**Measured 2/2**
+**Measured 1/2**
 
 - **+** [22:08](https://youtu.be/rNOzf12RORI?t=1328) The FFM native-to-String path is quoted before and after: 19 down to 14 microseconds for five ASCII characters.
-- **+** [38:29](https://youtu.be/rNOzf12RORI?t=2309) The method behind the numbers is shown: a JMH String hashCode benchmark that can fold to under a nanosecond, with the caveat that such benchmarks are synthetic.
+- **−** [36:21](https://youtu.be/rNOzf12RORI?t=2181) The pooled FFM allocation gain is given as "more than 10 in most cases" over malloc/free with no workload, unit or setup.
 - **−** [18:29](https://youtu.be/rNOzf12RORI?t=1109) The dual-card barrier payoff is given as "maybe 5% or even more in some cases", with no baseline or setup.
 
 **Depth 2/2**

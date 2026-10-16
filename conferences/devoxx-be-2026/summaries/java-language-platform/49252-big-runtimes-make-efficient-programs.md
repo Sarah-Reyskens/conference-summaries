@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=vhDwy1eCXbs
 durationMin: 50
 slides: null
-verdict: 8
+verdict: 7
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -80,22 +81,23 @@ JFR emits deep runtime telemetry at about 1-2% production overhead, far deeper t
 Java developers who want the performance rationale behind the JIT, GC, and JFR from the OpenJDK team, and anyone choosing between the JVM and a low-level language for a large evolving service. Skip if you already work on JVM internals (much of the mechanism will be familiar) or need hands-on tuning steps rather than design reasoning.
 
 ## Verdict
-**8/10**: Design rationale from the OpenJDK side and a Java-vs-Rust measurement with its workload shown; held back by no live demonstration and nothing to take home.
+**7/10**: OpenJDK-side rationale for JIT speculation and moving collectors, with a Java-vs-Rust comparison whose setup is on screen and trade-offs weighed throughout; held back by synthesis of credited sources and no artifact to take home.
 
-**Novelty 2/2**
+**Reach broad**: Most Java backend developers in the audience can apply the guidance on natural code, collector headroom and JFR profiling to services they run within the next year.
 
-- **+** [28:39](https://youtu.be/vhDwy1eCXbs?t=1719) A GC-team colleague's Caffeine-vs-Moka experiment gives head-to-head numbers that a search for the subject does not return.
-- **+** [33:19](https://youtu.be/vhDwy1eCXbs?t=1999) The FFI argument explains from the designers' side why low-level languages are structurally barred from moving collectors.
-- **+** [48:29](https://youtu.be/vhDwy1eCXbs?t=2909) The Q&A explains from the runtime team's view why pooling objects backfires: mutating promoted old-generation objects costs the GC more than allocating fresh ones.
+**Novelty 1/2**
+
+- **+** [01:35](https://youtu.be/vhDwy1eCXbs?t=95) Pressler frames the thesis from his own years keeping large performance-sensitive C++ programs fast through about five years of evolution before his team moved to Java.
+- **·** [10:22](https://youtu.be/vhDwy1eCXbs?t=622) The vtable-boundary framing is credited to Kelley's Zig talk, so the talk assembles credited sources around its thesis rather than reporting results only the team could give.
 
 **Demonstrated 1/2**
 
-- **·** [28:39](https://youtu.be/vhDwy1eCXbs?t=1719) An argument talk presenting a finished benchmark on slides has nothing to run live, so no on-screen demonstration was due.
+- **·** [41:09](https://youtu.be/vhDwy1eCXbs?t=2469) An argument talk that recaps its case for the interpreter, the JIT compilers, the collectors and telemetry in the closing has no live run due, so the absence of an on-screen run is neutral.
 
 **Measured 2/2**
 
-- **+** [28:39](https://youtu.be/vhDwy1eCXbs?t=1719) The cache comparison slide states the workload (30M strings, 90% hit rate) and gives RAM, RPS, p50/p90/p99 and CPU for Java and Rust at 5K and 10K RPS.
-- **·** [21:23](https://youtu.be/vhDwy1eCXbs?t=1283) The 20x speedup from a C++-to-Java switch rewrite is a colleague's report, and the 1-2% JFR overhead at [40:06](https://youtu.be/vhDwy1eCXbs?t=2406) comes with no method; neither carries the score.
+- **+** [28:39](https://youtu.be/vhDwy1eCXbs?t=1719) The cache-comparison slide states the workload (30M strings, 90% hit rate) and gives RAM, RPS, p50/p90/p99 and CPU for Java Caffeine on ZGC against Rust Moka at 5K and 10K RPS.
+- **·** [21:23](https://youtu.be/vhDwy1eCXbs?t=1283) A colleague's 20x switch-rewrite speedup is a retold report and the 1-2% JFR overhead at [40:06](https://youtu.be/vhDwy1eCXbs?t=2406) comes with no method, so neither carries the score.
 - **−** [36:59](https://youtu.be/vhDwy1eCXbs?t=2219) The allocator SLOC table rests on AI-supplied numbers the speaker says he did not check.
 
 **Depth 2/2**

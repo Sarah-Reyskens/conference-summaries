@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=0-1IGpVrFLQ
 durationMin: 50
 slides: null
-verdict: 10
+verdict: 7
+reach: niche
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -92,24 +93,26 @@ Java developers curious about GPU acceleration without learning CUDA, and anyone
 
 ## Verdict
 
-**10/10**: Portable Java reaches 78 µs against cuBLAS FP16's 66 µs on an RTX 5060, after a live LLaMA run and an Nsight-driven fix, with a repo and article to follow; the LLaMA demo is not yet published and the tensor and tile code is never run on stage.
+**7/10**: Portable Java within 84% of cuBLAS FP16 on an RTX 5060 is measured with its setup and explained down to the Nsight-found bank conflicts; the core is the speaker's own published HAT material, only the LLaMA run is shown live, and the repository is the project's own.
 
-**Novelty 2/2**
+**Reach niche**: only developers already doing GPU work from Java can put the kernel-level HAT content to use within a year.
 
-- **+** [02:40](https://youtu.be/0-1IGpVrFLQ?t=160) The speaker runs his own unpublished LLaMA inference engine in pure HAT Java live, with generated OpenCL and GPU activity on screen.
-- **+** [41:26](https://youtu.be/0-1IGpVrFLQ?t=2486) HAT-Tile at 78 µs is benchmarked head-to-head against Python cuTILE and cuBLAS on the same RTX 5060, a comparison no single source offers.
-- **+** [12:07](https://youtu.be/0-1IGpVrFLQ?t=727) Each of the three HAT APIs is placed on a performance-portability-productivity triangle with design rationale from the author.
+**Novelty 1/2**
 
-**Demonstrated 2/2**
+- **+** [48:58](https://youtu.be/0-1IGpVrFLQ?t=2938) The first HAT LLaMA port ran at 0.6 tok/s and needed guided kernel fusion through an AI assistant to reach the demoed speed, with programmer system knowledge still necessary.
+- **+** [46:10](https://youtu.be/0-1IGpVrFLQ?t=2770) The three HAT APIs are placed side by side on the performance-portability-productivity triangle taken from a parallel-patterns book the speaker credits, so the shape identifies which model is in use.
+- **−** The API walk-through and the matmul progression are covered by the Babylon article "Optimizing GPU Programs from Java using Babylon and HAT" and the HAT README, both written by the project's authors.
+
+**Demonstrated 1/2**
 
 - **+** [04:14](https://youtu.be/0-1IGpVrFLQ?t=254) The LLaMA demo generates text live at ~140 tok/s with the btop GPU monitor visible on screen.
 - **+** [04:47](https://youtu.be/0-1IGpVrFLQ?t=287) HAT prints the emitted OpenCL kernels for the whole transformer and then the detected Apple M4 GPU, so the run's output is shown.
-- **−** [36:40](https://youtu.be/0-1IGpVrFLQ?t=2200) The tensor and tile code appears only as slides and its results as charts; neither is run on stage.
+- **−** [36:40](https://youtu.be/0-1IGpVrFLQ?t=2200) The tensor and tile code appears only as slides and its results as charts, so the near-native performance claim the talk is built on is never run on stage.
 
 **Measured 2/2**
 
 - **+** [41:26](https://youtu.be/0-1IGpVrFLQ?t=2486) The 1k-matmul chart states setup (RTX 5060, driver 610.57.04, CUDA 13.3) with HAT-Tile 78 µs against cuBLAS FP16 66 µs and Python cuTILE 77 µs.
-- **+** [30:54](https://youtu.be/0-1IGpVrFLQ?t=1854) Nsight Compute kernel times compare Java (~300 ms), naive HAT (~2000 µs), tuned HAT and cuBLAS with the method named, and the speaker states the tuned SIMT build is still 3x off cuBLAS FP16 [31:57].
+- **+** [30:54](https://youtu.be/0-1IGpVrFLQ?t=1854) Nsight Compute kernel times compare Java (~300 ms), naive HAT (~2000 µs), tuned HAT and cuBLAS with the method named, and the speaker states the tuned SIMT build is still 3x off cuBLAS FP16 [31:57](https://youtu.be/0-1IGpVrFLQ?t=1917).
 - **−** [06:22](https://youtu.be/0-1IGpVrFLQ?t=382) The 140-vs-14 tok/s CPU baseline is admitted unoptimized, so that particular gap overstates the speedup.
 
 **Depth 2/2**
@@ -118,8 +121,8 @@ Java developers curious about GPU acceleration without learning CUDA, and anyone
 - **+** [37:42](https://youtu.be/0-1IGpVrFLQ?t=2262) On OpenCL 1.2 (Mac) HAT expands tensors to private arrays and loop tiling under the hood, so the same Java source runs without tensor hardware.
 - **+** [45:38](https://youtu.be/0-1IGpVrFLQ?t=2738) The tile speedup is framed as a deliberate trade-off: a constrained sub-domain that buys all three triangle axes at once.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [48:14](https://youtu.be/0-1IGpVrFLQ?t=2894) The conclusion slide links github.com/openjdk/babylon as the getting-started point; its `hat` directory carries the toolkit, a matmul example and run configurations.
 - **+** [29:49](https://youtu.be/0-1IGpVrFLQ?t=1789) The matmul study points to a published Babylon article with the full numbers and process.
-- **·** [47:12](https://youtu.be/0-1IGpVrFLQ?t=2832) The speaker calls the HAT APIs experiments still being formalized into a specification, so the published code is not a stable interface.
+- **·** [48:14](https://youtu.be/0-1IGpVrFLQ?t=2894) The conclusion slide links github.com/openjdk/babylon, the presented project's own repository, as the getting-started point.
+- **−** [05:51](https://youtu.be/0-1IGpVrFLQ?t=351) The opening LLaMA demo, with its web interface and benchmark engine, is unpublished and available only by asking at the Oracle booth.

@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=t9e9FtHB-48
 durationMin: 20
 slides: https://jabrena.github.io/plinth/dvbe26/
 verdict: 4
+reach: broad
 frames: 5
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # The Importance of HITL to Avoid Chaos and EU Regulations for AI
@@ -48,30 +49,29 @@ The closing checklist: label agent-created PRs and record generated artifacts; a
 Engineers and leads adding AI coding agents to enterprise Java estates who need a compact map from PR discipline to EU compliance obligations. Skip it if you want AI Act legal detail, measured results, or a demo: the talk stays at the level of practices and regulation pointers.
 
 ## Verdict
-**4/10**: PR review discipline mapped onto five EU regulations through the speaker's own Java examples, but nothing is shown running and no deployed system is classified.
+**4/10**: A cross-regulation map around PR review discipline with practices to reconstruct, but the proposed pipeline controls are not shown working and the AI Act classification stays an outline.
+
+**Reach broad**: PR review evidence, rollback capacity and agent-context practices apply to most of the conference's business-application developers and leads.
 
 **Novelty 1/2**
 
-- **+** [03:07](https://youtu.be/t9e9FtHB-48?t=187) The speaker ties a small change to a contract or database (deck: renaming `customerId` to `clientId` across six consumers) to Conway's-law fragmentation under agent-driven velocity, his own framing of why a green PR can still be wrong.
-- **+** [13:39](https://youtu.be/t9e9FtHB-48?t=819) Each regulation comes with Java issue tables that map a risk to a fix and an article hook (the DORA slide on screen: failover drills recording RTO and RPO, gated ICT change pipeline, inventory from the SBOM), the speaker's own translation of the obligations.
-- **−** [02:36](https://youtu.be/t9e9FtHB-48?t=156) The opening failure is a hypothetical ("I am not inventing this particular case") rather than an incident from the speaker's teams, and no later segment adds one.
+- **+** [13:39](https://youtu.be/t9e9FtHB-48?t=819) The AI Act, GDPR, CRA, NIS2 and DORA are placed side by side with their application dates around the risks of changing Java services, a cross-regulation map that no single regulation's overview gives.
+- **·** [02:36](https://youtu.be/t9e9FtHB-48?t=156) The small-change failure scenario is generic; it is not developed into an account of what a team tried, changed and learned.
 
 **Demonstrated 0/2**
 
-- **−** [14:48](https://youtu.be/t9e9FtHB-48?t=888) Pipeline gates, AI-PR labels and rollback evidence are described in speech and on slides, with nothing shown running.
-- **−** [10:56](https://youtu.be/t9e9FtHB-48?t=656) The CRA checks (secrets, insecure defaults, SBOM, unsafe deserialization) appear as table rows and speech, with no repository or scan output shown.
+- **−** [14:48](https://youtu.be/t9e9FtHB-48?t=888) The talk proposes labelling AI-generated PRs and adding regulation-aware pipeline gates, but shows no pipeline, run or output where they protect a change.
 
 **Measured 1/2**
 
-- **·** [03:37](https://youtu.be/t9e9FtHB-48?t=217) No quantitative claim is made: the agent-velocity warning is qualitative, and the regulation dates state applicability rather than backing a measurement.
+- **·** [03:37](https://youtu.be/t9e9FtHB-48?t=217) The warning that agents can accelerate failures is qualitative, so there is no quantitative claim requiring a measurement.
 
 **Depth 1/2**
 
-- **+** [06:15](https://youtu.be/t9e9FtHB-48?t=375) The reviewer is chosen by the change's risk and needs the authority to stop and roll back (deck routing: API, event and schema changes to domain owners, auth and secrets to security).
-- **+** [16:56](https://youtu.be/t9e9FtHB-48?t=1016) Parallel change is explained by its reason: the service keeps the old shape while the database change is prepared, so production sees no breaking change.
-- **−** [07:49](https://youtu.be/t9e9FtHB-48?t=469) AI Act oversight is said to depend on the system's classification, but no system is classified as an example.
+- **+** [06:15](https://youtu.be/t9e9FtHB-48?t=375) Reviewers are selected according to the change and must have authority to stop it, which explains why human presence alone is insufficient.
+- **+** [16:56](https://youtu.be/t9e9FtHB-48?t=1016) Parallel change is motivated by keeping the existing service working while preparing a database change, so the migration is not a breaking change.
+- **−** [07:49](https://youtu.be/t9e9FtHB-48?t=469) The central distinction between regulated AI systems and AI-assisted development is stated, but no example follows the classification decision through to its required controls.
 
 **Reusable 1/2**
 
-- **+** [14:16](https://youtu.be/t9e9FtHB-48?t=856) The closing practices are listed to reconstruct: AI-PR labels, PR-template risk triggers, contract tests, parallel change, monorepos, shared skills.
-- **−** [19:03](https://youtu.be/t9e9FtHB-48?t=1143) The only repository linked, Plinth, covers none of the HITL or regulation content, and no PR template, gate configuration or checklist for it is published.
+- **+** [18:31](https://youtu.be/t9e9FtHB-48?t=1111) The closing checklists name PR labels, risk triggers, accountable reviewers, rollback evidence and contract practices, but leave viewers to build the PR template and gates themselves.

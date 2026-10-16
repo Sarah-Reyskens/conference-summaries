@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=Mdu5_gndYn0
 durationMin: 40
 slides: null
 verdict: 6
+reach: segment
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -97,32 +98,33 @@ Teams running Maven builds on GitLab CI or GitHub Actions who want faster, cheap
 
 ## Verdict
 
-**6/10**: practical Maven and CI optimizations with a live parallel-test before/after and a clear recompilation diagnosis, but the recompilation fix is never shown working and no energy saving is measured.
+**6/10**: Maven and CI energy-saving practices a team can apply directly, with a live parallel-test before/after and an explained recompilation mechanism, but the main fix is never shown working and no energy saving is measured.
+
+**Reach segment**: Maven teams building on GitLab CI or GitHub Actions, a sizable minority of the JVM audience, can apply the pipeline and Maven practices; Gradle or other-CI shops get the JUnit parallelism and the pipeline-shape ideas only.
 
 **Novelty 1/2**
 
-- **+** [14:45](https://youtu.be/Mdu5_gndYn0?t=885) The speaker's own diagnosis of why transferred artifacts still trigger a full Maven rebuild (each job's fresh checkout is newer than the binaries), seen "a lot in projects", is paired with the grace-period fix.
-- **·** [06:46](https://youtu.be/Mdu5_gndYn0?t=406) The individual techniques (JUnit parallel config, GitLab `needs`/`artifacts`, EcoCI hooks) are in the JUnit 5, GitLab CI and EcoCI documentation; the speaker himself says "some things you might already know", and the value is the assembly around his own examples.
+- **+** [14:45](https://youtu.be/Mdu5_gndYn0?t=885) The speaker reports seeing the verify-then-Sonar double build "a lot" in projects, an observation from his own work rather than from documentation.
+- **·** [06:46](https://youtu.be/Mdu5_gndYn0?t=406) The individual techniques live in the JUnit 5, GitLab CI and EcoCI documentation, and the speaker says some of it you might already know; the value is the assembly around his own examples.
 
 **Demonstrated 1/2**
 
-- **+** [09:59](https://youtu.be/Mdu5_gndYn0?t=599) The same test suite runs live before and after enabling parallel execution, with the IDE timer dropping from over 6 seconds to about 3.
-- **+** [13:43](https://youtu.be/Mdu5_gndYn0?t=823) A real GitLab job view shows only test output and no Maven INFO lines after the logging change.
-- **−** [17:53](https://youtu.be/Mdu5_gndYn0?t=1073) The recompilation fix, the talk's main saving, is configured on screen but never shown skipping a rebuild ("this only works in a pipeline"); the job graph at 25:43 shows structure only.
+- **+** [13:43](https://youtu.be/Mdu5_gndYn0?t=823) A real GitLab job view shows the quiet-logging result: only test output, no Maven INFO lines.
+- **−** [17:53](https://youtu.be/Mdu5_gndYn0?t=1073) The recompilation fix is configured on screen but never shown skipping a rebuild, since it only works inside a pipeline.
 
 **Measured 1/2**
 
-- **+** [09:59](https://youtu.be/Mdu5_gndYn0?t=599) The parallel-testing claim gets a live serial-versus-concurrent timing with the method visible, on a three-sleep synthetic suite.
-- **−** [14:15](https://youtu.be/Mdu5_gndYn0?t=855) The 10-to-20-seconds saving from quiet logging is reported from practice with no baseline, project size or measurement shown.
-- **−** [31:30](https://youtu.be/Mdu5_gndYn0?t=1890) After saying the effect is "something we can only know if we measure", no optimization gets a before/after energy figure; the EcoCI dashboard values are estimates for an assumed runner type, as the speaker notes at [36:46](https://youtu.be/Mdu5_gndYn0?t=2206).
+- **+** [09:59](https://youtu.be/Mdu5_gndYn0?t=599) The same three-sleep suite runs live serially and then concurrently after a branch switch, with the IDE timer dropping from over 6 seconds to about 3.
+- **−** [14:15](https://youtu.be/Mdu5_gndYn0?t=855) The 10-to-20-second saving from quiet logging is reported from practice with no baseline, project size or measurement shown.
+- **−** [36:46](https://youtu.be/Mdu5_gndYn0?t=2206) No optimization gets a before/after energy figure; the EcoCI dashboard values are estimates for an assumed runner type, as the speaker notes.
 
 **Depth 2/2**
 
-- **+** [15:16](https://youtu.be/Mdu5_gndYn0?t=916) The recompilation segment explains the mechanism (per-job checkouts make sources newer than the transferred binaries, so Maven reruns the full lifecycle) and why the grace period is safe on one commit.
-- **+** [10:30](https://youtu.be/Mdu5_gndYn0?t=630) The parallel-testing advice names the Spring Boot dirty-context failure mode and its remedy (annotations pinning methods to one thread) from the speaker's own project.
-- **−** [26:14](https://youtu.be/Mdu5_gndYn0?t=1574) The rules and workflows logic is shown by example but not explained; the speaker calls it "not very clear" and says he leaned on AI to write it.
+- **+** [15:16](https://youtu.be/Mdu5_gndYn0?t=916) The recompilation segment explains the mechanism (each job's fresh checkout is newer than the transferred binaries, so Maven reruns the full lifecycle) and why the grace period is safe when all jobs run on one commit.
+- **+** [10:30](https://youtu.be/Mdu5_gndYn0?t=630) The parallel-testing advice names the Spring Boot dirty-context failure mode and the thread-pinning remedy, found by trial and error in the speaker's own project.
+- **−** [26:14](https://youtu.be/Mdu5_gndYn0?t=1574) The rules and workflows logic is shown by example but not explained; the speaker calls it not very clear and says he leaned on AI to write it.
 
 **Reusable 1/2**
 
 - **+** [07:52](https://youtu.be/Mdu5_gndYn0?t=472) The five-line parallel-test configuration is stated in full, and the logging and pipeline snippets are shown complete enough to copy.
-- **−** [08:24](https://youtu.be/Mdu5_gndYn0?t=504) The demo project behind every example is never published or linked, so all fragments have to be reconstructed by hand.
+- **−** [08:24](https://youtu.be/Mdu5_gndYn0?t=504) The demo project is described as built for the conference, but the talk points to no repository for it, so every fragment has to be reconstructed by hand.

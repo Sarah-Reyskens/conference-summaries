@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=asAxisu6EQ0
 durationMin: 23
 slides: null
-verdict: 7
+verdict: 8
+reach: segment
 frames: 6
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Testing Architecture Made Simple
@@ -79,31 +80,32 @@ Java and Spring developers who have never written architecture tests, or teams f
 
 ## Verdict
 
-**7/10**: Failing and passing architecture-test runs on screen plus a public demo repository with one module per demo; the core walkthrough restates the libraries' documented examples and the numbers lack baselines.
+**8/10**: Architecture-test failures and passes run on screen, a beginner-level model for choosing and adapting rules, and a published demo project make this usable; the experience is illustrative and the outcome claims lack comparative measurements.
+
+**Reach segment**: Java teams adopting ArchUnit or Taikai, especially Spring Boot teams standardizing their services, can use the rule-building walkthrough directly.
 
 **Novelty 1/2**
 
-- **+** [11:31](https://youtu.be/asAxisu6EQ0?t=691) The "configuration roulette" PR anecdote and the immutable-record standard the team adopted from it are the speaker's own production experience.
-- **+** [20:23](https://youtu.be/asAxisu6EQ0?t=1223) Adoption only stuck once the test shipped in the team's Maven archetype, and the team generates ArchUnit rules from its SonarQube quality gate through the MCP server ([19:21](https://youtu.be/asAxisu6EQ0?t=1161)).
-- **−** ArchUnit and Taikai documentation: the ArchUnit basics and the Taikai starter test plus rule catalog walked through on screen are the documented examples.
+- **+** [20:23](https://youtu.be/asAxisu6EQ0?t=1223) Colleagues did not adopt the test until it went into the team's Maven archetype, an adoption lesson beyond the rule catalog.
+- **+** [19:21](https://youtu.be/asAxisu6EQ0?t=1161) The team used the SonarQube MCP server to have an AI model generate ArchUnit rules from its quality gate, a practice the Taikai docs do not give.
 
 **Demonstrated 2/2**
 
-- **+** [05:49](https://youtu.be/asAxisu6EQ0?t=349) The ArchUnit repository-access rule runs in the IDE and fails with the violation listing naming the controller's accesses, and the pre-built layered rule fails the same way ([06:45](https://youtu.be/asAxisu6EQ0?t=405)).
-- **+** [14:06](https://youtu.be/asAxisu6EQ0?t=846) The generic-exception rule fails on screen with its violation trace, and the run goes green after the documented WebConfig exclusion ([14:37](https://youtu.be/asAxisu6EQ0?t=877)); the Spring-config suite also passes on screen ([13:35](https://youtu.be/asAxisu6EQ0?t=815)).
-- **−** [08:56](https://youtu.be/asAxisu6EQ0?t=536) The Taikai introduction test and the Lombok import rule are said to fail, with no run output on screen around either.
+- **+** [05:49](https://youtu.be/asAxisu6EQ0?t=349) The IDE shows the repository-access architecture test failing with the controller's violations listed in its output.
+- **+** [14:37](https://youtu.be/asAxisu6EQ0?t=877) The Taikai generic-exception rule fails on the Spring Security configuration, then passes once the documented exclusion is added.
 
 **Measured 1/2**
 
-- **+** [20:55](https://youtu.be/asAxisu6EQ0?t=1255) The adoption case is quantified: about 250 rising GitHub stars, no open issues, and same-day maintainer responses ([21:28](https://youtu.be/asAxisu6EQ0?t=1288)).
-- **−** [19:51](https://youtu.be/asAxisu6EQ0?t=1191) The five-minute setup and the AI-code quality-gate improvement ("will not fail our quality gate that often anymore") come with no timings or before/after counts.
+- **+** [20:55](https://youtu.be/asAxisu6EQ0?t=1255) The maintenance assessment supplies descriptive numbers, about 250 GitHub stars and no open issues, with no comparison or method.
+- **−** [19:51](https://youtu.be/asAxisu6EQ0?t=1191) The claim that generated code fails the SonarQube quality gate less often has no before/after failure counts or stated measurement method.
 
-**Depth 1/2**
+**Depth 2/2**
 
-- **+** [13:03](https://youtu.be/asAxisu6EQ0?t=783) Combining Java-category rules into the team's config standard, plus a plain ArchUnit rule where no pre-built one fits ([17:13](https://youtu.be/asAxisu6EQ0?t=1033)), shows how to bend the libraries to a team's conventions.
-- **−** [12:02](https://youtu.be/asAxisu6EQ0?t=722) The equivalent config-binding options are shown, but the team's chosen standard is picked as the speaker's preference without weighing it against them.
+- **+** [02:07](https://youtu.be/asAxisu6EQ0?t=127) Direct repository access can be reasonable for CRUD yet still violate an agreed diagram, so architecture tests enforce a team's decisions rather than a universal layering rule.
+- **+** [07:21](https://youtu.be/asAxisu6EQ0?t=441) A blank ArchUnit test is hard to start and hand-written suites fill with near-duplicate rules, which is the reason given for building on a predefined-rule library.
+- **+** [21:59](https://youtu.be/asAxisu6EQ0?t=1319) The single-maintainer risk is weighed against Taikai's thin ArchUnit foundation, few dependencies and the option to fork, giving beginners a reasoned basis for choosing the wrapper.
 
 **Reusable 2/2**
 
-- **+** [22:29](https://youtu.be/asAxisu6EQ0?t=1349) The talk points to the GitHub repository of the demo project shown throughout, which holds one module per demo, to copy from.
-- **+** [17:45](https://youtu.be/asAxisu6EQ0?t=1065) The documented copy-paste starter tests for plain Java and Spring Boot are flagged as the starting point for the next day.
+- **+** [22:29](https://youtu.be/asAxisu6EQ0?t=1349) The references slide publishes [the demo repository](https://github.com/mydeveloperplanet/archunit), and the speaker explicitly offers its examples to copy.
+- **+** [18:15](https://youtu.be/asAxisu6EQ0?t=1095) The Taikai documentation carries a copy-paste starter test, including one for Spring Boot, that a team can add and run the next day.

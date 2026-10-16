@@ -11,6 +11,7 @@ durationMin: 50
 slides: https://slides.com/julientopcu/you-thought-technical-debt-was-bad-meet-design-debt
 slidesNote: from Devoxx Poland 2026
 verdict: 8
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -80,13 +81,13 @@ Heuristics are warning signs for detecting tensions, but one is never enough: a 
 Developers and architects maintaining domain models or microservices that keep breaking each other gain a diagnostic vocabulary they can apply immediately. Teams debating a service split around a shared lifecycle also benefit. Viewers wanting DDD mechanics or live code beyond one walkthrough should look for a hands-on session instead.
 
 ## Verdict
-**8/10**: a self-authored catalog of model tensions, each tied to a line of the worked cruise-booking code or service split, with a published heuristics checklist; no demo or measurements apply to a modeling talk.
+**8/10**: a cross-layer framework for diagnosing design debt, worked through cruise-booking code and service boundaries, with a published heuristics checklist; execution and outcome measurement are outside this modeling talk's purpose.
+
+**Reach broad**: developers, tech leads and architects building business applications can apply the diagnostic vocabulary to domain models, service boundaries and delivery processes.
 
 **Novelty 2/2**
 
-- **+** [25:05](https://youtu.be/SoWgxHeAPGU?t=1505) The named tension catalog (state infiltration, loss of atomicity, diffusion of responsibility, disseminated representation, fragmented lifecycle, band-aid processes, palliative roles) is the speakers' own synthesis, defined against their example code and services.
-- **+** [11:27](https://youtu.be/SoWgxHeAPGU?t=687) The talk argues that KISS, DRY, YAGNI and refactoring should be set aside when shaping a model because they push you to keep reusing the existing one.
-- **+** [47:22](https://youtu.be/SoWgxHeAPGU?t=2842) Detection works by correlating several heuristics into a body of evidence before acting, with Model Mitosis as the remediation from the speakers' own practice.
+- **+** [48:24](https://youtu.be/SoWgxHeAPGU?t=2904) The speakers bring model, service, process and organizational tensions into one diagnostic framework, using their cruise example to show how correlated heuristics build a body of evidence for design debt across those layers.
 
 **Demonstrated 1/2**
 
@@ -94,15 +95,12 @@ Developers and architects maintaining domain models or microservices that keep b
 
 **Measured 1/2**
 
-- **·** [03:42](https://youtu.be/SoWgxHeAPGU?t=222) The talk makes no claim about speed, cost or effect; its figures (90% of tests touched, about 20 lines, 50 feature flags) belong to the staged example.
+- **·** [03:42](https://youtu.be/SoWgxHeAPGU?t=222) The regression figures belong to the staged example, and the talk makes no quantitative claim requiring an outcome measurement.
 
 **Depth 2/2**
 
-- **+** [27:09](https://youtu.be/SoWgxHeAPGU?t=1629) The always-valid-domain-model argument explains why the unselect-then-select code and its "should never happen" exception show that the structure itself allows invalid states.
 - **+** [45:17](https://youtu.be/SoWgxHeAPGU?t=2717) The closing causal chain runs from model fragmentation through synchronized evolutions and compensation systems to organizational fragmentation and back to the model, with Conway's law named as the mechanism.
-- **+** [47:54](https://youtu.be/SoWgxHeAPGU?t=2874) The heuristics are tested against a false positive: an order and a parcel each own a lifecycle, so they do not count as a fragmented lifecycle.
 
 **Reusable 2/2**
 
 - **+** [49:28](https://youtu.be/SoWgxHeAPGU?t=2968) The closing QR code links the public Model Tension Heuristics catalog on GitLab, which lists the heuristics the talk covers with further examples.
-- **·** [48:24](https://youtu.be/SoWgxHeAPGU?t=2904) Model Mitosis is pointed at an earlier talk and is not part of the linked catalog.

@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=Ij5RsREpjBg
 durationMin: 51
 slides: https://schrottner.at/openFeatureTalk/
 verdict: 6
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Fun with Flags: How OpenFeature Solves Your Feature Flag Headaches
@@ -114,24 +115,24 @@ Public adopters named: Google (OpenFeature-compliant solution in public preview)
 Beginners adopting feature flags or evaluating OpenFeature, and teams juggling several flagging SDKs or vendors who want one standard. Practitioners wanting Dynatrace-scale numbers or a live demo should watch the speaker's earlier OpenFeature Summit talk with Todd Baert instead; this session sketches the demo and defers its metrics there.
 
 ## Verdict
-**6/10**: A beginner-friendly OpenFeature tour with real production rationale and a full demo repo, limited by nothing running on screen and numbers without method.
+**6/10**: A beginner-friendly OpenFeature tour with Dynatrace production remarks and a demo repo that reproduces its examples, limited by nothing running on screen and numbers without method.
+
+**Reach segment**: Teams that ship with feature flags or standardise flagging across services can put the providers, evaluation context and hooks to use in their own work.
 
 **Novelty 1/2**
 
-- **+** [25:38](https://youtu.be/Ij5RsREpjBg?t=1538) Dynatrace's retired system held over 2,000 flags, most unevaluated in years, with a "temporary" flag as the oldest.
-- **+** [29:16](https://youtu.be/Ij5RsREpjBg?t=1756) Logging stays out of the evaluation hot path because milliseconds mattered at Dynatrace ingest scale; a logging hook adds it on request.
-- **−** The core concepts (evaluation API, providers, context, hooks) match the published material on openfeature.dev/docs and the spec, and the flag taxonomy comes from Pete Hodgson's feature-toggle article on martinfowler.com.
+- **+** [26:08](https://youtu.be/Ij5RsREpjBg?t=1568) Dynatrace teams repurposed flags whose names matched new needs, showing why removing stale flags requires evaluation evidence rather than a name-based cleanup.
+- **+** [29:16](https://youtu.be/Ij5RsREpjBg?t=1756) Logging stays out of the evaluation hot path because milliseconds mattered when Dynatrace used flags during observability data ingest; a logging hook adds it on request.
+- **−** The tour of the evaluation API, providers, context and hooks is what the openfeature.dev docs and spec already give.
 
 **Demonstrated 0/2**
 
-- **−** [36:37](https://youtu.be/Ij5RsREpjBg?t=2197) The Fun-With-Flags demo is presented only as a repo link because setting it up live takes too long.
 - **−** [17:15](https://youtu.be/Ij5RsREpjBg?t=1035) Provider swapping is shown as a code change on a slide, and no evaluation ever runs on screen to back it.
 
 **Measured 1/2**
 
-- **+** [01:04](https://youtu.be/Ij5RsREpjBg?t=64) Knight Capital lost about half a billion dollars in one hour when a repurposed flag met a 7-of-8-server deploy.
-- **+** [35:34](https://youtu.be/Ij5RsREpjBg?t=2134) The core JS SDK sees about 6.2 million npm downloads per week.
-- **−** [25:38](https://youtu.be/Ij5RsREpjBg?t=1538) The counts it leans on (2,000 unevaluated flags, over 130 providers, 6.2 million weekly downloads) arrive without a baseline or method.
+- **+** [35:34](https://youtu.be/Ij5RsREpjBg?t=2134) The core JS SDK sees about 6.2 million npm downloads per week, backing the adoption claim with a self-reported total.
+- **−** [25:38](https://youtu.be/Ij5RsREpjBg?t=1538) The report of over 2,000 flags, most unevaluated for years, quantifies the cleanup problem without a baseline or measurement method.
 
 **Depth 2/2**
 
@@ -141,6 +142,5 @@ Beginners adopting feature flags or evaluating OpenFeature, and teams juggling s
 
 **Reusable 2/2**
 
-- **+** [36:37](https://youtu.be/Ij5RsREpjBg?t=2197) The Fun-With-Flags demo repo (github.com/aepfli/Fun-With-Flags-Demo) is, in the speaker's words, the whole presentation as a demo code flow.
-- **+** [36:05](https://youtu.be/Ij5RsREpjBg?t=2165) flagd.dev gives a free reference backend to run as a sidecar or locally, and openfeature.dev hosts the spec plus provider catalogue.
+- **+** [36:37](https://youtu.be/Ij5RsREpjBg?t=2197) The Fun-With-Flags demo repo (github.com/aepfli/Fun-With-Flags-Demo) is, in the speaker's words, the whole presentation as a demo code flow, and its README walks the same steps across Spring Boot, Quarkus, Go, FastAPI and Express.
 

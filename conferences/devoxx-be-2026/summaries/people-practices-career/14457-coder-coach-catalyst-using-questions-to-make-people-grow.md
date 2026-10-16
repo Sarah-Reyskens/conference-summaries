@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=yhk1qvy6A_4
 durationMin: 52
 slides: null
 verdict: 6
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -83,31 +84,33 @@ Active listening underpins everything; impromptu coaching is the format to start
 Tech leads, senior engineers, and mentors around year ten-plus who feel overloaded by being everyone's solver, and anyone moving into a role where the work is suddenly about people. Skip it if you already practice structured coaching conversations (the framework will feel familiar) or if you want clinical or organizational-change depth rather than a starter kit.
 
 ## Verdict
-
-**6/10**: Reasoned question design and two acted dialogues carry Depth to 2; the question wording overlaps a published book and the talk points to no artifact.
-
++
+**6/10**: The reasons behind each question's wording and two fully acted dialogues carry it; the core questions mirror a published coaching book and the talk points to no artifact.
++
+**Reach segment**: Tech leads, senior engineers, and mentors who field teammates' problems can run these coaching conversations in their own teams within the next year.
++
 **Novelty 1/2**
-
-- **+** [05:47](https://youtu.be/yhk1qvy6A_4?t=347) The hero-to-villain arc comes from the speaker's own career and frames coaching as load relief for senior technologists.
-- **+** [38:28](https://youtu.be/yhk1qvy6A_4?t=2308) The React-or-Vue dialogue carries the question sequence over to advice requests by building a criteria list with the asker.
-- **·** The question wording ("What's on your mind?", "And what else?", "What's the real challenge here for you?") also appears in Michael Bungay Stanier's The Coaching Habit, while the talk credits only Gallwey and Peter Block.
-
++
+- **+** [05:47](https://youtu.be/yhk1qvy6A_4?t=347) The hero-to-villain arc draws on the speaker's consulting years: technologists rewarded for correct answers become overloaded heroes, then uncooperative bottlenecks.
+- **+** [38:28](https://youtu.be/yhk1qvy6A_4?t=2308) Advice requests get their own extension: build a reusable decision heuristic with the asker instead of handing over the answer.
+- **·** The five core questions match Michael Bungay Stanier's The Coaching Habit, which the talk never names; using a published method is no fault under the rubric.
++
 **Demonstrated 1/2**
-
-- **·** [27:04](https://youtu.be/yhk1qvy6A_4?t=1624) A conversational technique has nothing to run on screen; the acted Sam/Taylor dialogues show each question in context.
-
++
+- **·** [27:04](https://youtu.be/yhk1qvy6A_4?t=1624) A conversation framework has nothing to run on screen, so the acted Sam/Taylor dialogues walk each question in context instead of a live demo.
++
 **Measured 1/2**
-
-- **·** [22:27](https://youtu.be/yhk1qvy6A_4?t=1347) The only figure is a self-reported estimate (about two working days for five coaching sessions against one team session) with no method; the talk makes no measured claim about the technique's effect.
-
++
+- **·** [22:27](https://youtu.be/yhk1qvy6A_4?t=1347) The talk makes no measured claim about the technique's effect; its only figure is a rough self-reported estimate of about two working days for five 1:1 sessions against one team session.
++
 **Depth 2/2**
-
-- **+** [25:32](https://youtu.be/yhk1qvy6A_4?t=1532) Initiation alternatives are weighed and rejected with reasons: yes/no questions give nothing to work with, status questions feel like check-ins, prompting for problems manufactures low-priority issues.
-- **+** [28:39](https://youtu.be/yhk1qvy6A_4?t=1719) Excavation is explained by its mechanism: silence creates tension that the other person fills, and "And what else?" is the easier substitute that can be repeated until the real problem appears.
-- **+** [30:43](https://youtu.be/yhk1qvy6A_4?t=1843) Dropping "for you" from the focus question lets people spiral into things outside their control, so the words stay in.
-
++
+- **+** [26:03](https://youtu.be/yhk1qvy6A_4?t=1563) Initiation alternatives are weighed and rejected with reasons: yes/no questions give nothing to work with, status questions feel like check-ins, prompting for problems manufactures low-priority issues.
+- **+** [28:39](https://youtu.be/yhk1qvy6A_4?t=1719) Excavation is explained by mechanism: silence creates tension the other person fills, and repeated "And what else?" is the easier substitute until the real problem appears.
+- **+** [30:43](https://youtu.be/yhk1qvy6A_4?t=1843) The focus question keeps its "for you" because without it people spiral into things outside their circle of control.
++
 **Reusable 1/2**
-
-- **+** [17:14](https://youtu.be/yhk1qvy6A_4?t=1034) The why-only listening drill is specified precisely enough to run in a team day.
-- **+** [41:35](https://youtu.be/yhk1qvy6A_4?t=2495) The decision heuristic is handed over as a checklist of criteria (ease of use, community support, scalability, licensing) plus the check that the person can get the information and decide.
-- **·** [12:00](https://youtu.be/yhk1qvy6A_4?t=720) The talk calls itself "a framework... a starter kit" and links no artifact, so the practices must be reconstructed from the video.
++
+- **+** [17:14](https://youtu.be/yhk1qvy6A_4?t=1034) The why-only listening drill is specified precisely enough to run at a team day.
+- **+** [41:35](https://youtu.be/yhk1qvy6A_4?t=2495) The decision heuristic hands over a worked checklist (ease of use, community support, scalability, licensing) plus the check that the asker can gather the information and decide.
+- **·** [12:00](https://youtu.be/yhk1qvy6A_4?t=720) The talk calls itself a starter kit and points to no artifact, so the practices must be reconstructed from the video.

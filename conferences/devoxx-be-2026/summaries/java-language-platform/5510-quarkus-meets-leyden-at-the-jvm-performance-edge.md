@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=cbSl8UVdMVg
 durationMin: 60
 slides: null
 verdict: 10
+reach: segment
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -94,24 +95,26 @@ Quarkus and Spring developers who care about startup time and want a concrete re
 
 ## Verdict
 
-**10/10**: the Quarkus team's own startup results are run live end to end with the design reasons behind them and a public sample repository, though the numbers are a few laptop runs and the large-app figures come from a slide.
+**10/10**: the Quarkus team's account of what broke and what it changed when it ran Leyden on Quarkus, shown running live against a baseline, explained and reproducible from a public sample repository; the main limit is that the large-app figures come from a slide with no method.
+
+**Reach segment**: Quarkus developers can apply the AOT packaging recipe directly, and other JVM developers can reuse the Leyden workflow and training-run practices.
 
 **Novelty 2/2**
 
-- **+** [17:42](https://youtu.be/cbSl8UVdMVg?t=1062) The Quarkus team's own experiments show a naive Leyden run cutting startup from 400 ms to 200 ms and the uber jar to 130 ms.
-- **+** [35:07](https://youtu.be/cbSl8UVdMVg?t=2107) The engineer behind the integration explains the AOT jar design: delegate JDK class loading to the JDK loaders, keep Quarkus resource and service-file loading.
+- **+** [18:15](https://youtu.be/cbSl8UVdMVg?t=1095) Leyden's startup output flagged the classes it could not cache, revealing that only JDK-loader classes qualify and Quarkus's own loaders blocked the rest.
+- **+** [19:49](https://youtu.be/cbSl8UVdMVg?t=1189) Once class loading disappeared, the flame-graph pass surfaced fixes the team had never noticed: BigDecimal startup printing, UUID security-provider spin-up, lazy ServiceLoader use, reflective annotation reads, and slow negative lookups.
 - **·** [05:44](https://youtu.be/cbSl8UVdMVg?t=344) The Leyden workflow segment restates JEP-documented material as setup for the original Quarkus work.
 
 **Demonstrated 2/2**
 
-- **+** [29:59](https://youtu.be/cbSl8UVdMVg?t=1799) The baseline build and runs (385 ms, 333 ms) happen live in the terminal on screen.
-- **+** [32:04](https://youtu.be/cbSl8UVdMVg?t=1924) The AOT-enabled runs print 80, 84, and 76 ms in the same terminal, completing the before/after end to end.
+- **+** [29:59](https://youtu.be/cbSl8UVdMVg?t=1799) The baseline `mvn clean package` of the Quarkus REST app is typed and run live in the terminal on screen.
+- **+** [31:34](https://youtu.be/cbSl8UVdMVg?t=1894) The AOT-enabled build leaves a 38 MB `app.aot` listed with `ls -lh`, and the app is started with it in the same terminal, completing the before/after end to end.
 
 **Measured 2/2**
 
-- **+** [32:04](https://youtu.be/cbSl8UVdMVg?t=1924) Live before/after on the sample app with the commands and versions on screen: about 350 ms baseline against 80, 84 and 76 ms cached runs.
-- **+** [10:26](https://youtu.be/cbSl8UVdMVg?t=626) The Leyden benchmark slide charts normalized elapsed time against JDK mainline for several frameworks' Hello Worlds and Spring PetClinic, sourced to openjdk/leyden and labelled as last year's snapshot.
-- **−** [37:46](https://youtu.be/cbSl8UVdMVg?t=2266) The large-app figures (3.1 s to under 1 s, image 517 MB to 715 MB) are slide claims with no method shown, and the live readings are two baseline and three cached runs on a laptop.
+- **+** [32:04](https://youtu.be/cbSl8UVdMVg?t=1924) Baseline runs of 385 and 333 ms against 80, 84 and 76 ms with the AOT cache, on JDK 25.0.4 with the commands visible, give a before/after on one machine.
+- **+** [36:43](https://youtu.be/cbSl8UVdMVg?t=2203) The results slide puts the same sample app at about 370 ms against 80 ms and its container image at about 450 MB against 490 MB.
+- **−** [37:46](https://youtu.be/cbSl8UVdMVg?t=2266) The large-app figures (3.1 s to under 1 s, image 517 MB to 715 MB) are slide claims with no method shown.
 
 **Depth 2/2**
 

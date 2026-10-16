@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=y4F1XBtQeDw
 durationMin: 50
 slides: null
 verdict: 5
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Build the Builder: A Java Coding Agent in Your IDE with ACP
@@ -71,6 +72,8 @@ JVM engineers planning to build or buy coding agents, especially anyone integrat
 ## Verdict
 **5/10**: The ACP lead's own roadmap and a custom agent that streams file reads in the IDE, capped by a stalled build, a failed first run, unmeasured savings claims and a 404 source repository.
 
+**Reach segment**: JVM developers who use IntelliJ and build or integrate coding agents through ACP, a sizable minority of this conference's audience.
+
 **Novelty 1/2**
 
 - **+** [20:03](https://youtu.be/y4F1XBtQeDw?t=1203) The ACP lead describes the just-landed sub-agent support and the planned actor-like agent-to-agent messaging, with his view of where the protocol is heading.
@@ -78,7 +81,7 @@ JVM engineers planning to build or buy coding agents, especially anyone integrat
 
 **Demonstrated 1/2**
 
-- **+** [46:13](https://youtu.be/y4F1XBtQeDw?t=2773) The custom agent answers in a new IDE session with streamed ACP file-read events and their output visible, after the skill manager install shown at [44:08](https://youtu.be/y4F1XBtQeDw?t=2648).
+- **+** [46:13](https://youtu.be/y4F1XBtQeDw?t=2773) The custom agent answers in a new IDE session with streamed ACP file-read events and their output visible.
 - **−** [33:32](https://youtu.be/y4F1XBtQeDw?t=2012) Conference wifi stalls the Gradle build, so the agent-in-IDE segment ends asking the audience to believe it streams events like Codex.
 - **−** [46:20](https://youtu.be/y4F1XBtQeDw?t=2780) The first run's turn fails after reading six files with `context_length_exceeded` (311131 of 272000 tokens), and the Codex debugger-skill run ends with no result at [48:53](https://youtu.be/y4F1XBtQeDw?t=2933).
 

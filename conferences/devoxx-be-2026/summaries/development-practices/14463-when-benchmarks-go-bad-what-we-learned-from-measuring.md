@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=yePre1hOvHE
 durationMin: 54
 slides: https://speakerdeck.com/hollycummins/when-benchmarks-go-bad-what-i-learned-from-measuring-performance-wrong-4eb43ba5-37df-4149-ba73-14043a029aa2
 verdict: 8
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -63,23 +64,24 @@ A published Spring-vs-Quarkus comparison showed near-identical throughput (338 v
 Anyone who runs benchmarks or load tests, compares frameworks, or makes decisions from performance numbers gains directly applicable checks. Teams choosing between runtimes (Spring vs Quarkus, JVM vs native vs Rust) get the failure modes behind most published comparisons. Skip it if you already practice active benchmarking with coordinated-omission-free tooling; the concepts will be familiar, though the war stories still entertain.
 
 ## Verdict
-**8/10**: First-hand benchmark failures with before/after numbers and two worked mechanisms (coordinated omission, RSS against throughput), limited by the failed live demo and by setup recipes that are spoken rather than published.
+**8/10**: First-hand benchmark failures with a measured A-against-B chart and two worked mechanisms (coordinated omission, RSS against throughput), limited by the failed live demo and by setup recipes that are spoken rather than published.
+
+**Reach segment**: Developers and tech leads who run load tests or performance comparisons on their backend services can use the reproducibility checks and load-driver guidance within the next year; most of the audience will not run such a lab.
 
 **Novelty 2/2**
 
-- **+** [23:07](https://youtu.be/yePre1hOvHE?t=1387) The OS-scheduler story shows the same benchmark giving 1.4x on a new Ubuntu scheduler versus 2-3x on the lab's old kernel, a 40% swing found through the competitor's reproduction of the team's benchmark.
-- **+** [17:29](https://youtu.be/yePre1hOvHE?t=1049) Fixing core isolation improved the Quarkus-vs-Spring ratio from 1.8x upward, showing asymmetric noise from their own benchmark.
 - **+** [15:56](https://youtu.be/yePre1hOvHE?t=956) The stale-container-image incident, where the database was primed with unknown data, is first-hand failure evidence no search result provides.
+- **+** [17:29](https://youtu.be/yePre1hOvHE?t=1049) The team believed the applications were isolated onto four cores while everything shared them, and the sharing hurt Quarkus more than Spring, so fixing the isolation improved the Quarkus ratio: an asymmetric failure the speaker says she would never have predicted.
+- **+** [22:05](https://youtu.be/yePre1hOvHE?t=1325) The most useful reproduction came from the unnamed competitor, a Spring lead highly motivated to keep the team honest, whose differing result exposed the scheduler gap.
 
 **Demonstrated 1/2**
 
-- **+** [46:10](https://youtu.be/yePre1hOvHE?t=2770) The Spring-vs-Quarkus table (338 vs 390 req/s initial test) is shown on screen with its source blog URL; it is a recorded result, not a live run.
 - **−** [04:22](https://youtu.be/yePre1hOvHE?t=262) The central live demo never runs: the benchmark script stalls downloading containers over the venue Wi-Fi and is abandoned.
 
 **Measured 2/2**
 
 - **+** [17:10](https://youtu.be/yePre1hOvHE?t=1030) The results chart compares Quarkus and Spring (18,927 vs 10,104 tps, 272 vs 507 MiB RSS) with versions, memory setting and run date in its footer.
-- **+** [23:07](https://youtu.be/yePre1hOvHE?t=1387) The scheduler comparison gives both numbers (1.4x vs 2-3x) with the differing setup stated for each side.
+- **+** [23:07](https://youtu.be/yePre1hOvHE?t=1387) The scheduler comparison names the differing setup for each side (a current Ubuntu scheduler against the lab's old RHEL CFS machine) behind a 40% difference in the measured result.
 - **−** [10:41](https://youtu.be/yePre1hOvHE?t=641) The headline "about 40%" reproducibility noise is stated without a method or baseline.
 
 **Depth 2/2**

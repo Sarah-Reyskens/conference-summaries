@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=gPtWq_LHL8o
 durationMin: 41
 slides: null
 verdict: 7
+reach: niche
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Let's dance! – Teaching your robot some moves with reinforcement learning
@@ -81,32 +82,35 @@ Beginners curious how reinforcement learning meets real humanoids gain a full pi
 
 ## Verdict
 
-**7/10**: First-hand failure stories and a rig-tested real-robot dance walk a beginner through the whole RL-to-hardware pipeline, but the training setup is the vendor's repo and the team's own results carry no measurements or published artifact.
+**7/10**: A beginner-grade pipeline from RL basics to a rig-tested dancing humanoid, shown working on hardware, but built from published parts, with no measurements of the team's own results and no published artifact.
+
+**Reach niche**: Almost nobody in a Java/JVM business-application audience will train a humanoid robot within the next year.
 
 **Novelty 1/2**
 
-- **+** [23:30](https://youtu.be/gPtWq_LHL8o?t=1410) The yoga-pose and sack-race reward exploits are the team's own failures, each with the reward change that fixed it.
-- **+** [35:29](https://youtu.be/gPtWq_LHL8o?t=2129) The worn-gears autopsy and the two-directional sim/real realignment (randomized actuator gains, repaired hardware) come from the team's own robot.
-- **−** The walking reward list at [25:03](https://youtu.be/gPtWq_LHL8o?t=1503) shares its terms and weights with unitreerobotics/unitree_rl_lab's g1/29dof velocity_env_cfg.py, which also ships G1 velocity and dance policies; a search for the subject reaches it, and the talk never names it.
+- **+** [23:30](https://youtu.be/gPtWq_LHL8o?t=1410) The upward-dog yoga pose and the sack-race jumping are the team's own reward exploits from training the walking policy.
+- **+** [35:29](https://youtu.be/gPtWq_LHL8o?t=2129) The ground-down gears and burned cable, with the two-directional remedy (randomized actuator gains, epoxy and new joints), come from the team's own worn robot.
+- **−** [17:43](https://youtu.be/gPtWq_LHL8o?t=1063) Standing and walking are trained on the manufacturer's digital twin in Isaac Sim, the route the vendor's own material gives.
 
 **Demonstrated 2/2**
 
-- **+** [33:25](https://youtu.be/gPtWq_LHL8o?t=2005) Real-robot video on the hanging rig shows the dance policy performing and recovering from hard external forces.
-- **+** [39:52](https://youtu.be/gPtWq_LHL8o?t=2392) The Hamilton video runs through the SONIC policy with no further training and the actual robot performs it.
+- **+** [33:25](https://youtu.be/gPtWq_LHL8o?t=2005) The suspended robot performs the dance policy and recovers from hard shoves.
+- **+** [39:52](https://youtu.be/gPtWq_LHL8o?t=2392) The Hamilton video runs through the SONIC policy with no further training and the robot performs it.
 - **−** [34:27](https://youtu.be/gPtWq_LHL8o?t=2067) The dynamic Fortnite dance degrades on the real robot ("Feels a bit like the dance until it doesn't").
 
 **Measured 1/2**
 
-- **+** [39:20](https://youtu.be/gPtWq_LHL8o?t=2360) The SONIC slide quantifies the scale-up (140x parameters, 84,000x data, 5,250x GPU hours) with a source line, though these are NVIDIA's training inputs, not performance results.
-- **−** [22:57](https://youtu.be/gPtWq_LHL8o?t=1377) The team's own walking and dancing results get no success rate or reward curve; training progress appears only as step counts (6,000 for standing, 10,500 for the dance).
+- **+** [39:20](https://youtu.be/gPtWq_LHL8o?t=2360) The SONIC slide quantifies NVIDIA's scale-up (300k to 42M parameters, 30 seconds to 700 hours of motion capture, 4 to 21,000 GPU hours), figures without the team's own method.
+- **−** [30:51](https://youtu.be/gPtWq_LHL8o?t=1851) Dance training progress appears only as "iteration 10,500" with the robot looking "a bit drunk"; no reward curve or success rate follows.
 
 **Depth 2/2**
 
 - **+** [07:15](https://youtu.be/gPtWq_LHL8o?t=435) The actor/environment/observer model plus the IKEA reward table gives beginners a working mental model of RL.
 - **+** [14:37](https://youtu.be/gPtWq_LHL8o?t=877) The actor-critic split is explained functionally: the critic turns sparse rewards into a dense signal so the actor can train.
-- **+** [28:13](https://youtu.be/gPtWq_LHL8o?t=1693) The retargeting step says why direct transfer fails (human and robot proportions differ, the puppeteer's doll) and how GMR resolves it (inverse kinematics onto the robot skeleton).
+- **+** [28:13](https://youtu.be/gPtWq_LHL8o?t=1693) The retargeting step says why direct transfer fails (human and robot proportions differ) and how GMR resolves it (inverse kinematics onto the robot skeleton).
 
 **Reusable 1/2**
 
-- **+** [28:45](https://youtu.be/gPtWq_LHL8o?t=1725) The pipeline names open-source pieces (MediaPipe, GMR, NVIDIA SONIC) a viewer can look up.
-- **−** [25:03](https://youtu.be/gPtWq_LHL8o?t=1503) The team's own training setup appears only as a reward-term list on a slide; no repository or complete configuration is published.
+- **+** [28:45](https://youtu.be/gPtWq_LHL8o?t=1725) GMR is named as an open-source retargeting pipeline a viewer can look up, alongside MediaPipe.
+- **·** [38:49](https://youtu.be/gPtWq_LHL8o?t=2329) The SONIC model is NVIDIA's project (nvlabs.github.io/GEAR-SONIC), a pointer to a third-party release rather than the team's setup.
+- **−** [25:03](https://youtu.be/gPtWq_LHL8o?t=1503) The team's own walking setup appears only as a reward-term list on a slide; no repository or complete configuration is published.

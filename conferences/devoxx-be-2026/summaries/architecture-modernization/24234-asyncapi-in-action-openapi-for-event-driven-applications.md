@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=A_fp7RaG5UY
 durationMin: 30
 slides: null
 verdict: 8
+reach: segment
 frames: 7
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # AsyncAPI in action: OpenAPI for event-driven applications
@@ -64,30 +65,31 @@ After starting both applications, a POST with product ID and quantity returns an
 Teams documenting Kafka or other event contracts by hand, and Spring developers curious about generating messaging glue from a spec, gain most. Skip it if you already ship AsyncAPI code generation in production; this is an introduction with one demo project, not production war stories.
 
 ## Verdict
-**8/10**: A live spec-to-running-system demo explains the contract structure and generator choices and supplies the project, with the generated documentation example left incomplete.
+**8/10**: A live run from one AsyncAPI spec to two Kafka-connected Spring Boot services, with the OpenAPI mismatch and the shared/per-service spec split explained and the demo repository published; the spec concepts and CLI flow are what the AsyncAPI documentation already gives, the build-generated docs were never shown, and the talk has no measurements.
+
+**Reach segment**: Spring Boot teams at the conference who run Kafka or similar event-driven messaging can use the spec-first contracts and generator setup in their own services within the year.
 
 **Novelty 1/2**
 
-- **+** [21:13](https://youtu.be/A_fp7RaG5UY?t=1273) The speaker's own generator template (records, StreamBridge publisher, consumer, Spring config) and the order/stock demo project carry the second half beyond a docs walkthrough.
-- **−** [12:56](https://youtu.be/A_fp7RaG5UY?t=776) The example establishes a spec-to-code workflow in a small demo project without original comparative results or production findings.
+- **+** [04:38](https://youtu.be/A_fp7RaG5UY?t=278) The speaker's clients document messages on Confluence pages, where questions like "is quantity always an int?" and mailing consumers about breaking changes go unanswered by any formal contract; that practice is what the talk replaces.
+- **+** [12:26](https://youtu.be/A_fp7RaG5UY?t=746) The speaker judges the bundled Spring Boot template unmaintained and unable to run the new spec version, and tells the audience to skip it.
 
 **Demonstrated 2/2**
 
-- **+** [26:53](https://youtu.be/A_fp7RaG5UY?t=1613) Both services start, a POST with a product ID and quantity returns an order ID, and the stock service log shows the received `OrderCreated` event.
-- **+** [23:17](https://youtu.be/A_fp7RaG5UY?t=1397) The custom template generation runs live in the terminal, and the target directory gains the Spring config, the records and the generated publisher.
-- **−** [19:40](https://youtu.be/A_fp7RaG5UY?t=1180) The generated HTML docs open without the example payload, which the speaker guesses is a wrong input file, and the docs are not shown again after the Maven build.
+- **+** [26:53](https://youtu.be/A_fp7RaG5UY?t=1613) Both services start, a POST with a product ID and quantity is submitted from the Swagger page, and the stock service log shows the received `OrderCreated` event.
+- **+** [23:17](https://youtu.be/A_fp7RaG5UY?t=1397) The custom template generation runs in the terminal, and the target directory gains the Spring config, the records and the generated publisher.
+- **−** [28:56](https://youtu.be/A_fp7RaG5UY?t=1736) The speaker says "I forgot to show the documentation": the docs the Maven build generates are never opened, and the earlier standalone HTML docs lacked the example payload.
 
 **Measured 1/2**
 
-- **·** [04:38](https://youtu.be/A_fp7RaG5UY?t=278) The talk makes no quantitative claim: the Confluence drift motive is a told anecdote, and the end-to-end run shows the event arriving with no latency, size or time-saved comparison.
+- **·** [28:26](https://youtu.be/A_fp7RaG5UY?t=1706) The talk makes no quantitative claim: the summary slide lists qualitative properties (protocol-agnostic, machine-readable, reusable) and no latency, size or time-saved figure appears anywhere.
 
 **Depth 2/2**
 
-- **+** [05:42](https://youtu.be/A_fp7RaG5UY?t=342) The comparison with OpenAPI explains why request-response semantics, HTTP-bound tooling and the lack of pub/sub or fan-out concepts require a different event contract model.
-- **+** [10:21](https://youtu.be/A_fp7RaG5UY?t=621) The spec distribution separates shared message structures and channels from service-specific send and receive operations, explaining how both services reference one contract while retaining different roles.
-- **+** [21:13](https://youtu.be/A_fp7RaG5UY?t=1273) The built-in model generator's JavaBeans and single-directory limits motivate a custom template with records, messaging glue and separate source and resource outputs.
+- **+** [05:42](https://youtu.be/A_fp7RaG5UY?t=342) The OpenAPI comparison explains why request-response semantics, HTTP-bound tooling and the missing pub/sub and fan-out concepts call for a separate event contract model.
+- **+** [10:21](https://youtu.be/A_fp7RaG5UY?t=621) The spec distribution split keeps shared channels, messages and schemas apart from per-service send and receive operations, showing how two services reference one contract in different roles.
+- **+** [21:13](https://youtu.be/A_fp7RaG5UY?t=1273) The built-in model generator's old-fashioned JavaBeans and single output directory are weighed against a custom template, with manual follow-up work as the cost of the built-in route.
 
 **Reusable 2/2**
 
-- **+** [28:56](https://youtu.be/A_fp7RaG5UY?t=1736) The closing slide points to https://github.com/MichelSchudel/asyncapi-demo, which contains the specs, both services, generator template and instructions for running the demo.
-- **+** [24:20](https://youtu.be/A_fp7RaG5UY?t=1460) The POM wiring shown on screen regenerates docs and code on every Maven build through the exec plugin.
+- **+** [29:27](https://youtu.be/A_fp7RaG5UY?t=1767) The speaker points to the GitHub project where the demo lives (https://github.com/MichelSchudel/asyncapi-demo), which holds both services, the specs, the `asyncapi-kafka-template` generator, a docker-compose file for Redpanda and a README with the CLI commands and run steps.

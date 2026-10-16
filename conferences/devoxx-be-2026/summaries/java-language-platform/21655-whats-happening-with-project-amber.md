@@ -9,7 +9,8 @@ audienceLevel: ADVANCED
 video: https://www.youtube.com/watch?v=Go76-9Q51wU
 durationMin: 52
 slides: null
-verdict: 7
+verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -68,31 +69,33 @@ JDK APIs increasingly use the public-sealed-interface plus hidden-implementation
 Java developers already using records, sealed types, and pattern matching who want to see where the language is heading and why. Those still learning the shipped features should work through a data-oriented programming introduction first; the recap here moves fast.
 
 ## Verdict
-**7/10**: Design rationale from an Amber insider with prototype evidence, but unshipped sketches on slides with no demo and no artifact to try.
+**6/10**: An Amber roadmap with explanations of the proposed designs and prototype scope counts, presented through slide examples rather than runnable artifacts.
 
-**Novelty 2/2**
+**Reach broad**: Most Java developers in the conference audience will encounter these language features in their application code once they ship.
 
-- **+** [23:55](https://youtu.be/Go76-9Q51wU?t=1435) The exact-conversion rule for primitive patterns is argued by its designer as a fit for pattern matching's conditionality, and [27:32](https://youtu.be/Go76-9Q51wU?t=1652) shows why the naive convert-and-compare check fails.
-- **+** [48:59](https://youtu.be/Go76-9Q51wU?t=2939) Prototype-compiler results are reported first-hand: headers added to 110 class-file API interfaces and 18 FFM interfaces, with client code rewritten to data-interface patterns.
+**Novelty 1/2**
+
+- **+** [06:52](https://youtu.be/Go76-9Q51wU?t=412) The viewer gets a roadmap no single JEP gives: a polishing theme already previewing primitive patterns with more features to come, plus a more radical beyond theme.
+- **+** [03:12](https://youtu.be/Go76-9Q51wU?t=192) The speaker reports first-hand that string templates were prototyped in JDK 21 and 22 then withdrawn over design and performance, with active work on a replacement.
 - **·** [07:55](https://youtu.be/Go76-9Q51wU?t=475) The records, sealed classes, and patterns recap retraces material covered by the JDK 16–21 release notes, credited as background for the new proposals.
 
 **Demonstrated 1/2**
 
-- **·** [19:47](https://youtu.be/Go76-9Q51wU?t=1187) No demo slot: the speaker flags everything shown as unshipped designs that may never appear in the presented form, and the primitive-pattern feature already in preview [20:18](https://youtu.be/Go76-9Q51wU?t=1218) and the prototype refactors are described with slide code, not run on screen.
+- **·** [19:47](https://youtu.be/Go76-9Q51wU?t=1187) The speculative language designs are explained through slide code rather than an actual run, so the proposals with nothing available to run receive the neutral score.
 
 **Measured 1/2**
 
-- **+** [48:59](https://youtu.be/Go76-9Q51wU?t=2939) The data-interface prototype scope is quantified as 110 interfaces in the class-file API and 18 in the FFM API.
-- **·** [48:59](https://youtu.be/Go76-9Q51wU?t=2939) Those counts are anecdotal scope reports with no baseline, method, or before/after comparison.
+- **+** [01:37](https://youtu.be/Go76-9Q51wU?t=97) The scoreboard is quantified as 10 finalized features across 13 releases.
+- **·** [48:59](https://youtu.be/Go76-9Q51wU?t=2939) The 110 class-file API and 18 FFM API prototype counts are anecdotal scope reports with no baseline, method, or before/after comparison.
 
 **Depth 2/2**
 
-- **+** [26:30](https://youtu.be/Go76-9Q51wU?t=1590) The `Integer.MAX_VALUE` to float and back round-trip shows two lossy conversions landing back at the starting value, motivating the stricter exactness spec.
+- **+** [26:30](https://youtu.be/Go76-9Q51wU?t=1590) The Integer.MAX_VALUE to float and back round-trip lands back at the starting value through two lossy steps, motivating the stricter exactness spec.
 - **+** [38:34](https://youtu.be/Go76-9Q51wU?t=2314) A record constraining two lists to equal length shows why single-component withers cannot substitute for a multi-component reconstruction form.
-- **+** [32:48](https://youtu.be/Go76-9Q51wU?t=1968) The argument for constant patterns is grounded in compositionality: `when`-clause tests sit outside nestable pattern positions and run only after matching succeeds.
+- **+** [32:48](https://youtu.be/Go76-9Q51wU?t=1968) The argument for constant patterns rests on compositionality: when-clause tests sit outside nestable pattern positions and run only after matching succeeds.
 
 **Reusable 1/2**
 
-- **+** [47:25](https://youtu.be/Go76-9Q51wU?t=2845) The `JsonString(String asString)` header-plus-pattern sketch is a complete example to copy if the feature ships.
-- **+** [50:01](https://youtu.be/Go76-9Q51wU?t=3001) A second before/after refactor, the `Map.Entry` pattern in `ConcurrentHashMap`'s `equals`, comes from JDK source.
-- **·** [28:05](https://youtu.be/Go76-9Q51wU?t=1685) No artifact is pointed to: the primitive-patterns JEP and draft spec are mentioned without a number or link, and the prototype compiler is not published.
+- **+** [47:25](https://youtu.be/Go76-9Q51wU?t=2845) The JsonString header-plus-pattern sketch supplies a slide example of the proposed interface syntax and its use.
+- **+** [50:01](https://youtu.be/Go76-9Q51wU?t=3001) A second before/after refactor, the Map.Entry pattern in ConcurrentHashMap equals, comes from JDK source.
+- **·** [28:05](https://youtu.be/Go76-9Q51wU?t=1685) The primitive-patterns scope recap offers no sample artifact to reproduce the examples, while the preceding pointer names the JEP and draft spec without a number or link.

@@ -9,7 +9,8 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=sWP9osLV45I
 durationMin: 52
 slides: null
-verdict: 6
+verdict: 7
+reach: broad
 frames: 5
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -78,31 +79,31 @@ Developers and team members who currently grate on a colleague, or leads who wan
 
 ## Verdict
 
-**6/10**: First-hand cases from the speaker's career and a usable exit-and-prevention framework, limited by textbook models and cited-but-unexamined statistics.
+**7/10**: Two first-hand conflict cases and explanations of escalation and trust support the practical advice; the statistics lack a method and the practices have no published artifact.
 
-**Novelty 1/2**
+**Reach broad**: Most of the conference audience works in teams and can use peer-level practices for friction, prevention and trust.
+
+**Novelty 2/2**
 
 - **+** [21:57](https://youtu.be/sWP9osLV45I?t=1317) The SaaS production-incident clash is a first-hand case with its plain resolution: a next-day conversation grounded in a shared goal.
-- **+** [28:53](https://youtu.be/sWP9osLV45I?t=1733) The remote underperformance case names a dilemma no checklist resolves: the line between helping, reporting and gossiping when the cause is unknown.
-- **·** [13:56](https://youtu.be/sWP9osLV45I?t=836) The five conflict phases and the DISC, Insights and Management Drives models are standard material, presented without original results.
+- **+** [28:53](https://youtu.be/sWP9osLV45I?t=1733) The remote underperformance case follows her attempts to help, her checks with the scrum master and her decision to back off without knowing the private cause.
 
 **Demonstrated 1/2**
 
-- **·** [21:57](https://youtu.be/sWP9osLV45I?t=1317) A people-skills talk with nothing to run; the live Mentimeter votes are audience interaction, not a demo of the claims.
+- **·** [25:07](https://youtu.be/sWP9osLV45I?t=1507) A people-skills talk has nothing to run; the live Mentimeter votes collect audience opinions rather than showing a claim working.
 
 **Measured 1/2**
 
-- **+** [08:37](https://youtu.be/sWP9osLV45I?t=517) Conflict costs are quantified from named Dutch sources: 20% of manager time, 20-30% of employees affected yearly, 70,000 sick leaves as a lower bound.
-- **+** [20:16](https://youtu.be/sWP9osLV45I?t=1216) The conflict-type shares (35% two people, 20-25% one individual, 20% subgroups) from the same research decide which two cases the talk covers.
-- **−** [09:09](https://youtu.be/sWP9osLV45I?t=549) The figures are hedged ("let's say roughly", "reportedly") with no method, sample or baseline beyond noting the range depends on sector.
+- **+** [08:37](https://youtu.be/sWP9osLV45I?t=517) Conflict costs are quantified from Dutch research: 20% of manager time, 20–30% of employees affected yearly and 70,000 people calling in sick as a lower bound.
+- **−** [09:09](https://youtu.be/sWP9osLV45I?t=549) The figures have no stated method, sample or baseline beyond noting that the employee-conflict range depends on sector.
 
 **Depth 2/2**
 
-- **+** [15:01](https://youtu.be/sWP9osLV45I?t=901) The five-phase model explains why timing matters: rational disagreement is still win-win, stances drift to win-lose, escalation leaves only losers.
+- **+** [15:01](https://youtu.be/sWP9osLV45I?t=901) The five-phase model explains why timing matters: rational disagreement is still win-win, stances drift to win-lose and escalation leaves only losers.
 - **+** [40:32](https://youtu.be/sWP9osLV45I?t=2432) The no-venting advice carries its mechanism: short-term relief now teaches every listener you will talk about them next.
-- **−** [38:59](https://youtu.be/sWP9osLV45I?t=2339) Dropping both camps' ways for a third way arrives as "in my experience it works best", with no account of how to get there.
+- **−** [38:59](https://youtu.be/sWP9osLV45I?t=2339) Dropping both camps’ ways for a third way arrives as "in my experience it works best", with no account of how to get there.
 
 **Reusable 1/2**
 
-- **+** [46:58](https://youtu.be/sWP9osLV45I?t=2818) The envelope compliment exercise is specified end to end: names in an envelope, draw one, return after lunch with a sincere compliment.
-- **·** [35:51](https://youtu.be/sWP9osLV45I?t=2151) The five ways out and three ways ahead, including the LLM prompt for a recipient's culture [42:09], are described practices with no published checklist or artifact.
+- **+** [46:58](https://youtu.be/sWP9osLV45I?t=2818) The envelope compliment exercise is specified end to end: draw a teammate’s name, check it is not your own and think over lunch before giving a sincere compliment.
+- **·** [35:51](https://youtu.be/sWP9osLV45I?t=2151) The five ways out and three ways ahead are described practices with no published checklist or artifact.

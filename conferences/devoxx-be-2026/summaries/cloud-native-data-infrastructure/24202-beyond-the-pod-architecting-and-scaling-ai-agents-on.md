@@ -9,11 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=3bIiAoYtAPs
 durationMin: 43
 slides: null
-verdict: 9
+verdict: 7
+reach: niche
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Beyond the Pod: Architecting and Scaling AI Agents on Kubernetes
 
@@ -86,32 +86,32 @@ Platform engineers running coding agents or agent fleets on Kubernetes gain the 
 
 ## Verdict
 
-**9/10**: Live suspend/resume demos with preserved state carry the project team's design rationale and adopter detail; the performance numbers have no baseline or method.
+**7/10**: Live state-preserving suspend/resume demonstrations and a beginner-level model with weighed trade-offs carry it; performance claims lack a method and the reusable artifact is the project itself.
 
-**Novelty 2/2**
+**Reach niche**: Platform engineers operating fleets of AI agents on Kubernetes can use the main content, while most of the conference's business-application developers do not operate that infrastructure.
 
-- **+** [11:33](https://youtu.be/3bIiAoYtAPs?t=693) The speaker gives the project's design rationale: a separate API server and PostgreSQL instead of etcd, because the Kubernetes API server and etcd are too slow for 500 ms activation (repeated at [16:15](https://youtu.be/3bIiAoYtAPs?t=975)).
-- **+** [32:12](https://youtu.be/3bIiAoYtAPs?t=1932) The scheduler-on-scheduler objection is answered with Tim Hockin's reply from the speaker's own podcast interview: the layering is deliberate and some primitives may move into Kubernetes.
-- **+** [34:18](https://youtu.be/3bIiAoYtAPs?t=2058) Adopter specifics go beyond the docs: Lovable's 30-second account-to-workspace requirement that fat-image pulls could not meet, with Anthropic and the Gemini Enterprise Agents Platform ([37:04](https://youtu.be/3bIiAoYtAPs?t=2224)) also named as users.
+**Novelty 1/2**
+
+- **·** The core is a tour of the team's own Agent Substrate project, which scores 1 under the own-project rule with its docs, README and release notes included in the search baseline.
 
 **Demonstrated 2/2**
 
-- **+** [17:49](https://youtu.be/3bIiAoYtAPs?t=1069) The suspended in-memory counter wakes through the router and continues 5 to 6 to 7 live, showing memory preservation end to end.
-- **+** [24:48](https://youtu.be/3bIiAoYtAPs?t=1488) The suspended Jupyter session resumes with the notebook file and the variable value intact, then runs the next cell.
-- **−** [31:10](https://youtu.be/3bIiAoYtAPs?t=1870) The teleportation demo never renders: he shows three counters on three nodes and asks the audience to take the rest on trust.
+- **+** [17:49](https://youtu.be/3bIiAoYtAPs?t=1069) The suspended in-memory counter wakes through the router and continues from 5 to 6, then 7 after another suspension, showing memory preservation end to end.
+- **+** [25:22](https://youtu.be/3bIiAoYtAPs?t=1522) The suspended Jupyter session resumes with the notebook file and variable value intact, then runs the next cell.
+- **−** [31:10](https://youtu.be/3bIiAoYtAPs?t=1870) Cross-node teleportation is not demonstrated, and the speaker asks the audience to take that capability on trust.
 
 **Measured 1/2**
 
-- **+** [08:56](https://youtu.be/3bIiAoYtAPs?t=536) The talk states activation under 500 ms and, at [09:28](https://youtu.be/3bIiAoYtAPs?t=568), 500 activations per second through the controller.
-- **−** [09:28](https://youtu.be/3bIiAoYtAPs?t=568) No baseline, benchmark setup or measurement method appears behind either number, and the demo wake-ups are not timed.
+- **+** [08:56](https://youtu.be/3bIiAoYtAPs?t=536) The talk states agent activation in under 500 ms.
+- **−** [09:28](https://youtu.be/3bIiAoYtAPs?t=568) The claimed 500 activations per second comes without a baseline or stated testing method, as does the activation-latency claim.
 
 **Depth 2/2**
 
-- **+** [05:47](https://youtu.be/3bIiAoYtAPs?t=347) The actors-over-workers model is built from idle-agent economics and image-pull latency, with the warm-pool cost and the HPA cold-start trade-off weighed.
-- **+** [12:35](https://youtu.be/3bIiAoYtAPs?t=755) The sandbox choice is explained: gVisor is a user-space kernel inside the pod, while microVMs typically need nested virtualization from the cloud.
-- **+** [40:47](https://youtu.be/3bIiAoYtAPs?t=2447) The design is set against KEDA and Knative: the same autoscaling idea with sandboxing and templates added.
+- **+** [05:47](https://youtu.be/3bIiAoYtAPs?t=347) The actors-over-workers model explains multiplexing onto pre-provisioned Pods, then weighs the warm pool's resource cost against autoscaling and the next morning's cold start.
+- **+** [11:33](https://youtu.be/3bIiAoYtAPs?t=693) PostgreSQL is justified as a separate state store because etcd is too slow for the intended activation path.
+- **−** [39:27](https://youtu.be/3bIiAoYtAPs?t=2367) The capacity-exhaustion answer admits no explicit agent queue and leaves reconciliation retries as an untested expectation.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [01:36](https://youtu.be/3bIiAoYtAPs?t=96) The talk points to the open-source Agent Substrate project, with a CNCF donation pending, running on any Kubernetes.
-- **+** [39:57](https://youtu.be/3bIiAoYtAPs?t=2397) Viewers are sent to the project's GitHub repo and the Kubernetes Slack, and the demos show the real `kubectl ate` commands.
+- **+** [39:57](https://youtu.be/3bIiAoYtAPs?t=2397) Viewers are directed to the project's GitHub repository and Kubernetes Slack.
+- **·** The presented project's own repository scores 1 under the own-project rule, and no separate artifact reproducing the talk's examples is identified.

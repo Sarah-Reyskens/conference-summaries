@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=_dcauZC9ST8
 durationMin: 29
 slides: null
-verdict: 8
+verdict: 7
+reach: niche
 frames: 6
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # In the loop, not in the dark: staying in control in the era of dark software factories
@@ -72,32 +73,33 @@ Developers who let agents write most of their code and want an architecture-leve
 
 ## Verdict
 
-**8/10**: Design rationale from the tool's author plus a live large-repo scan of an open-source tool, limited by a partly simulated review loop and self-reported numbers.
+**7/10**: First-hand failures of agent-only development motivate a beginner-level model for persistent architecture review, but the working scan leaves the complete agent-change review loop only partly demonstrated.
+
+**Reach niche**: The main walkthrough teaches Groma's architecture-map workflow, which is directly useful to teams choosing this particular tool.
 
 **Novelty 2/2**
 
-- **+** [03:08](https://youtu.be/_dcauZC9ST8?t=188) Facing a live 500 in an AI-written hackathon platform with no idea how to reach production logs or the database supplies first-hand incident experience.
-- **+** [11:58](https://youtu.be/_dcauZC9ST8?t=718) The three scrapped Groma designs, each with the reason it failed, are design rationale from the tool's author.
+- **+** [03:08](https://youtu.be/_dcauZC9ST8?t=188) The speaker's own outage exposes the operational knowledge lost when he stopped reading agent-written code, leaving him unable to locate production logs or the database.
+- **+** [09:23](https://youtu.be/_dcauZC9ST8?t=563) His cleanup and instruction changes failed to persist because individually acceptable feature requests recreated system-wide drift, giving a first-hand account beyond the tool's feature tour.
 
 **Demonstrated 1/2**
 
-- **+** [20:43](https://youtu.be/_dcauZC9ST8?t=1243) The Keycloak scan runs live and its raw map appears on screen.
-- **−** [15:34](https://youtu.be/_dcauZC9ST8?t=934) The agent-change review loop uses mocked data in a live map interface, leaving actual agent-driven changes unproven.
-- **−** [22:16](https://youtu.be/_dcauZC9ST8?t=1336) The curated Keycloak map is shown without checking whether its inferred architecture is correct.
+- **+** [20:43](https://youtu.be/_dcauZC9ST8?t=1243) The live Keycloak scan produces a raw architecture map on screen.
+- **−** [15:34](https://youtu.be/_dcauZC9ST8?t=934) The agent-change visualization uses mocked data, so the central review loop is not shown end to end with actual agent edits.
+- **−** [22:16](https://youtu.be/_dcauZC9ST8?t=1336) The curated Keycloak view is presented without checking whether the inferred architecture is correct.
 
 **Measured 1/2**
 
-- **+** [04:12](https://youtu.be/_dcauZC9ST8?t=252) The outage account gives recovery durations of two minutes for the hotfix and twenty minutes for the replacement query to reach production.
-- **−** [01:36](https://youtu.be/_dcauZC9ST8?t=96) The ramp from one or two features a day to fifty is self-reported with no method behind the count.
+- **+** [04:12](https://youtu.be/_dcauZC9ST8?t=252) The outage account reports two minutes to restore service and twenty minutes to deploy the replacement query, but these are anecdotal durations.
+- **−** [01:36](https://youtu.be/_dcauZC9ST8?t=96) The claimed increase from one or two features per day to fifty has no measured baseline or counting method.
 
 **Depth 2/2**
 
-- **+** [11:58](https://youtu.be/_dcauZC9ST8?t=718) Each scrapped design carries its failure reason: the static mockup could not generalize, 72 unsupervised hours yielded 700 broken commits, and hardcoded folder rules collapsed on a second repo.
-- **+** [14:01](https://youtu.be/_dcauZC9ST8?t=841) Persisting the scan as Markdown lets architecture changes travel in the same commits and PRs as the code that caused them.
-- **+** [21:44](https://youtu.be/_dcauZC9ST8?t=1304) Deterministic offline scans with stable component IDs explain why later features land on the existing map instead of requiring a fresh start.
+- **+** [10:57](https://youtu.be/_dcauZC9ST8?t=657) The failure of static generated diagrams motivates continuously regenerating the architecture as code changes.
+- **+** [14:01](https://youtu.be/_dcauZC9ST8?t=841) Persisting the scan in Markdown explains how architecture changes can travel with the code in the same commit and pull request.
+- **+** [21:44](https://youtu.be/_dcauZC9ST8?t=1304) Deterministic scans and stable component IDs explain why curation can survive subsequent changes instead of restarting from scratch.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [22:48](https://youtu.be/_dcauZC9ST8?t=1368) Groma is open source and free at groma.md, covering the talk's main content.
-- **+** [26:54](https://youtu.be/_dcauZC9ST8?t=1614) The Groma-action GitHub Action provides the per-PR architecture-diff workflow and runs on the Groma repo itself.
-- **+** [25:52](https://youtu.be/_dcauZC9ST8?t=1552) Static HTML exports support sharing architecture views from CI, with commit ranges producing architecture diffs.
+- **+** [22:48](https://youtu.be/_dcauZC9ST8?t=1368) The speaker points viewers to the free, open-source Groma project, which supplies the tool rather than a separate reproducible demo.
+- **+** [26:54](https://youtu.be/_dcauZC9ST8?t=1614) Groma-action supplies the described pull-request export workflow and is used on the project's own repository.

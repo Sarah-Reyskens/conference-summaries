@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=vNeyNkeU4ms
 durationMin: 49
 slides: null
 verdict: 5
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -100,30 +101,32 @@ Java and backend developers adding LLM features to their systems get a pattern c
 
 ## Verdict
 
-**5/10**: Layered hardening patterns for LLM invoice extraction, with a public repository holding the code, but nothing is run on screen and no measurements are made.
+**5/10**: Layered hardening patterns for LLM invoice extraction, with a public repository holding the code and the commands to run it, but nothing is run on screen and no measurements are made.
+
+**Reach segment**: Backend developers adding LLM features to their systems can copy the guardrail, validation and consensus patterns layer by layer.
 
 **Novelty 1/2**
 
-- **+** [41:15](https://youtu.be/vNeyNkeU4ms?t=2475) The Mirror Test regenerates input text from the extracted JSON and compares it with the original to verify extraction without an answer key, offered as the speaker's bonus stage on top of the five-stage arc.
-- **+** [38:03](https://youtu.be/vNeyNkeU4ms?t=2283) The fortified extractor stack and the ACCEPTED / NEEDS_REVIEW / REJECTED pipeline verdict assemble guardrails, validation and consensus into one framework.
-- **+** [16:19](https://youtu.be/vNeyNkeU4ms?t=979) The speaker reports testing small models the week before and finding that the latest ones no longer follow a plain "forget all the previous instructions" injection, which he had to escalate.
+- **+** [41:15](https://youtu.be/vNeyNkeU4ms?t=2475) The Mirror Test regenerates plausible input text from the extracted JSON and compares it with the original, a verification loop the talk adds as a bonus stage after the five stages.
+- **+** [15:47](https://youtu.be/vNeyNkeU4ms?t=947) The speaker reports probing small models the week before the talk and finding recent ones refuse a plain "forget all the previous instructions" injection, forcing him to escalate.
+- **·** [17:19](https://youtu.be/vNeyNkeU4ms?t=1039) The individual layers arrive credited to their sources, with OWASP for LLMs named on stage, so each layer alone is documented practice assembled into one pipeline.
 
 **Demonstrated 0/2**
 
-- **−** [46:27](https://youtu.be/vNeyNkeU4ms?t=2787) The repository's demo commands (`mvn test`, `mvn verify` against Ollama) are shown and described as "running on my machine" but never run; no test output or model response appears on screen.
-- **−** [30:22](https://youtu.be/vNeyNkeU4ms?t=1822) The code-execution example, an LLM writing a one-off Python script to check his slide links, is told from experience and never shown running.
+- **−** [33:27](https://youtu.be/vNeyNkeU4ms?t=2007) The self-correction loop is walked through as code with a narrated two-attempt recovery, but no run output appears on screen.
+- **−** [30:22](https://youtu.be/vNeyNkeU4ms?t=1822) The code-execution example of an LLM writing a one-off script to check the slide links is told from the speaker's own use and never shown running.
 
 **Measured 1/2**
 
-- **·** [35:31](https://youtu.be/vNeyNkeU4ms?t=2131) The talk makes no quantitative claim needing a number: temperature and seed are presented as tuning knobs, and stability percentages describe what the analyzer computes rather than any result.
+- **·** [35:31](https://youtu.be/vNeyNkeU4ms?t=2131) The talk advances no quantitative claim: temperature and seed are introduced as tuning knobs and no result of changing them is reported.
 
 **Depth 1/2**
 
-- **+** [17:52](https://youtu.be/vNeyNkeU4ms?t=1072) Sandwiching is explained as a hint with no enforcement guarantee, paired with breakout detection on the SQL-injection parallel.
-- **+** [29:21](https://youtu.be/vNeyNkeU4ms?t=1761) Tool calling versus code execution is weighed on who defines the tool, hallucination risk in generated code, and fitting safety nets for each.
-- **·** [35:31](https://youtu.be/vNeyNkeU4ms?t=2131) Fifteen techniques in 49 minutes leaves each as one pattern sketch: stability analysis names temperature and seed reruns without thresholds for good-enough agreement.
+- **+** [17:52](https://youtu.be/vNeyNkeU4ms?t=1072) Sandwiching is presented as a hint with no enforcement guarantee, paired with breakout detection drawn on the SQL-injection parallel.
+- **+** [29:21](https://youtu.be/vNeyNkeU4ms?t=1761) Function calling and code execution are weighed on who defines the tool, hallucination risk in generated code, and which safety net each needs.
+- **·** [37:02](https://youtu.be/vNeyNkeU4ms?t=2222) Stability analysis and observability stay at the level of knobs to turn and failures to count, without thresholds for good-enough agreement.
 
 **Reusable 2/2**
 
-- **+** [46:27](https://youtu.be/vNeyNkeU4ms?t=2787) The closing slide points to the repository holding all code, slides and tests, with the exact commands to run mocked and live suites.
+- **+** [46:27](https://youtu.be/vNeyNkeU4ms?t=2787) The closing points to the repository holding all code, slides and tests, with the exact commands for the mocked and live suites.
 - **+** [12:04](https://youtu.be/vNeyNkeU4ms?t=724) The on-screen code is complete enough to copy per pattern, such as the canary-token guardrail with its UUID generation and output check.

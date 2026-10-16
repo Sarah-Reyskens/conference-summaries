@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=sexe_tnhAOI
 durationMin: 35
 slides: null
-verdict: 6
-frames: 8
+verdict: 5
+reach: niche
+frames: 18
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Beyond Code: The Intent-Driven IDE for the Agentic Age
@@ -78,34 +79,32 @@ Developers curious what spec-driven, multi-agent development feels like in pract
 
 ## Verdict
 
-**6/10**: A spec-to-fleet workflow with published workshop and project artifacts, limited by a failed task-creation action, cut profiling demo and no comparative workflow measurements.
+**5/10**: A spec-to-fleet workflow with a sequencing mistake shown on screen and a published extension, limited by a failing central demo, unbaselined figures and a basic account of agent coordination.
+
+**Reach niche**: The main content is operating and extending the GitHub Copilot app, so its users and evaluators can use it; the spec-first framing applies elsewhere but takes little of the talk.
 
 **Novelty 1/2**
 
-- **+** [26:53](https://youtu.be/sexe_tnhAOI?t=1613) JVM Pulse is a custom canvas extension the speaker built himself, opened here from the canvas list.
-- **+** [22:46](https://youtu.be/sexe_tnhAOI?t=1366) The speaker identifies his mistake of launching the fleet before merging the spec and draws a first-hand lesson about ordering agent work.
-- **−** The Copilot app tour covers a public vendor product documented in the GitHub Copilot app docs (agent sessions, canvas extensions, /fleet), and the speaker notes Claude and Codex take the same approach.
+- **+** [22:46](https://youtu.be/sexe_tnhAOI?t=1366) The speaker launched the agent fleet before the specification was reviewed and merged, and concludes that agent work needs the same flow discipline as code work; this is one live incident and a general lesson.
 
 **Demonstrated 1/2**
 
-- **+** [33:45](https://youtu.be/sexe_tnhAOI?t=2025) The fleet-built Spring MVC and Thymeleaf app runs locally, with a task list, categories, and a new-task form, after the spec, five issues and the spec PR all landed on screen.
-- **−** [31:37](https://youtu.be/sexe_tnhAOI?t=1897) The JVM profiling run is cut ("we are out of time") and the dashboard shown at 33:13 is the checked-in docs/dashboard.png, not the run's output.
-- **−** [34:16](https://youtu.be/sexe_tnhAOI?t=2056) Creating a task in the finished app fails due-time validation, which the speaker leaves broken as the closing beat.
+- **+** [33:45](https://youtu.be/sexe_tnhAOI?t=2025) The fleet produces a locally running Spring Boot app after the specification and parallel implementation issues are created on screen.
+- **−** [34:16](https://youtu.be/sexe_tnhAOI?t=2056) Creating a task fails due-time validation, so the central spec-to-working-application claim is incomplete.
+- **−** [31:37](https://youtu.be/sexe_tnhAOI?t=1897) The profiling run is stopped for time and the dashboard is shown as a screenshot instead of a live result.
 
 **Measured 1/2**
 
-- **+** [34:16](https://youtu.be/sexe_tnhAOI?t=2056) The session shows a "+3296 −2" diff and per-step timers (a 13-minute integration step), figures with no baseline.
-- **−** [33:13](https://youtu.be/sexe_tnhAOI?t=1993) The dashboard figures (98.89% throughput, p99 pause 14.9 ms, 232 MB/s allocation) come from a JairoSVG benchmark workload with no comparison, not from the to-do app.
-- **−** [04:49](https://youtu.be/sexe_tnhAOI?t=289) The question of writing code "faster reliably and secure" is never answered with a baseline or before/after comparison for the workflow.
+- **+** [33:13](https://youtu.be/sexe_tnhAOI?t=1993) The example dashboard reports 98.89% GC throughput, 14.9 ms p99 pause and 232 MB/s allocation, with no baseline or stated method.
+- **·** [24:17](https://youtu.be/sexe_tnhAOI?t=1457) The claim that at least one million public repositories use setup-java has no counting method and does not back the talk's workflow claims.
 
 **Depth 1/2**
 
-- **+** [17:59](https://youtu.be/sexe_tnhAOI?t=1079) Spawning a child session to commit and push SPEC.md while the fleet implements the issues shows how to run parallel sessions.
-- **+** [31:06](https://youtu.be/sexe_tnhAOI?t=1866) The orchestrator is explained by its purpose: agents coordinate so they avoid merge conflicts and do not step on each other.
-- **−** [07:55](https://youtu.be/sexe_tnhAOI?t=475) Interactive, Planning and Autopilot modes and the Hydro Fusion router are listed in a sentence each, with no guidance on when to choose which.
+- **+** [31:06](https://youtu.be/sexe_tnhAOI?t=1866) An orchestrator coordinates child sessions to prevent merge conflicts and overlapping work, which gives a basic reason for the fleet structure.
+- **+** [29:00](https://youtu.be/sexe_tnhAOI?t=1740) The canvas uses the Copilot SDK to locate session-generated JFR and GC files and plot their contents, which outlines the extension's data flow.
+- **·** [21:40](https://youtu.be/sexe_tnhAOI?t=1300) Sessions messaging each other and reusing a child session's context are mentioned, but the coordination design stops at an orchestrator assigning work.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [05:51](https://youtu.be/sexe_tnhAOI?t=351) The on-screen link gh.io/dev-days/workshop points to a complete Copilot app workshop covering the environment used in the demo.
-- **+** [26:23](https://youtu.be/sexe_tnhAOI?t=1583) JVM Pulse is installed from a GitHub URL, a public canvas extension viewers can reuse for the profiling workflow.
-- **+** [34:30](https://youtu.be/sexe_tnhAOI?t=2070) The demo project is public as brunoborges/todo-devoxx2026 with Spring Boot source, SPEC.md, the Maven wrapper and an interactive acceptance checklist.
+- **+** [26:23](https://youtu.be/sexe_tnhAOI?t=1583) JVM Pulse is installed from a GitHub URL, so the presented extension itself is a reusable distribution.
+- **·** [05:51](https://youtu.be/sexe_tnhAOI?t=351) The linked Copilot app workshop gives more instruction, but it is a separate resource that does not reproduce the spec-to-fleet example shown here.

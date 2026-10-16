@@ -10,9 +10,9 @@ video: https://www.youtube.com/watch?v=pgVJWp-SjxI
 durationMin: 30
 slides: null
 verdict: 7
+reach: broad
 frames: 9
-summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Java Script (No, Not That One): Modern Automation with Java
@@ -65,33 +65,33 @@ The same script runs in about 0.3 s under plain `java`, then "way way faster" un
 Java developers who reach for bash or Python for small automation and suspect Java could do it with less context switching. Skip it if you already script with JBang daily; the JEP mechanics will be familiar, though the PicoCLI and TamboUI pointers may still be new.
 
 ## Verdict
-**7/10**: The scripting features run live end to end and a `[STEP-N]` repo replays the main demos, limited by core material that the JEPs and JBang docs already give, a timing comparison with no stated method, and usage-level depth.
+**7/10**: Single-file launch, compact mains and JBang scripts run live end to end with a replayable demo repository; the timing evidence has no method and the explanations stay at usage level.
+
+**Reach broad**: Most Java developers in the audience can use single-file launch, compact mains and JBang for everyday automation in their own work.
 
 **Novelty 1/2**
 
-- **+** [26:19](https://youtu.be/pgVJWp-SjxI?t=1579) The closing demo runs an unreleased GraalVM fast-startup launcher the speaker learned about in a chat with the GraalVM team.
-- **+** [02:39](https://youtu.be/pgVJWp-SjxI?t=159) The speaker's own `dog` reimplementation of `cat` carries the scripting-feature demos.
-- **−** The single-file launch, compact mains and JBang features at the talk's core are documented in JEP 330, JEP 458, JEP 512 and the JBang docs, the first results of a search on the subject.
+- **+** [02:39](https://youtu.be/pgVJWp-SjxI?t=159) The speaker's own `dog` example ties source-file launch, compact mains, dependencies and CLI tooling into one progression across several sources.
 
 **Demonstrated 2/2**
 
-- **+** [03:47](https://youtu.be/pgVJWp-SjxI?t=227) `java Dog.java` runs live with no compile step and prints the file's contents.
-- **+** [21:02](https://youtu.be/pgVJWp-SjxI?t=1262) After the reflection crash at [19:03](https://youtu.be/pgVJWp-SjxI?t=1143), the rebuilt native binary runs ("this time it works", [20:35](https://youtu.be/pgVJWp-SjxI?t=1235)) with the model's answer visible in the terminal.
-- **−** [14:18](https://youtu.be/pgVJWp-SjxI?t=858) JBang's remote-jar execution and its automatic JDK download are described and never shown.
+- **+** [07:32](https://youtu.be/pgVJWp-SjxI?t=452) After correcting the import, the multi-file script prints file contents with line numbers and a bark.
+- **+** [23:41](https://youtu.be/pgVJWp-SjxI?t=1421) The generated PicoCLI help and numbered file output show the script becoming a usable command-line tool.
+- **+** [20:35](https://youtu.be/pgVJWp-SjxI?t=1235) The native binary runs after the reflection options are added, completing the recovered native-image demo.
 
 **Measured 1/2**
 
-- **+** [27:20](https://youtu.be/pgVJWp-SjxI?t=1640) The terminal shows plain `java` at 0.574 s then 0.327 s against the Crema `./run.sh` at 0.359 s then 0.085 s for the same script.
-- **−** [27:21](https://youtu.be/pgVJWp-SjxI?t=1641) The comparison gives no machine, run count or method, and the launcher is unreleased.
+- **+** [27:15](https://youtu.be/pgVJWp-SjxI?t=1635) The terminal shows the Crema launcher taking 0.359 s then 0.085 s, following the plain-Java baseline for the same directory-listing script.
+- **−** [26:50](https://youtu.be/pgVJWp-SjxI?t=1610) The roughly 0.3-second Java baseline and subsequent launcher timings are an informal demonstration without a stated timing protocol or explanation of the repeated-run conditions.
 
 **Depth 1/2**
 
-- **+** [08:03](https://youtu.be/pgVJWp-SjxI?t=483) Multi-file launch is explained: the launcher scans the subdirectories for the classes and compiles everything in memory.
-- **+** [19:03](https://youtu.be/pgVJWp-SjxI?t=1143) LangChain4j's Jackson dependency and its reflection are named as the cause of the native-image crash.
-- **−** [19:35](https://youtu.be/pgVJWp-SjxI?t=1175) The reflection config that fixes the crash is waved past ("don't think too much about it") instead of explained.
+- **+** [08:03](https://youtu.be/pgVJWp-SjxI?t=483) The launcher is explained as finding helper classes in subdirectories and compiling them in memory, giving beginners a model of why no separate build is needed.
+- **+** [19:03](https://youtu.be/pgVJWp-SjxI?t=1143) Jackson's reflection use is identified as the cause of the native-image failure.
+- **−** [19:35](https://youtu.be/pgVJWp-SjxI?t=1175) The reflection configuration is supplied with “don't think too much about it,” leaving the main dependency-to-native extension at recipe level.
 
 **Reusable 2/2**
 
-- **+** [28:23](https://youtu.be/pgVJWp-SjxI?t=1703) The closing QR code leads to the speaker's page, which links the article and the demo code for the talk.
-- **+** [28:23](https://youtu.be/pgVJWp-SjxI?t=1703) The main-content demos replay from the linked repo (LoMagnette/java-script-no-not-that-one), whose `[STEP-N]` commits run from the initial `dog` demo to TamboUI.
+- **+** [27:52](https://youtu.be/pgVJWp-SjxI?t=1672) The closing resources link points to the speaker's demo code, and [LoMagnette/java-script-no-not-that-one](https://github.com/LoMagnette/java-script-no-not-that-one) provides scripts, reflection configuration and a README mapping the progression to `[STEP-N]` commits.
+
 

@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=AxhLQZqZdIg
 durationMin: 47
 slides: null
 verdict: 5
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -74,18 +75,20 @@ securityContext hardens pod and container specs: refuse root, pin user and group
 Developers shipping to Kubernetes who configure their own manifests and want the essential checklist in one sitting. Teams standardizing shutdown, probes and resource defaults gain directly. Cluster administrators and anyone after depth on one feature (CEL policy design, OTel pipeline operations) should look for dedicated sessions instead.
 
 ## Verdict
-**5/10**: a broad Kubernetes-for-developers survey with new-feature coverage and a well-explained shutdown and debugging core, held back by slide-replayed demos, an unmeasured overhead claim and no published artifact.
+**5/10**: a wide-ranging Kubernetes-for-developers survey with a well-explained shutdown and debugging core, held back by replayed demos, an unmeasured overhead claim and no published artifact.
+
+**Reach segment**: developers shipping their services to Kubernetes, a sizable share of this Java audience, can apply its manifest, shutdown, probe and debugging checklist in their own work.
 
 **Novelty 1/2**
 
-- **+** [10:53](https://youtu.be/AxhLQZqZdIg?t=653) Pod-level resource budgets and stable in-place pod resize, then image volumes and CEL admission policies, go beyond the standard requests-and-probes tutorial.
-- **+** [21:54](https://youtu.be/AxhLQZqZdIg?t=1314) Audit experience surfaces a pitfall seen at client companies: Java probe timeouts causing apps to restart at random.
+- **+** [21:54](https://youtu.be/AxhLQZqZdIg?t=1314) Audit experience names a pitfall seen at client companies: Java probe timeouts under load causing apparently random restarts.
+- **−** Pod-level resource budgets, in-place pod resize and image volumes are covered by the official Kubernetes documentation and release notes.
 
 **Demonstrated 1/2**
 
 - **+** [31:24](https://youtu.be/AxhLQZqZdIg?t=1884) The kubectl debug scenario runs from connection refused through `--target` and `/proc/1/root` to the wrong-port root cause and the confirming port-forward and curl.
 - **+** [40:48](https://youtu.be/AxhLQZqZdIg?t=2448) The admission-policy run shows the policy, the binding and the one-replica nginx deployment rejected with the custom message.
-- **−** [29:30](https://youtu.be/AxhLQZqZdIg?t=1770) The demos are slides replaying an earlier run (commands and some result lines), not a recorded terminal; this frame shows the `kubectl debug` command with no output while the speaker narrates the ps, netstat and curl results.
+- **−** [29:30](https://youtu.be/AxhLQZqZdIg?t=1770) The demos replay an earlier run on slides rather than a live terminal or a recording of the run: this frame shows the `kubectl debug` command with no output while the speaker narrates the results.
 
 **Measured 0/2**
 
@@ -95,9 +98,10 @@ Developers shipping to Kubernetes who configure their own manifests and want the
 
 - **+** [14:02](https://youtu.be/AxhLQZqZdIg?t=842) The termination sequence is explained in order with the reason for each safeguard: endpoint removal, the preStop sleep, SIGTERM to PID 1, the grace period, and the OOM kill that skips all of them.
 - **+** [30:22](https://youtu.be/AxhLQZqZdIg?t=1822) The debugging segment explains why a plain `kubectl debug` shows no processes (no process-namespace sharing) and why `--target` and `/proc/1/root` expose the main container's files.
-- **+** [36:38](https://youtu.be/AxhLQZqZdIg?t=2198) RuntimeClass options (runC, gVisor, Kata) come with their costs: possible breakage ([37:09](https://youtu.be/AxhLQZqZdIg?t=2229)) and execution overhead ([37:39](https://youtu.be/AxhLQZqZdIg?t=2259)).
+- **+** [37:39](https://youtu.be/AxhLQZqZdIg?t=2259) The gVisor and Kata Containers options come with their costs stated: possible breakage and execution overhead, which suits untrusted code and multi-tenancy.
 
 **Reusable 1/2**
 
-- **+** [40:20](https://youtu.be/AxhLQZqZdIg?t=2420) Slides carry copyable YAML and commands for policies, probes, shutdown hooks and debug sessions.
+- **+** [40:20](https://youtu.be/AxhLQZqZdIg?t=2420) Policy, binding and probe YAML and commands appear on screen as copyable fragments.
+- **+** [35:33](https://youtu.be/AxhLQZqZdIg?t=2133) The bom-generate and Trivy rescan commands are named for the SBOM workflow but left for the viewer to reconstruct.
 - **·** [47:06](https://youtu.be/AxhLQZqZdIg?t=2826) No repository, sample project or checklist covering the talk's content is pointed to; the talk ends on the OpenTelemetry slides.

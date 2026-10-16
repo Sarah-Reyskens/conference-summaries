@@ -9,11 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=KwQ76IvU59M
 durationMin: 52
 slides: null
-verdict: 9
+verdict: 7
+reach: broad
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Introducing Agent Control Theory: The System Runs the Model
 Mark Pollack · Conference · Agentic Engineering & Tooling
@@ -79,32 +79,33 @@ Pollack warns against handing agent workflows to vendors (Anthropic's built-in w
 Java developers and tech leads building or supervising coding agents who want a disciplined eval-and-improve practice rather than vibes. Teams worried about agent cost, vendor lock-in, or merging agent-written code get the most. Skip it if you want Spring AI specifics or hands-on code walkthroughs; this is a framework talk with architecture and results, not a live-coding session.
 
 ## Verdict
-**9/10**: Original tooling and design rationale for an evaluate-and-improve loop for coding agents, with one A/B experiment and published projects per stage; limited by results shown on slides and a loop never run end to end.
+**7/10**: A measured prompt comparison and an explained eval-and-improve method for coding agents, with a spec-conformance case; the full loop is not demonstrated end to end and the published artifacts are the presented projects themselves.
 
-**Novelty 2/2**
+**Reach broad**: Java/JVM developers, tech leads and architects can apply specification-driven evaluation and controlled experiments to coding-agent work without adopting the speaker's libraries.
 
-- **+** [45:23](https://youtu.be/KwQ76IvU59M?t=2723) The control-theory loop with one dedicated project per stage is the speaker's own design, built on the eval-and-error-analysis loop he credits to Andrew Ng.
-- **+** [37:05](https://youtu.be/KwQ76IvU59M?t=2225) The tool-call transition heat maps comparing a simple and a refined prompt are experiments the speaker designed, ran and analyzed himself.
-- **+** [47:28](https://youtu.be/KwQ76IvU59M?t=2848) Running the RFC judge on his own ACP Java SDK found a spec gap (pending permission requests must be answered with cancelled) that his tests, PMD and a cross-language TCK had missed.
+**Novelty 1/2**
+
+- **+** [47:28](https://youtu.be/KwQ76IvU59M?t=2848) Running the RFC judge on his own ACP Java SDK found a pending-permission cancellation obligation that his tests, PMD and cross-language TCK had missed.
+- **·** [04:47](https://youtu.be/KwQ76IvU59M?t=287) The overview builds on the eval-and-error-analysis loop credited to Andrew Ng, adding the speaker's examples and tooling rather than establishing a new loop methodology.
 
 **Demonstrated 1/2**
 
 - **+** [09:01](https://youtu.be/KwQ76IvU59M?t=541) The locking-violation slide shows eval output from the real PetClinic run, with file references, the rule citation and a proposed improvement.
-- **+** [37:05](https://youtu.be/KwQ76IvU59M?t=2225) The heat-map slides display classified tool-call data from real runs of the same task.
-- **−** [39:07](https://youtu.be/KwQ76IvU59M?t=2347) The full loop appears as a diagram and pasted outputs; no workflow runs end to end on screen, and the MCP SDK run and the ACP finding are narrated without screen output.
+- **−** [39:07](https://youtu.be/KwQ76IvU59M?t=2347) The complete feedback loop is presented as a diagram rather than an actual end-to-end run with its output visible.
 
 **Measured 2/2**
 
 - **+** [37:36](https://youtu.be/KwQ76IvU59M?t=2256) The prompt comparison states its method on the slide (three runs each, v3) and reports both the footprint shift and the near-identical cost ($3.60 vs $3.46).
-- **+** [09:31](https://youtu.be/KwQ76IvU59M?t=571) The PetClinic eval reports exact counts: one abstention among the behavioral criteria and a majority of the 13 architectural rules failing.
-- **−** [20:33](https://youtu.be/KwQ76IvU59M?t=1233) The code-quality skill run on the Java MCP SDK is described as "a lot of findings" reduced toward zero, with no counts.
+- **+** [09:31](https://youtu.be/KwQ76IvU59M?t=571) The PetClinic eval reports one abstention among the behavioral criteria and a majority of the 13 architectural rules failing.
+- **−** [20:33](https://youtu.be/KwQ76IvU59M?t=1233) The code-quality skill run on the Java MCP SDK is described as finding and reducing many issues without counts.
 
 **Depth 2/2**
 
-- **+** [12:40](https://youtu.be/KwQ76IvU59M?t=760) LLM-as-judge is split into collecting evidence and applying logic to it, and numeric scores are rejected as a "magic number" in favor of pass, fail, inconclusive or not applicable.
-- **+** [21:05](https://youtu.be/KwQ76IvU59M?t=1265) The principle of least intelligence gives a rule for deterministic tools versus AI, with the complexity-metric example showing why a numeric signal works where "write clean code" does not.
-- **+** [31:25](https://youtu.be/KwQ76IvU59M?t=1885) The cost-divided-by-quality stopping rule, with the frontier model run first to prove the task is solvable, says when the loop is done.
+- **+** [12:40](https://youtu.be/KwQ76IvU59M?t=760) LLM-as-judge is split into collecting evidence and applying logic to it, with the following discussion rejecting opaque numeric scores in favor of categorical conclusions.
+- **+** [21:05](https://youtu.be/KwQ76IvU59M?t=1265) The principle of least intelligence assigns deterministic checks to compilers and architectural rules while reserving AI judgment for obligations expressed in human language.
+- **+** [31:25](https://youtu.be/KwQ76IvU59M?t=1885) The cost-divided-by-quality stopping rule starts with a frontier model to establish solvability and then reduces model cost while holding the quality bar.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [46:27](https://youtu.be/KwQ76IvU59M?t=2787) The projects behind each loop stage (Agent Eval, Agent Client, Agent Workflow, Agent Journal, Agent Experiment) are published at lab.pollack.ai and github.com/markpollack.
+- **+** [46:27](https://youtu.be/KwQ76IvU59M?t=2787) The projects behind the loop stages are published at lab.pollack.ai and github.com/markpollack.
+- **·** [26:14](https://youtu.be/KwQ76IvU59M?t=1574) The presented libraries are the artifacts on offer, without a separate sample project or complete configuration identified to reproduce the PetClinic or coverage examples.

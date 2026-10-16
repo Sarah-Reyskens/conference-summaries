@@ -11,6 +11,7 @@ durationMin: 52
 slides: https://speakerdeck.com/glaforge/choose-your-own-adventure-in-agentic-design-patterns
 slidesNote: from Devoxx France 2026
 verdict: 7
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -80,33 +81,35 @@ Java developers building multi-agent features who want a pattern vocabulary plus
 
 ## Verdict
 
-**7/10**: Six agentic patterns shown running in Java with reasoned trade-offs per pattern, but the cost comparison is list-price arithmetic backed by an anecdotal win rate, and no demo app ships with a repository.
+**7/10**: Working Java applications and reasoned trade-offs connect agentic patterns, but the cost comparison is list-price arithmetic backed by an anecdotal win rate, and the published side-demo skill does not reproduce the main applications.
+
+**Reach segment**: Teams adding LLM agent features to their applications can use the LangChain4j and ADK for Java patterns in their own systems.
 
 **Novelty 1/2**
 
-- **+** [42:27](https://youtu.be/w2RTFWet_6c?t=2547) One team of five agents reaches two different goals (an infographic, then a YouTube short from an article URL) by letting a goal-oriented planner choose the path, in ADK for Java.
-- **+** [33:34](https://youtu.be/w2RTFWet_6c?t=2014) The small-models-plus-judge experiment is the speaker's own, run live with the current Gemini price table.
-- **·** [14:40](https://youtu.be/w2RTFWet_6c?t=880) RAG gets a recap with no demo, and GOAP is credited to Rod Johnson ([39:17](https://youtu.be/w2RTFWet_6c?t=2357)); the talk's added value is the Java implementations and the survey.
+- **+** [50:51](https://youtu.be/w2RTFWet_6c?t=3051) The wrap-up maps the surveyed patterns onto planning, orchestration, context, evaluation, tooling, and harness engineering, giving one map of which pattern answers which concern.
+- **+** [46:37](https://youtu.be/w2RTFWet_6c?t=2797) Laforge connects the survey to his own coding-agent experiments with monolithic tool access and specialist sub-agents.
 
 **Demonstrated 2/2**
 
-- **+** [42:58](https://youtu.be/w2RTFWet_6c?t=2578) The GOAP content specialist returns a summary and then an infographic for an article URL, live.
-- **+** [49:17](https://youtu.be/w2RTFWet_6c?t=2957) The nanocode agentic supervisor, picked by the audience, delegates to its web-search specialist for the Devoxx Belgium 2026 themes.
+- **+** [42:58](https://youtu.be/w2RTFWet_6c?t=2578) The GOAP content specialist returns an article summary, then runs the infographic goal through to a generated image confirmed when the speaker returns to the result.
+- **+** [26:46](https://youtu.be/w2RTFWet_6c?t=1606) The live Comic Trip run finishes with captioned Antwerp comic panels and nearby points of interest that the speaker clicks through.
 - **−** [19:55](https://youtu.be/w2RTFWet_6c?t=1195) The deslopify demo does not show the progressive-disclosure mechanism, as the speaker says himself.
 
 **Measured 1/2**
 
-- **+** [34:10](https://youtu.be/w2RTFWet_6c?t=2050) The slide prices three small-model summaries plus one evaluation at $1.20 against $2.00 for one big-model summary, per million tokens.
-- **+** [11:00](https://youtu.be/w2RTFWet_6c?t=660) The pre-run deep-research report took 43 minutes 34 seconds.
-- **−** [36:40](https://youtu.be/w2RTFWet_6c?t=2200) The quality side rests on one live run that the big model won and a recollection that the small models win "maybe one out of three times or something".
+- **+** [34:10](https://youtu.be/w2RTFWet_6c?t=2050) The current video slide prices three small-model summaries plus one evaluation at $1.20 against $2.00 for one big-model summary, using prices per million input tokens rather than measured workload costs.
+- **+** [11:00](https://youtu.be/w2RTFWet_6c?t=660) The speaker reports that the pre-run deep-research report took 43 minutes.
+- **−** [36:40](https://youtu.be/w2RTFWet_6c?t=2200) The quality comparison rests on one live run that the big model won and a recollection that the small models win “maybe one out of three times or something”.
 
 **Depth 2/2**
 
 - **+** [19:24](https://youtu.be/w2RTFWet_6c?t=1164) Progressive disclosure is explained as three levels (metadata, full SKILL.md, then referenced files), tied to context rot and tool-choice confusion.
-- **+** [41:57](https://youtu.be/w2RTFWet_6c?t=2517) GOAP is walked through from goal to required summary to the agents that can supply it, using each agent's declared inputs and outputs.
+- **+** [41:57](https://youtu.be/w2RTFWet_6c?t=2517) GOAP is walked through from goal to required summary to the agents that can supply it, using each agent’s declared inputs and outputs.
 - **+** [08:24](https://youtu.be/w2RTFWet_6c?t=504) Programmatic planning is weighed against full agent autonomy: easier to debug and more deterministic, but more maintenance and less adaptable.
 
 **Reusable 1/2**
 
 - **+** [44:30](https://youtu.be/w2RTFWet_6c?t=2670) The GOAP agent-metadata setup for ADK is shown as code, with input and output keys per agent.
-- **−** [50:20](https://youtu.be/w2RTFWet_6c?t=3020) The nanocode agent ("a bit more than 300 lines") and the other demo apps come with no repository URL.
+- **+** [23:07](https://youtu.be/w2RTFWet_6c?t=1387) The demonstrated deslopify skill is available as a [published artifact](https://github.com/glaforge/deslopify) for the prose-refinement side example.
+- **−** [50:20](https://youtu.be/w2RTFWet_6c?t=3020) The nanocode implementation is described as a bit over 300 lines, but no repository is pointed to that reproduces the main multi-pattern demo applications.

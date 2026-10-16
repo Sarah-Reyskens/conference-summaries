@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=lsvVJaigNp8
 durationMin: 37
 slides: null
 verdict: 7
+reach: niche
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # "You May Now Optimize the Wedding": Optimizing the Seating, Bachelor Party, and Honeymoon with Constraint AI
 
@@ -61,33 +61,35 @@ Developers curious about constraint solving who learn best from live code, and a
 
 ## Verdict
 
-**7/10**: Three live end-to-end solves and a clear beginner mental model of constraint solving; held back by unmeasured solver claims, no new results and no published code.
+**7/10**: Three live end-to-end solves and a beginner-complete mental model of constraint solving; held back by estimated brute-force figures, no solver measurements and unpublished demo code.
+
+**Reach niche**: Backend developers whose systems already assign people, vehicles or tasks under rules can apply the modeling, but most of the conference audience will not meet a Timefold-style planning problem within a year.
 
 **Novelty 1/2**
 
-- **+** [05:43](https://youtu.be/lsvVJaigNp8?t=343) The three apps (seating, honeymoon, pub crawl) were built by the speakers for the talk, with the backend as the focus.
-- **+** [20:07](https://youtu.be/lsvVJaigNp8?t=1207) The hard-versus-soft walkthrough carries the speakers' experience from earlier runs: food preference is the rule that divides audiences most, and some customers treat it as hard.
-- **−** [22:47](https://youtu.be/lsvVJaigNp8?t=1367) No new results, solver benchmarks or production cases appear, and the speaker notes that Claude gives a decent answer from the same requirement list.
+- **+** [20:07](https://youtu.be/lsvVJaigNp8?t=1207) The hard-versus-soft walkthrough carries experience from earlier runs: food preference divides audiences most, and some customers treat it as a hard constraint.
+- **+** [36:19](https://youtu.be/lsvVJaigNp8?t=2179) Hallway cases gathered that week, theater seating and golf tee times, extend the pattern beyond weddings.
+- **−** The solver mechanics follow the project's documented getting-started path (Timefold docs: entity, variable, solve), and no production deployment story follows.
 
 **Demonstrated 2/2**
 
-- **+** [22:16](https://youtu.be/lsvVJaigNp8?t=1336) The seating chart fills in live and visibly refines as the solver keeps optimizing, with the score breakdown shown.
-- **+** [29:32](https://youtu.be/lsvVJaigNp8?t=1772) The honeymoon solve produces a visible day-by-day itinerary of hotels and activities in the running app.
-- **+** [33:11](https://youtu.be/lsvVJaigNp8?t=1991) Marking a beer out of stock shows the item struck through and a "Planning..." replan of the remaining rounds.
+- **+** [22:16](https://youtu.be/lsvVJaigNp8?t=1336) The seating chart fills in live and visibly refines as the solver keeps optimizing.
+- **+** [29:32](https://youtu.be/lsvVJaigNp8?t=1772) The honeymoon solve renders a day-by-day itinerary of hotels and activities, including the kayak and yoga picks.
+- **+** [33:11](https://youtu.be/lsvVJaigNp8?t=1991) Marking a beer out of stock strikes it through and triggers a visible "Planning..." replan of the remaining rounds.
 
 **Measured 1/2**
 
 - **+** [12:22](https://youtu.be/lsvVJaigNp8?t=742) Brute-force timings for 6, 8 and 10 guests (about 0.5 ms, 0.3 s, 27 s) come from the speaker's MacBook Pro.
-- **−** [13:22](https://youtu.be/lsvVJaigNp8?t=802) The brute-force method is not shown, and the figures from 16 guests on (5 years, 580,000 years, 11 times the universe's age) are estimations, admitted only when asked.
-- **−** [22:16](https://youtu.be/lsvVJaigNp8?t=1336) No solve time or plan-quality number is given for Timefold, only "pretty quickly".
+- **−** [13:22](https://youtu.be/lsvVJaigNp8?t=802) The figures from 16 guests on (5 years, 580,000 years, 11 times the universe's age) are estimations, admitted only when asked.
+- **−** [22:47](https://youtu.be/lsvVJaigNp8?t=1367) Solver quality is argued from the score analysis (only two tables mix sides), with no solve time or before/after number.
 
 **Depth 2/2**
 
-- **+** [11:51](https://youtu.be/lsvVJaigNp8?t=711) The factorial growth of seatings (20! ≈ 2.4 × 10^18) explains why search beats enumeration and why to reach for a solver instead of hand-rolled code.
-- **+** [19:05](https://youtu.be/lsvVJaigNp8?t=1145) The hard-versus-soft exercise builds a decision model for classifying constraints, including customer-dependent answers.
-- **+** [18:03](https://youtu.be/lsvVJaigNp8?t=1083) The warning that filters run up to hundreds of thousands of times per solve gives a performance mental model for writing constraints.
+- **+** [11:51](https://youtu.be/lsvVJaigNp8?t=711) Factorial growth of seatings explains why enumeration fails and when to reach for a solver instead of hand-rolled search.
+- **+** [15:27](https://youtu.be/lsvVJaigNp8?t=927) The entity, variable and solve annotations build the beginner mental model: the solver changes only what is marked changeable.
+- **+** [18:03](https://youtu.be/lsvVJaigNp8?t=1083) Constraint filters run up to hundreds of thousands of times per solve, so they stay pure and never call a database.
 
 **Reusable 1/2**
 
-- **+** [31:07](https://youtu.be/lsvVJaigNp8?t=1867) The timefold.beer app is live and usable, covering the pub-crawl demo end to end.
-- **−** [23:50](https://youtu.be/lsvVJaigNp8?t=1430) The seating and honeymoon code appears only on screen; no repository URL is given for it.
+- **+** [31:07](https://youtu.be/lsvVJaigNp8?t=1867) The timefold.beer app is live and usable for planning a five-round Beer Central evening.
+- **−** [26:56](https://youtu.be/lsvVJaigNp8?t=1616) The honeymoon domain code is walked through on screen, but no repository or sample URL is given for it or the seating app.

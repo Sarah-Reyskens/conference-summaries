@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=Ycdt7IT7Kdw
 durationMin: 150
 slides: null
-verdict: 6
+verdict: 5
+reach: segment
 frames: 15
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Cheaper or Better? The Strategic Choice Behind AI Adoption
@@ -81,13 +82,13 @@ Team leads, managers, agile coaches and architects who shape AI adoption or orga
 
 ## Verdict
 
-**6/10**: Frameworks the speaker built from her consulting work carry the novelty, but the Weinberg figures arrive without method and reuse means rebuilding the checklists from the talk.
+**5/10**: Consulting experience grounds an AI-adoption workshop with usable diagnostic questions, but choosing a strategy remains largely an exercise for the viewer and the quoted figures come without a method.
 
-**Novelty 2/2**
+**Reach segment**: Tech leads, architects and coaches driving AI adoption in business-application teams can use the diagnostic toolkit; most developers only feel its effects secondhand.
 
-- **+** [28:51](https://youtu.be/Ycdt7IT7Kdw?t=1731) The CLAAS wrong-place automation story and the polymer-flow simulator mapped six years apart come from the speaker's own consulting engagements.
-- **+** [75:42](https://youtu.be/Ycdt7IT7Kdw?t=4542) The four-question alpha-player diagnosis adapts board-game counter-mechanics to AI governance, a synthesis no cited source offers.
-- **+** [93:17](https://youtu.be/Ycdt7IT7Kdw?t=5597) Finance, IT, HR and compliance appear as four gatekeeper characters the whole adoption game is designed around.
+**Novelty 1/2**
+
+- **+** [28:51](https://youtu.be/Ycdt7IT7Kdw?t=1731) The CLAAS production-line case adds firsthand experience of expert identity defeating adoption of an expert database.
 
 **Demonstrated 1/2**
 
@@ -95,17 +96,16 @@ Team leads, managers, agile coaches and architects who shape AI adoption or orga
 
 **Measured 1/2**
 
-- **+** [133:38](https://youtu.be/Ycdt7IT7Kdw?t=8018) Weinberg's context-switching losses are quoted as 20% for two parallel tasks rising to 75% for five.
-- **−** [134:44](https://youtu.be/Ycdt7IT7Kdw?t=8084) The figures arrive through "a person ... who did a study on that", with no method, sample or baseline.
+- **+** [133:38](https://youtu.be/Ycdt7IT7Kdw?t=8018) Context-switching losses are quoted as 20% for two parallel tasks rising to 75% for five.
+- **−** [134:44](https://youtu.be/Ycdt7IT7Kdw?t=8084) The figures are attributed to a study by Gerald Weinberg, with no method, sample or baseline stated.
 
 **Depth 1/2**
 
-- **+** [50:49](https://youtu.be/Ycdt7IT7Kdw?t=3049) "Strategy 800" is rejected with reasons, showing why a revenue figure gives no direction on how to earn it.
-- **+** [109:04](https://youtu.be/Ycdt7IT7Kdw?t=6544) The status-report robot argues continuous information and built-in feedback could make the report itself obsolete.
-- **−** [58:18](https://youtu.be/Ycdt7IT7Kdw?t=3498) Mode choice is asserted as fit ("no mode is better than the other ... it has to fit to you") without criteria for judging which mode fits when.
+- **+** [56:12](https://youtu.be/Ycdt7IT7Kdw?t=3372) Agent mode is spelled out as new game rules: who the agent may contact, which decisions it can take, who monitors and stops it, and what happens when two agents conflict.
+- **+** [104:17](https://youtu.be/Ycdt7IT7Kdw?t=6257) Finance, IT, HR and compliance are given different entry conditions: capped investment and feedback, architectural boundaries, learning paths and human decision points.
 
 **Reusable 1/2**
 
 - **+** [76:12](https://youtu.be/Ycdt7IT7Kdw?t=4572) The alpha-player diagnosis is a rating instrument ("you can choose on your own is it more a yes or a partially or a no") that a team can rebuild from the description.
 - **+** [116:06](https://youtu.be/Ycdt7IT7Kdw?t=6966) The CD-logic versus streaming-logic checklist lays out five aspects each for scoring where a team stands.
-- **−** [149:22](https://youtu.be/Ycdt7IT7Kdw?t=8962) The close offers LinkedIn, email and two books on the final slide; no template, checklist file or sample covering the talk's content is published.
+- **·** [149:22](https://youtu.be/Ycdt7IT7Kdw?t=8962) The close offers LinkedIn and email for contact rather than a published set of the workshop's templates.

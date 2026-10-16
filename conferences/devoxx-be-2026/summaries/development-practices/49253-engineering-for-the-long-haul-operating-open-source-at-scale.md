@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=Pg5kS8l9CpI
 durationMin: 33
 slides: null
-verdict: 2
+verdict: 4
+reach: niche
 frames: 9
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Engineering for the Long Haul: Operating Open Source at Scale
@@ -67,33 +68,36 @@ TuxCare split from 17-year-old CloudLinux into its own company on 1 January. Clo
 Managers evaluating commercial EOL support or live-patching vendors get a compact catalog of one vendor's offering. Engineers wanting internals, self-serve hardening, or comparisons can skip it: the material stays at brochure level.
 
 ## Verdict
-
-**2/10**: A sales catalog of one vendor's portfolio with self-reported totals and nothing running on screen, useful only as a buyer's overview.
-
-**Novelty 0/2**
-
-- **−** The lineup, SLA table, and pipeline match what a search for TuxCare SecureChain, ELS, and KernelCare returns from tuxcare.com/securechain-for-oss and docs.tuxcare.com/securechain.
-- **−** [27:51](https://youtu.be/Pg5kS8l9CpI?t=1671) The only first-hand examples, a CentOS server never rebooted in 8 years and an unnamed customer's legacy server still under support, carry no names or detail.
-- **·** [02:08](https://youtu.be/Pg5kS8l9CpI?t=128) The survey figures are credited on the slide to TuxCare's 2026 landscape report (the YoY-growth card to StackWatch), which is credited background and no fault.
-
++
+**4/10**: A vendor tour with a usable pipeline model and on-screen survey figures, nothing running, and a lineup a search already returns.
++
+**Reach niche**: Only audience members whose organizations would buy commercial EOL support or live patching from this vendor can use its main content within the next year.
++
+**Novelty 1/2**
++
+- **+** [21:31](https://youtu.be/Pg5kS8l9CpI?t=1291) A customer is still carried on CentOS 6 because the server is too important to upgrade, one of the speaker's own cases of a system outliving its upgrade window.
+- **+** [27:51](https://youtu.be/Pg5kS8l9CpI?t=1671) A customer never rebooted a CentOS server until the hardware reached end of life after 8 years.
+- **−** The SecureChain pipeline, SLA table, and ELS lineup match what a search for TuxCare SecureChain, ELS, and KernelCare returns from tuxcare.com/securechain-for-oss and docs.tuxcare.com/securechain.
++
 **Demonstrated 0/2**
-
-- **−** [11:04](https://youtu.be/Pg5kS8l9CpI?t=664) The SecureChain pipeline is narrated over slides; no package, scan result, or patched install appears on screen.
-- **−** [24:10](https://youtu.be/Pg5kS8l9CpI?t=1450) Rebootless patching is claimed for 24/7 systems, but no live patch run or before/after kernel state is shown.
-
++
+- **−** [11:04](https://youtu.be/Pg5kS8l9CpI?t=664) The SecureChain pipeline is narrated over slides, with no package, scan result, or patched install appearing on screen.
+- **−** [24:10](https://youtu.be/Pg5kS8l9CpI?t=1450) Rebootless patching is claimed for systems that must run around the clock, with no live patch run or before/after kernel state shown.
++
 **Measured 1/2**
-
++
 - **+** [02:08](https://youtu.be/Pg5kS8l9CpI?t=128) The quiz puts survey percentages on incidents, unapplied patches, and downtime constraints on screen.
 - **−** [02:08](https://youtu.be/Pg5kS8l9CpI?t=128) No method, sample size, or baseline accompanies the percentages.
-- **−** [31:01](https://youtu.be/Pg5kS8l9CpI?t=1861) The closing totals (2,700+ clients, 420,000+ patches, 14,000+ vulnerabilities fixed) are self-reported, and the spoken "more than 5,000 CVE patched to date" disagrees with the slide's 14,000+.
-
+- **−** [31:01](https://youtu.be/Pg5kS8l9CpI?t=1861) The closing totals are self-reported, and the spoken "more than 5,000 CVE patched to date" disagrees with the slide's 14,000+.
++
 **Depth 1/2**
-
++
 - **+** [13:09](https://youtu.be/Pg5kS8l9CpI?t=789) The SecureChain pipeline (trusted catalog, malware scan, rebuild from source, SLSA Level 3 SBOM and VEX) gives a beginner-level mental model of how a package moves through the product.
-- **+** [24:44](https://youtu.be/Pg5kS8l9CpI?t=1484) Reboots interrupt services that must run 24/7 and need maintenance windows, which gives the case for choosing rebootless patching.
-- **−** [24:10](https://youtu.be/Pg5kS8l9CpI?t=1450) Why an in-memory kernel patch avoids a reboot goes unexplained beyond "live in memory".
-
-**Reusable 0/2**
-
-- **−** [16:20](https://youtu.be/Pg5kS8l9CpI?t=980) The integration segment gives one line ("Point your repository manager or package manager at secure chain") and no repository, sample configuration, trial, or checklist.
-- **−** [20:30](https://youtu.be/Pg5kS8l9CpI?t=1230) "Our website" and "CVE trackers" are mentioned without a URL or name.
+- **+** [24:44](https://youtu.be/Pg5kS8l9CpI?t=1484) Reboots interrupt services that must run around the clock and need maintenance windows, which gives the case for choosing rebootless patching.
+- **−** [25:45](https://youtu.be/Pg5kS8l9CpI?t=1545) LibraryCare's userspace live patching is named as "rebootless live in memories" with no mechanism beyond the label.
++
+**Reusable 1/2**
++
+- **+** [16:20](https://youtu.be/Pg5kS8l9CpI?t=980) The integration is one stated step: point Artifactory, Nexus or GitHub Packages at SecureChain, with no agent and no CI/CD rewrite.
+- **+** [19:26](https://youtu.be/Pg5kS8l9CpI?t=1166) The fixes are hosted in the vendor's own repository, which subscribers can reach: the presented product's distribution.
+- **−** [20:30](https://youtu.be/Pg5kS8l9CpI?t=1230) "Our website" and "CVE trackers" are mentioned without a URL or name, and no trial, sample configuration or checklist is offered.

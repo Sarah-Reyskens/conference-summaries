@@ -8,12 +8,11 @@ sessionType: Conference
 audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=HzbNrEDZkYU
 durationMin: 45
-slides: null
 verdict: 8
+reach: broad
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
----
+reviewedAt: 2026-10-15
 
 # 0 to 350 Engineers on Claude Code: What Could Go Wrong?
 
@@ -74,13 +73,15 @@ Engineering leaders, platform engineers, and principal-level individual contribu
 
 ## Verdict
 
-**8/10**: A production-scale adoption retrospective with the speaker's own bills, spend data and governance mechanics, limited to practices you must reconstruct yourself.
+**8/10**: A production-scale adoption retrospective with the speaker's own spend data and governance mechanics, limited to practices you must reconstruct yourself and with nothing to run.
+
+**Reach broad**: Developers, tech leads and platform engineers in the audience who use or roll out AI coding assistants can apply the PR-size, session, repository-boundary, budget and peer-community practices.
 
 **Novelty 2/2**
 
-- **+** [28:46](https://youtu.be/HzbNrEDZkYU?t=1726) The month-by-month provider-spend chart shows the June $86,947 peak collapsing after the OpenRouter switch, with $171k saved in three months while the user count kept growing.
-- **+** [36:35](https://youtu.be/HzbNrEDZkYU?t=2195) OpenRouter activity data for the company's 229 tech users in September shows code generation at only 23.6% of agent usage.
-- **+** [22:30](https://youtu.be/HzbNrEDZkYU?t=1350) The runaway-bill anatomy (median $40, mean $141, top-3 $22.7k) comes from 1,892 active user-months of the speaker's own Anthropic usage.
+- **+** [23:00](https://youtu.be/HzbNrEDZkYU?t=1380) Spending April to June coaching the top spenders one by one worked for each person but did not scale, because the heavy spenders change every month; that failure is what pushed the team to a fixed budget.
+- **+** [32:54](https://youtu.be/HzbNrEDZkYU?t=1974) The elected-resident group, not the CTO or a manager, decided to drop Cursor after its mid-August license change, a decision made by the community that the rollout was built around.
+- **+** [34:29](https://youtu.be/HzbNrEDZkYU?t=2069) Most engineering managers had not tried Claude Code by March, so the speaker ran a two-hour workshop in which agents did everything except write code, to win them over before adoption stalled.
 
 **Demonstrated 1/2**
 
@@ -88,18 +89,18 @@ Engineering leaders, platform engineers, and principal-level individual contribu
 
 **Measured 2/2**
 
-- **+** [28:46](https://youtu.be/HzbNrEDZkYU?t=1726) Before/after monthly spend with per-provider bars backs the savings claim: ~$87k peak months versus ~$23-28k after the switch.
-- **+** [22:40](https://youtu.be/HzbNrEDZkYU?t=1360) The spend distribution states its method: per-developer monthly spend over 1,892 active user-months from November 2025 to June 2026.
-- **−** [37:07](https://youtu.be/HzbNrEDZkYU?t=2227) The 23.6% activity split rests on OpenRouter's own prompt classifier, whose accuracy the speaker never validates.
+- **+** [28:46](https://youtu.be/HzbNrEDZkYU?t=1726) Before/after monthly spend with per-provider bars backs the savings claim: ~$87k peak months versus ~$23-28k after the switch, $171k saved in three months with more users than in early June.
+- **+** [22:30](https://youtu.be/HzbNrEDZkYU?t=1350) The spend distribution states its method: per-developer monthly spend over 1,892 active user-months from November 2025 to June 2026, giving median $40, mean $141 and $22.7k for the top 3.
+- **−** [37:07](https://youtu.be/HzbNrEDZkYU?t=2227) The 23.6% code-generation share of activity among 229 tech users rests on OpenRouter's own prompt classifier, whose accuracy the speaker never validates.
 
 **Depth 2/2**
 
-- **+** [22:40](https://youtu.be/HzbNrEDZkYU?t=1360) The governance-trap explanation gives the mechanism: unpruned context loops re-send 150,000 tokens on every retry at about $3.50 per Enter.
-- **+** [16:15](https://youtu.be/HzbNrEDZkYU?t=975) The friction-as-firewall model explains why agents break cross-team norms, paired with the accountability reasoning behind CODEOWNERS and CONTRIBUTING.md fixes.
-- **+** [26:41](https://youtu.be/HzbNrEDZkYU?t=1601) The pricing choice is argued from constraints: Anthropic's per-user budget controls need a commitment of at least $1 million, leaving Back Market "too big for the fixed price" and too small for enterprise, which motivated the router.
+- **+** [11:34](https://youtu.be/HzbNrEDZkYU?t=694) A session kept open all week re-sends its whole context on every Enter, adding three to five dollars each time, which is the mechanism behind the short-session and split-generation-from-tests remedies.
+- **+** [16:15](https://youtu.be/HzbNrEDZkYU?t=975) The friction-as-firewall model explains why agents break cross-team norms, paired with the accountability reasoning behind the CODEOWNERS and CONTRIBUTING.md fixes.
+- **+** [26:41](https://youtu.be/HzbNrEDZkYU?t=1601) The pricing choice is argued from constraints: Anthropic's per-user budget controls need a commitment of at least $1 million, leaving Back Market too big for the fixed price and too small for enterprise, which motivated the router.
 
 **Reusable 1/2**
 
-- **+** [27:12](https://youtu.be/HzbNrEDZkYU?t=1632) The $200 cap plus $20 Slack-bot extension plus project-exception budgets is specified clearly enough to copy.
+- **+** [27:12](https://youtu.be/HzbNrEDZkYU?t=1632) The $200 cap plus $20 Slack-bot extension plus project-exception budgets is described clearly enough to copy, though only in words and a screenshot.
 - **+** [14:20](https://youtu.be/HzbNrEDZkYU?t=860) The Spec-First slide lists takeaway fragments (Clean Session Rule: spec in read-only mode, `/clear`, then run the execution; Plan Mode First; Matt Pocock's skills).
-- **−** [43:58](https://youtu.be/HzbNrEDZkYU?t=2638) No repository, checklist, or configuration is linked; the speaker points to his French YouTube channel and an internal skills repository.
+- **−** [43:58](https://youtu.be/HzbNrEDZkYU?t=2638) No repository, checklist or configuration is linked; the speaker points to his French YouTube channel for more detail.

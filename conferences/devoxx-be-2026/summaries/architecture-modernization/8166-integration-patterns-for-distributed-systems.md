@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=_CtnBnmYQC0
 durationMin: 49
 slides: null
 verdict: 5
+reach: broad
 frames: 10
 summarizedAt: 2026-10-14
 reviewedAt: 2026-10-15
----
 
 # Integration patterns for distributed systems
 
@@ -61,13 +61,15 @@ Architects and backend developers designing async or multi-tenant messaging who 
 
 ## Verdict
 
-**5/10**: Four distributed-systems fundamentals with the reasoning derived on stage, held back by slides-only delivery, computed rather than measured numbers and no published artifact.
+**5/10**: Four distributed-systems fundamentals with the trade-offs derived on stage, held back by slides-only delivery, computed rather than measured numbers and no published artifact.
+
+**Reach broad**: Backend developers, tech leads and architects at Devoxx who integrate services over messaging can apply the coupling, delivery and tenant-fairness patterns in their own systems within the year.
 
 **Novelty 1/2**
 
-- **+** [05:43](https://youtu.be/_CtnBnmYQC0?t=343) The four pillars bring several sources together, opening with Larry Constantine's "a structure is stable if cohesion is high and coupling is low" credited on screen.
-- **+** [30:14](https://youtu.be/_CtnBnmYQC0?t=1814) The exactly-once and ordering arguments are built from the producer side, which Dirk Fröhner calls "often neglected".
-- **+** [36:26](https://youtu.be/_CtnBnmYQC0?t=2186) The noisy-neighbor chapter runs from a catch-all queue through cell and shuffle sharding to producer- and consumer-triggered overflow queues, with the blast-radius arithmetic worked aloud.
+- **+** [17:12](https://youtu.be/_CtnBnmYQC0?t=1032) Coupling is presented as a spectrum across dimensions rather than a binary state, building on Larry Constantine's stability line credited in the talk.
+- **+** [16:40](https://youtu.be/_CtnBnmYQC0?t=1000) Topic-to-queue fan-out with SNS and SQS is recommended from customer cases, keeping pub-sub decoupling while each consumer keeps its own buffering queue.
+- **−** The SQS 5-minute dedup window and the Kafka producer-id plus sequence-number scoping match what the Amazon SQS and Apache Kafka documentation already say.
 
 **Demonstrated 0/2**
 
@@ -76,15 +78,15 @@ Architects and backend developers designing async or multi-tenant messaging who 
 
 **Measured 1/2**
 
-- **+** [42:40](https://youtu.be/_CtnBnmYQC0?t=2560) Cell sharding at 12.5% of tenants and shuffle sharding at 3.5% (1 of 28 queue pairs) compare two designs, with the pair counting done aloud.
+- **+** [42:40](https://youtu.be/_CtnBnmYQC0?t=2560) Shuffle sharding across 8 queues gives 28 pairs and about 3.5% collision, set against 12.5% for 8 cells, with the counting done aloud.
 - **·** [43:11](https://youtu.be/_CtnBnmYQC0?t=2591) The percentages, including the 0.02% extrapolation to 100 shards, are worked combinatorics rather than measurements of a running system.
 - **−** [46:52](https://youtu.be/_CtnBnmYQC0?t=2812) "Mitigating this situation without queues would be 10x harder" gives a ratio with no baseline or method.
 
 **Depth 2/2**
 
-- **+** [27:38](https://youtu.be/_CtnBnmYQC0?t=1658) The lost-acknowledgement retry loop explains why exactly-once delivery is impossible, and [28:42](https://youtu.be/_CtnBnmYQC0?t=1722) why dedup state is bounded by time or scope.
-- **+** [32:47](https://youtu.be/_CtnBnmYQC0?t=1967) Total order would need infinite state, so partial order scoped to a partition or message group is the working design, argued from two concurrent producers and a network glitch.
-- **+** [46:52](https://youtu.be/_CtnBnmYQC0?t=2812) Each sharding option is weighed against its blast radius and engineering effort, ending in a check for broker features such as SQS fair queues before building.
+- **+** [27:38](https://youtu.be/_CtnBnmYQC0?t=1658) The lost-acknowledgement retry loop shows why the producer cannot get exactly-once delivery: a timed-out ack forces a retry that duplicates the message.
+- **+** [32:47](https://youtu.be/_CtnBnmYQC0?t=1967) Total order would need infinite state, so partial order per producer is the working design, argued from the two-producer example.
+- **+** [21:24](https://youtu.be/_CtnBnmYQC0?t=1284) TTL discard and producer back pressure are weighed as implementations of a business decision about stale messages and who slows down.
 
 **Reusable 1/2**
 

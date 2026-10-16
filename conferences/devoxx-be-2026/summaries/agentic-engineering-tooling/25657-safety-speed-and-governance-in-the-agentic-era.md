@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=N3VyoNNLDqQ
 durationMin: 41
 slides: null
 verdict: 7
+reach: segment
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Safety, speed, and governance in the agentic era
@@ -68,17 +69,19 @@ Developers already running coding agents who want a concrete isolation setup, an
 ## Verdict
 **7/10**: Docker Sandboxes' isolation is demonstrated end to end and the auto-mode bypass is first-hand, limited by a vendor-docs core, an unfinished kits run and no artifact the talk points to.
 
+**Reach segment**: Developers running coding agents and platform or security engineers rolling agents out to a team can use the sandbox setup in their own work.
+
 **Novelty 1/2**
 
 - **+** [14:42](https://youtu.be/N3VyoNNLDqQ?t=882) The speaker's own walkthrough of getting Claude Code's auto mode to run a secret-hunting script (write it as a script, hide it in a dependency, clear the context) is first-hand material no docs page offers.
-- **+** [10:31](https://youtu.be/N3VyoNNLDqQ?t=631) The rejection of plain containers, command allowlists and AI classifiers rests on the speaker's own arguments and examples, with no outside source named.
+- **·** [04:15](https://youtu.be/N3VyoNNLDqQ?t=255) The opening survey of agent incidents (servers hacked, found vulnerabilities exploited, a wiped home directory) retells public stories.
 - **−** The sbx install, `sbx run`, network policy and credential walkthrough is what Docker's own get-started page (docs.docker.com/ai/sandboxes/get-started) already covers.
 
 **Demonstrated 2/2**
 
-- **+** [19:26](https://youtu.be/N3VyoNNLDqQ?t=1166) `sbx run claude` creates a file inside the sandbox that appears on the host's mounted directory, and the agent confirms it has no access to the rest of the host file system.
+- **+** [19:26](https://youtu.be/N3VyoNNLDqQ?t=1166) `sbx run claude` creates a file in the mounted project directory, and the agent reports its path on the host.
 - **+** [20:30](https://youtu.be/N3VyoNNLDqQ?t=1230) A `curl` to an unlisted host is blocked live by the network proxy with the approval commands shown, and the same demo ends with a check that the sandbox holds no API keys.
-- **−** [38:20](https://youtu.be/N3VyoNNLDqQ?t=2300) The closing kits run with the YouTube-transcript kit is left mid-flight at a subtitle-download 429 retry, and no summary appears before the talk moves on.
+- **−** [38:20](https://youtu.be/N3VyoNNLDqQ?t=2300) The closing kits run with the YouTube-transcript kit stalls at a subtitle-download 429 retry on screen, and no summary appears before the talk moves on.
 
 **Measured 1/2**
 
@@ -94,4 +97,4 @@ Developers already running coding agents who want a concrete isolation setup, an
 **Reusable 1/2**
 
 - **+** [36:33](https://youtu.be/N3VyoNNLDqQ?t=2193) Two `sbxenv.yaml` examples (`talk-watcher` with a YouTube kit, `codex-core` with a Google Workspace kit bound to `*.googleapis.com`) are readable on the slide.
-- **·** [40:50](https://youtu.be/N3VyoNNLDqQ?t=2450) No repository or kit URL is spoken, and the closing QR leads to a cloud-sandbox page, so the kit and sbx material has to be found by searching.
+- **·** [40:50](https://youtu.be/N3VyoNNLDqQ?t=2450) No repository or kit URL is spoken, and the closing slide is a QR code for a $250 cloud-sandbox credit, so the kit and sbx material has to be found by searching.

@@ -9,10 +9,12 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=y9JjxyKc6gU
 durationMin: 31
 slides: null
-verdict: 9
+verdict: 8
+reach: niche
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
+---
 
 # Do We Need a Build Language? Java Builds Java
 Rafael Winterhalter · Tools-in-Action · Java Language & Platform
@@ -72,32 +74,34 @@ He closes by pointing at jenesis.build, noting Claude validated Jenesis against 
 Java developers curious about build tooling, the module system, or supply-chain security gain the most, especially anyone teaching Java or maintaining published libraries. Developers wanting a stable, documented Maven or Gradle replacement should skip it: Jenesis is explicitly a proof of concept.
 
 ## Verdict
-**9/10**: An original build tool run live from module-info with the author's design reasons throughout; the size and speed figures come with no method.
+**8/10**: Live builds and a rejected dependency make the module-first design checkable, with explained trade-offs and runnable examples; the performance and download-size claims lack a controlled comparison.
 
-**Novelty 2/2**
+**Reach niche**: The main content serves developers evaluating Jenesis or specialised module-first build tooling, especially library maintainers and Java teachers.
 
-- **+** [04:14](https://youtu.be/y9JjxyKc6gU?t=254) Module-info as the build descriptor, including `exports` as the construct Maven and Gradle lack, is the author's own design rationale for his own tool.
-- **+** [05:16](https://youtu.be/y9JjxyKc6gU?t=316) The pinning and signature defaults come from running Byte Buddy, where attackers sent reproducers with tinkered Maven builds to steer the maintainer at malicious locations.
-- **−** Gradle's dependency verification (checksums and PGP signature validation) already exists, so the new part is validation by default rather than validation itself.
+**Novelty 1/2**
+
+- **+** [05:16](https://youtu.be/y9JjxyKc6gU?t=316) The Byte Buddy maintainer describes people sending bug reproducers with altered Maven builds, firsthand context for the risk of running an unfamiliar project's build.
+- **−** The Jenesis README and jenesis.build already cover the feature tour that fills most of the talk, which is the search baseline for a project's own author.
 
 **Demonstrated 2/2**
 
-- **+** [11:57](https://youtu.be/y9JjxyKc6gU?t=717) The single-module build runs live from the java launcher and produces the jar on screen.
-- **+** [20:46](https://youtu.be/y9JjxyKc6gU?t=1246) The tampered-dependency build fails live with a mismatched-digest error naming commons-lang3 3.14.0.
-- **−** [19:43](https://youtu.be/y9JjxyKc6gU?t=1183) The multi-module log shows the test stage executing, but the JUnit output is withheld ("you can just believe me it runs the tests").
+- **+** [25:30](https://youtu.be/y9JjxyKc6gU?t=1530) A pom-based project builds live with the Java launcher, and the frame at 25:45 shows the completed build.
+- **+** [20:46](https://youtu.be/y9JjxyKc6gU?t=1246) The deliberately incorrect dependency pin produces a live mismatched-digest failure naming commons-lang3, visible in the frame at 21:05.
+- **+** [27:32](https://youtu.be/y9JjxyKc6gU?t=1652) Jenesis builds and launches an executable module with its dependency path assembled, and the frame at 27:50 shows the program's greeting.
 
 **Measured 1/2**
 
-- **+** [07:18](https://youtu.be/y9JjxyKc6gU?t=438) Wrapper download sizes are contrasted as 24 KB for Jenesis against roughly 30 MB for Maven and 158 MB for Gradle.
-- **−** [07:18](https://youtu.be/y9JjxyKc6gU?t=438) The wrapper sizes are given as "I think" figures with no stated method.
-- **−** [16:08](https://youtu.be/y9JjxyKc6gU?t=968) The 0.56-second incremental build has no baseline: no Maven or Gradle time on the same project.
+- **+** [07:49](https://youtu.be/y9JjxyKc6gU?t=469) The speaker reports a 24 KB source bootstrap against the preceding Maven and Gradle download-size estimates, but gives no measurement procedure.
+- **−** [16:08](https://youtu.be/y9JjxyKc6gU?t=968) The reported 0.56-second incremental rebuild has no same-project Maven or Gradle baseline.
+- **−** [03:44](https://youtu.be/y9JjxyKc6gU?t=224) Building thousands of projects is a self-reported compatibility total without a disclosed corpus or success criteria.
 
 **Depth 2/2**
 
-- **+** [18:40](https://youtu.be/y9JjxyKc6gU?t=1120) Qualified exports to a test module are presented as the fix for split packages, with the Mockito internals history as the reason encapsulation matters.
-- **+** [22:52](https://youtu.be/y9JjxyKc6gU?t=1372) Pins and OpenPGP signatures are weighed as complementary: the hash catches changed bytes, the signature validates an updated artifact against the publisher key.
+- **+** [12:29](https://youtu.be/y9JjxyKc6gU?t=749) The module-name-to-Maven-coordinate index explains how a descriptor containing only module names can resolve dependencies in the existing ecosystem.
+- **+** [18:40](https://youtu.be/y9JjxyKc6gU?t=1120) Qualified exports to a separate test module connect encapsulation to test access, answering the split-package problem described with Mockito.
+- **+** [22:21](https://youtu.be/y9JjxyKc6gU?t=1341) Hashes and publisher signatures address different checks: fixed bytes for a pinned artifact versus a recognised signing key after a version update.
 
 **Reusable 2/2**
 
-- **+** [10:26](https://youtu.be/y9JjxyKc6gU?t=626) Every demo shown is part of the Jenesis repository and can be run by the audience on their own projects.
-- **+** [30:09](https://youtu.be/y9JjxyKc6gU?t=1809) The talk points at jenesis.build as the installable, documented artifact covering its content.
+- **+** [10:26](https://youtu.be/y9JjxyKc6gU?t=626) The speaker identifies the demonstrated builds as runnable examples in the Jenesis repository, beyond the tool's distribution itself.
+- **+** [10:56](https://youtu.be/y9JjxyKc6gU?t=656) The example's tree includes a README and module sources, giving viewers the project structure needed to repeat the build.

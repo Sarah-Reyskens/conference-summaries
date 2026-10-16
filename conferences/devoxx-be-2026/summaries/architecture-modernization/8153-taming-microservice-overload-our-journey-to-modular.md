@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=v86SfHA5ISw
 durationMin: 50
 slides: null
 verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -92,10 +93,12 @@ Teams drowning in microservices who suspect their boundaries are wrong, and arch
 
 **6/10**: A 90-service consolidation with reasoned design decisions and migration patterns from a production system, limited by Spring Modulith verification that is only described and by improvement claims that are still unmeasured.
 
+**Reach broad**: Java backend developers, tech leads and architects can apply the boundary diagnosis, event-storming practice and modular-first rules to their own service landscapes.
+
 **Novelty 2/2**
 
 - **+** [13:02](https://youtu.be/v86SfHA5ISw?t=782) Three ship-clearance services with separate documented responsibilities turn out to call each other, change together and decide in code what the documentation assigns elsewhere, a diagnosis taken from the team's own landscape.
-- **+** [38:55](https://youtu.be/v86SfHA5ISw?t=2335) The team migrates business capabilities one at a time and describes four executed patterns (new-module landing, relocated code, process splitting, scattered-capability extraction) from its own 90-service consolidation.
+- **+** [38:55](https://youtu.be/v86SfHA5ISw?t=2335) The team decides to migrate business responsibilities one capability at a time instead of service by service, because the 24/7 system cannot stop, a decision taken on its own 90-service landscape.
 - **−** The Spring Modulith segment (API packages, dependency verification, `@ApplicationModuleTest`) follows the Spring Modulith reference documentation.
 
 **Demonstrated 0/2**

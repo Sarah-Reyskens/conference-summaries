@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=BLBwQpczk7M
 durationMin: 52
 slides: null
 verdict: 5
+reach: broad
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 # How to survive and thrive as a dev (team) in the exponential age of AI. Real-world AI adoption, smarter ways of working, and lessons from the front lines
 Sander Hoogendoorn · Conference · Agentic Engineering & Tooling
@@ -70,34 +71,34 @@ The closing habit draws on Dan Pink's Drive: purpose, mastery, and self-directio
 Engineering leads and senior developers rethinking team process around AI coding tools gain the most, especially those weighing trunk-based development, dropping pull requests, or prioritization without estimation. Teams wanting measured before/after evidence or a reusable playbook can skip it; the talk reports one company's practices without baselines or published artifacts.
 
 ## Verdict
-**5/10**: one team's operating model for the AI era, specific and first-hand, but it leans on credited frameworks, reports its numbers without baselines and publishes no artifact.
+**5/10**: a first-hand account of how a 13-person team reshaped its process around AI coding agents, limited by self-reported numbers, a list-like account of what was dropped and trade-offs left unweighed.
+
+**Reach broad**: developers, tech leads and architects in the conference audience can apply the prioritization, shared-ownership and short-feedback practices to their own AI-assisted teams.
 
 **Novelty 1/2**
 
-- **+** [29:00](https://youtu.be/BLBwQpczk7M?t=1740) Half the team built personal IDEs matched to their own agent workflows, the speaker's own in two days, which goes past generic AI-coding advice.
-- **+** [49:10](https://youtu.be/BLBwQpczk7M?t=2950) The iBox sandbox lets business users build and deploy their own dashboards on a limited set of company APIs, reported from the speaker's own company.
-- **·** [16:34](https://youtu.be/BLBwQpczk7M?t=994) The habits are built on credited published material (Cynefin, Hock, Deming, Gorman, Pink) plus one team's account, and the IDE and iBox examples come without results.
+- **+** [23:22](https://youtu.be/BLBwQpczk7M?t=1402) A developer's move from asking the CTO what to work on to negotiating scope and releases directly with the business gives first-hand experience of learning autonomy.
+- **+** [11:21](https://youtu.be/BLBwQpczk7M?t=681) The team's exhaustion from switching between up to eight parallel agent sessions exposes a cost of the new workflow that generic advice to parallelize agents misses.
+- **−** [26:55](https://youtu.be/BLBwQpczk7M?t=1615) The dropped practices (Scrum, sprints, estimates, pull requests, code reviews) arrive as a list of results, without an account of what broke or changed along the way.
 
 **Demonstrated 1/2**
 
-- **+** [05:44](https://youtu.be/BLBwQpczk7M?t=344) Screenshots show the sales page rebuilt in two hours, grounding the headline claim in visible output.
-- **+** [48:40](https://youtu.be/BLBwQpczk7M?t=2920) The speaker presents from a presentation tool he built two weeks earlier with AI, so one built artifact is in use on stage.
-- **·** [41:55](https://youtu.be/BLBwQpczk7M?t=2515) The central claim is a team operating model with nothing to run, so no end-to-end live run is fairly asked for.
+- **·** [08:47](https://youtu.be/BLBwQpczk7M?t=527) The central subject is a team operating model, for which an end-to-end executable demonstration is not applicable.
 
 **Measured 1/2**
 
-- **+** [41:55](https://youtu.be/BLBwQpczk7M?t=2515) The team releases to production about 100 times a day with 13 people.
-- **+** [05:44](https://youtu.be/BLBwQpczk7M?t=344) The sales-page rebuild took two hours with no handwritten code.
-- **−** [41:55](https://youtu.be/BLBwQpczk7M?t=2515) The numbers are self-reported totals with no baseline, method, or trend, so they read as anecdotes rather than measurements.
+- **+** [41:55](https://youtu.be/BLBwQpczk7M?t=2515) The team reports about 100 production releases a day with 13 people.
+- **+** [40:23](https://youtu.be/BLBwQpczk7M?t=2423) A dashboard change reportedly reached the pipeline in about 15 minutes and drew feedback five minutes later.
+- **−** [05:44](https://youtu.be/BLBwQpczk7M?t=344) The two-hour sales-page rebuild is a self-reported turnaround without a comparison or measurement method establishing the productivity gain.
 
 **Depth 1/2**
 
-- **+** [43:00](https://youtu.be/BLBwQpczk7M?t=2580) Dropping pull requests and reviews is argued through: late, context-switched reviewers check formatting, so quality moves into pairing plus automation.
-- **+** [15:32](https://youtu.be/BLBwQpczk7M?t=932) The Cynefin framing explains why tiny-step experiments fit complex work instead of just asserting it.
-- **−** [41:24](https://youtu.be/BLBwQpczk7M?t=2484) Regulated environments are answered with the prediction that "the AI is going to understand" the regulations, so the trade-off of releasing fast there is not weighed.
+- **+** [43:00](https://youtu.be/BLBwQpczk7M?t=2580) The critique of late, context-switched reviews explains why the team moves quality checks into collaborative work and automated pipelines.
+- **+** [31:36](https://youtu.be/BLBwQpczk7M?t=1896) Uniform service architecture, templated pipelines and explicit component knowledge explain the foundation that lets developers steer AI output.
+- **−** [41:24](https://youtu.be/BLBwQpczk7M?t=2484) The extension to regulated environments relies on a prediction that AI will understand the regulations rather than weighing the constraints on rapid release.
 
 **Reusable 1/2**
 
-- **+** [12:25](https://youtu.be/BLBwQpczk7M?t=745) The 70/20/10 split, the four board questions, and the someday-maybe column are described precisely enough to copy.
-- **+** [33:07](https://youtu.be/BLBwQpczk7M?t=1987) The push-back skill's opening rule is quoted ("do not immediately fold apologize or agree with them"), a starting point for a similar skill.
-- **−** [29:00](https://youtu.be/BLBwQpczk7M?t=1740) The self-built IDEs, presentation tool, and iBox are shown but not published, leaving no artifact covering the talk's main content.
+- **+** [12:56](https://youtu.be/BLBwQpczk7M?t=776) The goal, actionability, size and importance questions give viewers a prioritization practice to reconstruct.
+- **+** [33:07](https://youtu.be/BLBwQpczk7M?t=1987) The push-back skill's opening instruction supplies a fragment for discouraging immediate agreement when a user challenges the agent.
+- **·** [34:41](https://youtu.be/BLBwQpczk7M?t=2081) The microteam workflow is described as a practice without a published checklist or sample that reproduces the operating model.

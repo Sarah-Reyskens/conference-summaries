@@ -8,12 +8,11 @@ sessionType: Conference
 audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=S7x4DxwRnk4
 durationMin: 48
-slides: null
-verdict: 9
+verdict: 7
+reach: niche
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Quixotic: Pure Java Inference at Native Speed
 
@@ -109,18 +108,19 @@ Java developers evaluating local or sovereign AI (regulated industries, offline 
 
 ## Verdict
 
-**9/10**: The author's own 121-run benchmark against llama.cpp, a reasoned one-native-method design and a public repository to reproduce it; held back by the pure-Java claim and several features reaching the audience only as slides or failed demos.
+**7/10**: Head-to-head wins over llama.cpp with setup stated, and a reasoned one-native-method design; held back as the speaker's own feature tour and distribution, with the pure-Java mode only charted and a server demo failing.
 
-**Novelty 2/2**
+**Reach niche**: Teams building LLM features on the JVM who want in-process local inference for sovereignty or offline use, with the engine being one startup's pre-1.0 product.
 
-- **+** [25:10](https://youtu.be/S7x4DxwRnk4?t=1510) The author's head-to-head against llama.cpp covers 121 model-by-quant runs, with per-model speedups on the [24:10](https://youtu.be/S7x4DxwRnk4?t=1450) slide.
-- **+** [26:41](https://youtu.be/S7x4DxwRnk4?t=1601) The single-native-method design and the Vector API fallback come with the rationale of the person who built both.
-- **+** [29:54](https://youtu.be/S7x4DxwRnk4?t=1794) A 4x4-tiled kernel became viable on GraalVM two weeks before the talk, when Graal open-sourced its compiler, and the speaker shows the effect on each model.
+**Novelty 1/2**
+
+- **+** [09:57](https://youtu.be/S7x4DxwRnk4?t=597) The 17-family, all-modality, all-quant coverage in one small jar brings several model sources together in a combination no single doc page gives.
+- **·** qxoticai/qxotic docs, README and qxotic.ai: a tour of the speaker's own engine and API sits in the search baseline, so the tour itself is no more than 1.
 
 **Demonstrated 1/2**
 
-- **+** [18:49](https://youtu.be/S7x4DxwRnk4?t=1129) jinfer-bench runs live with visible output on all threads and on one thread, giving 2761 versus 142 tok/s and 560 versus 75 tok/s.
-- **−** [28:51](https://youtu.be/S7x4DxwRnk4?t=1731) The pure-Java (Vector API only) result appears as a chart, and no demo names the kernel backend it ran on.
+- **+** [08:55](https://youtu.be/S7x4DxwRnk4?t=535) A chat with the Liquid AI 350M model runs on the laptop CPU with visible replies.
+- **+** [31:31](https://youtu.be/S7x4DxwRnk4?t=1891) Kokoro speech synthesis plays audibly in the room and a self-contained native binary replays a second voice with no model files.
 - **−** [39:55](https://youtu.be/S7x4DxwRnk4?t=2395) The OpenAI-compatible server starts but the coding agent never connects, and the demo is abandoned.
 
 **Measured 2/2**
@@ -131,11 +131,11 @@ Java developers evaluating local or sovereign AI (regulated industries, offline 
 
 **Depth 2/2**
 
-- **+** [21:56](https://youtu.be/S7x4DxwRnk4?t=1316) The single-thread experiment and the weight-streaming explanation show that prefill beats decode as a caching effect on identical computations.
+- **+** [21:56](https://youtu.be/S7x4DxwRnk4?t=1316) Loading each weight matrix once and multiplying it by all prompt tokens, instead of streaming every weight per token, explains prefill beating decode as a caching effect on identical computations.
 - **+** [26:41](https://youtu.be/S7x4DxwRnk4?t=1601) The native-versus-Vector-API split is justified op by op: only matrix multiplication needs instructions the Vector API cannot express.
 - **+** [29:23](https://youtu.be/S7x4DxwRnk4?t=1763) Tile size, register pressure and compiler spilling explain why the 4x4 kernel regresses on OpenJDK and wins on GraalVM.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
 - **+** [44:50](https://youtu.be/S7x4DxwRnk4?t=2690) The closing slide points to github.com/qxoticai/qxotic and qxotic.ai, which hold the engine, examples and benchmarks.
-- **+** [36:20](https://youtu.be/S7x4DxwRnk4?t=2180) The LangChain4j setup slide names the Maven coordinates and BOM version 0.3.1 needed to try the integration.
+- **·** [36:20](https://youtu.be/S7x4DxwRnk4?t=2180) The BOM version and dependency set are the project's own distribution, which the rubric rates 1; no separate sample project reproducing the talk's examples is offered.

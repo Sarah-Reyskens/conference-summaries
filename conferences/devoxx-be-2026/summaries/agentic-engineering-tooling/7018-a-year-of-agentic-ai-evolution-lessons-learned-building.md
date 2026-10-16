@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=nEW0kosJjc8
 durationMin: 52
 slides: null
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # A Year of Agentic AI Evolution: Lessons Learned Building Production-grade Agentic Systems
@@ -89,33 +90,34 @@ Java developers building or evaluating multi-agent systems on LangChain4j and Qu
 
 ## Verdict
 
-**8/10**: The framework author explains the new planner design with a live end-to-end demo and points to a workshop and docs covering it, but the measurements stay at demo scale and the patterns are not compared in the talk.
+**7/10**: The authors rebuild their agent framework around a pluggable planner, run it live and point to a workshop that reproduces it, while the material is their own project's feature tour, the numbers stay at demo scale and the pattern trade-offs are left to a table.
 
-**Novelty 2/2**
+**Reach segment**: Java teams adding LLM agent features on LangChain4j and Quarkus can put the planner patterns and production controls to use.
 
-- **+** [06:51](https://youtu.be/nEW0kosJjc8?t=411) Fusco says why the planner became pluggable: feedback after last year's session showed everybody has their own coordination need, so he reworked the fixed patterns onto a planner interface that mixes with them.
-- **+** [32:42](https://youtu.be/nEW0kosJjc8?t=1962) Decision-model support was added to LangChain4j the Friday before the talk for a model released one or two weeks earlier, and the routing semantics (one choice question, or one yes/no per agent against a threshold) are shown on screen.
+**Novelty 1/2**
+
+- **+** [15:17](https://youtu.be/nEW0kosJjc8?t=917) The new patterns came from studying agent literature and brainstorming with Claude, though the sources are not named.
+- **+** [33:43](https://youtu.be/nEW0kosJjc8?t=2023) Three decision models (Jev, Leia, Kev) were tried as planners within days of release, and the speaker reports it worked pretty well.
+- **·** [07:56](https://youtu.be/nEW0kosJjc8?t=476) The planner interface and the pattern catalogue are the speakers' own project material, a tour of the LangChain4j agentic API.
 
 **Demonstrated 2/2**
 
 - **+** [23:40](https://youtu.be/nEW0kosJjc8?t=1420) The voting-pattern pipeline runs live: a story is generated, scored by three parallel critics, and revised until it clears the bar.
-- **+** [27:26](https://youtu.be/nEW0kosJjc8?t=1646) The execution view shows the loop iterating three times, with per-agent durations, token counts, inputs, and outputs visible.
-- **−** [34:15](https://youtu.be/nEW0kosJjc8?t=2055) The Jev routing planner is shown as code and screenshots, and the blackboard result at [20:00](https://youtu.be/nEW0kosJjc8?t=1200) as a screenshot; neither is run.
+- **+** [27:26](https://youtu.be/nEW0kosJjc8?t=1646) The execution view shows the review loop iterating three times before it exits.
 
 **Measured 1/2**
 
 - **+** [27:56](https://youtu.be/nEW0kosJjc8?t=1676) The execution view reports per-invocation durations and token counts for the demo run, with no baseline to compare against.
-- **+** [40:58](https://youtu.be/nEW0kosJjc8?t=2458) The Langfuse dashboard prices one agentic run at 4 cents.
-- **−** [44:07](https://youtu.be/nEW0kosJjc8?t=2647) The Quarkus MCP server is claimed fastest behind Rust and ahead of it on latency on a colleague's say-so, with no benchmark numbers or setup shown.
+- **+** [40:58](https://youtu.be/nEW0kosJjc8?t=2458) One agentic run is priced at 4 cents on the Langfuse dashboard.
+- **−** [44:07](https://youtu.be/nEW0kosJjc8?t=2647) The Quarkus MCP server is called fastest behind Rust, and faster on latency, on a colleague's word, with no numbers or setup shown.
 
 **Depth 1/2**
 
-- **+** [09:32](https://youtu.be/nEW0kosJjc8?t=572) The sequential planner is rebuilt method by method on the new interface, and the goal-oriented graph's loop-free limit is worked through to the nested-loop fix at [13:43](https://youtu.be/nEW0kosJjc8?t=823).
+- **+** [13:43](https://youtu.be/nEW0kosJjc8?t=823) Shortest-path traversal in the goal-oriented graph cannot loop, so a loop is nested in place of one node.
 - **+** [30:37](https://youtu.be/nEW0kosJjc8?t=1837) The model-selection strategy is reasoned through: cheap model while far from the quality bar, stronger model when close, with the thresholds stated.
-- **−** [16:51](https://youtu.be/nEW0kosJjc8?t=1011) The table of pros, cons and best-for per pattern is left as a reference ("I don't want to go through this table"), so the talk never weighs the patterns against each other.
+- **−** [16:51](https://youtu.be/nEW0kosJjc8?t=1011) The pros, cons and best-for per pattern are left as a table for reference, so the talk never weighs the patterns against each other.
 
 **Reusable 2/2**
 
-- **+** [50:55](https://youtu.be/nEW0kosJjc8?t=3055) The Quarkus LangChain4j workshop linked at the close runs from one AI service through the agentic patterns to the enterprise features the talk covers.
-- **+** [50:24](https://youtu.be/nEW0kosJjc8?t=3024) The LangChain4j repository and agentic framework docs cover the planner API and patterns shown on screen.
-- **·** [50:24](https://youtu.be/nEW0kosJjc8?t=3024) The voting and model-selection demo code is not among the references.
+- **+** [50:55](https://youtu.be/nEW0kosJjc8?t=3055) The Quarkus LangChain4j workshop runs from one AI service through the agentic patterns to the enterprise features the talk covers.
+- **+** [46:45](https://youtu.be/nEW0kosJjc8?t=2805) The speakers say the workshop demonstrates all the things mentioned in the talk.

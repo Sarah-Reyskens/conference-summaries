@@ -9,10 +9,11 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=QQcsZNf0eWs
 durationMin: 45
 slides: null
-verdict: 8
+verdict: 7
+reach: segment
 frames: 12
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 # CRAcking Compliance - The EU Cyber Resilience Act
 Christian Schabetsberger · Conference · Security, Trust & Compliance
@@ -95,32 +96,34 @@ Five steps: assess risk and document it; track dependencies and keep an SBOM rea
 Engineers and architects whose products sell into the EU and need a first practical map from the CRA to engineering work, especially around SBOMs and dependency management. Viewers already running CRA compliance programs, or seeking legal interpretation rather than engineering practice, can skip it.
 
 ## Verdict
-**8/10**: The speaker's own six-tool SBOM comparison and practitioner guidance carry a clear beginner CRA talk; no tool is run live and no artifact is published.
+**7/10**: A first-hand SBOM tool comparison with a stated setup and reasoned dependency guidance carry a beginner CRA-to-engineering map; the experience is one segment of the talk, nothing runs on screen and no artifact is published.
 
-**Novelty 2/2**
+**Reach segment**: Engineers and architects shipping products with digital elements into the EU can apply the CRA duties and SBOM practice directly; other JVM backend developers take away dependency hygiene.
 
-- **+** [28:29](https://youtu.be/QQcsZNf0eWs?t=1709) Six SBOM tools run against the same empty Angular project report 450, 423, 6, 32, 453 and 555 components, with each discrepancy explained.
-- **+** [26:56](https://youtu.be/QQcsZNf0eWs?t=1616) A customer .NET project shows the GitHub dependency graph producing a wrong SBOM through missed transitive dependencies and Central Package Management.
+**Novelty 1/2**
+
+- **+** [26:56](https://youtu.be/QQcsZNf0eWs?t=1616) A customer .NET project shows the GitHub dependency graph silently producing a wrong SBOM, through missed transitive dependencies and no support for Central Package Management.
+- **+** [41:30](https://youtu.be/QQcsZNf0eWs?t=2490) The speaker inlined the two classes his team used from a dependency unmaintained for seven years, after checking its license.
+- **−** The CRA obligations, deadlines and ENISA reporting steps follow the regulation text and ENISA's single reporting platform FAQ, and the risk-assessment method is Adam Shostack's published four questions plus STRIDE.
 
 **Demonstrated 1/2**
 
-- **+** [30:20](https://youtu.be/QQcsZNf0eWs?t=1820) The SBOM comparison table shows the actual component counts each of the six tools produced on screen.
-- **+** [21:11](https://youtu.be/QQcsZNf0eWs?t=1271) The slide of the ENISA single reporting platform accompanies the speaker's walk-through of how a vulnerability notification is submitted.
-- **−** [25:21](https://youtu.be/QQcsZNf0eWs?t=1521) The tooling survey names a dozen scanners and generators but none is run live or shown executing.
+- **·** [25:21](https://youtu.be/QQcsZNf0eWs?t=1521) The tooling survey names a dozen SBOM generators and scanners without running any; the talk is a CRA-to-practice overview with no demo slot, and its tool results appear only as the table counted under Measured.
 
 **Measured 2/2**
 
-- **+** [28:29](https://youtu.be/QQcsZNf0eWs?t=1709) The six-tool comparison states its method (same empty Angular project, local runs except the server-side GitHub graph) and reports exact counts per tool.
-- **+** [29:40](https://youtu.be/QQcsZNf0eWs?t=1780) The slide table breaks the counts down per tool so the disagreement is quantified, not asserted.
-- **−** [34:46](https://youtu.be/QQcsZNf0eWs?t=2086) The speaker concedes long-term data across stacks is missing, so the numbers rest on one small experiment.
+- **+** [28:29](https://youtu.be/QQcsZNf0eWs?t=1709) Six SBOM tools run against the same empty Angular project report 450, 423, 6, 32, 453 and 555 components, with each discrepancy explained.
+- **+** [30:07](https://youtu.be/QQcsZNf0eWs?t=1807) The method is disclosed: all runs were local except the GitHub dependency graph, which counted optional dependencies for every operating system.
+- **−** [34:46](https://youtu.be/QQcsZNf0eWs?t=2086) The speaker concedes long-term data is missing, so the numbers rest on one small experiment.
 
 **Depth 2/2**
 
-- **+** [15:01](https://youtu.be/QQcsZNf0eWs?t=901) The four threat-modeling questions plus STRIDE give beginners a working method for the legally required risk assessment.
-- **+** [23:47](https://youtu.be/QQcsZNf0eWs?t=1427) The dependency-scope discussion weighs transitive and dev-only inclusion against strict legal minimums and tooling reality.
-- **+** [39:23](https://youtu.be/QQcsZNf0eWs?t=2363) Update automation covers grouped updates, merge delays and major-versus-minor handling with configuration values.
+- **+** [23:47](https://youtu.be/QQcsZNf0eWs?t=1427) The dependency-scope discussion weighs transitive and dev-only inclusion against the strict legal minimum and what tooling can gather.
+- **+** [36:18](https://youtu.be/QQcsZNf0eWs?t=2178) Dependency debt is argued to grow exponentially, while maintainers owe no security fixes and manufacturers now owe patches, so staying near the latest version is the default.
+- **+** [39:23](https://youtu.be/QQcsZNf0eWs?t=2363) Update automation covers grouped updates, a 24-hour merge delay against compromised releases (GitHub moved to 72), and separate major and minor handling.
 
 **Reusable 1/2**
 
-- **+** [39:23](https://youtu.be/QQcsZNf0eWs?t=2363) Renovate and Dependabot practices are specified enough to reconstruct: grouping, 24-hour delay, security-only PRs.
-- **−** [44:35](https://youtu.be/QQcsZNf0eWs?t=2675) The closing shares contact details but points to no repository, checklist or sample configuration covering the talk's content.
+- **+** [38:21](https://youtu.be/QQcsZNf0eWs?t=2301) Renovate and Dependabot behaviour (branch, version bump, pull request with release notes, optional auto-merge for patches) is specified enough to reconstruct.
+- **−** [33:43](https://youtu.be/QQcsZNf0eWs?t=2023) The SPDX-to-CycloneDX converter written for Dependency-Track is described but not published.
+- **−** [44:35](https://youtu.be/QQcsZNf0eWs?t=2675) The closing gives contact details but points to no repository, checklist or sample configuration.

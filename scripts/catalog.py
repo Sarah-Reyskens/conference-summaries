@@ -12,16 +12,19 @@ summaries/INDEX.md.
 Usage (from the repo root):
   uv run scripts/catalog.py build  <slug>
   uv run scripts/catalog.py status <slug>
-  uv run scripts/catalog.py next   <slug> [--limit N]
   uv run scripts/catalog.py show   <slug> <talk-id | title fragment>
+  uv run scripts/catalog.py next   <slug> [--limit N] [--rescore]   # --rescore: summarized talks without a reach
   uv run scripts/catalog.py path   <slug> <talk-id>          # where the talk's summary belongs
   uv run scripts/catalog.py find   <slug> [--text T ...] [--track T] [--type T] [--level L]
                                    [--min-minutes N] [--max-minutes N] [--min-verdict N] [--min-favourites N]
                                    [--min-novelty N] [--min-demonstrated N] [--min-measured N] [--min-depth N] [--min-reusable N]
-                                   [--day D ...] [--sort relevance|time|favourites|verdict|<criterion>] [--status S]
+                                   [--reach R ...] [--tier T ...] [--day D ...]
+                                   [--sort relevance|time|favourites|rating|verdict|<criterion>] [--status S]
   uv run scripts/catalog.py index  <slug>
   uv run scripts/catalog.py set    <slug> <talk-id> --status S [--summary P] [--transcript P] [--slides URL|none]
-                                   [--scores NOV DEM MEA DEP REU] [--error MSG]
+                                   [--scores NOV DEM MEA DEP REU --reach niche|segment|broad] [--error MSG]
+
+Tiers and ratings are written by scripts/rank.py, through this script's locked writer.
 """
 
 from __future__ import annotations
@@ -50,6 +53,11 @@ REMATCHABLE = {"excluded", "no-video", "needs-review"}
 MAX_ATTEMPTS = 3
 # Verdict criteria, in the order of SUMMARY-FORMAT.md; each 0-2, the verdict is their sum.
 CRITERIA = ("novelty", "demonstrated", "measured", "depth", "reusable")
+# Who in the conference's audience can use a talk's main content (SUMMARY-FORMAT.md, "Reach").
+REACH = ("niche", "segment", "broad")
+# Ranking tiers, best first, with the share of ranked talks each takes (scripts/rank.py assigns them).
+TIERS = (("must-watch", 0.05), ("recommended", 0.15), ("if-relevant", 0.40), ("low-priority", 0.40))
+TIER_NAMES = tuple(name for name, _ in TIERS)
 
 
 def now() -> str:
@@ -205,7 +213,8 @@ def cmd_build(args) -> None:
         for f in fresh:
             prev = old.get(f["id"], {})
             t = {**f}
-            for k in ("status", "video", "candidate", "transcriptPath", "summaryPath", "slides", "verdict", "scores", "attempts", "error", "updatedAt"):
+            for k in ("status", "video", "candidate", "transcriptPath", "summaryPath", "slides", "verdict", "scores",
+                      "reach", "rating", "tier", "attempts", "error", "updatedAt"):
                 t[k] = prev.get(k)
             t["attempts"] = t["attempts"] or 0
             talks.append(t)
@@ -287,8 +296,11 @@ def cmd_status(args) -> None:
 
 def cmd_next(args) -> None:
     talks = read_catalog(args.slug)["talks"]
-    queue = [t for t in talks if t["status"] == "matched"]
-    queue += [t for t in talks if t["status"] == "failed" and t["attempts"] < MAX_ATTEMPTS]
+    if args.rescore:
+        queue = [t for t in talks if t["status"] == "summarized" and not t.get("reach")]
+    else:
+        queue = [t for t in talks if t["status"] == "matched"]
+        queue += [t for t in talks if t["status"] == "failed" and t["attempts"] < MAX_ATTEMPTS]
     print(json.dumps([{"id": t["id"], "title": t["title"], "status": t["status"], "attempts": t["attempts"]}
                       for t in queue[: args.limit]], indent=2, ensure_ascii=False))
 
@@ -307,6 +319,8 @@ def cmd_show(args) -> None:
 
 
 def cmd_set(args) -> None:
+    if (args.scores is None) != (args.reach is None):
+        sys.exit("--scores and --reach go together: a verdict is its five criteria plus its reach")
     with locked_catalog(args.slug) as cat:
         t = next((t for t in cat["talks"] if t["id"] == args.talk), None)
         if t is None:
@@ -321,15 +335,17 @@ def cmd_set(args) -> None:
         if args.scores is not None:
             t["scores"] = dict(zip(CRITERIA, args.scores))
             t["verdict"] = sum(args.scores)
+            t["reach"] = args.reach
         if args.status != "summarized":
-            t["verdict"] = t["scores"] = None  # a verdict belongs to a summary
+            # a verdict, reach and ranking belong to a summary
+            t["verdict"] = t["scores"] = t["reach"] = t["rating"] = t["tier"] = None
         if args.status == "failed":
             t["attempts"] = (t["attempts"] or 0) + 1
             t["error"] = args.error or "unspecified"
         else:
             t["error"] = args.error
         t["updatedAt"] = now()
-    print(json.dumps({k: t.get(k) for k in ("id", "status", "attempts", "summaryPath", "slides", "verdict", "scores", "error")}, ensure_ascii=False))
+    print(json.dumps({k: t.get(k) for k in ("id", "status", "attempts", "summaryPath", "slides", "verdict", "scores", "reach", "tier", "error")}, ensure_ascii=False))
 
 
 # ---------------------------------------------------------------- summary paths, index, search
@@ -379,33 +395,55 @@ def anchor(heading: str) -> str:
     return re.sub(r"[^\w\- ]", "", heading.lower()).replace(" ", "-")
 
 
+def rank_key(t: dict) -> tuple:
+    """Best first: tier, then ranking rating, then verdict; unranked talks after every tier."""
+    tier = TIER_NAMES.index(t["tier"]) if t.get("tier") in TIER_NAMES else len(TIER_NAMES)
+    return tier, -(t.get("rating") or 0.0), -(t.get("verdict") or 0), t["title"]
+
+
+def index_rows(slug: str, talks: list[dict]) -> list[str]:
+    lines = ["| Tier | Verdict | Reach | Talk | Speakers | When | Type | Min | Level | Favs | Slides |",
+             "|---|---|---|---|---|---|---|---|---|---|---|"]
+    for t in talks:
+        rel = Path(t["summaryPath"]).relative_to(f"conferences/{slug}/summaries").as_posix()
+        title = t["title"].replace("|", "\\|")
+        slides = f"[deck]({t['slides']})" if t.get("slides") else ""
+        verdict = "" if t.get("verdict") is None else t["verdict"]
+        lines.append(f"| {t.get('tier') or ''} | {verdict} | {t.get('reach') or ''} | [{title}]({rel}) | {', '.join(t['speakers'])} "
+                     f"| {when(t)} | {t['sessionType']} | {minutes(t) or ''} | {(t.get('audienceLevel') or '').title()} "
+                     f"| {t.get('favourites') or ''} | {slides} |")
+    return lines + [""]
+
+
 def write_index(slug: str, cat: dict) -> None:
-    """Regenerate summaries/INDEX.md: summarized talks grouped by track, best verdict first."""
+    """Regenerate summaries/INDEX.md: top picks across tracks, then summarized talks by track, best ranked first."""
     sdir = conf_dir(slug) / "summaries"
     sdir.mkdir(exist_ok=True)
     eligible = [t for t in cat["talks"] if t["status"] != "excluded"]
-    done = [t for t in eligible if t["status"] == "summarized" and t.get("summaryPath")]
+    done = sorted((t for t in eligible if t["status"] == "summarized" and t.get("summaryPath")), key=rank_key)
+    picks = [t for t in done if t.get("tier") in TIER_NAMES[:2]]
     tracks = sorted({t["track"] or "Other" for t in eligible})
+    picks_heading = f"{TIER_NAMES[0].capitalize()} and {TIER_NAMES[1]}"
+    toc = [f"[{picks_heading}](#{anchor(picks_heading)}) ({len(picks)})"] if picks else []
+    toc += [f"[{tr}](#{anchor(tr)}) ({sum(1 for t in done if (t['track'] or 'Other') == tr)})" for tr in tracks]
     lines = [f"# {load_conf(slug)['name']}: talk summaries", "",
              f"{len(done)} of {len(eligible)} talks summarized. Generated by `scripts/catalog.py` on every catalog write; edits here are overwritten.", "",
-             " · ".join(f"[{tr}](#{anchor(tr)}) ({sum(1 for t in done if (t['track'] or 'Other') == tr)})" for tr in tracks), ""]
+             " · ".join(toc), ""]
+    if picks:
+        lines += [f"## {picks_heading}", "",
+                  "Across all tracks, from the ranking of every summarized talk by its worth to this conference's audience.", ""]
+        lines += index_rows(slug, picks)
     for tr in tracks:
         in_track = [t for t in eligible if (t["track"] or "Other") == tr]
-        rows = sorted((t for t in done if (t["track"] or "Other") == tr), key=lambda t: (-(t.get("verdict") or 0), t["title"]))
+        rows = [t for t in done if (t["track"] or "Other") == tr]
         lines += [f"## {tr}", "", f"{len(rows)} of {len(in_track)} talks summarized.", ""]
         if rows:
-            lines += ["| Verdict | Talk | Speakers | When | Type | Min | Level | Favs | Slides |",
-                      "|---|---|---|---|---|---|---|---|---|"]
-            for t in rows:
-                rel = Path(t["summaryPath"]).relative_to(f"conferences/{slug}/summaries").as_posix()
-                title = t["title"].replace("|", "\\|")
-                slides = f"[deck]({t['slides']})" if t.get("slides") else ""
-                verdict = "" if t.get("verdict") is None else t["verdict"]
-                lines.append(f"| {verdict} | [{title}]({rel}) | {', '.join(t['speakers'])} | {when(t)} "
-                             f"| {t['sessionType']} | {minutes(t) or ''} | {(t.get('audienceLevel') or '').title()} "
-                             f"| {t.get('favourites') or ''} | {slides} |")
-            lines.append("")
-    lines += ["*Favs*: attendees who bookmarked the talk in the conference schedule (interest before the talk, not a rating).", ""]
+            lines += index_rows(slug, rows)
+    lines += ["*Tier*: the talk's place in a ranking of all summarized talks by how much watching it is worth to this conference's "
+              "audience (" + ", ".join(f"{name} {round(share * 100)}%" for name, share in TIERS) + " of ranked talks). "
+              "*Verdict*: the talk's quality for its subject, 0–10. "
+              "*Reach*: how much of the audience can use its main content (niche, segment, broad). "
+              "*Favs*: attendees who bookmarked the talk in the conference schedule (interest before the talk, not a rating).", ""]
     (sdir / "INDEX.md").write_text("\n".join(lines))
 
 
@@ -443,6 +481,8 @@ def cmd_find(args) -> None:
                 or args.max_minutes and (mins or 10**6) > args.max_minutes
                 or args.min_verdict is not None and (t.get("verdict") or 0) < args.min_verdict
                 or args.min_favourites and (t.get("favourites") or 0) < args.min_favourites
+                or args.reach and t.get("reach") not in args.reach
+                or args.tier and t.get("tier") not in args.tier
                 or args.day and not any(on_day(t, d) for d in args.day)
                 or any(getattr(args, f"min_{c}") is not None and (t.get("scores") or {}).get(c, 0) < getattr(args, f"min_{c}")
                        for c in CRITERIA)):
@@ -457,13 +497,15 @@ def cmd_find(args) -> None:
         hits.append({"id": t["id"], "title": t["title"], "speakers": t["speakers"], "track": t["track"],
                      "sessionType": t["sessionType"], "minutes": mins, "level": t.get("audienceLevel"),
                      "when": when(t), "start": t.get("start"), "favourites": t.get("favourites"),
-                     "verdict": t.get("verdict"), "scores": t.get("scores"), "summarized": bool(summarized), "summaryPath": t.get("summaryPath"),
+                     "verdict": t.get("verdict"), "scores": t.get("scores"), "reach": t.get("reach"),
+                     "tier": t.get("tier"), "rating": t.get("rating"), "summarized": bool(summarized), "summaryPath": t.get("summaryPath"),
                      "slides": t.get("slides"), "video": (t.get("video") or {}).get("url"),
                      "keywords": t.get("keywords"), "matched": matched, "brief": brief[:500]})
     orders = {
-        "relevance": lambda h: (-len(h["matched"]), -(h["verdict"] or 0), -(h["favourites"] or 0), h["title"]),
+        "relevance": lambda h: (-len(h["matched"]), *rank_key(h)[:3], -(h["favourites"] or 0), h["title"]),
         "time": lambda h: (h["start"] or "9999", h["title"]),
         "favourites": lambda h: (-(h["favourites"] or 0), h["title"]),
+        "rating": lambda h: (*rank_key(h)[:3], -(h["favourites"] or 0), h["title"]),
         "verdict": lambda h: (-(h["verdict"] or 0), -(h["favourites"] or 0), h["title"]),
         **{c: (lambda c: lambda h: (-(h["scores"] or {}).get(c, -1), -(h["verdict"] or 0), h["title"]))(c) for c in CRITERIA},
     }
@@ -476,7 +518,8 @@ def main() -> None:
     sub = p.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("build"); b.add_argument("slug"); b.set_defaults(fn=cmd_build)
     s = sub.add_parser("status"); s.add_argument("slug"); s.add_argument("--detail", action="store_true"); s.set_defaults(fn=cmd_status)
-    n = sub.add_parser("next"); n.add_argument("slug"); n.add_argument("--limit", type=int, default=10); n.set_defaults(fn=cmd_next)
+    n = sub.add_parser("next"); n.add_argument("slug"); n.add_argument("--limit", type=int, default=10)
+    n.add_argument("--rescore", action="store_true", help="summarized talks whose verdict predates reach"); n.set_defaults(fn=cmd_next)
     sh = sub.add_parser("show"); sh.add_argument("slug"); sh.add_argument("talk"); sh.set_defaults(fn=cmd_show)
     pa = sub.add_parser("path"); pa.add_argument("slug"); pa.add_argument("talk"); pa.set_defaults(fn=cmd_path)
     ix = sub.add_parser("index"); ix.add_argument("slug"); ix.set_defaults(fn=cmd_index)
@@ -489,8 +532,10 @@ def main() -> None:
     f.add_argument("--min-favourites", type=int, help="schedule bookmarks (interest, not a rating)")
     for c in CRITERIA:
         f.add_argument(f"--min-{c}", type=int, choices=range(0, 3), metavar="0-2", help=f"verdict criterion {c}")
+    f.add_argument("--reach", action="append", choices=REACH, help="repeatable; any matches")
+    f.add_argument("--tier", action="append", choices=TIER_NAMES, help="ranking tier; repeatable, any matches")
     f.add_argument("--day", action="append", default=[], help="weekday (mon, tuesday) or YYYY-MM-DD, local time; repeatable")
-    f.add_argument("--sort", choices=["relevance", "time", "favourites", "verdict", *CRITERIA], default="relevance")
+    f.add_argument("--sort", choices=["relevance", "time", "favourites", "rating", "verdict", *CRITERIA], default="relevance")
     f.add_argument("--status", choices=["any", "summarized", "unsummarized"], default="any")
     f.add_argument("--limit", type=int, default=30)
     f.set_defaults(fn=cmd_find)
@@ -499,6 +544,7 @@ def main() -> None:
     st.add_argument("--summary"); st.add_argument("--transcript"); st.add_argument("--slides")
     st.add_argument("--scores", type=int, nargs=5, choices=range(0, 3), metavar=tuple(c[:3].upper() for c in CRITERIA),
                     help="verdict criteria 0-2 in order " + " ".join(CRITERIA) + "; the verdict is their sum")
+    st.add_argument("--reach", choices=REACH, help="who in the conference audience can use the talk; required with --scores")
     st.add_argument("--error")
     st.set_defaults(fn=cmd_set)
     args = p.parse_args()

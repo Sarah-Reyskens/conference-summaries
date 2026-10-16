@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=aup9tNzQu7c
 durationMin: 26
 slides: null
 verdict: 5
+reach: broad
 frames: 7
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Welcome to Devoxx
@@ -68,33 +69,34 @@ Janssen plugs the Robot Games lunch talk (9 AI-built open-source games, Thursday
 Attendees and remote viewers who want the conference theme and Janssen's read on where agent engineering is heading, plus a genuinely live multi-agent demo. Viewers wanting depth should skip to the follow-up sessions instead: the Friday groma.md talk, the robot-programming lunch talk, Rod Johnson on Embabel, or the Java track talks.
 
 ## Verdict
-**5/10**: The lifecycle map, his own practice and an author-led live demo carry the builders thesis, but the demo stops with two agents still running, the numbers have no method and most of the survey is relayed news.
+**5/10**: Personal experience gives the builders theme substance and the live architecture map shows agent work in progress, while costs remain anecdotal and the explanations are introductory.
+
+**Reach broad**: AI-assisted development, token budgets and supervising coding agents apply to most of this conference's developers, leads and architects.
 
 **Novelty 1/2**
 
-- **+** [12:19](https://youtu.be/aup9tNzQu7c?t=739) The nine-stage 2020-2029 lifecycle map puts the industry at stage 6, with most companies at stage 3 from his company workshops.
-- **+** [14:26](https://youtu.be/aup9tNzQu7c?t=866) Writing no code since July 2025 and building pet projects in a weekend with coding agents comes from his own practice.
-- **−** The stage ladder up to harness engineering ([09:12](https://youtu.be/aup9tNzQu7c?t=552)) and the relayed releases (the decision API at [10:15](https://youtu.be/aup9tNzQu7c?t=615), Mistral 4 at [17:00](https://youtu.be/aup9tNzQu7c?t=1020)) are what a search on harness engineering and this week's releases already returns, e.g. Faros's "Harness Engineering: A Guide to AI Coding Agents".
+- **+** [07:06](https://youtu.be/aup9tNzQu7c?t=426) Building and deploying his non-developer son's wine site gives the builders theme a personal example beyond a feature tour.
+- **+** [18:02](https://youtu.be/aup9tNzQu7c?t=1082) His move from IDE-based development to several coding CLIs while retaining IntelliJ for review adds his own working practice to the trend survey.
+- **·** [12:19](https://youtu.be/aup9tNzQu7c?t=739) The lifecycle survey mentions his company-workshop experience only briefly, with no cases of what failed and changed.
 
 **Demonstrated 1/2**
 
-- **+** [22:11](https://youtu.be/aup9tNzQu7c?t=1331) Four of six backlog tasks finish live on the map with acceptance criteria ticked and code review attached, and the diff at [22:42](https://youtu.be/aup9tNzQu7c?t=1362) lists removed, modified and added components.
-- **−** [22:42](https://youtu.be/aup9tNzQu7c?t=1362) Two agents are still working when the demo moves to the diff, so the six-task run never completes on screen.
-- **−** [11:48](https://youtu.be/aup9tNzQu7c?t=708) Turning a Java application into Rust "in a minute" is stated from stage and never shown.
+- **+** [21:40](https://youtu.be/aup9tNzQu7c?t=1300) The live groma.md run displays agent task progress, acceptance criteria and an attached code review.
+- **+** [22:42](https://youtu.be/aup9tNzQu7c?t=1362) The architecture diff visibly distinguishes removed, modified and added components.
+- **−** [22:11](https://youtu.be/aup9tNzQu7c?t=1331) Four of six tasks are finished when the presentation moves on, so the whole job is not shown completing.
 
 **Measured 1/2**
 
-- **+** [24:16](https://youtu.be/aup9tNzQu7c?t=1456) The $60 rehearsal and the over-$100 live run are quoted against an estimated five days of manual work.
-- **−** [15:27](https://youtu.be/aup9tNzQu7c?t=927) AMD's 1,400 tokens per second from weights burned into silicon is a vendor figure with no baseline or method.
-- **−** [09:43](https://youtu.be/aup9tNzQu7c?t=583) A 500-euro token bill in one hour is a self-reported anecdote, and the hardware prices at [17:00](https://youtu.be/aup9tNzQu7c?t=1020) are price points, not benchmarks.
+- **+** [23:45](https://youtu.be/aup9tNzQu7c?t=1425) The rehearsal run has a reported cost of $60, giving the token-economics warning a real expenditure figure.
+- **−** [24:16](https://youtu.be/aup9tNzQu7c?t=1456) The live-run cost and five-day manual-effort comparison are estimates, without a measured manual baseline or a stated costing method.
 
 **Depth 1/2**
 
-- **+** [21:40](https://youtu.be/aup9tNzQu7c?t=1300) Opening a task shows its acceptance criteria and code review, then switching to the architecture diff at [22:42](https://youtu.be/aup9tNzQu7c?t=1362) shows added, modified and removed components.
-- **−** [18:33](https://youtu.be/aup9tNzQu7c?t=1113) Spec-driven development gets one line of reasons ("traceability, deterministic workflows") and no account of how it delivers them.
-- **−** [14:26](https://youtu.be/aup9tNzQu7c?t=866) The local-model alternative to subsidized subscriptions is asserted in a line ("one year behind the frontier models") with a Qwen 3.8 orchestrator pick at [14:56](https://youtu.be/aup9tNzQu7c?t=896), and no cost or capability comparison is weighed.
+- **+** [10:46](https://youtu.be/aup9tNzQu7c?t=646) Decision APIs receive a short explanation of constrained responses and probabilities, tied to tool selection and disruptive-call checks.
+- **+** [23:14](https://youtu.be/aup9tNzQu7c?t=1394) Language-specific scanners explain how the architecture tool can work deterministically and offline.
+- **·** [09:12](https://youtu.be/aup9tNzQu7c?t=552) The progression from prompting to context and agent tools supplies introductory orientation, with little discussion of how to choose among the approaches.
 
 **Reusable 1/2**
 
-- **+** [23:45](https://youtu.be/aup9tNzQu7c?t=1425) The groma.md tool behind the demo is open source (MIT) with backlog.md as its spec and task companion, and the demo's setup and offline path with local models ([23:14](https://youtu.be/aup9tNzQu7c?t=1394)) can be reproduced today.
-- **−** [24:48](https://youtu.be/aup9tNzQu7c?t=1488) The repositories cover the demo half; the trend survey ships no sample, configuration or checklist to take away.
+- **+** [25:19](https://youtu.be/aup9tNzQu7c?t=1519) The architecture tool is available as an MIT-licensed project that viewers can clone and fork.
+- **·** [17:31](https://youtu.be/aup9tNzQu7c?t=1051) DevoxxGenie is another presented project, so its distribution is a tool to try rather than an artifact reproducing the keynote's examples.

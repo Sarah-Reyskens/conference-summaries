@@ -10,11 +10,10 @@ video: https://www.youtube.com/watch?v=mebPFAKSpzw
 durationMin: 32
 slides: https://jamesward.github.io/exquisite_evals/
 verdict: 9
+reach: segment
+reviewedAt: 2026-10-16
 frames: 11
-summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
 ---
-
 # Exquisite Evals for Skills & MCPs
 Christian Tzolov, James Ward · Tools-in-Action · Development Practices
 Slides: https://jamesward.github.io/exquisite_evals/
@@ -77,31 +76,34 @@ The Spring AI Inspector replays runs as sequence diagrams with per-call LLM traf
 Builders of MCP servers, agent skills, or tool-using agents who want a concrete task/arm/judge pattern with real numbers and failure modes. Skip it if you already run graded eval harnesses with transcript review; the framework half will be familiar and only the javadocs.dev case study adds something.
 
 ## Verdict
-**9/10**: First-hand before/after eval comparison with published code and results, limited by single-trial cells and a partial replay of the evaluation workflow.
+**9/10**: A before/after eval case study with arms compared on three judges, whose rerun exposes the speakers' own reference-answer bias and is published as a repository; the full improvement loop is only partly shown and each cell is a single trial.
+
+**Reach segment**: Attendees adding LLM features or building MCP servers and agent skills can lift the task/arm/judge pattern into their own eval work within the year.
 
 **Novelty 2/2**
 
-- **+** [22:24](https://youtu.be/mebPFAKSpzw?t=1344) The baseline table reports the speaker's own head-to-head run: MCP 3/4 correct at 254k tokens against shell, web and base arms on three judges.
-- **+** [24:58](https://youtu.be/mebPFAKSpzw?t=1498) Tool-call transcripts surfaced the "what does latest mean" finding: the last-published entry served as latest release, milestones included.
+- **+** [24:27](https://youtu.be/mebPFAKSpzw?t=1467) Ward fed the full tool-call transcripts to a coding assistant, deployed the server fixes it proposed and reran the eval, an account of the speakers' own attempted improvement that a tour of eval APIs does not give.
+- **+** [27:30](https://youtu.be/mebPFAKSpzw?t=1650) The corrective server change exposed an eval that rewarded the old milestone-as-latest behavior, so the fixed server scored worse on that task because the reference was biased.
 
 **Demonstrated 1/2**
 
 - **+** [18:46](https://youtu.be/mebPFAKSpzw?t=1126) The MCP server answers a live version query about a week-old library in claude.ai and then summarizes its classes on screen.
 - **+** [31:09](https://youtu.be/mebPFAKSpzw?t=1869) A replay of an actual run in the Inspector shows a Jev verdict with per-question scores on one of the eval answers.
-- **−** [29:35](https://youtu.be/mebPFAKSpzw?t=1775) The Inspector walkthrough shows run traffic and a judge result, but does not replay the complete before/change/after evaluation workflow presented in the comparison tables.
+- **·** [29:35](https://youtu.be/mebPFAKSpzw?t=1775) The speakers do not run the eval live because the suite takes about 30 minutes, so the task-to-judges-to-server-fix loop is shown only through the replay.
 
 **Measured 2/2**
 
-- **+** [22:24](https://youtu.be/mebPFAKSpzw?t=1344) The baseline compares four arms on three judges with total tokens and average time, under a fixed model, system prompt and turn budget.
-- **+** [26:29](https://youtu.be/mebPFAKSpzw?t=1589) After the server changes, the same setup re-runs to MCP at 2/4 with 564k tokens and per-task token deltas.
-- **−** [27:00](https://youtu.be/mebPFAKSpzw?t=1620) Each cell is a single trial, which the speaker calls a bad idea, and the untouched shell arm moved anyway.
+- **+** [22:24](https://youtu.be/mebPFAKSpzw?t=1344) The baseline compares four arms on three judges with total tokens and average time (MCP 3/4 at 254k tokens, shell 1/4 at 812k), under a fixed model, system prompt and turn budget.
+- **+** [26:29](https://youtu.be/mebPFAKSpzw?t=1589) After the server changes the same setup reruns to MCP at 2/4 with 564k tokens, with per-task token deltas and five extra hosted-tool trials.
+- **−** [27:00](https://youtu.be/mebPFAKSpzw?t=1620) Each cell is a single trial, which Ward calls a bad idea, and the untouched shell arm moved anyway.
 
 **Depth 2/2**
 
-- **+** [12:34](https://youtu.be/mebPFAKSpzw?t=754) The judge kinds are weighed against each other on cost, determinism, parallel questions and general knowledge, with a failing "plausible temperature" example for the small models.
-- **+** [27:30](https://youtu.be/mebPFAKSpzw?t=1650) Their aggregate regression traces to eval bias: the task encoded the old milestone-as-latest behavior, a choice the server had made for the user.
+- **+** [12:34](https://youtu.be/mebPFAKSpzw?t=754) The speakers weigh generative judges against decision models through output structure, nondeterminism, parallel questions and confidence values, explaining why each fits a different kind of check.
+- **+** [15:13](https://youtu.be/mebPFAKSpzw?t=913) Their weather-check example explains why a decision judge needs sufficient context instead of an assumed store of general knowledge.
+- **+** [10:26](https://youtu.be/mebPFAKSpzw?t=626) The harness walkthrough connects the Spring AI chat client, tool-calling advisors, token instrumentation and execution budgets to the controlled arms.
 
 **Reusable 2/2**
 
-- **+** [31:39](https://youtu.be/mebPFAKSpzw?t=1899) The closing links point to github.com/jamesward/exquisite_evals with the eval code, results and slides.
-- **+** [31:39](https://youtu.be/mebPFAKSpzw?t=1899) Tzolov's repository holds the Spring AI Inspector used to replay runs, named at the close.
+- **+** [31:39](https://youtu.be/mebPFAKSpzw?t=1899) The closing points to github.com/jamesward/exquisite_evals, which holds the eval code and results that reproduce the experiment.
+- **·** [31:39](https://youtu.be/mebPFAKSpzw?t=1899) The Spring AI Inspector used to replay runs lives in Tzolov's multi-demo voxxeddays2026-demo repository rather than a standalone sample.

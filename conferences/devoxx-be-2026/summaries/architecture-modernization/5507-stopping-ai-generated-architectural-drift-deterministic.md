@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=K3kD89Y1YCk
 durationMin: 24
 slides: null
 verdict: 7
+reach: broad
 frames: 7
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
----
+reviewedAt: 2026-10-16
 
 # Stopping AI-Generated Architectural Drift: Deterministic Guardrails for Agentic Coding
 
@@ -66,33 +66,33 @@ Teams merging AI-generated code into a Java codebase who want architecture enfor
 
 ## Verdict
 
-**7/10**: Live demos of agents self-correcting against ArchUnit build checks, explained with a clear model of what each tool sees and what the checks cost; most of the material is in the ArchUnit docs, the numbers stay anecdotal and no repository is published.
+**7/10**: The agent-to-build feedback loop is shown working and the choice of tool and the trade-offs are explained for the short slot; outcome numbers are anecdotal and no sample project or rule set is published.
+
+**Reach broad**: Build-enforced architecture rules and feedback for AI-assisted coding are practices most of the conference's JVM developers and architects can apply.
 
 **Novelty 1/2**
 
-- **+** [12:04](https://youtu.be/K3kD89Y1YCk?t=724) Architectural mutation testing of the rule set, with named operators such as relabel, retarget and inversion, is presented as the team's own practice.
-- **+** [01:34](https://youtu.be/K3kD89Y1YCk?t=94) The four guardrail properties (executable, deterministic, quick and cheap, debuggable) come from the team's experience merging AI-assisted pull requests.
-- **−** The ArchUnit User Guide (https://www.archunit.org/userguide/html/000_Index.html) already covers the fluent rule API, JUnit integration and "Freezing Arch Rules", which are the core of the demos and the rollout advice.
+- **+** [18:29](https://youtu.be/K3kD89Y1YCk?t=1109) The team's rule backlog grows from recurring pull-request review comments, giving viewers an experience-based way to choose which agent failures deserve enforcement.
+- **+** [16:54](https://youtu.be/K3kD89Y1YCk?t=1014) The team's unsuccessful attempts to control growing comment volume through prose rules and agent memory add a specific adoption experience to the established tools.
 
 **Demonstrated 2/2**
 
-- **+** [05:44](https://youtu.be/K3kD89Y1YCk?t=344) The ArchUnit rule runs live as a JUnit test and the failing output shows the reason and violation locations the agent reads.
-- **+** [08:56](https://youtu.be/K3kD89Y1YCk?t=536) Asked to add a cancel-policy endpoint, the agent converts the service-based feature to the mediator pattern until the tests are green.
-- **−** [13:40](https://youtu.be/K3kD89Y1YCk?t=820) The mutation-testing run is not shown; only artifacts from a previous run appear, including a surviving mutant that injects a repository directly into a controller.
+- **+** [08:40](https://youtu.be/K3kD89Y1YCk?t=520) The agent's terminal output identifies architectural test failures and starts converting service-based code to mediator handlers.
+- **+** [09:05](https://youtu.be/K3kD89Y1YCk?t=545) The completed run reports passing architecture tests and lists the service deletion and mediator conversion that resolved the violations.
+- **−** [13:40](https://youtu.be/K3kD89Y1YCk?t=820) Architectural mutation testing is represented by artifacts from an earlier run rather than the running loop.
 
 **Measured 1/2**
 
-- **+** [00:32](https://youtu.be/K3kD89Y1YCk?t=32) The three-PR clock example reports one `Instant.now()` violation in three runs with the same task, rules and agent.
-- **−** [01:04](https://youtu.be/K3kD89Y1YCk?t=64) "Hundreds of AI-assisted pull requests every week" is a self-reported total with no baseline.
-- **−** [02:04](https://youtu.be/K3kD89Y1YCk?t=124) The "few seconds at most" build budget is stated as a requirement and never measured against a baseline.
+- **+** [00:32](https://youtu.be/K3kD89Y1YCk?t=32) The opening reports one clock-rule violation across three pull requests made with the same agent, task and rules.
+- **−** [01:04](https://youtu.be/K3kD89Y1YCk?t=64) The team's hundreds of AI-assisted pull requests per week provide scale context but no measured before-and-after drift reduction.
 
 **Depth 2/2**
 
-- **+** [03:39](https://youtu.be/K3kD89Y1YCk?t=219) Tools are chosen by what each can see: Checkstyle the source text, ArchUnit compiled classes and their relationships, Error Prone types and method bodies inside the compiler.
-- **+** [13:07](https://youtu.be/K3kD89Y1YCk?t=787) Relabel and retarget are explained by the blind spots they probe: over-reliance on names and sneaky alternative dependency paths.
-- **+** [19:01](https://youtu.be/K3kD89Y1YCk?t=1141) The close weighs the costs: rules that are too strict, longer builds and more agent iterations, and rules better left as prose.
+- **+** [03:07](https://youtu.be/K3kD89Y1YCk?t=187) The choice among Checkstyle, ArchUnit and Error Prone follows what each can inspect: source text, compiled relationships, or resolved types and method bodies.
+- **+** [13:07](https://youtu.be/K3kD89Y1YCk?t=787) Mutation operators target specific blind spots, including name-based enforcement and alternative dependency paths.
+- **+** [19:01](https://youtu.be/K3kD89Y1YCk?t=1141) The closing model weighs false positives, build time, extra agent iterations and rules that should remain prose, explaining when to soften enforcement.
 
 **Reusable 1/2**
 
-- **+** [17:40](https://youtu.be/K3kD89Y1YCk?t=1060) The `checkstyle.xml` with the `TodoComment` rule is shown in full on screen, next to the short ArchUnit rules at [05:13](https://youtu.be/K3kD89Y1YCk?t=313).
-- **−** [20:03](https://youtu.be/K3kD89Y1YCk?t=1203) No repository, sample project or checklist is pointed to.
+- **+** [17:40](https://youtu.be/K3kD89Y1YCk?t=1060) The screen exposes the short Checkstyle configuration, providing a fragment viewers can reconstruct.
+- **−** [01:34](https://youtu.be/K3kD89Y1YCk?t=94) The talk promises guardrails to try tomorrow but points to no published sample project or complete rule set reproducing it.

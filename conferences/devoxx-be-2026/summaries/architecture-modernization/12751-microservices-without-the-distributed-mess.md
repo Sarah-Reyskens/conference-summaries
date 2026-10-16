@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=eFSEg54mwVU
 durationMin: 46
 slides: null
 verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -61,29 +62,29 @@ Before creating a service, ask whose success depends on it, what data must stay 
 Architects and senior developers designing or rescuing service landscapes, especially anyone using DDD vocabulary loosely or defaulting to async messaging as a decoupling fix. Skip it if you already apply context mapping and strategic DDD daily; the patterns will be familiar and the talk offers no code or production metrics to study.
 
 ## Verdict
-**6/10**: A coherent framework for service boundaries, ownership and relationships, carried by the speaker's leasing examples and weighed trade-offs, with no artifact to take home.
+**6/10**: An ownership and boundary framework with reasoned design trade-offs, illustrated by leasing and household examples; its reusable practices remain in the talk rather than a published artifact.
+
+**Reach broad**: Most of the conference audience designs or maintains business applications and can use the ownership, boundary and communication questions in their own work.
 
 **Novelty 1/2**
 
-- **+** [15:24](https://youtu.be/eFSEg54mwVU?t=924) The three retail/fleet boundary diagrams map one credit domain three ways, grounding the claim that a bounded context is not a microservice.
-- **+** [21:15](https://youtu.be/eFSEg54mwVU?t=1275) Upstream/downstream, conformist and anti-corruption layer are taught through one sustained analogy of his own rather than recited.
-- **−** The context-mapping vocabulary itself (upstream/downstream, shared kernel, customer-supplier, conformist, anti-corruption layer) is the pattern catalogue from Evans' *Domain-Driven Design* and the first DDD context-mapping results a search returns.
+- **+** [21:15](https://youtu.be/eFSEg54mwVU?t=1275) The speaker brings his own household examples to the context-mapping patterns, giving viewers personal cases for familiar DDD material.
 
 **Demonstrated 1/2**
 
-- **·** [34:50](https://youtu.be/eFSEg54mwVU?t=2090) A talk about ownership and boundaries has nothing runnable to show; its diagrams of choreography, orchestration and context maps carry the argument instead.
+- **·** [27:58](https://youtu.be/eFSEg54mwVU?t=1678) This architecture strategy talk has no executable claim to demonstrate, so running software is not applicable.
 
 **Measured 1/2**
 
-- **·** [17:31](https://youtu.be/eFSEg54mwVU?t=1051) The talk makes no quantitative claims; the "90% of our revenue" for fleet is illustrative scenario setup, not a measurement.
+- **·** [17:31](https://youtu.be/eFSEg54mwVU?t=1051) The talk makes no quantitative outcome claims; the hypothetical fleet share of revenue sets up a risk decision rather than reporting a measurement.
 
 **Depth 2/2**
 
-- **+** [18:04](https://youtu.be/eFSEg54mwVU?t=1084) Risk is given as a reason to split one bounded context into two services: a retail bug overloading a database would hit the fleet customers behind most of the revenue.
-- **+** [35:56](https://youtu.be/eFSEg54mwVU?t=2156) Choreography and orchestration are weighed on state visibility, fault location, compensation without distributed rollback, and single-point-of-failure risk, ending in a stated rule for choosing.
-- **−** [39:06](https://youtu.be/eFSEg54mwVU?t=2346) The claim that domain-aligned services should refuse external shaping is asserted without an example of what that refusal costs a consumer.
+- **+** [18:04](https://youtu.be/eFSEg54mwVU?t=1084) Risk is weighed as a reason to split one bounded context into two services, since a retail bug overloading a shared database would also hit the fleet business.
+- **+** [35:56](https://youtu.be/eFSEg54mwVU?t=2156) Orchestration makes process tracking and compensation easier than choreography, at the cost of a single point of failure.
+- **−** [39:06](https://youtu.be/eFSEg54mwVU?t=2346) The rule that domain-aligned services should refuse external shaping is asserted without an example of what that refusal costs a consumer.
 
 **Reusable 1/2**
 
-- **+** [44:21](https://youtu.be/eFSEg54mwVU?t=2661) The closing questions (whose success depends on it, what data must be coherent, what transactionality is needed) can be used in a design review.
-- **−** [44:21](https://youtu.be/eFSEg54mwVU?t=2661) The heuristics stay in the talk; no repository, configuration or checklist file accompanies it.
+- **+** [44:21](https://youtu.be/eFSEg54mwVU?t=2661) The closing questions about whose success depends on a service, coherent data and transactionality can be reused in a design review.
+- **−** [44:53](https://youtu.be/eFSEg54mwVU?t=2693) The closing take-home pointer offers no published checklist, configuration or sample project that reproduces the boundary-review practices.

@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=OCCOIgkCnjE
 durationMin: 52
 slides: null
-verdict: 8
+verdict: 7
+reach: niche
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -80,33 +81,35 @@ In the final two minutes a brand-new "excuse generator" agent is deployed from a
 Platform engineers and architects who run (or plan to run) AI agents on Kubernetes and need cost control, auditability, and least-privilege tool access gain most. Developers curious about MCP token economics get useful numbers even without adopting the stack. Viewers allergic to vendor-led talks can skip it: every answer is a Solo.io project, and non-Solo alternatives get no airtime.
 
 ## Verdict
-**8/10**: Completed agent demos, a stated before/after token comparison and published repositories carry a practical stack walkthrough whose explanations focus on operating mechanisms rather than core design trade-offs.
+**7/10**: A live code-search-mode run and a before/after token comparison on one task earn the score, while a tour of the speakers' own products caps Novelty, Depth and Reusable at 1.
+
+**Reach niche**: Platform engineers who run or plan to run agents on Kubernetes with Solo.io's Agent Gateway, Kagent and related projects can use the main content; the rest of the Java audience takes away the MCP token-cost figures only.
 
 **Novelty 1/2**
 
-- **+** [05:15](https://youtu.be/OCCOIgkCnjE?t=315) The speaker's own PR-triage agent supplies the local example behind the 136k-token, 25-loop baseline.
-- **+** [13:34](https://youtu.be/OCCOIgkCnjE?t=814) Progressive disclosure and gateway-executed code mode are presented as a before/after technique pair with measured effect.
-- **·** [08:53](https://youtu.be/OCCOIgkCnjE?t=533) The wider walkthrough brings together Solo.io's gateway, runtime, registry and desktop projects.
+- **+** [05:15](https://youtu.be/OCCOIgkCnjE?t=315) The speaker's PR-triage agent, tried across Java, Python and Go ADK variants, supplies the running example the gateway techniques are tested against.
+- **+** [30:06](https://youtu.be/OCCOIgkCnjE?t=1806) He reports having compared CrewAI, ADK and LangChain in agent evals and finding that speed and token use depend on the framework, though no results are shown.
+- **·** The product walkthrough of gateway, runtime, registry, desktop and substrate covers what the Solo.io project docs and READMEs already describe.
 
 **Demonstrated 2/2**
 
-- **+** [16:11](https://youtu.be/OCCOIgkCnjE?t=971) Code search mode runs live to completion with two loops and lower spend visible, alongside a previously completed 75-second standard run.
-- **+** [20:17](https://youtu.be/OCCOIgkCnjE?t=1217) Semantic routing is shown through Claude Desktop, with a code prompt classified and rerouted to an open model.
-- **+** [48:19](https://youtu.be/OCCOIgkCnjE?t=2899) A new declarative agent is deployed, chatted with, and traced end to end in the final minutes.
+- **+** [16:11](https://youtu.be/OCCOIgkCnjE?t=971) Code search mode runs live to completion on the gateway, replacing the earlier page of GitHub tools with two.
+- **+** [20:17](https://youtu.be/OCCOIgkCnjE?t=1217) Semantic routing is shown through Claude Desktop, with a company-code prompt classified and rerouted to an open model.
+- **+** [48:19](https://youtu.be/OCCOIgkCnjE?t=2899) A new declarative agent is deployed from a prompt in the Kagent UI, chatted with and traced in the final minutes.
 
 **Measured 2/2**
 
-- **+** [07:21](https://youtu.be/OCCOIgkCnjE?t=441) The local GitHub PR-listing baseline states 136,000 tokens over 25 loops in 56 seconds.
-- **+** [15:40](https://youtu.be/OCCOIgkCnjE?t=940) The standard/code-search comparison shows the same task dropping from 136,476 tokens, 25 loops and 56 seconds to 12,456 tokens, 2 loops and 23 seconds.
+- **+** [15:40](https://youtu.be/OCCOIgkCnjE?t=940) The same release-report task is shown before and after one CRD change from standard to code search mode, falling from 136,476 tokens, 25 loops and 56 seconds to 12,456 tokens, 2 loops and 23 seconds.
 - **+** [13:34](https://youtu.be/OCCOIgkCnjE?t=814) The progressive-disclosure comparison shows tool context falling from 31,306 to approximately 6,560 tokens by withholding parameter schemas until invocation.
+- **−** [07:51](https://youtu.be/OCCOIgkCnjE?t=471) The $45,000-a-month GitHub MCP cost extrapolates one local run to his team's usage without stating team size, query rate or pricing.
 
 **Depth 1/2**
 
 - **+** [29:04](https://youtu.be/OCCOIgkCnjE?t=1744) SPIFFE-identity enforcement is explained at two layers: L4 mTLS connection refusal and L7 HTTP-verb policy.
-- **+** [34:48](https://youtu.be/OCCOIgkCnjE?t=2088) The gateway's STS exchanges a corporate identity token for a short-lived MCP credential and preserves the initiating user's lineage through agent calls.
-- **·** [15:08](https://youtu.be/OCCOIgkCnjE?t=908) The code-mode explanation follows generated TypeScript and its sandboxed execution rather than examining execution or isolation internals.
+- **+** [34:48](https://youtu.be/OCCOIgkCnjE?t=2088) The gateway's STS exchange of a corporate identity token for a short-lived MCP credential preserves the initiating user's lineage through agent calls.
+- **−** [15:08](https://youtu.be/OCCOIgkCnjE?t=908) Code mode is explained as generated TypeScript run in a sandbox, with no look at execution or isolation internals and no comparison with alternatives.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [50:57](https://youtu.be/OCCOIgkCnjE?t=3057) The closing slide points to the four open-source repositories covering the talk's main content: kagent, agentgateway, agentregistry and agentdesktop.
-- **+** [15:40](https://youtu.be/OCCOIgkCnjE?t=940) The gateway CRD changes for standard-to-code-mode are shown as declarative configuration viewers can apply.
+- **+** [22:53](https://youtu.be/OCCOIgkCnjE?t=1373) The arc scaffolding commands and declarative agent CRD give starting fragments for agent code, Dockerfile and MCP wiring.
+- **·** [50:57](https://youtu.be/OCCOIgkCnjE?t=3057) The artifacts pointed to are the presented projects' own repositories, not a sample reproducing the talk's examples.

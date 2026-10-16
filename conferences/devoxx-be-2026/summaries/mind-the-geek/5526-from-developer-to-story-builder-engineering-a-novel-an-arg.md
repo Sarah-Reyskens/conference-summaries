@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=496nv8jsWhQ
 durationMin: 40
 slides: null
 verdict: 6
+reach: niche
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # From Developer to Story Builder: Engineering a Novel, an ARG, and a Transmedia World with AI
@@ -79,31 +80,33 @@ Developers curious about applying spec-driven and agentic workflows outside code
 
 ## Verdict
 
-**6/10**: The chapter loop runs on screen end to end as an edited recording of a real Codex session, while the figures are self-reported with no baseline and the harness stays private.
+**6/10**: The chapter loop runs on screen end to end as a recording of a real Codex session, while the method is known AI-SDLC applied to a book, the figures are unlogged estimates and the harness is private.
+
+**Reach niche**: Developers who want to run a long AI-assisted creative project (a novel, an ARG, serialized fiction) can reuse the lore-as-code, loop and judge patterns; most of the audience has no such project.
 
 **Novelty 1/2**
 
-- **+** [18:47](https://youtu.be/496nv8jsWhQ?t=1127) The in-book QR code on page 175 moves readers into a clearance-gated in-universe ARG, a transmedia mechanic from the speaker's own shipped work.
-- **+** [11:29](https://youtu.be/496nv8jsWhQ?t=689) Three LLM judges with distinct roles (lore guard, dramatic analyst, stylistic editor) review the compiled book over several loops.
-- **−** Kindle Direct Publishing help pages already cover the Amazon deployment steps (Kindle Previewer, metadata, pricing, marketplaces).
+- **+** [15:41](https://youtu.be/496nv8jsWhQ?t=941) After publishing, he found his AI-SDLC-shaped workflow had no step for making the book visible among the hundreds of new Amazon titles a day.
+- **+** [27:38](https://youtu.be/496nv8jsWhQ?t=1658) He distilled golden rules from storytelling and narratology books he read into a storytelling skill that the writing loop calls.
+- **−** AI-SDLC and spec-driven development applied to writing, with story-bible and QA pipelines such as github.com/knoai/knowrite, and Kindle Direct Publishing's help pages for the Amazon steps (Kindle Previewer, metadata, pricing, marketplaces), already cover the structure.
 
 **Demonstrated 2/2**
 
 - **+** [29:43](https://youtu.be/496nv8jsWhQ?t=1783) A recording of a real Codex session, edited down to under 5 minutes, reads the chapter 6 scenario, injects lore files, drafts the chapter, checks it with the storytelling skill, and updates two character sheets.
-- **+** [32:53](https://youtu.be/496nv8jsWhQ?t=1973) Chapter 6 goes live on the site with text and corrected illustration via a delta update.
-- **−** [11:29](https://youtu.be/496nv8jsWhQ?t=689) The three QA judges are described on slides and never run on screen.
+- **+** [32:53](https://youtu.be/496nv8jsWhQ?t=1973) Chapter 6 goes live on the site with text and the corrected illustration via a delta update.
+- **−** [13:04](https://youtu.be/496nv8jsWhQ?t=784) The several QA loops with three judges, which the book's quality rests on, are described but never run on screen.
 
 **Measured 1/2**
 
-- **+** [31:00](https://youtu.be/496nv8jsWhQ?t=1860) The Codex panel for chapter 6 shows "Worked for 5m 35s", "Word count: 3,434" and "Edited 5 files", the output of one run.
+- **+** [31:00](https://youtu.be/496nv8jsWhQ?t=1860) The Codex panel for chapter 6 shows "Word count: 3,434" and "Edited 5 files", the output of one run.
 - **+** [37:16](https://youtu.be/496nv8jsWhQ?t=2236) A chapter takes around 20 minutes by the speaker's account, with the text drafted in a few minutes and the rest spent on image generation.
-- **−** [39:21](https://youtu.be/496nv8jsWhQ?t=2361) Nothing was logged, so the 20 minutes per chapter and the "several months" of lore design are the speaker's estimates with no baseline.
+- **−** [39:21](https://youtu.be/496nv8jsWhQ?t=2361) Nothing was logged, so the time per chapter is the speaker's estimate with no baseline.
 
 **Depth 1/2**
 
 - **+** [05:49](https://youtu.be/496nv8jsWhQ?t=349) The architect/executant split is justified: he owns universe, emotion and psychology, and agents turn that design into prose.
-- **+** [12:33](https://youtu.be/496nv8jsWhQ?t=753) Mistral serves as stylistic editor to give a non-American view of the prose.
-- **−** [09:24](https://youtu.be/496nv8jsWhQ?t=564) No alternative setup, model, or simpler prompting approach is weighed against the chosen harness design.
+- **+** [11:29](https://youtu.be/496nv8jsWhQ?t=689) Each of the three judges has its own job: Gemini CLI guards coherence with the lore, Codex with GPT models rates suspense and rhythm, Mistral gives a non-American view of the style.
+- **−** [09:24](https://youtu.be/496nv8jsWhQ?t=564) The harness is explained (lore, scenario, writing rules) but nothing says when it pays off against plain chapter-by-chapter prompting.
 
 **Reusable 1/2**
 

@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=JWFZY0aJTjg
 durationMin: 50
 slides: null
-verdict: 9
+verdict: 8
+reach: segment
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -91,33 +92,34 @@ Java developers who embed scripting (business rules, DSLs, build tooling) or nee
 
 ## Verdict
 
-**9/10**: Authors' design rationale, a live Detroit Python demo and head-to-head Octane and comparator charts, limited by an unquantified FFM speed-up and the experimental status.
+**8/10**: Nashorn post-mortem from the team that lived it, a live end-to-end Detroit Python demo and interop problems explained with their fixes, limited by benchmarks with an admittedly low GraalJS baseline and the project's own experimental repositories.
+
+**Reach segment**: Java developers who embed scripting (business rules, DSLs, build tooling) or call Python libraries from Java can put the approach to use; most others meet it only as context.
 
 **Novelty 2/2**
 
-- **+** [09:59](https://youtu.be/JWFZY0aJTjg?t=599) The Nashorn post-mortem gives the removal rationale from inside the team: yearly ES updates plus bug-for-bug V8 compatibility needed for the Node.js ecosystem.
-- **+** [37:30](https://youtu.be/JWFZY0aJTjg?t=2250) The FFM-meets-V8 prototype design (flat C API over RAII idioms, jextract bindings, C2-speculated marshalling) is original engineering from the authors.
-- **+** [25:40](https://youtu.be/JWFZY0aJTjg?t=1540) The Octane and comparator head-to-heads across DetroitJS, Nashorn and GraalJS are comparisons the speaker ran himself.
+- **+** [09:59](https://youtu.be/JWFZY0aJTjg?t=599) The team's own Node-on-Nashorn attempt showed that full ecosystem compatibility meant bug-for-bug V8 behavior, the lesson behind the removal.
+- **+** [10:29](https://youtu.be/JWFZY0aJTjg?t=629) The standards treadmill plus ecosystem tracking is framed as a permanent industrial-scale commitment a small team cannot carry, from inside the team that lived it.
+- **+** [45:27](https://youtu.be/JWFZY0aJTjg?t=2727) Most internal Oracle polyglot cases are shallow single calls into Python for one unavailable library, a signal the speaker hedges as not extrapolable.
 
 **Demonstrated 2/2**
 
-- **+** [17:19](https://youtu.be/JWFZY0aJTjg?t=1039) The Detroit Python REPL runs live in a terminal, including the Python 3.10 refusal and recovery via a 3.14 virtual environment.
-- **+** [20:27](https://youtu.be/JWFZY0aJTjg?t=1227) The Gradio image classifier launches end to end through `javax.script` and classifies a school bus live, with a visible misfire on the title slide.
-- **·** [15:12](https://youtu.be/JWFZY0aJTjg?t=912) DetroitJS, the engine behind the Nashorn story and both charts, runs on JNI and is only benchmarked, never run on screen.
+- **+** [18:22](https://youtu.be/JWFZY0aJTjg?t=1102) The Detroit Python REPL runs live in a terminal, refusing to start on Python 3.10 and working after activating a 3.14 virtual environment.
+- **+** [22:33](https://youtu.be/JWFZY0aJTjg?t=1353) The Gradio image classifier launches end to end through `javax.script` and classifies a school bus live, with a visible misfire on the title slide.
+- **·** [15:12](https://youtu.be/JWFZY0aJTjg?t=912) DetroitJS, the engine behind both charts, is only benchmarked and never run on screen.
 
 **Measured 1/2**
 
-- **+** [25:40](https://youtu.be/JWFZY0aJTjg?t=1540) Octane 2.0 bars put DetroitJS at 59,366 against GraalJS at 11,815 and Nashorn at 3,303.
-- **+** [27:12](https://youtu.be/JWFZY0aJTjg?t=1632) The Java-comparator sort benchmark ranks Detroit last by a wide margin, the talk's own worst case shown with its rivals.
-- **−** [38:01](https://youtu.be/JWFZY0aJTjg?t=2281) The FFM rewrite is said to make upcalls "a lot faster" and give "a lot better numbers", but no chart or figure follows, and "we never saw performance problem" at [40:04](https://youtu.be/JWFZY0aJTjg?t=2404) is an anecdote.
+- **+** [25:40](https://youtu.be/JWFZY0aJTjg?t=1540) The Octane 2.0 chart puts DetroitJS at 59,366 against GraalJS at 11,815 and Nashorn at 3,303, with the single-transition setup stated.
+- **−** [26:11](https://youtu.be/JWFZY0aJTjg?t=1571) The GraalJS bar is admitted to be low and could not be raised reliably (out-of-memory errors, "probably something in the 40,000 kind of region"), and no hardware, JDK or warmup setup is given.
+- **+** [27:12](https://youtu.be/JWFZY0aJTjg?t=1632) The Java-comparator sort benchmark ranks Detroit last by a wide margin, the talk's own worst case shown alongside its rivals.
 
 **Depth 2/2**
 
-- **+** [28:13](https://youtu.be/JWFZY0aJTjg?t=1693) The cross-runtime cycle is built step by step and resolved with explicit ref-count release plus arenas, naming the `javax.script` close-method gap.
-- **+** [31:48](https://youtu.be/JWFZY0aJTjg?t=1908) The virtual-thread pin is traced frame by frame down the stack and fixed with promises plus `async`/`await`.
-- **+** [36:58](https://youtu.be/JWFZY0aJTjg?t=2218) The V8 RAII dance explains why 1:1 FFM bindings cannot work and why the flat-C-API split wins on both size and speed.
+- **+** [29:14](https://youtu.be/JWFZY0aJTjg?t=1754) The cross-runtime cycle is built step by step and resolved with explicit ref-count release plus arenas, naming the `javax.script` close-method gap.
+- **+** [32:20](https://youtu.be/JWFZY0aJTjg?t=1940) The virtual-thread pin is traced frame by frame down the stack and fixed with promises plus `async`/`await`.
+- **+** [36:58](https://youtu.be/JWFZY0aJTjg?t=2218) The V8 RAII dance explains why per-call native round-trips fail and why a flat C API fits instead.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [43:12](https://youtu.be/JWFZY0aJTjg?t=2592) The closing slide points to the detroit-js and detroit-python repositories covering both engines in the talk.
-- **·** [43:12](https://youtu.be/JWFZY0aJTjg?t=2592) The project is experimental and its APIs will move with real-workload feedback, so adopters track a moving target.
+- **·** [43:12](https://youtu.be/JWFZY0aJTjg?t=2592) The detroit-js and detroit-python links are the project's own repositories, flagged experimental with APIs still shaped by feedback, so adopters track a moving target.

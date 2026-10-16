@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=VaT7DgmVSms
 durationMin: 34
 slides: null
 verdict: 7
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -72,13 +73,15 @@ Maintainers of long-lived libraries and formats, and anyone trying to land a cha
 
 ## Verdict
 
-**7/10**: First-hand account of pushing Brotli into the PDF spec, with the 20% claim set against a named Deflate baseline but no measurement method and no artifact to reuse.
+**7/10**: First-hand account of pushing Brotli into the PDF specification and the ecosystem lessons behind it, with a 20% claim that has no stated method and no artifact to reuse.
+
+**Reach segment**: Java developers and leads who maintain widely used libraries or formats, or who need to land a change in a standardized ecosystem, can use the playbook within the next year.
 
 **Novelty 2/2**
 
-- **+** [27:17](https://youtu.be/VaT7DgmVSms?t=1637) The Brotli campaign play-by-play (PDF Association article, Hacker News, Heise pickup, a pull request to pdf.js, lobbying Chromium) is first-hand standards work no search result gives.
-- **+** [24:42](https://youtu.be/VaT7DgmVSms?t=1482) The codec rationale comes from inside the selection process: maturity, licensing, C reference implementations, and cross-vendor interop.
-- **+** [32:00](https://youtu.be/VaT7DgmVSms?t=1920) The campaign's outcome is stated: the Brotli specification is released, and software that cannot decompress Brotli streams no longer supports PDF 2.0.
+- **+** [27:48](https://youtu.be/VaT7DgmVSms?t=1668) Posting the Brotli article to Hacker News brought "AI slop" accusations that the speaker attributes to the generated header image, a reaction no write-up of the campaign records.
+- **+** [30:24](https://youtu.be/VaT7DgmVSms?t=1824) His pdf.js pull request was closed by Mozilla, who reimplemented Brotli support themselves a day later, so the viewer got the feature without his code.
+- **+** [30:56](https://youtu.be/VaT7DgmVSms?t=1856) He used pdf.js's support to push Chromium's PDF viewer, which added support weeks later, and that is the tactic that moved the spec.
 
 **Demonstrated 1/2**
 
@@ -87,17 +90,17 @@ Maintainers of long-lived libraries and formats, and anyone trying to land a cha
 **Measured 1/2**
 
 - **+** [26:16](https://youtu.be/VaT7DgmVSms?t=1576) The codec comparison names its baseline: a rival codec 5-10% better than Brotli in some cases, set against roughly 20% over Deflate.
-- **−** [27:30](https://youtu.be/VaT7DgmVSms?t=1650) The headline figure (15-25% smaller files with zero quality loss) arrives as a conclusion, with no corpus, file sample, or measurement setup.
-- **−** [28:19](https://youtu.be/VaT7DgmVSms?t=1699) The campaign's reach is self-reported ("this article did quite well", "like 10 comments") with no baseline.
+- **−** [27:30](https://youtu.be/VaT7DgmVSms?t=1650) The headline figure (15-25% smaller files with zero quality loss) appears only as the article's subtitle on a slide, with no corpus, file sample or measurement setup.
+- **−** [28:50](https://youtu.be/VaT7DgmVSms?t=1730) The campaign's reach is self-reported ("like 10 comments", pickup by Heise and other outlets) with no baseline.
 
 **Depth 2/2**
 
-- **+** [05:21](https://youtu.be/VaT7DgmVSms?t=321) The PDF mental model (white page plus stacked drawing programs with pre-calculated positions) explains why extraction and reflow fail.
-- **+** [06:24](https://youtu.be/VaT7DgmVSms?t=384) Every visible element must also be written into the file, which is why PDFs get large and why compression is worth a spec change.
-- **+** [24:11](https://youtu.be/VaT7DgmVSms?t=1451) The codec choice weighs maturity, licensing, reference implementations, interop, and the write-once/decompress-often pattern.
+- **+** [05:21](https://youtu.be/VaT7DgmVSms?t=321) The PDF mental model (a white page plus concatenated stack-based drawing programs with pre-calculated positions) explains why extraction and reflow fail.
+- **+** [19:24](https://youtu.be/VaT7DgmVSms?t=1164) The producer-viewer chicken-and-egg (no library adds a feature no viewer opens, no viewer adds one no file uses) is the trade-off the propose, implement-both-sides process answers.
+- **+** [24:42](https://youtu.be/VaT7DgmVSms?t=1482) A new codec must also bring reference implementations in many languages and interoperability, so ratio alone does not decide.
 
 **Reusable 1/2**
 
 - **+** [20:27](https://youtu.be/VaT7DgmVSms?t=1227) The propose, draft, implement-both-sides, roll-out sequence is a practice a reader can follow, though it is described and not packaged.
 - **·** [01:38](https://youtu.be/VaT7DgmVSms?t=98) The one pointer is the speaker's employer's open-source iText SDK repository, which the talk does not tie to the Brotli work.
-- **−** [26:46](https://youtu.be/VaT7DgmVSms?t=1606) The Java Brotli implementation, the article and the pull requests are described without a link, sample project, configuration or checklist.
+- **−** [26:46](https://youtu.be/VaT7DgmVSms?t=1606) The Java Brotli implementation is described without a link, sample project, configuration or checklist.

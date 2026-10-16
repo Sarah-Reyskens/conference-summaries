@@ -8,8 +8,8 @@ sessionType: Conference
 audienceLevel: ADVANCED
 video: https://www.youtube.com/watch?v=8NURE3I4AJQ
 durationMin: 49
-slides: null
-verdict: 7
+verdict: 5
+reach: niche
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -131,33 +131,35 @@ Java developers who want GPU or SIMD acceleration without JNI or a Python sideca
 
 ## Verdict
 
-**7/10**: Integration experience from building CUDA support in Java and a three-backend benchmark carry the talk; it loses points for no run of the fraud flow, a benchmark that never says what is timed, and an open-source release that leaves out the accelerators.
+**5/10**: The team's CUDA-integration experience, weighed distribution trade-offs and a layered design carry the talk; nothing runs on screen, the benchmark never says what is timed and the takeaway is the product itself.
 
-**Novelty 2/2**
+**Reach niche**: Java developers already working on GPU or SIMD acceleration can use the CUDA and Vector API integration material; most of the Devoxx audience builds business applications and never touches GPU computing.
 
-- **+** [15:51](https://youtu.be/8NURE3I4AJQ?t=951) The ten-library, 1.5 GB CUDA stack with version, driver and platform traps (zlib on Windows, per-distro install paths) comes from the team that built the integration.
-- **+** [32:37](https://youtu.be/8NURE3I4AJQ?t=1957) The five-layer FFM-to-Core architecture and Accelerator Service Provider come from the platform's author, with reasons: swap in other accelerators and hide the C pointer API.
-- **+** [40:34](https://youtu.be/8NURE3I4AJQ?t=2434) The CPU, Vector API and GPU table across four dataset sizes is a head-to-head the speaker ran himself.
+**Novelty 1/2**
 
-**Demonstrated 1/2**
+- **+** [15:51](https://youtu.be/8NURE3I4AJQ?t=951) The ten-library, 1.5 GB CUDA stack and its platform traps (the Windows zlib dependency, a compiler on Windows only) are met first-hand by the team building the integration.
+- **+** [21:42](https://youtu.be/8NURE3I4AJQ?t=1302) The automatic probing of default install locations and library names is the team's own fix for the library-lookup breaking point, though it is mentioned in one sentence.
+- **·** [22:13](https://youtu.be/8NURE3I4AJQ?t=1333) The off-heap safety and arena material restates what the FFM documentation already says, as does most of the FFM and Vector API tour.
 
-- **+** [40:34](https://youtu.be/8NURE3I4AJQ?t=2434) The benchmark table puts millisecond timings and speedups for all three backends on screen at 1M through 50M rows.
+**Demonstrated 0/2**
+
 - **−** [44:19](https://youtu.be/8NURE3I4AJQ?t=2659) The fraud model training and Spring Boot inference appear only as code slides; no live or recorded run with visible output confirms the flow.
+- **−** [26:21](https://youtu.be/8NURE3I4AJQ?t=1581) The Vector API walkthrough stays on a code slide; the vector addition never executes on screen.
 
 **Measured 1/2**
 
-- **+** [40:34](https://youtu.be/8NURE3I4AJQ?t=2434) Each row has a single-threaded CPU baseline against Vector API and GPU times, with the i9 / RTX 4070 hardware and the 32/16/8 network shape on the slide.
-- **−** [40:02](https://youtu.be/8NURE3I4AJQ?t=2402) The slide is titled "Performance Metrics (ms)" and neither it nor the speech says what is timed (training, epoch or inference), and the speaker adds that the values are "not absolute".
-- **−** [48:36](https://youtu.be/8NURE3I4AJQ?t=2916) Parity with PyTorch ("no difference") and "full native performance" are claimed without numbers, and raw-CUDA overhead was never measured.
+- **+** [40:34](https://youtu.be/8NURE3I4AJQ?t=2434) Each dataset-size row has a single-threaded CPU baseline against Vector API and GPU times with speedups, with the i9 / RTX 4070 hardware and the 32/16/8 network shape on the slide.
+- **−** [41:06](https://youtu.be/8NURE3I4AJQ?t=2466) The slide's "Performance Metrics (ms)" never says what is timed (training, epoch or inference), and the speaker adds the values are "not absolute".
+- **−** [48:03](https://youtu.be/8NURE3I4AJQ?t=2883) Asked about the Java layer's cost over raw CUDA, he admits it was never measured; the PyTorch parity offered instead ("nearly the same") comes with no numbers.
 
 **Depth 2/2**
 
 - **+** [04:42](https://youtu.be/8NURE3I4AJQ?t=282) Each FFM feature is motivated against its JNI predecessor: jextract ends handwritten binding pairs, arenas end manual off-heap frees, OS loading ends hand-rolled library chains.
-- **+** [42:10](https://youtu.be/8NURE3I4AJQ?t=2530) The heap-to-native-to-device copy path (traced at 13:14) is given as the reason data movement, not arithmetic, decides whether a GPU wins on small data.
-- **+** [17:56](https://youtu.be/8NURE3I4AJQ?t=1076) The choice between assuming installed CUDA libraries (with matching jextract bindings) and bundling about 3 GB of them is weighed with the failure mode of each.
+- **+** [17:56](https://youtu.be/8NURE3I4AJQ?t=1076) The choice between assuming installed CUDA libraries and bundling about 3 GB of them is weighed with the failure mode of each.
+- **+** [32:37](https://youtu.be/8NURE3I4AJQ?t=1957) The five-layer FFM-to-Core stack and Accelerator Service Provider carry reasons: swap in other accelerators and hide the C pointer API.
 
 **Reusable 1/2**
 
 - **+** [45:54](https://youtu.be/8NURE3I4AJQ?t=2754) Deep Netts was open-sourced two days before the talk, with examples and templates to start from.
-- **−** [45:54](https://youtu.be/8NURE3I4AJQ?t=2754) The open-source Community Edition is the pure-Java engine; per deepnetts.com/pricing the Vector API and CUDA accelerators ship in the account-gated Free edition, so the artifact misses the talk's main content.
+- **−** [45:54](https://youtu.be/8NURE3I4AJQ?t=2754) The open-source Community Edition is the pure-Java engine; per deepnetts.com/pricing the Vector API and CUDA accelerators ship in the account-gated Free edition, and no example reproducing the fraud or CUDA flow was shown to exist, so the artifact is the product's own distribution.
 - **·** [37:53](https://youtu.be/8NURE3I4AJQ?t=2273) The enablement flags (`--add-modules jdk.incubator.vector`, `--enable-native-access`, `setUseVectorAPI`, `setUseCUDA`) are fragments to assemble yourself.

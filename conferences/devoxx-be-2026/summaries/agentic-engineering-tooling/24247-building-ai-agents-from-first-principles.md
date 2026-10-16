@@ -10,9 +10,11 @@ video: https://www.youtube.com/watch?v=SC5nO6iadsU
 durationMin: 150
 slides: null
 verdict: 7
-reviewedAt: 2026-10-14
+reach: segment
 frames: 21
 summarizedAt: 2026-10-14
+reviewedAt: 2026-10-16
+---
 
 # Building AI Agents from First Principles
 
@@ -126,25 +128,24 @@ Java and Spring developers curious how agents work under the hood, especially th
 
 ## Verdict
 
-**7/10**: a dinner-planning agent built live module by module with every model call visible on the wire, held back by the promised booking step never running and the acceptance rate never measured.
+**7/10**: a progressively built dinner-planning agent with visible model traffic, explanatory code walkthroughs and a published teaching repository, limited by an unfinished booking goal and anecdotal cost evidence.
+
+**Reach segment**: Spring developers adding agent or LLM features to their applications can reuse the alignment, tool-calling, checker, and memory patterns directly.
 
 **Novelty 1/2**
 
-- **+** [17:23](https://youtu.be/SC5nO6iadsU?t=1043) The Super Bowl cutoff test against the ChatGPT app and the raw models API, and the `ps aux` run inside Claude's attached container at [19:31](https://youtu.be/SC5nO6iadsU?t=1171), turn "consumer apps are agents" into something the audience sees checked.
-- **+** [102:23](https://youtu.be/SC5nO6iadsU?t=6143) The acceptance-rate "iron law" plus the deterministic/hybrid/LLM-judge checker taxonomy give the talk its own evaluative frame.
-- **−** The ChatClient, structured-output converter and tool-calling foundations walk through what the Spring AI reference docs (the ChatClient, structured output and tool calling pages) already cover.
+- **+** [27:16](https://youtu.be/SC5nO6iadsU?t=1636) The speaker's dinner-planning teaching case brings requirements alignment, evaluation, decision support and memory together beyond isolated Spring AI reference examples.
 
 **Demonstrated 1/2**
 
 - **+** [48:20](https://youtu.be/SC5nO6iadsU?t=2900) Intent alignment runs live, each utterance advancing the versioned requirements JSON to version three.
 - **+** [119:40](https://youtu.be/SC5nO6iadsU?t=7180) Evaluated planning runs live and returns vegetarian-suitable restaurants, after a restart from launching the wrong application at [118:34](https://youtu.be/SC5nO6iadsU?t=7114).
-- **−** [15:47](https://youtu.be/SC5nO6iadsU?t=947) The stated goal, plan the dinner and book the reservation under an expense policy, never runs: no booking step appears and the dietary judge passes a sushi restaurant as vegetarian.
+- **−** [15:47](https://youtu.be/SC5nO6iadsU?t=947) The stated goal includes booking a reservation under company expense policy, but the running example stops at recommendations and remembered preferences.
 
 **Measured 1/2**
 
-- **+** [99:20](https://youtu.be/SC5nO6iadsU?t=5960) The spy shows token usage per call (584 prompt, 39 completion) and per-call latencies (673 and 748 ms for the judge calls) at [120:30](https://youtu.be/SC5nO6iadsU?t=7230).
-- **+** [146:42](https://youtu.be/SC5nO6iadsU?t=8802) A 30-person workshop run reportedly consumed $1.50 of a $100 OpenAI budget on a cheap mini model, with no analysis behind it ([147:14](https://youtu.be/SC5nO6iadsU?t=8834)).
-- **−** [102:23](https://youtu.be/SC5nO6iadsU?t=6143) The acceptance rate at the centre of the talk is never measured for Jarvis; no baseline, comparison or benchmark appears.
+- **+** [146:42](https://youtu.be/SC5nO6iadsU?t=8802) The speaker reports that a 30-person workshop consumed $1.50 on a cheap mini model.
+- **−** [147:14](https://youtu.be/SC5nO6iadsU?t=8834) He explicitly says he did no cost analysis, leaving that total without a workload baseline or comparison.
 
 **Depth 2/2**
 
@@ -154,5 +155,4 @@ Java and Spring developers curious how agents work under the hood, especially th
 
 **Reusable 2/2**
 
-- **+** [00:41](https://youtu.be/SC5nO6iadsU?t=41) The opening slide links `asaikali/art-of-building-agents` (branch `2026-devoxx-be`), which holds the foundations apps and the six meal-agent snapshots shown on stage.
-- **+** [28:19](https://youtu.be/SC5nO6iadsU?t=1699) Each meal-agent module is a cumulative copy of the previous one, with an inspector UI and a wire spy, so a viewer can follow each step in the repo.
+- **+** [00:41](https://youtu.be/SC5nO6iadsU?t=41) The opening slide links [asaikali/art-of-building-agents, branch 2026-devoxx-be](https://github.com/asaikali/art-of-building-agents/tree/2026-devoxx-be), a teaching repository containing the foundations applications and cumulative meal-agent examples.

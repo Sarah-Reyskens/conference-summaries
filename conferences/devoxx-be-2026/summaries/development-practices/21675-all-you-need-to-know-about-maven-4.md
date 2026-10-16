@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=TgkY2UmWtBo
 durationMin: 47
 slides: https://speakerdeck.com/runningjava/all-you-need-to-know-about-maven-4
 verdict: 5
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # All you need to know about Maven 4!
 
@@ -81,13 +81,15 @@ Maven users planning the move to Maven 4, and anyone curious why the major relea
 
 ## Verdict
 
-**5/10**: A beginner tour of Maven 4 from a PMC member, with the reasoning behind the consumer POM and the verify-over-install advice, but nothing is run on screen and the feature list is the speaker's own what's-new article.
+**5/10**: A beginner tour of Maven 4 from a PMC member that explains why the release looks the way it does, but nothing is run on screen and the tour tracks the official what’s-new page.
+
+**Reach broad**: Most of the conference’s Java and JVM developers can use the Maven 4 migration guidance and build changes in their everyday project work.
 
 **Novelty 1/2**
 
-- **+** [08:23](https://youtu.be/TgkY2UmWtBo?t=503) The PMC explains why Maven 4 requires Java 17 and not 21: the move to 21 was proposed during the release-candidate phase and "we voted against this".
-- **+** [41:35](https://youtu.be/TgkY2UmWtBo?t=2495) The team validates Maven 4 with a crawler that builds GitHub Maven projects and builds all Apache Maven plugins with it, and relies on user feedback for cases such as 5,000-subproject builds.
-- **·** [39:30](https://youtu.be/TgkY2UmWtBo?t=2370) The feature tour follows the official what's-new article, which the speaker wrote and which the talk points to for "a bit more context and examples".
+- **+** [08:23](https://youtu.be/TgkY2UmWtBo?t=503) The speaker reports from inside the PMC that lifting the baseline to Java 21 was proposed during the release-candidate phase and voted down.
+- **+** [41:35](https://youtu.be/TgkY2UmWtBo?t=2495) The team validates Maven 4 with a crawler that builds GitHub Maven projects and relies on user feedback for company-specific edge cases.
+- **·** [39:30](https://youtu.be/TgkY2UmWtBo?t=2370) The feature tour tracks the official what’s-new page, which the talk points to for more context and examples.
 
 **Demonstrated 0/2**
 
@@ -96,16 +98,16 @@ Maven users planning the move to Maven 4, and anyone curious why the major relea
 
 **Measured 1/2**
 
-- **·** [03:12](https://youtu.be/TgkY2UmWtBo?t=192) The talk makes no performance or effect claims; figures such as 100 maintained artifacts and 6,000 community plugins set the scene rather than back an argument.
+- **·** [03:12](https://youtu.be/TgkY2UmWtBo?t=192) The talk makes no quantitative performance or effect claims requiring measurement, and figures such as 100 maintained artifacts and 6,000 community plugins set the scene rather than back an argument.
 
 **Depth 2/2**
 
-- **+** [04:14](https://youtu.be/TgkY2UmWtBo?t=254) "The POM fulfills two purposes. To build the project and to consume the project" gives beginners a mental model for why the consumer POM exists.
+- **+** [04:14](https://youtu.be/TgkY2UmWtBo?t=254) The POM’s two purposes, building and consuming a project, give beginners a mental model for why changing its schema threatens the ecosystem and motivates a separate consumer POM.
 - **+** [24:56](https://youtu.be/TgkY2UmWtBo?t=1496) The verify-over-install advice is grounded in the reactor bug and in how installing project A publishes an unfinished project to the user repository.
-- **−** [13:32](https://youtu.be/TgkY2UmWtBo?t=812) The consumer POM is presented as always generated reduced, and the talk never mentions the `maven.consumer.pom.flatten` switch that the official page documents as off by default.
+- **+** [36:23](https://youtu.be/TgkY2UmWtBo?t=2183) Lifecycle-tree dependencies preserve constraints such as sources preceding compilation while allowing a dependent project to start after a specific phase instead of waiting for packaging.
 
 **Reusable 1/2**
 
 - **+** [40:04](https://youtu.be/TgkY2UmWtBo?t=2404) The three-step migration path (latest 3.x and plugins, Java 17 environment, run Maven 4 and fix errors) is a procedure viewers can follow.
-- **+** [42:41](https://youtu.be/TgkY2UmWtBo?t=2561) The talk points to an official migration guide and the Maven Up tool, which rewrites a project to Maven 4 or full 4.1 model compatibility.
-- **·** [32:11](https://youtu.be/TgkY2UmWtBo?t=1931) Beyond the migration segment, takeaways are fragments (XML snippets, flags, property names) left to reconstruct in the viewer's own build.
+- **+** [42:41](https://youtu.be/TgkY2UmWtBo?t=2561) The talk points to the official migration guide and the Maven Up tool, which rewrites a project to Maven 4 or full 4.1 model compatibility.
+- **·** [34:49](https://youtu.be/TgkY2UmWtBo?t=2089) Smaller improvements such as optional profiles via `-P?profile` are named with their flags for viewers to try in their own builds.

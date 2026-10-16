@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=D_AmK8-UnZg
 durationMin: 51
 slides: null
 verdict: 7
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -95,32 +96,34 @@ Java developers who have heard of Valhalla and want a beginner-friendly groundin
 
 ## Verdict
 
-**7/10**: First-hand Valhalla implementation history and VM design rationale; on-screen output is limited to layout dumps, and the benchmark numbers come without setup.
+**7/10**: First-hand Valhalla implementation history and VM design rationale, with partial on-screen demonstration and benchmark comparisons lacking a stated method.
+
+**Reach broad**: Java application developers will meet value objects in a shipping JDK, including the primitive-wrapper migration when preview is enabled.
 
 **Novelty 2/2**
 
-- **+** [44:43](https://youtu.be/D_AmK8-UnZg?t=2683) The compiler team's new calling convention for values is described as an investment so large that its engineer said the team could not back off from it, which pinned the whole project to its repository.
-- **+** [22:52](https://youtu.be/D_AmK8-UnZg?t=1372) The 2014–19 VM prototype with its own signatures, 13 new bytecodes, arbitrary-size loads and stores and no null support is described as the work that showed flattening and scalarization were worth doing.
-- **+** [38:30](https://youtu.be/D_AmK8-UnZg?t=2310) The team's own experiments over the years put the flattening break-even near a cache line of moved bytes.
+- **+** [44:43](https://youtu.be/D_AmK8-UnZg?t=2683) The compiler team’s investment in the value calling convention made abandoning and rebuilding the project branch impractical, constraining how the team could finish the merge.
+- **+** [22:52](https://youtu.be/D_AmK8-UnZg?t=1372) The team deliberately prototyped outside Java compatibility constraints and left null support out to keep exploration affordable.
+- **+** [24:57](https://youtu.be/D_AmK8-UnZg?t=1497) The interpreter scalarization experiment failed to deliver useful results, leading the team to abandon that path and focus on C2.
 
 **Demonstrated 1/2**
 
-- **+** [40:35](https://youtu.be/D_AmK8-UnZg?t=2435) `-XX:+PrintFieldLayout` output for the real build is clicked through on screen, including a `nullable non-atomic flat` field for a final value-typed field.
-- **−** [47:21](https://youtu.be/D_AmK8-UnZg?t=2841) The scalarization speedup for the `Point` motion example is stated over a slide, with no run or output shown.
+- **+** [40:35](https://youtu.be/D_AmK8-UnZg?t=2435) Prepared field-layout output is clicked through on screen, showing flattened layouts and their storage accounting.
+- **−** [42:11](https://youtu.be/D_AmK8-UnZg?t=2531) The scalarization rewrite that removes intermediate Point allocations is walked through on a slide without an actual run shown.
 
 **Measured 1/2**
 
-- **+** [10:50](https://youtu.be/D_AmK8-UnZg?t=650) A microbenchmark compared with and without the `value` keyword shows a 40% gain on the speaker's cloud instance.
-- **−** [10:50](https://youtu.be/D_AmK8-UnZg?t=650) The speaker calls the benchmark contrived, names only "my instance in the cloud" as its setup, and warns that it will not extend to a whole application.
-- **−** [47:21](https://youtu.be/D_AmK8-UnZg?t=2841) The "magnitude almost" scalarization gain is a "rough benchmark" with no baseline or setup, and the 10x matrix-multiplication result ([23:23](https://youtu.be/D_AmK8-UnZg?t=1403)) and the 20% Class-File API gain ([12:22](https://youtu.be/D_AmK8-UnZg?t=742)) are secondhand anecdotes.
+- **+** [47:21](https://youtu.be/D_AmK8-UnZg?t=2841) The Point walk slide compares identity objects at 23.04 ms and 152 MiB against value objects at 2.74 ms and zero allocation, but the rough benchmark does not state its measurement method.
+- **−** [10:50](https://youtu.be/D_AmK8-UnZg?t=650) The contrived microbenchmark’s 40% gain names only the speaker’s cloud instance as setup and is explicitly not extrapolated to whole applications.
+- **−** [12:22](https://youtu.be/D_AmK8-UnZg?t=742) The 20% Class-File API improvement is a secondhand anecdote about an arbitrary tool, with no baseline or setup shown.
 
 **Depth 2/2**
 
-- **+** [37:28](https://youtu.be/D_AmK8-UnZg?t=2248) Wider atomic instructions are rejected as a flattening fix because their alignment would cost more data density than they save and add cache traffic.
+- **+** [37:28](https://youtu.be/D_AmK8-UnZg?t=2248) Wider atomic instructions are rejected as a flattening fix because their alignment would cost data density and add cache traffic.
 - **+** [31:13](https://youtu.be/D_AmK8-UnZg?t=1873) Strict initialization is checked statically once by the verifier, so the fast path needs no runtime checks.
-- **+** [43:41](https://youtu.be/D_AmK8-UnZg?t=2621) Scalarization is grounded in value semantics: values are passed by value and cannot be mutated, so C2 can keep fields in registers where it gives up on regular objects that escape.
+- **+** [43:41](https://youtu.be/D_AmK8-UnZg?t=2621) Scalarization is grounded in value semantics: values pass conceptually by value and cannot be mutated, so C2 can keep fields in registers where it gives up on escaping regular objects.
 
 **Reusable 1/2**
 
-- **+** [06:15](https://youtu.be/D_AmK8-UnZg?t=375) The source level 28 and `--enable-preview` flags plus the JDK 28 early-access build give viewers a working starting point.
-- **·** No repository, sample project or checklist covers the talk's main content; the pointers are the early-access build and the layout flags.
+- **+** [06:15](https://youtu.be/D_AmK8-UnZg?t=375) Source level 28, preview enabling and the JDK 28 early-access build give viewers a starting point for trying value objects.
+- **·** [06:15](https://youtu.be/D_AmK8-UnZg?t=375) The published pointer is the presented project’s own build, rather than a sample project or checklist reproducing the talk’s examples.

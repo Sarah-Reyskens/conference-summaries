@@ -10,8 +10,9 @@ video: https://www.youtube.com/watch?v=yUMnuh5U5k4
 durationMin: 36
 slides: null
 verdict: 5
+reach: segment
 frames: 8
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Post-Quantum Today: How Your Passwords Will Be Safe in a Quantum Future
@@ -61,7 +62,9 @@ Google's published plan migrates harvest-now-decrypt-later exposure first (ALTS 
 Developers and architects who want a conceptual grounding in why post-quantum migration matters now and how the replacement math works. Skip it if you already understand Shor's algorithm and learning with errors, or if you need implementation code rather than the ideas behind it.
 
 ## Verdict
-**5/10**: a conceptual tour from qubits to migration timelines whose derivations follow credited sources, with unsourced numbers and no demo or published artifact.
+**5/10**: a conceptual tour from qubits to migration timelines that joins credited sources, limited by unsourced numbers and migration advice left to reconstruct.
+
+**Reach segment**: architects and teams who choose providers or run their own cryptography can act on the migration guidance within the year; most attendees take background rather than an applicable change.
 
 **Novelty 1/2**
 
@@ -70,7 +73,7 @@ Developers and architects who want a conceptual grounding in why post-quantum mi
 
 **Demonstrated 1/2**
 
-- **·** [01:35](https://youtu.be/yUMnuh5U5k4?t=95) The talk sets itself up as a conceptual journey with no runnable artifact at stake and carries its claims through worked equations and diagrams on slides; the Java 24 ML-KEM remark at 34:34 is stated, not shown.
+- **·** [01:35](https://youtu.be/yUMnuh5U5k4?t=95) The talk sets itself up as a conceptual journey with no runnable artifact at stake and carries its claims through worked equations and diagrams on slides.
 
 **Measured 1/2**
 

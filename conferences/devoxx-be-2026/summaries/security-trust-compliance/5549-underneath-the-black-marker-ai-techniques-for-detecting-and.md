@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=wJ7R4qkVs8Y
 durationMin: 50
 slides: https://github.com/davidvonthenen/2026-devoxx-belgium/blob/main/Underneath_the_Black_Marker_AI_Techniques_for_Detecting_and_Reversing_Redactions.pdf
-verdict: 8
+verdict: 7
+reach: segment
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -90,32 +91,31 @@ Developers and security engineers who publish redacted documents or handle PII g
 
 ## Verdict
 
-**8/10**: nine working demos and an original trained model, held back by thin measurement and a glossed model architecture.
+**7/10**: working PDF and image-recovery demos with reproducible materials, limited by self-reported measurement and brief explanations of the recovery techniques.
 
-**Novelty 2/2**
+**Reach segment**: security engineers and developers handling redacted documents or publishing sensitive images can apply the failure modes and verification techniques.
 
-- **+** [38:19](https://youtu.be/wJ7R4qkVs8Y?t=2299) The speaker presents his own model that reads Gaussian-blurred text directly, trained on a dataset he generated through the obfuscation service, with the dataset and an inference checkpoint published.
-- **+** [24:12](https://youtu.be/wJ7R4qkVs8Y?t=1452) The data-locality plus named-entity-recognition idea for fitting candidate names to black boxes is the speaker's own proposal, offered unbuilt as an exercise.
-- **+** [27:21](https://youtu.be/wJ7R4qkVs8Y?t=1641) Three open-source recovery projects (Depixelization, unpixel, DeepMosaics) are credited, compared and run against prepared targets in one session.
+**Novelty 1/2**
+
+- **+** [23:41](https://youtu.be/wJ7R4qkVs8Y?t=1421) The speaker adds his own unbuilt proposal for correlating nearby communications and black-box lengths to the collection of published redaction attacks.
 
 **Demonstrated 2/2**
 
-- **+** [06:20](https://youtu.be/wJ7R4qkVs8Y?t=380) Copying text from under PDF black boxes works on screen, by hand and through a bulk script that reports 91 improper redactions and writes an `-unredacted.txt` file.
-- **+** [35:43](https://youtu.be/wJ7R4qkVs8Y?t=2143) Unpixel ranks nine fonts and returns the correct word "admin", with Liberation Sans first.
-- **+** [45:34](https://youtu.be/wJ7R4qkVs8Y?t=2734) The custom model infers "a test david" from the blurred test image, matching the original exactly.
+- **+** [06:52](https://youtu.be/wJ7R4qkVs8Y?t=412) Copying and pasting a black-boxed PDF exposes its concealed text on screen.
+- **+** [33:04](https://youtu.be/wJ7R4qkVs8Y?t=1984) Depixelization produces a readable recovery of the pixelated input phrase.
+- **+** [45:34](https://youtu.be/wJ7R4qkVs8Y?t=2734) The final demo runs the custom recognizer on a blurred image and checks the predicted text against the clear original.
 
 **Measured 1/2**
 
-- **+** [35:12](https://youtu.be/wJ7R4qkVs8Y?t=2112) Unpixel prints a match score per font, with the winner at total=0.0000 beside "Confidence: 1.00" (the score is inverted, as the speaker says).
-- **+** [44:32](https://youtu.be/wJ7R4qkVs8Y?t=2672) Training cost is stated as about 14 hours on an H100, a self-reported figure with no baseline.
-- **−** [45:34](https://youtu.be/wJ7R4qkVs8Y?t=2734) The custom model is validated on a single test image with no accuracy figure, test-set size or baseline comparison.
+- **+** [44:32](https://youtu.be/wJ7R4qkVs8Y?t=2672) Training is reported as about 14 hours on an H100, giving a resource estimate without a baseline or measurement method.
+- **−** [46:04](https://youtu.be/wJ7R4qkVs8Y?t=2764) The custom-model results conclude without test-set accuracy or an evaluation across blur strengths to establish how reliably the recovery works.
+- **−** [47:06](https://youtu.be/wJ7R4qkVs8Y?t=2826) The claim that a trained model could read other customers’ output from the same service is not backed by a cross-customer evaluation.
 
 **Depth 1/2**
 
-- **+** [14:48](https://youtu.be/wJ7R4qkVs8Y?t=888) PDF incremental revisions and object-stream encodings are explained at the file-format level, including why saving without publishing preserves history.
-- **+** [29:24](https://youtu.be/wJ7R4qkVs8Y?t=1764) The generate-and-test mechanism behind unpixel is explained: render candidates, compare pixelation strength per box, pick the match.
-- **−** [41:28](https://youtu.be/wJ7R4qkVs8Y?t=2488) The SVTRv2 architecture slide is skipped ("I'm going to skip this"), and the CTC scan-and-collapse sketch at [42:59](https://youtu.be/wJ7R4qkVs8Y?t=2579) is the only account of how the core model works.
+- **+** [29:24](https://youtu.be/wJ7R4qkVs8Y?t=1764) Unpixel’s generate-and-test mechanism is explained through font candidates and the lightness of pixelated boxes.
+- **+** [42:59](https://youtu.be/wJ7R4qkVs8Y?t=2579) The CTC explanation follows character predictions, blank markers and duplicate collapse to show how OCR emits text.
 
 **Reusable 2/2**
 
-- **+** [48:09](https://youtu.be/wJ7R4qkVs8Y?t=2889) The repository holds all nine demos with commands, dataset and checkpoint download links, and a bonus challenge PDF.
+- **+** [48:09](https://youtu.be/wJ7R4qkVs8Y?t=2889) The linked talk repository supplies the demo code and commands, plus links to the generated dataset and CPU inference checkpoint for the custom-model example.

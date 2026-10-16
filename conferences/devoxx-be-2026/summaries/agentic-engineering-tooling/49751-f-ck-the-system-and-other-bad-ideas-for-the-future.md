@@ -9,7 +9,8 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=wUyQmRriCng
 durationMin: 59
 slides: null
-verdict: 8
+verdict: 7
+reach: segment
 frames: 13
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -97,13 +98,14 @@ Builders and policymakers who want arousing big-picture case for European tech s
 
 ## Verdict
 
-**8/10**: Original arguments against the Europe 2031 compute case and two sourced charts carry it; a strategy keynote with nothing to run and no published artifact.
+**7/10**: Sovereignty and AI strategy are brought together with comparative charts and beginner-level decision rules; the synthesis is not tested on the speaker's own cases and the takeaways remain fragments.
 
-**Novelty 2/2**
+**Reach segment**: Tech leads, architects and public-sector developers choosing vendors, clouds and models can apply its sovereignty criteria; most of the audience takes home the big picture.
 
-- **+** [17:28](https://youtu.be/wUyQmRriCng?t=1048) The energy, technology, economy, military, agency pyramid is the speaker's own framework for sequencing sovereignty.
-- **+** [48:42](https://youtu.be/wUyQmRriCng?t=2922) The argument that European compute fills with American chips and deepens a known liability, plus the [50:49](https://youtu.be/wUyQmRriCng?t=3049) case that every reason for the frontier race triggers mutually assured economic destruction if used, answer the Europe 2031 essay with the speaker's own reasoning.
-- **+** [43:00](https://youtu.be/wUyQmRriCng?t=2580) Competing where industries transition anyway (energy as technology, mobility as usage) reframes the "we can't compete" objection.
+**Novelty 1/2**
+
+- **+** [43:00](https://youtu.be/wUyQmRriCng?t=2580) The keynote brings sovereignty and industry-transition thinking together with [51:53](https://youtu.be/wUyQmRriCng?t=3113) an AI absorption strategy, offering a synthesis across several subjects.
+- **·** [17:28](https://youtu.be/wUyQmRriCng?t=1048) The sovereignty pyramid proposes a sequence of priorities without testing that framework on the speaker's own cases.
 
 **Demonstrated 1/2**
 
@@ -111,17 +113,17 @@ Builders and policymakers who want arousing big-picture case for European tech s
 
 **Measured 2/2**
 
-- **+** [48:00](https://youtu.be/wUyQmRriCng?t=2880) The compute chart compares US, Chinese and European gigawatts today and planned for 2031 against a stated marathon band, with named sources (Europe2031.ai / Bruegel, Anthropic, OpenAI/NBER, SemiAnalysis).
+- **+** [48:00](https://youtu.be/wUyQmRriCng?t=2880) The compute chart compares current and planned regional capacity against a marathon band with stated workload assumptions and named sources, distinguishing planned capacity from capacity already built.
 - **+** [52:45](https://youtu.be/wUyQmRriCng?t=3165) The SWE-bench Verified against blended-price scatter compares frontier and cheaper models on one axis pair and flags a 38x cheaper option 14 points lower.
-- **−** [33:06](https://youtu.be/wUyQmRriCng?t=1986) The 400-billion-euro license fees, the 4-trillion-euro equity and the 50-billion versus hundreds-of-billions insurance estimate at [40:57](https://youtu.be/wUyQmRriCng?t=2457) are stated with no visible source or method.
+- **−** [33:06](https://youtu.be/wUyQmRriCng?t=1986) The 400-billion-euro license fees and 4-trillion-euro equity totals, like the converter replacement and blackout costs at [40:25](https://youtu.be/wUyQmRriCng?t=2425), are stated without a source or calculation.
 
 **Depth 2/2**
 
-- **+** [27:54](https://youtu.be/wUyQmRriCng?t=1674) The CLOUD Act and FISA override why vendor sovereign-cloud pledges say "we will help" and never "we will guarantee".
-- **+** [28:25](https://youtu.be/wUyQmRriCng?t=1705) EuroStack is explained as resilience at every layer so that a cutoff means switching, not stopping.
-- **+** [40:25](https://youtu.be/wUyQmRriCng?t=2425) The return-on-sovereignty KPI weighs a 50-billion converter replacement against a multi-day blackout costing hundreds of billions.
+- **+** [27:54](https://youtu.be/wUyQmRriCng?t=1674) The speaker explains sovereign-cloud promises through the CLOUD Act and FISA constraints on American companies.
+- **+** [28:25](https://youtu.be/wUyQmRriCng?t=1705) EuroStack is explained as resilience at every layer so that a cutoff means switching rather than stopping.
+- **+** [38:52](https://youtu.be/wUyQmRriCng?t=2332) The return-on-sovereignty KPI treats pricier European core tech as insurance against larger damage, giving the rebuild premium a decision rule alongside ROI.
 
 **Reusable 1/2**
 
-- **+** [39:22](https://youtu.be/wUyQmRriCng?t=2362) The return-on-sovereignty KPI can be added to a business case, and the named European tools can be looked up.
-- **·** [36:48](https://youtu.be/wUyQmRriCng?t=2208) The talk ships no repository or checklist; the copy-back argument is pointed to the speaker's book only in passing.
+- **+** [30:30](https://youtu.be/wUyQmRriCng?t=1830) France's Visio mandate and the German ODF requirement give viewers named tools and mandates to look up.
+- **·** [36:48](https://youtu.be/wUyQmRriCng?t=2208) The copy-back argument points to the speaker's book without identifying a checklist or other artifact that reproduces the keynote's program.

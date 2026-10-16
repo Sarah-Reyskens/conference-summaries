@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=AmL_OCs5F4E
 durationMin: 35
 slides: https://raniz.se/decks/2026/devoxx-be-26-strangling-the-dragon.pdf
 verdict: 5
+reach: broad
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -76,28 +77,30 @@ Developers and architects who own an aging system and need a plan to modernize i
 
 ## Verdict
 
-**5/10**: A well-ordered playbook that combines a strangler migration with TDD seams, DDD context mapping and team alignment, limited by no mechanics for running old and new side by side and no measured result.
+**5/10**: A migration playbook combining TDD seams, DDD context mapping and team alignment, grounded in a production example but leaving data coexistence unexplained and the practices to reconstruct.
+
+**Reach broad**: Developers, tech leads and architects maintaining business applications can use incremental modernization, tested boundaries and team alignment in their own systems.
 
 **Novelty 1/2**
 
-- **+** [08:20](https://youtu.be/AmL_OCs5F4E?t=500) The 2016–2019 startup story grounds the pattern in the speaker's own multi-year migration of a prototype image service.
-- **+** [11:28](https://youtu.be/AmL_OCs5F4E?t=688) TDD, DDD context mapping and the Inverse Conway Manoeuvre are combined into one migration playbook instead of being presented as separate topics.
+- **+** [08:20](https://youtu.be/AmL_OCs5F4E?t=500) The 2016–2019 migration of a prototype image service into job and album services, ending with the empty cluster decommissioned, grounds the pattern in the speaker’s own production experience.
+- **+** [11:28](https://youtu.be/AmL_OCs5F4E?t=688) TDD, DDD context mapping and the Inverse Conway Manoeuvre are brought together as one migration playbook rather than presented as separate topics.
 
 **Demonstrated 1/2**
 
-- **·** A strategy talk with diagrams and architecture sketches has nothing runnable to show, so there is no demo to pass or fail.
+- **·** A strategy talk argued through diagrams and architecture sketches has nothing runnable to show, so there is no demo to pass or fail.
 
 **Measured 1/2**
 
-- **·** [15:38](https://youtu.be/AmL_OCs5F4E?t=938) The talk makes no quantitative claims about the method; the Knight Capital $460M figure is a cited incident and not evidence for the pattern.
+- **·** [15:38](https://youtu.be/AmL_OCs5F4E?t=938) The talk makes no quantitative claim for the method; the Knight Capital $460M-in-45-minutes figure is a cited cautionary incident about stale feature flags, not evidence for the pattern.
 
 **Depth 1/2**
 
-- **+** [02:38](https://youtu.be/AmL_OCs5F4E?t=158) Six failure modes of rewrites are explained, including the dilemma of fixing or reimplementing existing bugs.
-- **+** [13:02](https://youtu.be/AmL_OCs5F4E?t=782) Legacy TDD is made specific: fixate current behavior first, break the code to prove each test fails, cut a seam, then test-drive the replacement.
-- **−** [20:54](https://youtu.be/AmL_OCs5F4E?t=1254) The target architecture is left open (microservices, modular monolith or self-contained systems) with no rule for choosing, and the talk never explains how data, routing or transactions work while old and new run side by side.
+- **+** [02:38](https://youtu.be/AmL_OCs5F4E?t=158) Six failure modes of rewrites are worked through, down to the dilemma of whether existing bugs get fixed or consciously reimplemented.
+- **+** [13:02](https://youtu.be/AmL_OCs5F4E?t=782) Legacy TDD is made specific: fixate current behavior first and break the code to prove each test fails, then test-drive the change.
+- **−** [20:54](https://youtu.be/AmL_OCs5F4E?t=1254) The extraction sequence reaches production deployment without explaining how data or transactions work while old and new run side by side.
 
 **Reusable 1/2**
 
-- **+** [14:37](https://youtu.be/AmL_OCs5F4E?t=877) The five-step test-driving sequence and the start/continue lists are specific enough to follow directly.
-- **·** [32:18](https://youtu.be/AmL_OCs5F4E?t=1938) No repository or sample project accompanies the talk; the only pointer is a QR code to the slides, so the practices must be reconstructed.
+- **+** [14:37](https://youtu.be/AmL_OCs5F4E?t=877) The migration sequence describes opening a tested seam, reusing tests for the replacement and switching paths behind a feature flag.
+- **·** [32:18](https://youtu.be/AmL_OCs5F4E?t=1938) The closing resource pointer offers slides but no repository or sample project reproducing the migration procedure, so the practices must be reconstructed.

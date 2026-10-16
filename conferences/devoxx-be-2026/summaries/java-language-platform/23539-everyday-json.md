@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=5y_82lCevHg
 durationMin: 51
 slides: null
 verdict: 6
+reach: broad
 frames: 13
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -73,31 +74,32 @@ Values are immutable: a mutable input map is copied into an immutable backing. J
 Java developers curious about the built-in JSON API coming in JDK 28, and anyone writing small diagnostic or one-off tools against JDK-produced JSON. Readers who only need the API reference can go straight to the JEP text; teams needing object mapping, streaming or lenient parsing should stay with Jackson or a similar library.
 
 ## Verdict
-**6/10**: JEP 540's own rationale presented with the speakers' experience and JDK-internal tooling examples, and the strict-parsing, fail-fast and scope decisions explained with their alternatives; held back by material that a read of the JEP largely gives, one captured run, and code that lives on slides.
+**6/10**: JEP 540's rationale presented with the speakers' experience and JDK-internal tooling examples, and the strict-parsing, fail-fast and scope decisions explained with their alternatives; held back by material that a read of the JEP largely gives, one captured run, and code that lives on slides.
+
+**Reach broad**: most Java developers who handle JSON config, HTTP payloads or JDK diagnostic output can use the built-in API for small tasks once it ships.
 
 **Novelty 1/2**
 
-- **+** [23:36](https://youtu.be/5y_82lCevHg?t=1416) Klang argues from his own career experience that liberal parsing makes a document's meaning depend on the parser, as the reason for the strict RFC 8259 stance.
-- **+** [28:14](https://youtu.be/5y_82lCevHg?t=1694) Bateman lays out JSON consumers inside the JDK (HttpClient body handlers, marshalling, JMX over REST, Properties), a roadmap beyond what the JEP covers.
+- **+** [28:14](https://youtu.be/5y_82lCevHg?t=1694) Bateman maps JSON consumers inside the JDK, from HttpClient handlers and marshalling to JMX over REST and Properties, as a roadmap beyond the JEP.
+- **+** [40:37](https://youtu.be/5y_82lCevHg?t=2437) Klang notes a simple built-in API also lets LLMs generate one-off JSON tools without extra project setup.
 - **−** JEP 540 (openjdk.org/jeps/540), which Klang calls very well written and points the audience to, already holds the API surface, the weather example and the strict-parsing policy that fill the first half.
 
 **Demonstrated 1/2**
 
-- **+** [34:40](https://youtu.be/5y_82lCevHg?t=2080) The thread-dump printer is shown with its `java --add-modules jdk.incubator.json` command line and the printed thread ids and names.
+- **+** [34:55](https://youtu.be/5y_82lCevHg?t=2095) The slide shows the thread-dump printer's `java --add-modules` command line with its printed thread ids and names.
 - **−** [19:58](https://youtu.be/5y_82lCevHg?t=1198) The weather-forecast pipeline is presented as code, and the average temperature it computes is never run or read out.
 
 **Measured 1/2**
 
-- **·** [14:14](https://youtu.be/5y_82lCevHg?t=854) The talk makes no quantitative claim; "three lines of code" describes an example's size and claims no result.
+- **·** [14:14](https://youtu.be/5y_82lCevHg?t=854) The talk makes no quantitative claim, and "three lines of code" describes an example's size rather than a result.
 
 **Depth 2/2**
 
-- **+** [24:38](https://youtu.be/5y_82lCevHg?t=1478) The strictness section weighs comment dialects, trailing commas and first-vs-last duplicate resolution (with its streaming consequence) before settling on RFC 8259 only.
+- **+** [24:38](https://youtu.be/5y_82lCevHg?t=1478) The strictness section weighs comment dialects, trailing commas and first-versus-last duplicate resolution with its streaming consequence before settling on RFC 8259 only.
 - **+** [22:03](https://youtu.be/5y_82lCevHg?t=1323) Fail-fast traversal is set against erroring after the whole traversal, shown with a misspelled path whose exception reports what was sought, the path and the document offset.
-- **−** [46:28](https://youtu.be/5y_82lCevHg?t=2788) The verbosity of generating nested JSON is acknowledged as the less mature side of the API and left without a design answer.
+- **−** [46:58](https://youtu.be/5y_82lCevHg?t=2818) The generation side is acknowledged as less mature than the parsing side, with nested-object verbosity left without a design answer.
 
 **Reusable 1/2**
 
-- **+** [08:24](https://youtu.be/5y_82lCevHg?t=504) Klang points to JEP 540, whose appendix publishes the complete weather-forecast program.
 - **+** [42:45](https://youtu.be/5y_82lCevHg?t=2565) An early-access JDK build and the core-libs-dev feedback channel give a path to try the API immediately.
-- **−** [33:21](https://youtu.be/5y_82lCevHg?t=2001) Bateman's thread-dump and Properties examples exist only as code on slides, to be retyped.
+- **−** [33:21](https://youtu.be/5y_82lCevHg?t=2001) The thread-dump and Properties examples exist only as code on slides, to be retyped.

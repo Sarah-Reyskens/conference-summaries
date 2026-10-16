@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=kuUeHD_k5fs
 durationMin: 40
 slides: null
 verdict: 8
+reach: segment
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Java and the Next Generation of Programming Models
 Ana-Maria Mihalceanu · Conference · Java Language & Platform
@@ -100,7 +100,9 @@ FFM minimizes copy overhead and transfer inefficiency around native calls today;
 Java developers embedding local inference or curious about Babylon gain the most, especially anyone weighing FFM against JNI-style glue. Viewers wanting GPU offload specifics or measured latency numbers should look to the follow-up work instead. Beginners to either Java internals or ML inference will find the pace steep.
 
 ## Verdict
-**8/10**: Two live end-to-end demos, code-model internals and runnable examples earn it; the synthesis stays introductory and the latency claims carry no numbers.
+**8/10**: Two live end-to-end demos, code-model internals and two runnable example projects earn it; the synthesis stays introductory and the latency claims carry no numbers.
+
+**Reach segment**: Teams adding local LLM inference or embeddings to Java applications can use the FFM and jextract pattern now, while the Babylon code-reflection half is a prototype most of the audience only watches.
 
 **Novelty 1/2**
 
@@ -114,14 +116,14 @@ Java developers embedding local inference or curious about Babylon gain the most
 
 **Measured 1/2**
 
-- **−** [37:24](https://youtu.be/kuUeHD_k5fs?t=2244) The closing claims reduced end-to-end latency and transfer inefficiency from FFM with no number, baseline or benchmark anywhere in the talk.
+- **−** [36:53](https://youtu.be/kuUeHD_k5fs?t=2213) The closing claims of reduced end-to-end latency and transfer inefficiency from FFM come with no number, baseline or benchmark anywhere in the talk.
 - **·** [34:17](https://youtu.be/kuUeHD_k5fs?t=2057) The only figure is the self-reported "less than 200 lines of code" for the Llama in Java, with no baseline.
 
 **Depth 2/2**
 
 - **+** [24:55](https://youtu.be/kuUeHD_k5fs?t=1495) The code-model anatomy (operations, bodies, blocks, parameters, `%` results) is explained at the level needed to debug a reflected LLM.
 - **+** [28:04](https://youtu.be/kuUeHD_k5fs?t=1684) The choice of a semantic tree over bytecode is justified: bytecode is too low level, discards useful information and serves only the JVM.
-- **−** [34:17](https://youtu.be/kuUeHD_k5fs?t=2057) The `forward` method is said to be transformed at compilation time into the ONNX model, but no step of that lowering is shown for the ReLU example or the Llama.
+- **−** [32:46](https://youtu.be/kuUeHD_k5fs?t=1966) The Llama `forward` method is said to lower into the ONNX model, but the walkthrough covers constants, weights and operators without showing a step of that lowering.
 
 **Reusable 2/2**
 

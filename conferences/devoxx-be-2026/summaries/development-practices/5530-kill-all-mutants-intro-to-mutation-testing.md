@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=AsVt_dzTmN4
 durationMin: 50
 slides: https://Codosaur.us/slides/mutants-dvxbe-26.pdf
 verdict: 5
+reach: broad
 frames: 5
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -99,31 +100,32 @@ Developers and leads who quote coverage numbers or are considering mutation test
 
 ## Verdict
 
-**5/10**: A clear intro with worked examples and a stated cost model, but no tool ever runs on screen and most of the background is what a first search returns.
+**5/10**: Worked examples, mutation-tool internals and a stated cost model explain the technique, but no tool runs on screen and no reproducible sample project is supplied.
+
+**Reach broad**: Developers, tech leads and architects building business applications can apply the test-suite reasoning and mutation-testing approval gates across languages and frameworks.
 
 **Novelty 1/2**
 
-- **+** [22:16](https://youtu.be/AsVt_dzTmN4?t=1336) The power-function walkthrough turns the kill/survive loop into four survivors with a diff-style report and two rounds of killing tests.
-- **−** The history (Lipton 1971, Budd 1980), the competent programmer hypothesis, the fuzzing comparison and equivalent mutants repeat the Wikipedia "Mutation testing" article.
-- **·** [42:43](https://youtu.be/AsVt_dzTmN4?t=2563) The per-language tool survey is a name list with no comparison or selection guidance beyond naming PIT for Java.
+- **+** [22:16](https://youtu.be/AsVt_dzTmN4?t=1336) The speaker's own power-function example illustrates known mutation-testing ideas through successive choices of inputs that distinguish surviving mutants.
 
 **Demonstrated 0/2**
 
-- **−** [24:21](https://youtu.be/AsVt_dzTmN4?t=1461) The mutation report is introduced as what output looks "roughly like", a mockup of a tool run.
-- **−** [29:43](https://youtu.be/AsVt_dzTmN4?t=1783) Both worked examples are hand-stepped on slides; no mutant is generated or killed by running software during the talk.
+- **−** [24:21](https://youtu.be/AsVt_dzTmN4?t=1461) The mutation report is introduced as what output looks "roughly like," rather than output from an actual tool run.
+- **−** [29:43](https://youtu.be/AsVt_dzTmN4?t=1783) The send_message example is another hypothetical slide walkthrough, with no mutant generated or killed by running software.
 
 **Measured 1/2**
 
-- **+** [36:32](https://youtu.be/AsVt_dzTmN4?t=2192) The cost model states its assumptions (10 lines, 5 points, 20 alternatives, a fifth of the tests) and derives 200x test runs, so a 10-second suite becomes over half an hour.
-- **−** [38:03](https://youtu.be/AsVt_dzTmN4?t=2283) The figures are illustrative arithmetic, not a timed run, and the claim that pruning cut mutants to about a third cites no source.
+- **+** [36:32](https://youtu.be/AsVt_dzTmN4?t=2192) The cost model states its assumptions of 10 lines, five mutation points, 20 alternatives and a fifth of the tests, deriving 200 times as many test runs without timing an actual suite.
+- **−** [38:03](https://youtu.be/AsVt_dzTmN4?t=2283) The claim that pruning reduces mutants to about a third is given without a cited study, benchmark setup or measured comparison.
 
 **Depth 2/2**
 
-- **+** [15:48](https://youtu.be/AsVt_dzTmN4?t=948) The AST walkthrough shows where mutants come from (parse, extract function subtrees, change one node at a time), followed by test discovery through annotations, naming, call graphs or coverage data.
-- **+** [39:04](https://youtu.be/AsVt_dzTmN4?t=2344) The one-mutation rule is defended four ways: the competent programmer hypothesis, reader focus, canceling changes and combinatorial explosion.
-- **+** [29:43](https://youtu.be/AsVt_dzTmN4?t=1783) The send_message example teaches survivor interpretation, splitting one survivor into a test-gap fix and a redundancy deletion.
+- **+** [15:48](https://youtu.be/AsVt_dzTmN4?t=948) The AST walkthrough explains function-subtree extraction and single-node mutation, alongside test discovery through annotations, naming, call graphs or coverage data.
+- **+** [39:04](https://youtu.be/AsVt_dzTmN4?t=2344) The one-mutation rule is defended through the competent programmer hypothesis, reader focus, canceling changes and combinatorial explosion.
+- **+** [31:48](https://youtu.be/AsVt_dzTmN4?t=1908) The send_message diagnosis distinguishes an undersized test message requiring a boundary-crossing input from an unnecessary loop that should be deleted.
 
 **Reusable 1/2**
 
-- **+** [21:43](https://youtu.be/AsVt_dzTmN4?t=1303) The find-tests, make-mutants, kill-loop pseudocode plus the PR-gate placement guidance at [41:41](https://youtu.be/AsVt_dzTmN4?t=2501) give a process to reconstruct.
-- **·** [42:43](https://youtu.be/AsVt_dzTmN4?t=2563) No repository, sample project, configuration or checklist is published; the code stays on slides.
+- **+** [21:43](https://youtu.be/AsVt_dzTmN4?t=1303) The find-tests, make-mutants and kill-loop pseudocode gives an algorithm to reconstruct.
+- **+** [41:41](https://youtu.be/AsVt_dzTmN4?t=2501) The proposed approval gates specify no surviving mutants on new code and no increase on old code, with CI enforcement and a personal lint-stage run.
+- **·** [44:48](https://youtu.be/AsVt_dzTmN4?t=2688) The talk closes without pointing to a sample repository, complete configuration or checklist reproducing its examples.

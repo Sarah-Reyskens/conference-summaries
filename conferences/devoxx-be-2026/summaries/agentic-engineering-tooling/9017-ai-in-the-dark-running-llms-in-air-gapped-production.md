@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=kaT6UpLrzhU
 durationMin: 51
 slides: null
-verdict: 7
+verdict: 6
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -86,33 +87,34 @@ The constraints generalize beyond defence to finance and healthcare data that le
 Engineers shipping AI agents into regulated or disconnected environments (defence, finance, healthcare, on-prem) who need the production patterns: permission boundaries, approval flows, auditability. Spring AI users get concrete tool-design and advisor-chain guidance. Skip if you want model-serving internals (quantization, GPU sizing, inference servers), which stay at architecture level, or if your agents only ever call cloud APIs.
 
 ## Verdict
-**7/10**: Defence-environment constraints and two recorded demos that show grounding and a human approval gate working, limited by generic core design, an effect claim with no number, and no published artifact.
+**6/10**: Defence air-gap constraints with two recorded demos showing grounding and the approval gate working, limited by an effect claim with no number and no published artifact.
+
+**Reach segment**: Java developers adding LLM agent features with Spring AI and MCP, including those shipping into regulated or disconnected environments.
 
 **Novelty 1/2**
 
-- **+** [10:32](https://youtu.be/kaT6UpLrzhU?t=632) The speaker names what no internet removes from her own setting: model upgrades behind a formal re-accreditation cycle, registries, telemetry and threat feeds, with DIL as the field term.
-- **+** [23:10](https://youtu.be/kaT6UpLrzhU?t=1390) A production constraint behind the local-model mandate: Anthropic's terms of service bar use with defence technology.
-- **·** [19:58](https://youtu.be/kaT6UpLrzhU?t=1198) The read/write split, human approval and append-only audit ([26:19](https://youtu.be/kaT6UpLrzhU?t=1579)) are established practice applied to the air-gap setting, and the demo model is a placeholder for the undisclosed production one.
+- **+** [10:32](https://youtu.be/kaT6UpLrzhU?t=632) The speaker names what no internet removes in her own setting: model upgrades behind a formal re-accreditation cycle with legal review, plus registries, telemetry and threat feeds, with DIL as the field term.
+- **+** [23:10](https://youtu.be/kaT6UpLrzhU?t=1390) A production constraint behind the local-model mandate from her industry: Anthropic's terms bar use with defence technology.
+- **·** [23:42](https://youtu.be/kaT6UpLrzhU?t=1422) The demo runs on Llama 3.2 as an explicit placeholder for the undisclosed production models, and the battalion scenario is simplified for the stage.
 
 **Demonstrated 2/2**
 
-- **+** [39:54](https://youtu.be/kaT6UpLrzhU?t=2394) The hallucination demo shows both outputs on screen: a fabricated 92%-readiness unit profile versus "Unit PHANTOM-9 not found in system."
-- **+** [44:04](https://youtu.be/kaT6UpLrzhU?t=2644) The approval demo shows approve-then-execute followed by a visible "Operation denied by operator. No changes were made."
-- **−** [45:09](https://youtu.be/kaT6UpLrzhU?t=2709) The timeout-means-rejected case is described, not run, and the audit trail and MCP delegation are drawn on slides without a run.
+- **+** [39:54](https://youtu.be/kaT6UpLrzhU?t=2394) The hallucination run shows both outputs on screen: a fabricated reconnaissance profile at 92% readiness versus "Unit PHANTOM-9 not found in system" once tool-calling runs.
+- **+** [44:04](https://youtu.be/kaT6UpLrzhU?t=2644) The approval run shows approve-then-execute on the ALPHA-7 move followed by a visible "Operation denied by operator. No changes were made" on the rejected retry.
+- **−** [45:09](https://youtu.be/kaT6UpLrzhU?t=2709) The timeout-means-rejected case is described as a configuration rule, not run.
 
-**Measured 1/2**
+**Measured 0/2**
 
-- **+** [38:48](https://youtu.be/kaT6UpLrzhU?t=2328) The same PHANTOM-9 question asked with tool calling off and on gives a visible before/after: invented unit details versus a correct not-found, from one pair of runs.
-- **−** [36:11](https://youtu.be/kaT6UpLrzhU?t=2171) The negative instruction is said to have reduced the wrong-tool error rate "with a very high percentage", with no number, baseline or method.
-- **·** [48:51](https://youtu.be/kaT6UpLrzhU?t=2931) The 90% and 50% confidence levels are illustrative outputs of a prototype, not a measurement.
+- **−** [36:11](https://youtu.be/kaT6UpLrzhU?t=2171) The negative instruction is said to have cut the wrong-tool error rate "with a very high percentage", with no number, baseline or method.
+- **−** [48:51](https://youtu.be/kaT6UpLrzhU?t=2931) The 90% versus 50% confidence levels are illustrative outputs of a prototype score breakdown, not a measurement of any claim.
 
 **Depth 2/2**
 
-- **+** [24:44](https://youtu.be/kaT6UpLrzhU?t=1484) The advisor chain order (logging, approval, audit) is explained with its reason: the audit write happens on the way back out.
-- **+** [35:07](https://youtu.be/kaT6UpLrzhU?t=2107) Each of the four description sentences is justified, including why the negative instruction stops wrong-tool selection and why a local model has no world knowledge to compensate.
-- **+** [12:39](https://youtu.be/kaT6UpLrzhU?t=759) The cloud-versus-air-gap trade-off weighs elastic scale and newest models against fixed hardware and self-owned failures.
+- **+** [24:44](https://youtu.be/kaT6UpLrzhU?t=1484) The advisor chain order (logging, approval, audit) is explained with its reason: the chain wraps the whole call so the audit write happens on the way back out.
+- **+** [35:07](https://youtu.be/kaT6UpLrzhU?t=2107) Each of the four description sentences is justified, including why the negative instruction stops wrong-tool selection when a local model has no world knowledge to fall back on.
+- **+** [12:39](https://youtu.be/kaT6UpLrzhU?t=759) The cloud-versus-air-gap trade-off weighs elastic scale and newest models against fixed hardware, frozen versions and self-owned failures.
 
 **Reusable 1/2**
 
-- **+** [36:00](https://youtu.be/kaT6UpLrzhU?t=2160) The full `@Tool` method with its four-sentence description is on screen and can be reconstructed directly.
-- **−** [37:46](https://youtu.be/kaT6UpLrzhU?t=2266) The demos run from a local prototype with no repository or published artifact covering the main content.
+- **+** [47:48](https://youtu.be/kaT6UpLrzhU?t=2868) The closing checklist centralizes the practices in four groups (model, supply chain, safety, observability) that can be reconstructed directly.
+- **−** [50:28](https://youtu.be/kaT6UpLrzhU?t=3028) The talk closes with a feedback QR and no repository or published artifact covering the demos.

@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=HO5CpETzywk
 durationMin: 45
 slides: null
-verdict: 10
+verdict: 8
+reach: niche
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -80,34 +81,36 @@ Everything is public: github.com/beehive-lab/jitllm, github.com/beehive-lab/Torn
 Java developers curious about local LLM inference or GPU programming from the JVM, and anyone evaluating alternatives to shipping Python/llama.cpp sidecars. Skip if you only consume models through cloud APIs, or if you want TornadoVM compiler internals: that material was explicitly left to earlier deep dives.
 
 ## Verdict
-**10/10**: A Java inference engine benchmarked live against llama.cpp with a stated method (prefill 1.20x, decode 93%), running two Quarkus apps on screen and published as an open repository.
+**8/10**: A Java GPU inference engine benchmarked live against llama.cpp with a stated method (prefill 1.20x, decode 93%) and explained at the level of design reasons, with two Quarkus apps running on screen; Novelty is limited by the project's own docs covering the feature tour and Reusable by the project's own repo being the main artifact.
 
-**Novelty 2/2**
+**Reach niche**: GPU and inference-engine developers in the audience; the Quarkus and LangChain4j provider swap needs an NVIDIA GPU and serves teams self-hosting local models, which most of the conference audience does not.
 
-- **+** [24:15](https://youtu.be/HO5CpETzywk?t=1455) The speakers ran the head-to-head themselves, porting llama.cpp's bench harness to Java so that "it's a fair comparison".
-- **+** [30:37](https://youtu.be/HO5CpETzywk?t=1837) They report which transformer-layer operations they found best as JIT kernels and which as cuBLAS calls, a result from their own tuning.
-- **+** [26:56](https://youtu.be/HO5CpETzywk?t=1616) Last year's engine was "10 to 30 times slower" than llama.cpp, and the current one is at near parity, a year-over-year result from the authors.
+**Novelty 1/2**
+
+- **+** [30:37](https://youtu.be/HO5CpETzywk?t=1837) The speakers report which transformer-layer operations they found fastest as JIT kernels and which as cuBLAS calls, a result of their own tuning, though the way they found it is not shown.
+- **·** [03:13](https://youtu.be/HO5CpETzywk?t=193) They claim the engine can autotune the code it generates on the same GPU that runs inference, a feature claim with no experience behind it in the talk.
+- **−** The tornadovm.org/jitllm page, the LangChain4j provider docs and the CUDA demos repo already state the toolkit, its TornadoVM compilation, the hybrid JIT-plus-library design and the supported model families.
 
 **Demonstrated 2/2**
 
-- **+** [24:50](https://youtu.be/HO5CpETzywk?t=1490) The live `jitllm bench` run prints prefill 1.20x and decode 93% of llama.cpp on screen.
+- **+** [24:15](https://youtu.be/HO5CpETzywk?t=1455) The live `jitllm bench` run is on screen with its llama.cpp comparison printed.
 - **+** [39:03](https://youtu.be/HO5CpETzywk?t=2343) The weather agent completes its three-tool chain and returns 22/13 for the host city, which the presenter checks ("Okay seems correct").
 - **+** [40:38](https://youtu.be/HO5CpETzywk?t=2438) The PR reviewer loads a 27B model, reads a real open pull request and returns its summary, with nvtop showing the memory line while the model loads.
-- **·** [42:19](https://youtu.be/HO5CpETzywk?t=2539) The second review's output was still streaming when the speakers moved on, so only its start was shown.
 
 **Measured 2/2**
 
 - **+** [24:47](https://youtu.be/HO5CpETzywk?t=1487) The bench method is stated: llama.cpp's bench ported to Java with identical parameters, 4K prefill tokens, 128 decode tokens, 5 repetitions.
-- **+** [33:44](https://youtu.be/HO5CpETzywk?t=2024) Batch prefill gives a 15x prefill gain over token-by-token and native libraries add another 2x, with each step attributed (the caption's "30%" for the combined figure reads as 30x).
-- **·** [25:52](https://youtu.be/HO5CpETzywk?t=1552) The live run uses Qwen3 0.6B to keep the demo fast; parity on 27B and 70B models is stated verbally.
+- **+** [26:56](https://youtu.be/HO5CpETzywk?t=1616) Last year's engine was "10 to 30 times slower" than llama.cpp and the current one is at near parity, a before/after on the same comparison.
+- **+** [33:44](https://youtu.be/HO5CpETzywk?t=2024) Batch prefill gives a 15x prefill gain over token-by-token and native libraries add another 2x, each step attributed, though no run is shown (the caption's "30%" for the combined figure reads as 30x).
 
 **Depth 2/2**
 
 - **+** [33:14](https://youtu.be/HO5CpETzywk?t=1994) Prefill takes the library path because it is compute-bound while decode stays all-JIT because it is bandwidth-bound, with the reasoning for each.
 - **+** [21:34](https://youtu.be/HO5CpETzywk?t=1294) Abstract ops lower to TornadoVM task graphs and JIT-compile to device code, and the six engine layers are walked with each layer's responsibility.
-- **·** [30:37](https://youtu.be/HO5CpETzywk?t=1837) The per-operation JIT-or-library choice is stated as "we found out that this is the best pattern", without how it was determined.
+- **+** [23:07](https://youtu.be/HO5CpETzywk?t=1387) The paged KV cache is split into blocks shared across sessions, so concurrent requests avoid one full cache copy each.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [43:56](https://youtu.be/HO5CpETzywk?t=2636) The closing slide points to the jitllm and TornadoVM repos, the Maven coordinates, the LangChain4j provider docs and the CUDA demos repo, "self-contained" for trying the demos.
-- **+** [34:48](https://youtu.be/HO5CpETzywk?t=2088) The three integration paths come with entry points: `LocalModels.load(path)`, a registered LangChain4j service, and `jitllm serve -m model.gguf --gpu`.
+- **+** [43:56](https://youtu.be/HO5CpETzywk?t=2636) The closing slide links the jitllm and TornadoVM repos, Maven coordinates, the LangChain4j provider docs and a CUDA demos repo with runnable Java and CUDA versions of 23 demos, including the JIT→cuBLAS→JIT graph.
+- **−** [34:48](https://youtu.be/HO5CpETzywk?t=2088) The three integration paths (`LocalModels.load(path)`, a registered LangChain4j service, `jitllm serve -m model.gguf --gpu`) come as slide fragments, not a sample project.
+- **−** [42:19](https://youtu.be/HO5CpETzywk?t=2539) The PR-reviewer app is offered on request ("we can share the demo with you") rather than linked, and the linked repos do not contain the bench setup or the two Quarkus apps.

@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=EJv0TMNSUjw
 durationMin: 45
 slides: https://github.com/dgageot/devoxx-be-2026/blob/shorter/demoit.html
 verdict: 6
+reach: segment
 frames: 11
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Create your own AI Agents without code
 David Gageot · Conference · Agentic Engineering & Tooling
@@ -60,7 +60,7 @@ Declaring a JSON schema makes the agent return a valid team document (piped to j
 The builder cheats: over-budget teams presented as legal, duplicate members ignored, losses reported as wins. The fix is evals, presented as unit tests for agents. Gageot shows five cases (legal Water team, build-and-spar, honest loss report, reject over-budget, reject duplicates), each with red/green assertions plus LLM-as-judge relevance checks ("does the response follow the rules?"). Capture a run as a test case, add the checks, then run `docker agent eval agents/11-builder.yaml evals/arena --repeat 5 --judge-model openai/gpt-5.6-terra`.
 
 ### [29:43](https://youtu.be/EJv0TMNSUjw?t=1783) Reading the eval report
-The report shows pass@1 of 80% but pass@5 of only 40%: two cases stable, two flaky, one failing, with per-case cost medians around a tenth of a cent, cost outliers flagged, and a total of $0.027 over 2m24s. Gageot reads this as "basically random" and not shippable. The fix loop is either manual or handed to another agent fed the YAML, tests, and detailed output; held-out cases stay hidden so the optimizer cannot overfit to the exam.
+The report shows 80% of cases passing at least once against 40% passing every time (`pass^5`): two cases stable, two flaky, one failing, with per-case cost medians around a tenth of a cent, cost outliers flagged, and a total of $0.027 over 2m24s. Gageot reads this as "basically random" and not shippable. The fix loop is either manual or handed to another agent fed the YAML, tests, and detailed output; held-out cases stay hidden so the optimizer cannot overfit to the exam.
 
 ### [32:49](https://youtu.be/EJv0TMNSUjw?t=1969) Optimizing with flavors
 A flavor is a small patch on the YAML that changes one thing, here adding a tool-backed arithmetic tool so stat totals are computed instead of guessed (the model kept summing the wrong members after redrawing duplicates). Eval suites run inside containers rather than sandboxes to keep thousands of repetitions affordable. Keep an edit only if the same evals score better than baseline.
@@ -87,31 +87,33 @@ Unexplored features get a word cloud: A2A and MCP consumption, ACP for JetBrains
 Developers and platform engineers asked to turn a business workflow into an AI agent gain the most: the evals-first loop and cost discipline transfer directly. Viewers deciding between a coding agent and a purpose-built service get a clear framing. Skip it if you already ship evaluated agents in production, or if you want Docker Agent API internals rather than a builder's tour (the companion three-hour deep dive covers that).
 
 ## Verdict
-**6/10**: A live build with a real eval report and a published repo, held back by a tour of documented features, a cut optimization run and no comparison between variants.
+**6/10**: A live build with an eval report read on screen and a published demo repo, held back by a cut optimization run and a tour of documented features.
+
+**Reach segment**: Developers adding LLM features or agents to their applications can apply the evals-first loop and the serving setup directly.
 
 **Novelty 1/2**
 
-- **+** [31:47](https://youtu.be/EJv0TMNSUjw?t=1907) The speaker builds the tool and ran thousands of Gordon tests, fixing some by hand and some with another agent, so the worked example carries production experience.
+- **+** [31:47](https://youtu.be/EJv0TMNSUjw?t=1907) The speaker reports running thousands of Gordon evals and fixing some by hand and some with another agent, so the worked example carries production testing experience.
 - **−** The evaluation and flavors pages of docs.docker.com/ai/docker-agent already cover `--repeat`, the LLM judge, container-isolated evals and the flavor patch the talk shows.
 
 **Demonstrated 1/2**
 
-- **+** [32:19](https://youtu.be/EJv0TMNSUjw?t=1939) The eval suite runs on stage with five repetitions and prints pass rates, flakiness, cost outliers and a total.
-- **−** [33:51](https://youtu.be/EJv0TMNSUjw?t=2031) The flavor run that would show the eval score improving is cut for time, so the optimization loop is described, not shown.
-- **−** [41:13](https://youtu.be/EJv0TMNSUjw?t=2473) The 32-agent tournament is announced as the proof, and the talk closes without its output after a first match that ends in a draw from a config omission.
+- **+** [18:18](https://youtu.be/EJv0TMNSUjw?t=1098) The agent calls the Pokemon tool live and answers Electric for Pikachu, with the tool call visible in the terminal UI.
+- **−** [33:51](https://youtu.be/EJv0TMNSUjw?t=2031) The flavor run that would show the eval score improving against the baseline is cut for time, so the optimization loop is described rather than shown.
+- **−** [41:13](https://youtu.be/EJv0TMNSUjw?t=2473) The 32-agent tournament is announced as the proof and the talk closes without its output, after a first match that draws from a missing randomness tool.
 
 **Measured 1/2**
 
-- **+** [32:19](https://youtu.be/EJv0TMNSUjw?t=1939) The eval report gives pass@1 80% against pass@5 40% over five repetitions, per-case cost medians and a $0.027 total over 2m24s.
-- **−** [08:22](https://youtu.be/EJv0TMNSUjw?t=502) The "15 times more expensive" model comparison is stated without the per-run costs on screen.
+- **+** [32:19](https://youtu.be/EJv0TMNSUjw?t=1939) The eval report shows 80% of cases passing at least once against 40% passing every time (`pass^5`) over five repetitions, with per-case cost medians and a $0.027 total over 2m24s.
+- **−** [08:53](https://youtu.be/EJv0TMNSUjw?t=533) The "15 times more expensive" model comparison is stated without the per-run costs shown on screen.
 
 **Depth 1/2**
 
-- **+** [34:54](https://youtu.be/EJv0TMNSUjw?t=2094) Eval runs use containers instead of sandboxes because for thousands of tests sandboxes would be too expensive.
-- **+** [35:26](https://youtu.be/EJv0TMNSUjw?t=2126) Held-out cases keep the optimizing agent from learning the test answers, a trade-off of agent tuning.
-- **·** [44:19](https://youtu.be/EJv0TMNSUjw?t=2659) The harness internals go to the three-hour companion session; this talk shows how to use the features.
+- **+** [34:54](https://youtu.be/EJv0TMNSUjw?t=2094) Eval suites run in containers instead of sandboxes because sandboxes would cost too much across thousands of repetitions.
+- **+** [35:26](https://youtu.be/EJv0TMNSUjw?t=2126) Held-out cases stay hidden from the optimizing agent so it cannot memorize the answers, a stated trade-off of agent tuning.
+- **·** [42:15](https://youtu.be/EJv0TMNSUjw?t=2535) Sandbox internals go to the keynote and the three-hour companion session; this slot covers using the features.
 
 **Reusable 2/2**
 
-- **+** [44:19](https://youtu.be/EJv0TMNSUjw?t=2659) The speaker points to the presentation repo, which holds the deck, the agent YAML files, the eval cases, the arena and the compose setup used on stage.
-- **+** [44:19](https://youtu.be/EJv0TMNSUjw?t=2659) The closing slide also links the Docker Agent documentation, its source and the DemoIt tool.
+- **+** [44:19](https://youtu.be/EJv0TMNSUjw?t=2659) The speaker points to the presentation repository, which holds the agent YAML files, the eval cases, the arena backend and the compose setup used on stage.
+- **+** [44:19](https://youtu.be/EJv0TMNSUjw?t=2659) The closing slide also links the Docker Agent documentation, its source and the DemoIt presentation tool.

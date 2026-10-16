@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=YEy7AgRO7As
 durationMin: 30
 slides: null
 verdict: 5
+reach: segment
 frames: 6
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # The day we stopped publishing Kafka event from our API...
@@ -61,34 +62,34 @@ Asked about pushing to Kafka from the API after commit instead of Debezium, Zinc
 Beginners fighting database-plus-Kafka consistency bugs, and teams evaluating Debezium who have not yet configured heartbeats or connector monitoring. Skip if you already run outbox plus Debezium in production; the pattern treatment stays introductory and the Q&A audio is partial.
 
 ## Verdict
-**5/10**: The replication-slot mechanics and the rejected variants from a production migration earn it; nothing is shown running and the claimed gains carry no measurements.
+**5/10**: The outbox variants, the WAL retention model and the heartbeat practice are explained clearly for beginners; the central flow is a diagram, the speed claim is unmeasured, and apart from the failed fixes the content is what Debezium's documentation gives.
+
+**Reach segment**: Backend teams combining relational database transactions with Kafka can use the outbox choices and Debezium operating practices in their services.
 
 **Novelty 1/2**
 
-- **+** [04:15](https://youtu.be/YEy7AgRO7As?t=255) The timing-race failure mode comes from the team's own B2B orders of several thousand gift cards taking milliseconds to persist.
-- **+** [14:43](https://youtu.be/YEy7AgRO7As?t=883) The one-consumer-per-action design is the team's own extension model: a new action is a new consumer with no change elsewhere.
-- **−** Debezium PostgreSQL connector documentation: the heartbeat table that keeps the replication slot advancing on low-traffic databases is already described there.
+- **+** [04:47](https://youtu.be/YEy7AgRO7As?t=287) The team's compensation and retry fixes failed in different ways: activation can be undone but mail cannot, and retries help the timing race but not a rolled-back order.
+- **−** The outbox flow, the heartbeat settings and WAL growth from a stalled replication slot are covered by Debezium's documentation and its outbox-pattern blog posts.
 
 **Demonstrated 0/2**
 
-- **−** [13:07](https://youtu.be/YEy7AgRO7As?t=787) The chosen connector-plus-topics design is walked through on architecture diagrams with no running connector on screen.
-- **−** [19:57](https://youtu.be/YEy7AgRO7As?t=1197) The heartbeat setup rests on speech plus its properties on a slide, with no running connector or heartbeat topic shown.
+- **−** [13:07](https://youtu.be/YEy7AgRO7As?t=787) The order-table-to-Kafka flow appears as an architecture diagram without a running connector, committed order or resulting event shown.
 
 **Measured 1/2**
 
-- **+** [04:15](https://youtu.be/YEy7AgRO7As?t=255) Order sizes and save times appear as anecdotes: B2B orders of several thousand gift cards taking a few milliseconds to persist.
-- **−** [14:12](https://youtu.be/YEy7AgRO7As?t=852) The API is claimed simpler and faster with no response-time numbers before or after the migration.
+- **+** [04:15](https://youtu.be/YEy7AgRO7As?t=255) Several-thousand-gift-card orders taking a few milliseconds to save give an anecdotal scale for the race condition, without a measured setup or comparison.
+- **−** [14:12](https://youtu.be/YEy7AgRO7As?t=852) The claim that the migrated API is simpler and faster has no before-and-after response-time measurements.
 
 **Depth 2/2**
 
-- **+** [12:37](https://youtu.be/YEy7AgRO7As?t=757) After rejecting the publish-first variant because consumer lag would hide fresh orders from the webshop, the pick is justified by decoupling and framed as situation-dependent.
-- **+** [18:22](https://youtu.be/YEy7AgRO7As?t=1102) The replication-slot mechanics explain why a stalled connector lets the WAL grow until the database crashes.
-- **−** [11:33](https://youtu.be/YEy7AgRO7As?t=693) Idempotency under the tables-as-outbox design is flagged as harder without showing how the team solved it.
+- **+** [07:52](https://youtu.be/YEy7AgRO7As?t=472) The publish-first alternative is rejected against the requirement that customers see a newly placed order immediately, giving beginners a reason to choose between designs.
+- **+** [10:32](https://youtu.be/YEy7AgRO7As?t=632) Using operational tables as the outbox is weighed against consumer schema coupling and the difficulty of deduplicating several changes to one order.
+- **+** [18:22](https://youtu.be/YEy7AgRO7As?t=1102) The replication-slot explanation connects a stalled offset to retained WAL, disk exhaustion and the need for heartbeats and monitoring.
 
 **Reusable 1/2**
 
-- **+** [19:57](https://youtu.be/YEy7AgRO7As?t=1197) The heartbeat recipe names a one-row timestamp table refreshed every 60,000 ms and read by the connector.
-- **+** [22:32](https://youtu.be/YEy7AgRO7As?t=1352) The monitoring recipe alerts when the heartbeat topic's `messages-in rate` drops below one message per minute, a metric that stays up when the connector stops.
-- **−** [27:47](https://youtu.be/YEy7AgRO7As?t=1667) The connector YAML is mentioned as the zero-code path but never shown, and no repository or docs link is given.
+- **+** [19:57](https://youtu.be/YEy7AgRO7As?t=1197) The slide names the heartbeat interval and action-query properties and describes the timestamp table, leaving a configuration to reconstruct.
+- **+** [23:03](https://youtu.be/YEy7AgRO7As?t=1383) Monitoring the heartbeat topic's `messages-in rate` is a reusable practice because the metric stays available when the connector stops.
+- **−** [27:47](https://youtu.be/YEy7AgRO7As?t=1667) YAML configuration is named as the implementation path, but no complete configuration or sample repository is published to reproduce it.
 
 

@@ -2,7 +2,7 @@ You are the **judge** in a verdict review. The checker verified the verdict's bu
 
 ## Inputs
 
-`uv run scripts/catalog.py show <slug> <id>` gives `summaryPath`, `transcriptPath` and `video.id`. Read `.agents/skills/summarize-talk/SUMMARY-FORMAT.md` (item 7 of "Sections, in order", "Verdict scale", "Fidelity", "Style"), the summary, and the review log `conferences/<slug>/reviews/<id>.md`.
+`uv run scripts/catalog.py show <slug> <id>` gives `summaryPath`, `transcriptPath` and `video.id`. Read `.agents/skills/summarize-talk/SUMMARY-FORMAT.md` (item 7 of "Sections, in order", "Verdict scale", "Reach", "Fidelity", "Style"), `audience` in `conferences/<slug>/conference.yaml`, the summary, and the review log `conferences/<slug>/reviews/<id>.md`.
 
 ## 1. Settle the disputes
 
@@ -10,7 +10,7 @@ Open the transcript yourself at every finding the author contested and every mis
 
 ## 2. Score
 
-Score each criterion against the rubric table from the settled facts, independently of the scores the summary or the author proposed. Within the talk's frame (format, length, level) you are the **skeptic** the rubric asks for: a 2 stands only when its down challenge was answered with a quoted moment, and evidence between two levels takes the lower. A shortfall the fairness rules exclude counts for nothing, in either direction.
+Score each criterion against the rubric table from the settled facts, independently of the scores the summary or the author proposed. Within the talk's frame (format, length, level) you are the **skeptic** the rubric asks for: a 2 stands only when its down challenge was answered with a quoted moment, and evidence between two levels takes the lower. A shortfall the fairness rules exclude counts for nothing, in either direction. Rate Reach against its table and the conference's `audience`, taking the narrower level when between two; it never moves a criterion.
 
 ## 3. Write the ruling
 
@@ -24,10 +24,13 @@ Append to the review log:
 - Measured <n>: …
 - Depth <n>: …
 - Reusable <n>: …
+- Reach <level>: <who in the audience can use the main content>
 
 ### Ruling
 
 **<total>/10**: <one-line reason>
+
+**Reach <level>**: <who in the conference audience can use the main content>
 
 **Novelty <n>/2**
 
@@ -35,6 +38,6 @@ Append to the review log:
 …
 ```
 
-The ruling is the complete `## Verdict` section body in the format of item 7, ready to paste into the summary: keep the summary's bullets that survived, fix or drop the ones that did not, and add bullets for missed material that moved a score. Every timestamp in it is one you or the checker opened. Leave the summary file and the catalog untouched; the author applies the ruling.
+The ruling is the complete `## Verdict` section body in the format of item 7, ready to paste into the summary: keep the summary's bullets that survived, fix or drop the ones that did not, and add bullets for missed material that moved a score. Every timestamp in it is one you or the checker opened, and none appears under two criteria ("One moment, one criterion"); a criterion left without support once its double-counted bullets are dropped takes the level its remaining bullets carry. Leave the summary file and the catalog untouched; the author applies the ruling.
 
-Reply with one line: `<id> ruled <total>/10`.
+Reply with one line: `<id> ruled <total>/10 reach=<level>`.

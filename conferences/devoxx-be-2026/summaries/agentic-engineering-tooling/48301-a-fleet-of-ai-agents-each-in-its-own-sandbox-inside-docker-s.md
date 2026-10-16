@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=mnoUXIT4nMY
 durationMin: 21
 slides: null
 verdict: 5
+reach: segment
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # A Fleet of AI Agents, Each in Its Own Sandbox: Inside Docker's Agentic Platform
@@ -71,28 +72,30 @@ Engineers about to give coding agents real credentials or repository access, and
 
 ## Verdict
 
-**5/10**: A free sandbox CLI and SDK to try and a clear secret-injection and microVM rationale, held back by a stored demo, self-reported scale figures and an internal-only factory.
+**5/10**: A clear microVM and secret-injection rationale with a visible policy block and a free CLI and SDK, held back by a stored demo, unmeasured scale claims and an internal-only factory.
+
+**Reach segment**: Java teams that let coding agents touch repositories or standardize agent setup across a company can apply the sandbox policies and shared kit configs in their own work within the next year.
 
 **Novelty 1/2**
 
 - **+** [14:26](https://youtu.be/mnoUXIT4nMY?t=866) The internal AI factory, running at Docker since February with design agents, parallel implementers and review agents before a human merge, is production experience no search result offers.
-- **−** The sandbox CLI, kits format and SDK are public product surface, installable via `brew install docker/tap/sbx` and documented at docs.docker.com/ai/sandboxes-api.
+- **−** The sbx CLI, kits format and SDK walkthrough covers Docker's public product surface, documented at docs.docker.com/ai/sandboxes-api.
 
 **Demonstrated 1/2**
 
-- **+** [08:15](https://youtu.be/mnoUXIT4nMY?t=495) The demo pane shows the agent's call to news.ycombinator.com blocked by the network policy ("default deny"), with the agent's HTTP 403 output.
-- **−** [08:15](https://youtu.be/mnoUXIT4nMY?t=495) He narrates a stored session dated 05 Oct, two days before the talk ("you see here the thing is blocked"), instead of running the command live, and secret injection and the factory are never shown running.
+- **+** [08:15](https://youtu.be/mnoUXIT4nMY?t=495) The network log shows 6 allowed and 1 blocked request, with the agent's call to news.ycombinator.com denied and the approval commands to follow up.
+- **−** [08:15](https://youtu.be/mnoUXIT4nMY?t=495) He narrates a stored session synced 05 Oct, two days before the talk, instead of running the command live, and secret injection and the factory are never shown running.
 
 **Measured 1/2**
 
-- **+** [13:56](https://youtu.be/mnoUXIT4nMY?t=836) The cloud sandbox screen states XL compute at $1.12/hr billed per second, with $250 in signup credits.
-- **−** [07:44](https://youtu.be/mnoUXIT4nMY?t=464) "6 10 20 different agents running on your laptop" and the "sub-second boot" slide come with no load, memory or boot-time measurement.
+- **+** [02:06](https://youtu.be/mnoUXIT4nMY?t=126) The talk quotes platform scale as 20 million developers, 20 billion image pulls and 1 billion installs.
+- **−** [07:44](https://youtu.be/mnoUXIT4nMY?t=464) "6, 10, 20 different agents running on your laptop" and the "sub-second boot" slide come with no load, memory or boot-time measurement.
 
 **Depth 1/2**
 
 - **+** [06:42](https://youtu.be/mnoUXIT4nMY?t=402) Secret handling is explained step by step: the agent sees a dummy environment value and the host proxy injects the real key on outbound calls.
 - **+** [07:13](https://youtu.be/mnoUXIT4nMY?t=433) The microVM choice gets a reason: own kernel, memory and CPU, enforced by Intel VT-x or AMD-V rather than by policy.
-- **−** [16:29](https://youtu.be/mnoUXIT4nMY?t=989) The review agents that gate every PR get one line ("review the PR before even you can read it") with no word on what they check.
+- **−** [16:29](https://youtu.be/mnoUXIT4nMY?t=989) The review agents that gate every PR get one line with no word on what they check.
 
 **Reusable 1/2**
 

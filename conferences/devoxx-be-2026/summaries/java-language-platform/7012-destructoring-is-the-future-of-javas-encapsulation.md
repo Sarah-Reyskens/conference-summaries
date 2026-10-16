@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=wcghmWdu-HY
 durationMin: 37
 slides: https://speakerdeck.com/richargh/destructoring-is-the-future-of-javas-encapsulation-v1-at-devoxx-be-2026
 verdict: 5
+reach: broad
 frames: 4
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Destructoring is the future of Javas Encapsulation
@@ -82,13 +83,15 @@ Java developers who serialize objects through Jackson, JPA, or the JDK API and w
 
 ## Verdict
 
-**5/10**: A clear beginner model of the encapsulation problem and the deconstruction fix, with runnable demos that never run and a proposal half that has nothing to take home yet.
+**5/10**: A clear beginner model of the encapsulation problem and the deconstruction fix, with demos that are never run and a proposal half that has nothing to take home yet.
+
+**Reach broad**: most of the conference audience serializes objects through Jackson, JPA or the JDK API and will meet this future JDK feature once it ships.
 
 **Novelty 1/2**
 
 - **+** [12:06](https://youtu.be/wcghmWdu-HY?t=726) The Timestamp example, which takes a UTC string but stores a compact long, comes from the speaker's own project work.
 - **+** [26:19](https://youtu.be/wcghmWdu-HY?t=1579) The Q&A works out on the spot how Jackson infers constructors from matching parameter names, reasoning the speaker builds live from admitted ignorance of Lombok.
-- **−** The integrity-by-default segment follows JEP 8305968, quoting its rationale on the slide rather than adding analysis.
+- **−** The integrity-by-default segment follows JEP 8305968, quoting its rationale rather than adding analysis.
 
 **Demonstrated 0/2**
 
@@ -99,7 +102,7 @@ Java developers who serialize objects through Jackson, JPA, or the JDK API and w
 
 - **+** [02:09](https://youtu.be/wcghmWdu-HY?t=129) The quoted Reinhold estimate (a third to over half of Java vulnerabilities) puts a number on serialization's share of the problem.
 - **−** [02:09](https://youtu.be/wcghmWdu-HY?t=129) That figure is relayed from a 2018 interview with no method behind it, so it stays an anecdote rather than a measurement.
-- **−** [12:06](https://youtu.be/wcghmWdu-HY?t=726) The Timestamp memory claim carries no figures: no allocation numbers or before/after comparison for the long-vs-string storage.
+- **−** [12:39](https://youtu.be/wcghmWdu-HY?t=759) The Timestamp memory claim carries no figures: no allocation numbers or before/after comparison for the long-vs-string storage.
 
 **Depth 2/2**
 

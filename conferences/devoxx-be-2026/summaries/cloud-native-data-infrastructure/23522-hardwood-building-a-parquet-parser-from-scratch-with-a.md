@@ -9,11 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=6mzvcPr30kg
 durationMin: 52
 slides: https://speakerdeck.com/gunnarmorling/hardwood-building-a-parquet-library-from-scratch-with-a-little-help-from-ai-devoxx-belgium-2026
-verdict: 9
+verdict: 8
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Hardwood: Building a Parquet Parser From Scratch (With a Little Help From AI)
 
@@ -105,32 +105,35 @@ Data engineers and Java developers who read Parquet on the JVM, performance-mind
 
 ## Verdict
 
-**9/10**: The library author's design rationale, comparative benchmarks, explained decoding mechanisms and published implementation earn the score; the live inspection demos show a narrower claim than the performance charts.
+**8/10**: The speaker's own build experience, benchmarks against parquet-java with stated setups and the weighed decoding trade-offs earn the score; the live runs inspect files rather than proving the throughput, and no sample project reproduces the examples.
+
+**Reach segment**: JVM developers and data engineers who read or write Parquet files can use the library, its decoding techniques and the AI-workflow lessons within the next year.
 
 **Novelty 2/2**
 
-- **+** [08:51](https://youtu.be/6mzvcPr30kg?t=531) The speaker presents his own Parquet library's dependency and parallelism design rationale, developed into head-to-head comparisons with parquet-java.
-- **+** [30:07](https://youtu.be/6mzvcPr30kg?t=1807) The fixed-length-list optimization matches encoded level streams instead of materializing them and contributes the speaker's own speedup sweep.
+- **+** [36:24](https://youtu.be/6mzvcPr30kg?t=2184) Differential testing of hundreds of corpus files against parquet-java and DuckDB gives the agent a yes/no feedback loop on this spec-heavy library and already surfaced bugs in parquet-java.
+- **+** [40:02](https://youtu.be/6mzvcPr30kg?t=2402) Observed agent failure modes, from five inconsistent value formatters to a test fixed by disabling it, set the contributor rule that every change must be explainable.
+- **+** [41:35](https://youtu.be/6mzvcPr30kg?t=2495) The team replaced the heavy AWS SDK with the JDK HTTP client and its own request signer checked against AWS test vectors, keeping the SDK as an optional dependency for SSO and role-based authentication.
 
 **Demonstrated 1/2**
 
-- **+** [32:10](https://youtu.be/6mzvcPr30kg?t=1930) The CLI inspects a real file live, printing metadata and sample values with reported sub-60 ms responses.
-- **+** [34:55](https://youtu.be/6mzvcPr30kg?t=2095) The WASM build of the CLI shows decoded sample-file values in the browser.
-- **·** [20:16](https://youtu.be/6mzvcPr30kg?t=1216) The parallel-throughput and pushdown results appear as prepared benchmark charts, while the actual runs shown inspect files and sample values.
+- **+** [32:10](https://youtu.be/6mzvcPr30kg?t=1930) The CLI inspects a real file live, printing metadata and sample values with responses under 60 ms.
+- **+** [34:18](https://youtu.be/6mzvcPr30kg?t=2058) The WASM build of the CLI loads a sample file and browses its schema and data in the browser.
+- **·** [20:16](https://youtu.be/6mzvcPr30kg?t=1216) The throughput and pushdown results appear as prepared benchmark charts rather than runs with visible output.
 
 **Measured 2/2**
 
-- **+** [20:55](https://youtu.be/6mzvcPr30kg?t=1255) The NYC taxi benchmark states its AWS instance, warm cache and Java version, comparing 16.5M rows/s all-core and 3.9M single-core with parquet-java's 3.3M single-threaded baseline.
-- **+** [30:10](https://youtu.be/6mzvcPr30kg?t=1810) Beyond the selective and match-all filtered-scan comparison, the fast-path chart sweeps vector lengths 1–1536 against reconstruction on the same files with identical output checked and hardware, cache, Java and library revision stated.
-- **−** [30:38](https://youtu.be/6mzvcPr30kg?t=1838) The assertion that detecting a mismatch only in the final list causes no measurable slowdown is not accompanied by that worst-case measurement.
+- **+** [20:47](https://youtu.be/6mzvcPr30kg?t=1247) The NYC taxi benchmark states its setup (AWS machine with 8 vCPUs, 32 GB) and compares 16.5M rows/s on all cores and the single-core figure against parquet-java.
+- **+** [25:27](https://youtu.be/6mzvcPr30kg?t=1527) The filtered scan compares a selective 5%-match query and a match-all control against parquet-java with the setup stated.
+- **+** [30:07](https://youtu.be/6mzvcPr30kg?t=1807) The fast-path chart sweeps list lengths against the regular reconstruction path, showing a gain above 2x for the column reader and about 4x for the row reader.
 
 **Depth 2/2**
 
-- **+** [04:39](https://youtu.be/6mzvcPr30kg?t=279) The footer-first layout, row groups, column chunks, pages and Dremel definition/repetition levels are explained as working internals.
-- **+** [16:04](https://youtu.be/6mzvcPr30kg?t=964) Row-group, column-chunk and page parallelism are weighed against insufficient fan-out, memory pressure and unequal column-decoding speeds.
-- **+** [27:30](https://youtu.be/6mzvcPr30kg?t=1650) The fixed-list fast path avoids materializing level arrays through RLE and bit-packed pattern detection, using word-sized or bulk shifted-stream comparisons with regular decoding on mismatch.
+- **+** [04:39](https://youtu.be/6mzvcPr30kg?t=279) The footer-first layout, row groups, column chunks and pages are laid out as the structure the later optimizations work on.
+- **+** [16:04](https://youtu.be/6mzvcPr30kg?t=964) Row-group, column-chunk and page parallelism are weighed against too few row groups, memory pressure and unequal column decoding speeds, which is why Hardwood parallelizes per page.
+- **+** [27:30](https://youtu.be/6mzvcPr30kg?t=1650) The fixed-list fast path works on the encoded representation, spotting repeating bit-packed or run-length patterns instead of materializing level arrays, and falls back to regular decoding.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [47:49](https://youtu.be/6mzvcPr30kg?t=2869) The published Hardwood implementation, platform-specific CLI binaries and documentation at hardwood.dev cover the talk's main content.
-- **+** [31:09](https://youtu.be/6mzvcPr30kg?t=1869) A linked post on the speaker's blog carries the fixed-list optimization's further implementation details.
+- **+** [47:49](https://youtu.be/6mzvcPr30kg?t=2869) The published Hardwood implementation, platform CLI binaries and documentation at hardwood.dev cover the talk's main content.
+- **·** [31:09](https://youtu.be/6mzvcPr30kg?t=1869) The linked blog post writes up the fixed-list optimization as prose, and no demo repository or configuration reproduces the talk's examples.

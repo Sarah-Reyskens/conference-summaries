@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=DniA37kVfvI
 durationMin: 51
 slides: null
-verdict: 8
+verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -68,33 +69,32 @@ Chat sessions are modeled as long-running agent processes: a `@Action(trigger = 
 JVM developers building or evaluating AI agents, especially in Spring shops wrestling with brittle prompt-and-tools flows, will get the most from the planning model and the RAG treatment. Viewers wanting a from-zero tutorial should start with the Java template and examples repos instead; those after measured benchmark comparisons or a full live demo will find neither here.
 
 ## Verdict
-**8/10**: The framework creator's design rationale and planner internals carry the talk, but the Sherlock agent never runs end to end and the performance claims come without numbers.
+**7/10**: Embabel's planning model is explained with working framework introspection and published examples, but the agent flow is not run end to end and performance claims lack measurements.
 
-**Novelty 2/2**
+**Reach segment**: JVM developers adding LLM agent or RAG features to their applications within the next year.
 
-- **+** [16:16](https://youtu.be/DniA37kVfvI?t=976) The creator explains why a deterministic GOAP planner replaces LLM orchestration and brittle state machines, with the no-path-to-goal answer and re-planning when a step fails as the payoff.
-- **+** [38:11](https://youtu.be/DniA37kVfvI?t=2291) The pipeline-versus-agentic RAG argument comes from the authors' own design experience: chunk boundaries that cut meaning drive the tool-based search, reflect and retry approach with next/previous chunk expansion.
-- **+** [06:51](https://youtu.be/DniA37kVfvI?t=411) The speaker reports production experience: the sweet spot is complex applications in large companies, with one of the world's largest banks using it for global payments AI.
+**Novelty 1/2**
+
+- **+** [07:22](https://youtu.be/DniA37kVfvI?t=442) The speaker reports that production adoption is concentrated in complex applications at large companies, including a bank's global-payments infrastructure.
 
 **Demonstrated 1/2**
 
-- **+** [22:10](https://youtu.be/DniA37kVfvI?t=1330) The running Spring Shell lists the discovered agents, goals, actions, preconditions and postconditions, showing the framework's introspection working on screen.
-- **+** [26:30](https://youtu.be/DniA37kVfvI?t=1590) The IDE walkthrough shows the real CaseAgent code, the fluent prompt-runner API, and the RAG configuration as written.
+- **+** [22:10](https://youtu.be/DniA37kVfvI?t=1330) On screen, the running Spring Shell lists discovered agents, goals, actions, preconditions and postconditions.
 - **−** [43:53](https://youtu.be/DniA37kVfvI?t=2633) The speaker says there is no time for a demo, so no agent run executes end to end with visible output.
 
 **Measured 1/2**
 
-- **+** [06:51](https://youtu.be/DniA37kVfvI?t=411) Adoption is quantified as over 4,500 stars and 67 contributors, with production use at an unnamed large bank.
-- **−** [39:13](https://youtu.be/DniA37kVfvI?t=2353) The agentic RAG benchmark results on finance and legal sets are described only as exceptionally good, with no numbers, baseline or method shown ("we haven't published any public numbers for the open source").
+- **+** [06:51](https://youtu.be/DniA37kVfvI?t=411) Adoption is quantified as over 4,500 stars and 67 contributors with production use.
+- **−** [39:13](https://youtu.be/DniA37kVfvI?t=2353) Agentic RAG benchmarks on finance and legal sets are described only as exceptionally good, with no numbers, baseline or method and no public figures.
 
 **Depth 2/2**
 
-- **+** [18:19](https://youtu.be/DniA37kVfvI?t=1099) Planner mechanics are explained at working depth: blackboard world state, absolute preconditions versus verified postconditions, per-action re-planning.
-- **+** [12:06](https://youtu.be/DniA37kVfvI?t=726) The typed-decomposition argument weighs cost, testability and latency of code steps against LLM calls, with the horoscope flow as the worked example.
-- **+** [28:45](https://youtu.be/DniA37kVfvI?t=1725) Per-call model selection is argued on cost, confidentiality, data sovereignty and energy grounds, with role-based configuration as the mechanism.
+- **+** [18:19](https://youtu.be/DniA37kVfvI?t=1099) The planner assesses world state against a goal and re-plans after each action, with a blackboard retaining the flow's state.
+- **+** [22:26](https://youtu.be/DniA37kVfvI?t=1346) Preconditions are mandatory while postconditions are promises requiring verification, explaining why world state must be reassessed after execution.
+- **+** [28:45](https://youtu.be/DniA37kVfvI?t=1725) Per-call model selection through named roles is argued on cost, confidentiality, data sovereignty and energy grounds.
 
 **Reusable 2/2**
 
-- **+** [43:53](https://youtu.be/DniA37kVfvI?t=2633) The demo code shown on screen lives in johnsonr's devoxx-demo GitHub repository, which the speaker says runs "very quickly".
-- **+** [50:44](https://youtu.be/DniA37kVfvI?t=3044) The closing points to the agent examples repo and the Java template repo as starting points covering the talk's main content.
-- **+** [49:09](https://youtu.be/DniA37kVfvI?t=2949) The hub.embabel.com chatbot is built wholly on Embabel's agentic RAG and is open source, a second published reference application.
+- **+** [17:48](https://youtu.be/DniA37kVfvI?t=1068) The full horoscope flow lives in the agent examples repository for the audience to run.
+- **+** [50:44](https://youtu.be/DniA37kVfvI?t=3044) As starting points covering the main content, the closing points to the agent examples repository and the Java template repository.
+- **+** [49:09](https://youtu.be/DniA37kVfvI?t=2949) Built wholly on Embabel agentic RAG, the hub.embabel.com chatbot is open source as a reference application.

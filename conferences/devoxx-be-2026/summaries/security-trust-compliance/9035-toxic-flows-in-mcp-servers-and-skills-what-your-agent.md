@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=c4F7Iy3XqaY
 durationMin: 50
 slides: null
 verdict: 7
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -79,34 +80,34 @@ Developers who install MCP servers or skills for coding agents, and platform or 
 
 ## Verdict
 
-**7/10**: five attacks run live end to end with a clear trust-boundary model, but the core attacks are already catalogued in OWASP MCP03:2025 and the measurement method and demo code are not on stage.
+**7/10**: five attacks run live end to end with a clear trust-boundary model, but the core mechanics are catalogued elsewhere and the demo code stays unpublished.
+
+**Reach broad**: most Devoxx attendees use AI coding assistants daily, so pinning, scanning and reviewing MCP servers and skills applies to their own work within the year.
 
 **Novelty 1/2**
 
-- **+** [02:42](https://youtu.be/c4F7Iy3XqaY?t=162) The ClawHub numbers (37% flawed, 13.4% critical of ~4,000 skills, researcher-confirmed) are the speaker's own team's research, published as a report the talk points to.
-- **+** [15:48](https://youtu.be/c4F7Iy3XqaY?t=948) The cross-connector flow (a poisoned description steering the agent to a second tool while concealing the source) is a purpose-built demo of the speaker's own.
-- **−** The rug pull and tool-description poisoning mechanics, and the pin/scan/sandbox defenses, are listed in OWASP MCP03:2025 Tool Poisoning, which a search on MCP security returns.
+- **+** [03:14](https://youtu.be/c4F7Iy3XqaY?t=194) The ClawHub ecosystem research was done by the speaker's own team and is published as an abstract crediting his team lead.
+- **+** [41:59](https://youtu.be/c4F7Iy3XqaY?t=2519) The team found a SkillGuard skill on ClawHub carrying an actual reverse shell and a published scanner that reported dirty skills as clean.
+- **−** The rug pull, tool-description poisoning and pin/scan/sandbox defenses are listed in OWASP MCP03:2025 Tool Poisoning, which a search on MCP security returns.
 
 **Demonstrated 2/2**
 
-- **+** [11:04](https://youtu.be/c4F7Iy3XqaY?t=664) The rug pull runs live: same question, same conference list, and the calculator pops from the injected side effect.
-- **+** [17:23](https://youtu.be/c4F7Iy3XqaY?t=1043) The poisoned description makes the agent call the email tool, and a fake DevSecCon Java edition in Breda appears among the legitimate results.
+- **+** [11:04](https://youtu.be/c4F7Iy3XqaY?t=664) The rug pull runs live: the same question returns the same conference list while the injected side effect pops the calculator.
 - **+** [32:08](https://youtu.be/c4F7Iy3XqaY?t=1928) The dependency skill downloads and executes the native binary live while reporting outdated libraries as current.
-- **·** [07:24](https://youtu.be/c4F7Iy3XqaY?t=444) The rug pull is simulated by repackaging a locally installed jar, so a floating `latest` reference being re-resolved is asserted, not shown.
+- **·** [07:24](https://youtu.be/c4F7Iy3XqaY?t=444) The server is repackaged as a locally installed jar, so a floating `latest` reference being re-resolved is asserted, not shown.
 
 **Measured 1/2**
 
-- **+** [02:42](https://youtu.be/c4F7Iy3XqaY?t=162) The ecosystem claims carry totals and confirmation status: ~4,000 skills, 37% with flaws, 13.4% critical, scanned and confirmed by researchers.
-- **·** [03:14](https://youtu.be/c4F7Iy3XqaY?t=194) The scan method is left to the research abstract the speaker names, so no baseline or method appears on stage.
-- **·** [43:05](https://youtu.be/c4F7Iy3XqaY?t=2585) The scanner scores (1000/1000, 300/1000) come with no stated scale and support no comparison.
+- **+** [02:42](https://youtu.be/c4F7Iy3XqaY?t=162) The ecosystem claims carry totals and confirmation status: about 4,000 skills, 37% with flaws, scanned and researcher-confirmed.
+- **·** [43:35](https://youtu.be/c4F7Iy3XqaY?t=2615) The scanner flags arrive as bare scores (300/1000 here) with no explanation of how they are computed and no comparison behind them.
 
 **Depth 2/2**
 
-- **+** [10:01](https://youtu.be/c4F7Iy3XqaY?t=601) The talk explains what the agent sees (tool name and description only, never the implementation) and why that makes descriptions trusted input even when the tool is sandboxed ([14:11](https://youtu.be/c4F7Iy3XqaY?t=851)).
-- **+** [22:05](https://youtu.be/c4F7Iy3XqaY?t=1325) Skills get a mechanism-level treatment: stateless models, just-in-time loading into context, and why that turns prose into instructions.
-- **+** [41:28](https://youtu.be/c4F7Iy3XqaY?t=2488) Candidate defenses are weighed and rejected with reasons: regexes fall to typos, human approval falls to fatigue, sandboxing misses description poisoning.
+- **+** [10:01](https://youtu.be/c4F7Iy3XqaY?t=601) The talk draws the trust boundary: the agent sees only the tool name and description, never the implementation, which is why descriptions stay trusted input.
+- **+** [22:05](https://youtu.be/c4F7Iy3XqaY?t=1325) Skills get a mechanism treatment: stateless models plus just-in-time loading into context turns prose into instructions.
+- **+** [41:28](https://youtu.be/c4F7Iy3XqaY?t=2488) Human-in-the-loop approval is weighed and rejected as a security boundary, since approval fatigue makes people click through like phishing.
 
 **Reusable 1/2**
 
-- **+** [43:05](https://youtu.be/c4F7Iy3XqaY?t=2585) The free scanner is runnable (`uvx snyk-agent-scan@0.6`) and flags the dependency-updater skill, the code-formatter skill ([43:35](https://youtu.be/c4F7Iy3XqaY?t=2615)) and the MCP server ([45:40](https://youtu.be/c4F7Iy3XqaY?t=2740)); the git-pulse skill is not scanned.
-- **−** [47:13](https://youtu.be/c4F7Iy3XqaY?t=2833) The demo MCP server, skills, and scripts are never published or linked, so the attacks themselves must be rebuilt from the video.
+- **+** [43:05](https://youtu.be/c4F7Iy3XqaY?t=2585) The free Snyk Agent Scan runs from a published version (`uvx snyk-agent-scan@0.6`) and flags the demo skill live.
+- **−** [47:13](https://youtu.be/c4F7Iy3XqaY?t=2833) The demo MCP server, skills and scripts are never published or linked, so the attacks must be rebuilt from the video.

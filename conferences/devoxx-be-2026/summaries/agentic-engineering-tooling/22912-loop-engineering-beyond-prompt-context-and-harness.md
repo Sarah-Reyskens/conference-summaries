@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=A7ZIf8LkSvE
 durationMin: 149
 slides: null
-verdict: 8
+verdict: 7
+reach: broad
 frames: 18
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Loop Engineering, beyond prompt, context, and harness engineering
@@ -97,13 +98,16 @@ Asked about verification loops for the Java SDK, Laforge says human review still
 Developers already using coding agents who want to automate multi-step workflows with triggers, verification, and budgets gain the most, especially from the live SDK and loop-pattern demos. People looking for an introduction to prompting or to a specific agent IDE should start elsewhere; skeptics of autonomous agents get the failure-modes catalog but little on evaluation rigor.
 
 ## Verdict
-**8/10**: completed loop demonstrations, reasoned verification and context trade-offs, and a before/after coverage comparison earn the score; the patterns are a synthesis of familiar approaches and lack a reusable artifact covering the full session.
+
+**7/10**: loop patterns run end to end on screen and the design choices behind them are reasoned, but the coverage numbers carry no test-quality check, the token comparisons are self-described as incomparable and only one demo has a published repository.
+
+**Reach broad**: most of the conference audience already uses an AI coding assistant daily and can apply trigger, verification and budget practices to their own workflows within the next year.
 
 **Novelty 1/2**
 
-- **+** [86:27](https://youtu.be/A7ZIf8LkSvE?t=5187) Venema's friction-log example gives a source-blind user agent a badly documented CLI, then routes its usability findings to a maker.
-- **+** [93:14](https://youtu.be/A7ZIf8LkSvE?t=5594) The dreaming implementation carries a session log and a distilled markdown memory into the maker's next run.
-- **−** [93:46](https://youtu.be/A7ZIf8LkSvE?t=5626) The memory example shows a personal implementation without comparative results establishing a new decision framework.
+- **+** [135:06](https://youtu.be/A7ZIf8LkSvE?t=8106) Laforge's own 2.0 release of his Java SDK shipped with `Object` parameters because he reviewed the agent's output too quickly, which forced a 2.0.1 re-release.
+- **+** [95:50](https://youtu.be/A7ZIf8LkSvE?t=5750) The session credits Huntley's Ralph loop and sets it beside Karpathy's auto-research loop and Warp's software-factory graph, next to the speakers' own loop patterns.
+- **−** The fresh-context loop with spec, TODO and progress files, one item per iteration and test backpressure is what Geoffrey Huntley's own write-up at ghuntley.com/ralph already gives.
 
 **Demonstrated 2/2**
 
@@ -111,11 +115,11 @@ Developers already using coding agents who want to automate multi-step workflows
 - **+** [88:32](https://youtu.be/A7ZIf8LkSvE?t=5312) A saved friction-log run shows the user agent finding problems, the maker fixing them and the user agent returning to approve the result.
 - **−** [115:22](https://youtu.be/A7ZIf8LkSvE?t=6922) The live Ralph run is left unfinished and replaced with a finished Connect Four application from another run.
 
-**Measured 2/2**
+**Measured 1/2**
 
-- **+** [51:37](https://youtu.be/A7ZIf8LkSvE?t=3097) The coverage demonstration reads JaCoCo's CSV report and distinguishes line coverage from instruction coverage.
-- **+** [56:52](https://youtu.be/A7ZIf8LkSvE?t=3412) An earlier goal run's report compares three key classes at roughly 16%, 45% and 63% line coverage with after-values of 96–100%.
-- **−** [76:56](https://youtu.be/A7ZIf8LkSvE?t=4616) The token-efficiency comparison uses different tasks and is explicitly called “apples and oranges,” so it cannot establish compaction's savings.
+- **+** [56:21](https://youtu.be/A7ZIf8LkSvE?t=3381) The JaCoCo report lists line coverage of 16.7%, 45.4% and 63.5% before the goal and 100%, 100% and 96.4% after it on three classes.
+- **−** [57:23](https://youtu.be/A7ZIf8LkSvE?t=3443) The gain comes from a run with a slightly different goal, and the speakers did not check whether the tests were good after describing models that delete files or add ignore lists to reach coverage.
+- **−** [76:56](https://youtu.be/A7ZIf8LkSvE?t=4616) The token comparison between the plain and compaction loops uses different tasks and is called "apples and oranges" by the speaker.
 
 **Depth 2/2**
 
@@ -125,6 +129,6 @@ Developers already using coding agents who want to automate multi-step workflows
 
 **Reusable 1/2**
 
-- **+** [66:57](https://youtu.be/A7ZIf8LkSvE?t=4017) The published PR-reviewer repository includes the script, prompt and GitHub Action demonstrated on a dependency-upgrade pull request.
-- **+** [49:29](https://youtu.be/A7ZIf8LkSvE?t=2969) The demonstrated Devoxx AI schedule-builder application is published on GitHub.
-- **−** [123:09](https://youtu.be/A7ZIf8LkSvE?t=7389) The failure-mode catalog is presented as talk content without an offered checklist or template covering it.
+- **+** [66:57](https://youtu.be/A7ZIf8LkSvE?t=4017) The PR-reviewer repository holds the script, prompt and GitHub Action demonstrated on a dependency-upgrade pull request, though the demo run only approves a minimal change.
+- **−** [80:05](https://youtu.be/A7ZIf8LkSvE?t=4805) The maker-checker, compaction, TDD and dreaming loops are shown as code on screen with no repository offered for them.
+- **·** [49:29](https://youtu.be/A7ZIf8LkSvE?t=2969) The Devoxx AI schedule-builder code is on GitHub, but it is the target application of the coverage goal, not a loop.

@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=U9pOWsERF6o
 durationMin: 31
 slides: null
 verdict: 6
+reach: niche
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # 30 minutes to build your first Vidocq app, the 100% European Sovereign Java stack with zero external dependencies
@@ -79,32 +80,33 @@ Jakarta and MicroProfile developers curious about a new dependency-free runtime 
 
 ## Verdict
 
-**6/10**: A new dependency-free Jakarta EE runtime and its identity server shown working live from scaffold to secured endpoint, but much of the build matches the project's published getting-started, the numbers have no baseline, and no repository or site is pointed to.
+**6/10**: A new dependency-free Jakarta EE runtime built live from scaffold to a secured endpoint, but the build follows the project's getting-started page, the numbers have no baseline, and the build steps live in a private cheat sheet.
+
+**Reach niche**: Jakarta EE and MicroProfile developers already interested in trying a 0.4.0-SNAPSHOT runtime outside Spring, Quarkus and the mainstream Jakarta servers can use the scaffold-to-secured-endpoint build; most of the audience will not run the project.
 
 **Novelty 1/2**
 
-- **+** [04:12](https://youtu.be/U9pOWsERF6o?t=252) The origin experiment (Jakarta specs plus TCKs as an LLM pass/fail signal, from dependency-free CDI to the full Core Profile) is first-hand rationale from the project's side.
-- **+** [21:06](https://youtu.be/U9pOWsERF6o?t=1266) Rossignol, the OpenID Connect provider vibe-coded on Vidocq alone, is new, in-development material shown running.
-- **−** The scaffold, build and first REST endpoint ([07:56](https://youtu.be/U9pOWsERF6o?t=476)-[11:33](https://youtu.be/U9pOWsERF6o?t=693)) follow the Getting started page at doc.vidocq.dev, which a search for the subject returns first.
+- **+** [04:12](https://youtu.be/U9pOWsERF6o?t=252) The speaker gives a first-hand account of why the project started: Jakarta specs plus TCKs give an LLM both the what and a pass/fail signal, which took it from a dependency-free CDI to the full Core Profile.
+- **−** The scaffold, build and first REST endpoint follow the Getting started page at doc.vidocq.dev and the project's blog post, which a search for the subject returns first.
 
 **Demonstrated 2/2**
 
-- **+** [11:03](https://youtu.be/U9pOWsERF6o?t=663) The first curl against the live-reloaded endpoint returns the greeting on screen, and the injected shop name renders on the next request ([12:38](https://youtu.be/U9pOWsERF6o?t=758)).
-- **+** [25:46](https://youtu.be/U9pOWsERF6o?t=1546) After `@RolesAllowed` is added, the same order curl returns 401, the Rossignol login completes with "Authorization received" ([26:47](https://youtu.be/U9pOWsERF6o?t=1607)), and the secured call returns the placed order ([27:49](https://youtu.be/U9pOWsERF6o?t=1669)).
-- **−** [29:25](https://youtu.be/U9pOWsERF6o?t=1765) The OpenCode finale loads the Vidocq skill but time runs out before the KitchenService code appears.
+- **+** [11:33](https://youtu.be/U9pOWsERF6o?t=693) The first endpoint answers after a save and changes on the next curl, with the injected shop name appearing in the response about a minute and a half later.
+- **+** [27:49](https://youtu.be/U9pOWsERF6o?t=1669) After the curl draws a 401 at 25:46 and the Rossignol login completes, the secured order call returns the placed order (after a wrong-directory slip at 27:18 fixed on stage).
+- **−** [29:25](https://youtu.be/U9pOWsERF6o?t=1765) The OpenCode finale loads the Vidocq skill but time runs out before any KitchenService code appears.
 
 **Measured 1/2**
 
-- **+** [14:12](https://youtu.be/U9pOWsERF6o?t=852) The dev console startup report shows per-phase boot times in single-digit milliseconds (15 ms for build).
-- **−** [04:44](https://youtu.be/U9pOWsERF6o?t=284) The 300,000 lines and 19 components are self-reported totals ("maybe this morning it was 15") with no baseline, and startup speed is never compared against another runtime.
+- **+** [14:15](https://youtu.be/U9pOWsERF6o?t=855) The dev console startup report on screen shows per-phase boot times, with 15 ms for build and single-digit milliseconds for the other phases.
+- **−** [04:44](https://youtu.be/U9pOWsERF6o?t=284) The 300,000 lines and 19 components are self-reported totals with no baseline, and startup speed is never compared against another runtime.
 
 **Depth 1/2**
 
-- **+** [24:44](https://youtu.be/U9pOWsERF6o?t=1484) The security wiring is explained step by step: issuer, public-key location and audience in properties, the module requirement, `@RolesAllowed`, owner from the JWT subject.
-- **−** [24:14](https://youtu.be/U9pOWsERF6o?t=1454) Configuration and security follow familiar OpenID Connect convention ("more or less the same"), and no alternative or trade-off is weighed.
+- **+** [24:14](https://youtu.be/U9pOWsERF6o?t=1454) The security wiring runs from issuer, public-key location and audience through the module requirement to `@RolesAllowed` and the owner taken from the JWT subject, shown as usage with the speaker keeping it short.
+- **·** [08:58](https://youtu.be/U9pOWsERF6o?t=538) The strict JPMS rule (every component a module, no automatic modules) is stated as a design decision without its reason.
 
 **Reusable 1/2**
 
-- **+** [20:34](https://youtu.be/U9pOWsERF6o?t=1234) The waffle-shop build (REST endpoint, config injection, menu JSON, order service and resource) is shown working on screen through curl, leaving the steps reconstructable.
-- **−** [06:52](https://youtu.be/U9pOWsERF6o?t=412) "I will show you the website in a few moment" is never followed by a site, repository or sample URL.
-- **−** [13:09](https://youtu.be/U9pOWsERF6o?t=789) The demo runs a 0.4.0-SNAPSHOT ("I'm using the snapshot"), so the build cannot be repeated on a release.
+- **+** [06:52](https://youtu.be/U9pOWsERF6o?t=412) The project itself is open source with contributions welcome, so the runtime is available to try, though no website or repository URL is ever shown.
+- **−** [07:23](https://youtu.be/U9pOWsERF6o?t=443) The build is driven from a private cheat sheet and a pre-filled pom, and neither is published for the audience to rerun.
+- **·** [13:09](https://youtu.be/U9pOWsERF6o?t=789) The demo runs a snapshot build ("here I'm using the snapshot") that the maintainers update as they fix problems.

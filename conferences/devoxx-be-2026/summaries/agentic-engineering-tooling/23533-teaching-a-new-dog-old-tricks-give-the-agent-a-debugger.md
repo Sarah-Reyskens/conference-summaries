@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=rk22mStXsGU
 durationMin: 35
 slides: null
-verdict: 7
+verdict: 6
+reach: segment
 frames: 9
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # Teaching a New Dog Old Tricks: Give the Agent a Debugger
@@ -74,32 +75,32 @@ JVM developers who pair with coding agents (Junie, Claude, Codex) and want clean
 
 ## Verdict
 
-**7/10**: three agent-debugging demos run on a bundled, installable ij-debugger skill, but the core is in JetBrains' help pages, the skill's procedures are not walked through and the numbers carry no baseline.
+**6/10**: the agent gathers runtime evidence in working debugger demos with reasons for choosing logpoints, but the talk is a feature tour of the speaker's own product, with anecdotal timing and no sample project.
+
+**Reach segment**: IntelliJ IDEA users who pair coding agents with JVM debugging can apply the bundled skill and breakpoint workflows.
 
 **Novelty 1/2**
 
-- **+** [15:10](https://youtu.be/rk22mStXsGU?t=910) The hidden-reflection demo, where the method name is built from bytes and no text search finds it, is the speaker's own example.
-- **−** JetBrains' IntelliJ IDEA help pages on logpoints (jetbrains.com/help/idea/logpoints.html) and agentic debugging (jetbrains.com/help/idea/agentic-debugging.html) already cover logpoints, dependent breakpoints, the bundled ij-debugger skill and the `execute_tool` router.
+- **·** [01:06](https://youtu.be/rk22mStXsGU?t=66) The speaker combines his earlier debugger material with agent workflows, a product-feature tour rather than production experience or a tested cross-tool decision framework.
 
 **Demonstrated 2/2**
 
-- **+** [18:46](https://youtu.be/rk22mStXsGU?t=1126) In demo 2 the agent sets method breakpoints, hits one, collects the stack trace and reports that the hidden reflective code decodes into foo.
-- **+** [32:52](https://youtu.be/rk22mStXsGU?t=1972) Two agent-placed logpoints make the flaky concurrency test fail on the first run.
-- **−** [11:00](https://youtu.be/rk22mStXsGU?t=660) The demo-1 breakpoints flashed past unseen ("we haven't seen them") and only the printed log lines show the agent's work.
+- **+** [09:28](https://youtu.be/rk22mStXsGU?t=568) The stream example ends with the agent confirming the duplicate, removing its breakpoints and applying the fix for the BigDecimal equality bug.
+- **+** [18:46](https://youtu.be/rk22mStXsGU?t=1126) The agent sets breakpoints, captures the runtime stack and confirms the reflective invocation of foo.
+- **+** [32:52](https://youtu.be/rk22mStXsGU?t=1972) Agent-installed logpoints reproduce the intermittent concurrency failure.
 
 **Measured 1/2**
 
-- **+** [31:16](https://youtu.be/rk22mStXsGU?t=1876) Manual repeat-until-failure time is given as sometimes 7 seconds and sometimes a couple of minutes.
-- **−** [33:22](https://youtu.be/rk22mStXsGU?t=2002) The race reproduction rests on "a few milliseconds" of logpoint latency stated from the stage, with no timing and no comparison against the manual baseline.
+- **+** [31:16](https://youtu.be/rk22mStXsGU?t=1876) Repeat-until-failure is reported to take sometimes seven seconds and sometimes minutes.
+- **−** [33:22](https://youtu.be/rk22mStXsGU?t=2002) The claimed few milliseconds of logpoint overhead are not timed, and the reproduction has no repeated-run comparison.
 
 **Depth 1/2**
 
-- **+** [22:58](https://youtu.be/rk22mStXsGU?t=1378) Both humans and agents reach for println to locate where a breakpoint belongs, and logpoints remove that need.
-- **+** [13:36](https://youtu.be/rk22mStXsGU?t=816) A method breakpoint is weighed against find-usages plus a line breakpoint that ends in the same place.
-- **−** [24:00](https://youtu.be/rk22mStXsGU?t=1440) The skill is opened only at its description, although the talk promised what tools are inside it, and its procedures, tool ordering and failure handling are never walked through.
+- **+** [22:58](https://youtu.be/rk22mStXsGU?t=1378) The explanation connects println instrumentation to the difficulty of locating a breakpoint, motivating logpoint-first evidence gathering.
+- **+** [24:31](https://youtu.be/rk22mStXsGU?t=1471) Runtime instrumentation is useful in library code that agents cannot modify.
+- **·** [08:26](https://youtu.be/rk22mStXsGU?t=506) The skill is described as supplying tool order and guardrails, but the walkthrough concentrates on invoking it rather than explaining its investigation decisions.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [25:02](https://youtu.be/rk22mStXsGU?t=1502) From IDE settings the skill installs into .agents/skills/ij-debugger for the project and the demos run on it.
-- **+** [19:49](https://youtu.be/rk22mStXsGU?t=1189) Its description states debugger-first runtime root-cause analysis for JVM code with evidence from logpoints and breakpoints.
-- **−** [34:23](https://youtu.be/rk22mStXsGU?t=2063) No repository, URL or sample project for the demo programs is given at the close; the talk points to the booth instead.
+- **+** [25:02](https://youtu.be/rk22mStXsGU?t=1502) The bundled ij-debugger skill can be installed into the project's .agents/skills directory, providing the presented product's own distribution.
+- **−** [34:23](https://youtu.be/rk22mStXsGU?t=2063) The talk closes with an invitation to the booth and names no sample project that reproduces the demo programs.

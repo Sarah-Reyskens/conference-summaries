@@ -10,8 +10,9 @@ video: https://www.youtube.com/watch?v=5W4o_aYOaIY
 durationMin: 44
 slides: null
 verdict: 8
+reach: niche
 frames: 10
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Java, Raspberry Pi, and the Art of Overengineering Everyday Life
@@ -81,17 +82,19 @@ The closing recipe: Pi 5 for development, clone pi-starter and run simulated, ha
 Java developers curious about Raspberry Pi automation, and anyone weighing Pi4J against Python for hobby hardware. Experienced Pi or embedded developers will find the hardware shallow; viewers wanting rigorous benchmarks or production security practice should look elsewhere.
 
 ## Verdict
-**8/10**: A live simulate-then-deploy loop on a real Pi, the speaker's own builds and a documented starter repo earn the score; the numbers are anecdotes and most hardware topics get a sentence.
+**8/10**: A live simulate-then-deploy loop on a real Pi, the speaker's own failures and fixes, and a documented starter repo earn the score; the numbers are anecdotes and most hardware topics get a sentence.
+
+**Reach niche**: Only the few in the Devoxx audience who run Raspberry Pi or hobby hardware at home can put the main content to use within a year.
 
 **Novelty 2/2**
 
-- **+** [11:36](https://youtu.be/5W4o_aYOaIY?t=696) The smoker reads MEATER probes over Bluetooth LE after the speaker reverse engineered the old model's protocol, and the same build adds a chainsaw-carburetor butterfly valve [15:16](https://youtu.be/5W4o_aYOaIY?t=916), a P controller and a 12 V battery backup.
-- **+** [22:03](https://youtu.be/5W4o_aYOaIY?t=1323) He wrote a pure-Java camera driver on top of libcamera so nothing shells out to Python.
-- **+** [27:47](https://youtu.be/5W4o_aYOaIY?t=1667) The recipe slide packages his own projects' stack (starter, simulation, boot2vm, Proto Tools, tunnel, passkeys) as one workflow, with Home Assistant rejected up front because it "was built with Python. I couldn't extend it" [04:12](https://youtu.be/5W4o_aYOaIY?t=252).
+- **+** [11:36](https://youtu.be/5W4o_aYOaIY?t=696) The smoker reads MEATER probes over a self reverse-engineered BLE protocol, backed by a 12 V battery that carries full-day cooks through island power cuts.
+- **+** [22:03](https://youtu.be/5W4o_aYOaIY?t=1323) He vibe-coded a pure-Java driver on libcamera so the camera runs without shelling out to Python.
+- **+** [14:44](https://youtu.be/5W4o_aYOaIY?t=884) The first solenoid valve let too little air through at the small pressure difference between firebox and outside, so he replaced it with a butterfly valve from an old chainsaw carburetor driven by a micro servo.
 
 **Demonstrated 2/2**
 
-- **+** [33:01](https://youtu.be/5W4o_aYOaIY?t=1981) An edited view title ships through boot2vm and the Pi-served page auto-reloads seconds later while the temperature and humidity graphs climb.
+- **+** [32:29](https://youtu.be/5W4o_aYOaIY?t=1949) An edited view title ships through boot2vm and the Pi-served page auto-reloads seconds later while the temperature and humidity graphs climb.
 - **+** [31:25](https://youtu.be/5W4o_aYOaIY?t=1885) The Bluetooth scanner runs on the stage Pi against the room and lists the audience's phones.
 - **+** [37:17](https://youtu.be/5W4o_aYOaIY?t=2237) A recorded phone run shows a web push notification arriving with the app closed and reopening the PWA full screen.
 
@@ -103,9 +106,9 @@ Java developers curious about Raspberry Pi automation, and anyone weighing Pi4J 
 
 **Depth 1/2**
 
-- **+** [19:25](https://youtu.be/5W4o_aYOaIY?t=1165) The microcontroller-versus-Pi and Pi4J-versus-driver-versus-FFM choices each come with a when-to-use rule.
-- **+** [37:15](https://youtu.be/5W4o_aYOaIY?t=2235) The HTTPS slide gives three routes (Cloudflare Tunnel for remote, own domain with DNS-01 for LAN only, Caddy's internal CA with no domain), and the talk picks Cloudflare Tunnel over ngrok because one tunnel serves every home service [38:49](https://youtu.be/5W4o_aYOaIY?t=2329).
-- **·** [19:55](https://youtu.be/5W4o_aYOaIY?t=1195) Pi4J is called "quite low-level" and skipped in favour of drivers, and the FFM wrapper gets one sentence, so how either talks to the hardware is not explained.
+- **+** [19:25](https://youtu.be/5W4o_aYOaIY?t=1165) The microcontroller-versus-Pi and Pi4J-versus-ready-driver choices each come with a when-to-use rule.
+- **+** [38:49](https://youtu.be/5W4o_aYOaIY?t=2329) The talk picks Cloudflare Tunnel over ngrok because one tunnel on the strong home Pi serves every home service over HTTP/3.
+- **·** [19:55](https://youtu.be/5W4o_aYOaIY?t=1195) Pi4J is called "quite low-level" and skipped in favour of drivers, so how it talks to GPIO and I2C is not explained.
 
 **Reusable 2/2**
 

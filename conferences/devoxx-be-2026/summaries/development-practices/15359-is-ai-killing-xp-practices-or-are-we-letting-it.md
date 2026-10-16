@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=wrV4f83UMWI
 durationMin: 49
 slides: null
 verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -68,30 +69,32 @@ The practices are not independent: failures compound, and each missing practice 
 Teams and leads setting norms for AI-assisted development, and developers who know AI tooling but never learned XP. Viewers wanting hands-on technique (a TDD or refactoring demo, spec-driven tooling in action) should look elsewhere; this talk argues the case and names the discipline rather than teaching it.
 
 ## Verdict
-**6/10**: Seven XP practices defended against the case for dropping each, with the mechanism for why each holds; limited by third-party figures quoted without method and an audit that exists only as speech.
+**6/10**: Seven XP practices defended through their underlying mechanisms, with personal examples; the quantitative evidence is uneven and the closing audit has no published takeaway.
+
+**Reach broad**: Developers and leads across the conference audience can use the team norms for AI-assisted development without adopting a particular framework or platform.
 
 **Novelty 1/2**
 
-- **+** [04:14](https://youtu.be/wrV4f83UMWI?t=254) The Amazon incident sequence, the agent database-drop story, and three named industry reports are brought together under one charge-and-defense framework.
-- **+** [16:05](https://youtu.be/wrV4f83UMWI?t=965) The speaker's own cases carry part of the argument: an agent admitting it validated the implementation rather than the business, and an AI refactor of a Java class that the speaker's team no longer recognized ([26:29](https://youtu.be/wrV4f83UMWI?t=1589)).
+- **+** [16:05](https://youtu.be/wrV4f83UMWI?t=965) The speaker adds his own production-bug case in which an agent admitted its tests had validated the implementation rather than the business.
+- **+** [26:29](https://youtu.be/wrV4f83UMWI?t=1589) His Java refactoring example adds a team consequence: syntactically correct AI changes left colleagues unable to recognize their code.
 
 **Demonstrated 1/2**
 
-- **·** [10:58](https://youtu.be/wrV4f83UMWI?t=658) A strategy talk with nothing to run; its screen moments (IDE autocomplete, industry trend charts) illustrate claims rather than demonstrate them, so there is no demo to fail.
+- **·** [10:58](https://youtu.be/wrV4f83UMWI?t=658) This strategy talk has no central executable claim to demonstrate, and its autocomplete illustration does not create a need for an end-to-end demo.
 
 **Measured 1/2**
 
-- **+** [22:53](https://youtu.be/wrV4f83UMWI?t=1373) The GitClear June 2026 chart tracks repo metrics over 2023-2026 with a baseline of 100: refactor activity falls to about 30, duplication nearly doubles and two-week churn climbs toward 7%.
-- **−** [04:45](https://youtu.be/wrV4f83UMWI?t=285) The Amazon outage figures (13 hours, 120,000 and 6.3 million lost orders) are stated without naming any report or source a viewer could check.
-- **−** [36:47](https://youtu.be/wrV4f83UMWI?t=2207) The Cloud Security Alliance's 62% and Lightrun's 43% ([17:08](https://youtu.be/wrV4f83UMWI?t=1028)) design-flaw figures are relayed as headline totals, and the GitClear corpus is named without a method for how refactoring was measured.
+- **+** [22:53](https://youtu.be/wrV4f83UMWI?t=1373) The GitClear report compares repository metrics over 2023–2026, showing refactoring falling from an index of 100 to about 30, duplication nearly doubling and churn approaching 7%, with churn defined as code changed again within two weeks.
+- **−** [17:08](https://youtu.be/wrV4f83UMWI?t=1028) The Lightrun 43% figure and the [36:47](https://youtu.be/wrV4f83UMWI?t=2207) Cloud Security Alliance 62% figure are quoted without their samples or measurement methods.
+- **−** [04:45](https://youtu.be/wrV4f83UMWI?t=285) The Amazon outage narrative gives lost-order and website-error totals without naming their source or explaining how the losses were counted.
 
 **Depth 2/2**
 
-- **+** [17:38](https://youtu.be/wrV4f83UMWI?t=1058) TDD is reframed as design rather than coverage, with the mechanism spelled out: tests specify business behavior first so green means the functionality is done.
-- **+** [25:58](https://youtu.be/wrV4f83UMWI?t=1558) Refactoring is explained as maintaining the team's shared mental model of the domain, which is why syntactic AI refactors can be correct yet harmful.
-- **+** [39:56](https://youtu.be/wrV4f83UMWI?t=2396) CI is explained as frequent integration with constant verification cycles rather than bug-finding, so more generated code makes it more necessary.
+- **+** [17:38](https://youtu.be/wrV4f83UMWI?t=1058) Tests specify the required behavior before implementation, explaining why TDD supplies business constraints that an agent cannot infer from its own code.
+- **+** [25:58](https://youtu.be/wrV4f83UMWI?t=1558) Refactoring maintains the shared model of the business domain, explaining why syntactic changes alone cannot preserve the understanding shared by a team.
+- **+** [39:56](https://youtu.be/wrV4f83UMWI?t=2396) CI integrates contributions through frequent verification cycles, explaining why faster code generation increases the need for integration discipline.
 
 **Reusable 1/2**
 
-- **+** [48:10](https://youtu.be/wrV4f83UMWI?t=2890) The closing audit gives seven questions a team can run before adopting AI tools.
-- **−** [48:41](https://youtu.be/wrV4f83UMWI?t=2921) The checklist exists only as spoken words; no repository, sample, or written checklist is pointed to.
+- **+** [48:10](https://youtu.be/wrV4f83UMWI?t=2890) The closing audit gives seven questions teams can apply to behavior-focused tests, design, complexity, shared knowledge, ownership, integration and release size.
+- **−** [48:41](https://youtu.be/wrV4f83UMWI?t=2921) The audit finishes as spoken guidance without a link to a written checklist, sample project or other artifact reproducing it.

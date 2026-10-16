@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=bqwtnKLU35E
 durationMin: 50
 slides: null
 verdict: 6
+reach: broad
 frames: 12
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # How to Architect Green Software
 
@@ -80,18 +80,20 @@ Architects and senior developers who choose regions, redundancy models, or clien
 
 ## Verdict
 
-**6/10**: A trade-off catalog across devices, networks, data centers, availability and ARM servers, with the PUE/WUE and four-nines reasoning explained in depth; the figures are cited from others without method and nothing is run or published.
+**6/10**: A trade-off catalog across devices, networks, data centers, availability and ARM servers, with the PUE/WUE and four-nines reasoning explained in depth; the figures are cited from others without method and nothing is run end to end or published.
+
+**Reach broad**: most backend teams deploying to the public cloud can use the region, redundancy, and server choices in their own work within the next year.
 
 **Novelty 1/2**
 
 - **+** [15:54](https://youtu.be/bqwtnKLU35E?t=954) The recurring trade-off framing (device footprint against maintainability and testability) brings several credited sources into one decision catalog.
-- **+** [11:41](https://youtu.be/bqwtnKLU35E?t=701) Facebook Lite is used as a real thin-client precedent (screens rendered on the server, Android phones back to 2009, usable on 2G).
+- **+** [11:41](https://youtu.be/bqwtnKLU35E?t=701) Facebook Lite is brought in as a thin-client precedent for old Android hardware (screens rendered on the server, phones back to 2009, usable on 2G), tying the device-lifetime argument to a shipped product.
 - **·** [47:11](https://youtu.be/bqwtnKLU35E?t=2831) The speaker's own bare-metal measurements of agent energy against long-run savings are mentioned in one sentence with no figures or setup shown.
 
 **Demonstrated 1/2**
 
 - **+** [32:15](https://youtu.be/bqwtnKLU35E?t=1935) The Google Cloud Region Picker's recommendation list for Belgium traffic is on screen while the speaker explains how the carbon, price and latency sliders change it.
-- **·** [30:13](https://youtu.be/bqwtnKLU35E?t=1813) Electricity Maps and the Region Picker appear as static captures and nothing is operated on screen, which fits a strategy talk with no demo slot.
+- **·** [30:44](https://youtu.be/bqwtnKLU35E?t=1844) Electricity Maps is shown in a browser with Belgium's grid mix pointed out, but only as an illustration and not worked through to a region choice, which fits a strategy talk with no demo slot.
 
 **Measured 1/2**
 
@@ -107,5 +109,5 @@ Architects and senior developers who choose regions, redundancy models, or clien
 
 **Reusable 1/2**
 
-- **+** [32:15](https://youtu.be/bqwtnKLU35E?t=1935) Public tools (Electricity Maps, Google Cloud Region Picker) and a Terraform restart-on-failure pattern give viewers something to try.
+- **+** [38:38](https://youtu.be/bqwtnKLU35E?t=2318) The Terraform restart-on-failure pattern is described as a script that starts a replacement instance on failure, a fragment for viewers to reconstruct for standby-free recovery.
 - **·** [45:00](https://youtu.be/bqwtnKLU35E?t=2700) The closing gives three reminders, and neither the trade-off catalog nor the book mentioned at [01:39](https://youtu.be/bqwtnKLU35E?t=99) is pointed to as a checklist or repository.

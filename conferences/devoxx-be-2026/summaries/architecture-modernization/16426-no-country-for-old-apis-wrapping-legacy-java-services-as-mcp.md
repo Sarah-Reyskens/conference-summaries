@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=a5cQAl0g2AM
 durationMin: 45
 slides: null
 verdict: 6
+reach: segment
 frames: 9
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -99,34 +100,36 @@ The closing slide contrasts the two modes: curated operations are reviewed in a 
 Brownfield Java developers asked to connect legacy SOAP/REST estates to AI agents, and architects weighing GraphQL as an agent-facing layer. Skip if you already ship GraphQL-backed MCP servers with scoped auth, or if you want MCP protocol internals rather than an integration recipe.
 
 ## Verdict
-
++
 **6/10**: Live brownfield recipe (Spring GraphQL over a real SOAP service, Keycloak write scopes, dynamic schema search) that runs on screen, limited by techniques with published counterparts, an evaluation report with no stated results, and no linked artifact.
-
++
+**Reach segment**: Spring Boot developers and architects putting agent-facing tool layers over legacy SOAP and REST estates.
++
 **Novelty 1/2**
-
++
 - **+** [11:06](https://youtu.be/a5cQAl0g2AM?t=666) The speaker built his own library that turns reviewed GraphQL operations into MCP and in-process tools, because anything agentic is "behaving like a JavaScript framework" against slower enterprise release cycles.
-- **+** [24:47](https://youtu.be/a5cQAl0g2AM?t=1487) A live Antwerp SOAP service behind one GraphQL field, secured with Keycloak scopes and checked with promptfoo, is the speaker's own brownfield combination.
+- **+** [24:13](https://youtu.be/a5cQAl0g2AM?t=1453) An agent updated three pets in the middle of a promptfoo run and failed every later check, so he now tests reads with writes disabled.
 - **·** [36:29](https://youtu.be/a5cQAl0g2AM?t=2189) The embedding model and schema-search approach come from the GraphQL AI working group, as the speaker says.
-
++
 **Demonstrated 2/2**
-
++
 - **+** [27:59](https://youtu.be/a5cQAl0g2AM?t=1679) The SOAP-backed dog-zone lookup chains the owner tool and the live government service on screen end to end.
 - **+** [31:08](https://youtu.be/a5cQAl0g2AM?t=1868) Keycloak login, scope denial for the read-only user, and authorized write for the read-write user all run live.
 - **−** [39:07](https://youtu.be/a5cQAl0g2AM?t=2347) In the three-tool large-schema mode two models "just gave up" and the run completes only after switching to Claude.
-
++
 **Measured 1/2**
-
++
 - **+** [23:11](https://youtu.be/a5cQAl0g2AM?t=1391) The promptfoo report asserts both the tool called and the answer returned, with per-assertion pass/fail rows visible.
 - **−** [23:11](https://youtu.be/a5cQAl0g2AM?t=1391) The report lists historic runs of different eval setups, and the speaker states no pass rate or per-model comparison beyond "quite good".
 - **−** [34:22](https://youtu.be/a5cQAl0g2AM?t=2062) "We can do better" than Anthropic's tool search and Spring's implementation of it is claimed without a comparison.
-
++
 **Depth 1/2**
-
-- **+** [04:11](https://youtu.be/a5cQAl0g2AM?t=251) Rejects pointing the LLM at APIs and per-client BFFs in favor of one GraphQL layer, with scaling as the stated reason for BFFs and preference for the direct case.
++
+- **+** [04:11](https://youtu.be/a5cQAl0g2AM?t=251) Rejects pointing the LLM straight at APIs and per-client BFFs in favor of one GraphQL layer, giving scaling as the reason against BFFs.
 - **+** [42:41](https://youtu.be/a5cQAl0g2AM?t=2561) Compares curated operations with dynamic model-written queries on review in a pull request, cost, predictability and coverage.
-- **−** [34:54](https://youtu.be/a5cQAl0g2AM?t=2094) The embedding search internals (what is embedded, ranking, the three-step process) are named but not explained.
-
+- **−** [34:54](https://youtu.be/a5cQAl0g2AM?t=2094) How the embedding search ranks fields and how the three-step search flow works are named but not explained.
++
 **Reusable 1/2**
-
++
 - **+** [30:05](https://youtu.be/a5cQAl0g2AM?t=1805) The Keycloak and Spring Security configuration is walked through on screen: starter dependency, Keycloak properties and the baseline-scope setup.
-- **−** [05:46](https://youtu.be/a5cQAl0g2AM?t=346) A step-per-branch demo repository is mentioned, but no URL or library coordinates are given at any point in the talk.
+- **−** [05:46](https://youtu.be/a5cQAl0g2AM?t=346) A step-per-branch demo repository is mentioned, but no URL or library coordinates are given in the captions.

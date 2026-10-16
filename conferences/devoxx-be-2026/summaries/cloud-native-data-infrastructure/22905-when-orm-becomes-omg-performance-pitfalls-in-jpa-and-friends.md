@@ -11,6 +11,7 @@ durationMin: 51
 slides: https://easingyou.com/whenORMbecomesOMG/
 slidesNote: from J-Spring 2025
 verdict: 9
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -91,23 +92,26 @@ Spring developers shipping JPA or Hibernate code who want a checklist of configu
 ## Verdict
 **9/10**: JPA connection and fetching pitfalls re-run on screen with timed before/after steps and a published repo of the demo code; the subject is mostly the standard Hibernate performance canon.
 
+**Reach segment**: Spring Boot and Spring Data JPA users in the conference audience can apply the configuration and mapping defaults in their own services within the next year.
+
 **Novelty 1/2**
 
-- **+** [06:51](https://youtu.be/ePBmAdRYl10?t=411) The lease tracing and each fix run on the speaker's own FunFactStore app, with a custom Hikari metrics tracker logging acquire and release times.
-- **+** [43:07](https://youtu.be/ePBmAdRYl10?t=2587) The MapStruct warning rests on freelance experience, including a single screen that fired over a thousand selects.
+- **+** [06:51](https://youtu.be/ePBmAdRYl10?t=411) The diagnosis is built on the speaker's own FunFactStore shop endpoint, where a criminal-registry check, a last-purchase read and a CEO email shape each connection-lease trace.
+- **+** [43:07](https://youtu.be/ePBmAdRYl10?t=2587) The MapStruct warning rests on freelance project experience, including a single screen that fired over a thousand selects.
 - **−** Eager defaults, N+1, join fetch, DTO projections and open-in-view are the standard Hibernate performance canon (Vlad Mihalcea's blog and High-Performance Java Persistence, the Hibernate docs, Spring Boot's own open-in-view startup warning).
 
 **Demonstrated 2/2**
 
-- **+** [05:16](https://youtu.be/ePBmAdRYl10?t=316) The connection benchmark runs on screen with output visible: under 1 ms pooled against over 4 s direct for 1000 connections.
-- **+** [12:08](https://youtu.be/ePBmAdRYl10?t=728) Each connection fix is re-run in the same integration test with the new lease time visible in the log.
+- **+** [08:56](https://youtu.be/ePBmAdRYl10?t=536) The shop-controller integration test runs with acquire and release logging, showing the connection held 659 ms until the controller returns.
+- **+** [34:48](https://youtu.be/ePBmAdRYl10?t=2088) The join-fetch query re-runs with the log showing facts and admins loaded in one statement and no further selects on access.
 - **+** [39:27](https://youtu.be/ePBmAdRYl10?t=2367) The DTO projection test passes on screen showing a single three-column query replacing six.
 
 **Measured 2/2**
 
-- **+** [04:15](https://youtu.be/ePBmAdRYl10?t=255) The pool benchmark states its method (Testcontainers Postgres, first 25 of 1025 connections discarded) with a direct-connection baseline.
-- **+** [15:17](https://youtu.be/ePBmAdRYl10?t=917) Each setting is changed alone in the same test: the lease drops from 659 ms to 251 ms with open-in-view off [12:08], then to 80 ms with auto-commit off.
-- **·** [20:00](https://youtu.be/ePBmAdRYl10?t=1200) The closing 26 ms total comes after a bug fix that adds a second connection, so it compares different code paths from the 659 ms run.
+- **+** [04:46](https://youtu.be/ePBmAdRYl10?t=286) The pool benchmark states its method (Testcontainers Postgres, 1025 connects discarding the first 25) with a same-database DriverManager baseline: under 1 ms pooled against over 4 s direct.
+- **+** [12:08](https://youtu.be/ePBmAdRYl10?t=728) Turning only open-in-view off in the same test returns the connection right after the last database access, cutting the lease from 659 ms to 251 ms.
+- **+** [15:17](https://youtu.be/ePBmAdRYl10?t=917) Setting Hikari auto-commit off in the same test defers acquisition until real JDBC interaction, cutting the lease to 80 ms.
+- **·** [20:00](https://youtu.be/ePBmAdRYl10?t=1200) The closing 26 ms total spans two leases over changed code that adds a database email read, so it compares a different path from the 659 ms single lease.
 
 **Depth 2/2**
 

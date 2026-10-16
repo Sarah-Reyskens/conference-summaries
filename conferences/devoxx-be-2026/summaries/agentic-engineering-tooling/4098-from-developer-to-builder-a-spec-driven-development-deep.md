@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=z8lal-Yt_04
 durationMin: 157
 slides: https://speakerdeck.com/simas/from-developer-to-builder-a-spec-driven-development-deep-dive
 verdict: 8
+reach: broad
 frames: 15
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-16
 ---
 
 # From Developer to Builder: A Spec-Driven Development Deep Dive
@@ -146,34 +147,35 @@ Specs plus the harness reduce non-determinism and target sustainability; most of
 
 ## Verdict
 
-**8/10**: A three-hour original method with a published sample project, held back by a live loop that stops short of its reconcile and end-to-end steps and by anecdotal numbers.
+**8/10**: Customer experience on spec-anchored development, an explained sensor and harness design and two published example projects support the method, while the coverage audit and test-case run were not completed on screen and the productivity figures have no comparison.
+
+**Reach broad**: Java and backend developers and architects building business applications with AI coding assistants can apply the spec-anchored loop, sensors and harness to their own systems within the next year.
 
 **Novelty 2/2**
 
-- **+** [26:52](https://youtu.be/z8lal-Yt_04?t=1612) AIUP is the speaker's own method, with design rationale for skipping the planning/task phase other spec-driven tools keep.
-- **+** [48:22](https://youtu.be/z8lal-Yt_04?t=2902) The 1200-entity wholesale ERP modernization behind the modularization argument is unpublished production experience.
-- **+** [130:57](https://youtu.be/z8lal-Yt_04?t=7857) At an insurer's one-week workshop most framework skills were thrown away on day four because the specs carried that knowledge and the models had improved.
+- **+** [04:28](https://youtu.be/z8lal-Yt_04?t=268) The volunteer-management project exposes the maintenance failure behind the method: a working vibe-coded application became hard to adapt when a festival needed a different process.
+- **+** [130:57](https://youtu.be/z8lal-Yt_04?t=7857) An insurer workshop found most of its framework skills redundant after moving knowledge into specifications and using improved models, an adoption lesson beyond a feature tour.
+- **+** [142:41](https://youtu.be/z8lal-Yt_04?t=8561) An order-management migration missed a rare customer workflow despite review by its users, and keeping the old system available prevented the omission from stopping operations.
 
 **Demonstrated 1/2**
 
-- **+** [94:21](https://youtu.be/z8lal-Yt_04?t=5661) The generated repository and view are reviewed on screen and the app starts and runs ("And it works"), weak UX and raw errors included.
-- **−** [102:12](https://youtu.be/z8lal-Yt_04?t=6132) The /coverage-check audit is only launched in the background and its report never appears on screen.
-- **−** [117:51](https://youtu.be/z8lal-Yt_04?t=7071) The live /test-case run ends without output because only UC-001 is implemented.
+- **+** [94:21](https://youtu.be/z8lal-Yt_04?t=5661) The generated repository and view are reviewed on screen and the application starts and runs with its weak UX and raw errors visible.
+- **−** [102:12](https://youtu.be/z8lal-Yt_04?t=6132) The /coverage-check audit is launched as a background subagent and its report never appears on screen.
+- **−** [117:51](https://youtu.be/z8lal-Yt_04?t=7071) The live /test-case run produces no journey because only UC-001 is implemented.
 
 **Measured 1/2**
 
-- **+** [92:46](https://youtu.be/z8lal-Yt_04?t=5566) The 52-second implementation is timed on screen.
-- **−** [100:06](https://youtu.be/z8lal-Yt_04?t=6006) The 95 percent coverage figure is stated without showing the report behind it.
-- **−** [155:16](https://youtu.be/z8lal-Yt_04?t=9316) Six-times-faster is a solo gut feeling, offered with the warning that enterprise settings run far slower.
+- **+** [92:46](https://youtu.be/z8lal-Yt_04?t=5566) The speaker reports that implementing UC-001 took 52 seconds, without a manual-development baseline.
+- **·** [100:06](https://youtu.be/z8lal-Yt_04?t=6006) The roughly 95 percent coverage across projects is self-reported and the speaker questions whether jointly generated tests establish correctness.
+- **−** [155:16](https://youtu.be/z8lal-Yt_04?t=9316) The six-times-faster Studio estimate has no stated measurement method or comparison and is explicitly limited to solo work with a known domain.
 
 **Depth 2/2**
 
-- **+** [75:00](https://youtu.be/z8lal-Yt_04?t=4500) An ArchUnit rule (no domain class may depend on a Vaadin class) shows how deterministic sensors enforce architecture.
-- **+** [76:04](https://youtu.be/z8lal-Yt_04?t=4564) Deterministic sensors block the next step while AI-based sensors only warn, because repeated AI checks can fix and re-find issues in an endless loop.
-- **+** [12:19](https://youtu.be/z8lal-Yt_04?t=739) Spec-as-source is rejected with reasons: regeneration is non-deterministic and per-change regeneration burns tokens.
+- **+** [75:00](https://youtu.be/z8lal-Yt_04?t=4500) An ArchUnit rule that no domain class may depend on a Vaadin class shows how deterministic sensors enforce architecture.
+- **+** [76:04](https://youtu.be/z8lal-Yt_04?t=4564) Deterministic sensors block the next step while AI-based sensors only warn because repeated AI checks can loop between fixing and re-finding issues.
+- **+** [12:19](https://youtu.be/z8lal-Yt_04?t=739) Spec-as-source is rejected with reasons, since regeneration is non-deterministic and per-change regeneration burns tokens.
 
 **Reusable 2/2**
 
-- **+** [116:48](https://youtu.be/z8lal-Yt_04?t=6998) The PetClinic repository (github.com/AI-Unified-Process/petclinic) publishes the specs, the use-case traceability sensors and the architecture tests, and its Claude Code hooks ([119:24](https://youtu.be/z8lal-Yt_04?t=7164)) guard the session.
-- **+** [35:48](https://youtu.be/z8lal-Yt_04?t=2148) The AIUP core skills and stack plugins ship through a public marketplace (unifiedprocess.ai), covering the loop the talk runs live.
-- **−** [30:30](https://youtu.be/z8lal-Yt_04?t=1830) The hotel demo repo (github.com/simasch/hrs) is the starter only: its docs/ folder holds vision.md, not the specs and tests built live.
+- **+** [116:48](https://youtu.be/z8lal-Yt_04?t=7008) The PetClinic project supplies specifications, a use-case traceability test and architecture tests that reproduce the sensors the talk describes.
+- **+** [30:30](https://youtu.be/z8lal-Yt_04?t=1830) The hotel starter repository with its H2 and PostgreSQL branches is the project the spec-to-code exercise is built on.

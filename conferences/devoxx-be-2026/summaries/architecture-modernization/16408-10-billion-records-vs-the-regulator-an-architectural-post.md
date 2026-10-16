@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=TB45qqp-OxM
 durationMin: 49
 slides: https://github.com/martin-ladecky/devoxx-belgium-2026
 verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -88,30 +89,31 @@ Architects running large Oracle estates, teams planning an Oracle-to-PostgreSQL 
 
 ## Verdict
 
-**7/10**: A bank-outage post-mortem with production experience and reasoned design trade-offs, limited by an unmeasured central fix and fragments as the only takeaway.
+**7/10**: A production-outage post-mortem with first-hand recovery decisions and explained architectural trade-offs, limited by anecdotal performance evidence and practices left to reconstruct.
+
+**Reach segment**: Engineers and architects operating large relational business systems can apply the recovery, write-side integrity and staged migration lessons.
 
 **Novelty 2/2**
 
-- **+** [08:31](https://youtu.be/TB45qqp-OxM?t=511) The timeout first aid and the 15-minute production deploy come from the speaker's own incident, not from any guide.
-- **+** [40:36](https://youtu.be/TB45qqp-OxM?t=2436) The CDC rejection rests on bank-specific constraints (sys-admin access, Oracle SLAs, schema-wide blast radius) no vendor tutorial covers.
+- **+** [16:23](https://youtu.be/TB45qqp-OxM?t=983) The account of defending deliberate inaction under management and regulatory pressure gives first-hand incident experience beyond a cache-warming guide.
+- **+** [40:05](https://youtu.be/TB45qqp-OxM?t=2405) The speaker traces how repeated delivery pressure and acceptance of working software let the problematic query survive inside this bank.
 
 **Demonstrated 1/2**
 
-- **·** [23:18](https://youtu.be/TB45qqp-OxM?t=1398) An incident narrative with nothing to run live; the SQL and architecture appear as static slides rather than executed output.
+- **·** [20:04](https://youtu.be/TB45qqp-OxM?t=1204) This architectural post-mortem explains a past incident rather than offering an executable demonstration, so the not-applicable rule applies.
 
 **Measured 1/2**
 
-- **+** [06:20](https://youtu.be/TB45qqp-OxM?t=380) Normal 20-40 ms responses are set against incident latencies of 100 ms to 20 minutes from production monitoring.
-- **−** [08:31](https://youtu.be/TB45qqp-OxM?t=511) The 90% of users answered within 3 minutes is the speaker's own observation, with no method shown.
-- **−** [29:34](https://youtu.be/TB45qqp-OxM?t=1774) The 10-day window fix shipped without a before/after measurement: the execution plan is identical and the 10,000-account test environment could not reproduce the cold cache.
+- **+** [06:20](https://youtu.be/TB45qqp-OxM?t=380) Reported production latency changes from a normal 20–40 ms to as much as 20 minutes during the incident.
+- **·** [29:34](https://youtu.be/TB45qqp-OxM?t=1774) The date-window fix is supported by a subsequent successful disaster-recovery test rather than a measured before/after comparison, with an unchanged execution plan and a test environment too small to reproduce production conditions.
 
 **Depth 2/2**
 
-- **+** [21:40](https://youtu.be/TB45qqp-OxM?t=1300) The three-source merge, newest-state selection and booked anti-join are explained step by step with row counts.
-- **+** [40:36](https://youtu.be/TB45qqp-OxM?t=2436) CDC, vendor migration tools, network copy and in-house dual writes are weighed with reasons for each rejection.
-- **−** [14:48](https://youtu.be/TB45qqp-OxM?t=888) Which of the four Exadata cache layers caused the slowdown is an admitted bet, though the cold-cache cause itself is shown at 17:27.
+- **+** [24:20](https://youtu.be/TB45qqp-OxM?t=1460) The SQL walkthrough explains newest-state selection and the pending-to-booked join that make read-time deduplication costly.
+- **+** [31:08](https://youtu.be/TB45qqp-OxM?t=1868) The redesign weighs one table against two and explains why schema ownership allows integrity checks to move into importers.
+- **+** [41:41](https://youtu.be/TB45qqp-OxM?t=2501) The CDC alternative is rejected on administrator privileges, vendor guarantees and blast radius before the application-owned migration approach is selected.
 
 **Reusable 1/2**
 
-- **+** [23:18](https://youtu.be/TB45qqp-OxM?t=1398) The anonymized SQL is shown on a slide and can be zoomed, specific enough to study the dedup pattern.
-- **·** [42:42](https://youtu.be/TB45qqp-OxM?t=2562) The write-side dedup and the dual-write migration are described in speech, so the design has to be reconstructed from the description.
+- **+** [23:18](https://youtu.be/TB45qqp-OxM?t=1398) The anonymized SQL fragment is offered for zooming and study.
+- **·** [42:42](https://youtu.be/TB45qqp-OxM?t=2562) Dual writes are a described migration plan rather than a supplied implementation that reproduces the migration.

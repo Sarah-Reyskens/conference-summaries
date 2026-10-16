@@ -9,7 +9,8 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=2Yh7LKt8YNw
 durationMin: 49
 slides: null
-verdict: 4
+verdict: 5
+reach: broad
 frames: 10
 reviewedAt: 2026-10-15
 ---
@@ -102,30 +103,34 @@ Developers who enjoy shared industry pain, including students meeting these quir
 
 ## Verdict
 
-**4/10**: A fun grab-bag of industry lore carried by personal anecdotes, with breadth traded for depth and nothing to take home.
+**5/10**: A humorous survey of software quirks with first-hand incidents and small practices to reuse, while its quantitative examples and technical explanations remain brief.
+
+**Reach broad**: most of the conference's Java/JVM business-application developers encounter these encoding, arithmetic, date and data-import problems in their work within a year.
 
 **Novelty 1/2**
 
-- **+** [08:21](https://youtu.be/2Yh7LKt8YNw?t=501) The mainframe-metadata story and the linearly increasing OTP values are first-hand production anecdotes no search returns.
-- **+** [33:06](https://youtu.be/2Yh7LKt8YNw?t=1986) Dozens of quirks are gathered into one arc with credited sources, from socket.dev to Tom's Hardware links on the Doom slide.
-- **−** Individual items are standard documented lore rather than new findings: the Samoa dateline skip, Y2K38, and IEEE 754 NaN semantics all sit on their Wikipedia pages.
+- **+** [08:21](https://youtu.be/2Yh7LKt8YNw?t=501) The mainframe-metadata story is a first-hand production anecdote beyond the standard explanation of encoding problems.
+- **+** [20:32](https://youtu.be/2Yh7LKt8YNw?t=1232) The speaker's token-engineering experience adds a personal case of unexpectedly increasing OTP values to the survey of randomness failures.
+- **−** Individual curiosities such as Samoa's skipped date are already documented on Wikipedia's Samoa time-zone history page, limiting the novelty of the surrounding survey.
 
 **Demonstrated 1/2**
 
-- **·** [29:55](https://youtu.be/2Yh7LKt8YNw?t=1795) A humor survey with nothing to run; the on-screen clips entertain rather than back a claim, so no demo is fairly asked.
+- **·** [29:55](https://youtu.be/2Yh7LKt8YNw?t=1795) The CSS clip serves the humor survey rather than an end-to-end runnable claim, so a central demo is not fairly required.
 
 **Measured 1/2**
 
-- **+** [22:36](https://youtu.be/2Yh7LKt8YNw?t=1356) The UUID collision figures (2.71 quintillion for 50%, a billion per second for 86 years) come with their Wikipedia derivation.
-- **+** [33:06](https://youtu.be/2Yh7LKt8YNw?t=1986) The Doom-in-TypeScript numbers (3.5 trillion lines, 177 TB, 12 days per frame) are shown with their sources on the slide.
-- **−** [08:53](https://youtu.be/2Yh7LKt8YNw?t=533) The speaker's own figure, invoices billed 9.9999999 instead of 10, is an anecdote with no invoice or calculation shown; the other numbers (the 220-billion COBOL lines included) are quoted from elsewhere.
+- **+** [22:36](https://youtu.be/2Yh7LKt8YNw?t=1356) The quoted UUID collision figures put the risk in scale with 2.71 quintillion identifiers for a 50% collision chance and a billion per second for 86 years.
+- **+** [33:06](https://youtu.be/2Yh7LKt8YNw?t=1986) The sourced Doom-in-TypeScript example supplies totals of 3.5 trillion lines and 177 TB with 12 days to compile its first frame.
+- **−** [08:53](https://youtu.be/2Yh7LKt8YNw?t=533) The invoice figure of 9.9999999 instead of 10 remains an anecdote without its calculation reproduced, while the cited project totals provide no comparative measurement setup.
 
 **Depth 1/2**
 
-- **+** [16:50](https://youtu.be/2Yh7LKt8YNw?t=1010) The 2038 overflow is walked through arithmetically: 2^31 seconds from 1970 lands on 13 December 1901, not back at 1970.
-- **+** [24:10](https://youtu.be/2Yh7LKt8YNw?t=1450) Line endings are explained from typewriter mechanics up through FTP rewriting and Unicode LS/PS separators.
-- **·** [45:50](https://youtu.be/2Yh7LKt8YNw?t=2750) Each topic gets minutes by design; the slot explains side-topic internals but weighs no trade-off in depth.
+- **+** [16:50](https://youtu.be/2Yh7LKt8YNw?t=1010) The 2038 example explains how signed 32-bit seconds overflow from a future date into December 1901.
+- **+** [24:10](https://youtu.be/2Yh7LKt8YNw?t=1450) Line endings are explained through typewriter mechanics, CR plus LF, file-transfer rewriting and Unicode separators.
+- **·** [45:50](https://youtu.be/2Yh7LKt8YNw?t=2750) The closing Jira discussion continues the survey of familiar problems rather than developing a core mechanism or weighing design alternatives.
 
-**Reusable 0/2**
+**Reusable 1/2**
 
-- **−** [48:20](https://youtu.be/2Yh7LKt8YNw?t=2900) The closing slide's QR code is for bone marrow donor registration, and the talk points to no repository, sample, configuration or checklist covering its content; the URLs on the Doom, 2038 and CapsOff slides are citations for single jokes.
+- **+** [09:55](https://youtu.be/2Yh7LKt8YNw?t=595) BigDecimal or counting money in minor units gives a small practice to reconstruct from the floating-point example.
+- **+** [11:00](https://youtu.be/2Yh7LKt8YNw?t=660) The displayed JDK NaN check supplies a code fragment showing why a value can compare unequal to itself.
+- **−** [48:20](https://youtu.be/2Yh7LKt8YNw?t=2900) The closing QR code concerns bone marrow donor registration, and no repository, sample, configuration or checklist reproducing the survey's main content is offered.

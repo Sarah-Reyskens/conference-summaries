@@ -9,7 +9,8 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=jhvT8hVYSvQ
 durationMin: 45
 slides: null
-verdict: 9
+verdict: 8
+reach: niche
 frames: 7
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -86,34 +87,35 @@ Developers and tech leads running coding agents on real codebases who feel revie
 
 ## Verdict
 
-**9/10**: A first-hand outage, an open-source tool built through four documented iterations, and a live scan and agent-tracking demo; held back only by unmeasured claims.
+**8/10**: First-hand failures, live architectural tracking and explained design choices earn the score; comparative evidence and a separate reproducible example package are missing.
+
+**Reach niche**: The main workflow is useful to developers and architects adopting Groma for supervising agent-written code, rather than most of the conference's Java and JVM audience.
 
 **Novelty 2/2**
 
-- **+** [03:43](https://youtu.be/jhvT8hVYSvQ?t=223) A first-hand production outage caused by unsupervised agent code, with the specific failure (an ever-growing WHERE IN list) and the two-minute agent fix.
-- **+** [15:16](https://youtu.be/jhvT8hVYSvQ?t=916) The author's build record: three failed attempts (a stale UI mockup, 700 commits in 72 hours with nothing working, a 3,000-line folder-name switch) before the fourth Groma.
-- **+** [24:10](https://youtu.be/jhvT8hVYSvQ?t=1450) The raw-scan-plus-curation trade-off, explained from the author's own over-hardcoding mistakes rather than from docs.
+- **+** [03:43](https://youtu.be/jhvT8hVYSvQ?t=223) A first-hand production outage shows how delegating implementation and deployment left the speaker unable to investigate his own application when it failed.
+- **+** [15:16](https://youtu.be/jhvT8hVYSvQ?t=916) The author traces failed builds through a stale UI-first prototype, an uncontrolled agent run and a folder-name-dependent scanner before switching to an incrementally working implementation.
 
 **Demonstrated 2/2**
 
-- **+** [22:37](https://youtu.be/jhvT8hVYSvQ?t=1357) A Keycloak clone scanned live with the init wizard, which detected Java (197 declarations), React, JavaScript and TypeScript, and the raw hairball map rendered on screen.
-- **+** [28:21](https://youtu.be/jhvT8hVYSvQ?t=1701) Six Codex agents editing the Groma repo live while the map tracks their touched components in real time.
-- **+** [29:55](https://youtu.be/jhvT8hVYSvQ?t=1795) The live-diffs view marking new components blue and modified ones yellow while the agents were still running.
-- **−** [25:13](https://youtu.be/jhvT8hVYSvQ?t=1513) The Keycloak curation step is skipped on stage ("this takes few minutes, I skipped it"), so the curated map shown is pre-made rather than produced live.
+- **+** [28:52](https://youtu.be/jhvT8hVYSvQ?t=1732) Six Codex agents editing the Groma repository report touched components while the map displays their activity in real time.
+- **+** [29:55](https://youtu.be/jhvT8hVYSvQ?t=1795) The live-diffs view marks new components blue and modified ones yellow while the agents continue working.
+- **−** [25:13](https://youtu.be/jhvT8hVYSvQ?t=1513) The Keycloak curation step is skipped on stage, so its readable map is prepared ahead rather than produced during the demonstration.
 
 **Measured 1/2**
 
-- **+** [30:00](https://youtu.be/jhvT8hVYSvQ?t=1800) The live run displays token spend with its basis on screen (about $28.59 for 11.7M tokens, 6 agents, list prices).
-- **−** [28:21](https://youtu.be/jhvT8hVYSvQ?t=1701) The claim that each of the six tasks would take "few hours if not a single day" by hand is the speaker's own estimate, with no baseline.
-- **·** [09:31](https://youtu.be/jhvT8hVYSvQ?t=571) Decay is reported as self-observed totals (20 duplicated buttons, a 3,000-line switch case) with no before/after comparison of review methods.
+- **+** [30:00](https://youtu.be/jhvT8hVYSvQ?t=1800) The live run shows token spend with its basis on screen, about $28.59 for 11.7M tokens across six agents at list prices.
+- **−** [28:21](https://youtu.be/jhvT8hVYSvQ?t=1701) The claim that each task would take hours or a day manually is the speaker's estimate without a measured baseline.
+- **·** [09:31](https://youtu.be/jhvT8hVYSvQ?t=571) Architectural decay is reported through observed duplication, including 20 button instances and per-page authentication, without a before/after comparison of review methods.
 
 **Depth 2/2**
 
-- **+** [21:05](https://youtu.be/jhvT8hVYSvQ?t=1265) Scanner design: per-language plugins on native tooling feeding a unified core, with deterministic IDs enabling fast incremental updates.
-- **+** [34:40](https://youtu.be/jhvT8hVYSvQ?t=2080) Format choices with reasons: C4 for the hierarchy, Open Knowledge Format 0.2 so the markdown survives uninstalling the tool.
-- **+** [12:09](https://youtu.be/jhvT8hVYSvQ?t=729) Why shallower fixes failed: agents tolerate deeply nested loops, so a cognitive-complexity lint rule helps, yet AGENTS.md rules, skill pruning and simplification passes improved the code only briefly before drift returned.
+- **+** [21:05](https://youtu.be/jhvT8hVYSvQ?t=1265) Per-language scanners use native tooling to extract relationships into a unified core, explaining how mixed-language codebases can map without repeated AI calls.
+- **+** [34:40](https://youtu.be/jhvT8hVYSvQ?t=2080) C4 supplies the hierarchy and Open Knowledge Format preserves component descriptions and relationships in portable markdown after Groma is uninstalled.
+- **+** [12:09](https://youtu.be/jhvT8hVYSvQ?t=729) The speaker explains why cognitive-complexity linting constrains agent-generated nested loops, then describes how simplification passes improved the code only temporarily before architectural drift returned.
 
-**Reusable 2/2**
+**Reusable 1/2**
 
-- **+** [30:58](https://youtu.be/jhvT8hVYSvQ?t=1858) The MIT-licensed Groma repository, installable as a global tool and started with `groma web` ([35:43](https://youtu.be/jhvT8hVYSvQ?t=2143)).
-- **+** [25:13](https://youtu.be/jhvT8hVYSvQ?t=1513) The `groma agent-instructions` command ships agent-usable curation workflows, and a marketplace GitHub Action ([33:36](https://youtu.be/jhvT8hVYSvQ?t=2016)) publishes per-PR architecture pages.
+- **+** [30:58](https://youtu.be/jhvT8hVYSvQ?t=1858) The MIT-licensed Groma repository is available for viewers to run and modify.
+- **+** [33:36](https://youtu.be/jhvT8hVYSvQ?t=2016) A marketplace GitHub Action publishes per-PR architecture-change pages.
+- **·** [19:27](https://youtu.be/jhvT8hVYSvQ?t=1167) Groma is the presented project and maps itself, so its repository and distribution support Reusable 1 under the project-author rule.

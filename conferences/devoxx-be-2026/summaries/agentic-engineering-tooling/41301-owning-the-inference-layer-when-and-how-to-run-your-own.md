@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=QbA-rs7XLEk
 durationMin: 51
 slides: null
 verdict: 7
+reach: segment
 frames: 10
 reviewedAt: 2026-10-15
 ---
@@ -98,11 +99,12 @@ Teams deciding between hosted APIs and self-hosted inference, and Java developer
 
 **7/10**: A beginner framework on hosted versus self-hosted inference, with a local-model demo run end to end and a three-variant demo repository, limited by an OpenAI demo that was never run, a cut final demo and no cost numbers.
 
+**Reach segment**: Teams adding LLM features to their applications can use the gateway-first decision framework within the next year.
+
 **Novelty 1/2**
 
-- **+** [21:21](https://youtu.be/QbA-rs7XLEk?t=1281) The ownership and gateway guidance draws on the speakers' customer work across Western Europe, not only on product docs.
-- **+** [16:43](https://youtu.be/QbA-rs7XLEk?t=1003) Personal-risk scenarios (a physician pasting records into ChatGPT, dynamic pay, salary offers shaped by debt) carry the sovereignty argument beyond a vendor lock-in checklist.
-- **·** [24:30](https://youtu.be/QbA-rs7XLEk?t=1470) The Podman AI Lab and OpenShift AI model-as-a-service segments tour the products' consoles and show no results of the speakers' own.
+- **+** [21:21](https://youtu.be/QbA-rs7XLEk?t=1281) The speakers report ownership ambiguity across their Western-European customers, although they give no case showing what a team changed and how it worked out.
+- **+** [16:43](https://youtu.be/QbA-rs7XLEk?t=1003) Personal-risk scenarios involving medical records, dynamic pay and debt-informed salary offers illustrate the sovereignty argument beyond a vendor lock-in checklist.
 
 **Demonstrated 1/2**
 
@@ -114,15 +116,14 @@ Teams deciding between hosted APIs and self-hosted inference, and Java developer
 
 - **+** [41:00](https://youtu.be/QbA-rs7XLEk?t=2460) The validated-model catalog compares H100 x4 and x2 configurations by TTFT P90 and tokens/s for a stated chatbot scenario (512 input, 256 output tokens).
 - **−** [30:16](https://youtu.be/QbA-rs7XLEk?t=1816) Quantization is backed by an image-compression example (2.4 MB versus 73 kB), not by a model measurement.
-- **−** [50:22](https://youtu.be/QbA-rs7XLEk?t=3022) The cost comparison behind the central when-to-self-host question has no numbers; the speakers say they have no sizing data.
+- **−** [50:53](https://youtu.be/QbA-rs7XLEk?t=3053) The cost comparison behind the central when-to-self-host question has no numbers; the speakers say they have no sizing data.
 
 **Depth 2/2**
 
-- **+** [07:19](https://youtu.be/QbA-rs7XLEk?t=439) Hosted-API risks and self-hosting challenges are weighed against each other with reasons for each.
-- **+** [34:27](https://youtu.be/QbA-rs7XLEk?t=2067) The serving stack gets a working mental model: Podman for local use, vLLM for concurrent production load, llm-d routing requests to the pod with the most capacity.
+- **+** [08:22](https://youtu.be/QbA-rs7XLEk?t=502) Shared API keys obscure which workloads caused a bill, explaining why monitoring and usage attribution belong in the inference layer.
+- **+** [20:19](https://youtu.be/QbA-rs7XLEk?t=1219) Self-hosting is weighed against upfront hardware cost, idle capacity and peak demand, making ownership a trade-off rather than an automatic saving.
 - **+** [38:06](https://youtu.be/QbA-rs7XLEk?t=2286) The migration path is reasoned: a gateway in front of external models first for observability, then gradual moves to owned infrastructure.
 
 **Reusable 2/2**
 
 - **+** [11:33](https://youtu.be/QbA-rs7XLEk?t=693) The talk points to a repository holding all three demo variants as independent runnable projects with Compose files, tests and per-variant READMEs.
-- **+** [48:40](https://youtu.be/QbA-rs7XLEk?t=2920) The closing hand-off tells listeners to run the app locally with Podman Desktop and try the OpenShift AI model gateway.

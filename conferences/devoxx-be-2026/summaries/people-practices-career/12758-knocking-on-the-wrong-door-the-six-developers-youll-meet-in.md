@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=qrtd6svRUnk
 durationMin: 41
 slides: null
 verdict: 6
+reach: broad
 frames: 6
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -53,28 +54,30 @@ The OWASP Security Culture project is building SECUR-E, a self-assessment tool t
 Team leads, engineering managers, and security champions deciding where to spend a limited security-improvement budget gain a practical diagnostic vocabulary. Developers curious why training never seems to stick get an explanation that points away from blame. Skip it if you already work with COM-B or the OWASP Security Culture material, since the talk surveys the framework rather than extending it.
 
 ## Verdict
-**6/10**: A diagnose-then-match framework that gives each of six developer patterns a COM-B reason for its wrong and right intervention, with a live self-assessment behind the QR code; the interventions themselves are described in speech for the audience to reconstruct.
+**6/10**: A beginner-level model explains why different security barriers call for different support; the self-assessment remains a project resource rather than a worked team intervention.
+
+**Reach broad**: Developers, tech leads and architects can use the barrier-first questions in their own teams' security discussions.
 
 **Novelty 1/2**
 
-- **+** [18:42](https://youtu.be/qrtd6svRUnk?t=1122) The six-pattern taxonomy with per-pattern COM-B profiles and matched interventions comes from the speaker's own OWASP project work.
-- **·** [11:06](https://youtu.be/qrtd6svRUnk?t=666) COM-B itself is established behavioral science, credited as such rather than presented as new.
+- **+** [02:42](https://youtu.be/qrtd6svRUnk?t=162) The speaker brings behavioral science into software-team security through his OWASP Security Culture project work.
+- **·** [18:42](https://youtu.be/qrtd6svRUnk?t=1122) The six-pattern overview presents the project's framework without an account of applying and revising it in a particular team.
 
 **Demonstrated 1/2**
 
-- **·** [38:23](https://youtu.be/qrtd6svRUnk?t=2303) A strategy talk about matching interventions to behavioral barriers has nothing to run on screen; the self-assessment tool appears only as a QR code.
+- **·** [14:19](https://youtu.be/qrtd6svRUnk?t=859) This security-culture talk teaches a diagnostic conversation and has no central claim that needs running software.
 
 **Measured 1/2**
 
-- **·** [03:46](https://youtu.be/qrtd6svRUnk?t=226) The full-completion-yet-same-incidents story is told without numbers, and no claim in the talk needs one.
+- **·** [03:46](https://youtu.be/qrtd6svRUnk?t=226) Training completion followed by recurring incidents is an illustrative scenario, with no quantitative effectiveness claim needing a measurement.
 
 **Depth 2/2**
 
-- **+** [20:16](https://youtu.be/qrtd6svRUnk?t=1216) Each of the six patterns gets its COM-B diagnosis plus the wrong intervention and the right one, for example the skeptic's low motivation from distrust calls for evidence of late-fix costs, not fear or training.
-- **+** [29:19](https://youtu.be/qrtd6svRUnk?t=1759) One training intervention is traced across the team: it helps the unaware developer, backfires for the resistant one and annoys the skeptic.
-- **−** [32:29](https://youtu.be/qrtd6svRUnk?t=1949) The one-budget trade-off between a quick win and the most productive team-wide impact is posed as a question, with no way to choose given.
+- **+** [20:47](https://youtu.be/qrtd6svRUnk?t=1247) The skeptic's distrust explains why evidence of costs fits the motivational barrier while more awareness training misses it.
+- **+** [26:36](https://youtu.be/qrtd6svRUnk?t=1596) Treating resistance as feedback and involving developers in control design explains how co-authorship can turn opposition into advocacy.
+- **+** [35:43](https://youtu.be/qrtd6svRUnk?t=2143) Anonymous assessment and team-level patterns address the trust risk created when diagnostic information becomes hiring or performance-review data.
 
 **Reusable 1/2**
 
-- **+** [40:55](https://youtu.be/qrtd6svRUnk?t=2455) The closing QR code leads to a live SECUR-E developer self-assessment form.
-- **−** [31:25](https://youtu.be/qrtd6svRUnk?t=1885) The matched supports per pattern are listed only in speech, and the tool is still in validation ([38:23](https://youtu.be/qrtd6svRUnk?t=2303)), so the practices must be reconstructed from the talk.
+- **+** [40:55](https://youtu.be/qrtd6svRUnk?t=2455) The final slide points to the SECUR-E diagnostic self-assessment through a QR code.
+- **·** [38:23](https://youtu.be/qrtd6svRUnk?t=2303) The assessment is the presented project's own tool, still being validated, rather than a separate worked example reproducing a team's diagnosis and intervention.

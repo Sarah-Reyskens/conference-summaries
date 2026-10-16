@@ -9,11 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=PGpKfdXZrpc
 durationMin: 46
 slides: https://speakerdeck.com/inesp/their-api-went-down-so-why-is-my-app-on-fire
-verdict: 6
-frames: 6
+verdict: 5
+reach: broad
+frames: 7
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
----
 
 # Their API Went Down. So Why Is My App on Fire?
 
@@ -77,30 +77,32 @@ Backend developers who integrate third-party APIs and own the resulting incident
 
 ## Verdict
 
-**6/10**: Production-tested rate-limit and slow-API mechanisms explained in depth, but no pattern is run on screen, the numbers are illustrative and no artifact is published.
+**5/10**: Production experience and explanations of API-failure containment carry the talk, but no mechanism is run on screen, the quantitative examples are hypothetical and the takeaways remain fragments.
+
+**Reach broad**: Backend developers building the business applications that dominate this conference can use the API-failure containment, timeout and isolation practices across frameworks and providers.
 
 **Novelty 2/2**
 
-- **+** [21:21](https://youtu.be/PGpKfdXZrpc?t=1281) Caching the serialized 429 response in Redis and serving it from a requests-level hook to block all workers per provider, tenant, and token is a production technique with its gotchas, not generic advice.
-- **+** [12:00](https://youtu.be/PGpKfdXZrpc?t=720) The three-part expired-token UX (broken token, affected feature, exact fix link) comes from multi-day bad-credential sequences found in production logs.
-- **+** [18:43](https://youtu.be/PGpKfdXZrpc?t=1123) Checkpointing paginated syncs by retrying the task with the last processed page, against queue conventions, is presented as her own working implementation.
+- **+** [13:02](https://youtu.be/PGpKfdXZrpc?t=782) Multi-day bad-credential sequences in production logs led the team to combine customer nudges with evidence-gated feature disabling, while accepting that some doomed requests remained during evidence collection.
+- **+** [19:46](https://youtu.be/PGpKfdXZrpc?t=1186) The speaker reports choosing to change retried-task parameters against queue conventions rather than persist checkpoints separately because this worked for their system, with a maintenance cost attached.
 
 **Demonstrated 0/2**
 
-- **−** [22:23](https://youtu.be/PGpKfdXZrpc?t=1343) The cached-429 hook and the page checkpoint "show results immediately" and "worked beautifully", but no run, recording or output is shown; the slides are code and diagrams.
+- **−** [22:23](https://youtu.be/PGpKfdXZrpc?t=1343) The cached-429 hook is said to show results immediately, but no run, recording or output demonstrates the mechanism working.
+- **−** [44:40](https://youtu.be/PGpKfdXZrpc?t=2680) The circuit-breaker dashboard is a static screenshot of blocker state rather than a run producing output.
 
-**Measured 1/2**
+**Measured 0/2**
 
-- **+** [32:46](https://youtu.be/PGpKfdXZrpc?t=1966) The throughput arithmetic (20 workers at 200 ms versus 8000 ms, 100 down to 2.5 calls per second, queue growth of about 1,000 calls per minute) works a baseline against a degraded case with its method stated.
-- **−** [32:13](https://youtu.be/PGpKfdXZrpc?t=1933) Those numbers are explicitly hypothetical, the load-shedding expiries are configured values, and no production metrics or before/after measurements back any claim.
+- **−** [32:13](https://youtu.be/PGpKfdXZrpc?t=1933) The throughput example explicitly uses hypothetical inputs that do not describe a realistic system, so its arithmetic supplies no observed performance measurement.
+- **−** [32:46](https://youtu.be/PGpKfdXZrpc?t=1966) The claimed fortyfold throughput loss and subsequent queue growth are calculated from those assumptions without a measured system comparison.
 
 **Depth 2/2**
 
-- **+** [26:01](https://youtu.be/PGpKfdXZrpc?t=1561) The TCP timeout ladder (instant refusal, two-minute SYN retry, 15-minute retransmit, waiting forever) explains why libraries without timeouts hang.
-- **+** [33:48](https://youtu.be/PGpKfdXZrpc?t=2028) The 5-second-timeout-against-8-second-responses case shows why timeouts bound waiting without restoring throughput.
-- **+** [41:32](https://youtu.be/PGpKfdXZrpc?t=2492) The backfill-quota discussion weighs a trade-off: partitioning API budget between sync jobs and interactive calls costs maintenance against the resilience gained.
+- **+** [26:01](https://youtu.be/PGpKfdXZrpc?t=1561) The TCP failure-state ladder explains why connection refusal, lost handshake packets and a disappearing peer produce different waits when application timeouts are absent.
+- **+** [30:40](https://youtu.be/PGpKfdXZrpc?t=1840) The resource-exhaustion explanation connects blocked workers or exhausted descriptors and shared resources to unrelated work stalling and health-check failures spreading load to other instances.
+- **+** [41:32](https://youtu.be/PGpKfdXZrpc?t=2492) The backfill-quota discussion weighs the resilience gained by isolating interactive API capacity against the implementation and ongoing maintenance cost.
 
 **Reusable 1/2**
 
-- **+** [44:08](https://youtu.be/PGpKfdXZrpc?t=2648) A slide carries a copyable diagnostic `logger.error` message template with schema-mismatch hypotheses and the raw payload.
-- **−** [45:14](https://youtu.be/PGpKfdXZrpc?t=2714) No repository, sample project or checklist covers the patterns; the closing QR code leads to a list of references.
+- **+** [44:08](https://youtu.be/PGpKfdXZrpc?t=2648) A slide carries a copyable diagnostic logging fragment with schema-mismatch hypotheses and the raw payload.
+- **−** [45:14](https://youtu.be/PGpKfdXZrpc?t=2714) The closing QR code offers references, with no published sample project, complete configuration or checklist reproducing the main content.

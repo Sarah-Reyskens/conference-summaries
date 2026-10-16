@@ -9,10 +9,11 @@ audienceLevel: INTERMEDIATE
 video: https://www.youtube.com/watch?v=aow56RgptLA
 durationMin: 51
 slides: null
-verdict: 7
+verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 ---
 
 # Structured Concurrency Looms
@@ -83,7 +84,7 @@ try (var scope = StructuredTaskScope.open(
 Because Java lacks union types for a fork's possible failures, subtasks may throw anything checked or unchecked. `join()` throws from the main thread, so every subtask exception is wrapped in `ExecutionException` by default (matching `java.util.concurrent` convention) to preserve where the main task was waiting; joiner factories accept a wrapper function to substitute your own type and avoid mandatory catches for impossible failures. Recommended practice: put the catch on the try-with-resources, and consider result types instead of exceptions for routine service outcomes.
 
 ### [38:11](https://youtu.be/aow56RgptLA?t=2291) ScopedValue propagation and structured thread dumps
-`ScopedValue` (permanent in JDK 25) implicitly passes context such as a security object to callees, and opening a scope inside a `where(...).call(...)` propagates that binding to every subtask cheaply. For diagnosis, the JSON thread dump from `jcmd <pid> Thread.dump_to_file -format=json` records parent-child relationships (the main thread blocked in `join` plus its virtual-thread children), unlike the flat traditional dump; Bateman demoed rendering it as a tree with under 50 lines using the incubating JSON API.
+`ScopedValue` (permanent in JDK 25) implicitly passes context such as a security object to callees, and opening a scope inside a `where(...).call(...)` propagates that binding to every subtask cheaply. For diagnosis, the JSON thread dump from `jcmd <pid> Thread.dump_to_file -format=json` records parent-child relationships (the main thread blocked in `join` plus its virtual-thread children), unlike the flat traditional dump; Bateman described rendering it as a tree with under 50 lines using the incubating JSON API.
 
 ### [44:25](https://youtu.be/aow56RgptLA?t=2665) Status: permanent API proposed for JDK 28
 After several preview rounds slowed by the ecosystem digesting virtual threads, structured concurrency is proposed to go permanent in JDK 28 (JEP proposed to target). Feedback pushed back against `invokeAll`-style combinators that hide structure, and exception handling was the hardest design area. The current API covers independent tasks only; dependent tasks, channels, and workflow engines belong outside the JDK, so future work explores exposing the stable lower-level runtime primitives plus a structured-lifetime `Arena` for the Foreign Function API. No Q&A time remained; the speakers took questions outside.
@@ -101,32 +102,33 @@ After several preview rounds slowed by the ecosystem digesting virtual threads, 
 Java developers writing fan-out code over blocking I/O (service aggregation, scatter-gather queries) and anyone evaluating the structured concurrency preview before it goes permanent. Framework and library authors curious about the planned lower-level primitives get the roadmap directly. Skip if you already follow the Loom mailing list and preview Javadoc closely, or if you want benchmarks or production case studies rather than API design.
 
 ## Verdict
-**7/10**: The authors explain why the API is shaped as it is (exception wrapping, interruption-based cancellation, rejected combinators), but fork/join/cancel is shown only in animations and nothing is measured.
+**6/10**: The authors argue why exceptions and cancellation work the way they do, but the API tour follows JEP 505 and the Javadoc, only a thread-dump screenshot is shown, and nothing is measured.
 
-**Novelty 2/2**
+**Reach broad**: Java backend developers fanning out over blocking I/O (service aggregation, scatter-gather queries) who will meet this JDK feature once it ships.
 
-- **+** [44:57](https://youtu.be/aow56RgptLA?t=2697) The authors explain why `invokeAll`-style combinators were rejected (they hide the structure) and that exception handling was the hardest design problem across the preview rounds.
-- **+** [47:32](https://youtu.be/aow56RgptLA?t=2852) The roadmap beyond the JDK API (stable lower-level primitives, structured-lifetime Arena) is laid out with its rationale: every prototype built on the same small set of runtime primitives.
-- **+** [08:52](https://youtu.be/aow56RgptLA?t=532) The talk traces the idea from libdill and Python Trio back to 1970s architecture literature, situating the JDK design.
+**Novelty 1/2**
+
+- **+** [44:57](https://youtu.be/aow56RgptLA?t=2697) The authors say they dropped `invokeAll`-style combinator prototypes because they hide the structure, and that exception handling was the hardest part across the preview rounds.
+- **+** [47:32](https://youtu.be/aow56RgptLA?t=2852) Every prototype API was built on one small internal set of runtime primitives that never had to change, which is the basis for exposing a lower-level API and a structured-lifetime `Arena`.
+- **−** JEP 505 and the `StructuredTaskScope` Javadoc already cover most of the API tour, including the credit to Sústrik, Smith and Erlang supervisors.
 
 **Demonstrated 1/2**
 
-- **+** [13:34](https://youtu.be/aow56RgptLA?t=814) Animated diagrams step through fork, blocking join, per-subtask completion ticks, and result aggregation on screen.
-- **+** [43:22](https://youtu.be/aow56RgptLA?t=2602) A slide shows a real `jcmd Thread.dump_to_file -format=json` dump with the main thread blocked in `StructuredTaskScopeImpl.join` and its virtual-thread children 36 and 38.
-- **−** [16:42](https://youtu.be/aow56RgptLA?t=1002) Sibling cancellation and the cause-by-cause exception chain are drawn as slide animations; no fork, join or cancellation code is run live or as a recording.
+- **+** [43:22](https://youtu.be/aow56RgptLA?t=2602) A slide shows a real `jcmd Thread.dump_to_file -format=json` dump with the main thread blocked in `StructuredTaskScope` `join` and its virtual-thread children 36 and 38.
+- **−** [16:42](https://youtu.be/aow56RgptLA?t=1002) Fork, join, sibling cancellation and the cause-by-cause exception chain are slide animations; no scope code is run live or as a recording.
 
 **Measured 1/2**
 
-- **·** [24:01](https://youtu.be/aow56RgptLA?t=1441) The talk makes no quantitative claims; figures like the 10-second and 500-millisecond timeouts are configured parameters, not measurements.
+- **·** [24:01](https://youtu.be/aow56RgptLA?t=1441) The talk makes no quantitative claims; the 10-second and 500-millisecond timeouts are configured parameters, not measurements.
 
 **Depth 2/2**
 
-- **+** [32:23](https://youtu.be/aow56RgptLA?t=1943) The exception-wrapping design is argued from first principles: no union types, the main-thread throw site, and the dual over/under-catch dilemma.
-- **+** [18:47](https://youtu.be/aow56RgptLA?t=1127) Cancellation is set against fork-join tasks and grounded in thread interruption, with the contract that subtasks must respond or `close()` blocks.
-- **−** [19:51](https://youtu.be/aow56RgptLA?t=1191) How to write a correctly interruptible subtask is asserted rather than shown; no cancelable-task code appears.
+- **+** [32:23](https://youtu.be/aow56RgptLA?t=1943) The exception design is argued from the alternatives: no union types, a typed `throws` that degrades to `Throwable`, and the main-thread throw site that justifies wrapping in `ExecutionException` with an override for impossible failures.
+- **+** [18:47](https://youtu.be/aow56RgptLA?t=1127) Cancellation is set against fork-join tasks, grounded in thread interruption, with the contract that subtasks must respond or `close()` blocks.
+- **−** [19:51](https://youtu.be/aow56RgptLA?t=1191) How to write a correctly interruptible subtask is named (interruptible blocking calls) but no cancelable-task code is shown.
 
 **Reusable 1/2**
 
-- **+** [29:48](https://youtu.be/aow56RgptLA?t=1788) Complete scope snippets for each joiner strategy appear on slides in copyable form.
-- **·** [27:10](https://youtu.be/aow56RgptLA?t=1630) The talk recommends the API's Javadoc as its reference material, which is documentation rather than a sample project.
-- **·** [50:07](https://youtu.be/aow56RgptLA?t=3007) No repository, sample project, or checklist is pointed to; the patterns must be reconstructed from the slides.
+- **+** [29:48](https://youtu.be/aow56RgptLA?t=1788) Scope code for the execute-all joiner is walked through on slides, a fragment to reconstruct from.
+- **·** [27:10](https://youtu.be/aow56RgptLA?t=1630) The speakers point to the API's Javadoc as reference material, which is documentation rather than a sample project.
+- **·** [50:07](https://youtu.be/aow56RgptLA?t=3007) No repository, sample project or checklist is given; the patterns must be reconstructed from the slides.

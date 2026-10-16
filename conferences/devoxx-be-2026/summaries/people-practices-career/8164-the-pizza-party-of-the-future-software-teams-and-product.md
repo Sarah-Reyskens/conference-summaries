@@ -10,10 +10,10 @@ video: https://www.youtube.com/watch?v=Tc2RFLa0ip8
 durationMin: 51
 slides: null
 verdict: 6
+reach: broad
 frames: 8
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
----
+reviewedAt: 2026-10-15
 
 # The pizza party of the future 🍕 software teams and product value in the age of coding agents
 
@@ -84,13 +84,15 @@ Team leads, engineering managers, and architects deciding how to organize humans
 
 ## Verdict
 
-**6/10**: A broad, well-sourced argument that agents move the developer's contribution up a level, with a team-size and spec-as-source framework to place yourself in, limited by thin original material, no demonstration, and no measurements.
+**6/10**: A well-sourced argument that agents move the developer's contribution up a level, with a spec-as-source matrix and team-size guidance to place yourself in, limited by thin original material, nothing demonstrated and no measurements.
+
+**Reach broad**: Developers, tech leads and architects using coding assistants can apply the role shift, the spec-as-source matrix and the team-size guidance to their own teams.
 
 **Novelty 1/2**
 
-- **+** [43:16](https://youtu.be/Tc2RFLa0ip8?t=2596) The local-versus-systemic by conventional-versus-novel matrix for placing spec-driven work is the speakers' own framework, and no search result restates it.
-- **+** [20:50](https://youtu.be/Tc2RFLa0ip8?t=1250) Taylor versus Drucker (1911 versus 1959) is applied to offshoring, dark scrum and XP, and then to agents, bringing several credited sources into one argument.
-- **−** [44:19](https://youtu.be/Tc2RFLa0ip8?t=2659) The matrix is asserted quadrant by quadrant and draws on Plur's Wardley map; no team of the speakers' own is run through it.
+- **+** [20:50](https://youtu.be/Tc2RFLa0ip8?t=1250) Taylor versus Drucker (1911 versus 1959) is applied to offshoring, Dark Scrum, SAFe and XP, and then to agents, bringing several credited sources into one argument.
+- **+** [36:31](https://youtu.be/Tc2RFLa0ip8?t=2191) Boris Cherny's prototyper, builder, grower, sweeper and maintainer archetypes are set beside Kent Beck's explore, expand, extract and Simon Wardley's explorers, villagers and town planners.
+- **−** [44:19](https://youtu.be/Tc2RFLa0ip8?t=2659) The matrix is asserted quadrant by quadrant and leans on others' work (Wardley maps, Parnas 1976, Barry O'Reilly's residuality); no team of the speakers' own is run through it.
 
 **Demonstrated 1/2**
 
@@ -98,7 +100,7 @@ Team leads, engineering managers, and architects deciding how to organize humans
 
 **Measured 1/2**
 
-- **+** [12:32](https://youtu.be/Tc2RFLa0ip8?t=752) The historical figures (more than one in four programmers women by 1960, one woman per eight men by 1967) and the 1968 Sackman study anchor the stereotypes segment in dated sources.
+- **+** [12:32](https://youtu.be/Tc2RFLa0ip8?t=752) The historical figures (more than one in four programmers women by 1960, one woman per eight men by 1967) carry a year and a named source, though no method.
 - **−** [30:15](https://youtu.be/Tc2RFLa0ip8?t=1815) The 8-million-view post and the reports of apathy and burnout are anecdotes with no method or baseline.
 - **·** [29:13](https://youtu.be/Tc2RFLa0ip8?t=1753) The show-of-hands poll on which developer role the room sees is audience opinion, not a measurement.
 
@@ -112,3 +114,4 @@ Team leads, engineering managers, and architects deciding how to organize humans
 
 - **+** [02:39](https://youtu.be/Tc2RFLa0ip8?t=159) The QR code points to Substack articles that collect the full-length quotes and sources cut from the talk.
 - **−** [02:39](https://youtu.be/Tc2RFLa0ip8?t=159) The articles were unfinished at talk time ("still work in progress"), so the take-home is a reading list, not a checklist, repository or configuration.
+- **−** [44:51](https://youtu.be/Tc2RFLa0ip8?t=2691) The write-up of the matrix is promised for a later Substack post, so the quadrant rules exist only in the talk.

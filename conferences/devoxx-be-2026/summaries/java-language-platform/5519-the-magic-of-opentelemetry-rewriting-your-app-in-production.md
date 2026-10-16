@@ -9,9 +9,10 @@ audienceLevel: ADVANCED
 video: https://www.youtube.com/watch?v=Lf_m5dIjjqw
 durationMin: 30
 slides: null
-verdict: 7
+verdict: 8
+reach: segment
+reviewedAt: 2026-10-16
 frames: 9
-reviewedAt: 2026-10-14
 ---
 
 # The Magic of OpenTelemetry: Rewriting Your App in Production
@@ -68,31 +69,34 @@ Java engineers running the OTel agent in production, or anyone weighing zero-cod
 
 ## Verdict
 
-**7/10**: Zero-code tracing demo, live bytecode diffs of OTel's injections and a baselined startup chart; the injections and the Leyden/AppCDS incompatibilities go unexplained and the demo app is unpublished.
+**8/10**: Zero-code tracing and the bytecode diffs run on screen, a start-to-first-response comparison covers two agents, and the transformation pipeline and startup cost are explained; the examples are not published as a reproducible project.
+
+**Reach segment**: Java backend teams using or evaluating the OpenTelemetry Java agent can apply the startup trade-offs and the picture of what the agent does to their classes.
 
 **Novelty 1/2**
 
-- **+** [18:01](https://youtu.be/Lf_m5dIjjqw?t=1081) The speaker's own run of Bechberger's meta-agent shows what OTel injects into the JDK HTTP server, `ForkJoinPool` and Jedis, with line counts a search does not return.
-- **−** The `premain` and `ClassFileTransformer` pipeline is the documented `java.lang.instrument` API (package docs), and the injections themselves live in the public opentelemetry-java-instrumentation modules.
+- **+** [26:25](https://youtu.be/Lf_m5dIjjqw?t=1585) A Datadog agent engineer reports where Native Image and AppCDS stand with a production agent (Native Image removes the startup penalty, AppCDS can be kept from crashing but gains nothing), which the OpenTelemetry docs do not cover.
+- **+** [25:54](https://youtu.be/Lf_m5dIjjqw?t=1554) The speaker places the OTel Java agent as a Datadog donation and hopes Datadog's Leyden and Native Image work transfers to OTel and the JDK, a practitioner view stated as hope, not as an outcome.
+- **·** The basic agent setup and the `java.lang.instrument` API follow the OpenTelemetry Java agent documentation and the JDK `java.lang.instrument` package docs.
 
 **Demonstrated 2/2**
 
-- **+** [05:54](https://youtu.be/Lf_m5dIjjqw?t=354) An unmodified containerized app produces three traces with HTTP server, HTTP client and Jedis spans after only the agent flag is added.
-- **+** [20:43](https://youtu.be/Lf_m5dIjjqw?t=1243) The meta-agent UI renders the transformed-class diffs live, including the Jedis page with its `@@ -1,5046 +1,43711 @@` hunk header after a slow load.
+- **+** [05:54](https://youtu.be/Lf_m5dIjjqw?t=354) Redeploying the unmodified application with the agent produces three traces with HTTP server, HTTP client and Redis spans.
+- **+** [17:29](https://youtu.be/Lf_m5dIjjqw?t=1049) The meta-agent lists the classes OTel transformed and the walkthrough opens the JDK HTTP server's before/after code.
 
 **Measured 2/2**
 
-- **+** [26:57](https://youtu.be/Lf_m5dIjjqw?t=1617) The Spring PetClinic 4 chart compares start-to-first-response across baseline (about 2 s), OTel (about 3.5 s) and Datadog (about 3 s), with the metric stated.
-- **+** [20:43](https://youtu.be/Lf_m5dIjjqw?t=1243) The Jedis class goes from 5,046 to 43,711 decompiled lines in the diff header, a before/after count of what the agent injects.
-- **−** [26:57](https://youtu.be/Lf_m5dIjjqw?t=1617) The chart states no run count, environment or variance, and the Native Image, AppCDS and Leyden outcomes that follow have no numbers behind them.
+- **+** [26:57](https://youtu.be/Lf_m5dIjjqw?t=1617) A Spring PetClinic 4 comparison measures start to first response and shows about 2 seconds without an agent, 3.5 seconds with OTel and 3 seconds with Datadog.
+- **+** [20:43](https://youtu.be/Lf_m5dIjjqw?t=1243) The diff header counts 5,046 decompiled Jedis lines before transformation and 43,711 afterward, a before/after size of the same class.
+- **·** [27:27](https://youtu.be/Lf_m5dIjjqw?t=1647) The Leyden comparison is a single-application chart without a stated run count or variance.
 
-**Depth 1/2**
+**Depth 2/2**
 
-- **+** [12:09](https://youtu.be/Lf_m5dIjjqw?t=729) The transform pipeline is explained: class bytes in, rewritten bytes out, a verify error if the bytecode is invalid, and the Class-File API skipped because OTel supports Java 8.
-- **+** [24:20](https://youtu.be/Lf_m5dIjjqw?t=1460) The startup cost is traced to per-class pattern matching: name lookups are cheap, inheritance and method patterns need byte-array analysis, repeated for every class times every instrumentation.
-- **−** [25:22](https://youtu.be/Lf_m5dIjjqw?t=1522) The AppCDS and Leyden incompatibilities are conclusions with at most a clause of mechanism, and the `ForkJoinPool` injections ([19:41](https://youtu.be/Lf_m5dIjjqw?t=1181)) are shown without the reason they are needed.
+- **+** [12:09](https://youtu.be/Lf_m5dIjjqw?t=729) The explanation follows class bytes through method-body modification, validation and replacement, and says why Java 8 support rules out the JDK 24 Class-File API.
+- **+** [24:20](https://youtu.be/Lf_m5dIjjqw?t=1460) Startup overhead is derived from matching every loaded class against every instrumentation, with cheap name checks set against inheritance and method inspection and the extra work when a match is rewritten.
+- **+** [23:19](https://youtu.be/Lf_m5dIjjqw?t=1399) Moving telemetry from business threads to exporter threads is named as a source of locks and contention that depends on the application profile.
 
 **Reusable 1/2**
 
-- **+** [18:30](https://youtu.be/Lf_m5dIjjqw?t=1110) The meta-agent UI has a GitHub button leading to the public inspector, and the demo's compose file and agent flags are visible on screen.
-- **−** [05:10](https://youtu.be/Lf_m5dIjjqw?t=310) The demo project is unpublished and no repository URL is spoken, so the viewer must rebuild the app.
+- **+** [18:30](https://youtu.be/Lf_m5dIjjqw?t=1110) The inspector UI shows a GitHub button, a lead for reconstructing the bytecode-inspection workflow.
+- **−** [29:36](https://youtu.be/Lf_m5dIjjqw?t=1776) The closing offers no demo project or configuration that reproduces the application, collector and meta-agent setup.

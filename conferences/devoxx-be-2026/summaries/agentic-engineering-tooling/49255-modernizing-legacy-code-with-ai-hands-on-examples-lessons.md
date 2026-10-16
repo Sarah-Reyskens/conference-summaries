@@ -9,7 +9,8 @@ audienceLevel: BEGINNER
 video: https://www.youtube.com/watch?v=FvVe9J0Abjg
 durationMin: 51
 slides: null
-verdict: 5
+verdict: 6
+reach: broad
 frames: 10
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -89,34 +90,36 @@ Teams facing framework or namespace migrations (Jakarta EE in particular) and en
 
 ## Verdict
 
-**5/10**: Seven-case migration study with real generated artifacts and reasoned harness choices, limited by screenshots instead of a run and by no measured outcome.
+**6/10**: A seven-case migration study brings the team's failures, generated artifacts and reasons for its harness choices, with no end-to-end run or measurements backing its speed and profitability claims.
 
-**Novelty 1/2**
+**Reach broad**: Developers, tech leads and architects maintaining business applications can apply the context, planning and review practices to AI-assisted work on their existing codebases.
 
-- **+** [12:09](https://youtu.be/FvVe9J0Abjg?t=729) Seven cases from a two-year Smals study, from COBOL dependency graphs to SAS-to-Python, bring the speaker's own experience to the subject.
-- **+** [17:23](https://youtu.be/FvVe9J0Abjg?t=1043) A model wrote tests that "just returned the correct value", a failure from their own VBA case that a search for the subject does not hand you.
-- **−** The EAP 7 to 8 plan shown at [34:06](https://youtu.be/FvVe9J0Abjg?t=2046) follows the path documented in Red Hat's JBoss EAP 8.0 Migration Guide, and the talk reports no outcome from the seven cases.
+**Novelty 2/2**
+
+- **+** [12:09](https://youtu.be/FvVe9J0Abjg?t=729) The speakers' COBOL cases show how dependency-analysis tooling and a retiring expert's recorded explanations became aids for teams maintaining unfamiliar code.
+- **+** [17:23](https://youtu.be/FvVe9J0Abjg?t=1043) A model wrote tests that "just returned the correct value", a failure encountered in the team's own work.
+- **+** [49:50](https://youtu.be/FvVe9J0Abjg?t=2990) The closing synthesis separates the small translations their cases supported from end-to-end migrations and architectural rewrites that still required human guidance.
 
 **Demonstrated 1/2**
 
-- **+** [38:50](https://youtu.be/FvVe9J0Abjg?t=2330) Screenshots show the generated progress.md and audit trail from the migration, with the ~124 source files needing migration and 11 prerequisites the analysis found.
+- **+** [34:06](https://youtu.be/FvVe9J0Abjg?t=2046) A generated migration plan appears on screen with Hibernate, Spring and namespace changes broken into phases.
 - **+** [41:27](https://youtu.be/FvVe9J0Abjg?t=2487) The Python analysis-review agent definition appears on screen as a real *.agent.md file.
-- **−** [38:17](https://youtu.be/FvVe9J0Abjg?t=2297) Phase execution ("do phase 1, do next phase, continue") is described over static screenshots; no run executes on screen.
+- **−** [38:17](https://youtu.be/FvVe9J0Abjg?t=2297) Phase execution is described over static screenshots, without an actual end-to-end run shown on screen.
 
 **Measured 0/2**
 
-- **−** [46:44](https://youtu.be/FvVe9J0Abjg?t=2804) The claim that the approach is "absolutely" profitable comes with no time, cost, or before/after numbers.
+- **−** [21:38](https://youtu.be/FvVe9J0Abjg?t=1298) The "couple of $10,000" figure is speculation about an approach the speakers have not used, so it measures none of their results.
+- **−** [46:44](https://youtu.be/FvVe9J0Abjg?t=2804) The claim that the approach is "absolutely" profitable comes with no time, cost or before/after numbers.
 - **−** [22:40](https://youtu.be/FvVe9J0Abjg?t=1360) The claim that AI lets you "analyze faster" has no measured speed-up behind it.
-- **−** [21:38](https://youtu.be/FvVe9J0Abjg?t=1298) The "couple of $10,000" for loop engineering is the only cost figure and carries no baseline or method.
 
 **Depth 2/2**
 
-- **+** [05:18](https://youtu.be/FvVe9J0Abjg?t=318) Even with a million-token window the AI cannot tell which part of a large legacy codebase matters, so quality of context, not quantity, is what limits one-shot migration.
-- **+** [41:59](https://youtu.be/FvVe9J0Abjg?t=2519) The agent asks the human which model to use per phase instead of hardcoding one, because models change all the time.
-- **+** [44:04](https://youtu.be/FvVe9J0Abjg?t=2644) Quality gates of linters and JSON validation are not AI, so each phase is checked without relying on the model to grade itself.
+- **+** [05:18](https://youtu.be/FvVe9J0Abjg?t=318) Even with a million-token window the AI cannot tell which part of a large legacy codebase matters, so context relevance limits one-shot migration.
+- **+** [44:04](https://youtu.be/FvVe9J0Abjg?t=2644) Linters and JSON validation check phase acceptance criteria without relying on the model to grade itself.
+- **+** [41:59](https://youtu.be/FvVe9J0Abjg?t=2519) The agent asks the human which model to use per phase instead of hardcoding one because models change all the time.
 
 **Reusable 1/2**
 
-- **+** [43:31](https://youtu.be/FvVe9J0Abjg?t=2611) The spec folder of JSON contracts (inventory, Java target, runtime map, SQL map) and the plan.md, progress.md and audit-trail structure are shown well enough to reconstruct.
+- **+** [43:31](https://youtu.be/FvVe9J0Abjg?t=2611) The spec folder's JSON contracts for inventory and later phases are shown well enough to reconstruct their structure.
 - **+** [39:21](https://youtu.be/FvVe9J0Abjg?t=2361) Run the full migration cycle on the shared common library first, update the dependency inventory, then continue with the applications.
-- **−** [46:11](https://youtu.be/FvVe9J0Abjg?t=2771) The finished migration skill is shown living in a codebase but no repository, link, or checklist is pointed to.
+- **−** [46:11](https://youtu.be/FvVe9J0Abjg?t=2771) The finished migration skill is shown living in a codebase, but no public repository, link or checklist is supplied.

@@ -10,6 +10,7 @@ video: https://www.youtube.com/watch?v=oey2TbFvfWE
 durationMin: 40
 slides: null
 verdict: 7
+reach: segment
 frames: 8
 summarizedAt: 2026-10-15
 reviewedAt: 2026-10-15
@@ -72,13 +73,15 @@ Engineers building agent systems who feel the pain of inconsistent tool-loop beh
 
 ## Verdict
 
-**7/10**: Live demos carry the thesis from the memory problem to a governed compiler, but the cost and speed claims carry no numbers and nothing is published to reuse.
+**7/10**: Two live demos carry the thesis from the memory problem to a governed compiler, but the cheaper-faster claims carry no measurements and nothing is published to reuse.
+
+**Reach segment**: Engineers and tech leads adding LLM agent features to business applications can lift the pin-and-govern practice into their own work within the next year.
 
 **Novelty 1/2**
 
-- **+** [14:14](https://youtu.be/oey2TbFvfWE?t=854) The speaker runs a head-to-head on one credit question: an LLM choosing its own tools against pinned retrievals plus a decision model.
-- **+** [29:25](https://youtu.be/oey2TbFvfWE?t=1765) Compiling the context graph into a Java workflow behind drift, policy and skill-version gates is the speaker's own prototype, not a tour of vendor documentation.
-- **·** [09:30](https://youtu.be/oey2TbFvfWE?t=570) The context graph that ingests conversations, extracts entities and traces reasoning is Neo4j's existing pattern, presented as the company's approach.
+- **+** [22:05](https://youtu.be/oey2TbFvfWE?t=1325) Every agent run should be distilled into reusable steps, at best deterministic code that runs the same way every time instead of being re-derived each run.
+- **+** [23:06](https://youtu.be/oey2TbFvfWE?t=1386) The context graph works as compilable source for skills, pinned procedures, prompts or training data, each traceable to the agent runs behind it.
+- **·** [09:30](https://youtu.be/oey2TbFvfWE?t=570) The context-graph memory itself is presented as Neo4j's existing pattern rather than something first shown here.
 
 **Demonstrated 2/2**
 
@@ -88,7 +91,7 @@ Engineers building agent systems who feel the pain of inconsistent tool-loop beh
 
 **Measured 1/2**
 
-- **+** [15:47](https://youtu.be/oey2TbFvfWE?t=947) The agent loop shows "already five tool calls" against ten fixed Cypher lookups on the pinned side, a step count for each arm.
+- **+** [15:47](https://youtu.be/oey2TbFvfWE?t=947) The agent loop shows "already five tool calls" mid-run before reaching any verdict.
 - **−** [18:24](https://youtu.be/oey2TbFvfWE?t=1104) "Way less cost, way less time, way less tokens" is claimed with no token counts, timings or stated method.
 - **·** [21:03](https://youtu.be/oey2TbFvfWE?t=1263) The inconsistency claim rests on two earlier runs, "conditionally approve" and "decline", that were not shown on screen.
 

@@ -10,9 +10,10 @@ video: https://www.youtube.com/watch?v=9vtYvAI2Dtk
 durationMin: 48
 slides: https://speakerdeck.com/mthmulders/deterministic-by-design-achieving-reproducible-builds-with-maven-devoxx-be-2026
 verdict: 7
+reach: segment
 frames: 10
 summarizedAt: 2026-10-14
-reviewedAt: 2026-10-14
+reviewedAt: 2026-10-15
 
 # Deterministic by Design - Achieving Reproducible Builds with Maven
 Maarten Mulders · Conference · Development Practices
@@ -74,6 +75,8 @@ Maven-based Java developers who own releases, pipelines, or audit evidence gain 
 
 ## Verdict
 **7/10**: A Maven reproducibility workflow with the failure shown, the checks run and a published demo repository, limited by an official-guide core and a post-fix demo beat that did not behave as the speaker expected.
+
+**Reach segment**: Java teams that build and release with Maven can apply the POM-level fixes and Reproducible Central listing directly, while Gradle-only teams cannot within a year.
 
 **Novelty 1/2**
 
